@@ -1,17 +1,112 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>NordFit</title>
+
   <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
 </head>
 
 <body>
 
-  <div class="container">
-    <h1>NordFit</h1>
-    <p>Training. Klar gedacht.</p>
-  </div>
+  <!-- NAVBAR -->
+  <header class="navbar">
+    <div class="nav-inner">
+
+      <div class="logo">
+        <span>NordFit</span>
+      </div>
+
+      <nav class="nav-links">
+        <a href="#app">App</a>
+        <a href="#memberships">Mitgliedschaften</a>
+        <a href="#locations">Standorte</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+
+      <a class="nav-button" href="#app">App öffnen</a>
+
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>NordFit</h1>
+      <p>Training. Klar gedacht. Für deinen Alltag.</p>
+
+      <div class="hero-buttons">
+        <a href="#app" class="btn primary">App herunterladen</a>
+        <a href="#memberships" class="btn secondary">Mitgliedschaften</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- APP -->
+  <section id="app" class="section">
+    <div class="split">
+
+      <div class="text">
+        <h2>Dein Training in einer App.</h2>
+        <p>Alles, was du brauchst. Ohne Ablenkung. Nur Fokus.</p>
+      </div>
+
+      <div class="mock">
+        <div class="phone-placeholder"></div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- MEMBERSHIPS -->
+  <section id="memberships" class="section center">
+    <h2>Mitgliedschaften</h2>
+
+    <div class="cards">
+
+      <div class="card">
+        <h3>Day Pass</h3>
+        <p>Zum Testen</p>
+        <span>Flexibel</span>
+      </div>
+
+      <div class="card highlight">
+        <h3>Basic</h3>
+        <p>Für den Einstieg</p>
+        <span>29,90 €</span>
+      </div>
+
+      <div class="card">
+        <h3>Plus</h3>
+        <p>Mehr Möglichkeiten</p>
+        <span>Preis folgt</span>
+      </div>
+
+      <div class="card">
+        <h3>Pro</h3>
+        <p>Maximale Leistung</p>
+        <span>Preis folgt</span>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer class="footer" id="contact">
+    <p>© 2026 NordFit</p>
+
+    <div class="footer-links">
+      <a href="#">Impressum</a>
+      <a href="#">Datenschutz</a>
+      <a href="#">AGB</a>
+    </div>
+  </footer>
 
 </body>
 </html>
