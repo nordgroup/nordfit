@@ -235,3 +235,48 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+.hero {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+
+  /* LIGHT APPLE DEPTH */
+  background: radial-gradient(
+    circle at top,
+    rgba(46, 204, 113, 0.08),
+    transparent 60%
+  );
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.hero h1 {
+  font-size: 80px;
+  letter-spacing: -2px;
+  font-weight: 600;
+}
+
+.subtitle {
+  margin-top: 12px;
+  font-size: 20px;
+  opacity: 0.6;
+}
+
+/* softer section spacing */
+.section {
+  padding: 140px 24px;
+}
+
+/* cards upgrade */
+.card {
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(25px);
+  border-radius: 22px;
+  border: 1px solid rgba(0,0,0,0.05);
+}
