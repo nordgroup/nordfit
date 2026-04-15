@@ -5,135 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>NordFit</title>
 
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial;
-}
-
-body {
-  background: #0b0b0f;
-  color: #fff;
-  overflow-x: hidden;
-}
-
-/* NAV */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 18px 60px;
-  backdrop-filter: blur(12px);
-  background: rgba(10,10,15,0.6);
-  z-index: 1000;
-}
-
-nav .logo {
-  font-weight: 600;
-  letter-spacing: 2px;
-}
-
-nav a {
-  color: #aaa;
-  margin-left: 25px;
-  text-decoration: none;
-  font-size: 14px;
-  transition: 0.3s;
-}
-
-nav a:hover {
-  color: #fff;
-}
-
-/* HERO */
-.hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex-direction: column;
-  position: relative;
-}
-
-.hero h1 {
-  font-size: 72px;
-  font-weight: 600;
-  letter-spacing: -2px;
-}
-
-.hero p {
-  margin-top: 20px;
-  color: #aaa;
-  font-size: 18px;
-}
-
-.glow {
-  position: absolute;
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, rgba(0,255,180,0.25), transparent 70%);
-  filter: blur(80px);
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-}
-
-/* SECTIONS */
-section {
-  padding: 120px 60px;
-}
-
-.card {
-  background: rgba(255,255,255,0.05);
-  border-radius: 20px;
-  padding: 40px;
-  margin-top: 40px;
-  backdrop-filter: blur(10px);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-8px);
-}
-
-h2 {
-  font-size: 40px;
-  margin-bottom: 10px;
-}
-
-p {
-  color: #aaa;
-  line-height: 1.6;
-}
-
-/* CTA */
-.cta {
-  text-align: center;
-  padding: 120px 20px;
-}
-
-button {
-  margin-top: 20px;
-  padding: 14px 28px;
-  border: none;
-  border-radius: 999px;
-  background: #00ffb4;
-  color: #000;
-  font-weight: 600;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-button:hover {
-  transform: scale(1.05);
-}
-</style>
+<link rel="stylesheet" href="styles.css">
+<script defer src="main.js"></script>
 </head>
 
 <body>
@@ -147,38 +20,47 @@ button:hover {
   </div>
 </nav>
 
+<!-- HERO -->
 <div class="hero">
   <div class="glow"></div>
   <h1>Train smarter.</h1>
   <p>NordFit – modernes Fitnessstudio für echte Ergebnisse.</p>
 </div>
 
+<!-- ABOUT -->
 <section id="about">
-  <h2>Dein Training. Dein System.</h2>
+  <h2>Dein Training. Dein Fokus.</h2>
   <div class="card">
     <p>
-      NordFit ist kein klassisches Gym. Es ist ein strukturierter Raum für Fortschritt,
-      Fokus und körperliche Entwicklung – ohne Ablenkung, ohne Chaos.
+      NordFit ist kein klassisches Fitnessstudio. Es ist ein ruhiger, klarer Raum,
+      in dem du Fortschritt spürst statt Chaos erlebst. Fokus, Struktur, Ergebnis.
     </p>
   </div>
 </section>
 
+<!-- FEATURES -->
 <section id="features">
   <h2>Features</h2>
 
   <div class="card">
-    <p>• Modernes Equipment auf Studio-Level</p>
-    <p>• Ruheorientiertes Design ohne Ablenkung</p>
-    <p>• Smart Training Zones</p>
-    <p>• Fokus auf Progress statt Masse</p>
+    <p>• High-End Equipment für jedes Level</p>
+    <p>• Minimalistisches, ruhiges Studio-Design</p>
+    <p>• Klare Trainingsbereiche ohne Ablenkung</p>
+    <p>• Fokus auf Fortschritt statt Masse</p>
+    <p>• Moderne, digitale Trainingsstruktur</p>
   </div>
 </section>
 
+<!-- JOIN -->
 <section class="cta" id="join">
   <h2>Bereit für NordFit?</h2>
-  <p>Werde Teil eines neuen Trainingsgefühls.</p>
+  <p>Starte dein Training auf einem neuen Level.</p>
   <button>Jetzt starten</button>
 </section>
+
+<footer style="text-align:center; padding:60px; color:#555; font-size:12px;">
+  © 2026 NordFit. All rights reserved.
+</footer>
 
 </body>
 </html>
