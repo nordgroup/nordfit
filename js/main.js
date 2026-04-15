@@ -5,16 +5,33 @@ function toggleMenu() {
   }
 }
 
+function applyTranslation(element, value) {
+  const attr = element.getAttribute("data-i18n-attr");
+
+  if (attr) {
+    element.setAttribute(attr, value);
+    return;
+  }
+
+  if (element.tagName === "TITLE") {
+    document.title = value;
+    return;
+  }
+
+  element.textContent = value;
+}
+
 function setLanguage(lang = "de") {
   if (!window.translations || !window.translations[lang]) return;
 
-  const elements = document.querySelectorAll("[data-i18n]");
-  elements.forEach((element) => {
-    const key = element.getAttribute("data-i18n");
-    const translation = window.translations[lang][key];
+  const translationSet = window.translations[lang];
 
-    if (translation) {
-      element.textContent = translation;
+  document.querySelectorAll("[data-i18n]").forEach((element) => {
+    const key = element.getAttribute("data-i18n");
+    const value = translationSet[key];
+
+    if (value !== undefined) {
+      applyTranslation(element, value);
     }
   });
 
@@ -24,46 +41,56 @@ function setLanguage(lang = "de") {
 
 function openModal(modalId) {
   const modal = document.getElementById(modalId);
-  if (modal) {
-    modal.classList.add("show");
-    modal.setAttribute("aria-hidden", "false");
-  }
+  if (!modal) return;
+
+  modal.classList.add("show");
+  modal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
 }
 
 function closeModal(modalId) {
   const modal = document.getElementById(modalId);
-  if (modal) {
-    modal.classList.remove("show");
-    modal.setAttribute("aria-hidden", "true");
-  }
+  if (!modal) return;
+
+  modal.classList.remove("show");
+  modal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
 }
 
 function initModals() {
+  const modals = document.querySelectorAll(".modal");
   const closeButtons = document.querySelectorAll(".modal-close");
 
   closeButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const modal = button.closest(".modal");
       if (modal) {
-        modal.classList.remove("show");
-        modal.setAttribute("aria-hidden", "true");
+        closeModal(modal.id);
       }
     });
   });
 
-  document.querySelectorAll(".modal").forEach((modal) => {
+  modals.forEach((modal) => {
     modal.addEventListener("click", (event) => {
       if (event.target === modal) {
-        modal.classList.remove("show");
-        modal.setAttribute("aria-hidden", "true");
+        closeModal(modal.id);
       }
     });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      modals.forEach((modal) => {
+        if (modal.classList.contains("show")) {
+          closeModal(modal.id);
+        }
+      });
+    }
   });
 }
 
 function initScrollAnimations() {
   const revealElements = document.querySelectorAll(".reveal");
-
   if (!revealElements.length) return;
 
   const observer = new IntersectionObserver(
@@ -71,17 +98,16 @@ function initScrollAnimations() {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
         }
       });
     },
     {
-      threshold: 0.15,
+      threshold: 0.14,
     }
   );
 
-  revealElements.forEach((element) => {
-    observer.observe(element);
-  });
+  revealElements.forEach((element) => observer.observe(element));
 }
 
 function initLanguageSwitcher() {
@@ -100,15 +126,24 @@ function initLanguageSwitcher() {
 
 function initBurgerMenu() {
   const burger = document.getElementById("burger");
+  const navLinks = document.querySelectorAll(".site-nav a");
 
   if (burger) {
     burger.addEventListener("click", toggleMenu);
   }
+
+  navLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      const nav = document.querySelector(".site-nav");
+      if (nav && nav.classList.contains("open")) {
+        nav.classList.remove("open");
+      }
+    });
+  });
 }
 
 function initLocationSelector() {
   const locationSelect = document.getElementById("location-select");
-
   if (!locationSelect) return;
 
   locationSelect.addEventListener("change", () => {
