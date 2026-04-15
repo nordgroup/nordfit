@@ -1,21 +1,21 @@
-document.addEventListener("DOMContentLoaded", () => {
+const menuBtn = document.getElementById("menu-btn");
+const navLinks = document.getElementById("nav-links");
+const menuBtnIcon = menuBtn.querySelector("i");
 
-  const elements = document.querySelectorAll(".section, .hero-content, .card, .split-section");
+menuBtn.addEventListener("click", (e) => {
+  navLinks.classList.toggle("open");
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.style.opacity = "1";
-        entry.target.style.transform = "translateY(0)";
-      }
-    });
-  }, { threshold: 0.15 });
-
-  elements.forEach(el => {
-    el.style.opacity = "0";
-    el.style.transform = "translateY(25px)";
-    el.style.transition = "0.8s ease";
-    observer.observe(el);
-  });
-
+  const isOpen = navLinks.classList.contains("open");
+  menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
 });
+
+navLinks.addEventListener("click", (e) => {
+  navLinks.classList.remove("open");
+  menuBtnIcon.setAttribute("class", "ri-menu-line");
+});
+
+const scrollRevealOption = {
+  distance: "50px",
+  origin: "bottom",
+  duration: 1000,
+};
