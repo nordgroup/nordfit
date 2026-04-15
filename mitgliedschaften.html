@@ -1,1 +1,183 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NordFit – Tarife</title>
+  <meta
+    name="description"
+    content="NordFit Tarife – flexible Mitgliedschaften, faire Preise und Tagespass."
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-header-inner glass">
+        <a href="index.html" class="logo" aria-label="NordFit Startseite">
+          <img src="images/nordfit-logo.png" alt="NordFit-Logo" />
+        </a>
 
+        <button id="burger" class="burger" aria-label="Menü öffnen">☰</button>
+
+        <nav class="site-nav" aria-label="Hauptnavigation">
+          <ul>
+            <li><a href="index.html" data-i18n="navHome">Home</a></li>
+            <li><a href="mitgliedschaften.html" data-i18n="navTariffs">Tarife</a></li>
+            <li><a href="standorte.html" data-i18n="navLocations">Standorte</a></li>
+            <li><a href="app.html" data-i18n="navApp">App</a></li>
+            <li><a href="kontakt.html" data-i18n="navContact">Kontakt</a></li>
+          </ul>
+        </nav>
+
+        <div class="lang-switcher">
+          <button class="lang-btn" data-lang="de">DE</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 2rem;">
+          <h1>Mitgliedschaften & Tarife</h1>
+          <p class="muted">
+            Mitgliedschaften können nur in der NordFit-App abgeschlossen und gekündigt werden.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card reveal text-center">
+            <h2>Basic</h2>
+            <p><strong>29,99 € / Monat</strong></p>
+            <p class="muted">Mindestlaufzeit: 8 Monate</p>
+            <p class="muted">Danach monatlich kündbar</p>
+            <p class="muted">Kein Getränke- oder Kursangebot</p>
+          </article>
+
+          <article class="card reveal text-center">
+            <h2>Plus</h2>
+            <p><strong>34,99 € / Monat</strong></p>
+            <p class="muted">Mindestlaufzeit: 6 Monate</p>
+            <p class="muted">Danach monatlich kündbar</p>
+            <p class="muted">Kein Getränke- oder Kursangebot</p>
+          </article>
+
+          <article class="card reveal text-center">
+            <h2>Pro</h2>
+            <p><strong>39,99 € / Monat</strong></p>
+            <p class="muted">Mindestlaufzeit: 3 Monate</p>
+            <p class="muted">Danach monatlich kündbar</p>
+            <p class="muted">Kein Getränke- oder Kursangebot</p>
+          </article>
+        </div>
+
+        <div class="glass text-center reveal" style="padding: 2rem; margin-top: 2rem;">
+          <h2>Tagespass</h2>
+          <p><strong>4,99 € für einen Tag</strong></p>
+          <p class="muted">Ideal zum Testen – 1 Tag freier Zugang</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: #f8f8f8;">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 2rem;">
+          <h2>FAQ</h2>
+        </div>
+
+        <div class="grid" style="max-width: 900px; margin: 0 auto;">
+          <div class="card reveal">
+            <h3>Wie funktioniert der Zutritt?</h3>
+            <p class="muted">Der Zutritt erfolgt nur über die App mittels QR-Code.</p>
+          </div>
+
+          <div class="card reveal">
+            <h3>Gibt es Personal Training oder Kurse?</h3>
+            <p class="muted">In Studio 1 zum Start noch nicht.</p>
+          </div>
+
+          <div class="card reveal">
+            <h3>Ist die Kündigung nach der Mindestlaufzeit monatlich möglich?</h3>
+            <p class="muted">Ja, nach der Mindestlaufzeit ist die Kündigung monatlich möglich.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid-2" style="align-items: start;">
+          <div class="reveal">
+            <h2>Fragen? Schreib uns.</h2>
+            <p class="muted">
+              Bei Fragen erreichst du uns auch unter
+              <a href="mailto:info@nordfit.de">info@nordfit.de</a>
+              oder via Instagram
+              <a href="#">@nordfit</a>.
+            </p>
+          </div>
+
+          <form class="card reveal">
+            <div style="margin-bottom: 1rem;">
+              <label for="name">Name</label><br />
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                style="width: 100%; margin-top: 0.5rem; padding: 0.85rem; border: 1px solid #ddd; border-radius: 12px;"
+              />
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+              <label for="email">E-Mail</label><br />
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                style="width: 100%; margin-top: 0.5rem; padding: 0.85rem; border: 1px solid #ddd; border-radius: 12px;"
+              />
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+              <label for="message">Nachricht</label><br />
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                style="width: 100%; margin-top: 0.5rem; padding: 0.85rem; border: 1px solid #ddd; border-radius: 12px; resize: vertical;"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Senden</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="glass" style="padding: 1.5rem;">
+        <div class="flex" style="justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+          <p>© 2026 NordFit</p>
+          <div class="flex" style="gap: 1rem; flex-wrap: wrap;">
+            <a href="impressum.html">Impressum / AGB / Datenschutz</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
