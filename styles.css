@@ -1,17 +1,29 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
   background: #ffffff;
-  color: #111;
+  color: #1d1d1f;
 }
 
 .container {
-  max-width: 1000px;
-  margin: 100px auto;
-  padding: 20px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  padding: 40px;
 }
 
 h1 {
-  font-size: 48px;
+  font-size: 64px;
+  font-weight: 600;
+  letter-spacing: -1px;
+  margin: 0;
+}
+
+p {
+  font-size: 18px;
+  opacity: 0.6;
+  margin-top: 12px;
 }
