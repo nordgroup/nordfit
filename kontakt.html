@@ -1,1 +1,125 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NordFit – Kontakt</title>
+  <meta
+    name="description"
+    content="Kontakt zu NordFit – Nachricht senden und Kontaktinfos finden."
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-header-inner glass">
+        <a href="index.html" class="logo" aria-label="NordFit Startseite">
+          <img src="images/nordfit-logo.png" alt="NordFit-Logo" />
+        </a>
 
+        <button id="burger" class="burger" aria-label="Menü öffnen">☰</button>
+
+        <nav class="site-nav" aria-label="Hauptnavigation">
+          <ul>
+            <li><a href="index.html" data-i18n="navHome">Home</a></li>
+            <li><a href="mitgliedschaften.html" data-i18n="navTariffs">Tarife</a></li>
+            <li><a href="standorte.html" data-i18n="navLocations">Standorte</a></li>
+            <li><a href="app.html" data-i18n="navApp">App</a></li>
+            <li><a href="kontakt.html" data-i18n="navContact">Kontakt</a></li>
+          </ul>
+        </nav>
+
+        <div class="lang-switcher">
+          <button class="lang-btn" data-lang="de">DE</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 2rem;">
+          <h1>Kontakt</h1>
+          <p class="muted" style="max-width: 700px; margin: 1rem auto 0;">
+            Du hast Fragen zu Tarifen, Standorten oder zur App? Dann schreib uns direkt.
+          </p>
+        </div>
+
+        <div class="grid-2" style="align-items: start;">
+          <div class="glass reveal" style="padding: 2rem;">
+            <h2>Kontaktdaten</h2>
+            <div class="muted" style="margin-top: 1rem;">
+              <p><strong>E-Mail:</strong> <a href="mailto:info@nordfit.de">info@nordfit.de</a></p>
+              <p><strong>Instagram:</strong> <a href="#">@nordfit</a></p>
+              <p><strong>Telefon:</strong> +49 0000 000000</p>
+            </div>
+
+            <p class="muted" style="margin-top: 1.5rem;">
+              Wir melden uns so schnell wie möglich bei dir zurück.
+            </p>
+          </div>
+
+          <form class="card reveal">
+            <div style="margin-bottom: 1rem;">
+              <label for="contact-name">Name</label><br />
+              <input
+                type="text"
+                id="contact-name"
+                name="contact-name"
+                required
+                style="width: 100%; margin-top: 0.5rem; padding: 0.85rem; border: 1px solid #ddd; border-radius: 12px;"
+              />
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+              <label for="contact-email">E-Mail</label><br />
+              <input
+                type="email"
+                id="contact-email"
+                name="contact-email"
+                required
+                style="width: 100%; margin-top: 0.5rem; padding: 0.85rem; border: 1px solid #ddd; border-radius: 12px;"
+              />
+            </div>
+
+            <div style="margin-bottom: 1rem;">
+              <label for="contact-message">Nachricht</label><br />
+              <textarea
+                id="contact-message"
+                name="contact-message"
+                rows="6"
+                required
+                style="width: 100%; margin-top: 0.5rem; padding: 0.85rem; border: 1px solid #ddd; border-radius: 12px; resize: vertical;"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Senden</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="glass" style="padding: 1.5rem;">
+        <div class="flex" style="justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+          <p>© 2026 NordFit</p>
+          <div class="flex" style="gap: 1rem; flex-wrap: wrap;">
+            <a href="impressum.html">Impressum / AGB / Datenschutz</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
