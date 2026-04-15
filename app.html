@@ -1,1 +1,123 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NordFit – App</title>
+  <meta
+    name="description"
+    content="Die NordFit-App: QR-Code-Zutritt, Mitgliedschaften verwalten, Tagespass kaufen und mehr."
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-header-inner glass">
+        <a href="index.html" class="logo" aria-label="NordFit Startseite">
+          <img src="images/nordfit-logo.png" alt="NordFit-Logo" />
+        </a>
 
+        <button id="burger" class="burger" aria-label="Menü öffnen">☰</button>
+
+        <nav class="site-nav" aria-label="Hauptnavigation">
+          <ul>
+            <li><a href="index.html" data-i18n="navHome">Home</a></li>
+            <li><a href="mitgliedschaften.html" data-i18n="navTariffs">Tarife</a></li>
+            <li><a href="standorte.html" data-i18n="navLocations">Standorte</a></li>
+            <li><a href="app.html" data-i18n="navApp">App</a></li>
+            <li><a href="kontakt.html" data-i18n="navContact">Kontakt</a></li>
+          </ul>
+        </nav>
+
+        <div class="lang-switcher">
+          <button class="lang-btn" data-lang="de">DE</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 2rem;">
+          <h1>Die NordFit-App</h1>
+          <p class="muted" style="max-width: 760px; margin: 1rem auto 0;">
+            Alles an einem Ort: Zutritt per QR-Code, Mitgliedschaften buchen,
+            verwalten oder kündigen, Tagespass kaufen, Öffnungszeiten prüfen
+            und Standorte auswählen.
+          </p>
+        </div>
+
+        <div class="grid-2" style="align-items: center;">
+          <div class="reveal">
+            <div class="glass" style="padding: 2rem; max-width: 380px; margin: 0 auto;">
+              <img
+                src="images/nordfit-app-screen.png"
+                alt="Screenshot der NordFit-App"
+                style="width: 100%; border-radius: 24px;"
+              />
+            </div>
+          </div>
+
+          <div class="reveal">
+            <div class="card">
+              <h2>Was die App kann</h2>
+              <ul style="margin-top: 1rem; display: grid; gap: 0.9rem;">
+                <li>QR-Code-Zutritt zum Studio</li>
+                <li>Mitgliedschaften direkt buchen</li>
+                <li>Verwaltung und Kündigung in der App</li>
+                <li>Tagespass schnell kaufen</li>
+                <li>Öffnungszeiten und Studioinfos ansehen</li>
+                <li>Standort auswählen</li>
+              </ul>
+
+              <p class="muted" style="margin-top: 1.5rem;">
+                Die NordFit-App befindet sich aktuell noch im Aufbau.
+                Registriere dich später, um als Erster zu erfahren, wann sie live geht.
+              </p>
+
+              <div class="flex" style="gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
+                <a href="#" class="btn btn-secondary">App Store</a>
+                <a href="#" class="btn btn-secondary">Google Play</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: #f8f8f8;">
+      <div class="container">
+        <div class="glass reveal" style="padding: 2.5rem; text-align: center;">
+          <h2>Einfach. Direkt. NordFit.</h2>
+          <p class="muted" style="max-width: 780px; margin: 1rem auto 0;">
+            Die App ist das Zentrum deiner Mitgliedschaft. Kein unnötiger Papierkram,
+            keine komplizierten Prozesse — alles digital, modern und klar.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="glass" style="padding: 1.5rem;">
+        <div class="flex" style="justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+          <p>© 2026 NordFit</p>
+          <div class="flex" style="gap: 1rem; flex-wrap: wrap;">
+            <a href="impressum.html">Impressum / AGB / Datenschutz</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
