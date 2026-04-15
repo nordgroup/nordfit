@@ -1,73 +1,63 @@
-/* 🔤 Apple-inspirierte Schrift */
-@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
-/* 🌍 Globale Farb-Variablen (hier kannst du alles ändern) */
 :root {
-  --bg: #0b0c10;              /* Hintergrundfarbe */
-  --glass: rgba(255, 255, 255, 0.08);  /* leichte Glasflächen */
-  --glass-strong: rgba(255, 255, 255, 0.14); /* stärkerer Hover-Effekt */
-  --text: rgba(255, 255, 255, 0.92);    /* Haupttext */
-  --muted: rgba(255, 255, 255, 0.6);    /* sekundärer Text */
-  --accent: #7cf7d4;         /* Highlight-Farbe (Buttons etc.) */
+  --bg: #f5f5f7;
+  --glass: rgba(255, 255, 255, 0.55);
+  --glass-border: rgba(0, 0, 0, 0.08);
+  --text: #1d1d1f;
+  --muted: rgba(0, 0, 0, 0.55);
+  --accent: #0071e3;
 }
 
-/* 📦 Reset: entfernt Standard-Abstände */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "SF Pro Display", system-ui, sans-serif;
+  font-family: "Inter", system-ui, sans-serif;
 }
 
-/* 🌑 Grundhintergrund der Seite */
 body {
-  background: radial-gradient(circle at top, #111827, var(--bg));
+  background: var(--bg);
   color: var(--text);
   overflow-x: hidden;
 }
 
-/* 🔝 FIXED HEADER */
+/* 🔝 HEADER */
 header {
-  position: fixed; /* bleibt oben */
+  position: fixed;
   top: 0;
   width: 100%;
+  padding: 16px 40px;
 
-  padding: 18px 32px;
-
-  /* links: Logo / rechts: Navigation */
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  /* Glass-Look Effekt */
   backdrop-filter: blur(20px);
-  background: var(--glass);
+  background: rgba(255,255,255,0.6);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
 
-  z-index: 100; /* immer vorne */
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+  z-index: 100;
 }
 
-/* 🧭 Logo Größe */
 .logo {
-  height: 28px;
-  opacity: 0.9;
+  height: 26px;
 }
 
-/* 🔗 Navigation Links */
+/* NAV */
 nav a {
-  color: var(--muted);
   margin-left: 18px;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 13px;
+  color: var(--muted);
   transition: 0.2s;
 }
 
-/* Hover Effekt bei Links */
 nav a:hover {
   color: var(--text);
 }
 
-/* 🌅 HERO Bereich (Startbildschirm) */
+/* 🌤 HERO */
 .hero {
   height: 100vh;
   display: flex;
@@ -78,68 +68,68 @@ nav a:hover {
   padding: 0 20px;
 }
 
-/* 🧠 Haupttitel */
+.kicker {
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
 .hero h1 {
   font-size: 64px;
   font-weight: 600;
   letter-spacing: -2px;
+  line-height: 1.05;
 }
 
-/* 📝 Untertitel */
-.hero p {
-  margin-top: 12px;
+.sub {
+  margin-top: 16px;
+  font-size: 16px;
   color: var(--muted);
-  font-size: 18px;
+  max-width: 480px;
 }
 
-/* ✨ GLASS CARDS (die Preisboxen) */
-.glass {
-  background: var(--glass);
-  backdrop-filter: blur(18px);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 18px;
-
-  padding: 24px;
-
-  transition: 0.3s;
-}
-
-/* Hover Effekt (leicht hoch + heller) */
-.glass:hover {
-  transform: translateY(-4px);
-  background: var(--glass-strong);
-}
-
-/* 🔘 BUTTON DESIGN */
+/* 🔘 BUTTON */
 .btn {
-  margin-top: 20px;
-  padding: 12px 18px;
+  margin-top: 26px;
+  padding: 12px 20px;
 
   border-radius: 999px;
   border: none;
 
   background: var(--accent);
-  color: #000;
+  color: white;
 
-  font-weight: 500;
+  font-size: 14px;
   cursor: pointer;
 
-  transition: 0.2s;
+  transition: 0.25s ease;
 }
 
-/* Button Animation beim Hover */
 .btn:hover {
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
-/* 📊 GRID für Karten */
-.grid {
+/* 💳 CARDS */
+.cards {
   display: grid;
-
-  /* automatisch responsive */
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 18px;
 
-  padding: 120px 40px 60px;
+  padding: 80px 40px;
+}
+
+/* 🪟 LIQUID GLASS */
+.glass {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(18px);
+
+  border-radius: 18px;
+  padding: 22px;
+
+  transition: 0.25s ease;
+}
+
+.glass:hover {
+  transform: translateY(-6px);
 }
