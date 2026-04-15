@@ -1,0 +1,145 @@
+/* 🔤 Apple-inspirierte Schrift */
+@import url('https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600&display=swap');
+
+/* 🌍 Globale Farb-Variablen (hier kannst du alles ändern) */
+:root {
+  --bg: #0b0c10;              /* Hintergrundfarbe */
+  --glass: rgba(255, 255, 255, 0.08);  /* leichte Glasflächen */
+  --glass-strong: rgba(255, 255, 255, 0.14); /* stärkerer Hover-Effekt */
+  --text: rgba(255, 255, 255, 0.92);    /* Haupttext */
+  --muted: rgba(255, 255, 255, 0.6);    /* sekundärer Text */
+  --accent: #7cf7d4;         /* Highlight-Farbe (Buttons etc.) */
+}
+
+/* 📦 Reset: entfernt Standard-Abstände */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "SF Pro Display", system-ui, sans-serif;
+}
+
+/* 🌑 Grundhintergrund der Seite */
+body {
+  background: radial-gradient(circle at top, #111827, var(--bg));
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+/* 🔝 FIXED HEADER */
+header {
+  position: fixed; /* bleibt oben */
+  top: 0;
+  width: 100%;
+
+  padding: 18px 32px;
+
+  /* links: Logo / rechts: Navigation */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  /* Glass-Look Effekt */
+  backdrop-filter: blur(20px);
+  background: var(--glass);
+
+  z-index: 100; /* immer vorne */
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+/* 🧭 Logo Größe */
+.logo {
+  height: 28px;
+  opacity: 0.9;
+}
+
+/* 🔗 Navigation Links */
+nav a {
+  color: var(--muted);
+  margin-left: 18px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+/* Hover Effekt bei Links */
+nav a:hover {
+  color: var(--text);
+}
+
+/* 🌅 HERO Bereich (Startbildschirm) */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+/* 🧠 Haupttitel */
+.hero h1 {
+  font-size: 64px;
+  font-weight: 600;
+  letter-spacing: -2px;
+}
+
+/* 📝 Untertitel */
+.hero p {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+/* ✨ GLASS CARDS (die Preisboxen) */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+
+  padding: 24px;
+
+  transition: 0.3s;
+}
+
+/* Hover Effekt (leicht hoch + heller) */
+.glass:hover {
+  transform: translateY(-4px);
+  background: var(--glass-strong);
+}
+
+/* 🔘 BUTTON DESIGN */
+.btn {
+  margin-top: 20px;
+  padding: 12px 18px;
+
+  border-radius: 999px;
+  border: none;
+
+  background: var(--accent);
+  color: #000;
+
+  font-weight: 500;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+/* Button Animation beim Hover */
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* 📊 GRID für Karten */
+.grid {
+  display: grid;
+
+  /* automatisch responsive */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+
+  gap: 18px;
+
+  padding: 120px 40px 60px;
+}
