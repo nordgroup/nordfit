@@ -11,76 +11,94 @@
 
 <body>
 
-  <header class="navbar">
-    <div class="nav-inner">
-      <div class="logo">NordFit</div>
+<!-- NAVBAR (ultra minimal, Apple style) -->
+<header class="navbar">
+  <div class="nav-inner">
 
-      <nav class="nav-links">
-        <a href="#app">App</a>
-        <a href="#memberships">Mitgliedschaften</a>
-        <a href="#contact">Kontakt</a>
-      </nav>
+    <div class="logo">NordFit</div>
 
-      <a class="cta" href="#app">App öffnen</a>
-    </div>
-  </header>
-
-
-  <section class="hero">
-    <div class="hero-content">
-      <h1>NordFit</h1>
-      <p>Training neu gedacht. Klar. Ruhig. Effektiv.</p>
-
-      <div class="buttons">
-        <a href="#app" class="btn primary">App herunterladen</a>
-        <a href="#memberships" class="btn secondary">Mitgliedschaften</a>
-      </div>
-    </div>
-  </section>
-
-
-  <section id="app" class="section split-section">
-    <div class="text">
-      <h2>Dein Training in einer App.</h2>
-      <p>Alles was du brauchst. Ohne Ablenkung. Nur Fokus.</p>
+    <div class="nav-right">
+      <a href="#app">App</a>
+      <a href="#pricing">Preise</a>
+      <a href="#footer">Info</a>
     </div>
 
-    <div class="phone-glass"></div>
-  </section>
+  </div>
+</header>
 
 
-  <section id="memberships" class="section center">
-    <h2>Mitgliedschaften</h2>
+<!-- HERO (1 IDEA ONLY) -->
+<section class="hero">
 
-    <div class="cards">
+  <div class="hero-stack">
+    <h1>Training.<br/>Neu gedacht.</h1>
 
-      <div class="card">
-        <h3>Day Pass</h3>
-        <p>Zum Testen</p>
-      </div>
+    <p>
+      Klar. Ruhig. Effektiv.<br/>
+      Ohne Ablenkung. Nur Fortschritt.
+    </p>
 
-      <div class="card highlight">
-        <h3>Basic</h3>
-        <p>29,90 €</p>
-      </div>
-
-      <div class="card">
-        <h3>Plus</h3>
-        <p>Coming soon</p>
-      </div>
-
-      <div class="card">
-        <h3>Pro</h3>
-        <p>Coming soon</p>
-      </div>
-
+    <div class="hero-actions">
+      <a class="primary" href="#app">App öffnen</a>
+      <a class="secondary" href="#pricing">Mitgliedschaften</a>
     </div>
-  </section>
+  </div>
+
+</section>
 
 
-  <footer id="contact" class="footer">
-    <p>© 2026 NordFit</p>
-  </footer>
+<!-- APP MOMENT (not a section, a product moment) -->
+<section id="app" class="panel app">
+
+  <div class="text">
+    <h2>Dein Training. In einer App.</h2>
+    <p>Alles was du brauchst. Kein Lärm. Kein Chaos.</p>
+  </div>
+
+  <div class="device"></div>
+
+</section>
+
+
+<!-- PRICING MOMENT (Apple style cards, not grid section) -->
+<section id="pricing" class="panel pricing">
+
+  <h2>Mitgliedschaften</h2>
+
+  <div class="pricing-wrap">
+
+    <div class="price-card">
+      <h3>Day Pass</h3>
+      <span>Zum Testen</span>
+    </div>
+
+    <div class="price-card highlight">
+      <h3>Basic</h3>
+      <span>29,90 €</span>
+    </div>
+
+    <div class="price-card">
+      <h3>Plus</h3>
+      <span>Coming soon</span>
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- FOOTER (clean exit) -->
+<footer id="footer" class="footer">
+
+  <div class="footer-links">
+    <a href="#">Impressum</a>
+    <a href="#">Datenschutz</a>
+    <a href="#">AGB</a>
+  </div>
+
+  <p>© 2026 NordFit</p>
+
+</footer>
 
 </body>
 </html>
