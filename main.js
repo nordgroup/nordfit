@@ -1,22 +1,14 @@
-const menuBtn = document.getElementById("menu-btn");
-const navLinks = document.getElementById("nav-links");
-const menuBtnIcon = menuBtn.querySelector("i");
+// 🖱️ Mausbewegung erzeugt leichte Bewegung der Karten (Apple Feeling)
+document.addEventListener("mousemove", (e) => {
 
-menuBtn.addEventListener("click", (e) => {
-  navLinks.classList.toggle("open");
+  // X Position der Maus (zentriert berechnet)
+  const x = (e.clientX / window.innerWidth - 0.5) * 10;
 
-  const isOpen = navLinks.classList.contains("open");
-  menuBtnIcon.setAttribute("class", isOpen ? "ri-close-line" : "ri-menu-line");
+  // Y Position der Maus
+  const y = (e.clientY / window.innerHeight - 0.5) * 10;
+
+  // Alle Glass-Karten bewegen sich leicht mit der Maus
+  document.querySelectorAll(".glass").forEach(el => {
+    el.style.transform = `translate(${x}px, ${y}px)`;
+  });
 });
-
-navLinks.addEventListener("click", (e) => {
-  navLinks.classList.remove("open");
-  menuBtnIcon.setAttribute("class", "ri-menu-line");
-});
-
-const scrollRevealOption = {
-  distance: "50px",
-  origin: "bottom",
-  duration: 1000,
-};
-
