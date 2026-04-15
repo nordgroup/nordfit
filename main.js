@@ -19,3 +19,4 @@ const scrollRevealOption = {
   origin: "bottom",
   duration: 1000,
 };
+
