@@ -1,1 +1,171 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NordFit – Standorte</title>
+  <meta
+    name="description"
+    content="NordFit Standorte – alle Studios, Öffnungszeiten und Standortinfos auf einen Blick."
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-header-inner glass">
+        <a href="index.html" class="logo" aria-label="NordFit Startseite">
+          <img src="images/nordfit-logo.png" alt="NordFit-Logo" />
+        </a>
 
+        <button id="burger" class="burger" aria-label="Menü öffnen">☰</button>
+
+        <nav class="site-nav" aria-label="Hauptnavigation">
+          <ul>
+            <li><a href="index.html" data-i18n="navHome">Home</a></li>
+            <li><a href="mitgliedschaften.html" data-i18n="navTariffs">Tarife</a></li>
+            <li><a href="standorte.html" data-i18n="navLocations">Standorte</a></li>
+            <li><a href="app.html" data-i18n="navApp">App</a></li>
+            <li><a href="kontakt.html" data-i18n="navContact">Kontakt</a></li>
+          </ul>
+        </nav>
+
+        <div class="lang-switcher">
+          <button class="lang-btn" data-lang="de">DE</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 2rem;">
+          <h1>Unsere Standorte</h1>
+          <p class="muted">Wähle dein Studio aus und schau dir die wichtigsten Infos an.</p>
+        </div>
+
+        <div class="glass" style="padding: 1.5rem; max-width: 500px; margin: 0 auto 2rem;">
+          <label for="location-select">Studio auswählen</label>
+          <select
+            id="location-select"
+            style="width: 100%; margin-top: 0.75rem; padding: 0.85rem; border: 1px solid #ddd; border-radius: 12px;"
+          >
+            <option value="grevesmuehlen">Studio 1 – Grevesmühlen</option>
+          </select>
+        </div>
+
+        <div class="grid-2" style="align-items: start;">
+          <div class="card reveal">
+            <h2>Studio 1 – Grevesmühlen</h2>
+            <p class="muted" style="margin-top: 1rem;">
+              <strong>Adresse:</strong><br />
+              Musterstraße 1<br />
+              23936 Grevesmühlen
+            </p>
+
+            <p class="muted" style="margin-top: 1rem;">
+              <strong>Öffnungszeiten:</strong><br />
+              24/7 geöffnet
+            </p>
+
+            <p class="muted" style="margin-top: 1rem;">
+              <strong>Info:</strong><br />
+              Modernes Studio mit gut erreichbarer Lage und Parkmöglichkeiten direkt vor Ort.
+            </p>
+          </div>
+
+          <div class="card reveal">
+            <h2>Karte</h2>
+            <div style="margin-top: 1rem; overflow: hidden; border-radius: 16px;">
+              <iframe
+                src="https://www.openstreetmap.org/export/embed.html?bbox=11.1600%2C54.0780%2C11.2050%2C54.0950&layer=mapnik&marker=54.0860%2C11.1820"
+                width="100%"
+                height="320"
+                style="border: 0;"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Karte des NordFit Studios in Grevesmühlen"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: #f8f8f8;">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 2rem;">
+          <h2>Bildergalerie</h2>
+          <p class="muted">Platzhalterbilder – später kommen hier echte Studiofotos rein.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card reveal">
+            <img
+              src="images/nordfit-app-screen.png"
+              alt="Platzhalterbild für Studioansicht"
+              style="border-radius: 14px; margin-bottom: 1rem;"
+            />
+            <p class="muted">Studiofläche</p>
+          </div>
+
+          <div class="card reveal">
+            <img
+              src="images/nordfit-logo.png"
+              alt="Platzhalterbild für Parkplatz"
+              style="border-radius: 14px; margin-bottom: 1rem;"
+            />
+            <p class="muted">Parkplatz / Außenbereich</p>
+          </div>
+
+          <div class="card reveal">
+            <img
+              src="images/nordfit-app-screen.png"
+              alt="Platzhalterbild für Innenbereich"
+              style="border-radius: 14px; margin-bottom: 1rem;"
+            />
+            <p class="muted">Innenbereich</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="glass reveal" style="padding: 2rem;">
+          <h2>Zum Standort</h2>
+          <p class="muted" style="margin-top: 1rem;">
+            Das erste NordFit-Studio in Grevesmühlen soll modern, klar und unkompliziert sein.
+            Gute Erreichbarkeit, 24/7-Zugang und ein ehrliches Studiokonzept stehen im Vordergrund.
+          </p>
+          <p class="muted">
+            Das Dropdown oben ist bewusst so vorbereitet, dass später weitere Studios leicht ergänzt
+            werden können.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="glass" style="padding: 1.5rem;">
+        <div class="flex" style="justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+          <p>© 2026 NordFit</p>
+          <div class="flex" style="gap: 1rem; flex-wrap: wrap;">
+            <a href="impressum.html">Impressum / AGB / Datenschutz</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
