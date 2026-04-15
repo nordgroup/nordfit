@@ -18,7 +18,7 @@
           <img src="images/nordfit-logo.png" alt="NordFit-Logo" />
         </a>
 
-        <button id="burger" class="burger" aria-label="Menü öffnen">☰</button>
+        <button id="burger" class="burger" aria-label="Menü öffnen" type="button">☰</button>
 
         <nav class="site-nav" aria-label="Hauptnavigation">
           <ul>
@@ -31,9 +31,9 @@
         </nav>
 
         <div class="lang-switcher">
-          <button class="lang-btn" data-lang="de">DE</button>
-          <button class="lang-btn" data-lang="en">EN</button>
-          <button class="lang-btn" data-lang="fr">FR</button>
+          <button class="lang-btn" data-lang="de" type="button">DE</button>
+          <button class="lang-btn" data-lang="en" type="button">EN</button>
+          <button class="lang-btn" data-lang="fr" type="button">FR</button>
         </div>
       </div>
     </div>
@@ -42,62 +42,82 @@
   <main>
     <section class="section">
       <div class="container">
-        <div class="text-center" style="margin-bottom: 2rem;">
-          <h1>Kontakt</h1>
-          <p class="muted" style="max-width: 700px; margin: 1rem auto 0;">
+        <div class="glass text-center reveal" style="padding: 3rem 2rem;">
+          <h1 class="section-title" data-i18n="contactPageTitle">Kontakt</h1>
+          <p
+            class="muted"
+            data-i18n="contactPageIntro"
+            style="max-width: 760px; margin: 1rem auto 0;"
+          >
             Du hast Fragen zu Tarifen, Standorten oder zur App? Dann schreib uns direkt.
           </p>
         </div>
+      </div>
+    </section>
 
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
         <div class="grid-2" style="align-items: start;">
           <div class="glass reveal" style="padding: 2rem;">
-            <h2>Kontaktdaten</h2>
-            <div class="muted" style="margin-top: 1rem;">
-              <p><strong>E-Mail:</strong> <a href="mailto:info@nordfit.de">info@nordfit.de</a></p>
-              <p><strong>Instagram:</strong> <a href="#">@nordfit</a></p>
-              <p><strong>Telefon:</strong> +49 0000 000000</p>
+            <h2 class="section-title" data-i18n="contactDetailsTitle">Kontaktdaten</h2>
+
+            <div class="muted" style="margin-top: 1rem; display: grid; gap: 0.9rem;">
+              <p>
+                <strong data-i18n="formEmail">E-Mail</strong>:
+                <a href="mailto:info@nordfit.de">info@nordfit.de</a>
+              </p>
+
+              <p>
+                <strong data-i18n="footerInstagram">Instagram</strong>:
+                <a href="#">@nordfit</a>
+              </p>
+
+              <p>
+                <strong data-i18n="contactPhoneLabel">Telefon:</strong>
+                +49 0000 000000
+              </p>
             </div>
 
-            <p class="muted" style="margin-top: 1.5rem;">
+            <p class="muted" data-i18n="contactReplyText" style="margin-top: 1.5rem;">
               Wir melden uns so schnell wie möglich bei dir zurück.
             </p>
           </div>
 
           <form class="card reveal">
             <div style="margin-bottom: 1rem;">
-              <label for="contact-name">Name</label><br />
+              <label for="contact-name" data-i18n="formName">Name</label><br />
               <input
                 type="text"
                 id="contact-name"
                 name="contact-name"
                 required
-                style="width: 100%; margin-top: 0.5rem; padding: 0.85rem; border: 1px solid #ddd; border-radius: 12px;"
+                style="width: 100%; margin-top: 0.5rem; padding: 0.9rem 1rem;"
               />
             </div>
 
             <div style="margin-bottom: 1rem;">
-              <label for="contact-email">E-Mail</label><br />
+              <label for="contact-email" data-i18n="formEmail">E-Mail</label><br />
               <input
                 type="email"
                 id="contact-email"
                 name="contact-email"
                 required
-                style="width: 100%; margin-top: 0.5rem; padding: 0.85rem; border: 1px solid #ddd; border-radius: 12px;"
+                style="width: 100%; margin-top: 0.5rem; padding: 0.9rem 1rem;"
               />
             </div>
 
             <div style="margin-bottom: 1rem;">
-              <label for="contact-message">Nachricht</label><br />
+              <label for="contact-message" data-i18n="formMessage">Nachricht</label><br />
               <textarea
                 id="contact-message"
                 name="contact-message"
                 rows="6"
                 required
-                style="width: 100%; margin-top: 0.5rem; padding: 0.85rem; border: 1px solid #ddd; border-radius: 12px; resize: vertical;"
+                style="width: 100%; margin-top: 0.5rem; padding: 0.9rem 1rem; resize: vertical;"
               ></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary">Senden</button>
+            <button type="submit" class="btn btn-primary" data-i18n="formSend">Senden</button>
           </form>
         </div>
       </div>
@@ -106,13 +126,13 @@
 
   <footer class="site-footer">
     <div class="container">
-      <div class="glass" style="padding: 1.5rem;">
+      <div class="glass">
         <div class="flex" style="justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
           <p>© 2026 NordFit</p>
           <div class="flex" style="gap: 1rem; flex-wrap: wrap;">
-            <a href="impressum.html">Impressum / AGB / Datenschutz</a>
-            <a href="kontakt.html">Kontakt</a>
-            <a href="#">Instagram</a>
+            <a href="impressum.html" data-i18n="footerLegal">Impressum / AGB / Datenschutz</a>
+            <a href="kontakt.html" data-i18n="footerContact">Kontakt</a>
+            <a href="#" data-i18n="footerInstagram">Instagram</a>
           </div>
         </div>
       </div>
