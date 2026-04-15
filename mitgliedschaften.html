@@ -18,7 +18,7 @@
           <img src="images/nordfit-logo.png" alt="NordFit-Logo" />
         </a>
 
-        <button id="burger" class="burger" aria-label="Menü öffnen">☰</button>
+        <button id="burger" class="burger" aria-label="Menü öffnen" type="button">☰</button>
 
         <nav class="site-nav" aria-label="Hauptnavigation">
           <ul>
@@ -31,9 +31,9 @@
         </nav>
 
         <div class="lang-switcher">
-          <button class="lang-btn" data-lang="de">DE</button>
-          <button class="lang-btn" data-lang="en">EN</button>
-          <button class="lang-btn" data-lang="fr">FR</button>
+          <button class="lang-btn" data-lang="de" type="button">DE</button>
+          <button class="lang-btn" data-lang="en" type="button">EN</button>
+          <button class="lang-btn" data-lang="fr" type="button">FR</button>
         </div>
       </div>
     </div>
@@ -42,68 +42,78 @@
   <main>
     <section class="section">
       <div class="container">
-        <div class="text-center" style="margin-bottom: 2rem;">
-          <h1>Mitgliedschaften & Tarife</h1>
-          <p class="muted">
+        <div class="glass text-center reveal" style="padding: 3rem 2rem;">
+          <h1 class="section-title" data-i18n="tariffsTitle">Mitgliedschaften & Tarife</h1>
+          <p class="muted" data-i18n="tariffsIntro" style="max-width: 820px; margin: 1rem auto 0;">
             Mitgliedschaften können nur in der NordFit-App abgeschlossen und gekündigt werden.
           </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card reveal text-center">
-            <h2>Basic</h2>
-            <p><strong>29,99 € / Monat</strong></p>
-            <p class="muted">Mindestlaufzeit: 8 Monate</p>
-            <p class="muted">Danach monatlich kündbar</p>
-            <p class="muted">Kein Getränke- oder Kursangebot</p>
-          </article>
-
-          <article class="card reveal text-center">
-            <h2>Plus</h2>
-            <p><strong>34,99 € / Monat</strong></p>
-            <p class="muted">Mindestlaufzeit: 6 Monate</p>
-            <p class="muted">Danach monatlich kündbar</p>
-            <p class="muted">Kein Getränke- oder Kursangebot</p>
-          </article>
-
-          <article class="card reveal text-center">
-            <h2>Pro</h2>
-            <p><strong>39,99 € / Monat</strong></p>
-            <p class="muted">Mindestlaufzeit: 3 Monate</p>
-            <p class="muted">Danach monatlich kündbar</p>
-            <p class="muted">Kein Getränke- oder Kursangebot</p>
-          </article>
-        </div>
-
-        <div class="glass text-center reveal" style="padding: 2rem; margin-top: 2rem;">
-          <h2>Tagespass</h2>
-          <p><strong>4,99 € für einen Tag</strong></p>
-          <p class="muted">Ideal zum Testen – 1 Tag freier Zugang</p>
         </div>
       </div>
     </section>
 
-    <section class="section" style="background: #f8f8f8;">
+    <section class="section" style="padding-top: 0;">
       <div class="container">
-        <div class="text-center" style="margin-bottom: 2rem;">
-          <h2>FAQ</h2>
+        <div class="grid-3">
+          <article class="card tariff-card reveal text-center">
+            <h2 data-i18n="basicName">Basic</h2>
+            <p><strong data-i18n="priceBasic">29,99 € / Monat</strong></p>
+            <p class="muted" data-i18n="durationBasic">Mindestlaufzeit: 8 Monate</p>
+            <p class="muted" data-i18n="cancelMonthly">Danach monatlich kündbar</p>
+            <p class="muted" data-i18n="noCourses">Kein Getränke- oder Kursangebot</p>
+          </article>
+
+          <article class="card tariff-card reveal text-center">
+            <h2 data-i18n="plusName">Plus</h2>
+            <p><strong data-i18n="pricePlus">34,99 € / Monat</strong></p>
+            <p class="muted" data-i18n="durationPlus">Mindestlaufzeit: 6 Monate</p>
+            <p class="muted" data-i18n="cancelMonthly">Danach monatlich kündbar</p>
+            <p class="muted" data-i18n="noCourses">Kein Getränke- oder Kursangebot</p>
+          </article>
+
+          <article class="card tariff-card reveal text-center">
+            <h2 data-i18n="proName">Pro</h2>
+            <p><strong data-i18n="pricePro">39,99 € / Monat</strong></p>
+            <p class="muted" data-i18n="durationPro">Mindestlaufzeit: 3 Monate</p>
+            <p class="muted" data-i18n="cancelMonthly">Danach monatlich kündbar</p>
+            <p class="muted" data-i18n="noCourses">Kein Getränke- oder Kursangebot</p>
+          </article>
         </div>
 
-        <div class="grid" style="max-width: 900px; margin: 0 auto;">
-          <div class="card reveal">
-            <h3>Wie funktioniert der Zutritt?</h3>
-            <p class="muted">Der Zutritt erfolgt nur über die App mittels QR-Code.</p>
-          </div>
+        <div class="glass text-center reveal" style="padding: 2rem; margin-top: 2rem;">
+          <h2 data-i18n="daypassTitle">Tagespass</h2>
+          <p><strong data-i18n="daypassPrice">4,99 € für einen Tag</strong></p>
+          <p class="muted" data-i18n="daypassText">Ideal zum Testen – 1 Tag freier Zugang</p>
+        </div>
+      </div>
+    </section>
 
-          <div class="card reveal">
-            <h3>Gibt es Personal Training oder Kurse?</h3>
-            <p class="muted">In Studio 1 zum Start noch nicht.</p>
-          </div>
+    <section class="section">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 2rem;">
+          <h2 class="section-title" data-i18n="faqTitle">FAQ</h2>
+        </div>
 
-          <div class="card reveal">
-            <h3>Ist die Kündigung nach der Mindestlaufzeit monatlich möglich?</h3>
-            <p class="muted">Ja, nach der Mindestlaufzeit ist die Kündigung monatlich möglich.</p>
-          </div>
+        <div class="grid" style="max-width: 920px; margin: 0 auto;">
+          <article class="card reveal">
+            <h3 data-i18n="faqQ1">Wie funktioniert der Zutritt?</h3>
+            <p class="muted" data-i18n="faqA1">
+              Der Zutritt erfolgt nur über die App mittels QR-Code.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <h3 data-i18n="faqQ2">Gibt es Personal Training oder Kurse?</h3>
+            <p class="muted" data-i18n="faqA2">
+              In Studio 1 zum Start noch nicht.
+            </p>
+          </article>
+
+          <article class="card reveal">
+            <h3 data-i18n="faqQ3">Ist die Kündigung nach der Mindestlaufzeit monatlich möglich?</h3>
+            <p class="muted" data-i18n="faqA3">
+              Ja, nach der Mindestlaufzeit ist die Kündigung monatlich möglich.
+            </p>
+          </article>
         </div>
       </div>
     </section>
@@ -111,51 +121,48 @@
     <section class="section">
       <div class="container">
         <div class="grid-2" style="align-items: start;">
-          <div class="reveal">
-            <h2>Fragen? Schreib uns.</h2>
-            <p class="muted">
-              Bei Fragen erreichst du uns auch unter
-              <a href="mailto:info@nordfit.de">info@nordfit.de</a>
-              oder via Instagram
-              <a href="#">@nordfit</a>.
+          <div class="glass reveal" style="padding: 2rem;">
+            <h2 class="section-title" data-i18n="contactBlockTitle">Fragen? Schreib uns.</h2>
+            <p class="muted" data-i18n="contactBlockText" style="margin-top: 1rem;">
+              Bei Fragen erreichst du uns auch unter info@nordfit.de oder via Instagram @nordfit.
             </p>
           </div>
 
           <form class="card reveal">
             <div style="margin-bottom: 1rem;">
-              <label for="name">Name</label><br />
+              <label for="name" data-i18n="formName">Name</label><br />
               <input
                 type="text"
                 id="name"
                 name="name"
                 required
-                style="width: 100%; margin-top: 0.5rem; padding: 0.85rem; border: 1px solid #ddd; border-radius: 12px;"
+                style="width: 100%; margin-top: 0.5rem; padding: 0.9rem 1rem;"
               />
             </div>
 
             <div style="margin-bottom: 1rem;">
-              <label for="email">E-Mail</label><br />
+              <label for="email" data-i18n="formEmail">E-Mail</label><br />
               <input
                 type="email"
                 id="email"
                 name="email"
                 required
-                style="width: 100%; margin-top: 0.5rem; padding: 0.85rem; border: 1px solid #ddd; border-radius: 12px;"
+                style="width: 100%; margin-top: 0.5rem; padding: 0.9rem 1rem;"
               />
             </div>
 
             <div style="margin-bottom: 1rem;">
-              <label for="message">Nachricht</label><br />
+              <label for="message" data-i18n="formMessage">Nachricht</label><br />
               <textarea
                 id="message"
                 name="message"
                 rows="5"
                 required
-                style="width: 100%; margin-top: 0.5rem; padding: 0.85rem; border: 1px solid #ddd; border-radius: 12px; resize: vertical;"
+                style="width: 100%; margin-top: 0.5rem; padding: 0.9rem 1rem; resize: vertical;"
               ></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary">Senden</button>
+            <button type="submit" class="btn btn-primary" data-i18n="formSend">Senden</button>
           </form>
         </div>
       </div>
@@ -164,13 +171,13 @@
 
   <footer class="site-footer">
     <div class="container">
-      <div class="glass" style="padding: 1.5rem;">
+      <div class="glass">
         <div class="flex" style="justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
           <p>© 2026 NordFit</p>
           <div class="flex" style="gap: 1rem; flex-wrap: wrap;">
-            <a href="impressum.html">Impressum / AGB / Datenschutz</a>
-            <a href="kontakt.html">Kontakt</a>
-            <a href="#">Instagram</a>
+            <a href="impressum.html" data-i18n="footerLegal">Impressum / AGB / Datenschutz</a>
+            <a href="kontakt.html" data-i18n="footerContact">Kontakt</a>
+            <a href="#" data-i18n="footerInstagram">Instagram</a>
           </div>
         </div>
       </div>
