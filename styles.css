@@ -11,34 +11,37 @@ body {
   overflow-x: hidden;
 }
 
-/* BACKGROUND GLOW (Apple feeling) */
+/* soft Apple glow background */
 body::before {
   content: "";
   position: fixed;
+  width: 700px;
+  height: 700px;
   top: -200px;
   left: -200px;
-  width: 600px;
-  height: 600px;
-  background: rgba(46, 204, 113, 0.08);
-  filter: blur(120px);
+  background: rgba(46, 204, 113, 0.07);
+  filter: blur(140px);
   z-index: -1;
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
+
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
+  z-index: 1000;
+
   background: rgba(255,255,255,0.6);
   backdrop-filter: blur(30px);
   border-bottom: 1px solid rgba(0,0,0,0.04);
-  z-index: 1000;
 }
 
 .nav-inner {
   max-width: 1100px;
   margin: auto;
   padding: 16px 24px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -46,174 +49,209 @@ body::before {
 
 .logo {
   font-weight: 600;
+  font-size: 16px;
 }
 
-.nav-links {
+.nav-right {
   display: flex;
   gap: 18px;
 }
 
-.nav-links a {
+.nav-right a {
   text-decoration: none;
   color: #1d1d1f;
+  font-size: 13px;
   opacity: 0.55;
-  font-size: 14px;
+  transition: 0.3s;
 }
 
-.nav-links a:hover {
+.nav-right a:hover {
   opacity: 1;
 }
 
-.cta {
-  background: #2ecc71;
-  color: white;
-  padding: 8px 14px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-size: 13px;
-}
+/* ================= HERO ================= */
 
-/* HERO */
 .hero {
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  padding: 0 24px;
 }
 
-.hero h1 {
-  font-size: 86px;
+.hero-stack h1 {
+  font-size: 88px;
   letter-spacing: -3px;
   font-weight: 600;
+  line-height: 1.05;
 }
 
-.hero p {
-  margin-top: 10px;
+.hero-stack p {
+  margin-top: 18px;
   font-size: 20px;
   opacity: 0.6;
+  line-height: 1.4;
 }
 
-.buttons {
-  margin-top: 30px;
+.hero-actions {
+  margin-top: 32px;
   display: flex;
-  gap: 12px;
   justify-content: center;
+  gap: 14px;
 }
 
-.btn {
+.hero-actions a {
+  text-decoration: none;
   padding: 12px 20px;
   border-radius: 999px;
-  text-decoration: none;
   font-size: 14px;
   transition: 0.3s;
 }
 
-.btn.primary {
+.primary {
   background: #2ecc71;
   color: white;
 }
 
-.btn.secondary {
+.secondary {
   border: 1px solid rgba(0,0,0,0.15);
   color: #1d1d1f;
 }
 
-.btn:hover {
+.hero-actions a:hover {
   transform: translateY(-3px);
 }
 
-/* SECTIONS */
-.section {
+/* ================= PANELS ================= */
+
+.panel {
   max-width: 1100px;
   margin: auto;
-  padding: 140px 24px;
+  padding: 160px 24px;
 }
 
-.center {
-  text-align: center;
-}
+/* ================= APP MOMENT ================= */
 
-/* APP SECTION */
-.split-section {
+.app {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 80px;
 }
 
-.text h2 {
-  font-size: 42px;
+.app h2 {
+  font-size: 44px;
   letter-spacing: -1px;
 }
 
-.text p {
-  margin-top: 10px;
+.app p {
+  margin-top: 12px;
   opacity: 0.6;
   font-size: 18px;
 }
 
-.phone-glass {
-  width: 300px;
-  height: 600px;
-  border-radius: 50px;
+.device {
+  width: 320px;
+  height: 640px;
+  border-radius: 55px;
 
-  background: rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.7);
   backdrop-filter: blur(30px);
 
   border: 1px solid rgba(0,0,0,0.05);
-  box-shadow: 0 40px 100px rgba(0,0,0,0.08);
+  box-shadow: 0 50px 120px rgba(0,0,0,0.10);
 }
 
-/* CARDS */
-.cards {
-  margin-top: 40px;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+/* ================= PRICING MOMENT ================= */
+
+.pricing {
+  text-align: center;
 }
 
-.card {
+.pricing h2 {
+  font-size: 42px;
+  letter-spacing: -1px;
+}
+
+.pricing-wrap {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.price-card {
+  width: 220px;
   padding: 28px;
-  border-radius: 24px;
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(25px);
+  border-radius: 26px;
+
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(30px);
+
   border: 1px solid rgba(0,0,0,0.05);
+
   transition: 0.3s;
 }
 
-.card:hover {
-  transform: translateY(-8px);
+.price-card:hover {
+  transform: translateY(-10px);
 }
 
-.card.highlight {
-  border: 1px solid #2ecc71;
+.price-card h3 {
+  font-size: 18px;
 }
 
-/* FOOTER */
-.footer {
-  text-align: center;
-  padding: 60px 20px;
+.price-card span {
+  display: block;
+  margin-top: 10px;
   opacity: 0.6;
 }
 
-/* MOBILE */
+.highlight {
+  border: 1px solid #2ecc71;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+  text-align: center;
+  padding: 80px 20px;
+  opacity: 0.6;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 10px;
+}
+
+.footer a {
+  text-decoration: none;
+  color: #1d1d1f;
+  font-size: 13px;
+}
+
+/* ================= MOBILE ================= */
+
 @media (max-width: 900px) {
 
-  .hero h1 {
-    font-size: 52px;
+  .hero-stack h1 {
+    font-size: 54px;
   }
 
-  .split-section {
+  .app {
     flex-direction: column;
     text-align: center;
   }
 
-  .cards {
-    grid-template-columns: 1fr;
+  .pricing-wrap {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .nav-links {
+  .nav-right {
     display: none;
   }
 }
