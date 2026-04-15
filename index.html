@@ -1,1 +1,179 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NordFit – Startseite</title>
+  <meta
+    name="description"
+    content="NordFit – modernes Fitnessstudio mit 24/7-Zugang, flexiblen Tarifen und eigener App."
+  />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <div class="site-header-inner glass">
+        <a href="index.html" class="logo" aria-label="NordFit Startseite">
+          <img src="images/nordfit-logo.png" alt="NordFit-Logo" />
+        </a>
 
+        <button id="burger" class="burger" aria-label="Menü öffnen">
+          ☰
+        </button>
+
+        <nav class="site-nav" aria-label="Hauptnavigation">
+          <ul>
+            <li><a href="index.html" data-i18n="navHome">Home</a></li>
+            <li><a href="mitgliedschaften.html" data-i18n="navTariffs">Tarife</a></li>
+            <li><a href="standorte.html" data-i18n="navLocations">Standorte</a></li>
+            <li><a href="app.html" data-i18n="navApp">App</a></li>
+            <li><a href="kontakt.html" data-i18n="navContact">Kontakt</a></li>
+          </ul>
+        </nav>
+
+        <div class="lang-switcher">
+          <button class="lang-btn" data-lang="de">DE</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+          <button class="lang-btn" data-lang="fr">FR</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="glass" style="padding: 4rem 2rem; text-align: center;">
+          <h1 data-i18n="heroHeading">Für deinen Weg nach vorn</h1>
+          <p class="muted" data-i18n="heroSub" style="max-width: 700px; margin: 1rem auto 0;">
+            Dein Fitnessstudio mit 24/7-Zugang
+          </p>
+          <a
+            href="mitgliedschaften.html"
+            class="btn btn-primary"
+            data-i18n="heroCTA"
+            style="margin-top: 1.5rem;"
+          >
+            Tarife entdecken
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid-3">
+          <div class="card reveal text-center">
+            <h3>24/7-Zugang</h3>
+            <p class="muted">Trainiere, wann du willst – morgens, nachts oder zwischendurch.</p>
+          </div>
+
+          <div class="card reveal text-center">
+            <h3>Modernste Geräte</h3>
+            <p class="muted">Klare, moderne Trainingsfläche mit hochwertigem Equipment.</p>
+          </div>
+
+          <div class="card reveal text-center">
+            <h3>Flexible Tarife</h3>
+            <p class="muted">Faire Mitgliedschaften ohne unnötigen Quatsch und ohne Anmeldegebühr.</p>
+          </div>
+        </div>
+
+        <div class="card reveal text-center" style="margin-top: 2rem;">
+          <h3>Tagespass für 4,99 €</h3>
+          <p class="muted">Ideal zum Testen – 1 Tag freier Zugang zu NordFit.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: #f8f8f8;">
+      <div class="container">
+        <div class="text-center" style="margin-bottom: 2rem;">
+          <h2>Tarifvorschau</h2>
+          <p class="muted">Drei klare Modelle. Du entscheidest, was zu dir passt.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="card reveal text-center">
+            <h3>Basic</h3>
+            <p><strong>29,99 € / Monat</strong></p>
+            <p class="muted">8 Monate Mindestlaufzeit</p>
+            <a href="mitgliedschaften.html" class="btn btn-primary">Mehr erfahren</a>
+          </div>
+
+          <div class="card reveal text-center">
+            <h3>Plus</h3>
+            <p><strong>34,99 € / Monat</strong></p>
+            <p class="muted">6 Monate Mindestlaufzeit</p>
+            <a href="mitgliedschaften.html" class="btn btn-primary">Mehr erfahren</a>
+          </div>
+
+          <div class="card reveal text-center">
+            <h3>Pro</h3>
+            <p><strong>39,99 € / Monat</strong></p>
+            <p class="muted">3 Monate Mindestlaufzeit</p>
+            <a href="mitgliedschaften.html" class="btn btn-primary">Mehr erfahren</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid-2" style="align-items: center;">
+          <div class="reveal">
+            <img
+              src="images/nordfit-app-screen.png"
+              alt="Screenshot der NordFit-App"
+              style="max-width: 320px; margin: 0 auto;"
+            />
+          </div>
+
+          <div class="reveal">
+            <h2>Die NordFit-App</h2>
+            <p class="muted">
+              Alle Buchungen, Zutritt per QR-Code, Verwaltung deiner Mitgliedschaft
+              und mehr – alles an einem Ort.
+            </p>
+
+            <div class="flex" style="gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
+              <a href="#" class="btn btn-secondary">App Store</a>
+              <a href="#" class="btn btn-secondary">Google Play</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background: #f8f8f8;">
+      <div class="container">
+        <div class="glass text-center" style="padding: 3rem 2rem;">
+          <h2 data-i18n="aboutHeading">Lokal, modern, ehrlich</h2>
+          <p class="muted" data-i18n="aboutText" style="max-width: 800px; margin: 1rem auto 0;">
+            NordFit steht für ehrliches Training, moderne Studios und einen klaren Weg nach vorn.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="glass" style="padding: 1.5rem;">
+        <div class="flex" style="justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+          <p>© 2026 NordFit</p>
+          <div class="flex" style="gap: 1rem; flex-wrap: wrap;">
+            <a href="impressum.html">Impressum / AGB / Datenschutz</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="#">Instagram</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/translations.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
