@@ -18,7 +18,7 @@
           <img src="images/nordfit-logo.png" alt="NordFit-Logo" />
         </a>
 
-        <button id="burger" class="burger" aria-label="Menü öffnen">☰</button>
+        <button id="burger" class="burger" aria-label="Menü öffnen" type="button">☰</button>
 
         <nav class="site-nav" aria-label="Hauptnavigation">
           <ul>
@@ -31,9 +31,9 @@
         </nav>
 
         <div class="lang-switcher">
-          <button class="lang-btn" data-lang="de">DE</button>
-          <button class="lang-btn" data-lang="en">EN</button>
-          <button class="lang-btn" data-lang="fr">FR</button>
+          <button class="lang-btn" data-lang="de" type="button">DE</button>
+          <button class="lang-btn" data-lang="en" type="button">EN</button>
+          <button class="lang-btn" data-lang="fr" type="button">FR</button>
         </div>
       </div>
     </div>
@@ -42,46 +42,47 @@
   <main>
     <section class="section">
       <div class="container">
-        <div class="text-center" style="margin-bottom: 2rem;">
-          <h1>Die NordFit-App</h1>
-          <p class="muted" style="max-width: 760px; margin: 1rem auto 0;">
-            Alles an einem Ort: Zutritt per QR-Code, Mitgliedschaften buchen,
-            verwalten oder kündigen, Tagespass kaufen, Öffnungszeiten prüfen
-            und Standorte auswählen.
+        <div class="glass text-center reveal" style="padding: 3rem 2rem;">
+          <h1 class="section-title" data-i18n="appPageTitle">Die NordFit-App</h1>
+          <p class="muted" data-i18n="appPageIntro" style="max-width: 860px; margin: 1rem auto 0;">
+            Alles an einem Ort: Zutritt per QR-Code, Mitgliedschaften buchen, verwalten oder kündigen, Tagespass kaufen, Öffnungszeiten prüfen und Standorte auswählen.
           </p>
         </div>
+      </div>
+    </section>
 
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
         <div class="grid-2" style="align-items: center;">
           <div class="reveal">
-            <div class="glass" style="padding: 2rem; max-width: 380px; margin: 0 auto;">
+            <div class="app-frame">
               <img
                 src="images/nordfit-app-screen.png"
                 alt="Screenshot der NordFit-App"
-                style="width: 100%; border-radius: 24px;"
               />
             </div>
           </div>
 
           <div class="reveal">
             <div class="card">
-              <h2>Was die App kann</h2>
+              <h2 class="section-title" data-i18n="appFeaturesTitle">Was die App kann</h2>
+
               <ul style="margin-top: 1rem; display: grid; gap: 0.9rem;">
-                <li>QR-Code-Zutritt zum Studio</li>
-                <li>Mitgliedschaften direkt buchen</li>
-                <li>Verwaltung und Kündigung in der App</li>
-                <li>Tagespass schnell kaufen</li>
-                <li>Öffnungszeiten und Studioinfos ansehen</li>
-                <li>Standort auswählen</li>
+                <li data-i18n="appFeature1">QR-Code-Zutritt zum Studio</li>
+                <li data-i18n="appFeature2">Mitgliedschaften direkt buchen</li>
+                <li data-i18n="appFeature3">Verwaltung und Kündigung in der App</li>
+                <li data-i18n="appFeature4">Tagespass schnell kaufen</li>
+                <li data-i18n="appFeature5">Öffnungszeiten und Studioinfos ansehen</li>
+                <li data-i18n="appFeature6">Standort auswählen</li>
               </ul>
 
-              <p class="muted" style="margin-top: 1.5rem;">
-                Die NordFit-App befindet sich aktuell noch im Aufbau.
-                Registriere dich später, um als Erster zu erfahren, wann sie live geht.
+              <p class="muted" data-i18n="appNotice" style="margin-top: 1.5rem;">
+                Die NordFit-App befindet sich aktuell noch im Aufbau. Registriere dich später, um als Erster zu erfahren, wann sie live geht.
               </p>
 
               <div class="flex" style="gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="#" class="btn btn-secondary">App Store</a>
-                <a href="#" class="btn btn-secondary">Google Play</a>
+                <a href="#" class="btn btn-secondary" data-i18n="appStore">App Store</a>
+                <a href="#" class="btn btn-secondary" data-i18n="googlePlay">Google Play</a>
               </div>
             </div>
           </div>
@@ -89,13 +90,12 @@
       </div>
     </section>
 
-    <section class="section" style="background: #f8f8f8;">
+    <section class="section">
       <div class="container">
-        <div class="glass reveal" style="padding: 2.5rem; text-align: center;">
-          <h2>Einfach. Direkt. NordFit.</h2>
-          <p class="muted" style="max-width: 780px; margin: 1rem auto 0;">
-            Die App ist das Zentrum deiner Mitgliedschaft. Kein unnötiger Papierkram,
-            keine komplizierten Prozesse — alles digital, modern und klar.
+        <div class="glass reveal text-center" style="padding: 2.8rem 2rem;">
+          <h2 class="section-title" data-i18n="appSectionTitle">Einfach. Direkt. NordFit.</h2>
+          <p class="muted" data-i18n="appSectionText" style="max-width: 860px; margin: 1rem auto 0;">
+            Die App ist das Zentrum deiner Mitgliedschaft. Kein unnötiger Papierkram, keine komplizierten Prozesse — alles digital, modern und klar.
           </p>
         </div>
       </div>
@@ -104,13 +104,13 @@
 
   <footer class="site-footer">
     <div class="container">
-      <div class="glass" style="padding: 1.5rem;">
+      <div class="glass">
         <div class="flex" style="justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
           <p>© 2026 NordFit</p>
           <div class="flex" style="gap: 1rem; flex-wrap: wrap;">
-            <a href="impressum.html">Impressum / AGB / Datenschutz</a>
-            <a href="kontakt.html">Kontakt</a>
-            <a href="#">Instagram</a>
+            <a href="impressum.html" data-i18n="footerLegal">Impressum / AGB / Datenschutz</a>
+            <a href="kontakt.html" data-i18n="footerContact">Kontakt</a>
+            <a href="#" data-i18n="footerInstagram">Instagram</a>
           </div>
         </div>
       </div>
