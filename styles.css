@@ -1,29 +1,237 @@
-body {
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, "Inter", sans-serif;
   background: #ffffff;
   color: #1d1d1f;
+  overflow-x: hidden;
 }
 
-.container {
-  min-height: 100vh;
+/* ================= NAVBAR ================= */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.nav-inner {
+  max-width: 1100px;
+  margin: auto;
+  padding: 14px 24px;
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo span {
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1d1d1f;
+  font-size: 14px;
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  opacity: 1;
+}
+
+.nav-button {
+  background: #2ecc71;
+  color: white;
+  padding: 8px 14px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 13px;
+}
+
+/* ================= HERO ================= */
+
+.hero {
+  height: 100vh;
+  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 40px;
+  padding: 0 20px;
 }
 
-h1 {
-  font-size: 64px;
-  font-weight: 600;
-  letter-spacing: -1px;
-  margin: 0;
+.hero h1 {
+  font-size: 72px;
+  letter-spacing: -2px;
 }
 
-p {
+.hero p {
+  margin-top: 10px;
   font-size: 18px;
   opacity: 0.6;
+}
+
+.hero-buttons {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.btn {
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.btn.primary {
+  background: #2ecc71;
+  color: white;
+}
+
+.btn.secondary {
+  border: 1px solid rgba(0,0,0,0.15);
+  color: #1d1d1f;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ================= SECTIONS ================= */
+
+.section {
+  max-width: 1100px;
+  margin: auto;
+  padding: 120px 24px;
+}
+
+.center {
+  text-align: center;
+}
+
+/* ================= APP ================= */
+
+.split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.split h2 {
+  font-size: 36px;
+}
+
+.split p {
+  margin-top: 10px;
+  opacity: 0.6;
+}
+
+.phone-placeholder {
+  width: 280px;
+  height: 560px;
+  border-radius: 40px;
+  background: rgba(0,0,0,0.04);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.08);
+}
+
+/* ================= MEMBERSHIPS ================= */
+
+.cards {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card {
+  padding: 24px;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+.card h3 {
+  font-size: 18px;
+}
+
+.card p {
+  margin-top: 6px;
+  opacity: 0.6;
+}
+
+.card span {
+  display: block;
   margin-top: 12px;
+  font-weight: 500;
+}
+
+.card.highlight {
+  border: 1px solid #2ecc71;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+  text-align: center;
+  padding: 60px 20px;
+  opacity: 0.6;
+}
+
+.footer-links {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #1d1d1f;
+  font-size: 13px;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 900px) {
+
+  .nav-links {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .split {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
 }
