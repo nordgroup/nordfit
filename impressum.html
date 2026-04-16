@@ -13,7 +13,7 @@
 <body>
   <header class="site-header">
     <div class="container">
-      <div class="site-header-inner glass nav-shell">
+      <div class="site-header-inner glass">
         <a href="index.html" class="logo" aria-label="NordFit Startseite">
           <img src="images/nordfit-logo.png" alt="NordFit-Logo" />
         </a>
@@ -21,9 +21,9 @@
         <button
           id="burger"
           class="burger"
+          type="button"
           aria-label="Menü öffnen"
           aria-expanded="false"
-          type="button"
         >
           <span class="burger-lines" aria-hidden="true">
             <span></span>
@@ -44,8 +44,8 @@
 
         <div class="language-dropdown">
           <button
-            class="lang-toggle"
             id="lang-toggle"
+            class="lang-toggle"
             type="button"
             aria-expanded="false"
           >
@@ -53,7 +53,7 @@
             <span class="lang-caret" aria-hidden="true">⌄</span>
           </button>
 
-          <div class="lang-menu glass" id="lang-menu">
+          <div id="lang-menu" class="lang-menu glass">
             <button class="lang-option" data-lang="de" type="button">Deutsch</button>
             <button class="lang-option" data-lang="en" type="button">English</button>
             <button class="lang-option" data-lang="fr" type="button">Français</button>
@@ -67,14 +67,14 @@
   </header>
 
   <main>
-    <section class="section">
+    <section class="section home-hero-section">
       <div class="container">
-        <div class="text-center reveal" style="max-width: 920px; margin: 0 auto;">
+        <div class="home-hero reveal">
           <p class="eyebrow">Rechtliches</p>
-          <h1 class="hero-title small-hero">Klar. Direkt. Rechtlich sauber.</h1>
+          <h1 class="hero-title">Klar. Direkt. Rechtlich sauber.</h1>
           <p class="hero-subtitle">
-            Hier findest du Impressum, Datenschutz und AGB in einer ruhigen,
-            übersichtlichen Darstellung.
+            Hier findest du Impressum, Datenschutz und AGB
+            in einer ruhigen, übersichtlichen Darstellung.
           </p>
         </div>
       </div>
@@ -82,68 +82,70 @@
 
     <section class="section section-tight">
       <div class="container">
-        <div class="legal-grid">
-          <article class="glass section-block reveal">
-            <p class="eyebrow">Impressum</p>
-            <h2 class="section-title">Pflichtangaben</h2>
+        <div class="glass reveal" style="padding: 1.35rem;">
+          <div class="legal-grid">
+            <article class="glass section-block" style="background: linear-gradient(180deg, rgba(255,255,255,0.74), rgba(255,255,255,0.54));">
+              <p class="eyebrow">Impressum</p>
+              <h2 class="section-title large-title">Pflichtangaben</h2>
 
-            <div class="legal-info-list">
-              <div class="legal-info-row">
-                <span class="legal-label">Firmenname</span>
-                <strong>NordFit / Nordgroup</strong>
+              <div class="legal-info-list">
+                <div class="legal-info-row">
+                  <span class="legal-label">Firmenname</span>
+                  <strong>NordFit / Nordgroup</strong>
+                </div>
+
+                <div class="legal-info-row">
+                  <span class="legal-label">E-Mail</span>
+                  <strong><a href="mailto:nordgroup.business@gmail.com">nordgroup.business@gmail.com</a></strong>
+                </div>
+
+                <div class="legal-info-row">
+                  <span class="legal-label">Instagram</span>
+                  <strong><a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">@nordfit.business</a></strong>
+                </div>
+
+                <div class="legal-info-row">
+                  <span class="legal-label">Adresse</span>
+                  <strong>Bald verfügbar</strong>
+                </div>
+
+                <div class="legal-info-row">
+                  <span class="legal-label">Weitere Angaben</span>
+                  <strong>Werden vor Veröffentlichung final ergänzt</strong>
+                </div>
+              </div>
+            </article>
+
+            <article class="card reveal legal-actions-card">
+              <p class="eyebrow">Dokumente</p>
+              <h2 class="section-title">Weitere Inhalte</h2>
+              <p class="muted">
+                Datenschutz und AGB kannst du direkt in einem ruhigen Overlay öffnen,
+                ohne die Seite zu verlassen.
+              </p>
+
+              <div class="legal-action-buttons">
+                <button class="btn btn-primary" type="button" onclick="openModal('agb-modal')">
+                  AGB öffnen
+                </button>
+                <button class="btn btn-secondary" type="button" onclick="openModal('privacy-modal')">
+                  Datenschutz öffnen
+                </button>
               </div>
 
-              <div class="legal-info-row">
-                <span class="legal-label">E-Mail</span>
-                <strong><a href="mailto:nordgroup.business@gmail.com">nordgroup.business@gmail.com</a></strong>
-              </div>
-
-              <div class="legal-info-row">
-                <span class="legal-label">Instagram</span>
-                <strong><a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">@nordfit.business</a></strong>
-              </div>
-
-              <div class="legal-info-row">
-                <span class="legal-label">Adresse</span>
-                <strong>Bald verfügbar</strong>
-              </div>
-
-              <div class="legal-info-row">
-                <span class="legal-label">Weitere Angaben</span>
-                <strong>Werden vor Veröffentlichung final ergänzt</strong>
-              </div>
-            </div>
-          </article>
-
-          <article class="card reveal legal-actions-card">
-            <p class="eyebrow">Dokumente</p>
-            <h2 class="section-title">Weitere Inhalte</h2>
-            <p class="muted">
-              Datenschutz und AGB kannst du direkt in einem ruhigen Overlay öffnen,
-              ohne die Seite zu verlassen.
-            </p>
-
-            <div class="legal-action-buttons">
-              <button class="btn btn-primary" type="button" onclick="openModal('agb-modal')">
-                AGB öffnen
-              </button>
-              <button class="btn btn-secondary" type="button" onclick="openModal('privacy-modal')">
-                Datenschutz öffnen
-              </button>
-            </div>
-
-            <p class="muted legal-note">
-              Diese Inhalte sind aktuell Platzhalter und müssen vor der echten
-              Veröffentlichung rechtlich final geprüft und ergänzt werden.
-            </p>
-          </article>
+              <p class="muted legal-note">
+                Diese Inhalte sind aktuell Platzhalter und müssen vor der echten
+                Veröffentlichung rechtlich final geprüft und ergänzt werden.
+              </p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="glass app-bottom-banner reveal text-center">
+        <div class="glass reveal text-center" style="padding: 3rem 2rem;">
           <p class="eyebrow">NordFit Rechtliches</p>
           <h2 class="section-title large-title">Auch rechtlich soll alles klar wirken.</h2>
           <p class="muted" style="max-width: 760px; margin: 1rem auto 0;">
@@ -161,7 +163,8 @@
       <p class="eyebrow">AGB</p>
       <h2 class="section-title">Allgemeine Geschäftsbedingungen</h2>
       <p class="muted" style="margin-top: 1rem;">
-        Allgemeine Geschäftsbedingungen werden noch erstellt und vor Veröffentlichung ergänzt.
+        Allgemeine Geschäftsbedingungen werden noch erstellt
+        und vor Veröffentlichung ergänzt.
       </p>
     </div>
   </div>
@@ -172,7 +175,8 @@
       <p class="eyebrow">Datenschutz</p>
       <h2 class="section-title">Datenschutzerklärung</h2>
       <p class="muted" style="margin-top: 1rem;">
-        Die Datenschutzerklärung folgt und wird vor Veröffentlichung rechtlich vollständig ergänzt.
+        Die Datenschutzerklärung folgt und wird vor Veröffentlichung
+        rechtlich vollständig ergänzt.
       </p>
     </div>
   </div>
