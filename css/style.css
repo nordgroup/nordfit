@@ -8,11 +8,10 @@
   --bg-white: #ffffff;
   --bg-dark: #111111;
 
-  --glass-1: rgba(255, 255, 255, 0.78);
-  --glass-2: rgba(255, 255, 255, 0.58);
-  --glass-3: rgba(255, 255, 255, 0.42);
-  --glass-line: rgba(255, 255, 255, 0.72);
-  --glass-shadow: rgba(0, 0, 0, 0.08);
+  --glass-1: rgba(255, 255, 255, 0.82);
+  --glass-2: rgba(255, 255, 255, 0.62);
+  --glass-3: rgba(255, 255, 255, 0.46);
+  --glass-line: rgba(255, 255, 255, 0.78);
 
   --text-main: #1d1d1f;
   --text-muted: #6e6e73;
@@ -20,7 +19,7 @@
   --text-link: #0066cc;
 
   --border-soft: rgba(0, 0, 0, 0.06);
-  --border-light: rgba(255, 255, 255, 0.72);
+  --border-light: rgba(255, 255, 255, 0.78);
 
   --shadow-soft: 0 8px 24px rgba(0, 0, 0, 0.05);
   --shadow-medium: 0 20px 48px rgba(0, 0, 0, 0.09);
@@ -50,6 +49,11 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+html,
+body {
+  overflow-x: clip;
 }
 
 body {
@@ -96,6 +100,15 @@ select {
 button {
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
+}
+
+button.is-pressed,
+.btn.is-pressed,
+.card.is-pressed,
+.lang-toggle.is-pressed,
+.burger.is-pressed,
+.site-nav a.is-pressed {
+  transform: scale(0.985);
 }
 
 input,
@@ -178,12 +191,12 @@ select:focus {
       rgba(255, 255, 255, 0.84),
       rgba(255, 255, 255, 0.62)
     );
-  backdrop-filter: blur(34px) saturate(165%);
-  -webkit-backdrop-filter: blur(34px) saturate(165%);
+  backdrop-filter: blur(38px) saturate(170%);
+  -webkit-backdrop-filter: blur(38px) saturate(170%);
   border: 1px solid var(--glass-line);
   box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.88) inset,
-    0 12px 34px rgba(0, 0, 0, 0.055);
+    0 1px 0 rgba(255, 255, 255, 0.92) inset,
+    0 14px 36px rgba(0, 0, 0, 0.055);
   border-radius: var(--radius-lg);
 }
 
@@ -196,8 +209,8 @@ select:focus {
   background:
     linear-gradient(
       180deg,
-      rgba(255,255,255,0.36),
-      rgba(255,255,255,0.12) 36%,
+      rgba(255,255,255,0.38),
+      rgba(255,255,255,0.12) 34%,
       rgba(255,255,255,0.02) 70%,
       rgba(255,255,255,0) 100%
     );
@@ -346,23 +359,36 @@ select:focus {
   background:
     linear-gradient(
       180deg,
-      rgba(255,255,255,0.86),
-      rgba(255,255,255,0.64)
+      rgba(255,255,255,0.88),
+      rgba(255,255,255,0.66)
     );
-  border: 1px solid rgba(255,255,255,0.84);
+  border: 1px solid rgba(255,255,255,0.86);
   box-shadow:
-    0 1px 0 rgba(255,255,255,0.92) inset,
+    0 1px 0 rgba(255,255,255,0.94) inset,
     0 14px 36px rgba(0,0,0,0.05);
   transition:
     transform var(--transition-medium),
     box-shadow var(--transition-medium),
-    background var(--transition-medium);
+    background var(--transition-medium),
+    backdrop-filter var(--transition-medium);
 }
 
 .site-header-inner:hover {
   box-shadow:
-    0 1px 0 rgba(255,255,255,0.94) inset,
+    0 1px 0 rgba(255,255,255,0.96) inset,
     0 18px 42px rgba(0,0,0,0.06);
+}
+
+.site-header-inner.scrolled {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255,255,255,0.92),
+      rgba(255,255,255,0.72)
+    );
+  box-shadow:
+    0 1px 0 rgba(255,255,255,0.96) inset,
+    0 18px 46px rgba(0,0,0,0.07);
 }
 
 .nav-shell {
@@ -384,12 +410,12 @@ select:focus {
   background:
     linear-gradient(
       180deg,
-      rgba(255,255,255,0.68),
-      rgba(255,255,255,0.48)
+      rgba(255,255,255,0.7),
+      rgba(255,255,255,0.5)
     );
-  border: 1px solid rgba(255,255,255,0.75);
+  border: 1px solid rgba(255,255,255,0.78);
   box-shadow:
-    inset 0 1px 0 rgba(255,255,255,0.8),
+    inset 0 1px 0 rgba(255,255,255,0.82),
     0 4px 18px rgba(0,0,0,0.03);
 }
 
@@ -413,7 +439,7 @@ select:focus {
 }
 
 .site-nav a:hover {
-  background: rgba(255, 255, 255, 0.84);
+  background: rgba(255, 255, 255, 0.86);
   opacity: 1;
   transform: translateY(-1px);
 }
@@ -441,16 +467,16 @@ select:focus {
   height: 42px;
   padding: 0 0.9rem;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.82);
+  border: 1px solid rgba(255,255,255,0.84);
   background:
     linear-gradient(
       180deg,
-      rgba(255,255,255,0.92),
-      rgba(255,255,255,0.72)
+      rgba(255,255,255,0.94),
+      rgba(255,255,255,0.76)
     );
   color: var(--text-main);
   box-shadow:
-    0 1px 0 rgba(255,255,255,0.9) inset,
+    0 1px 0 rgba(255,255,255,0.92) inset,
     0 10px 22px rgba(0,0,0,0.05);
   transition:
     transform var(--transition-fast),
@@ -463,7 +489,7 @@ select:focus {
   transform: translateY(-1px);
   filter: brightness(1.01);
   box-shadow:
-    0 1px 0 rgba(255,255,255,0.94) inset,
+    0 1px 0 rgba(255,255,255,0.96) inset,
     0 14px 28px rgba(0,0,0,0.06);
 }
 
@@ -515,20 +541,21 @@ select:focus {
 
 .burger {
   display: none;
+  align-items: center;
+  justify-content: center;
   width: 44px;
   height: 44px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.82);
+  border: 1px solid rgba(255,255,255,0.84);
   background:
     linear-gradient(
       180deg,
-      rgba(255,255,255,0.94),
-      rgba(255,255,255,0.74)
+      rgba(255,255,255,0.95),
+      rgba(255,255,255,0.76)
     );
   color: var(--text-main);
-  font-size: 1.15rem;
   box-shadow:
-    0 1px 0 rgba(255,255,255,0.9) inset,
+    0 1px 0 rgba(255,255,255,0.92) inset,
     0 10px 22px rgba(0,0,0,0.05);
   transition:
     transform var(--transition-fast),
@@ -538,6 +565,52 @@ select:focus {
 
 .burger:hover {
   transform: translateY(-1px);
+}
+
+.burger-lines {
+  position: relative;
+  width: 18px;
+  height: 14px;
+  display: block;
+}
+
+.burger-lines span {
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--text-main);
+  transition:
+    transform 0.32s var(--ease-apple),
+    opacity 0.24s var(--ease-apple),
+    top 0.32s var(--ease-apple);
+}
+
+.burger-lines span:nth-child(1) {
+  top: 0;
+}
+
+.burger-lines span:nth-child(2) {
+  top: 6px;
+}
+
+.burger-lines span:nth-child(3) {
+  top: 12px;
+}
+
+.burger.is-active .burger-lines span:nth-child(1) {
+  top: 6px;
+  transform: rotate(45deg);
+}
+
+.burger.is-active .burger-lines span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.is-active .burger-lines span:nth-child(3) {
+  top: 6px;
+  transform: rotate(-45deg);
 }
 
 .site-footer {
