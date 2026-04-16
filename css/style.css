@@ -1508,3 +1508,34 @@ iframe {
     max-width: 320px;
   }
 }
+
+.legal-action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  margin-top: 1.4rem;
+}
+
+.legal-note {
+  margin-top: 1.35rem;
+}
+
+.legal-info-row a {
+  color: var(--text-main);
+  word-break: break-word;
+}
+
+.legal-info-row a:hover {
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .legal-grid {
+    gap: 1.2rem;
+  }
+
+  .legal-action-buttons .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}
