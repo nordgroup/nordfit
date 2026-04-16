@@ -1484,3 +1484,27 @@ iframe {
     min-height: 300px;
   }
 }
+
+.contact-hero-grid {
+  gap: 1.5rem;
+}
+
+.contact-info-item a {
+  color: var(--text-main);
+  word-break: break-word;
+}
+
+.contact-info-item a:hover {
+  color: var(--primary-color);
+}
+
+@media (max-width: 768px) {
+  .contact-hero-grid {
+    gap: 1.2rem;
+  }
+
+  .contact-form-footer .btn {
+    width: 100%;
+    max-width: 320px;
+  }
+}
