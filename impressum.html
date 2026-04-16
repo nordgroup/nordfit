@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-i18n="titleImpressum">NordFit – Impressum</title>
+  <title>NordFit – Impressum</title>
   <meta
     name="description"
     content="Impressum, AGB und Datenschutz von NordFit."
@@ -13,7 +13,7 @@
 <body>
   <header class="site-header">
     <div class="container">
-      <div class="site-header-inner glass">
+      <div class="site-header-inner glass nav-shell">
         <a href="index.html" class="logo" aria-label="NordFit Startseite">
           <img src="images/nordfit-logo.png" alt="NordFit-Logo" />
         </a>
@@ -22,18 +22,28 @@
 
         <nav class="site-nav" aria-label="Hauptnavigation">
           <ul>
-            <li><a href="index.html" data-i18n="navHome">Home</a></li>
-            <li><a href="mitgliedschaften.html" data-i18n="navTariffs">Tarife</a></li>
-            <li><a href="standorte.html" data-i18n="navLocations">Standorte</a></li>
-            <li><a href="app.html" data-i18n="navApp">App</a></li>
-            <li><a href="kontakt.html" data-i18n="navContact">Kontakt</a></li>
+            <li><a href="index.html" class="nav-link">Startseite</a></li>
+            <li><a href="mitgliedschaften.html" class="nav-link">Tarife</a></li>
+            <li><a href="standorte.html" class="nav-link">Standorte</a></li>
+            <li><a href="app.html" class="nav-link">App</a></li>
+            <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
           </ul>
         </nav>
 
-        <div class="lang-switcher">
-          <button class="lang-btn" data-lang="de" type="button">DE</button>
-          <button class="lang-btn" data-lang="en" type="button">EN</button>
-          <button class="lang-btn" data-lang="fr" type="button">FR</button>
+        <div class="language-dropdown">
+          <button class="lang-toggle" id="lang-toggle" type="button" aria-expanded="false">
+            <span>DE</span>
+            <span class="lang-caret">⌄</span>
+          </button>
+
+          <div class="lang-menu glass" id="lang-menu">
+            <button class="lang-option" data-lang="de" type="button">Deutsch</button>
+            <button class="lang-option" data-lang="en" type="button">English</button>
+            <button class="lang-option" data-lang="fr" type="button">Français</button>
+            <button class="lang-option" data-lang="it" type="button">Italiano</button>
+            <button class="lang-option" data-lang="es" type="button">Español</button>
+            <button class="lang-option" data-lang="pl" type="button">Polski</button>
+          </div>
         </div>
       </div>
     </div>
@@ -42,55 +52,83 @@
   <main>
     <section class="section">
       <div class="container">
-        <div class="glass reveal" style="padding: 2.8rem 2rem;">
-          <h1 class="section-title" data-i18n="imprintTitle">Impressum</h1>
+        <div class="text-center reveal" style="max-width: 900px; margin: 0 auto;">
+          <p class="eyebrow">Rechtliches</p>
+          <h1 class="hero-title small-hero">Klar. Direkt. Rechtlich sauber.</h1>
+          <p class="hero-subtitle">
+            Hier findest du Impressum, Datenschutz und AGB in einer ruhigen, übersichtlichen Darstellung.
+          </p>
+        </div>
+      </div>
+    </section>
 
-          <div class="muted" style="margin-top: 1.5rem; display: grid; gap: 0.8rem;">
-            <p>
-              <strong data-i18n="companyNameLabel">Firmenname:</strong>
-              <span data-i18n="companyNameText">NordFit GmbH</span>
+    <section class="section section-tight">
+      <div class="container">
+        <div class="legal-grid">
+          <article class="glass section-block reveal">
+            <p class="eyebrow">Impressum</p>
+            <h2 class="section-title">Pflichtangaben</h2>
+
+            <div class="legal-info-list">
+              <div class="legal-info-row">
+                <span class="legal-label">Firmenname</span>
+                <strong>NordFit GmbH</strong>
+              </div>
+
+              <div class="legal-info-row">
+                <span class="legal-label">Geschäftsführer</span>
+                <strong>Max Mustermann</strong>
+              </div>
+
+              <div class="legal-info-row">
+                <span class="legal-label">Adresse</span>
+                <strong>Musterstraße 1, 23936 Grevesmühlen</strong>
+              </div>
+
+              <div class="legal-info-row">
+                <span class="legal-label">Handelsregister</span>
+                <strong>HRB 12345</strong>
+              </div>
+
+              <div class="legal-info-row">
+                <span class="legal-label">E-Mail</span>
+                <strong><a href="mailto:info@nordfit.de">info@nordfit.de</a></strong>
+              </div>
+            </div>
+          </article>
+
+          <article class="card reveal legal-actions-card">
+            <p class="eyebrow">Dokumente</p>
+            <h2 class="section-title">Weitere Inhalte</h2>
+            <p class="muted">
+              Datenschutz und AGB kannst du direkt in einem ruhigen Overlay öffnen, ohne die Seite zu verlassen.
             </p>
 
-            <p>
-              <strong data-i18n="managerLabel">Geschäftsführer:</strong>
-              <span data-i18n="managerText">Max Mustermann</span>
+            <div class="legal-action-buttons">
+              <button class="btn btn-primary" type="button" onclick="openModal('agb-modal')">
+                AGB öffnen
+              </button>
+              <button class="btn btn-secondary" type="button" onclick="openModal('privacy-modal')">
+                Datenschutz öffnen
+              </button>
+            </div>
+
+            <p class="muted legal-note">
+              Die Inhalte hier sind aktuell noch Platzhalter und müssen vor einer echten Veröffentlichung mit den finalen rechtlichen Angaben ersetzt werden.
             </p>
+          </article>
+        </div>
+      </div>
+    </section>
 
-            <p>
-              <strong data-i18n="addressLabel">Adresse:</strong>
-              <span data-i18n="addressText">Musterstraße 1, 23936 Grevesmühlen</span>
-            </p>
-
-            <p>
-              <strong data-i18n="registerLabel">Handelsregister:</strong>
-              <span data-i18n="registerText">HRB 12345</span>
-            </p>
-
-            <p>
-              <strong data-i18n="mailLabel">E-Mail:</strong>
-              <a href="mailto:info@nordfit.de">info@nordfit.de</a>
-            </p>
-          </div>
-
-          <div class="flex" style="gap: 1rem; flex-wrap: wrap; margin-top: 2rem;">
-            <button
-              class="btn btn-primary"
-              type="button"
-              onclick="openModal('agb-modal')"
-              data-i18n="agbButton"
-            >
-              AGB
-            </button>
-
-            <button
-              class="btn btn-secondary"
-              type="button"
-              onclick="openModal('privacy-modal')"
-              data-i18n="privacyButton"
-            >
-              Datenschutz
-            </button>
-          </div>
+    <section class="section">
+      <div class="container">
+        <div class="glass legal-bottom-banner reveal text-center">
+          <p class="eyebrow">NordFit</p>
+          <h2 class="section-title large-title">Auch rechtlich soll alles klar wirken.</h2>
+          <p class="muted closing-text">
+            Keine überladene Seite, kein unnötiges Chaos — sondern eine rechtliche Darstellung, die zum restlichen Auftritt passt.
+          </p>
         </div>
       </div>
     </section>
@@ -99,8 +137,9 @@
   <div class="modal" id="agb-modal" aria-hidden="true">
     <div class="modal-box glass">
       <button class="modal-close" aria-label="Modal schließen" type="button">×</button>
-      <h2 data-i18n="agbTitle">AGB</h2>
-      <p class="muted" data-i18n="agbText" style="margin-top: 1rem;">
+      <p class="eyebrow">AGB</p>
+      <h2 class="section-title">Allgemeine Geschäftsbedingungen</h2>
+      <p class="muted" style="margin-top: 1rem;">
         Allgemeine Geschäftsbedingungen werden noch erstellt.
       </p>
     </div>
@@ -109,8 +148,9 @@
   <div class="modal" id="privacy-modal" aria-hidden="true">
     <div class="modal-box glass">
       <button class="modal-close" aria-label="Modal schließen" type="button">×</button>
-      <h2 data-i18n="privacyTitle">Datenschutz</h2>
-      <p class="muted" data-i18n="privacyText" style="margin-top: 1rem;">
+      <p class="eyebrow">Datenschutz</p>
+      <h2 class="section-title">Datenschutzerklärung</h2>
+      <p class="muted" style="margin-top: 1rem;">
         Datenschutzerklärung folgt.
       </p>
     </div>
@@ -118,13 +158,13 @@
 
   <footer class="site-footer">
     <div class="container">
-      <div class="glass">
-        <div class="flex" style="justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+      <div class="glass footer-shell">
+        <div class="flex footer-row">
           <p>© 2026 NordFit</p>
-          <div class="flex" style="gap: 1rem; flex-wrap: wrap;">
-            <a href="impressum.html" data-i18n="footerLegal">Impressum / AGB / Datenschutz</a>
-            <a href="kontakt.html" data-i18n="footerContact">Kontakt</a>
-            <a href="#" data-i18n="footerInstagram">Instagram</a>
+          <div class="flex footer-links">
+            <a href="impressum.html">Impressum / AGB / Datenschutz</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="#">Instagram</a>
           </div>
         </div>
       </div>
