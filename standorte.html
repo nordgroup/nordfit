@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title data-i18n="titleLocations">NordFit – Standorte</title>
+  <title>NordFit – Standorte</title>
   <meta
     name="description"
-    content="NordFit Standorte – alle Studios, Öffnungszeiten und Standortinfos auf einen Blick."
+    content="NordFit Standorte – Studio, Lage, Öffnungszeiten und erste Eindrücke auf einen Blick."
   />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container">
-      <div class="site-header-inner glass">
+      <div class="site-header-inner glass nav-shell">
         <a href="index.html" class="logo" aria-label="NordFit Startseite">
           <img src="images/nordfit-logo.png" alt="NordFit-Logo" />
         </a>
@@ -22,18 +22,28 @@
 
         <nav class="site-nav" aria-label="Hauptnavigation">
           <ul>
-            <li><a href="index.html" data-i18n="navHome">Home</a></li>
-            <li><a href="mitgliedschaften.html" data-i18n="navTariffs">Tarife</a></li>
-            <li><a href="standorte.html" data-i18n="navLocations">Standorte</a></li>
-            <li><a href="app.html" data-i18n="navApp">App</a></li>
-            <li><a href="kontakt.html" data-i18n="navContact">Kontakt</a></li>
+            <li><a href="index.html" class="nav-link">Startseite</a></li>
+            <li><a href="mitgliedschaften.html" class="nav-link">Tarife</a></li>
+            <li><a href="standorte.html" class="nav-link active">Standorte</a></li>
+            <li><a href="app.html" class="nav-link">App</a></li>
+            <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
           </ul>
         </nav>
 
-        <div class="lang-switcher">
-          <button class="lang-btn" data-lang="de" type="button">DE</button>
-          <button class="lang-btn" data-lang="en" type="button">EN</button>
-          <button class="lang-btn" data-lang="fr" type="button">FR</button>
+        <div class="language-dropdown">
+          <button class="lang-toggle" id="lang-toggle" type="button" aria-expanded="false">
+            <span>DE</span>
+            <span class="lang-caret">⌄</span>
+          </button>
+
+          <div class="lang-menu glass" id="lang-menu">
+            <button class="lang-option" data-lang="de" type="button">Deutsch</button>
+            <button class="lang-option" data-lang="en" type="button">English</button>
+            <button class="lang-option" data-lang="fr" type="button">Français</button>
+            <button class="lang-option" data-lang="it" type="button">Italiano</button>
+            <button class="lang-option" data-lang="es" type="button">Español</button>
+            <button class="lang-option" data-lang="pl" type="button">Polski</button>
+          </div>
         </div>
       </div>
     </div>
@@ -42,116 +52,142 @@
   <main>
     <section class="section">
       <div class="container">
-        <div class="glass text-center reveal" style="padding: 3rem 2rem;">
-          <h1 class="section-title" data-i18n="locationsTitle">Unsere Standorte</h1>
-          <p class="muted" data-i18n="locationsIntro" style="max-width: 760px; margin: 1rem auto 0;">
-            Wähle dein Studio aus und schau dir die wichtigsten Infos an.
+        <div class="text-center reveal" style="max-width: 980px; margin: 0 auto;">
+          <p class="eyebrow">Standorte</p>
+          <h1 class="hero-title small-hero">Studio. Lage. Eindruck.</h1>
+          <p class="hero-subtitle">
+            Hier findest du den ersten NordFit-Standort mit Öffnungszeiten, Lage und einem klaren Überblick.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="section" style="padding-top: 0;">
+    <section class="section section-tight">
       <div class="container">
-        <div class="glass reveal" style="padding: 1.4rem; max-width: 560px; margin: 0 auto 2rem;">
-          <label for="location-select" data-i18n="locationChoose">Studio auswählen</label>
-          <select
-            id="location-select"
-            style="width: 100%; margin-top: 0.75rem; padding: 0.9rem 1rem;"
-          >
-            <option value="grevesmuehlen" data-i18n="locationStudio1">Studio 1 – Grevesmühlen</option>
-          </select>
+        <div class="location-hero glass reveal">
+          <div class="location-hero-copy">
+            <p class="eyebrow">Studio 1</p>
+            <h2 class="section-title large-title">Grevesmühlen</h2>
+            <p class="muted location-hero-text">
+              Der erste NordFit-Standort ist auf Klarheit ausgelegt:
+              gute Erreichbarkeit, ruhige Struktur, moderner Auftritt und 24/7-Zugang.
+            </p>
+
+            <div class="location-meta-grid">
+              <div class="location-meta-card">
+                <span class="location-meta-label">Adresse</span>
+                <strong>Musterstraße 1<br />23936 Grevesmühlen</strong>
+              </div>
+
+              <div class="location-meta-card">
+                <span class="location-meta-label">Öffnungszeiten</span>
+                <strong>24/7 geöffnet</strong>
+              </div>
+
+              <div class="location-meta-card">
+                <span class="location-meta-label">Parken</span>
+                <strong>Direkt vor Ort</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="location-hero-image">
+            <div class="location-image-shell">
+              <img
+                src="images/nordfit-app-screen.png"
+                alt="NordFit Studio Vorschau"
+              />
+            </div>
+          </div>
         </div>
+      </div>
+    </section>
 
-        <div class="grid-2" style="align-items: start;">
-          <article class="card info-card reveal">
-            <h2 data-i18n="locationCardTitle">Studio 1 – Grevesmühlen</h2>
-
-            <p class="muted" style="margin-top: 1rem;">
-              <strong data-i18n="locationAddressLabel">Adresse:</strong><br />
-              <span data-i18n="locationAddressText">Musterstraße 1, 23936 Grevesmühlen</span>
+    <section class="section">
+      <div class="container">
+        <div class="grid-2 location-detail-grid">
+          <article class="glass section-block reveal">
+            <p class="eyebrow">Karte</p>
+            <h2 class="section-title">Lage im Blick</h2>
+            <p class="muted" style="margin-bottom: 1rem;">
+              Die Karte ist aktuell auf Grevesmühlen ausgerichtet. Sobald die finale Adresse feststeht,
+              setzen wir sie exakt auf den echten Punkt.
             </p>
 
-            <p class="muted" style="margin-top: 1rem;">
-              <strong data-i18n="locationHoursLabel">Öffnungszeiten:</strong><br />
-              <span data-i18n="locationHoursText">24/7 geöffnet</span>
-            </p>
-
-            <p class="muted" style="margin-top: 1rem;">
-              <strong data-i18n="locationInfoLabel">Info:</strong><br />
-              <span data-i18n="locationInfoText">Modernes Studio mit gut erreichbarer Lage und Parkmöglichkeiten direkt vor Ort.</span>
-            </p>
-          </article>
-
-          <article class="card info-card reveal">
-            <h2 data-i18n="locationMapTitle">Karte</h2>
-
-            <div style="margin-top: 1rem; overflow: hidden; border-radius: 20px;">
+            <div class="map-shell">
               <iframe
                 src="https://www.openstreetmap.org/export/embed.html?bbox=11.1700%2C53.8450%2C11.2100%2C53.8700&layer=mapnik&marker=53.8583%2C11.1916"
-                height="340"
+                height="360"
                 loading="lazy"
-                title="Karte des NordFit Studios in Grevesmühlen"
+                title="Karte von Grevesmühlen"
               ></iframe>
             </div>
           </article>
+
+          <article class="glass section-block reveal">
+            <p class="eyebrow">Eindruck</p>
+            <h2 class="section-title">Ruhig. Klar. Direkt.</h2>
+            <p class="muted">
+              NordFit soll sich nicht überladen anfühlen. Kein unnötiger Lärm,
+              kein chaotischer Eindruck, sondern ein Studio mit moderner Linie und klarer Orientierung.
+            </p>
+            <p class="muted" style="margin-top: 1rem;">
+              Der Standortbereich ist bewusst so aufgebaut, dass später weitere Studios leicht ergänzt
+              werden können, ohne das Design kaputt zu machen.
+            </p>
+
+            <a href="kontakt.html" class="btn btn-primary" style="margin-top: 1.5rem;">
+              Standort anfragen
+            </a>
+          </article>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="text-center" style="margin-bottom: 2rem;">
-          <h2 class="section-title" data-i18n="locationGalleryTitle">Bildergalerie</h2>
-          <p class="muted" data-i18n="locationGalleryText">
-            Platzhalterbilder – später kommen hier echte Studiofotos rein.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card reveal text-center">
+        <div class="location-gallery-grid">
+          <article class="card reveal location-gallery-card">
             <img
               src="images/nordfit-app-screen.png"
-              alt="Platzhalterbild für Studiofläche"
-              style="border-radius: 18px; margin-bottom: 1rem;"
+              alt="Studiofläche Platzhalter"
             />
-            <p class="muted" data-i18n="locationImage1">Studiofläche</p>
+            <div class="location-gallery-copy">
+              <p class="eyebrow">Fläche</p>
+              <h3>Klare Trainingsbereiche</h3>
+              <p class="muted">
+                Platzhalter für spätere echte Innenaufnahmen des Studios.
+              </p>
+            </div>
           </article>
 
-          <article class="card reveal text-center">
+          <article class="card reveal location-gallery-card">
             <img
               src="images/nordfit-logo.png"
-              alt="Platzhalterbild für Parkplatz oder Außenbereich"
-              style="border-radius: 18px; margin-bottom: 1rem;"
+              alt="Außenbereich Platzhalter"
             />
-            <p class="muted" data-i18n="locationImage2">Parkplatz / Außenbereich</p>
+            <div class="location-gallery-copy">
+              <p class="eyebrow">Außenbereich</p>
+              <h3>Ankommen ohne Stress</h3>
+              <p class="muted">
+                Platzhalter für Parkplatz, Eingang und äußere Studioansicht.
+              </p>
+            </div>
           </article>
 
-          <article class="card reveal text-center">
+          <article class="card reveal location-gallery-card">
             <img
               src="images/nordfit-app-screen.png"
-              alt="Platzhalterbild für Innenbereich"
-              style="border-radius: 18px; margin-bottom: 1rem;"
+              alt="Innenbereich Platzhalter"
             />
-            <p class="muted" data-i18n="locationImage3">Innenbereich</p>
+            <div class="location-gallery-copy">
+              <p class="eyebrow">Innenraum</p>
+              <h3>Modern und ruhig gedacht</h3>
+              <p class="muted">
+                Später kommen hier echte Bilder für einen hochwertigen Studio-Eindruck rein.
+              </p>
+            </div>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="glass reveal" style="padding: 2.4rem;">
-          <h2 class="section-title" data-i18n="locationAboutTitle">Zum Standort</h2>
-          <p class="muted" data-i18n="locationAboutText1" style="margin-top: 1rem;">
-            Das erste NordFit-Studio in Grevesmühlen soll modern, klar und unkompliziert sein.
-          </p>
-          <p class="muted" data-i18n="locationAboutText2">
-            Gute Erreichbarkeit, 24/7-Zugang und ein ehrliches Studiokonzept stehen im Vordergrund.
-          </p>
-          <p class="muted" data-i18n="locationAboutText3">
-            Das Dropdown oben ist bewusst so vorbereitet, dass später weitere Studios leicht ergänzt werden können.
-          </p>
         </div>
       </div>
     </section>
@@ -159,13 +195,13 @@
 
   <footer class="site-footer">
     <div class="container">
-      <div class="glass">
-        <div class="flex" style="justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+      <div class="glass footer-shell">
+        <div class="flex footer-row">
           <p>© 2026 NordFit</p>
-          <div class="flex" style="gap: 1rem; flex-wrap: wrap;">
-            <a href="impressum.html" data-i18n="footerLegal">Impressum / AGB / Datenschutz</a>
-            <a href="kontakt.html" data-i18n="footerContact">Kontakt</a>
-            <a href="#" data-i18n="footerInstagram">Instagram</a>
+          <div class="flex footer-links">
+            <a href="impressum.html">Impressum / AGB / Datenschutz</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="#">Instagram</a>
           </div>
         </div>
       </div>
