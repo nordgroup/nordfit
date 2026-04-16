@@ -6,12 +6,17 @@ function qsa(selector, scope = document) {
   return Array.from(scope.querySelectorAll(selector));
 }
 
-function getNav() {
-  return qs(".site-nav");
-}
+const state = {
+  menuOpen: false,
+  langOpen: false
+};
 
 function getBurger() {
   return qs("#burger");
+}
+
+function getNav() {
+  return qs(".site-nav");
 }
 
 function getLangToggle() {
@@ -22,16 +27,17 @@ function getLangMenu() {
   return qs("#lang-menu");
 }
 
-function setMenuState(isOpen) {
-  const nav = getNav();
+function setMenuState(open) {
   const burger = getBurger();
+  const nav = getNav();
 
-  if (!nav || !burger) return;
+  if (!burger || !nav) return;
 
-  nav.classList.toggle("open", isOpen);
-  burger.classList.toggle("is-active", isOpen);
-  burger.setAttribute("aria-expanded", String(isOpen));
-  burger.setAttribute("aria-label", isOpen ? "Menü schließen" : "Menü öffnen");
+  state.menuOpen = open;
+  nav.classList.toggle("open", open);
+  burger.classList.toggle("is-active", open);
+  burger.setAttribute("aria-expanded", String(open));
+  burger.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
 }
 
 function openMenu() {
@@ -43,33 +49,31 @@ function closeMenu() {
 }
 
 function toggleMenu() {
-  const nav = getNav();
-  if (!nav) return;
-  setMenuState(!nav.classList.contains("open"));
+  setMenuState(!state.menuOpen);
 }
 
-function setLanguageMenuState(isOpen) {
-  const langToggle = getLangToggle();
-  const langMenu = getLangMenu();
+function setLangState(open) {
+  const toggle = getLangToggle();
+  const menu = getLangMenu();
 
-  if (!langToggle || !langMenu) return;
+  if (!toggle || !menu) return;
 
-  langMenu.classList.toggle("show", isOpen);
-  langToggle.setAttribute("aria-expanded", String(isOpen));
+  state.langOpen = open;
+  menu.classList.toggle("show", open);
+  toggle.classList.toggle("is-open", open);
+  toggle.setAttribute("aria-expanded", String(open));
 }
 
-function openLanguageMenu() {
-  setLanguageMenuState(true);
+function openLangMenu() {
+  setLangState(true);
 }
 
-function closeLanguageMenu() {
-  setLanguageMenuState(false);
+function closeLangMenu() {
+  setLangState(false);
 }
 
-function toggleLanguageMenu() {
-  const langMenu = getLangMenu();
-  if (!langMenu) return;
-  setLanguageMenuState(!langMenu.classList.contains("show"));
+function toggleLangMenu() {
+  setLangState(!state.langOpen);
 }
 
 function applyTranslation(element, value) {
@@ -102,9 +106,9 @@ function setLanguage(lang = "de") {
     }
   });
 
-  const langToggleLabel = qs(".lang-toggle-label");
-  if (langToggleLabel) {
-    langToggleLabel.textContent = lang.toUpperCase();
+  const label = qs(".lang-toggle-label");
+  if (label) {
+    label.textContent = lang.toUpperCase();
   }
 
   document.documentElement.lang = lang;
@@ -127,8 +131,8 @@ function closeModal(modalId) {
   modal.classList.remove("show");
   modal.setAttribute("aria-hidden", "true");
 
-  const hasOpenModal = qsa(".modal.show").length > 0;
-  if (!hasOpenModal) {
+  const anyOpen = qsa(".modal.show").length > 0;
+  if (!anyOpen) {
     document.body.style.overflow = "";
   }
 }
@@ -138,21 +142,19 @@ function closeAllModals() {
     modal.classList.remove("show");
     modal.setAttribute("aria-hidden", "true");
   });
+
   document.body.style.overflow = "";
 }
 
 function initModals() {
-  const modals = qsa(".modal");
-  const closeButtons = qsa(".modal-close");
-
-  closeButtons.forEach((button) => {
+  qsa(".modal-close").forEach((button) => {
     button.addEventListener("click", () => {
       const modal = button.closest(".modal");
       if (modal) closeModal(modal.id);
     });
   });
 
-  modals.forEach((modal) => {
+  qsa(".modal").forEach((modal) => {
     modal.addEventListener("click", (event) => {
       if (event.target === modal) {
         closeModal(modal.id);
@@ -161,71 +163,102 @@ function initModals() {
   });
 }
 
-function initScrollAnimations() {
+function initRevealAnimations() {
   const revealElements = qsa(".reveal");
   if (!revealElements.length) return;
 
   const observer = new IntersectionObserver(
     (entries) => {
-      entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-          entry.target.style.transitionDelay = `${Math.min(index * 35, 180)}ms`;
-          entry.target.classList.add("visible");
-          observer.unobserve(entry.target);
-        }
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
       });
     },
     {
-      threshold: 0.12,
-      rootMargin: "0px 0px -8% 0px",
+      threshold: 0.14,
+      rootMargin: "0px 0px -8% 0px"
     }
   );
 
   revealElements.forEach((element) => observer.observe(element));
 }
 
-function initLanguageSwitcher() {
-  const langToggle = getLangToggle();
-  const langOptions = qsa(".lang-option");
+function initHeaderScrollState() {
+  const headerInner = qs(".site-header-inner");
+  if (!headerInner) return;
 
-  if (langToggle) {
-    langToggle.addEventListener("click", (event) => {
-      event.stopPropagation();
-      closeMenu();
-      toggleLanguageMenu();
-    });
-  }
+  const update = () => {
+    headerInner.classList.toggle("scrolled", window.scrollY > 8);
+  };
 
-  langOptions.forEach((button) => {
-    button.addEventListener("click", () => {
-      const lang = button.getAttribute("data-lang");
-      setLanguage(lang);
-      closeLanguageMenu();
-    });
+  update();
+  window.addEventListener("scroll", update, { passive: true });
+}
+
+function initLanguageDropdown() {
+  const toggle = getLangToggle();
+  const menu = getLangMenu();
+
+  if (!toggle || !menu) return;
+
+  toggle.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    closeMenu();
+    toggleLangMenu();
   });
 
-  const savedLanguage = localStorage.getItem("nordfit-language") || "de";
-  setLanguage(savedLanguage);
+  qsa(".lang-option", menu).forEach((option) => {
+    option.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      const lang = option.getAttribute("data-lang");
+      setLanguage(lang);
+      closeLangMenu();
+    });
+  });
 }
 
 function initBurgerMenu() {
   const burger = getBurger();
-  const navLinks = qsa(".site-nav a");
+  const nav = getNav();
 
-  if (burger) {
-    burger.addEventListener("click", (event) => {
-      event.stopPropagation();
-      closeLanguageMenu();
-      toggleMenu();
-    });
-  }
+  if (!burger || !nav) return;
 
-  navLinks.forEach((link) => {
-    link.addEventListener("click", () => {
-      closeMenu();
-    });
+  burger.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    closeLangMenu();
+    toggleMenu();
   });
 
+  qsa("a", nav).forEach((link) => {
+    link.addEventListener("click", () => {
+      if (window.innerWidth <= 768) {
+        closeMenu();
+      }
+    });
+  });
+}
+
+function initOutsideClickHandling() {
+  document.addEventListener("click", (event) => {
+    const clickedBurger = event.target.closest("#burger");
+    const clickedNav = event.target.closest(".site-nav");
+    const clickedLang = event.target.closest(".language-dropdown");
+
+    if (!clickedBurger && !clickedNav && state.menuOpen) {
+      closeMenu();
+    }
+
+    if (!clickedLang && state.langOpen) {
+      closeLangMenu();
+    }
+  });
+}
+
+function initResizeHandling() {
   window.addEventListener("resize", () => {
     if (window.innerWidth > 768) {
       closeMenu();
@@ -233,22 +266,20 @@ function initBurgerMenu() {
   });
 }
 
-function initHeaderScrollState() {
-  const headerInner = qs(".site-header-inner");
-  if (!headerInner) return;
-
-  const updateHeaderState = () => {
-    headerInner.classList.toggle("scrolled", window.scrollY > 10);
-  };
-
-  updateHeaderState();
-  window.addEventListener("scroll", updateHeaderState, { passive: true });
+function initKeyboardHandling() {
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMenu();
+      closeLangMenu();
+      closeAllModals();
+    }
+  });
 }
 
-function initPressStates() {
-  const interactiveElements = qsa(".btn, .card, .lang-toggle, .burger, .site-nav a");
+function initPressFeedback() {
+  const interactive = qsa(".btn, .card, .lang-toggle, .burger, .site-nav a");
 
-  interactiveElements.forEach((element) => {
+  interactive.forEach((element) => {
     const addPressed = () => element.classList.add("is-pressed");
     const removePressed = () => element.classList.remove("is-pressed");
 
@@ -259,39 +290,17 @@ function initPressStates() {
   });
 }
 
-function initGlobalOutsideClick() {
-  document.addEventListener("click", (event) => {
-    const clickedInNav = event.target.closest(".site-nav");
-    const clickedBurger = event.target.closest("#burger");
-    const clickedLang = event.target.closest(".language-dropdown");
-
-    if (!clickedInNav && !clickedBurger) {
-      closeMenu();
-    }
-
-    if (!clickedLang) {
-      closeLanguageMenu();
-    }
-  });
-}
-
-function initKeyboardShortcuts() {
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeMenu();
-      closeLanguageMenu();
-      closeAllModals();
-    }
-  });
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   initBurgerMenu();
-  initLanguageSwitcher();
+  initLanguageDropdown();
+  initOutsideClickHandling();
+  initResizeHandling();
+  initKeyboardHandling();
   initModals();
-  initScrollAnimations();
+  initRevealAnimations();
   initHeaderScrollState();
-  initPressStates();
-  initGlobalOutsideClick();
-  initKeyboardShortcuts();
+  initPressFeedback();
+
+  const savedLanguage = localStorage.getItem("nordfit-language") || "de";
+  setLanguage(savedLanguage);
 });
