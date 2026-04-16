@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title data-i18n="titleHome">NordFit – Startseite</title>
+  <title>NordFit – Startseite</title>
   <meta
     name="description"
-    content="NordFit – modernes Fitnessstudio mit klarer Vision, 24/7-Zugang und eigener App."
+    content="NordFit – modernes Fitnessstudio mit klarer Atmosphäre, starken Trainingsbereichen und ruhigem Premium-Design."
   />
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -22,11 +22,11 @@
 
         <nav class="site-nav" aria-label="Hauptnavigation">
           <ul>
-            <li><a href="index.html" class="nav-link active" data-i18n="navHome">Startseite</a></li>
-            <li><a href="mitgliedschaften.html" class="nav-link" data-i18n="navTariffs">Tarife</a></li>
-            <li><a href="standorte.html" class="nav-link" data-i18n="navLocations">Standorte</a></li>
-            <li><a href="app.html" class="nav-link" data-i18n="navApp">App</a></li>
-            <li><a href="kontakt.html" class="nav-link" data-i18n="navContact">Kontakt</a></li>
+            <li><a href="index.html" class="nav-link active">Startseite</a></li>
+            <li><a href="mitgliedschaften.html" class="nav-link">Tarife</a></li>
+            <li><a href="standorte.html" class="nav-link">Standorte</a></li>
+            <li><a href="app.html" class="nav-link">App</a></li>
+            <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
           </ul>
         </nav>
 
@@ -50,17 +50,18 @@
   </header>
 
   <main>
-    <section class="hero-apple section">
+    <section class="section home-hero-section">
       <div class="container">
-        <div class="hero-stage reveal">
-          <p class="eyebrow" data-i18n="homeEyebrow">NordFit</p>
-          <h1 class="hero-title" data-i18n="heroHeading">Für deinen Weg nach vorn.</h1>
-          <p class="hero-subtitle" data-i18n="heroSub">
-            Modern. Klar. 24/7. Ein Fitnessstudio, das sich leicht anfühlt und stark wirkt.
+        <div class="home-hero reveal">
+          <p class="eyebrow">NordFit</p>
+          <h1 class="hero-title">Raum für Fokus. Training mit Klarheit.</h1>
+          <p class="hero-subtitle">
+            Ein modernes Fitnessstudio mit ruhiger Atmosphäre, hochwertigen Bereichen
+            und einem Design, das sich leicht und stark zugleich anfühlt.
           </p>
 
           <div class="hero-actions">
-            <a href="standorte.html" class="btn btn-primary" data-i18n="heroCTA">Studio entdecken</a>
+            <a href="standorte.html" class="btn btn-primary">Studio ansehen</a>
           </div>
         </div>
       </div>
@@ -68,66 +69,90 @@
 
     <section class="section section-tight">
       <div class="container">
-        <div class="hero-visual-card glass reveal">
-          <div class="hero-visual-copy">
-            <p class="eyebrow" data-i18n="homeVisualEyebrow">Ein Raum für Fokus</p>
-            <h2 class="section-title large-title" data-i18n="homeVisualTitle">
-              Weniger Lärm. Mehr Klarheit.
-            </h2>
-            <p class="muted visual-text" data-i18n="homeVisualText">
-              NordFit steht für ein ruhiges, modernes Studioerlebnis mit hochwertigem Look, klarer Struktur und digitalem Zugang.
+        <div class="studio-preview-shell glass reveal">
+          <div class="studio-preview-copy">
+            <p class="eyebrow">Studio-Vorschau</p>
+            <h2 class="section-title large-title">Ein Ort, der modern wirkt. Und ruhig bleibt.</h2>
+            <p class="muted studio-preview-text">
+              NordFit soll nicht chaotisch, überfüllt oder laut wirken.
+              Sondern klar, hochwertig und durchdacht — vom ersten Eindruck bis zum letzten Satz auf der Wand.
             </p>
           </div>
 
-          <div class="hero-visual-image">
-            <img
-              src="images/nordfit-app-screen.png"
-              alt="NordFit App und Studio Vorschau"
-            />
+          <div class="studio-preview-image">
+            <div class="studio-main-image-shell">
+              <img src="images/nordfit-app-screen.png" alt="NordFit Studio Vorschau" />
+            </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-tight">
-      <div class="container">
-        <div class="home-panels">
-          <a href="mitgliedschaften.html" class="home-panel card reveal">
-            <p class="eyebrow" data-i18n="homePanelTariffsEyebrow">Tarife</p>
-            <h3 data-i18n="homePanelTariffsTitle">Finde das Modell, das zu dir passt.</h3>
-            <p class="muted" data-i18n="homePanelTariffsText">
-              Klare Preise. Klare Laufzeiten. Kein unnötiger Ballast.
-            </p>
-          </a>
-
-          <a href="app.html" class="home-panel card reveal">
-            <p class="eyebrow" data-i18n="homePanelAppEyebrow">App</p>
-            <h3 data-i18n="homePanelAppTitle">Alles digital. Alles an einem Ort.</h3>
-            <p class="muted" data-i18n="homePanelAppText">
-              Zutritt, Mitgliedschaft und Überblick direkt in der NordFit-App.
-            </p>
-          </a>
-
-          <a href="standorte.html" class="home-panel card reveal">
-            <p class="eyebrow" data-i18n="homePanelLocationsEyebrow">Standorte</p>
-            <h3 data-i18n="homePanelLocationsTitle">Sieh dir Studio und Lage an.</h3>
-            <p class="muted" data-i18n="homePanelLocationsText">
-              Öffnungszeiten, Standortinfos und Orientierung auf einen Blick.
-            </p>
-          </a>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="closing-banner glass reveal text-center">
-          <p class="eyebrow" data-i18n="aboutHeading">Lokal, modern, ehrlich</p>
-          <h2 class="section-title large-title" data-i18n="homeClosingTitle">
-            Fitness soll klar wirken. Nicht schwer.
-          </h2>
-          <p class="muted closing-text" data-i18n="homeClosingText">
-            NordFit verbindet moderne Studios, ruhiges Design und einen direkten digitalen Zugang zu deinem Training.
+        <div class="text-center reveal" style="max-width: 860px; margin: 0 auto 2.5rem;">
+          <p class="eyebrow">Trainingsbereiche</p>
+          <h2 class="section-title large-title">Verschiedene Bereiche. Ein klares Gefühl.</h2>
+          <p class="muted">
+            Jeder Bereich soll seine eigene Aufgabe haben — ohne dass das Studio unruhig oder überladen wirkt.
+          </p>
+        </div>
+
+        <div class="area-grid">
+          <article class="area-card card reveal">
+            <img src="images/nordfit-app-screen.png" alt="Cardio Bereich Vorschau" />
+            <div class="area-card-copy">
+              <p class="eyebrow">Cardio</p>
+              <h3>Ausdauer mit Überblick.</h3>
+              <p class="muted">
+                Laufbänder, Bikes und Geräte für sauberes, ruhiges Cardiotraining in moderner Umgebung.
+              </p>
+            </div>
+          </article>
+
+          <article class="area-card card reveal">
+            <img src="images/nordfit-logo.png" alt="Kraftsport Bereich Vorschau" />
+            <div class="area-card-copy">
+              <p class="eyebrow">Kraftsport</p>
+              <h3>Stark. Direkt. Klar.</h3>
+              <p class="muted">
+                Maschinen und freie Bereiche für fokussiertes Krafttraining ohne unnötige Reizüberflutung.
+              </p>
+            </div>
+          </article>
+
+          <article class="area-card card reveal">
+            <img src="images/nordfit-app-screen.png" alt="Functional Bereich Vorschau" />
+            <div class="area-card-copy">
+              <p class="eyebrow">Functional</p>
+              <h3>Bewegung mit Freiheit.</h3>
+              <p class="muted">
+                Platz für freies Training, Mobilität, Eigengewicht und dynamische Einheiten mit Raumgefühl.
+              </p>
+            </div>
+          </article>
+
+          <article class="area-card card reveal">
+            <img src="images/nordfit-logo.png" alt="Recovery Bereich Vorschau" />
+            <div class="area-card-copy">
+              <p class="eyebrow">Recovery</p>
+              <h3>Ruhiger aus dem Training raus.</h3>
+              <p class="muted">
+                Ein Bereich für Regeneration, Runterkommen und den klaren Abschluss einer starken Einheit.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="home-quote-banner glass reveal text-center">
+          <p class="eyebrow">NordFit Gefühl</p>
+          <h2 class="section-title large-title">Weniger Lärm. Mehr Training.</h2>
+          <p class="muted closing-text">
+            Die Startseite soll nicht alles erklären. Sie soll zeigen, wie sich NordFit anfühlt.
           </p>
         </div>
       </div>
@@ -140,9 +165,9 @@
         <div class="flex footer-row">
           <p>© 2026 NordFit</p>
           <div class="flex footer-links">
-            <a href="impressum.html" data-i18n="footerLegal">Impressum / AGB / Datenschutz</a>
-            <a href="kontakt.html" data-i18n="footerContact">Kontakt</a>
-            <a href="#" data-i18n="footerInstagram">Instagram</a>
+            <a href="impressum.html">Impressum / AGB / Datenschutz</a>
+            <a href="kontakt.html">Kontakt</a>
+            <a href="#">Instagram</a>
           </div>
         </div>
       </div>
