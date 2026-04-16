@@ -165,19 +165,9 @@ function initBurgerMenu() {
   });
 }
 
-function initLocationSelector() {
-  const locationSelect = document.getElementById("location-select");
-  if (!locationSelect) return;
-
-  locationSelect.addEventListener("change", () => {
-    console.log("Später können hier weitere Studios dynamisch geladen werden.");
-  });
-}
-
 document.addEventListener("DOMContentLoaded", () => {
   initBurgerMenu();
   initLanguageSwitcher();
   initModals();
   initScrollAnimations();
-  initLocationSelector();
 });
