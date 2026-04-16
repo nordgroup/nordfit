@@ -18,7 +18,19 @@
           <img src="images/nordfit-logo.png" alt="NordFit-Logo" />
         </a>
 
-        <button id="burger" class="burger" aria-label="Menü öffnen" type="button">☰</button>
+        <button
+          id="burger"
+          class="burger"
+          aria-label="Menü öffnen"
+          aria-expanded="false"
+          type="button"
+        >
+          <span class="burger-lines" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
 
         <nav class="site-nav" aria-label="Hauptnavigation">
           <ul>
@@ -31,9 +43,14 @@
         </nav>
 
         <div class="language-dropdown">
-          <button class="lang-toggle" id="lang-toggle" type="button" aria-expanded="false">
-            <span>DE</span>
-            <span class="lang-caret">⌄</span>
+          <button
+            class="lang-toggle"
+            id="lang-toggle"
+            type="button"
+            aria-expanded="false"
+          >
+            <span class="lang-toggle-label">DE</span>
+            <span class="lang-caret" aria-hidden="true">⌄</span>
           </button>
 
           <div class="lang-menu glass" id="lang-menu">
@@ -62,6 +79,7 @@
 
           <div class="hero-actions">
             <a href="standorte.html" class="btn btn-primary">Studio ansehen</a>
+            <a href="mitgliedschaften.html" class="btn btn-secondary">Mitgliedschaften</a>
           </div>
         </div>
       </div>
@@ -72,11 +90,17 @@
         <div class="studio-preview-shell glass reveal">
           <div class="studio-preview-copy">
             <p class="eyebrow">Studio-Vorschau</p>
-            <h2 class="section-title large-title">Ein Ort, der modern wirkt. Und ruhig bleibt.</h2>
+            <h2 class="section-title large-title">
+              Ein Ort, der modern wirkt. Und ruhig bleibt.
+            </h2>
             <p class="muted studio-preview-text">
               NordFit soll nicht chaotisch, überfüllt oder laut wirken.
-              Sondern klar, hochwertig und durchdacht — vom ersten Eindruck bis zum letzten Bereich.
+              Sondern klar, hochwertig und durchdacht — vom ersten Eindruck bis
+              zum letzten Bereich.
             </p>
+            <a href="standorte.html" class="text-link" style="display:inline-block; margin-top:1.1rem;">
+              Mehr zum Standort ansehen ›
+            </a>
           </div>
 
           <div class="studio-preview-image">
@@ -90,11 +114,14 @@
 
     <section class="section">
       <div class="container">
-        <div class="text-center reveal" style="max-width: 860px; margin: 0 auto 2.5rem;">
+        <div class="text-center reveal" style="max-width: 860px; margin: 0 auto 2.8rem;">
           <p class="eyebrow">Trainingsbereiche</p>
-          <h2 class="section-title large-title">Verschiedene Bereiche. Ein klares Gefühl.</h2>
+          <h2 class="section-title large-title">
+            Verschiedene Bereiche. Ein klares Gefühl.
+          </h2>
           <p class="muted">
-            Jeder Bereich soll seine eigene Aufgabe haben — ohne dass das Studio unruhig oder überladen wirkt.
+            Jeder Bereich soll seine eigene Aufgabe haben — ohne dass das Studio
+            unruhig oder überladen wirkt.
           </p>
         </div>
 
@@ -104,7 +131,8 @@
               <p class="eyebrow">Cardio</p>
               <h3>Ausdauer mit Überblick.</h3>
               <p class="muted">
-                Laufbänder, Bikes und Geräte für sauberes, ruhiges Cardiotraining in moderner Umgebung.
+                Laufbänder, Bikes und Geräte für sauberes, ruhiges Cardiotraining
+                in moderner Umgebung.
               </p>
             </div>
 
@@ -123,7 +151,8 @@
               <p class="eyebrow">Kraftsport</p>
               <h3>Stark. Direkt. Klar.</h3>
               <p class="muted">
-                Maschinen und freie Bereiche für fokussiertes Krafttraining ohne unnötige Reizüberflutung.
+                Maschinen und freie Bereiche für fokussiertes Krafttraining ohne
+                unnötige Reizüberflutung.
               </p>
             </div>
 
@@ -142,7 +171,8 @@
               <p class="eyebrow">Functional</p>
               <h3>Bewegung mit Freiheit.</h3>
               <p class="muted">
-                Platz für freies Training, Mobilität, Eigengewicht und dynamische Einheiten mit Raumgefühl.
+                Platz für freies Training, Mobilität, Eigengewicht und dynamische
+                Einheiten mit Raumgefühl.
               </p>
             </div>
 
@@ -161,7 +191,8 @@
               <p class="eyebrow">Recovery</p>
               <h3>Ruhiger aus dem Training raus.</h3>
               <p class="muted">
-                Ein Bereich für Regeneration, Runterkommen und den klaren Abschluss einer starken Einheit.
+                Ein Bereich für Regeneration, Runterkommen und den klaren
+                Abschluss einer starken Einheit.
               </p>
             </div>
 
@@ -183,8 +214,9 @@
         <div class="home-quote-banner glass reveal text-center">
           <p class="eyebrow">NordFit Gefühl</p>
           <h2 class="section-title large-title">Weniger Lärm. Mehr Training.</h2>
-          <p class="muted closing-text">
-            Die Startseite soll nicht alles erklären. Sie soll zeigen, wie sich NordFit anfühlt.
+          <p class="muted" style="max-width: 760px; margin: 1rem auto 0;">
+            Die Startseite soll nicht alles erklären. Sie soll zeigen, wie sich
+            NordFit anfühlt.
           </p>
         </div>
       </div>
@@ -193,9 +225,9 @@
 
   <footer class="site-footer">
     <div class="container">
-      <div class="glass footer-shell">
+      <div class="footer-shell">
         <div class="flex footer-row">
-          <p>© 2026 NordFit</p>
+          <p class="muted">© 2030 NordFit</p>
           <div class="flex footer-links">
             <a href="impressum.html">Impressum / AGB / Datenschutz</a>
             <a href="kontakt.html">Kontakt</a>
