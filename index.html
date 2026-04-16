@@ -6,200 +6,128 @@
   <title data-i18n="titleHome">NordFit – Startseite</title>
   <meta
     name="description"
-    content="NordFit – modernes Fitnessstudio mit 24/7-Zugang, flexiblen Tarifen und eigener App."
+    content="NordFit – modernes Fitnessstudio mit klarer Vision, 24/7-Zugang und eigener App."
   />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container">
-      <div class="site-header-inner glass">
+      <div class="site-header-inner glass nav-shell">
         <a href="index.html" class="logo" aria-label="NordFit Startseite">
           <img src="images/nordfit-logo.png" alt="NordFit-Logo" />
         </a>
 
-        <button id="burger" class="burger" aria-label="Menü öffnen">☰</button>
+        <button id="burger" class="burger" aria-label="Menü öffnen" type="button">☰</button>
 
         <nav class="site-nav" aria-label="Hauptnavigation">
           <ul>
-            <li><a href="index.html" data-i18n="navHome">Home</a></li>
-            <li><a href="mitgliedschaften.html" data-i18n="navTariffs">Tarife</a></li>
-            <li><a href="standorte.html" data-i18n="navLocations">Standorte</a></li>
-            <li><a href="app.html" data-i18n="navApp">App</a></li>
-            <li><a href="kontakt.html" data-i18n="navContact">Kontakt</a></li>
+            <li><a href="index.html" class="nav-link active" data-i18n="navHome">Startseite</a></li>
+            <li><a href="mitgliedschaften.html" class="nav-link" data-i18n="navTariffs">Tarife</a></li>
+            <li><a href="standorte.html" class="nav-link" data-i18n="navLocations">Standorte</a></li>
+            <li><a href="app.html" class="nav-link" data-i18n="navApp">App</a></li>
+            <li><a href="kontakt.html" class="nav-link" data-i18n="navContact">Kontakt</a></li>
           </ul>
         </nav>
 
-        <div class="lang-switcher">
-          <button class="lang-btn" data-lang="de" type="button">DE</button>
-          <button class="lang-btn" data-lang="en" type="button">EN</button>
-          <button class="lang-btn" data-lang="fr" type="button">FR</button>
+        <div class="language-dropdown">
+          <button class="lang-toggle" id="lang-toggle" type="button" aria-expanded="false">
+            <span>DE</span>
+            <span class="lang-caret">⌄</span>
+          </button>
+
+          <div class="lang-menu glass" id="lang-menu">
+            <button class="lang-option" data-lang="de" type="button">Deutsch</button>
+            <button class="lang-option" data-lang="en" type="button">English</button>
+            <button class="lang-option" data-lang="fr" type="button">Français</button>
+            <button class="lang-option" data-lang="it" type="button">Italiano</button>
+            <button class="lang-option" data-lang="es" type="button">Español</button>
+            <button class="lang-option" data-lang="pl" type="button">Polski</button>
+          </div>
         </div>
       </div>
     </div>
   </header>
 
   <main>
-    <section class="section">
+    <section class="hero-apple section">
       <div class="container">
-        <div class="hero-panel text-center reveal">
-          <h1 data-i18n="heroHeading">Für deinen Weg nach vorn</h1>
-          <p
-            class="muted"
-            data-i18n="heroSub"
-            style="max-width: 760px; margin: 1rem auto 0;"
-          >
-            Dein Fitnessstudio mit 24/7-Zugang
+        <div class="hero-stage reveal">
+          <p class="eyebrow" data-i18n="homeEyebrow">NordFit</p>
+          <h1 class="hero-title" data-i18n="heroHeading">Für deinen Weg nach vorn.</h1>
+          <p class="hero-subtitle" data-i18n="heroSub">
+            Modern. Klar. 24/7. Ein Fitnessstudio, das sich leicht anfühlt und stark wirkt.
           </p>
 
-          <div
-            class="flex-center"
-            style="gap: 1rem; flex-wrap: wrap; margin-top: 2rem;"
-          >
-            <a
-              href="mitgliedschaften.html"
-              class="btn btn-primary"
-              data-i18n="heroCTA"
-            >
-              Tarife entdecken
-            </a>
-
-            <a
-              href="app.html"
-              class="btn"
-              style="
-                background: rgba(255,255,255,0.72);
-                color: var(--dark-text);
-                border: 1px solid rgba(15,23,42,0.08);
-              "
-              data-i18n="homeAppTitle"
-            >
-              Die NordFit-App
-            </a>
+          <div class="hero-actions">
+            <a href="standorte.html" class="btn btn-primary" data-i18n="heroCTA">Studio entdecken</a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="section section-tight">
       <div class="container">
-        <div class="grid-3">
-          <article class="card feature-card reveal text-center">
-            <h3 data-i18n="homeFeaturesTitle1">24/7-Zugang</h3>
-            <p class="muted" data-i18n="homeFeaturesText1">
-              Trainiere, wann du willst – morgens, nachts oder zwischendurch.
+        <div class="hero-visual-card glass reveal">
+          <div class="hero-visual-copy">
+            <p class="eyebrow" data-i18n="homeVisualEyebrow">Ein Raum für Fokus</p>
+            <h2 class="section-title large-title" data-i18n="homeVisualTitle">
+              Weniger Lärm. Mehr Klarheit.
+            </h2>
+            <p class="muted visual-text" data-i18n="homeVisualText">
+              NordFit steht für ein ruhiges, modernes Studioerlebnis mit hochwertigem Look, klarer Struktur und digitalem Zugang.
             </p>
-          </article>
-
-          <article class="card feature-card reveal text-center">
-            <h3 data-i18n="homeFeaturesTitle2">Modernste Geräte</h3>
-            <p class="muted" data-i18n="homeFeaturesText2">
-              Klare, moderne Trainingsfläche mit hochwertigem Equipment.
-            </p>
-          </article>
-
-          <article class="card feature-card reveal text-center">
-            <h3 data-i18n="homeFeaturesTitle3">Flexible Tarife</h3>
-            <p class="muted" data-i18n="homeFeaturesText3">
-              Faire Mitgliedschaften ohne unnötigen Quatsch und ohne Anmeldegebühr.
-            </p>
-          </article>
-        </div>
-
-        <div
-          class="glass text-center reveal"
-          style="padding: 2rem; margin-top: 2rem;"
-        >
-          <h3 data-i18n="homeDaypassTitle">Tagespass für 4,99 €</h3>
-          <p class="muted" data-i18n="homeDaypassText">
-            Ideal zum Testen – 1 Tag freier Zugang zu NordFit.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="text-center" style="margin-bottom: 2rem;">
-          <h2 class="section-title" data-i18n="homeTariffPreviewTitle">Tarifvorschau</h2>
-          <p class="muted" data-i18n="homeTariffPreviewText">
-            Drei klare Modelle. Du entscheidest, was zu dir passt.
-          </p>
-        </div>
-
-        <div class="grid-3">
-          <article class="card tariff-card reveal text-center">
-            <h3 data-i18n="basicName">Basic</h3>
-            <p><strong data-i18n="priceBasic">29,99 € / Monat</strong></p>
-            <p class="muted" data-i18n="durationBasic">Mindestlaufzeit: 8 Monate</p>
-            <p class="muted" data-i18n="cancelMonthly">Danach monatlich kündbar</p>
-            <a href="mitgliedschaften.html" class="btn btn-primary" data-i18n="homeLearnMore">
-              Mehr erfahren
-            </a>
-          </article>
-
-          <article class="card tariff-card reveal text-center">
-            <h3 data-i18n="plusName">Plus</h3>
-            <p><strong data-i18n="pricePlus">34,99 € / Monat</strong></p>
-            <p class="muted" data-i18n="durationPlus">Mindestlaufzeit: 6 Monate</p>
-            <p class="muted" data-i18n="cancelMonthly">Danach monatlich kündbar</p>
-            <a href="mitgliedschaften.html" class="btn btn-primary" data-i18n="homeLearnMore">
-              Mehr erfahren
-            </a>
-          </article>
-
-          <article class="card tariff-card reveal text-center">
-            <h3 data-i18n="proName">Pro</h3>
-            <p><strong data-i18n="pricePro">39,99 € / Monat</strong></p>
-            <p class="muted" data-i18n="durationPro">Mindestlaufzeit: 3 Monate</p>
-            <p class="muted" data-i18n="cancelMonthly">Danach monatlich kündbar</p>
-            <a href="mitgliedschaften.html" class="btn btn-primary" data-i18n="homeLearnMore">
-              Mehr erfahren
-            </a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="grid-2" style="align-items: center;">
-          <div class="reveal">
-            <div class="app-frame">
-              <img
-                src="images/nordfit-app-screen.png"
-                alt="Screenshot der NordFit-App"
-              />
-            </div>
           </div>
 
-          <div class="reveal">
-            <div class="glass" style="padding: 2rem;">
-              <h2 class="section-title" data-i18n="homeAppTitle">Die NordFit-App</h2>
-              <p class="muted" data-i18n="homeAppText">
-                Alle Buchungen, Zutritt per QR-Code, Verwaltung deiner Mitgliedschaft und mehr – alles an einem Ort.
-              </p>
-
-              <div class="flex" style="gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;">
-                <a href="#" class="btn btn-secondary" data-i18n="appStore">App Store</a>
-                <a href="#" class="btn btn-secondary" data-i18n="googlePlay">Google Play</a>
-              </div>
-            </div>
+          <div class="hero-visual-image">
+            <img
+              src="images/nordfit-app-screen.png"
+              alt="NordFit App und Studio Vorschau"
+            />
           </div>
         </div>
       </div>
     </section>
 
+    <section class="section section-tight">
+      <div class="container">
+        <div class="home-panels">
+          <a href="mitgliedschaften.html" class="home-panel card reveal">
+            <p class="eyebrow" data-i18n="homePanelTariffsEyebrow">Tarife</p>
+            <h3 data-i18n="homePanelTariffsTitle">Finde das Modell, das zu dir passt.</h3>
+            <p class="muted" data-i18n="homePanelTariffsText">
+              Klare Preise. Klare Laufzeiten. Kein unnötiger Ballast.
+            </p>
+          </a>
+
+          <a href="app.html" class="home-panel card reveal">
+            <p class="eyebrow" data-i18n="homePanelAppEyebrow">App</p>
+            <h3 data-i18n="homePanelAppTitle">Alles digital. Alles an einem Ort.</h3>
+            <p class="muted" data-i18n="homePanelAppText">
+              Zutritt, Mitgliedschaft und Überblick direkt in der NordFit-App.
+            </p>
+          </a>
+
+          <a href="standorte.html" class="home-panel card reveal">
+            <p class="eyebrow" data-i18n="homePanelLocationsEyebrow">Standorte</p>
+            <h3 data-i18n="homePanelLocationsTitle">Sieh dir Studio und Lage an.</h3>
+            <p class="muted" data-i18n="homePanelLocationsText">
+              Öffnungszeiten, Standortinfos und Orientierung auf einen Blick.
+            </p>
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section class="section">
       <div class="container">
-        <div class="glass text-center reveal" style="padding: 3rem 2rem;">
-          <h2 class="section-title" data-i18n="aboutHeading">Lokal, modern, ehrlich</h2>
-          <p
-            class="muted"
-            data-i18n="aboutText"
-            style="max-width: 800px; margin: 1rem auto 0;"
-          >
-            NordFit steht für ehrliches Training, moderne Studios und einen klaren Weg nach vorn.
+        <div class="closing-banner glass reveal text-center">
+          <p class="eyebrow" data-i18n="aboutHeading">Lokal, modern, ehrlich</p>
+          <h2 class="section-title large-title" data-i18n="homeClosingTitle">
+            Fitness soll klar wirken. Nicht schwer.
+          </h2>
+          <p class="muted closing-text" data-i18n="homeClosingText">
+            NordFit verbindet moderne Studios, ruhiges Design und einen direkten digitalen Zugang zu deinem Training.
           </p>
         </div>
       </div>
@@ -208,10 +136,10 @@
 
   <footer class="site-footer">
     <div class="container">
-      <div class="glass">
-        <div class="flex" style="justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+      <div class="glass footer-shell">
+        <div class="flex footer-row">
           <p>© 2026 NordFit</p>
-          <div class="flex" style="gap: 1rem; flex-wrap: wrap;">
+          <div class="flex footer-links">
             <a href="impressum.html" data-i18n="footerLegal">Impressum / AGB / Datenschutz</a>
             <a href="kontakt.html" data-i18n="footerContact">Kontakt</a>
             <a href="#" data-i18n="footerInstagram">Instagram</a>
