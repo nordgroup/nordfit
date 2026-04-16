@@ -1882,3 +1882,57 @@ iframe {
     width: min(220px, calc(100vw - 0.9rem));
   }
 }
+
+/* =========================
+   APP PAGE FINAL FIX
+   ========================= */
+
+.app-page-hero-grid {
+  align-items: center;
+}
+
+.app-screen-stage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.app-screen-image {
+  width: 100%;
+  max-width: 340px;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.14));
+}
+
+.app-need-list {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.app-need-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 1rem 1.05rem;
+  border-radius: 18px;
+  background: rgba(255,255,255,0.62);
+  border: 1px solid rgba(255,255,255,0.78);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.5);
+}
+
+.app-need-title {
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+@media (max-width: 768px) {
+  .app-screen-stage {
+    padding: 0.5rem 0 0;
+  }
+
+  .app-screen-image {
+    max-width: 300px;
+  }
+}
