@@ -6,14 +6,14 @@
   <title>NordFit – Startseite</title>
   <meta
     name="description"
-    content="NordFit – modernes Fitnessstudio mit klarer Atmosphäre, hochwertigen Bereichen und ruhigem Premium-Design."
+    content="NordFit – modernes Fitnessstudio mit klarer Atmosphäre, hochwertigen Trainingsbereichen und ruhigem Premium-Design."
   />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container">
-      <div class="site-header-inner glass nav-shell">
+      <div class="site-header-inner glass">
         <a href="index.html" class="logo" aria-label="NordFit Startseite">
           <img src="images/nordfit-logo.png" alt="NordFit-Logo" />
         </a>
@@ -21,9 +21,9 @@
         <button
           id="burger"
           class="burger"
+          type="button"
           aria-label="Menü öffnen"
           aria-expanded="false"
-          type="button"
         >
           <span class="burger-lines" aria-hidden="true">
             <span></span>
@@ -44,8 +44,8 @@
 
         <div class="language-dropdown">
           <button
-            class="lang-toggle"
             id="lang-toggle"
+            class="lang-toggle"
             type="button"
             aria-expanded="false"
           >
@@ -53,7 +53,7 @@
             <span class="lang-caret" aria-hidden="true">⌄</span>
           </button>
 
-          <div class="lang-menu glass" id="lang-menu">
+          <div id="lang-menu" class="lang-menu glass">
             <button class="lang-option" data-lang="de" type="button">Deutsch</button>
             <button class="lang-option" data-lang="en" type="button">English</button>
             <button class="lang-option" data-lang="fr" type="button">Français</button>
@@ -78,7 +78,9 @@
           </p>
 
           <div class="hero-actions">
-            <a href="standorte.html" class="btn btn-primary">Studio ansehen</a>
+            <a href="mitgliedschaften.html" class="btn btn-primary">Mitgliedschaften</a>
+            <a href="app.html" class="btn btn-secondary">App</a>
+            <a href="standorte.html" class="btn btn-secondary">Standorte</a>
           </div>
         </div>
       </div>
@@ -87,7 +89,7 @@
     <section class="section section-tight">
       <div class="container">
         <div class="glass reveal" style="padding: 1.2rem;">
-          <div class="image-frame image-frame-large" style="max-width: none; min-height: 560px;">
+          <div class="image-frame image-frame-large">
             <span class="image-frame-label">Studio Hero Bild</span>
           </div>
         </div>
@@ -96,12 +98,12 @@
 
     <section class="section">
       <div class="container">
-        <div class="text-center reveal" style="max-width: 880px; margin: 0 auto 3rem;">
+        <div class="text-center reveal" style="max-width: 860px; margin: 0 auto 3rem;">
           <p class="eyebrow">Trainingsbereiche</p>
           <h2 class="section-title large-title">Verschiedene Bereiche. Ein klares Gefühl.</h2>
           <p class="muted">
             Jeder Bereich soll seine eigene Aufgabe haben — ohne dass das Studio
-            unruhig oder überladen wirkt.
+            chaotisch, laut oder überladen wirkt.
           </p>
         </div>
 
@@ -112,7 +114,7 @@
               <h3>Ausdauer mit Überblick.</h3>
               <p class="muted">
                 Laufbänder, Bikes und Cardio-Geräte für ruhiges, modernes
-                Ausdauertraining mit klarem Raumgefühl.
+                Ausdauertraining mit klarer Struktur.
               </p>
             </div>
 
@@ -131,8 +133,8 @@
               <p class="eyebrow">Kraftsport</p>
               <h3>Stark. Direkt. Klar.</h3>
               <p class="muted">
-                Freie Gewichte und Maschinen für fokussiertes Krafttraining ohne
-                Reizüberflutung und ohne Unruhe.
+                Freie Gewichte und Maschinen für fokussiertes Krafttraining
+                ohne unnötige Reizüberflutung.
               </p>
             </div>
 
@@ -151,8 +153,8 @@
               <p class="eyebrow">Functional</p>
               <h3>Bewegung mit Freiheit.</h3>
               <p class="muted">
-                Mehr Raum für Mobilität, Eigengewicht, freie Übungen und dynamische
-                Einheiten mit offener Struktur.
+                Mehr Raum für Mobilität, Eigengewicht, freie Übungen
+                und dynamische Einheiten.
               </p>
             </div>
 
@@ -171,8 +173,8 @@
               <p class="eyebrow">Recovery</p>
               <h3>Ruhiger aus dem Training raus.</h3>
               <p class="muted">
-                Ein Bereich für Regeneration, Runterkommen und einen sauberen,
-                hochwertigen Abschluss deiner Einheit.
+                Ein Bereich für Regeneration, Runterkommen und einen
+                sauberen Abschluss deiner Einheit.
               </p>
             </div>
 
@@ -191,12 +193,12 @@
 
     <section class="section">
       <div class="container">
-        <div class="home-quote-banner glass reveal text-center">
+        <div class="glass reveal text-center" style="padding: 3rem 2rem;">
           <p class="eyebrow">NordFit Gefühl</p>
           <h2 class="section-title large-title">Weniger Lärm. Mehr Training.</h2>
           <p class="muted" style="max-width: 760px; margin: 1rem auto 0;">
-            Die Startseite soll nicht alles erklären. Sie soll zeigen, wie sich
-            NordFit anfühlt.
+            Die Startseite soll nicht alles erklären. Sie soll zeigen,
+            wie sich NordFit anfühlt.
           </p>
         </div>
       </div>
@@ -211,7 +213,7 @@
           <div class="flex footer-links">
             <a href="impressum.html">Impressum / AGB / Datenschutz</a>
             <a href="kontakt.html">Kontakt</a>
-            <a href="#">Instagram</a>
+            <a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
         </div>
       </div>
