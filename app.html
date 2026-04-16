@@ -18,7 +18,19 @@
           <img src="images/nordfit-logo.png" alt="NordFit-Logo" />
         </a>
 
-        <button id="burger" class="burger" aria-label="Menü öffnen" type="button">☰</button>
+        <button
+          id="burger"
+          class="burger"
+          aria-label="Menü öffnen"
+          aria-expanded="false"
+          type="button"
+        >
+          <span class="burger-lines" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
 
         <nav class="site-nav" aria-label="Hauptnavigation">
           <ul>
@@ -31,9 +43,14 @@
         </nav>
 
         <div class="language-dropdown">
-          <button class="lang-toggle" id="lang-toggle" type="button" aria-expanded="false">
-            <span>DE</span>
-            <span class="lang-caret">⌄</span>
+          <button
+            class="lang-toggle"
+            id="lang-toggle"
+            type="button"
+            aria-expanded="false"
+          >
+            <span class="lang-toggle-label">DE</span>
+            <span class="lang-caret" aria-hidden="true">⌄</span>
           </button>
 
           <div class="lang-menu glass" id="lang-menu">
@@ -56,7 +73,8 @@
           <p class="eyebrow">NordFit App</p>
           <h1 class="hero-title small-hero">Alles, was zählt. In deiner Hand.</h1>
           <p class="hero-subtitle">
-            Zutritt per QR-Code, Mitgliedschaften verwalten, Tagespass kaufen und dein Studio digital im Blick behalten.
+            Zutritt per QR-Code, Mitgliedschaften verwalten, Tagespass kaufen und dein
+            Studio digital im Blick behalten.
           </p>
         </div>
       </div>
@@ -69,14 +87,18 @@
             <p class="eyebrow">Digitaler Zugang</p>
             <h2 class="section-title large-title">Einfach rein. Ohne Umwege.</h2>
             <p class="muted app-showcase-text">
-              Die NordFit-App verbindet Zugang, Verwaltung und Übersicht in einer klaren, ruhigen Oberfläche.
-              Weniger Schritte. Weniger Reibung. Mehr Fokus.
+              Die NordFit-App verbindet Zugang, Verwaltung und Übersicht in einer klaren,
+              ruhigen Oberfläche. Weniger Schritte. Weniger Reibung. Mehr Fokus.
             </p>
 
             <div class="app-store-row">
               <a href="#" class="btn btn-primary">App Store</a>
               <a href="#" class="btn btn-secondary">Google Play</a>
             </div>
+
+            <a href="mitgliedschaften.html" class="text-link" style="display:inline-block; margin-top:1.15rem;">
+              Mitgliedschaften ansehen ›
+            </a>
           </div>
 
           <div class="app-showcase-device">
@@ -124,10 +146,34 @@
 
     <section class="section">
       <div class="container">
+        <div class="grid-2">
+          <article class="glass section-block reveal">
+            <p class="eyebrow">Verwaltung</p>
+            <h2 class="section-title">Alles an einem Ort.</h2>
+            <p class="muted" style="margin-top: 1rem;">
+              Mitgliedschaft, Zutritt und Überblick laufen zentral über die App.
+              Dadurch bleibt der gesamte Ablauf modern und klar.
+            </p>
+          </article>
+
+          <article class="glass section-block reveal">
+            <p class="eyebrow">Ausblick</p>
+            <h2 class="section-title">Ein ruhiger digitaler Weg ins Training.</h2>
+            <p class="muted" style="margin-top: 1rem;">
+              Die App soll sich nicht vollgestopft anfühlen, sondern direkt, schnell
+              und hochwertig — passend zum gesamten NordFit-Auftritt.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
         <div class="glass app-bottom-banner reveal text-center">
           <p class="eyebrow">NordFit digital</p>
           <h2 class="section-title large-title">Weniger Papier. Mehr Klarheit.</h2>
-          <p class="muted closing-text">
+          <p class="muted" style="max-width: 760px; margin: 1rem auto 0;">
             Die App soll nicht einfach nur „noch eine Fitnessstudio-App“ sein,
             sondern der direkteste Weg in dein Training.
           </p>
@@ -140,7 +186,7 @@
     <div class="container">
       <div class="footer-shell">
         <div class="flex footer-row">
-          <p class="muted">© 2026 NordFit</p>
+          <p class="muted">© 2030 NordFit</p>
           <div class="flex footer-links">
             <a href="impressum.html">Impressum / AGB / Datenschutz</a>
             <a href="kontakt.html">Kontakt</a>
