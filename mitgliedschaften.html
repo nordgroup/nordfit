@@ -6,14 +6,14 @@
   <title data-i18n="titleTariffs">NordFit – Tarife</title>
   <meta
     name="description"
-    content="NordFit Tarife – flexible Mitgliedschaften, faire Preise und Tagespass."
+    content="NordFit Tarife – klare Mitgliedschaften, faire Preise und digitaler Abschluss über die App."
   />
   <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container">
-      <div class="site-header-inner glass">
+      <div class="site-header-inner glass nav-shell">
         <a href="index.html" class="logo" aria-label="NordFit Startseite">
           <img src="images/nordfit-logo.png" alt="NordFit-Logo" />
         </a>
@@ -22,18 +22,28 @@
 
         <nav class="site-nav" aria-label="Hauptnavigation">
           <ul>
-            <li><a href="index.html" data-i18n="navHome">Home</a></li>
-            <li><a href="mitgliedschaften.html" data-i18n="navTariffs">Tarife</a></li>
-            <li><a href="standorte.html" data-i18n="navLocations">Standorte</a></li>
-            <li><a href="app.html" data-i18n="navApp">App</a></li>
-            <li><a href="kontakt.html" data-i18n="navContact">Kontakt</a></li>
+            <li><a href="index.html" class="nav-link" data-i18n="navHome">Startseite</a></li>
+            <li><a href="mitgliedschaften.html" class="nav-link active" data-i18n="navTariffs">Tarife</a></li>
+            <li><a href="standorte.html" class="nav-link" data-i18n="navLocations">Standorte</a></li>
+            <li><a href="app.html" class="nav-link" data-i18n="navApp">App</a></li>
+            <li><a href="kontakt.html" class="nav-link" data-i18n="navContact">Kontakt</a></li>
           </ul>
         </nav>
 
-        <div class="lang-switcher">
-          <button class="lang-btn" data-lang="de" type="button">DE</button>
-          <button class="lang-btn" data-lang="en" type="button">EN</button>
-          <button class="lang-btn" data-lang="fr" type="button">FR</button>
+        <div class="language-dropdown">
+          <button class="lang-toggle" id="lang-toggle" type="button" aria-expanded="false">
+            <span>DE</span>
+            <span class="lang-caret">⌄</span>
+          </button>
+
+          <div class="lang-menu glass" id="lang-menu">
+            <button class="lang-option" data-lang="de" type="button">Deutsch</button>
+            <button class="lang-option" data-lang="en" type="button">English</button>
+            <button class="lang-option" data-lang="fr" type="button">Français</button>
+            <button class="lang-option" data-lang="it" type="button">Italiano</button>
+            <button class="lang-option" data-lang="es" type="button">Español</button>
+            <button class="lang-option" data-lang="pl" type="button">Polski</button>
+          </div>
         </div>
       </div>
     </div>
@@ -42,78 +52,87 @@
   <main>
     <section class="section">
       <div class="container">
-        <div class="glass text-center reveal" style="padding: 3rem 2rem;">
-          <h1 class="section-title" data-i18n="tariffsTitle">Mitgliedschaften & Tarife</h1>
-          <p class="muted" data-i18n="tariffsIntro" style="max-width: 820px; margin: 1rem auto 0;">
+        <div class="text-center reveal" style="max-width: 920px; margin: 0 auto;">
+          <p class="eyebrow" data-i18n="tariffsEyebrow">Mitgliedschaften</p>
+          <h1 class="hero-title small-hero" data-i18n="tariffsTitle">Mitgliedschaften & Tarife</h1>
+          <p class="hero-subtitle" data-i18n="tariffsIntro">
             Mitgliedschaften können nur in der NordFit-App abgeschlossen und gekündigt werden.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="section" style="padding-top: 0;">
+    <section class="section section-tight">
       <div class="container">
-        <div class="grid-3">
-          <article class="card tariff-card reveal text-center">
-            <h2 data-i18n="basicName">Basic</h2>
-            <p><strong data-i18n="priceBasic">29,99 € / Monat</strong></p>
-            <p class="muted" data-i18n="durationBasic">Mindestlaufzeit: 8 Monate</p>
-            <p class="muted" data-i18n="cancelMonthly">Danach monatlich kündbar</p>
-            <p class="muted" data-i18n="noCourses">Kein Getränke- oder Kursangebot</p>
+        <div class="pricing-grid">
+          <article class="pricing-card card reveal">
+            <p class="eyebrow" data-i18n="basicName">Basic</p>
+            <h2 class="price-line" data-i18n="priceBasic">29,99 € / Monat</h2>
+            <div class="pricing-details">
+              <p class="muted" data-i18n="durationBasic">Mindestlaufzeit: 8 Monate</p>
+              <p class="muted" data-i18n="cancelMonthly">Danach monatlich kündbar</p>
+              <p class="muted" data-i18n="noCourses">Kein Getränke- oder Kursangebot</p>
+            </div>
           </article>
 
-          <article class="card tariff-card reveal text-center">
-            <h2 data-i18n="plusName">Plus</h2>
-            <p><strong data-i18n="pricePlus">34,99 € / Monat</strong></p>
-            <p class="muted" data-i18n="durationPlus">Mindestlaufzeit: 6 Monate</p>
-            <p class="muted" data-i18n="cancelMonthly">Danach monatlich kündbar</p>
-            <p class="muted" data-i18n="noCourses">Kein Getränke- oder Kursangebot</p>
+          <article class="pricing-card card featured-pricing reveal">
+            <div class="pricing-badge" data-i18n="pricingBadge">Empfohlen</div>
+            <p class="eyebrow" data-i18n="plusName">Plus</p>
+            <h2 class="price-line" data-i18n="pricePlus">34,99 € / Monat</h2>
+            <div class="pricing-details">
+              <p class="muted" data-i18n="durationPlus">Mindestlaufzeit: 6 Monate</p>
+              <p class="muted" data-i18n="cancelMonthly">Danach monatlich kündbar</p>
+              <p class="muted" data-i18n="noCourses">Kein Getränke- oder Kursangebot</p>
+            </div>
           </article>
 
-          <article class="card tariff-card reveal text-center">
-            <h2 data-i18n="proName">Pro</h2>
-            <p><strong data-i18n="pricePro">39,99 € / Monat</strong></p>
-            <p class="muted" data-i18n="durationPro">Mindestlaufzeit: 3 Monate</p>
-            <p class="muted" data-i18n="cancelMonthly">Danach monatlich kündbar</p>
-            <p class="muted" data-i18n="noCourses">Kein Getränke- oder Kursangebot</p>
+          <article class="pricing-card card reveal">
+            <p class="eyebrow" data-i18n="proName">Pro</p>
+            <h2 class="price-line" data-i18n="pricePro">39,99 € / Monat</h2>
+            <div class="pricing-details">
+              <p class="muted" data-i18n="durationPro">Mindestlaufzeit: 3 Monate</p>
+              <p class="muted" data-i18n="cancelMonthly">Danach monatlich kündbar</p>
+              <p class="muted" data-i18n="noCourses">Kein Getränke- oder Kursangebot</p>
+            </div>
           </article>
         </div>
 
-        <div class="glass text-center reveal" style="padding: 2rem; margin-top: 2rem;">
-          <h2 data-i18n="daypassTitle">Tagespass</h2>
-          <p><strong data-i18n="daypassPrice">4,99 € für einen Tag</strong></p>
-          <p class="muted" data-i18n="daypassText">Ideal zum Testen – 1 Tag freier Zugang</p>
+        <div class="glass reveal daypass-shell">
+          <div>
+            <p class="eyebrow" data-i18n="daypassTitle">Tagespass</p>
+            <h2 class="section-title" data-i18n="daypassPrice">4,99 € für einen Tag</h2>
+            <p class="muted" data-i18n="daypassText">Ideal zum Testen – 1 Tag freier Zugang</p>
+          </div>
+
+          <a href="app.html" class="btn btn-primary" data-i18n="daypassCTA">Über die App kaufen</a>
         </div>
       </div>
     </section>
 
     <section class="section">
       <div class="container">
-        <div class="text-center" style="margin-bottom: 2rem;">
-          <h2 class="section-title" data-i18n="faqTitle">FAQ</h2>
-        </div>
+        <div class="glass section-block reveal">
+          <div class="text-center" style="margin-bottom: 2rem;">
+            <p class="eyebrow" data-i18n="faqEyebrow">Fragen</p>
+            <h2 class="section-title" data-i18n="faqTitle">FAQ</h2>
+          </div>
 
-        <div class="grid" style="max-width: 920px; margin: 0 auto;">
-          <article class="card reveal">
-            <h3 data-i18n="faqQ1">Wie funktioniert der Zutritt?</h3>
-            <p class="muted" data-i18n="faqA1">
-              Der Zutritt erfolgt nur über die App mittels QR-Code.
-            </p>
-          </article>
+          <div class="faq-list">
+            <article class="faq-item">
+              <h3 data-i18n="faqQ1">Wie funktioniert der Zutritt?</h3>
+              <p class="muted" data-i18n="faqA1">Der Zutritt erfolgt nur über die App mittels QR-Code.</p>
+            </article>
 
-          <article class="card reveal">
-            <h3 data-i18n="faqQ2">Gibt es Personal Training oder Kurse?</h3>
-            <p class="muted" data-i18n="faqA2">
-              In Studio 1 zum Start noch nicht.
-            </p>
-          </article>
+            <article class="faq-item">
+              <h3 data-i18n="faqQ2">Gibt es Personal Training oder Kurse?</h3>
+              <p class="muted" data-i18n="faqA2">In Studio 1 zum Start noch nicht.</p>
+            </article>
 
-          <article class="card reveal">
-            <h3 data-i18n="faqQ3">Ist die Kündigung nach der Mindestlaufzeit monatlich möglich?</h3>
-            <p class="muted" data-i18n="faqA3">
-              Ja, nach der Mindestlaufzeit ist die Kündigung monatlich möglich.
-            </p>
-          </article>
+            <article class="faq-item">
+              <h3 data-i18n="faqQ3">Ist die Kündigung nach der Mindestlaufzeit monatlich möglich?</h3>
+              <p class="muted" data-i18n="faqA3">Ja, nach der Mindestlaufzeit ist die Kündigung monatlich möglich.</p>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -121,9 +140,10 @@
     <section class="section">
       <div class="container">
         <div class="grid-2" style="align-items: start;">
-          <div class="glass reveal" style="padding: 2rem;">
+          <div class="glass section-block reveal">
+            <p class="eyebrow" data-i18n="contactBlockEyebrow">Kontakt</p>
             <h2 class="section-title" data-i18n="contactBlockTitle">Fragen? Schreib uns.</h2>
-            <p class="muted" data-i18n="contactBlockText" style="margin-top: 1rem;">
+            <p class="muted" data-i18n="contactBlockText">
               Bei Fragen erreichst du uns auch unter info@nordfit.de oder via Instagram @nordfit.
             </p>
           </div>
@@ -136,7 +156,7 @@
                 id="name"
                 name="name"
                 required
-                style="width: 100%; margin-top: 0.5rem; padding: 0.9rem 1rem;"
+                style="width: 100%; margin-top: 0.5rem; padding: 0.95rem 1rem;"
               />
             </div>
 
@@ -147,7 +167,7 @@
                 id="email"
                 name="email"
                 required
-                style="width: 100%; margin-top: 0.5rem; padding: 0.9rem 1rem;"
+                style="width: 100%; margin-top: 0.5rem; padding: 0.95rem 1rem;"
               />
             </div>
 
@@ -158,7 +178,7 @@
                 name="message"
                 rows="5"
                 required
-                style="width: 100%; margin-top: 0.5rem; padding: 0.9rem 1rem; resize: vertical;"
+                style="width: 100%; margin-top: 0.5rem; padding: 0.95rem 1rem; resize: vertical;"
               ></textarea>
             </div>
 
@@ -171,10 +191,10 @@
 
   <footer class="site-footer">
     <div class="container">
-      <div class="glass">
-        <div class="flex" style="justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
+      <div class="glass footer-shell">
+        <div class="flex footer-row">
           <p>© 2026 NordFit</p>
-          <div class="flex" style="gap: 1rem; flex-wrap: wrap;">
+          <div class="flex footer-links">
             <a href="impressum.html" data-i18n="footerLegal">Impressum / AGB / Datenschutz</a>
             <a href="kontakt.html" data-i18n="footerContact">Kontakt</a>
             <a href="#" data-i18n="footerInstagram">Instagram</a>
