@@ -329,3 +329,99 @@
     align-items: flex-start;
   }
 }
+.app-showcase {
+  display: grid;
+  grid-template-columns: 1fr 0.95fr;
+  gap: 2rem;
+  align-items: center;
+  padding: 2rem;
+  border-radius: 34px;
+  overflow: hidden;
+}
+
+.app-showcase-copy {
+  padding: 1rem;
+}
+
+.app-showcase-text {
+  max-width: 640px;
+  margin-top: 1rem;
+  font-size: 1.05rem;
+}
+
+.app-store-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 1.75rem;
+}
+
+.app-showcase-device {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.device-shell {
+  position: relative;
+  width: 100%;
+  max-width: 330px;
+  padding: 14px;
+  border-radius: 42px;
+  background:
+    linear-gradient(180deg, rgba(30, 30, 34, 0.96), rgba(12, 12, 16, 0.96));
+  box-shadow:
+    0 22px 60px rgba(15, 23, 42, 0.22),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+}
+
+.device-notch {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 34%;
+  height: 22px;
+  border-radius: 0 0 18px 18px;
+  background: #0b0b0f;
+  z-index: 2;
+}
+
+.device-shell img {
+  width: 100%;
+  border-radius: 30px;
+  display: block;
+}
+
+.feature-split-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+.feature-split-card {
+  min-height: 250px;
+}
+
+.feature-split-card h3 {
+  font-size: 1.5rem;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  margin-bottom: 0.8rem;
+}
+
+.app-bottom-banner {
+  padding: 3rem 2rem;
+  border-radius: 34px;
+}
+
+@media (max-width: 980px) {
+  .app-showcase,
+  .feature-split-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-showcase-copy {
+    padding: 0;
+  }
+}
