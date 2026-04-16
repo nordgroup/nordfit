@@ -18,7 +18,19 @@
           <img src="images/nordfit-logo.png" alt="NordFit-Logo" />
         </a>
 
-        <button id="burger" class="burger" aria-label="Menü öffnen" type="button">☰</button>
+        <button
+          id="burger"
+          class="burger"
+          aria-label="Menü öffnen"
+          aria-expanded="false"
+          type="button"
+        >
+          <span class="burger-lines" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
 
         <nav class="site-nav" aria-label="Hauptnavigation">
           <ul>
@@ -31,9 +43,14 @@
         </nav>
 
         <div class="language-dropdown">
-          <button class="lang-toggle" id="lang-toggle" type="button" aria-expanded="false">
-            <span>DE</span>
-            <span class="lang-caret">⌄</span>
+          <button
+            class="lang-toggle"
+            id="lang-toggle"
+            type="button"
+            aria-expanded="false"
+          >
+            <span class="lang-toggle-label">DE</span>
+            <span class="lang-caret" aria-hidden="true">⌄</span>
           </button>
 
           <div class="lang-menu glass" id="lang-menu">
@@ -56,7 +73,8 @@
           <p class="eyebrow">NordFit Tarife</p>
           <h1 class="hero-title small-hero">Entdecke das Modell, das zu dir passt.</h1>
           <p class="hero-subtitle">
-            Drei klare Mitgliedschaften, eine ruhige Struktur und ein Tagespass zum einfachen Testen.
+            Drei klare Mitgliedschaften, eine ruhige Struktur und ein Tagespass zum
+            einfachen Testen.
           </p>
         </div>
       </div>
@@ -64,7 +82,7 @@
 
     <section class="section section-tight">
       <div class="container">
-        <div class="glass" style="padding: 0.45rem; border-radius: 999px; max-width: 620px; margin: 0 auto 2rem;">
+        <div class="glass" style="padding: 0.45rem; border-radius: 999px; max-width: 620px; margin: 0 auto 2.2rem;">
           <div class="site-nav" style="display:block;">
             <ul style="justify-content:center;">
               <li><a href="#" class="nav-link active">Alle Tarife</a></li>
@@ -77,13 +95,17 @@
         <div class="pricing-grid">
           <article class="pricing-card card reveal">
             <p class="eyebrow">Basic</p>
-            <h2 class="price-line">29,99 € / Monat</h2>
+            <h2 class="price-line">29,99 €</h2>
+            <p class="muted" style="margin-bottom: 1rem;">pro Monat</p>
+
             <div class="pricing-details">
               <p class="muted">Mindestlaufzeit: 8 Monate</p>
               <p class="muted">Danach monatlich kündbar</p>
               <p class="muted">Kein Getränke- oder Kursangebot</p>
+              <p class="muted">Ideal für einen klaren Einstieg</p>
             </div>
-            <div style="margin-top: 1.5rem;">
+
+            <div style="margin-top: 1.7rem;">
               <a href="app.html" class="btn btn-primary">In der App starten</a>
             </div>
           </article>
@@ -91,26 +113,34 @@
           <article class="pricing-card card featured-pricing reveal">
             <div class="pricing-badge">Empfohlen</div>
             <p class="eyebrow">Plus</p>
-            <h2 class="price-line">34,99 € / Monat</h2>
+            <h2 class="price-line">34,99 €</h2>
+            <p class="muted" style="margin-bottom: 1rem;">pro Monat</p>
+
             <div class="pricing-details">
               <p class="muted">Mindestlaufzeit: 6 Monate</p>
               <p class="muted">Danach monatlich kündbar</p>
               <p class="muted">Kein Getränke- oder Kursangebot</p>
+              <p class="muted">Das ausgewogenste Modell für NordFit</p>
             </div>
-            <div style="margin-top: 1.5rem;">
+
+            <div style="margin-top: 1.7rem;">
               <a href="app.html" class="btn btn-primary">In der App starten</a>
             </div>
           </article>
 
           <article class="pricing-card card reveal">
             <p class="eyebrow">Pro</p>
-            <h2 class="price-line">39,99 € / Monat</h2>
+            <h2 class="price-line">39,99 €</h2>
+            <p class="muted" style="margin-bottom: 1rem;">pro Monat</p>
+
             <div class="pricing-details">
               <p class="muted">Mindestlaufzeit: 3 Monate</p>
               <p class="muted">Danach monatlich kündbar</p>
               <p class="muted">Kein Getränke- oder Kursangebot</p>
+              <p class="muted">Mehr Freiheit bei kürzerer Laufzeit</p>
             </div>
-            <div style="margin-top: 1.5rem;">
+
+            <div style="margin-top: 1.7rem;">
               <a href="app.html" class="btn btn-primary">In der App starten</a>
             </div>
           </article>
@@ -133,7 +163,9 @@
           <div class="text-center" style="max-width: 760px; margin: 0 auto 2rem;">
             <p class="eyebrow">FAQ</p>
             <h2 class="section-title">Kurz erklärt</h2>
-            <p class="muted">Alles Wesentliche ruhig, klar und direkt auf einen Blick.</p>
+            <p class="muted">
+              Alles Wesentliche ruhig, klar und direkt auf einen Blick.
+            </p>
           </div>
 
           <div class="faq-list">
@@ -155,13 +187,42 @@
         </div>
       </div>
     </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="grid-2">
+          <article class="glass section-block reveal">
+            <p class="eyebrow">Hinweis</p>
+            <h2 class="section-title">Alles läuft über die App.</h2>
+            <p class="muted" style="margin-top: 1rem;">
+              Mitgliedschaften werden nicht klassisch auf Papier abgeschlossen,
+              sondern digital und direkt in der NordFit-App verwaltet.
+            </p>
+            <a href="app.html" class="text-link" style="display:inline-block; margin-top:1.1rem;">
+              Mehr zur App ansehen ›
+            </a>
+          </article>
+
+          <article class="glass section-block reveal">
+            <p class="eyebrow">Fragen</p>
+            <h2 class="section-title">Du bist dir noch unsicher?</h2>
+            <p class="muted" style="margin-top: 1rem;">
+              Dann schau dir zuerst den Tagespass an oder schreib uns direkt über die Kontaktseite.
+            </p>
+            <a href="kontakt.html" class="text-link" style="display:inline-block; margin-top:1.1rem;">
+              Kontakt aufnehmen ›
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <div class="glass footer-shell">
+      <div class="footer-shell">
         <div class="flex footer-row">
-          <p>© 2026 NordFit</p>
+          <p class="muted">© 2030 NordFit</p>
           <div class="flex footer-links">
             <a href="impressum.html">Impressum / AGB / Datenschutz</a>
             <a href="kontakt.html">Kontakt</a>
