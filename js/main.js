@@ -35,6 +35,11 @@ function setLanguage(lang = "de") {
     }
   });
 
+  const langToggleText = document.querySelector("#lang-toggle span");
+  if (langToggleText) {
+    langToggleText.textContent = lang.toUpperCase();
+  }
+
   document.documentElement.lang = lang;
   localStorage.setItem("nordfit-language", lang);
 }
@@ -64,9 +69,7 @@ function initModals() {
   closeButtons.forEach((button) => {
     button.addEventListener("click", () => {
       const modal = button.closest(".modal");
-      if (modal) {
-        closeModal(modal.id);
-      }
+      if (modal) closeModal(modal.id);
     });
   });
 
@@ -102,21 +105,41 @@ function initScrollAnimations() {
         }
       });
     },
-    {
-      threshold: 0.14,
-    }
+    { threshold: 0.14 }
   );
 
   revealElements.forEach((element) => observer.observe(element));
 }
 
 function initLanguageSwitcher() {
-  const langButtons = document.querySelectorAll("[data-lang]");
+  const langToggle = document.getElementById("lang-toggle");
+  const langMenu = document.getElementById("lang-menu");
+  const langOptions = document.querySelectorAll(".lang-option");
 
-  langButtons.forEach((button) => {
+  if (langToggle && langMenu) {
+    langToggle.addEventListener("click", () => {
+      const isOpen = langMenu.classList.toggle("show");
+      langToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    document.addEventListener("click", (event) => {
+      const clickedInside = event.target.closest(".language-dropdown");
+      if (!clickedInside) {
+        langMenu.classList.remove("show");
+        langToggle.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  langOptions.forEach((button) => {
     button.addEventListener("click", () => {
       const lang = button.getAttribute("data-lang");
       setLanguage(lang);
+
+      if (langMenu && langToggle) {
+        langMenu.classList.remove("show");
+        langToggle.setAttribute("aria-expanded", "false");
+      }
     });
   });
 
