@@ -1432,3 +1432,29 @@ iframe {
     font-size: 0.96rem;
   }
 }
+
+.app-showcase-device {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.device-stage {
+  min-height: 100%;
+}
+
+.feature-split-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.feature-split-card p.muted {
+  margin-top: 0.2rem;
+}
+
+@media (max-width: 768px) {
+  .app-showcase-device {
+    margin-top: 0.5rem;
+  }
+}
