@@ -2210,3 +2210,173 @@ iframe {
     min-height: 195px !important;
   }
 }
+
+/* =========================
+   LANGUAGE + BURGER PREMIUM
+   ========================= */
+
+/* Sprachbutton */
+.lang-toggle {
+  min-width: 96px !important;
+  height: 46px !important;
+  padding: 0 0.95rem 0 1.05rem !important;
+  gap: 0.65rem !important;
+  border-radius: 999px !important;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.42), rgba(255,255,255,0.10)) !important;
+  border: 1px solid rgba(255,255,255,0.30) !important;
+  box-shadow:
+    0 16px 34px rgba(0,0,0,0.09),
+    inset 0 1px 0 rgba(255,255,255,0.16),
+    inset 0 -1px 0 rgba(255,255,255,0.02) !important;
+  backdrop-filter: blur(42px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(42px) saturate(200%) !important;
+}
+
+.lang-toggle:hover,
+.lang-toggle.is-open {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.48), rgba(255,255,255,0.14)) !important;
+  border: 1px solid rgba(255,255,255,0.34) !important;
+  box-shadow:
+    0 18px 38px rgba(0,0,0,0.10),
+    inset 0 1px 0 rgba(255,255,255,0.18),
+    inset 0 -1px 0 rgba(255,255,255,0.03) !important;
+}
+
+.lang-toggle-label {
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
+}
+
+.lang-caret {
+  width: 20px !important;
+  height: 20px !important;
+  font-size: 0.68rem !important;
+  opacity: 0.58 !important;
+  transform: translateY(0) !important;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.16);
+}
+
+.lang-toggle[aria-expanded="true"] .lang-caret {
+  transform: rotate(180deg) !important;
+}
+
+/* Sprachmenü */
+.lang-menu {
+  padding: 0.5rem !important;
+  border-radius: 24px !important;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.56), rgba(255,255,255,0.18)) !important;
+  border: 1px solid rgba(255,255,255,0.34) !important;
+  box-shadow:
+    0 24px 60px rgba(0,0,0,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.18) !important;
+  backdrop-filter: blur(44px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(44px) saturate(200%) !important;
+}
+
+.lang-option {
+  padding: 0.9rem 1rem !important;
+  border-radius: 16px !important;
+  font-size: 0.95rem;
+}
+
+.lang-option:hover {
+  background: rgba(255,255,255,0.18) !important;
+}
+
+/* Burger */
+.burger {
+  width: 44px !important;
+  height: 44px !important;
+  border-radius: 999px !important;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.42), rgba(255,255,255,0.10)) !important;
+  border: 1px solid rgba(255,255,255,0.30) !important;
+  box-shadow:
+    0 16px 34px rgba(0,0,0,0.09),
+    inset 0 1px 0 rgba(255,255,255,0.16),
+    inset 0 -1px 0 rgba(255,255,255,0.02) !important;
+  backdrop-filter: blur(42px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(42px) saturate(200%) !important;
+}
+
+.burger:hover,
+.burger.is-active {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.48), rgba(255,255,255,0.14)) !important;
+  border: 1px solid rgba(255,255,255,0.34) !important;
+  box-shadow:
+    0 18px 38px rgba(0,0,0,0.10),
+    inset 0 1px 0 rgba(255,255,255,0.18),
+    inset 0 -1px 0 rgba(255,255,255,0.03) !important;
+}
+
+.burger-lines {
+  width: 18px !important;
+  height: 14px !important;
+}
+
+.burger-lines span {
+  width: 18px !important;
+  height: 2px !important;
+  border-radius: 999px !important;
+  background: rgba(29,29,31,0.92) !important;
+}
+
+.burger-lines span:nth-child(2) {
+  width: 12px !important;
+  left: 3px !important;
+}
+
+.burger.is-active .burger-lines span:nth-child(1),
+.burger.is-active .burger-lines span:nth-child(3) {
+  top: 6px !important;
+}
+
+/* Mobile feinjustierung */
+@media (max-width: 768px) {
+  .lang-toggle {
+    min-width: 70px !important;
+    height: 40px !important;
+    padding: 0 0.82rem 0 0.88rem !important;
+    gap: 0.45rem !important;
+  }
+
+  .lang-toggle-label {
+    font-size: 0.9rem !important;
+  }
+
+  .lang-caret {
+    width: 18px !important;
+    height: 18px !important;
+    font-size: 0.62rem !important;
+  }
+
+  .burger {
+    width: 40px !important;
+    height: 40px !important;
+  }
+
+  .burger-lines {
+    width: 16px !important;
+    height: 12px !important;
+  }
+
+  .burger-lines span {
+    width: 16px !important;
+  }
+
+  .burger-lines span:nth-child(2) {
+    width: 11px !important;
+    left: 2.5px !important;
+  }
+
+  .lang-menu {
+    width: min(230px, calc(100vw - 1rem)) !important;
+    right: 0 !important;
+  }
+}
