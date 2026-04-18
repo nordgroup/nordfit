@@ -20,9 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let lastFocusedElement = null;
 
-  /* =========================
-     Header scroll state
-     ========================= */
   const updateHeaderScrollState = () => {
     if (!headerInner) return;
 
@@ -36,9 +33,6 @@ document.addEventListener("DOMContentLoaded", () => {
   updateHeaderScrollState();
   window.addEventListener("scroll", updateHeaderScrollState, { passive: true });
 
-  /* =========================
-     Burger menu
-     ========================= */
   const closeBurgerMenu = () => {
     if (!burger || !siteNav) return;
 
@@ -86,9 +80,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* =========================
-     Language helpers
-     ========================= */
   const getStoredLanguage = () => {
     try {
       return (localStorage.getItem("nordfit-language") || "de").trim().toLowerCase();
@@ -119,9 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  /* =========================
-     Language dropdown
-     ========================= */
   function closeLanguageMenu() {
     if (!langToggle || !langMenu) return;
 
@@ -183,9 +171,6 @@ document.addEventListener("DOMContentLoaded", () => {
     syncLanguageSelectionUI(getStoredLanguage());
   });
 
-  /* =========================
-     Global outside click close
-     ========================= */
   document.addEventListener("click", (event) => {
     const target = event.target;
 
@@ -204,9 +189,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* =========================
-     Escape key
-     ========================= */
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeLanguageMenu();
@@ -215,18 +197,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* =========================
-     Resize handling
-     ========================= */
   window.addEventListener("resize", () => {
     if (window.innerWidth > 768) {
       closeBurgerMenu();
     }
   });
 
-  /* =========================
-     Reveal on scroll
-     ========================= */
   if (revealElements.length) {
     const revealObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -245,9 +221,6 @@ document.addEventListener("DOMContentLoaded", () => {
     revealElements.forEach((element) => revealObserver.observe(element));
   }
 
-  /* =========================
-     Modal helpers
-     ========================= */
   function openModalById(modalId) {
     const modal = document.getElementById(modalId);
     if (!modal) return;
@@ -302,9 +275,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* =========================
-     Focus trap for modals
-     ========================= */
   document.addEventListener("keydown", (event) => {
     if (event.key !== "Tab") return;
 
@@ -347,97 +317,66 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* =========================
-     Gallery slider / arrows / dots / drag
-     ========================= */
   const galleryRows = document.querySelectorAll(".gallery-row");
 
   const getGalleryCards = (row) => Array.from(row.querySelectorAll(".gallery-card"));
 
-  const getVisibleStartIndex = (row) => {
-    const cards = getGalleryCards(row);
-    if (!cards.length) return 0;
+  const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
 
-    const rowLeft = row.getBoundingClientRect().left;
-    let bestIndex = 0;
-    let bestDistance = Number.POSITIVE_INFINITY;
+  const ensureSliderExists = (section) => {
+    const controls = section?.querySelector(".gallery-controls");
+    if (!controls) return null;
 
-    cards.forEach((card, index) => {
-      const distance = Math.abs(card.getBoundingClientRect().left - rowLeft);
-      if (distance < bestDistance) {
-        bestDistance = distance;
-        bestIndex = index;
+    let sliderWrap = controls.querySelector(".gallery-slider-wrap");
+    let slider = controls.querySelector(".gallery-range");
+
+    if (!sliderWrap || !slider) {
+      const dots = controls.querySelector(".gallery-dots");
+      if (dots) {
+        dots.innerHTML = `
+          <div class="gallery-slider-wrap">
+            <input
+              class="gallery-range"
+              type="range"
+              min="0"
+              max="100"
+              step="1"
+              value="0"
+              aria-label="Galerie verschieben"
+            />
+          </div>
+        `;
       }
-    });
 
-    return bestIndex;
-  };
+      sliderWrap = controls.querySelector(".gallery-slider-wrap");
+      slider = controls.querySelector(".gallery-range");
+    }
 
-  const scrollToCardIndex = (row, index) => {
-    const cards = getGalleryCards(row);
-    if (!cards.length) return;
-
-    const safeIndex = Math.max(0, Math.min(index, cards.length - 1));
-    const targetCard = cards[safeIndex];
-
-    row.scrollTo({
-      left: targetCard.offsetLeft,
-      behavior: "smooth",
-    });
-  };
-
-  const getPageCount = (row) => {
-    const controls = row.closest(".area-section")?.querySelector(".gallery-controls");
-    const dots = controls?.querySelectorAll(".gallery-dot");
-    return dots?.length ? dots.length : 2;
-  };
-
-  const getPageIndex = (row) => {
-    const maxScroll = Math.max(0, row.scrollWidth - row.clientWidth);
-    if (maxScroll <= 0) return 0;
-
-    const ratio = row.scrollLeft / maxScroll;
-    const pageCount = getPageCount(row);
-    return Math.min(pageCount - 1, Math.round(ratio * (pageCount - 1)));
-  };
-
-  const goToPage = (row, pageIndex) => {
-    const pageCount = getPageCount(row);
-    if (pageCount <= 1) return;
-
-    const maxScroll = Math.max(0, row.scrollWidth - row.clientWidth);
-    const safePage = Math.max(0, Math.min(pageIndex, pageCount - 1));
-    const target = (maxScroll / (pageCount - 1)) * safePage;
-
-    row.scrollTo({
-      left: target,
-      behavior: "smooth",
-    });
+    return slider;
   };
 
   const updateGalleryState = (row) => {
     if (!(row instanceof HTMLElement)) return;
 
-    const controls = row.closest(".area-section")?.querySelector(".gallery-controls");
-    const dots = controls?.querySelectorAll(".gallery-dot");
+    const section = row.closest(".area-section");
+    const controls = section?.querySelector(".gallery-controls");
     const prev = controls?.querySelector('[data-gallery-arrow="prev"]');
     const next = controls?.querySelector('[data-gallery-arrow="next"]');
+    const slider = ensureSliderExists(section);
 
     const maxScroll = Math.max(0, row.scrollWidth - row.clientWidth);
-    const pageIndex = getPageIndex(row);
-    const pageCount = getPageCount(row);
+    const progress = maxScroll > 0 ? (row.scrollLeft / maxScroll) * 100 : 0;
 
-    dots?.forEach((dot, index) => {
-      dot.classList.toggle("active", index === pageIndex);
-      dot.setAttribute("aria-pressed", index === pageIndex ? "true" : "false");
-    });
+    if (slider instanceof HTMLInputElement) {
+      slider.value = String(Math.round(progress));
+    }
 
     if (prev instanceof HTMLButtonElement) {
       prev.disabled = row.scrollLeft <= 8;
     }
 
     if (next instanceof HTMLButtonElement) {
-      next.disabled = row.scrollLeft >= maxScroll - 8 || pageIndex >= pageCount - 1;
+      next.disabled = row.scrollLeft >= maxScroll - 8;
     }
   };
 
@@ -449,25 +388,49 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const prev = controls.querySelector('[data-gallery-arrow="prev"]');
     const next = controls.querySelector('[data-gallery-arrow="next"]');
-    const dots = controls.querySelectorAll(".gallery-dot");
+    const slider = ensureSliderExists(section);
+
+    const getStepDistance = () => {
+      const cards = getGalleryCards(row);
+      if (cards.length < 2) {
+        return row.clientWidth * 0.82;
+      }
+
+      const first = cards[0];
+      const second = cards[1];
+      return Math.abs(second.offsetLeft - first.offsetLeft) || row.clientWidth * 0.82;
+    };
+
+    const scrollByStep = (direction) => {
+      const maxScroll = Math.max(0, row.scrollWidth - row.clientWidth);
+      const step = getStepDistance();
+      const target = clamp(row.scrollLeft + direction * step, 0, maxScroll);
+
+      row.scrollTo({
+        left: target,
+        behavior: "smooth",
+      });
+    };
 
     if (prev instanceof HTMLButtonElement) {
       prev.addEventListener("click", () => {
-        const currentPage = getPageIndex(row);
-        goToPage(row, currentPage - 1);
+        scrollByStep(-1);
       });
     }
 
     if (next instanceof HTMLButtonElement) {
       next.addEventListener("click", () => {
-        const currentPage = getPageIndex(row);
-        goToPage(row, currentPage + 1);
+        scrollByStep(1);
       });
     }
 
-    dots.forEach((dot, index) => {
-      dot.addEventListener("click", () => goToPage(row, index));
-    });
+    if (slider instanceof HTMLInputElement) {
+      slider.addEventListener("input", () => {
+        const maxScroll = Math.max(0, row.scrollWidth - row.clientWidth);
+        const value = Number(slider.value) || 0;
+        row.scrollLeft = (value / 100) * maxScroll;
+      });
+    }
 
     let isPointerDown = false;
     let startX = 0;
@@ -493,11 +456,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!isPointerDown) return;
       isPointerDown = false;
       row.classList.remove("is-dragging");
-
-      if (moved) {
-        const index = getVisibleStartIndex(row);
-        scrollToCardIndex(row, index);
-      }
     };
 
     row.addEventListener("mousedown", (event) => {
