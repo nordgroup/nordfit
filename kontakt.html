@@ -60,7 +60,6 @@
             <button class="lang-option" data-lang="fr" type="button">Français</button>
             <button class="lang-option" data-lang="it" type="button">Italiano</button>
             <button class="lang-option" data-lang="es" type="button">Español</button>
-            <button class="lang-option" data-lang="pl" type="button">Polski</button>
           </div>
         </div>
       </div>
@@ -68,24 +67,22 @@
   </header>
 
   <main>
-    <section class="section home-hero-section">
+    <section class="section home-hero-section" style="padding-bottom: 7.4rem;">
       <div class="container">
-        <div class="home-hero reveal">
-          <p class="eyebrow">Kontakt</p>
+        <div class="home-hero reveal" style="padding-bottom: 0;">
           <h1 class="hero-title small-hero">Direkt. Klar. Erreichbar.</h1>
           <p class="hero-subtitle">
-            Für Fragen rund um NordFit, Mitgliedschaft, App oder Studio
+            Für Fragen rund um NordFit, Mitgliedschaft, App oder Standort
             kannst du uns direkt hier schreiben.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="section section-tight">
+    <section class="section" style="padding-top: 1.2rem;">
       <div class="container">
         <div class="grid-2 contact-hero-grid">
           <article class="glass section-block reveal">
-            <p class="eyebrow">Kontaktwege</p>
             <h2 class="section-title">So erreichst du uns.</h2>
 
             <div class="contact-info-stack" style="margin-top: 1.2rem;">
@@ -107,81 +104,46 @@
           </article>
 
           <article class="glass contact-form-shell reveal">
-            <p class="eyebrow">Formular</p>
             <h2 class="section-title">Schreib uns direkt.</h2>
 
             <form style="margin-top: 1.25rem;">
               <div class="form-grid">
                 <div class="form-field">
-                  <label for="contact-firstname">Vorname <span class="required-star">*</span></label>
-                  <input
-                    type="text"
-                    id="contact-firstname"
-                    name="contact-firstname"
-                    placeholder="Dein Vorname"
-                    autocomplete="given-name"
-                    required
-                  />
+                  <label for="contact-first-name">Vorname <span class="required-star">*</span></label>
+                  <input type="text" id="contact-first-name" name="contact-first-name" placeholder="Dein Vorname" required />
                 </div>
 
                 <div class="form-field">
-                  <label for="contact-lastname">Nachname <span class="required-star">*</span></label>
-                  <input
-                    type="text"
-                    id="contact-lastname"
-                    name="contact-lastname"
-                    placeholder="Dein Nachname"
-                    autocomplete="family-name"
-                    required
-                  />
+                  <label for="contact-last-name">Nachname <span class="required-star">*</span></label>
+                  <input type="text" id="contact-last-name" name="contact-last-name" placeholder="Dein Nachname" required />
                 </div>
 
                 <div class="form-field">
                   <label for="contact-email">E-Mail <span class="required-star">*</span></label>
-                  <input
-                    type="email"
-                    id="contact-email"
-                    name="contact-email"
-                    placeholder="deinname@email.de"
-                    autocomplete="email"
-                    required
-                  />
+                  <input type="email" id="contact-email" name="contact-email" placeholder="deinname@email.de" required />
                 </div>
 
                 <div class="form-field">
                   <label for="contact-phone">Telefonnummer <span class="required-star">*</span></label>
-                  <input
-                    type="tel"
-                    id="contact-phone"
-                    name="contact-phone"
-                    placeholder="Deine Telefonnummer"
-                    autocomplete="tel"
-                    required
-                  />
-                </div>
-
-                <div class="form-field">
-                  <label for="contact-member-id">Member-ID <span class="muted">(optional)</span></label>
-                  <input
-                    type="text"
-                    id="contact-member-id"
-                    name="contact-member-id"
-                    placeholder="Falls vorhanden"
-                  />
+                  <input type="tel" id="contact-phone" name="contact-phone" placeholder="+49 ..." required />
                 </div>
 
                 <div class="form-field">
                   <label for="contact-topic">Thema <span class="required-star">*</span></label>
                   <select id="contact-topic" name="contact-topic" required>
-                    <option value="" selected disabled>Thema auswählen</option>
+                    <option value="">Bitte auswählen</option>
                     <option value="mitgliedschaft">Mitgliedschaft</option>
                     <option value="app">App</option>
-                    <option value="tagespass">Tagespass</option>
-                    <option value="zugang">Zugang zum Studio</option>
                     <option value="standort">Standort</option>
+                    <option value="zugang">Zugang</option>
+                    <option value="rechnung">Abrechnung</option>
                     <option value="allgemein">Allgemeine Frage</option>
-                    <option value="sonstiges">Sonstiges Anliegen</option>
                   </select>
+                </div>
+
+                <div class="form-field">
+                  <label for="contact-member-id">Member ID</label>
+                  <input type="text" id="contact-member-id" name="contact-member-id" placeholder="Optional" />
                 </div>
 
                 <div class="form-field form-field-full">
@@ -191,7 +153,6 @@
                     name="contact-message"
                     rows="6"
                     placeholder="Schreib uns dein Anliegen …"
-                    style="resize: none;"
                     required
                   ></textarea>
                 </div>
@@ -200,7 +161,7 @@
               <div class="contact-form-footer">
                 <div>
                   <p class="muted">Oder direkt per Mail an nordgroup.business@gmail.com</p>
-                  <p class="required-note">Felder mit rotem Stern müssen ausgefüllt werden.</p>
+                  <p class="required-note">Felder mit * müssen ausgefüllt werden.</p>
                 </div>
                 <button type="submit" class="btn btn-primary">Nachricht senden</button>
               </div>
