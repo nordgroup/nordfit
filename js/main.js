@@ -1,6 +1,6 @@
 /* =========================
    NordFit main.js
-   Header / Burger / Sprache / Modals / Reveal / Gallery
+   Header / Burger / Sprache / Modals / Reveal / Galleries
    ========================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -17,9 +17,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const modalElements = document.querySelectorAll(".modal");
   const revealElements = document.querySelectorAll(".reveal");
+  const galleryShells = document.querySelectorAll("[data-gallery]");
 
   let lastFocusedElement = null;
 
+  /* =========================
+     Header scroll state
+     ========================= */
   const updateHeaderScrollState = () => {
     if (!headerInner) return;
 
@@ -33,6 +37,9 @@ document.addEventListener("DOMContentLoaded", () => {
   updateHeaderScrollState();
   window.addEventListener("scroll", updateHeaderScrollState, { passive: true });
 
+  /* =========================
+     Burger menu
+     ========================= */
   const closeBurgerMenu = () => {
     if (!burger || !siteNav) return;
 
@@ -55,10 +62,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!burger || !siteNav) return;
 
     const isOpen = siteNav.classList.contains("open");
+
     if (isOpen) {
       closeBurgerMenu();
     } else {
-      closeBurgerMenu();
       closeLanguageMenu();
       openBurgerMenu();
     }
@@ -80,36 +87,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  const getStoredLanguage = () => {
-    try {
-      return (localStorage.getItem("nordfit-language") || "de").trim().toLowerCase();
-    } catch {
-      return "de";
-    }
-  };
-
-  const syncLanguageSelectionUI = (languageCode) => {
-    const normalized = (languageCode || "de").trim().toLowerCase();
-
-    if (langToggleLabel) {
-      langToggleLabel.textContent = normalized.toUpperCase();
-    }
-
-    if (langOptions.length) {
-      langOptions.forEach((option) => {
-        const optionLang = option.dataset.lang?.trim().toLowerCase() || "";
-
-        if (optionLang === normalized) {
-          option.classList.add("is-selected");
-          option.setAttribute("aria-current", "true");
-        } else {
-          option.classList.remove("is-selected");
-          option.removeAttribute("aria-current");
-        }
-      });
-    }
-  };
-
+  /* =========================
+     Language dropdown
+     ========================= */
   function closeLanguageMenu() {
     if (!langToggle || !langMenu) return;
 
@@ -121,7 +101,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function openLanguageMenu() {
     if (!langToggle || !langMenu) return;
 
-    syncLanguageSelectionUI(getStoredLanguage());
     langToggle.classList.add("is-open");
     langToggle.setAttribute("aria-expanded", "true");
     langMenu.classList.add("show");
@@ -131,15 +110,36 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!langToggle || !langMenu) return;
 
     const isOpen = langMenu.classList.contains("show");
+
     if (isOpen) {
       closeLanguageMenu();
     } else {
-      closeBurgerMenu();
+      if (window.innerWidth <= 768) {
+        closeBurgerMenu();
+      }
       openLanguageMenu();
     }
   }
 
-  syncLanguageSelectionUI(getStoredLanguage());
+  function getStoredLanguage() {
+    try {
+      return localStorage.getItem("nordfit-language") || "de";
+    } catch {
+      return "de";
+    }
+  }
+
+  function markActiveLanguage(langCode) {
+    if (!langOptions.length) return;
+
+    langOptions.forEach((option) => {
+      const optionLang = option.dataset.lang?.trim().toLowerCase() || "";
+      const isActive = optionLang === langCode;
+
+      option.classList.toggle("is-active", isActive);
+      option.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+  }
 
   if (langToggle && langMenu) {
     langToggle.addEventListener("click", (event) => {
@@ -152,25 +152,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (langOptions.length) {
+  if (langOptions.length && langToggleLabel) {
+    const initialLang = getStoredLanguage().toLowerCase();
+    langToggleLabel.textContent = initialLang.toUpperCase();
+    markActiveLanguage(initialLang);
+
     langOptions.forEach((option) => {
       option.addEventListener("click", () => {
         const lang = option.dataset.lang?.trim().toLowerCase() || "de";
-
-        try {
-          localStorage.setItem("nordfit-language", lang);
-        } catch {}
-
-        syncLanguageSelectionUI(lang);
+        langToggleLabel.textContent = lang.toUpperCase();
+        markActiveLanguage(lang);
         closeLanguageMenu();
       });
     });
+
+    window.addEventListener("storage", () => {
+      const updatedLang = getStoredLanguage().toLowerCase();
+      langToggleLabel.textContent = updatedLang.toUpperCase();
+      markActiveLanguage(updatedLang);
+    });
   }
 
-  window.addEventListener("storage", () => {
-    syncLanguageSelectionUI(getStoredLanguage());
-  });
-
+  /* =========================
+     Global outside click close
+     ========================= */
   document.addEventListener("click", (event) => {
     const target = event.target;
 
@@ -189,6 +194,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  /* =========================
+     Escape key
+     ========================= */
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeLanguageMenu();
@@ -197,12 +205,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  /* =========================
+     Resize handling
+     ========================= */
   window.addEventListener("resize", () => {
     if (window.innerWidth > 768) {
       closeBurgerMenu();
     }
+
+    galleryShells.forEach((shell) => updateGalleryState(shell));
   });
 
+  /* =========================
+     Reveal on scroll
+     ========================= */
   if (revealElements.length) {
     const revealObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -221,6 +237,9 @@ document.addEventListener("DOMContentLoaded", () => {
     revealElements.forEach((element) => revealObserver.observe(element));
   }
 
+  /* =========================
+     Modal helpers
+     ========================= */
   function openModalById(modalId) {
     const modal = document.getElementById(modalId);
     if (!modal) return;
@@ -265,7 +284,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeButton = modal.querySelector(".modal-close");
 
     if (closeButton) {
-      closeButton.addEventListener("click", () => closeModal(modal));
+      closeButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        closeModal(modal);
+      });
     }
 
     modal.addEventListener("click", (event) => {
@@ -275,6 +298,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  /* =========================
+     Focus trap for modals
+     ========================= */
   document.addEventListener("keydown", (event) => {
     if (event.key !== "Tab") return;
 
@@ -293,9 +319,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const focusableElements = Array.from(
       openModal.querySelectorAll(focusableSelectors.join(","))
     ).filter((el) => {
-      return !(el instanceof HTMLElement)
-        ? false
-        : !el.hasAttribute("disabled");
+      if (!(el instanceof HTMLElement)) return false;
+      return !el.hasAttribute("disabled");
     });
 
     if (!focusableElements.length) return;
@@ -317,198 +342,93 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  const galleryRows = document.querySelectorAll(".gallery-row");
-
-  const getGalleryCards = (row) => Array.from(row.querySelectorAll(".gallery-card"));
-
-  const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
-
-  const ensureSliderExists = (section) => {
-    const controls = section?.querySelector(".gallery-controls");
-    if (!controls) return null;
-
-    let sliderWrap = controls.querySelector(".gallery-slider-wrap");
-    let slider = controls.querySelector(".gallery-range");
-
-    if (!sliderWrap || !slider) {
-      const dots = controls.querySelector(".gallery-dots");
-      if (dots) {
-        dots.innerHTML = `
-          <div class="gallery-slider-wrap">
-            <input
-              class="gallery-range"
-              type="range"
-              min="0"
-              max="100"
-              step="1"
-              value="0"
-              aria-label="Galerie verschieben"
-            />
-          </div>
-        `;
-      }
-
-      sliderWrap = controls.querySelector(".gallery-slider-wrap");
-      slider = controls.querySelector(".gallery-range");
+  /* =========================
+     Galleries
+     ========================= */
+  function getGalleryStep(row) {
+    const firstCard = row.querySelector(".gallery-card");
+    if (!(firstCard instanceof HTMLElement)) {
+      return Math.max(row.clientWidth * 0.85, 280);
     }
 
-    return slider;
-  };
+    const cardStyles = window.getComputedStyle(firstCard);
+    const rowStyles = window.getComputedStyle(row);
 
-  const updateGalleryState = (row) => {
+    const cardWidth = firstCard.getBoundingClientRect().width;
+    const gap =
+      parseFloat(rowStyles.columnGap || rowStyles.gap || "0") ||
+      parseFloat(cardStyles.marginRight || "0") ||
+      0;
+
+    return cardWidth + gap;
+  }
+
+  function updateGalleryState(shell) {
+    const row = shell.querySelector(".gallery-row");
+    const leftArrow = shell.querySelector(".gallery-arrow-left");
+    const rightArrow = shell.querySelector(".gallery-arrow-right");
+
+    if (!(row instanceof HTMLElement)) return;
+    if (!(leftArrow instanceof HTMLElement) || !(rightArrow instanceof HTMLElement)) return;
+
+    const maxScrollLeft = Math.max(0, row.scrollWidth - row.clientWidth);
+    const currentScroll = row.scrollLeft;
+
+    const atStart = currentScroll <= 6;
+    const atEnd = currentScroll >= maxScrollLeft - 6;
+
+    leftArrow.disabled = atStart;
+    rightArrow.disabled = atEnd;
+
+    leftArrow.classList.toggle("is-disabled", atStart);
+    rightArrow.classList.toggle("is-disabled", atEnd);
+  }
+
+  function scrollGallery(row, direction) {
     if (!(row instanceof HTMLElement)) return;
 
-    const section = row.closest(".area-section");
-    const controls = section?.querySelector(".gallery-controls");
-    const prev = controls?.querySelector('[data-gallery-arrow="prev"]');
-    const next = controls?.querySelector('[data-gallery-arrow="next"]');
-    const slider = ensureSliderExists(section);
+    const step = getGalleryStep(row);
+    const distance = direction === "left" ? -step * 2 : step * 2;
 
-    const maxScroll = Math.max(0, row.scrollWidth - row.clientWidth);
-    const progress = maxScroll > 0 ? (row.scrollLeft / maxScroll) * 100 : 0;
+    row.scrollBy({
+      left: distance,
+      behavior: "smooth",
+    });
+  }
 
-    if (slider instanceof HTMLInputElement) {
-      slider.value = String(Math.round(progress));
-    }
+  if (galleryShells.length) {
+    galleryShells.forEach((shell) => {
+      const row = shell.querySelector(".gallery-row");
+      const leftArrow = shell.querySelector(".gallery-arrow-left");
+      const rightArrow = shell.querySelector(".gallery-arrow-right");
 
-    if (prev instanceof HTMLButtonElement) {
-      prev.disabled = row.scrollLeft <= 8;
-    }
+      if (!(row instanceof HTMLElement)) return;
 
-    if (next instanceof HTMLButtonElement) {
-      next.disabled = row.scrollLeft >= maxScroll - 8;
-    }
-  };
-
-  galleryRows.forEach((row) => {
-    const section = row.closest(".area-section");
-    const controls = section?.querySelector(".gallery-controls");
-
-    if (!controls) return;
-
-    const prev = controls.querySelector('[data-gallery-arrow="prev"]');
-    const next = controls.querySelector('[data-gallery-arrow="next"]');
-    const slider = ensureSliderExists(section);
-
-    const getStepDistance = () => {
-      const cards = getGalleryCards(row);
-      if (cards.length < 2) {
-        return row.clientWidth * 0.82;
+      if (leftArrow instanceof HTMLElement) {
+        leftArrow.addEventListener("click", () => {
+          scrollGallery(row, "left");
+        });
       }
 
-      const first = cards[0];
-      const second = cards[1];
-      return Math.abs(second.offsetLeft - first.offsetLeft) || row.clientWidth * 0.82;
-    };
-
-    const scrollByStep = (direction) => {
-      const maxScroll = Math.max(0, row.scrollWidth - row.clientWidth);
-      const step = getStepDistance();
-      const target = clamp(row.scrollLeft + direction * step, 0, maxScroll);
-
-      row.scrollTo({
-        left: target,
-        behavior: "smooth",
-      });
-    };
-
-    if (prev instanceof HTMLButtonElement) {
-      prev.addEventListener("click", () => {
-        scrollByStep(-1);
-      });
-    }
-
-    if (next instanceof HTMLButtonElement) {
-      next.addEventListener("click", () => {
-        scrollByStep(1);
-      });
-    }
-
-    if (slider instanceof HTMLInputElement) {
-      slider.addEventListener("input", () => {
-        const maxScroll = Math.max(0, row.scrollWidth - row.clientWidth);
-        const value = Number(slider.value) || 0;
-        row.scrollLeft = (value / 100) * maxScroll;
-      });
-    }
-
-    let isPointerDown = false;
-    let startX = 0;
-    let startScrollLeft = 0;
-    let moved = false;
-
-    const pointerDown = (clientX) => {
-      isPointerDown = true;
-      moved = false;
-      startX = clientX;
-      startScrollLeft = row.scrollLeft;
-      row.classList.add("is-dragging");
-    };
-
-    const pointerMove = (clientX) => {
-      if (!isPointerDown) return;
-      const walk = clientX - startX;
-      if (Math.abs(walk) > 4) moved = true;
-      row.scrollLeft = startScrollLeft - walk;
-    };
-
-    const pointerUp = () => {
-      if (!isPointerDown) return;
-      isPointerDown = false;
-      row.classList.remove("is-dragging");
-    };
-
-    row.addEventListener("mousedown", (event) => {
-      if (event.target.closest("button") && !event.target.closest(".gallery-button")) return;
-      pointerDown(event.clientX);
-    });
-
-    row.addEventListener("mousemove", (event) => {
-      pointerMove(event.clientX);
-    });
-
-    window.addEventListener("mouseup", pointerUp);
-
-    row.addEventListener("mouseleave", () => {
-      if (isPointerDown) {
-        pointerUp();
+      if (rightArrow instanceof HTMLElement) {
+        rightArrow.addEventListener("click", () => {
+          scrollGallery(row, "right");
+        });
       }
+
+      row.addEventListener(
+        "scroll",
+        () => {
+          updateGalleryState(shell);
+        },
+        { passive: true }
+      );
+
+      updateGalleryState(shell);
     });
 
-    row.addEventListener(
-      "touchstart",
-      (event) => {
-        if (!event.touches[0]) return;
-        pointerDown(event.touches[0].clientX);
-      },
-      { passive: true }
-    );
-
-    row.addEventListener(
-      "touchmove",
-      (event) => {
-        if (!event.touches[0]) return;
-        pointerMove(event.touches[0].clientX);
-      },
-      { passive: true }
-    );
-
-    row.addEventListener("touchend", pointerUp);
-    row.addEventListener("touchcancel", pointerUp);
-
-    row.querySelectorAll(".gallery-button").forEach((button) => {
-      button.addEventListener("click", (event) => {
-        if (moved) {
-          event.preventDefault();
-          event.stopPropagation();
-          moved = false;
-        }
-      });
+    window.addEventListener("load", () => {
+      galleryShells.forEach((shell) => updateGalleryState(shell));
     });
-
-    row.addEventListener("scroll", () => updateGalleryState(row), { passive: true });
-    window.addEventListener("resize", () => updateGalleryState(row));
-
-    updateGalleryState(row);
-  });
+  }
 });
