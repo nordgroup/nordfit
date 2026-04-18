@@ -54,7 +54,7 @@
             <span class="lang-caret" aria-hidden="true">⌄</span>
           </button>
 
-          <div id="lang-menu" class="lang-menu glass">
+          <div id="lang-menu" class="lang-menu">
             <button class="lang-option" data-lang="de" type="button">Deutsch</button>
             <button class="lang-option" data-lang="en" type="button">English</button>
             <button class="lang-option" data-lang="fr" type="button">Français</button>
@@ -74,7 +74,7 @@
           <p class="eyebrow">Kontakt</p>
           <h1 class="hero-title small-hero">Direkt. Klar. Erreichbar.</h1>
           <p class="hero-subtitle">
-            Für Fragen rund um NordFit, Mitgliedschaft, App oder Standort
+            Für Fragen rund um NordFit, Mitgliedschaft, App oder Studio
             kannst du uns direkt hier schreiben.
           </p>
         </div>
@@ -113,13 +113,75 @@
             <form style="margin-top: 1.25rem;">
               <div class="form-grid">
                 <div class="form-field">
-                  <label for="contact-name">Name</label>
-                  <input type="text" id="contact-name" name="contact-name" placeholder="Dein Name" required />
+                  <label for="contact-firstname">Vorname</label>
+                  <input
+                    type="text"
+                    id="contact-firstname"
+                    name="contact-firstname"
+                    placeholder="Dein Vorname"
+                    autocomplete="given-name"
+                    required
+                  />
+                </div>
+
+                <div class="form-field">
+                  <label for="contact-lastname">Nachname</label>
+                  <input
+                    type="text"
+                    id="contact-lastname"
+                    name="contact-lastname"
+                    placeholder="Dein Nachname"
+                    autocomplete="family-name"
+                    required
+                  />
                 </div>
 
                 <div class="form-field">
                   <label for="contact-email">E-Mail</label>
-                  <input type="email" id="contact-email" name="contact-email" placeholder="deinname@email.de" required />
+                  <input
+                    type="email"
+                    id="contact-email"
+                    name="contact-email"
+                    placeholder="deinname@email.de"
+                    autocomplete="email"
+                    required
+                  />
+                </div>
+
+                <div class="form-field">
+                  <label for="contact-phone">Telefonnummer</label>
+                  <input
+                    type="tel"
+                    id="contact-phone"
+                    name="contact-phone"
+                    placeholder="Deine Telefonnummer"
+                    autocomplete="tel"
+                    required
+                  />
+                </div>
+
+                <div class="form-field">
+                  <label for="contact-member-id">Member-ID <span class="muted">(optional)</span></label>
+                  <input
+                    type="text"
+                    id="contact-member-id"
+                    name="contact-member-id"
+                    placeholder="Falls vorhanden"
+                  />
+                </div>
+
+                <div class="form-field">
+                  <label for="contact-topic">Thema</label>
+                  <select id="contact-topic" name="contact-topic" required>
+                    <option value="" selected disabled>Thema auswählen</option>
+                    <option value="mitgliedschaft">Mitgliedschaft</option>
+                    <option value="app">App</option>
+                    <option value="tagespass">Tagespass</option>
+                    <option value="zugang">Zugang zum Studio</option>
+                    <option value="standort">Standort</option>
+                    <option value="allgemein">Allgemeine Frage</option>
+                    <option value="sonstiges">Sonstiges Anliegen</option>
+                  </select>
                 </div>
 
                 <div class="form-field form-field-full">
@@ -129,6 +191,7 @@
                     name="contact-message"
                     rows="6"
                     placeholder="Schreib uns dein Anliegen …"
+                    style="resize: none;"
                     required
                   ></textarea>
                 </div>
