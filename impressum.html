@@ -83,16 +83,16 @@
 
     <section class="section section-tight">
       <div class="container">
-        <div class="reveal" style="max-width: 920px;">
-          <p class="eyebrow">Schnellauswahl</p>
-          <div class="app-store-row" style="margin-top: 0.9rem;">
-            <button class="btn btn-primary" type="button" onclick="openModal('agb-modal')">
-              AGB öffnen
-            </button>
-            <button class="btn btn-secondary" type="button" onclick="openModal('privacy-modal')">
-              Datenschutz öffnen
-            </button>
-          </div>
+        <div class="reveal legal-quick-actions">
+          <button class="btn btn-primary" type="button" onclick="openModal('agb-modal')">
+            AGB öffnen
+          </button>
+          <button class="btn btn-secondary" type="button" onclick="openModal('privacy-modal')">
+            Datenschutz öffnen
+          </button>
+          <a href="hausordnung.html" class="btn btn-secondary">
+            Hausordnung öffnen
+          </a>
         </div>
       </div>
     </section>
@@ -134,10 +134,13 @@
             </div>
           </div>
 
-          <p class="muted" style="margin-top: 1.2rem; max-width: 66ch;">
-            Vollständige rechtliche Angaben werden vor der finalen Veröffentlichung
-            rechtlich vollständig ergänzt.
-          </p>
+          <div class="legal-missing-info">
+            <p class="eyebrow">Vor Veröffentlichung noch ergänzen</p>
+            <p class="muted">Vollständiger Firmenname / Rechtsform</p>
+            <p class="muted">Ladungsfähige Anschrift</p>
+            <p class="muted">Vertretungsberechtigte Person</p>
+            <p class="muted">Weitere rechtlich erforderliche Angaben, falls notwendig</p>
+          </div>
         </div>
       </div>
     </section>
