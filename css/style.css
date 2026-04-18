@@ -450,6 +450,17 @@ select:focus {
   z-index: 5000;
 }
 
+.lang-toggle,
+.burger {
+  background: linear-gradient(180deg, rgba(255,255,255,0.36), rgba(255,255,255,0.12));
+  border: 1px solid rgba(255,255,255,0.20);
+  box-shadow:
+    0 18px 46px rgba(0,0,0,0.10),
+    inset 0 1px 0 rgba(255,255,255,0.10);
+  backdrop-filter: blur(34px) saturate(180%);
+  -webkit-backdrop-filter: blur(34px) saturate(180%);
+}
+
 .lang-toggle {
   min-width: 88px;
   height: 42px;
@@ -462,13 +473,6 @@ select:focus {
   letter-spacing: -0.01em;
   color: var(--text-main);
   border-radius: 999px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.44), rgba(255,255,255,0.16));
-  border: 1px solid rgba(255,255,255,0.24);
-  box-shadow:
-    0 12px 24px rgba(0,0,0,0.08),
-    inset 0 1px 0 rgba(255,255,255,0.08);
-  backdrop-filter: blur(26px) saturate(175%);
-  -webkit-backdrop-filter: blur(26px) saturate(175%);
   transition:
     background var(--t-med),
     box-shadow var(--t-med),
@@ -477,13 +481,15 @@ select:focus {
 }
 
 .lang-toggle:hover,
-.lang-toggle.is-open {
+.lang-toggle.is-open,
+.burger:hover,
+.burger.is-active {
   transform: none;
-  background: linear-gradient(180deg, rgba(255,255,255,0.52), rgba(255,255,255,0.22));
-  border-color: rgba(255,255,255,0.28);
+  background: linear-gradient(180deg, rgba(255,255,255,0.44), rgba(255,255,255,0.16));
+  border-color: rgba(255,255,255,0.24);
   box-shadow:
-    0 14px 28px rgba(0,0,0,0.10),
-    inset 0 1px 0 rgba(255,255,255,0.10);
+    0 20px 52px rgba(0,0,0,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.11);
 }
 
 .lang-toggle-label {
@@ -509,6 +515,17 @@ select:focus {
   transform: rotate(180deg);
 }
 
+.lang-menu,
+.site-nav.open ul {
+  background: linear-gradient(180deg, rgba(255,255,255,0.36), rgba(255,255,255,0.12));
+  border: 1px solid rgba(255,255,255,0.20);
+  box-shadow:
+    0 18px 46px rgba(0,0,0,0.10),
+    inset 0 1px 0 rgba(255,255,255,0.10);
+  backdrop-filter: blur(34px) saturate(180%);
+  -webkit-backdrop-filter: blur(34px) saturate(180%);
+}
+
 .lang-menu {
   position: absolute;
   top: calc(100% + 0.72rem);
@@ -521,13 +538,6 @@ select:focus {
   border-radius: 22px;
   z-index: 6000;
   overflow: hidden;
-  background: linear-gradient(180deg, rgba(255,255,255,0.56), rgba(255,255,255,0.24));
-  border: 1px solid rgba(255,255,255,0.26);
-  box-shadow:
-    0 22px 52px rgba(0,0,0,0.12),
-    inset 0 1px 0 rgba(255,255,255,0.08);
-  backdrop-filter: blur(32px) saturate(180%);
-  -webkit-backdrop-filter: blur(32px) saturate(180%);
 }
 
 .lang-menu.show {
@@ -558,28 +568,11 @@ select:focus {
   justify-content: center;
   flex-shrink: 0;
   border-radius: 999px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.44), rgba(255,255,255,0.16));
-  border: 1px solid rgba(255,255,255,0.24);
-  box-shadow:
-    0 12px 24px rgba(0,0,0,0.08),
-    inset 0 1px 0 rgba(255,255,255,0.08);
-  backdrop-filter: blur(26px) saturate(175%);
-  -webkit-backdrop-filter: blur(26px) saturate(175%);
   transition:
     background var(--t-med),
     box-shadow var(--t-med),
     transform var(--t-med),
     border-color var(--t-fast);
-}
-
-.burger:hover,
-.burger.is-active {
-  transform: none;
-  background: linear-gradient(180deg, rgba(255,255,255,0.52), rgba(255,255,255,0.22));
-  border-color: rgba(255,255,255,0.28);
-  box-shadow:
-    0 14px 28px rgba(0,0,0,0.10),
-    inset 0 1px 0 rgba(255,255,255,0.10);
 }
 
 .burger-lines {
@@ -1499,13 +1492,6 @@ iframe {
     gap: 0.55rem;
     padding: 0.72rem;
     border-radius: 22px;
-    background: linear-gradient(180deg, rgba(255,255,255,0.70), rgba(255,255,255,0.32));
-    border: 1px solid rgba(255,255,255,0.24);
-    box-shadow:
-      0 22px 46px rgba(0,0,0,0.11),
-      inset 0 1px 0 rgba(255,255,255,0.08);
-    backdrop-filter: blur(32px) saturate(180%);
-    -webkit-backdrop-filter: blur(32px) saturate(180%);
   }
 
   .site-nav a {
