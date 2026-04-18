@@ -1,306 +1,299 @@
-function qs(selector, scope = document) {
-  return scope.querySelector(selector);
-}
+/* =========================
+   NordFit main.js
+   Header / Burger / Sprache / Modals / Reveal
+   ========================= */
 
-function qsa(selector, scope = document) {
-  return Array.from(scope.querySelectorAll(selector));
-}
+document.addEventListener("DOMContentLoaded", () => {
+  const body = document.body;
 
-const state = {
-  menuOpen: false,
-  langOpen: false
-};
+  const headerInner = document.querySelector(".site-header-inner");
+  const burger = document.getElementById("burger");
+  const siteNav = document.querySelector(".site-nav");
 
-function getBurger() {
-  return qs("#burger");
-}
+  const langToggle = document.getElementById("lang-toggle");
+  const langMenu = document.getElementById("lang-menu");
+  const langOptions = document.querySelectorAll(".lang-option");
+  const langToggleLabel = document.querySelector(".lang-toggle-label");
 
-function getNav() {
-  return qs(".site-nav");
-}
+  const modalElements = document.querySelectorAll(".modal");
+  const revealElements = document.querySelectorAll(".reveal");
 
-function getLangToggle() {
-  return qs("#lang-toggle");
-}
+  let lastFocusedElement = null;
 
-function getLangMenu() {
-  return qs("#lang-menu");
-}
+  /* =========================
+     Header scroll state
+     ========================= */
+  const updateHeaderScrollState = () => {
+    if (!headerInner) return;
 
-function setMenuState(open) {
-  const burger = getBurger();
-  const nav = getNav();
-
-  if (!burger || !nav) return;
-
-  state.menuOpen = open;
-  nav.classList.toggle("open", open);
-  burger.classList.toggle("is-active", open);
-  burger.setAttribute("aria-expanded", String(open));
-  burger.setAttribute("aria-label", open ? "Menü schließen" : "Menü öffnen");
-}
-
-function openMenu() {
-  setMenuState(true);
-}
-
-function closeMenu() {
-  setMenuState(false);
-}
-
-function toggleMenu() {
-  setMenuState(!state.menuOpen);
-}
-
-function setLangState(open) {
-  const toggle = getLangToggle();
-  const menu = getLangMenu();
-
-  if (!toggle || !menu) return;
-
-  state.langOpen = open;
-  menu.classList.toggle("show", open);
-  toggle.classList.toggle("is-open", open);
-  toggle.setAttribute("aria-expanded", String(open));
-}
-
-function openLangMenu() {
-  setLangState(true);
-}
-
-function closeLangMenu() {
-  setLangState(false);
-}
-
-function toggleLangMenu() {
-  setLangState(!state.langOpen);
-}
-
-function applyTranslation(element, value) {
-  const attr = element.getAttribute("data-i18n-attr");
-
-  if (attr) {
-    element.setAttribute(attr, value);
-    return;
-  }
-
-  if (element.tagName === "TITLE") {
-    document.title = value;
-    return;
-  }
-
-  element.textContent = value;
-}
-
-function setLanguage(lang = "de") {
-  if (!window.translations || !window.translations[lang]) return;
-
-  const translationSet = window.translations[lang];
-
-  qsa("[data-i18n]").forEach((element) => {
-    const key = element.getAttribute("data-i18n");
-    const value = translationSet[key];
-
-    if (value !== undefined) {
-      applyTranslation(element, value);
+    if (window.scrollY > 10) {
+      headerInner.classList.add("scrolled");
+    } else {
+      headerInner.classList.remove("scrolled");
     }
-  });
-
-  const label = qs(".lang-toggle-label");
-  if (label) {
-    label.textContent = lang.toUpperCase();
-  }
-
-  document.documentElement.lang = lang;
-  localStorage.setItem("nordfit-language", lang);
-}
-
-function openModal(modalId) {
-  const modal = document.getElementById(modalId);
-  if (!modal) return;
-
-  modal.classList.add("show");
-  modal.setAttribute("aria-hidden", "false");
-  document.body.style.overflow = "hidden";
-}
-
-function closeModal(modalId) {
-  const modal = document.getElementById(modalId);
-  if (!modal) return;
-
-  modal.classList.remove("show");
-  modal.setAttribute("aria-hidden", "true");
-
-  const anyOpen = qsa(".modal.show").length > 0;
-  if (!anyOpen) {
-    document.body.style.overflow = "";
-  }
-}
-
-function closeAllModals() {
-  qsa(".modal.show").forEach((modal) => {
-    modal.classList.remove("show");
-    modal.setAttribute("aria-hidden", "true");
-  });
-
-  document.body.style.overflow = "";
-}
-
-function initModals() {
-  qsa(".modal-close").forEach((button) => {
-    button.addEventListener("click", () => {
-      const modal = button.closest(".modal");
-      if (modal) closeModal(modal.id);
-    });
-  });
-
-  qsa(".modal").forEach((modal) => {
-    modal.addEventListener("click", (event) => {
-      if (event.target === modal) {
-        closeModal(modal.id);
-      }
-    });
-  });
-}
-
-function initRevealAnimations() {
-  const revealElements = qsa(".reveal");
-  if (!revealElements.length) return;
-
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add("visible");
-        observer.unobserve(entry.target);
-      });
-    },
-    {
-      threshold: 0.14,
-      rootMargin: "0px 0px -8% 0px"
-    }
-  );
-
-  revealElements.forEach((element) => observer.observe(element));
-}
-
-function initHeaderScrollState() {
-  const headerInner = qs(".site-header-inner");
-  if (!headerInner) return;
-
-  const update = () => {
-    headerInner.classList.toggle("scrolled", window.scrollY > 8);
   };
 
-  update();
-  window.addEventListener("scroll", update, { passive: true });
-}
+  updateHeaderScrollState();
+  window.addEventListener("scroll", updateHeaderScrollState, { passive: true });
 
-function initLanguageDropdown() {
-  const toggle = getLangToggle();
-  const menu = getLangMenu();
+  /* =========================
+     Burger menu
+     ========================= */
+  const closeBurgerMenu = () => {
+    if (!burger || !siteNav) return;
 
-  if (!toggle || !menu) return;
+    burger.classList.remove("is-active");
+    burger.setAttribute("aria-expanded", "false");
+    siteNav.classList.remove("open");
+    body.classList.remove("nav-open");
+  };
 
-  toggle.addEventListener("click", (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    closeMenu();
-    toggleLangMenu();
-  });
+  const openBurgerMenu = () => {
+    if (!burger || !siteNav) return;
 
-  qsa(".lang-option", menu).forEach((option) => {
-    option.addEventListener("click", (event) => {
-      event.preventDefault();
+    burger.classList.add("is-active");
+    burger.setAttribute("aria-expanded", "true");
+    siteNav.classList.add("open");
+    body.classList.add("nav-open");
+  };
+
+  const toggleBurgerMenu = () => {
+    if (!burger || !siteNav) return;
+
+    const isOpen = siteNav.classList.contains("open");
+    if (isOpen) {
+      closeBurgerMenu();
+    } else {
+      closeBurgerMenu();
+      closeLanguageMenu();
+      openBurgerMenu();
+    }
+  };
+
+  if (burger && siteNav) {
+    burger.addEventListener("click", toggleBurgerMenu);
+
+    const navLinks = siteNav.querySelectorAll("a");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth <= 768) {
+          closeBurgerMenu();
+        }
+      });
+    });
+  }
+
+  /* =========================
+     Language dropdown
+     ========================= */
+  function closeLanguageMenu() {
+    if (!langToggle || !langMenu) return;
+
+    langToggle.classList.remove("is-open");
+    langToggle.setAttribute("aria-expanded", "false");
+    langMenu.classList.remove("show");
+  }
+
+  function openLanguageMenu() {
+    if (!langToggle || !langMenu) return;
+
+    langToggle.classList.add("is-open");
+    langToggle.setAttribute("aria-expanded", "true");
+    langMenu.classList.add("show");
+  }
+
+  function toggleLanguageMenu() {
+    if (!langToggle || !langMenu) return;
+
+    const isOpen = langMenu.classList.contains("show");
+    if (isOpen) {
+      closeLanguageMenu();
+    } else {
+      closeBurgerMenu();
+      openLanguageMenu();
+    }
+  }
+
+  if (langToggle && langMenu) {
+    langToggle.addEventListener("click", (event) => {
       event.stopPropagation();
-      const lang = option.getAttribute("data-lang");
-      setLanguage(lang);
-      closeLangMenu();
+      toggleLanguageMenu();
     });
-  });
-}
 
-function initBurgerMenu() {
-  const burger = getBurger();
-  const nav = getNav();
-
-  if (!burger || !nav) return;
-
-  burger.addEventListener("click", (event) => {
-    event.preventDefault();
-    event.stopPropagation();
-    closeLangMenu();
-    toggleMenu();
-  });
-
-  qsa("a", nav).forEach((link) => {
-    link.addEventListener("click", () => {
-      if (window.innerWidth <= 768) {
-        closeMenu();
-      }
+    langMenu.addEventListener("click", (event) => {
+      event.stopPropagation();
     });
-  });
-}
+  }
 
-function initOutsideClickHandling() {
+  if (langOptions.length && langToggleLabel) {
+    langOptions.forEach((option) => {
+      option.addEventListener("click", () => {
+        const lang = option.dataset.lang?.trim().toUpperCase() || "DE";
+        langToggleLabel.textContent = lang;
+        closeLanguageMenu();
+      });
+    });
+  }
+
+  /* =========================
+     Global outside click close
+     ========================= */
   document.addEventListener("click", (event) => {
-    const clickedBurger = event.target.closest("#burger");
-    const clickedNav = event.target.closest(".site-nav");
-    const clickedLang = event.target.closest(".language-dropdown");
+    const target = event.target;
 
-    if (!clickedBurger && !clickedNav && state.menuOpen) {
-      closeMenu();
+    const clickedInsideLang =
+      langToggle?.contains(target) || langMenu?.contains(target);
+
+    const clickedInsideBurger =
+      burger?.contains(target) || siteNav?.contains(target);
+
+    if (!clickedInsideLang) {
+      closeLanguageMenu();
     }
 
-    if (!clickedLang && state.langOpen) {
-      closeLangMenu();
-    }
-  });
-}
-
-function initResizeHandling() {
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 768) {
-      closeMenu();
+    if (!clickedInsideBurger && window.innerWidth <= 768) {
+      closeBurgerMenu();
     }
   });
-}
 
-function initKeyboardHandling() {
+  /* =========================
+     Escape key
+     ========================= */
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
-      closeMenu();
-      closeLangMenu();
+      closeLanguageMenu();
+      closeBurgerMenu();
       closeAllModals();
     }
   });
-}
 
-function initPressFeedback() {
-  const interactive = qsa(".btn, .card, .lang-toggle, .burger, .site-nav a");
-
-  interactive.forEach((element) => {
-    const addPressed = () => element.classList.add("is-pressed");
-    const removePressed = () => element.classList.remove("is-pressed");
-
-    element.addEventListener("pointerdown", addPressed);
-    element.addEventListener("pointerup", removePressed);
-    element.addEventListener("pointerleave", removePressed);
-    element.addEventListener("pointercancel", removePressed);
+  /* =========================
+     Resize handling
+     ========================= */
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 768) {
+      closeBurgerMenu();
+    }
   });
-}
 
-document.addEventListener("DOMContentLoaded", () => {
-  initBurgerMenu();
-  initLanguageDropdown();
-  initOutsideClickHandling();
-  initResizeHandling();
-  initKeyboardHandling();
-  initModals();
-  initRevealAnimations();
-  initHeaderScrollState();
-  initPressFeedback();
+  /* =========================
+     Reveal on scroll
+     ========================= */
+  if (revealElements.length) {
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        });
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px",
+      }
+    );
 
-  const savedLanguage = localStorage.getItem("nordfit-language") || "de";
-  setLanguage(savedLanguage);
+    revealElements.forEach((element) => revealObserver.observe(element));
+  }
+
+  /* =========================
+     Modal helpers
+     ========================= */
+  function openModalById(modalId) {
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
+
+    lastFocusedElement = document.activeElement instanceof HTMLElement
+      ? document.activeElement
+      : null;
+
+    modal.classList.add("show");
+    modal.setAttribute("aria-hidden", "false");
+    body.classList.add("modal-open");
+
+    const closeButton = modal.querySelector(".modal-close");
+    if (closeButton instanceof HTMLElement) {
+      closeButton.focus();
+    }
+  }
+
+  function closeModal(modal) {
+    if (!modal) return;
+
+    modal.classList.remove("show");
+    modal.setAttribute("aria-hidden", "true");
+
+    const anyOpenModal = document.querySelector(".modal.show");
+    if (!anyOpenModal) {
+      body.classList.remove("modal-open");
+      if (lastFocusedElement instanceof HTMLElement) {
+        lastFocusedElement.focus();
+      }
+    }
+  }
+
+  function closeAllModals() {
+    modalElements.forEach((modal) => closeModal(modal));
+  }
+
+  /* Global function for inline onclick in HTML */
+  window.openModal = openModalById;
+
+  modalElements.forEach((modal) => {
+    const closeButton = modal.querySelector(".modal-close");
+
+    if (closeButton) {
+      closeButton.addEventListener("click", () => closeModal(modal));
+    }
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        closeModal(modal);
+      }
+    });
+  });
+
+  /* =========================
+     Basic focus trap for modals
+     ========================= */
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Tab") return;
+
+    const openModal = document.querySelector(".modal.show");
+    if (!openModal) return;
+
+    const focusableSelectors = [
+      "button",
+      "[href]",
+      "input",
+      "select",
+      "textarea",
+      "[tabindex]:not([tabindex='-1'])",
+    ];
+
+    const focusableElements = Array.from(
+      openModal.querySelectorAll(focusableSelectors.join(","))
+    ).filter((el) => {
+      return !(el instanceof HTMLElement) ? false : !el.hasAttribute("disabled");
+    });
+
+    if (!focusableElements.length) return;
+
+    const first = focusableElements[0];
+    const last = focusableElements[focusableElements.length - 1];
+    const active = document.activeElement;
+
+    if (event.shiftKey) {
+      if (active === first || !openModal.contains(active)) {
+        event.preventDefault();
+        last.focus();
+      }
+    } else {
+      if (active === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  });
 });
