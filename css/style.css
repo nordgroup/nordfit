@@ -2965,3 +2965,52 @@ iframe {
     min-height: 200px;
   }
 }
+
+/* =========================
+   KILL THE WHITE HEADER LINE
+   ========================= */
+
+.site-header,
+.site-header .container,
+.site-header-inner,
+.site-header-inner.glass {
+  overflow: visible !important;
+}
+
+.site-header-inner,
+.site-header-inner.glass {
+  background: rgba(255, 255, 255, 0.22) !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: 0 18px 46px rgba(0, 0, 0, 0.10) !important;
+  backdrop-filter: blur(44px) saturate(190%) !important;
+  -webkit-backdrop-filter: blur(44px) saturate(190%) !important;
+}
+
+/* Alle künstlichen Licht-/Glas-Layer komplett aus */
+.site-header-inner::before,
+.site-header-inner::after,
+.site-header-inner.glass::before,
+.site-header-inner.glass::after {
+  display: none !important;
+  content: none !important;
+  background: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Auch bei Nav / Sprachbutton / Burger keine weißen Kanten */
+.site-nav ul,
+.lang-toggle,
+.lang-menu,
+.burger {
+  border-top: none !important;
+  outline: none !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Falls Safari ein Hairline rendert */
+.site-header,
+.site-header * {
+  -webkit-mask-image: -webkit-radial-gradient(white, black);
+}
