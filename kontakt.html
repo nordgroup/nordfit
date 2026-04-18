@@ -67,23 +67,23 @@
   </header>
 
   <main>
-    <section class="section home-hero-section" style="padding-bottom: 7.4rem;">
+    <section class="section home-hero-section">
       <div class="container">
-        <div class="home-hero reveal" style="padding-bottom: 0;">
-          <h1 class="hero-title small-hero">Direkt. Klar. Erreichbar.</h1>
+        <div class="home-hero reveal">
+          <h1 class="hero-title small-hero">Schreib uns direkt.</h1>
           <p class="hero-subtitle">
-            Für Fragen rund um NordFit, Mitgliedschaft, App oder Standort
-            kannst du uns direkt hier schreiben.
+            Wenn du Fragen zu NordFit, zur App, zu deiner Mitgliedschaft oder zum Studio hast,
+            kannst du uns hier auf dem direkten Weg erreichen.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="section" style="padding-top: 1.2rem;">
+    <section class="section section-tight">
       <div class="container">
         <div class="grid-2 contact-hero-grid">
           <article class="glass section-block reveal">
-            <h2 class="section-title">So erreichst du uns.</h2>
+            <h2 class="section-title">Kontaktwege</h2>
 
             <div class="contact-info-stack" style="margin-top: 1.2rem;">
               <div class="contact-info-item">
@@ -104,18 +104,18 @@
           </article>
 
           <article class="glass contact-form-shell reveal">
-            <h2 class="section-title">Schreib uns direkt.</h2>
+            <h2 class="section-title">Kontaktformular</h2>
 
             <form style="margin-top: 1.25rem;">
               <div class="form-grid">
                 <div class="form-field">
-                  <label for="contact-first-name">Vorname <span class="required-star">*</span></label>
-                  <input type="text" id="contact-first-name" name="contact-first-name" placeholder="Dein Vorname" required />
+                  <label for="contact-firstname">Vorname <span class="required-star">*</span></label>
+                  <input type="text" id="contact-firstname" name="contact-firstname" placeholder="Dein Vorname" required />
                 </div>
 
                 <div class="form-field">
-                  <label for="contact-last-name">Nachname <span class="required-star">*</span></label>
-                  <input type="text" id="contact-last-name" name="contact-last-name" placeholder="Dein Nachname" required />
+                  <label for="contact-lastname">Nachname <span class="required-star">*</span></label>
+                  <input type="text" id="contact-lastname" name="contact-lastname" placeholder="Dein Nachname" required />
                 </div>
 
                 <div class="form-field">
@@ -125,7 +125,7 @@
 
                 <div class="form-field">
                   <label for="contact-phone">Telefonnummer <span class="required-star">*</span></label>
-                  <input type="tel" id="contact-phone" name="contact-phone" placeholder="+49 ..." required />
+                  <input type="tel" id="contact-phone" name="contact-phone" placeholder="Deine Telefonnummer" required />
                 </div>
 
                 <div class="form-field">
@@ -134,16 +134,17 @@
                     <option value="">Bitte auswählen</option>
                     <option value="mitgliedschaft">Mitgliedschaft</option>
                     <option value="app">App</option>
+                    <option value="zutritt">Zutritt / QR-Code</option>
+                    <option value="tagespass">Tagespass</option>
                     <option value="standort">Standort</option>
-                    <option value="zugang">Zugang</option>
-                    <option value="rechnung">Abrechnung</option>
+                    <option value="konto">Konto / Daten</option>
                     <option value="allgemein">Allgemeine Frage</option>
                   </select>
                 </div>
 
                 <div class="form-field">
-                  <label for="contact-member-id">Member ID</label>
-                  <input type="text" id="contact-member-id" name="contact-member-id" placeholder="Optional" />
+                  <label for="contact-memberid">Member ID</label>
+                  <input type="text" id="contact-memberid" name="contact-memberid" placeholder="Optional" />
                 </div>
 
                 <div class="form-field form-field-full">
@@ -152,7 +153,7 @@
                     id="contact-message"
                     name="contact-message"
                     rows="6"
-                    placeholder="Schreib uns dein Anliegen …"
+                    placeholder="Schreib uns dein Anliegen ..."
                     required
                   ></textarea>
                 </div>
