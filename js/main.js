@@ -1,8 +1,3 @@
-/* =========================
-   NordFit main.js
-   Header / Burger / Sprache / Modals / Reveal / Gallery paging
-   ========================= */
-
 document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
 
@@ -21,12 +16,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let lastFocusedElement = null;
 
-  /* =========================
-     Header scroll state
-     ========================= */
   const updateHeaderScrollState = () => {
     if (!headerInner) return;
-
     if (window.scrollY > 10) {
       headerInner.classList.add("scrolled");
     } else {
@@ -37,12 +28,8 @@ document.addEventListener("DOMContentLoaded", () => {
   updateHeaderScrollState();
   window.addEventListener("scroll", updateHeaderScrollState, { passive: true });
 
-  /* =========================
-     Burger menu
-     ========================= */
   const closeBurgerMenu = () => {
     if (!burger || !siteNav) return;
-
     burger.classList.remove("is-active");
     burger.setAttribute("aria-expanded", "false");
     siteNav.classList.remove("open");
@@ -51,7 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const openBurgerMenu = () => {
     if (!burger || !siteNav) return;
-
     burger.classList.add("is-active");
     burger.setAttribute("aria-expanded", "true");
     siteNav.classList.add("open");
@@ -60,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const toggleBurgerMenu = () => {
     if (!burger || !siteNav) return;
-
     const isOpen = siteNav.classList.contains("open");
     if (isOpen) {
       closeBurgerMenu();
@@ -84,12 +69,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* =========================
-     Language dropdown
-     ========================= */
   function closeLanguageMenu() {
     if (!langToggle || !langMenu) return;
-
     langToggle.classList.remove("is-open");
     langToggle.setAttribute("aria-expanded", "false");
     langMenu.classList.remove("show");
@@ -97,7 +78,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function openLanguageMenu() {
     if (!langToggle || !langMenu) return;
-
     langToggle.classList.add("is-open");
     langToggle.setAttribute("aria-expanded", "true");
     langMenu.classList.add("show");
@@ -105,7 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function toggleLanguageMenu() {
     if (!langToggle || !langMenu) return;
-
     const isOpen = langMenu.classList.contains("show");
     if (isOpen) {
       closeLanguageMenu();
@@ -136,9 +115,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  /* =========================
-     Global outside click close
-     ========================= */
   document.addEventListener("click", (event) => {
     const target = event.target;
 
@@ -157,9 +133,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* =========================
-     Escape key
-     ========================= */
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeLanguageMenu();
@@ -168,9 +141,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* =========================
-     Resize handling
-     ========================= */
   window.addEventListener("resize", () => {
     if (window.innerWidth > 768) {
       closeBurgerMenu();
@@ -178,9 +148,6 @@ document.addEventListener("DOMContentLoaded", () => {
     refreshAllGalleryDots();
   });
 
-  /* =========================
-     Reveal on scroll
-     ========================= */
   if (revealElements.length) {
     const revealObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -199,9 +166,6 @@ document.addEventListener("DOMContentLoaded", () => {
     revealElements.forEach((element) => revealObserver.observe(element));
   }
 
-  /* =========================
-     Modal helpers
-     ========================= */
   function openModalById(modalId) {
     const modal = document.getElementById(modalId);
     if (!modal) return;
@@ -246,7 +210,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeButton = modal.querySelector(".modal-close");
 
     if (closeButton) {
-      closeButton.addEventListener("click", () => closeModal(modal));
+      closeButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        closeModal(modal);
+      });
     }
 
     modal.addEventListener("click", (event) => {
@@ -256,9 +224,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* =========================
-     Basic focus trap for modals
-     ========================= */
   document.addEventListener("keydown", (event) => {
     if (event.key !== "Tab") return;
 
@@ -299,9 +264,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* =========================
-     Gallery paging dots
-     ========================= */
   function getGalleryButtons(galleryId) {
     return document.querySelectorAll(
       `.gallery-dot[data-gallery-target="${galleryId}"]`
@@ -317,17 +279,24 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function getGalleryPageScrollLeft(gallery) {
-    const maxScroll = Math.max(0, gallery.scrollWidth - gallery.clientWidth);
-    if (maxScroll <= 0) {
-      return [0, 0];
-    }
-    return [0, maxScroll];
+  function getGalleryMaxScroll(gallery) {
+    return Math.max(0, gallery.scrollWidth - gallery.clientWidth);
+  }
+
+  function getGalleryPageIndexFromScroll(gallery) {
+    const maxScroll = getGalleryMaxScroll(gallery);
+    if (maxScroll <= 0) return 0;
+    return gallery.scrollLeft < maxScroll * 0.5 ? 0 : 1;
+  }
+
+  function updateGalleryDotsFromScroll(gallery) {
+    if (!gallery || !gallery.id) return;
+    setActiveGalleryDot(gallery.id, getGalleryPageIndexFromScroll(gallery));
   }
 
   function scrollGalleryToPage(gallery, pageIndex) {
-    const [page0, page1] = getGalleryPageScrollLeft(gallery);
-    const targetLeft = pageIndex <= 0 ? page0 : page1;
+    const maxScroll = getGalleryMaxScroll(gallery);
+    const targetLeft = pageIndex <= 0 ? 0 : maxScroll;
 
     gallery.scrollTo({
       left: targetLeft,
@@ -337,22 +306,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (gallery.id) {
       setActiveGalleryDot(gallery.id, pageIndex <= 0 ? 0 : 1);
     }
-  }
-
-  function updateGalleryDotsFromScroll(gallery) {
-    if (!gallery || !gallery.id) return;
-
-    const maxScroll = Math.max(0, gallery.scrollWidth - gallery.clientWidth);
-    if (maxScroll <= 0) {
-      setActiveGalleryDot(gallery.id, 0);
-      return;
-    }
-
-    const current = gallery.scrollLeft;
-    const midpoint = maxScroll * 0.5;
-    const pageIndex = current < midpoint ? 0 : 1;
-
-    setActiveGalleryDot(gallery.id, pageIndex);
   }
 
   function refreshAllGalleryDots() {
@@ -388,6 +341,30 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (!gallery) return;
       scrollGalleryToPage(gallery, pageIndex);
+    });
+  });
+
+  const galleryArrowButtons = document.querySelectorAll(".gallery-arrow[data-gallery-target]");
+  galleryArrowButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const targetId = button.dataset.galleryTarget;
+      const direction = button.dataset.galleryDirection;
+      const gallery = document.getElementById(targetId);
+
+      if (!gallery) return;
+
+      const currentPage = getGalleryPageIndexFromScroll(gallery);
+      let nextPage = currentPage;
+
+      if (direction === "next") {
+        nextPage = Math.min(1, currentPage + 1);
+      }
+
+      if (direction === "prev") {
+        nextPage = Math.max(0, currentPage - 1);
+      }
+
+      scrollGalleryToPage(gallery, nextPage);
     });
   });
 
