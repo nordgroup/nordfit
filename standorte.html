@@ -6,7 +6,7 @@
   <title>NordFit – Standorte</title>
   <meta
     name="description"
-    content="NordFit Standorte – Studio, Lage, Öffnungszeiten und erste Eindrücke auf einen Blick."
+    content="NordFit Standorte – Studio, Lage und erste Eindrücke auf einen Blick."
   />
   <link rel="stylesheet" href="css/style.css" />
 </head>
@@ -58,8 +58,13 @@
             <button class="lang-option" data-lang="de" type="button">Deutsch</button>
             <button class="lang-option" data-lang="en" type="button">English</button>
             <button class="lang-option" data-lang="fr" type="button">Français</button>
-            <button class="lang-option" data-lang="it" type="button">Italiano</button>
             <button class="lang-option" data-lang="es" type="button">Español</button>
+            <button class="lang-option" data-lang="it" type="button">Italiano</button>
+            <button class="lang-option" data-lang="pl" type="button">Polski</button>
+            <button class="lang-option" data-lang="nl" type="button">Nederlands</button>
+            <button class="lang-option" data-lang="sv" type="button">Svenska</button>
+            <button class="lang-option" data-lang="da" type="button">Dansk</button>
+            <button class="lang-option" data-lang="no" type="button">Norsk</button>
           </div>
         </div>
       </div>
@@ -70,7 +75,7 @@
     <section class="section home-hero-section">
       <div class="container">
         <div class="home-hero reveal">
-          <h1 class="hero-title small-hero">Ein Standort. Klar gedacht.</h1>
+          <h1 class="hero-title">Ein Standort. Klar gedacht.</h1>
           <p class="hero-subtitle">
             Der erste NordFit Standort soll nicht einfach nur erreichbar sein.
             Er soll sich direkt stimmig anfühlen — von außen, von innen und im ganzen Ablauf.
@@ -103,8 +108,8 @@
                 sondern ein Ort, an dem man direkt weiß, woran man ist.
               </p>
               <p class="muted" style="margin-top: 1rem; max-width: 640px;">
-                Geplant sind 24/7 Zugang, eine moderne App-Anbindung, ein sauberer Ablauf
-                und ein Studio, das bewusst hochwertig statt chaotisch wirkt.
+                Geplant sind 24/7 Zugang, eine moderne App-Anbindung,
+                ein sauberer Ablauf und ein Studio, das bewusst hochwertig statt chaotisch wirkt.
               </p>
             </div>
 
@@ -115,54 +120,55 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
 
-        <div class="glass reveal" style="padding: 1.25rem; margin-top: 1.5rem;">
-          <div style="display: grid; gap: 1.25rem;">
-            <div>
-              <h2 class="section-title">Standort ansehen</h2>
-              <p class="muted" style="margin-top: 0.8rem; max-width: 60ch;">
-                Hier soll man den Standort nicht nur lesen, sondern direkt nachvollziehen können —
-                mit Karte und schneller Route über die bevorzugte App.
-              </p>
-            </div>
+    <section class="section section-tight">
+      <div class="container">
+        <div class="glass reveal" style="padding: 1.5rem;">
+          <h2 class="section-title">Standort ansehen</h2>
+          <p class="muted" style="margin-top: 0.9rem; max-width: 62ch;">
+            Hier soll man den Standort nicht nur lesen, sondern direkt nachvollziehen können —
+            mit Karte und schneller Route über die bevorzugte App.
+          </p>
 
+          <div style="margin-top: 1.4rem; overflow: hidden; border-radius: 28px;">
             <iframe
-              title="NordFit Standortkarte"
-              src="https://www.google.com/maps?q=Grevesmühlen&output=embed"
+              src="https://www.google.com/maps?q=Grevesm%C3%BChlen&output=embed"
+              width="100%"
+              height="420"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
-              style="min-height: 420px;"
+              title="NordFit Standort Karte"
             ></iframe>
+          </div>
 
-            <div class="app-store-row" style="margin-top: 0;">
-              <a
-                href="https://maps.apple.com/?q=Grevesm%C3%BChlen"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="store-badge store-badge-dark"
-                aria-label="Route in Apple Karten öffnen"
-              >
-                <span class="store-badge-icon" aria-hidden="true"></span>
-                <span class="store-badge-text">
-                  <span class="store-badge-small">ÖFFNEN IN</span>
-                  <span class="store-badge-big">Apple Karten</span>
-                </span>
-              </a>
+          <div class="app-store-row" style="margin-top: 1.4rem;">
+            <a
+              href="https://maps.apple.com/?q=Grevesm%C3%BChlen"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="store-badge store-badge-light"
+            >
+              <span class="store-badge-icon" aria-hidden="true">⌘</span>
+              <span class="store-badge-text">
+                <span class="store-badge-small">ÖFFNEN IN</span>
+                <span class="store-badge-big">Apple Karten</span>
+              </span>
+            </a>
 
-              <a
-                href="https://www.google.com/maps/search/?api=1&query=Grevesm%C3%BChlen"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="store-badge store-badge-light"
-                aria-label="Route in Google Maps öffnen"
-              >
-                <span class="store-badge-icon" aria-hidden="true">↗</span>
-                <span class="store-badge-text">
-                  <span class="store-badge-small">ÖFFNEN IN</span>
-                  <span class="store-badge-big">Google Maps</span>
-                </span>
-              </a>
-            </div>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Grevesm%C3%BChlen"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="store-badge store-badge-dark"
+            >
+              <span class="store-badge-icon" aria-hidden="true">⌖</span>
+              <span class="store-badge-text">
+                <span class="store-badge-small">ÖFFNEN IN</span>
+                <span class="store-badge-big">Google Maps</span>
+              </span>
+            </a>
           </div>
         </div>
       </div>
