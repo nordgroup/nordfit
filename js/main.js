@@ -1,3 +1,8 @@
+/* =========================
+   NordFit main.js
+   Header / Burger / Sprache / Modals / Reveal / Gallery
+   ========================= */
+
 document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
 
@@ -12,12 +17,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const modalElements = document.querySelectorAll(".modal");
   const revealElements = document.querySelectorAll(".reveal");
-  const galleryRows = document.querySelectorAll(".gallery-row");
 
   let lastFocusedElement = null;
 
+  /* =========================
+     Header scroll state
+     ========================= */
   const updateHeaderScrollState = () => {
     if (!headerInner) return;
+
     if (window.scrollY > 10) {
       headerInner.classList.add("scrolled");
     } else {
@@ -28,8 +36,12 @@ document.addEventListener("DOMContentLoaded", () => {
   updateHeaderScrollState();
   window.addEventListener("scroll", updateHeaderScrollState, { passive: true });
 
+  /* =========================
+     Burger menu
+     ========================= */
   const closeBurgerMenu = () => {
     if (!burger || !siteNav) return;
+
     burger.classList.remove("is-active");
     burger.setAttribute("aria-expanded", "false");
     siteNav.classList.remove("open");
@@ -38,6 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const openBurgerMenu = () => {
     if (!burger || !siteNav) return;
+
     burger.classList.add("is-active");
     burger.setAttribute("aria-expanded", "true");
     siteNav.classList.add("open");
@@ -46,6 +59,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const toggleBurgerMenu = () => {
     if (!burger || !siteNav) return;
+
     const isOpen = siteNav.classList.contains("open");
     if (isOpen) {
       closeBurgerMenu();
@@ -57,7 +71,10 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   if (burger && siteNav) {
-    burger.addEventListener("click", toggleBurgerMenu);
+    burger.addEventListener("click", (event) => {
+      event.stopPropagation();
+      toggleBurgerMenu();
+    });
 
     const navLinks = siteNav.querySelectorAll("a");
     navLinks.forEach((link) => {
@@ -69,8 +86,45 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  /* =========================
+     Language helpers
+     ========================= */
+  const getStoredLanguage = () => {
+    try {
+      return (localStorage.getItem("nordfit-language") || "de").trim().toLowerCase();
+    } catch {
+      return "de";
+    }
+  };
+
+  const syncLanguageSelectionUI = (languageCode) => {
+    const normalized = (languageCode || "de").trim().toLowerCase();
+
+    if (langToggleLabel) {
+      langToggleLabel.textContent = normalized.toUpperCase();
+    }
+
+    if (langOptions.length) {
+      langOptions.forEach((option) => {
+        const optionLang = option.dataset.lang?.trim().toLowerCase() || "";
+
+        if (optionLang === normalized) {
+          option.classList.add("is-selected");
+          option.setAttribute("aria-current", "true");
+        } else {
+          option.classList.remove("is-selected");
+          option.removeAttribute("aria-current");
+        }
+      });
+    }
+  };
+
+  /* =========================
+     Language dropdown
+     ========================= */
   function closeLanguageMenu() {
     if (!langToggle || !langMenu) return;
+
     langToggle.classList.remove("is-open");
     langToggle.setAttribute("aria-expanded", "false");
     langMenu.classList.remove("show");
@@ -78,6 +132,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function openLanguageMenu() {
     if (!langToggle || !langMenu) return;
+
+    syncLanguageSelectionUI(getStoredLanguage());
     langToggle.classList.add("is-open");
     langToggle.setAttribute("aria-expanded", "true");
     langMenu.classList.add("show");
@@ -85,6 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function toggleLanguageMenu() {
     if (!langToggle || !langMenu) return;
+
     const isOpen = langMenu.classList.contains("show");
     if (isOpen) {
       closeLanguageMenu();
@@ -93,6 +150,8 @@ document.addEventListener("DOMContentLoaded", () => {
       openLanguageMenu();
     }
   }
+
+  syncLanguageSelectionUI(getStoredLanguage());
 
   if (langToggle && langMenu) {
     langToggle.addEventListener("click", (event) => {
@@ -105,16 +164,28 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (langOptions.length && langToggleLabel) {
+  if (langOptions.length) {
     langOptions.forEach((option) => {
       option.addEventListener("click", () => {
-        const lang = option.dataset.lang?.trim().toUpperCase() || "DE";
-        langToggleLabel.textContent = lang;
+        const lang = option.dataset.lang?.trim().toLowerCase() || "de";
+
+        try {
+          localStorage.setItem("nordfit-language", lang);
+        } catch {}
+
+        syncLanguageSelectionUI(lang);
         closeLanguageMenu();
       });
     });
   }
 
+  window.addEventListener("storage", () => {
+    syncLanguageSelectionUI(getStoredLanguage());
+  });
+
+  /* =========================
+     Global outside click close
+     ========================= */
   document.addEventListener("click", (event) => {
     const target = event.target;
 
@@ -133,6 +204,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  /* =========================
+     Escape key
+     ========================= */
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeLanguageMenu();
@@ -141,13 +215,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  /* =========================
+     Resize handling
+     ========================= */
   window.addEventListener("resize", () => {
     if (window.innerWidth > 768) {
       closeBurgerMenu();
     }
-    refreshAllGalleryDots();
   });
 
+  /* =========================
+     Reveal on scroll
+     ========================= */
   if (revealElements.length) {
     const revealObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -166,6 +245,9 @@ document.addEventListener("DOMContentLoaded", () => {
     revealElements.forEach((element) => revealObserver.observe(element));
   }
 
+  /* =========================
+     Modal helpers
+     ========================= */
   function openModalById(modalId) {
     const modal = document.getElementById(modalId);
     if (!modal) return;
@@ -210,11 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const closeButton = modal.querySelector(".modal-close");
 
     if (closeButton) {
-      closeButton.addEventListener("click", (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        closeModal(modal);
-      });
+      closeButton.addEventListener("click", () => closeModal(modal));
     }
 
     modal.addEventListener("click", (event) => {
@@ -224,6 +302,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  /* =========================
+     Focus trap for modals
+     ========================= */
   document.addEventListener("keydown", (event) => {
     if (event.key !== "Tab") return;
 
@@ -242,7 +323,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const focusableElements = Array.from(
       openModal.querySelectorAll(focusableSelectors.join(","))
     ).filter((el) => {
-      return !(el instanceof HTMLElement) ? false : !el.hasAttribute("disabled");
+      return !(el instanceof HTMLElement)
+        ? false
+        : !el.hasAttribute("disabled");
     });
 
     if (!focusableElements.length) return;
@@ -264,109 +347,74 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  function getGalleryButtons(galleryId) {
-    return document.querySelectorAll(
-      `.gallery-dot[data-gallery-target="${galleryId}"]`
-    );
-  }
+  /* =========================
+     Gallery pagination / arrows / dots
+     ========================= */
+  const galleryRows = document.querySelectorAll(".gallery-row");
 
-  function setActiveGalleryDot(galleryId, pageIndex) {
-    const buttons = getGalleryButtons(galleryId);
-    buttons.forEach((button) => {
-      const isActive = Number(button.dataset.galleryPage) === pageIndex;
-      button.classList.toggle("active", isActive);
-      button.setAttribute("aria-pressed", String(isActive));
-    });
-  }
+  const updateGalleryState = (row) => {
+    if (!(row instanceof HTMLElement)) return;
 
-  function getGalleryMaxScroll(gallery) {
-    return Math.max(0, gallery.scrollWidth - gallery.clientWidth);
-  }
+    const controls = row.closest(".area-section")?.querySelector(".gallery-controls");
+    const dots = controls?.querySelectorAll(".gallery-dot");
+    const prev = controls?.querySelector('[data-gallery-arrow="prev"]');
+    const next = controls?.querySelector('[data-gallery-arrow="next"]');
 
-  function getGalleryPageIndexFromScroll(gallery) {
-    const maxScroll = getGalleryMaxScroll(gallery);
-    if (maxScroll <= 0) return 0;
-    return gallery.scrollLeft < maxScroll * 0.5 ? 0 : 1;
-  }
+    const maxScroll = Math.max(0, row.scrollWidth - row.clientWidth);
+    const progress = maxScroll > 0 ? row.scrollLeft / maxScroll : 0;
+    const pageIndex = progress > 0.45 ? 1 : 0;
 
-  function updateGalleryDotsFromScroll(gallery) {
-    if (!gallery || !gallery.id) return;
-    setActiveGalleryDot(gallery.id, getGalleryPageIndexFromScroll(gallery));
-  }
-
-  function scrollGalleryToPage(gallery, pageIndex) {
-    const maxScroll = getGalleryMaxScroll(gallery);
-    const targetLeft = pageIndex <= 0 ? 0 : maxScroll;
-
-    gallery.scrollTo({
-      left: targetLeft,
-      behavior: "smooth",
+    dots?.forEach((dot, index) => {
+      dot.classList.toggle("active", index === pageIndex);
+      dot.setAttribute("aria-pressed", index === pageIndex ? "true" : "false");
     });
 
-    if (gallery.id) {
-      setActiveGalleryDot(gallery.id, pageIndex <= 0 ? 0 : 1);
+    if (prev instanceof HTMLButtonElement) {
+      prev.disabled = row.scrollLeft <= 8;
+      prev.style.opacity = prev.disabled ? "0.45" : "1";
     }
-  }
 
-  function refreshAllGalleryDots() {
-    galleryRows.forEach((gallery) => updateGalleryDotsFromScroll(gallery));
-  }
+    if (next instanceof HTMLButtonElement) {
+      next.disabled = row.scrollLeft >= maxScroll - 8;
+      next.style.opacity = next.disabled ? "0.45" : "1";
+    }
+  };
 
-  galleryRows.forEach((gallery) => {
-    let scrollTimeout = null;
+  galleryRows.forEach((row) => {
+    const section = row.closest(".area-section");
+    const controls = section?.querySelector(".gallery-controls");
 
-    updateGalleryDotsFromScroll(gallery);
+    if (!controls) return;
 
-    gallery.addEventListener(
-      "scroll",
-      () => {
-        if (scrollTimeout) {
-          window.clearTimeout(scrollTimeout);
-        }
+    const prev = controls.querySelector('[data-gallery-arrow="prev"]');
+    const next = controls.querySelector('[data-gallery-arrow="next"]');
+    const dots = controls.querySelectorAll(".gallery-dot");
 
-        scrollTimeout = window.setTimeout(() => {
-          updateGalleryDotsFromScroll(gallery);
-        }, 40);
-      },
-      { passive: true }
-    );
-  });
+    const goToPage = (pageIndex) => {
+      const maxScroll = Math.max(0, row.scrollWidth - row.clientWidth);
+      const target = pageIndex === 0 ? 0 : maxScroll;
 
-  const galleryDotButtons = document.querySelectorAll(".gallery-dot[data-gallery-target]");
-  galleryDotButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const targetId = button.dataset.galleryTarget;
-      const pageIndex = Number(button.dataset.galleryPage || "0");
-      const gallery = document.getElementById(targetId);
+      row.scrollTo({
+        left: target,
+        behavior: "smooth",
+      });
+    };
 
-      if (!gallery) return;
-      scrollGalleryToPage(gallery, pageIndex);
+    if (prev instanceof HTMLButtonElement) {
+      prev.addEventListener("click", () => goToPage(0));
+    }
+
+    if (next instanceof HTMLButtonElement) {
+      next.addEventListener("click", () => goToPage(1));
+    }
+
+    dots.forEach((dot, index) => {
+      dot.addEventListener("click", () => goToPage(index));
     });
+
+    row.addEventListener("scroll", () => updateGalleryState(row), { passive: true });
+    window.addEventListener("resize", () => updateGalleryState(row));
+
+    updateGalleryState(row);
   });
-
-  const galleryArrowButtons = document.querySelectorAll(".gallery-arrow[data-gallery-target]");
-  galleryArrowButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      const targetId = button.dataset.galleryTarget;
-      const direction = button.dataset.galleryDirection;
-      const gallery = document.getElementById(targetId);
-
-      if (!gallery) return;
-
-      const currentPage = getGalleryPageIndexFromScroll(gallery);
-      let nextPage = currentPage;
-
-      if (direction === "next") {
-        nextPage = Math.min(1, currentPage + 1);
-      }
-
-      if (direction === "prev") {
-        nextPage = Math.max(0, currentPage - 1);
-      }
-
-      scrollGalleryToPage(gallery, nextPage);
-    });
-  });
-
-  refreshAllGalleryDots();
 });
