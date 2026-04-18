@@ -60,7 +60,6 @@
             <button class="lang-option" data-lang="fr" type="button">Français</button>
             <button class="lang-option" data-lang="it" type="button">Italiano</button>
             <button class="lang-option" data-lang="es" type="button">Español</button>
-            <button class="lang-option" data-lang="pl" type="button">Polski</button>
           </div>
         </div>
       </div>
@@ -68,78 +67,70 @@
   </header>
 
   <main>
-    <section class="section home-hero-section">
+    <section class="section home-hero-section" style="padding-bottom: 7.4rem;">
       <div class="container">
-        <div class="home-hero reveal">
-          <p class="eyebrow">Rechtliches</p>
+        <div class="home-hero reveal" style="padding-bottom: 0;">
           <h1 class="hero-title small-hero">Klar. Direkt. Rechtlich sauber.</h1>
           <p class="hero-subtitle">
-            Hier findest du Impressum, AGB und Datenschutz
-            in einer ruhigen und übersichtlichen Darstellung.
+            Hier findest du Impressum, Datenschutz und AGB
+            in einer ruhigen, übersichtlichen Darstellung.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="section section-tight">
+    <section class="section" style="padding-top: 1.2rem;">
       <div class="container">
-        <div class="reveal legal-quick-actions">
-          <button class="btn btn-primary" type="button" onclick="openModal('agb-modal')">
-            AGB öffnen
-          </button>
-          <button class="btn btn-secondary" type="button" onclick="openModal('privacy-modal')">
-            Datenschutz öffnen
-          </button>
-          <a href="hausordnung.html" class="btn btn-secondary">
-            Hausordnung öffnen
-          </a>
-        </div>
-      </div>
-    </section>
+        <div class="glass reveal" style="padding: 1.35rem;">
+          <div class="legal-grid">
+            <article class="glass section-block">
+              <h2 class="section-title large-title">Pflichtangaben</h2>
 
-    <section class="section">
-      <div class="container">
-        <div class="glass reveal" style="padding: 1.4rem;">
-          <p class="eyebrow">Impressum</p>
-          <h2 class="section-title">Pflichtangaben</h2>
+              <div class="legal-info-list" style="margin-top: 1.2rem;">
+                <div class="legal-info-row">
+                  <span class="legal-label">Firmenname</span>
+                  <strong>NordFit / Nordgroup</strong>
+                </div>
 
-          <div class="legal-info-list" style="margin-top: 1.2rem;">
-            <div class="legal-info-row">
-              <span class="legal-label">Marke / Unternehmen</span>
-              <strong>NordFit / Nordgroup</strong>
-            </div>
+                <div class="legal-info-row">
+                  <span class="legal-label">E-Mail</span>
+                  <strong><a href="mailto:nordgroup.business@gmail.com">nordgroup.business@gmail.com</a></strong>
+                </div>
 
-            <div class="legal-info-row">
-              <span class="legal-label">E-Mail</span>
-              <strong>
-                <a href="mailto:nordgroup.business@gmail.com">nordgroup.business@gmail.com</a>
-              </strong>
-            </div>
+                <div class="legal-info-row">
+                  <span class="legal-label">Instagram</span>
+                  <strong><a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">@nordfit.business</a></strong>
+                </div>
 
-            <div class="legal-info-row">
-              <span class="legal-label">Instagram</span>
-              <strong>
-                <a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">@nordfit.business</a>
-              </strong>
-            </div>
+                <div class="legal-info-row">
+                  <span class="legal-label">Adresse</span>
+                  <strong>Bald verfügbar</strong>
+                </div>
+              </div>
 
-            <div class="legal-info-row">
-              <span class="legal-label">Telefon</span>
-              <strong>Bald verfügbar</strong>
-            </div>
+              <div class="legal-missing-info">
+                <p class="muted">Falls noch Angaben ergänzt werden müssen, kommen sie hier gesammelt und sauber darunter.</p>
+              </div>
+            </article>
 
-            <div class="legal-info-row">
-              <span class="legal-label">Adresse</span>
-              <strong>Bald verfügbar</strong>
-            </div>
-          </div>
+            <article class="card legal-actions-card">
+              <h2 class="section-title">Schnellauswahl</h2>
+              <p class="muted" style="margin-top: 0.9rem;">
+                AGB, Datenschutz und Hausordnung kannst du direkt hier öffnen.
+              </p>
 
-          <div class="legal-missing-info">
-            <p class="eyebrow">Vor Veröffentlichung noch ergänzen</p>
-            <p class="muted">Vollständiger Firmenname / Rechtsform</p>
-            <p class="muted">Ladungsfähige Anschrift</p>
-            <p class="muted">Vertretungsberechtigte Person</p>
-            <p class="muted">Weitere rechtlich erforderliche Angaben, falls notwendig</p>
+              <div class="legal-action-buttons">
+                <button class="btn btn-primary" type="button" onclick="openModal('agb-modal')">
+                  AGB öffnen
+                </button>
+                <button class="btn btn-secondary" type="button" onclick="openModal('privacy-modal')">
+                  Datenschutz öffnen
+                </button>
+                <button class="btn btn-secondary" type="button" onclick="openModal('rules-modal')">
+                  Hausordnung öffnen
+                </button>
+              </div>
+            </article>
           </div>
         </div>
       </div>
@@ -148,48 +139,35 @@
 
   <div class="modal" id="agb-modal" aria-hidden="true">
     <div class="modal-box glass">
-      <button class="modal-close" aria-label="AGB schließen" type="button">×</button>
-      <p class="eyebrow">AGB</p>
+      <button class="modal-close" aria-label="Modal schließen" type="button">×</button>
       <h2 class="section-title">Allgemeine Geschäftsbedingungen</h2>
-      <p class="muted" style="margin-top: 1rem; max-width: 62ch;">
-        Die Allgemeinen Geschäftsbedingungen werden noch vollständig erstellt
-        und vor der finalen Veröffentlichung rechtlich ergänzt.
+      <p class="muted" style="margin-top: 1rem;">
+        Allgemeine Geschäftsbedingungen werden noch erstellt
+        und vor Veröffentlichung ergänzt.
       </p>
-
-      <div class="legal-info-list" style="margin-top: 1.2rem;">
-        <div class="legal-info-row">
-          <span class="legal-label">Status</span>
-          <strong>In Vorbereitung</strong>
-        </div>
-
-        <div class="legal-info-row">
-          <span class="legal-label">Hinweis</span>
-          <strong>Wird vor Veröffentlichung final ergänzt</strong>
-        </div>
-      </div>
     </div>
   </div>
 
   <div class="modal" id="privacy-modal" aria-hidden="true">
     <div class="modal-box glass">
-      <button class="modal-close" aria-label="Datenschutz schließen" type="button">×</button>
-      <p class="eyebrow">Datenschutz</p>
+      <button class="modal-close" aria-label="Modal schließen" type="button">×</button>
       <h2 class="section-title">Datenschutzerklärung</h2>
-      <p class="muted" style="margin-top: 1rem; max-width: 62ch;">
-        Die Datenschutzerklärung wird noch vollständig ausgearbeitet
-        und vor der finalen Veröffentlichung rechtlich ergänzt.
+      <p class="muted" style="margin-top: 1rem;">
+        Die Datenschutzerklärung folgt und wird vor Veröffentlichung
+        rechtlich vollständig ergänzt.
       </p>
+    </div>
+  </div>
 
-      <div class="legal-info-list" style="margin-top: 1.2rem;">
-        <div class="legal-info-row">
-          <span class="legal-label">Status</span>
-          <strong>In Vorbereitung</strong>
-        </div>
-
-        <div class="legal-info-row">
-          <span class="legal-label">Hinweis</span>
-          <strong>Wird vor Veröffentlichung final ergänzt</strong>
-        </div>
+  <div class="modal" id="rules-modal" aria-hidden="true">
+    <div class="modal-box glass">
+      <button class="modal-close" aria-label="Modal schließen" type="button">×</button>
+      <h2 class="section-title">Hausordnung</h2>
+      <p class="muted" style="margin-top: 1rem;">
+        Die vollständige Hausordnung findest du zusätzlich auf der eigenen Unterseite.
+      </p>
+      <div style="margin-top: 1.2rem;">
+        <a href="hausordnung.html" class="btn btn-primary">Zur Hausordnung</a>
       </div>
     </div>
   </div>
