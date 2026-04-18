@@ -1018,6 +1018,28 @@ select:focus {
   box-shadow: 0 12px 22px rgba(0,0,0,0.08);
 }
 
+.info-note {
+  max-width: 920px;
+  padding: 0.35rem 0 0.1rem;
+}
+
+.info-note-label {
+  margin-bottom: 0.5rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.info-note-text {
+  max-width: 68ch;
+  font-size: clamp(1.05rem, 1.45vw, 1.16rem);
+  line-height: 1.65;
+  letter-spacing: -0.015em;
+  color: var(--text-main);
+}
+
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1079,16 +1101,6 @@ select:focus {
   font-size: 0.78rem;
   font-weight: 700;
   background: rgba(46, 145, 63, 0.1);
-}
-
-.pricing-info-note {
-  max-width: 880px;
-}
-
-.pricing-info-note p.muted {
-  max-width: 68ch;
-  font-size: 1.02rem;
-  line-height: 1.65;
 }
 
 .daypass-shell {
