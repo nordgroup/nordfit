@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const modalElements = document.querySelectorAll(".modal");
   const revealElements = document.querySelectorAll(".reveal");
-  const galleryShells = document.querySelectorAll("[data-gallery]");
+  const galleryRows = document.querySelectorAll(".gallery-row");
 
   let lastFocusedElement = null;
 
@@ -90,6 +90,34 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =========================
      Language dropdown
      ========================= */
+  function getStoredLanguage() {
+    try {
+      return localStorage.getItem("nordfit-language") || "de";
+    } catch {
+      return "de";
+    }
+  }
+
+  function updateLanguageUI(lang) {
+    if (langToggleLabel) {
+      langToggleLabel.textContent = lang.toUpperCase();
+    }
+
+    if (!langOptions.length) return;
+
+    langOptions.forEach((option) => {
+      const optionLang = option.dataset.lang?.trim().toLowerCase();
+
+      if (optionLang === lang) {
+        option.classList.add("is-active", "is-selected");
+        option.setAttribute("aria-current", "true");
+      } else {
+        option.classList.remove("is-active", "is-selected");
+        option.removeAttribute("aria-current");
+      }
+    });
+  }
+
   function closeLanguageMenu() {
     if (!langToggle || !langMenu) return;
 
@@ -104,6 +132,8 @@ document.addEventListener("DOMContentLoaded", () => {
     langToggle.classList.add("is-open");
     langToggle.setAttribute("aria-expanded", "true");
     langMenu.classList.add("show");
+
+    updateLanguageUI(getStoredLanguage());
   }
 
   function toggleLanguageMenu() {
@@ -114,32 +144,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (isOpen) {
       closeLanguageMenu();
     } else {
-      if (window.innerWidth <= 768) {
-        closeBurgerMenu();
-      }
+      closeBurgerMenu();
       openLanguageMenu();
     }
   }
 
-  function getStoredLanguage() {
-    try {
-      return localStorage.getItem("nordfit-language") || "de";
-    } catch {
-      return "de";
-    }
-  }
-
-  function markActiveLanguage(langCode) {
-    if (!langOptions.length) return;
-
-    langOptions.forEach((option) => {
-      const optionLang = option.dataset.lang?.trim().toLowerCase() || "";
-      const isActive = optionLang === langCode;
-
-      option.classList.toggle("is-active", isActive);
-      option.setAttribute("aria-pressed", isActive ? "true" : "false");
-    });
-  }
+  updateLanguageUI(getStoredLanguage());
 
   if (langToggle && langMenu) {
     langToggle.addEventListener("click", (event) => {
@@ -152,29 +162,23 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (langOptions.length && langToggleLabel) {
-    const initialLang = getStoredLanguage().toLowerCase();
-    langToggleLabel.textContent = initialLang.toUpperCase();
-    markActiveLanguage(initialLang);
-
+  if (langOptions.length) {
     langOptions.forEach((option) => {
       option.addEventListener("click", () => {
         const lang = option.dataset.lang?.trim().toLowerCase() || "de";
-        langToggleLabel.textContent = lang.toUpperCase();
-        markActiveLanguage(lang);
+
+        try {
+          localStorage.setItem("nordfit-language", lang);
+        } catch {}
+
+        updateLanguageUI(lang);
         closeLanguageMenu();
       });
-    });
-
-    window.addEventListener("storage", () => {
-      const updatedLang = getStoredLanguage().toLowerCase();
-      langToggleLabel.textContent = updatedLang.toUpperCase();
-      markActiveLanguage(updatedLang);
     });
   }
 
   /* =========================
-     Global outside click close
+     Outside click close
      ========================= */
   document.addEventListener("click", (event) => {
     const target = event.target;
@@ -213,7 +217,7 @@ document.addEventListener("DOMContentLoaded", () => {
       closeBurgerMenu();
     }
 
-    galleryShells.forEach((shell) => updateGalleryState(shell));
+    refreshAllGalleries();
   });
 
   /* =========================
@@ -245,9 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!modal) return;
 
     lastFocusedElement =
-      document.activeElement instanceof HTMLElement
-        ? document.activeElement
-        : null;
+      document.activeElement instanceof HTMLElement ? document.activeElement : null;
 
     modal.classList.add("show");
     modal.setAttribute("aria-hidden", "false");
@@ -268,6 +270,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const anyOpenModal = document.querySelector(".modal.show");
     if (!anyOpenModal) {
       body.classList.remove("modal-open");
+
       if (lastFocusedElement instanceof HTMLElement) {
         lastFocusedElement.focus();
       }
@@ -319,8 +322,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const focusableElements = Array.from(
       openModal.querySelectorAll(focusableSelectors.join(","))
     ).filter((el) => {
-      if (!(el instanceof HTMLElement)) return false;
-      return !el.hasAttribute("disabled");
+      return el instanceof HTMLElement && !el.hasAttribute("disabled");
     });
 
     if (!focusableElements.length) return;
@@ -345,90 +347,254 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =========================
      Galleries
      ========================= */
-  function getGalleryStep(row) {
-    const firstCard = row.querySelector(".gallery-card");
-    if (!(firstCard instanceof HTMLElement)) {
-      return Math.max(row.clientWidth * 0.85, 280);
+  const galleryInstances = [];
+
+  function clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
+  }
+
+  function getGalleryCards(row) {
+    return Array.from(row.querySelectorAll(".gallery-card"));
+  }
+
+  function getClosestCardIndex(row) {
+    const cards = getGalleryCards(row);
+    if (!cards.length) return 0;
+
+    const rowLeft = row.scrollLeft;
+    let closestIndex = 0;
+    let smallestDistance = Infinity;
+
+    cards.forEach((card, index) => {
+      const distance = Math.abs(card.offsetLeft - rowLeft);
+      if (distance < smallestDistance) {
+        smallestDistance = distance;
+        closestIndex = index;
+      }
+    });
+
+    return closestIndex;
+  }
+
+  function scrollToCard(row, index, smooth = true) {
+    const cards = getGalleryCards(row);
+    if (!cards.length) return;
+
+    const safeIndex = clamp(index, 0, cards.length - 1);
+    const targetCard = cards[safeIndex];
+
+    row.scrollTo({
+      left: targetCard.offsetLeft,
+      behavior: smooth ? "smooth" : "auto",
+    });
+  }
+
+  function updateGalleryState(instance) {
+    const { row, prevButton, nextButton, range } = instance;
+    const cards = getGalleryCards(row);
+    if (!cards.length) return;
+
+    const activeIndex = getClosestCardIndex(row);
+    const maxIndex = cards.length - 1;
+
+    if (prevButton) {
+      const disabled = activeIndex <= 0;
+      prevButton.disabled = disabled;
+      prevButton.classList.toggle("is-disabled", disabled);
     }
 
-    const cardStyles = window.getComputedStyle(firstCard);
-    const rowStyles = window.getComputedStyle(row);
+    if (nextButton) {
+      const disabled = activeIndex >= maxIndex;
+      nextButton.disabled = disabled;
+      nextButton.classList.toggle("is-disabled", disabled);
+    }
 
-    const cardWidth = firstCard.getBoundingClientRect().width;
-    const gap =
-      parseFloat(rowStyles.columnGap || rowStyles.gap || "0") ||
-      parseFloat(cardStyles.marginRight || "0") ||
-      0;
-
-    return cardWidth + gap;
+    if (range) {
+      range.max = String(maxIndex);
+      range.value = String(activeIndex);
+    }
   }
 
-  function updateGalleryState(shell) {
-    const row = shell.querySelector(".gallery-row");
-    const leftArrow = shell.querySelector(".gallery-arrow-left");
-    const rightArrow = shell.querySelector(".gallery-arrow-right");
+  function buildGalleryControls(row) {
+    const areaSection = row.closest(".area-section");
+    if (!areaSection) return null;
 
-    if (!(row instanceof HTMLElement)) return;
-    if (!(leftArrow instanceof HTMLElement) || !(rightArrow instanceof HTMLElement)) return;
+    let topbar = areaSection.querySelector(".gallery-topbar");
+    if (!topbar) {
+      topbar = document.createElement("div");
+      topbar.className = "gallery-topbar";
+      row.parentNode.insertBefore(topbar, row);
+    }
 
-    const maxScrollLeft = Math.max(0, row.scrollWidth - row.clientWidth);
-    const currentScroll = row.scrollLeft;
+    let controls = topbar.querySelector(".gallery-controls");
+    if (!controls) {
+      controls = document.createElement("div");
+      controls.className = "gallery-controls";
+      topbar.appendChild(controls);
+    }
 
-    const atStart = currentScroll <= 6;
-    const atEnd = currentScroll >= maxScrollLeft - 6;
+    let prevButton = controls.querySelector(".gallery-arrow.prev");
+    if (!prevButton) {
+      prevButton = document.createElement("button");
+      prevButton.type = "button";
+      prevButton.className = "gallery-arrow prev";
+      prevButton.setAttribute("aria-label", "Vorheriges Bild");
+      prevButton.innerHTML = "‹";
+      controls.appendChild(prevButton);
+    }
 
-    leftArrow.disabled = atStart;
-    rightArrow.disabled = atEnd;
+    let sliderWrap = controls.querySelector(".gallery-slider-wrap");
+    if (!sliderWrap) {
+      sliderWrap = document.createElement("div");
+      sliderWrap.className = "gallery-slider-wrap";
+      controls.appendChild(sliderWrap);
+    }
 
-    leftArrow.classList.toggle("is-disabled", atStart);
-    rightArrow.classList.toggle("is-disabled", atEnd);
+    let range = sliderWrap.querySelector(".gallery-range");
+    if (!range) {
+      range = document.createElement("input");
+      range.type = "range";
+      range.className = "gallery-range";
+      range.min = "0";
+      range.step = "1";
+      range.value = "0";
+      range.setAttribute("aria-label", "Bilder wechseln");
+      sliderWrap.appendChild(range);
+    }
+
+    let nextButton = controls.querySelector(".gallery-arrow.next");
+    if (!nextButton) {
+      nextButton = document.createElement("button");
+      nextButton.type = "button";
+      nextButton.className = "gallery-arrow next";
+      nextButton.setAttribute("aria-label", "Nächstes Bild");
+      nextButton.innerHTML = "›";
+      controls.appendChild(nextButton);
+    }
+
+    return { topbar, controls, prevButton, nextButton, range };
   }
 
-  function scrollGallery(row, direction) {
-    if (!(row instanceof HTMLElement)) return;
+  function setupGallery(row) {
+    const controls = buildGalleryControls(row);
+    if (!controls) return;
 
-    const step = getGalleryStep(row);
-    const distance = direction === "left" ? -step * 2 : step * 2;
+    const { prevButton, nextButton, range } = controls;
+    const cards = getGalleryCards(row);
+    if (!cards.length) return;
 
-    row.scrollBy({
-      left: distance,
-      behavior: "smooth",
+    row.dataset.galleryReady = "true";
+
+    const instance = {
+      row,
+      prevButton,
+      nextButton,
+      range,
+      isPointerDown: false,
+      startX: 0,
+      startScrollLeft: 0,
+      moved: false,
+      scrollTimeout: null,
+    };
+
+    prevButton.addEventListener("click", () => {
+      const currentIndex = getClosestCardIndex(row);
+      scrollToCard(row, currentIndex - 1);
     });
-  }
 
-  if (galleryShells.length) {
-    galleryShells.forEach((shell) => {
-      const row = shell.querySelector(".gallery-row");
-      const leftArrow = shell.querySelector(".gallery-arrow-left");
-      const rightArrow = shell.querySelector(".gallery-arrow-right");
+    nextButton.addEventListener("click", () => {
+      const currentIndex = getClosestCardIndex(row);
+      scrollToCard(row, currentIndex + 1);
+    });
 
-      if (!(row instanceof HTMLElement)) return;
+    range.addEventListener("input", () => {
+      const index = Number(range.value);
+      scrollToCard(row, index, false);
+      updateGalleryState(instance);
+    });
 
-      if (leftArrow instanceof HTMLElement) {
-        leftArrow.addEventListener("click", () => {
-          scrollGallery(row, "left");
-        });
+    range.addEventListener("change", () => {
+      const index = Number(range.value);
+      scrollToCard(row, index, true);
+    });
+
+    row.addEventListener("scroll", () => {
+      window.clearTimeout(instance.scrollTimeout);
+      updateGalleryState(instance);
+
+      instance.scrollTimeout = window.setTimeout(() => {
+        updateGalleryState(instance);
+      }, 80);
+    }, { passive: true });
+
+    row.addEventListener("pointerdown", (event) => {
+      if (event.pointerType === "mouse" && event.button !== 0) return;
+
+      instance.isPointerDown = true;
+      instance.startX = event.clientX;
+      instance.startScrollLeft = row.scrollLeft;
+      instance.moved = false;
+
+      row.classList.add("is-dragging");
+      row.setPointerCapture?.(event.pointerId);
+    });
+
+    row.addEventListener("pointermove", (event) => {
+      if (!instance.isPointerDown) return;
+
+      const deltaX = event.clientX - instance.startX;
+      if (Math.abs(deltaX) > 4) {
+        instance.moved = true;
       }
 
-      if (rightArrow instanceof HTMLElement) {
-        rightArrow.addEventListener("click", () => {
-          scrollGallery(row, "right");
-        });
-      }
-
-      row.addEventListener(
-        "scroll",
-        () => {
-          updateGalleryState(shell);
-        },
-        { passive: true }
-      );
-
-      updateGalleryState(shell);
+      row.scrollLeft = instance.startScrollLeft - deltaX;
     });
 
-    window.addEventListener("load", () => {
-      galleryShells.forEach((shell) => updateGalleryState(shell));
+    function endPointerDrag(event) {
+      if (!instance.isPointerDown) return;
+
+      instance.isPointerDown = false;
+      row.classList.remove("is-dragging");
+
+      try {
+        row.releasePointerCapture?.(event.pointerId);
+      } catch {}
+
+      const closestIndex = getClosestCardIndex(row);
+      scrollToCard(row, closestIndex);
+    }
+
+    row.addEventListener("pointerup", endPointerDrag);
+    row.addEventListener("pointercancel", endPointerDrag);
+    row.addEventListener("pointerleave", (event) => {
+      if (!instance.isPointerDown) return;
+      endPointerDrag(event);
+    });
+
+    const buttons = row.querySelectorAll(".gallery-button");
+    buttons.forEach((button) => {
+      button.addEventListener("click", (event) => {
+        if (instance.moved) {
+          event.preventDefault();
+          event.stopPropagation();
+          instance.moved = false;
+        }
+      });
+    });
+
+    galleryInstances.push(instance);
+    updateGalleryState(instance);
+  }
+
+  function refreshAllGalleries() {
+    galleryInstances.forEach((instance) => {
+      updateGalleryState(instance);
     });
   }
+
+  galleryRows.forEach((row) => setupGallery(row));
+
+  window.setTimeout(() => {
+    refreshAllGalleries();
+  }, 120);
 });
