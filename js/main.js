@@ -1,6 +1,6 @@
 /* =========================
    NordFit main.js
-   Header / Burger / Sprache / Modals / Reveal
+   Header / Burger / Sprache / Modals / Reveal / Gallery paging
    ========================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const modalElements = document.querySelectorAll(".modal");
   const revealElements = document.querySelectorAll(".reveal");
+  const galleryRows = document.querySelectorAll(".gallery-row");
 
   let lastFocusedElement = null;
 
@@ -174,6 +175,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.innerWidth > 768) {
       closeBurgerMenu();
     }
+    refreshAllGalleryDots();
   });
 
   /* =========================
@@ -204,9 +206,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const modal = document.getElementById(modalId);
     if (!modal) return;
 
-    lastFocusedElement = document.activeElement instanceof HTMLElement
-      ? document.activeElement
-      : null;
+    lastFocusedElement =
+      document.activeElement instanceof HTMLElement
+        ? document.activeElement
+        : null;
 
     modal.classList.add("show");
     modal.setAttribute("aria-hidden", "false");
@@ -237,7 +240,6 @@ document.addEventListener("DOMContentLoaded", () => {
     modalElements.forEach((modal) => closeModal(modal));
   }
 
-  /* Global function for inline onclick in HTML */
   window.openModal = openModalById;
 
   modalElements.forEach((modal) => {
@@ -296,4 +298,98 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   });
+
+  /* =========================
+     Gallery paging dots
+     ========================= */
+  function getGalleryButtons(galleryId) {
+    return document.querySelectorAll(
+      `.gallery-dot[data-gallery-target="${galleryId}"]`
+    );
+  }
+
+  function setActiveGalleryDot(galleryId, pageIndex) {
+    const buttons = getGalleryButtons(galleryId);
+    buttons.forEach((button) => {
+      const isActive = Number(button.dataset.galleryPage) === pageIndex;
+      button.classList.toggle("active", isActive);
+      button.setAttribute("aria-pressed", String(isActive));
+    });
+  }
+
+  function getGalleryPageScrollLeft(gallery) {
+    const maxScroll = Math.max(0, gallery.scrollWidth - gallery.clientWidth);
+    if (maxScroll <= 0) {
+      return [0, 0];
+    }
+    return [0, maxScroll];
+  }
+
+  function scrollGalleryToPage(gallery, pageIndex) {
+    const [page0, page1] = getGalleryPageScrollLeft(gallery);
+    const targetLeft = pageIndex <= 0 ? page0 : page1;
+
+    gallery.scrollTo({
+      left: targetLeft,
+      behavior: "smooth",
+    });
+
+    if (gallery.id) {
+      setActiveGalleryDot(gallery.id, pageIndex <= 0 ? 0 : 1);
+    }
+  }
+
+  function updateGalleryDotsFromScroll(gallery) {
+    if (!gallery || !gallery.id) return;
+
+    const maxScroll = Math.max(0, gallery.scrollWidth - gallery.clientWidth);
+    if (maxScroll <= 0) {
+      setActiveGalleryDot(gallery.id, 0);
+      return;
+    }
+
+    const current = gallery.scrollLeft;
+    const midpoint = maxScroll * 0.5;
+    const pageIndex = current < midpoint ? 0 : 1;
+
+    setActiveGalleryDot(gallery.id, pageIndex);
+  }
+
+  function refreshAllGalleryDots() {
+    galleryRows.forEach((gallery) => updateGalleryDotsFromScroll(gallery));
+  }
+
+  galleryRows.forEach((gallery) => {
+    let scrollTimeout = null;
+
+    updateGalleryDotsFromScroll(gallery);
+
+    gallery.addEventListener(
+      "scroll",
+      () => {
+        if (scrollTimeout) {
+          window.clearTimeout(scrollTimeout);
+        }
+
+        scrollTimeout = window.setTimeout(() => {
+          updateGalleryDotsFromScroll(gallery);
+        }, 40);
+      },
+      { passive: true }
+    );
+  });
+
+  const galleryDotButtons = document.querySelectorAll(".gallery-dot[data-gallery-target]");
+  galleryDotButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const targetId = button.dataset.galleryTarget;
+      const pageIndex = Number(button.dataset.galleryPage || "0");
+      const gallery = document.getElementById(targetId);
+
+      if (!gallery) return;
+      scrollGalleryToPage(gallery, pageIndex);
+    });
+  });
+
+  refreshAllGalleryDots();
 });
