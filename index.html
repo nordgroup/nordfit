@@ -58,8 +58,13 @@
             <button class="lang-option" data-lang="de" type="button">Deutsch</button>
             <button class="lang-option" data-lang="en" type="button">English</button>
             <button class="lang-option" data-lang="fr" type="button">Français</button>
-            <button class="lang-option" data-lang="it" type="button">Italiano</button>
             <button class="lang-option" data-lang="es" type="button">Español</button>
+            <button class="lang-option" data-lang="it" type="button">Italiano</button>
+            <button class="lang-option" data-lang="pl" type="button">Polski</button>
+            <button class="lang-option" data-lang="nl" type="button">Nederlands</button>
+            <button class="lang-option" data-lang="sv" type="button">Svenska</button>
+            <button class="lang-option" data-lang="da" type="button">Dansk</button>
+            <button class="lang-option" data-lang="no" type="button">Norsk</button>
           </div>
         </div>
       </div>
@@ -67,9 +72,9 @@
   </header>
 
   <main>
-    <section class="section home-hero-section" style="padding-bottom: 7.6rem;">
+    <section class="section home-hero-section">
       <div class="container">
-        <div class="home-hero reveal" style="padding-bottom: 0;">
+        <div class="home-hero reveal">
           <h1 class="hero-title">Ein Studio, das modern wirkt. Und ruhig bleibt.</h1>
           <p class="hero-subtitle">
             NordFit ist für Menschen gedacht, die nicht einfach irgendein Studio wollen,
@@ -85,7 +90,7 @@
       </div>
     </section>
 
-    <section class="section section-tight" style="padding-top: 0;">
+    <section class="section section-tight">
       <div class="container">
         <div class="home-hero-panel reveal">
           <div class="home-hero-visual">
@@ -97,7 +102,7 @@
           </div>
         </div>
 
-        <div class="hero-image-caption reveal" style="margin-top: 1.8rem;">
+        <div class="hero-image-caption reveal">
           <h2>Ein erster Eindruck, der direkt hängen bleibt.</h2>
           <p class="muted">
             Schon von außen soll NordFit modern, ruhig und sauber wirken.
@@ -111,30 +116,61 @@
     <section class="section">
       <div class="container">
         <div class="area-stack">
-
           <article class="area-section reveal">
             <div class="area-copy">
               <h3>Krafttraining</h3>
             </div>
 
-            <div class="gallery-topbar">
-              <div class="gallery-controls">
-                <button class="gallery-arrow" data-gallery-arrow="prev" type="button" aria-label="Vorherige Bilder">‹</button>
-                <div class="gallery-dots" aria-hidden="true">
-                  <div class="gallery-slider-wrap">
-                    <input class="gallery-range" type="range" min="0" max="100" step="1" value="0" aria-label="Krafttraining Galerie verschieben" />
-                  </div>
-                </div>
-                <button class="gallery-arrow" data-gallery-arrow="next" type="button" aria-label="Nächste Bilder">›</button>
-              </div>
-            </div>
+            <div class="gallery-shell" data-gallery>
+              <button class="gallery-arrow gallery-arrow-left" type="button" aria-label="Vorherige Bilder">
+                ‹
+              </button>
 
-            <div class="gallery-row" aria-label="Galerie Krafttraining">
-              <article class="gallery-card"><button class="gallery-button" type="button" onclick="openModal('strength-1-modal')"><div class="gallery-image"><div class="gallery-placeholder">Krafttraining Bild 1</div></div></button></article>
-              <article class="gallery-card"><button class="gallery-button" type="button" onclick="openModal('strength-2-modal')"><div class="gallery-image"><div class="gallery-placeholder">Krafttraining Bild 2</div></div></button></article>
-              <article class="gallery-card"><button class="gallery-button" type="button" onclick="openModal('strength-3-modal')"><div class="gallery-image"><div class="gallery-placeholder">Krafttraining Bild 3</div></div></button></article>
-              <article class="gallery-card"><button class="gallery-button" type="button" onclick="openModal('strength-4-modal')"><div class="gallery-image"><div class="gallery-placeholder">Krafttraining Bild 4</div></div></button></article>
-              <article class="gallery-card"><button class="gallery-button" type="button" onclick="openModal('strength-5-modal')"><div class="gallery-image"><div class="gallery-placeholder">Krafttraining Bild 5</div></div></button></article>
+              <div class="gallery-row" aria-label="Galerie Krafttraining">
+                <article class="gallery-card">
+                  <button class="gallery-button" type="button" onclick="openModal('kraft-1-modal')">
+                    <div class="gallery-image">
+                      <div class="gallery-placeholder">Krafttraining Bild 1</div>
+                    </div>
+                  </button>
+                </article>
+
+                <article class="gallery-card">
+                  <button class="gallery-button" type="button" onclick="openModal('kraft-2-modal')">
+                    <div class="gallery-image">
+                      <div class="gallery-placeholder">Krafttraining Bild 2</div>
+                    </div>
+                  </button>
+                </article>
+
+                <article class="gallery-card">
+                  <button class="gallery-button" type="button" onclick="openModal('kraft-3-modal')">
+                    <div class="gallery-image">
+                      <div class="gallery-placeholder">Krafttraining Bild 3</div>
+                    </div>
+                  </button>
+                </article>
+
+                <article class="gallery-card">
+                  <button class="gallery-button" type="button" onclick="openModal('kraft-4-modal')">
+                    <div class="gallery-image">
+                      <div class="gallery-placeholder">Krafttraining Bild 4</div>
+                    </div>
+                  </button>
+                </article>
+
+                <article class="gallery-card">
+                  <button class="gallery-button" type="button" onclick="openModal('kraft-5-modal')">
+                    <div class="gallery-image">
+                      <div class="gallery-placeholder">Krafttraining Bild 5</div>
+                    </div>
+                  </button>
+                </article>
+              </div>
+
+              <button class="gallery-arrow gallery-arrow-right" type="button" aria-label="Nächste Bilder">
+                ›
+              </button>
             </div>
           </article>
 
@@ -143,24 +179,56 @@
               <h3>Cardio</h3>
             </div>
 
-            <div class="gallery-topbar">
-              <div class="gallery-controls">
-                <button class="gallery-arrow" data-gallery-arrow="prev" type="button" aria-label="Vorherige Bilder">‹</button>
-                <div class="gallery-dots" aria-hidden="true">
-                  <div class="gallery-slider-wrap">
-                    <input class="gallery-range" type="range" min="0" max="100" step="1" value="0" aria-label="Cardio Galerie verschieben" />
-                  </div>
-                </div>
-                <button class="gallery-arrow" data-gallery-arrow="next" type="button" aria-label="Nächste Bilder">›</button>
-              </div>
-            </div>
+            <div class="gallery-shell" data-gallery>
+              <button class="gallery-arrow gallery-arrow-left" type="button" aria-label="Vorherige Bilder">
+                ‹
+              </button>
 
-            <div class="gallery-row" aria-label="Galerie Cardio">
-              <article class="gallery-card"><button class="gallery-button" type="button" onclick="openModal('cardio-1-modal')"><div class="gallery-image"><div class="gallery-placeholder">Cardio Bild 1</div></div></button></article>
-              <article class="gallery-card"><button class="gallery-button" type="button" onclick="openModal('cardio-2-modal')"><div class="gallery-image"><div class="gallery-placeholder">Cardio Bild 2</div></div></button></article>
-              <article class="gallery-card"><button class="gallery-button" type="button" onclick="openModal('cardio-3-modal')"><div class="gallery-image"><div class="gallery-placeholder">Cardio Bild 3</div></div></button></article>
-              <article class="gallery-card"><button class="gallery-button" type="button" onclick="openModal('cardio-4-modal')"><div class="gallery-image"><div class="gallery-placeholder">Cardio Bild 4</div></div></button></article>
-              <article class="gallery-card"><button class="gallery-button" type="button" onclick="openModal('cardio-5-modal')"><div class="gallery-image"><div class="gallery-placeholder">Cardio Bild 5</div></div></button></article>
+              <div class="gallery-row" aria-label="Galerie Cardio">
+                <article class="gallery-card">
+                  <button class="gallery-button" type="button" onclick="openModal('cardio-1-modal')">
+                    <div class="gallery-image">
+                      <div class="gallery-placeholder">Cardio Bild 1</div>
+                    </div>
+                  </button>
+                </article>
+
+                <article class="gallery-card">
+                  <button class="gallery-button" type="button" onclick="openModal('cardio-2-modal')">
+                    <div class="gallery-image">
+                      <div class="gallery-placeholder">Cardio Bild 2</div>
+                    </div>
+                  </button>
+                </article>
+
+                <article class="gallery-card">
+                  <button class="gallery-button" type="button" onclick="openModal('cardio-3-modal')">
+                    <div class="gallery-image">
+                      <div class="gallery-placeholder">Cardio Bild 3</div>
+                    </div>
+                  </button>
+                </article>
+
+                <article class="gallery-card">
+                  <button class="gallery-button" type="button" onclick="openModal('cardio-4-modal')">
+                    <div class="gallery-image">
+                      <div class="gallery-placeholder">Cardio Bild 4</div>
+                    </div>
+                  </button>
+                </article>
+
+                <article class="gallery-card">
+                  <button class="gallery-button" type="button" onclick="openModal('cardio-5-modal')">
+                    <div class="gallery-image">
+                      <div class="gallery-placeholder">Cardio Bild 5</div>
+                    </div>
+                  </button>
+                </article>
+              </div>
+
+              <button class="gallery-arrow gallery-arrow-right" type="button" aria-label="Nächste Bilder">
+                ›
+              </button>
             </div>
           </article>
 
@@ -169,24 +237,56 @@
               <h3>Functional Training</h3>
             </div>
 
-            <div class="gallery-topbar">
-              <div class="gallery-controls">
-                <button class="gallery-arrow" data-gallery-arrow="prev" type="button" aria-label="Vorherige Bilder">‹</button>
-                <div class="gallery-dots" aria-hidden="true">
-                  <div class="gallery-slider-wrap">
-                    <input class="gallery-range" type="range" min="0" max="100" step="1" value="0" aria-label="Functional Training Galerie verschieben" />
-                  </div>
-                </div>
-                <button class="gallery-arrow" data-gallery-arrow="next" type="button" aria-label="Nächste Bilder">›</button>
-              </div>
-            </div>
+            <div class="gallery-shell" data-gallery>
+              <button class="gallery-arrow gallery-arrow-left" type="button" aria-label="Vorherige Bilder">
+                ‹
+              </button>
 
-            <div class="gallery-row" aria-label="Galerie Functional Training">
-              <article class="gallery-card"><button class="gallery-button" type="button" onclick="openModal('functional-1-modal')"><div class="gallery-image"><div class="gallery-placeholder">Functional Training Bild 1</div></div></button></article>
-              <article class="gallery-card"><button class="gallery-button" type="button" onclick="openModal('functional-2-modal')"><div class="gallery-image"><div class="gallery-placeholder">Functional Training Bild 2</div></div></button></article>
-              <article class="gallery-card"><button class="gallery-button" type="button" onclick="openModal('functional-3-modal')"><div class="gallery-image"><div class="gallery-placeholder">Functional Training Bild 3</div></div></button></article>
-              <article class="gallery-card"><button class="gallery-button" type="button" onclick="openModal('functional-4-modal')"><div class="gallery-image"><div class="gallery-placeholder">Functional Training Bild 4</div></div></button></article>
-              <article class="gallery-card"><button class="gallery-button" type="button" onclick="openModal('functional-5-modal')"><div class="gallery-image"><div class="gallery-placeholder">Functional Training Bild 5</div></div></button></article>
+              <div class="gallery-row" aria-label="Galerie Functional Training">
+                <article class="gallery-card">
+                  <button class="gallery-button" type="button" onclick="openModal('move-1-modal')">
+                    <div class="gallery-image">
+                      <div class="gallery-placeholder">Functional Training Bild 1</div>
+                    </div>
+                  </button>
+                </article>
+
+                <article class="gallery-card">
+                  <button class="gallery-button" type="button" onclick="openModal('move-2-modal')">
+                    <div class="gallery-image">
+                      <div class="gallery-placeholder">Functional Training Bild 2</div>
+                    </div>
+                  </button>
+                </article>
+
+                <article class="gallery-card">
+                  <button class="gallery-button" type="button" onclick="openModal('move-3-modal')">
+                    <div class="gallery-image">
+                      <div class="gallery-placeholder">Functional Training Bild 3</div>
+                    </div>
+                  </button>
+                </article>
+
+                <article class="gallery-card">
+                  <button class="gallery-button" type="button" onclick="openModal('move-4-modal')">
+                    <div class="gallery-image">
+                      <div class="gallery-placeholder">Functional Training Bild 4</div>
+                    </div>
+                  </button>
+                </article>
+
+                <article class="gallery-card">
+                  <button class="gallery-button" type="button" onclick="openModal('move-5-modal')">
+                    <div class="gallery-image">
+                      <div class="gallery-placeholder">Functional Training Bild 5</div>
+                    </div>
+                  </button>
+                </article>
+              </div>
+
+              <button class="gallery-arrow gallery-arrow-right" type="button" aria-label="Nächste Bilder">
+                ›
+              </button>
             </div>
           </article>
 
@@ -195,55 +295,226 @@
               <h3>Regeneration</h3>
             </div>
 
-            <div class="gallery-topbar">
-              <div class="gallery-controls">
-                <button class="gallery-arrow" data-gallery-arrow="prev" type="button" aria-label="Vorherige Bilder">‹</button>
-                <div class="gallery-dots" aria-hidden="true">
-                  <div class="gallery-slider-wrap">
-                    <input class="gallery-range" type="range" min="0" max="100" step="1" value="0" aria-label="Regeneration Galerie verschieben" />
-                  </div>
-                </div>
-                <button class="gallery-arrow" data-gallery-arrow="next" type="button" aria-label="Nächste Bilder">›</button>
-              </div>
-            </div>
+            <div class="gallery-shell" data-gallery>
+              <button class="gallery-arrow gallery-arrow-left" type="button" aria-label="Vorherige Bilder">
+                ‹
+              </button>
 
-            <div class="gallery-row" aria-label="Galerie Regeneration">
-              <article class="gallery-card"><button class="gallery-button" type="button" onclick="openModal('recovery-1-modal')"><div class="gallery-image"><div class="gallery-placeholder">Regeneration Bild 1</div></div></button></article>
-              <article class="gallery-card"><button class="gallery-button" type="button" onclick="openModal('recovery-2-modal')"><div class="gallery-image"><div class="gallery-placeholder">Regeneration Bild 2</div></div></button></article>
-              <article class="gallery-card"><button class="gallery-button" type="button" onclick="openModal('recovery-3-modal')"><div class="gallery-image"><div class="gallery-placeholder">Regeneration Bild 3</div></div></button></article>
-              <article class="gallery-card"><button class="gallery-button" type="button" onclick="openModal('recovery-4-modal')"><div class="gallery-image"><div class="gallery-placeholder">Regeneration Bild 4</div></div></button></article>
-              <article class="gallery-card"><button class="gallery-button" type="button" onclick="openModal('recovery-5-modal')"><div class="gallery-image"><div class="gallery-placeholder">Regeneration Bild 5</div></div></button></article>
+              <div class="gallery-row" aria-label="Galerie Regeneration">
+                <article class="gallery-card">
+                  <button class="gallery-button" type="button" onclick="openModal('recovery-1-modal')">
+                    <div class="gallery-image">
+                      <div class="gallery-placeholder">Regeneration Bild 1</div>
+                    </div>
+                  </button>
+                </article>
+
+                <article class="gallery-card">
+                  <button class="gallery-button" type="button" onclick="openModal('recovery-2-modal')">
+                    <div class="gallery-image">
+                      <div class="gallery-placeholder">Regeneration Bild 2</div>
+                    </div>
+                  </button>
+                </article>
+
+                <article class="gallery-card">
+                  <button class="gallery-button" type="button" onclick="openModal('recovery-3-modal')">
+                    <div class="gallery-image">
+                      <div class="gallery-placeholder">Regeneration Bild 3</div>
+                    </div>
+                  </button>
+                </article>
+
+                <article class="gallery-card">
+                  <button class="gallery-button" type="button" onclick="openModal('recovery-4-modal')">
+                    <div class="gallery-image">
+                      <div class="gallery-placeholder">Regeneration Bild 4</div>
+                    </div>
+                  </button>
+                </article>
+
+                <article class="gallery-card">
+                  <button class="gallery-button" type="button" onclick="openModal('recovery-5-modal')">
+                    <div class="gallery-image">
+                      <div class="gallery-placeholder">Regeneration Bild 5</div>
+                    </div>
+                  </button>
+                </article>
+              </div>
+
+              <button class="gallery-arrow gallery-arrow-right" type="button" aria-label="Nächste Bilder">
+                ›
+              </button>
             </div>
           </article>
-
         </div>
       </div>
     </section>
   </main>
 
-  <div class="modal" id="strength-1-modal" aria-hidden="true"><div class="modal-box glass gallery-modal-box"><button class="modal-close" aria-label="Bild schließen" type="button">×</button><div class="gallery-modal-image-wrap"><div class="gallery-image"><div class="gallery-placeholder">Krafttraining Bild 1 groß</div></div></div></div></div>
-  <div class="modal" id="strength-2-modal" aria-hidden="true"><div class="modal-box glass gallery-modal-box"><button class="modal-close" aria-label="Bild schließen" type="button">×</button><div class="gallery-modal-image-wrap"><div class="gallery-image"><div class="gallery-placeholder">Krafttraining Bild 2 groß</div></div></div></div></div>
-  <div class="modal" id="strength-3-modal" aria-hidden="true"><div class="modal-box glass gallery-modal-box"><button class="modal-close" aria-label="Bild schließen" type="button">×</button><div class="gallery-modal-image-wrap"><div class="gallery-image"><div class="gallery-placeholder">Krafttraining Bild 3 groß</div></div></div></div></div>
-  <div class="modal" id="strength-4-modal" aria-hidden="true"><div class="modal-box glass gallery-modal-box"><button class="modal-close" aria-label="Bild schließen" type="button">×</button><div class="gallery-modal-image-wrap"><div class="gallery-image"><div class="gallery-placeholder">Krafttraining Bild 4 groß</div></div></div></div></div>
-  <div class="modal" id="strength-5-modal" aria-hidden="true"><div class="modal-box glass gallery-modal-box"><button class="modal-close" aria-label="Bild schließen" type="button">×</button><div class="gallery-modal-image-wrap"><div class="gallery-image"><div class="gallery-placeholder">Krafttraining Bild 5 groß</div></div></div></div></div>
+  <div class="modal" id="kraft-1-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Krafttraining Bild 1 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="kraft-2-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Krafttraining Bild 2 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="kraft-3-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Krafttraining Bild 3 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="kraft-4-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Krafttraining Bild 4 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="kraft-5-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Krafttraining Bild 5 groß</div></div>
+      </div>
+    </div>
+  </div>
 
-  <div class="modal" id="cardio-1-modal" aria-hidden="true"><div class="modal-box glass gallery-modal-box"><button class="modal-close" aria-label="Bild schließen" type="button">×</button><div class="gallery-modal-image-wrap"><div class="gallery-image"><div class="gallery-placeholder">Cardio Bild 1 groß</div></div></div></div></div>
-  <div class="modal" id="cardio-2-modal" aria-hidden="true"><div class="modal-box glass gallery-modal-box"><button class="modal-close" aria-label="Bild schließen" type="button">×</button><div class="gallery-modal-image-wrap"><div class="gallery-image"><div class="gallery-placeholder">Cardio Bild 2 groß</div></div></div></div></div>
-  <div class="modal" id="cardio-3-modal" aria-hidden="true"><div class="modal-box glass gallery-modal-box"><button class="modal-close" aria-label="Bild schließen" type="button">×</button><div class="gallery-modal-image-wrap"><div class="gallery-image"><div class="gallery-placeholder">Cardio Bild 3 groß</div></div></div></div></div>
-  <div class="modal" id="cardio-4-modal" aria-hidden="true"><div class="modal-box glass gallery-modal-box"><button class="modal-close" aria-label="Bild schließen" type="button">×</button><div class="gallery-modal-image-wrap"><div class="gallery-image"><div class="gallery-placeholder">Cardio Bild 4 groß</div></div></div></div></div>
-  <div class="modal" id="cardio-5-modal" aria-hidden="true"><div class="modal-box glass gallery-modal-box"><button class="modal-close" aria-label="Bild schließen" type="button">×</button><div class="gallery-modal-image-wrap"><div class="gallery-image"><div class="gallery-placeholder">Cardio Bild 5 groß</div></div></div></div></div>
+  <div class="modal" id="cardio-1-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Cardio Bild 1 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="cardio-2-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Cardio Bild 2 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="cardio-3-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Cardio Bild 3 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="cardio-4-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Cardio Bild 4 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="cardio-5-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Cardio Bild 5 groß</div></div>
+      </div>
+    </div>
+  </div>
 
-  <div class="modal" id="functional-1-modal" aria-hidden="true"><div class="modal-box glass gallery-modal-box"><button class="modal-close" aria-label="Bild schließen" type="button">×</button><div class="gallery-modal-image-wrap"><div class="gallery-image"><div class="gallery-placeholder">Functional Training Bild 1 groß</div></div></div></div></div>
-  <div class="modal" id="functional-2-modal" aria-hidden="true"><div class="modal-box glass gallery-modal-box"><button class="modal-close" aria-label="Bild schließen" type="button">×</button><div class="gallery-modal-image-wrap"><div class="gallery-image"><div class="gallery-placeholder">Functional Training Bild 2 groß</div></div></div></div></div>
-  <div class="modal" id="functional-3-modal" aria-hidden="true"><div class="modal-box glass gallery-modal-box"><button class="modal-close" aria-label="Bild schließen" type="button">×</button><div class="gallery-modal-image-wrap"><div class="gallery-image"><div class="gallery-placeholder">Functional Training Bild 3 groß</div></div></div></div></div>
-  <div class="modal" id="functional-4-modal" aria-hidden="true"><div class="modal-box glass gallery-modal-box"><button class="modal-close" aria-label="Bild schließen" type="button">×</button><div class="gallery-modal-image-wrap"><div class="gallery-image"><div class="gallery-placeholder">Functional Training Bild 4 groß</div></div></div></div></div>
-  <div class="modal" id="functional-5-modal" aria-hidden="true"><div class="modal-box glass gallery-modal-box"><button class="modal-close" aria-label="Bild schließen" type="button">×</button><div class="gallery-modal-image-wrap"><div class="gallery-image"><div class="gallery-placeholder">Functional Training Bild 5 groß</div></div></div></div></div>
+  <div class="modal" id="move-1-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Functional Training Bild 1 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="move-2-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Functional Training Bild 2 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="move-3-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Functional Training Bild 3 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="move-4-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Functional Training Bild 4 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="move-5-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Functional Training Bild 5 groß</div></div>
+      </div>
+    </div>
+  </div>
 
-  <div class="modal" id="recovery-1-modal" aria-hidden="true"><div class="modal-box glass gallery-modal-box"><button class="modal-close" aria-label="Bild schließen" type="button">×</button><div class="gallery-modal-image-wrap"><div class="gallery-image"><div class="gallery-placeholder">Regeneration Bild 1 groß</div></div></div></div></div>
-  <div class="modal" id="recovery-2-modal" aria-hidden="true"><div class="modal-box glass gallery-modal-box"><button class="modal-close" aria-label="Bild schließen" type="button">×</button><div class="gallery-modal-image-wrap"><div class="gallery-image"><div class="gallery-placeholder">Regeneration Bild 2 groß</div></div></div></div></div>
-  <div class="modal" id="recovery-3-modal" aria-hidden="true"><div class="modal-box glass gallery-modal-box"><button class="modal-close" aria-label="Bild schließen" type="button">×</button><div class="gallery-modal-image-wrap"><div class="gallery-image"><div class="gallery-placeholder">Regeneration Bild 3 groß</div></div></div></div></div>
-  <div class="modal" id="recovery-4-modal" aria-hidden="true"><div class="modal-box glass gallery-modal-box"><button class="modal-close" aria-label="Bild schließen" type="button">×</button><div class="gallery-modal-image-wrap"><div class="gallery-image"><div class="gallery-placeholder">Regeneration Bild 4 groß</div></div></div></div></div>
-  <div class="modal" id="recovery-5-modal" aria-hidden="true"><div class="modal-box glass gallery-modal-box"><button class="modal-close" aria-label="Bild schließen" type="button">×</button><div class="gallery-modal-image-wrap"><div class="gallery-image"><div class="gallery-placeholder">Regeneration Bild 5 groß</div></div></div></div></div>
+  <div class="modal" id="recovery-1-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Regeneration Bild 1 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="recovery-2-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Regeneration Bild 2 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="recovery-3-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Regeneration Bild 3 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="recovery-4-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Regeneration Bild 4 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="recovery-5-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Regeneration Bild 5 groß</div></div>
+      </div>
+    </div>
+  </div>
 
   <footer class="site-footer">
     <div class="container">
