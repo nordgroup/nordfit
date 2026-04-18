@@ -348,9 +348,72 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =========================
-     Gallery pagination / arrows / dots
+     Gallery slider / arrows / dots / drag
      ========================= */
   const galleryRows = document.querySelectorAll(".gallery-row");
+
+  const getGalleryCards = (row) => Array.from(row.querySelectorAll(".gallery-card"));
+
+  const getVisibleStartIndex = (row) => {
+    const cards = getGalleryCards(row);
+    if (!cards.length) return 0;
+
+    const rowLeft = row.getBoundingClientRect().left;
+    let bestIndex = 0;
+    let bestDistance = Number.POSITIVE_INFINITY;
+
+    cards.forEach((card, index) => {
+      const distance = Math.abs(card.getBoundingClientRect().left - rowLeft);
+      if (distance < bestDistance) {
+        bestDistance = distance;
+        bestIndex = index;
+      }
+    });
+
+    return bestIndex;
+  };
+
+  const scrollToCardIndex = (row, index) => {
+    const cards = getGalleryCards(row);
+    if (!cards.length) return;
+
+    const safeIndex = Math.max(0, Math.min(index, cards.length - 1));
+    const targetCard = cards[safeIndex];
+
+    row.scrollTo({
+      left: targetCard.offsetLeft,
+      behavior: "smooth",
+    });
+  };
+
+  const getPageCount = (row) => {
+    const controls = row.closest(".area-section")?.querySelector(".gallery-controls");
+    const dots = controls?.querySelectorAll(".gallery-dot");
+    return dots?.length ? dots.length : 2;
+  };
+
+  const getPageIndex = (row) => {
+    const maxScroll = Math.max(0, row.scrollWidth - row.clientWidth);
+    if (maxScroll <= 0) return 0;
+
+    const ratio = row.scrollLeft / maxScroll;
+    const pageCount = getPageCount(row);
+    return Math.min(pageCount - 1, Math.round(ratio * (pageCount - 1)));
+  };
+
+  const goToPage = (row, pageIndex) => {
+    const pageCount = getPageCount(row);
+    if (pageCount <= 1) return;
+
+    const maxScroll = Math.max(0, row.scrollWidth - row.clientWidth);
+    const safePage = Math.max(0, Math.min(pageIndex, pageCount - 1));
+    const target = (maxScroll / (pageCount - 1)) * safePage;
+
+    row.scrollTo({
+      left: target,
+      behavior: "smooth",
+    });
+  };
 
   const updateGalleryState = (row) => {
     if (!(row instanceof HTMLElement)) return;
@@ -361,8 +424,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const next = controls?.querySelector('[data-gallery-arrow="next"]');
 
     const maxScroll = Math.max(0, row.scrollWidth - row.clientWidth);
-    const progress = maxScroll > 0 ? row.scrollLeft / maxScroll : 0;
-    const pageIndex = progress > 0.45 ? 1 : 0;
+    const pageIndex = getPageIndex(row);
+    const pageCount = getPageCount(row);
 
     dots?.forEach((dot, index) => {
       dot.classList.toggle("active", index === pageIndex);
@@ -371,12 +434,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (prev instanceof HTMLButtonElement) {
       prev.disabled = row.scrollLeft <= 8;
-      prev.style.opacity = prev.disabled ? "0.45" : "1";
     }
 
     if (next instanceof HTMLButtonElement) {
-      next.disabled = row.scrollLeft >= maxScroll - 8;
-      next.style.opacity = next.disabled ? "0.45" : "1";
+      next.disabled = row.scrollLeft >= maxScroll - 8 || pageIndex >= pageCount - 1;
     }
   };
 
@@ -390,26 +451,101 @@ document.addEventListener("DOMContentLoaded", () => {
     const next = controls.querySelector('[data-gallery-arrow="next"]');
     const dots = controls.querySelectorAll(".gallery-dot");
 
-    const goToPage = (pageIndex) => {
-      const maxScroll = Math.max(0, row.scrollWidth - row.clientWidth);
-      const target = pageIndex === 0 ? 0 : maxScroll;
-
-      row.scrollTo({
-        left: target,
-        behavior: "smooth",
-      });
-    };
-
     if (prev instanceof HTMLButtonElement) {
-      prev.addEventListener("click", () => goToPage(0));
+      prev.addEventListener("click", () => {
+        const currentPage = getPageIndex(row);
+        goToPage(row, currentPage - 1);
+      });
     }
 
     if (next instanceof HTMLButtonElement) {
-      next.addEventListener("click", () => goToPage(1));
+      next.addEventListener("click", () => {
+        const currentPage = getPageIndex(row);
+        goToPage(row, currentPage + 1);
+      });
     }
 
     dots.forEach((dot, index) => {
-      dot.addEventListener("click", () => goToPage(index));
+      dot.addEventListener("click", () => goToPage(row, index));
+    });
+
+    let isPointerDown = false;
+    let startX = 0;
+    let startScrollLeft = 0;
+    let moved = false;
+
+    const pointerDown = (clientX) => {
+      isPointerDown = true;
+      moved = false;
+      startX = clientX;
+      startScrollLeft = row.scrollLeft;
+      row.classList.add("is-dragging");
+    };
+
+    const pointerMove = (clientX) => {
+      if (!isPointerDown) return;
+      const walk = clientX - startX;
+      if (Math.abs(walk) > 4) moved = true;
+      row.scrollLeft = startScrollLeft - walk;
+    };
+
+    const pointerUp = () => {
+      if (!isPointerDown) return;
+      isPointerDown = false;
+      row.classList.remove("is-dragging");
+
+      if (moved) {
+        const index = getVisibleStartIndex(row);
+        scrollToCardIndex(row, index);
+      }
+    };
+
+    row.addEventListener("mousedown", (event) => {
+      if (event.target.closest("button") && !event.target.closest(".gallery-button")) return;
+      pointerDown(event.clientX);
+    });
+
+    row.addEventListener("mousemove", (event) => {
+      pointerMove(event.clientX);
+    });
+
+    window.addEventListener("mouseup", pointerUp);
+
+    row.addEventListener("mouseleave", () => {
+      if (isPointerDown) {
+        pointerUp();
+      }
+    });
+
+    row.addEventListener(
+      "touchstart",
+      (event) => {
+        if (!event.touches[0]) return;
+        pointerDown(event.touches[0].clientX);
+      },
+      { passive: true }
+    );
+
+    row.addEventListener(
+      "touchmove",
+      (event) => {
+        if (!event.touches[0]) return;
+        pointerMove(event.touches[0].clientX);
+      },
+      { passive: true }
+    );
+
+    row.addEventListener("touchend", pointerUp);
+    row.addEventListener("touchcancel", pointerUp);
+
+    row.querySelectorAll(".gallery-button").forEach((button) => {
+      button.addEventListener("click", (event) => {
+        if (moved) {
+          event.preventDefault();
+          event.stopPropagation();
+          moved = false;
+        }
+      });
     });
 
     row.addEventListener("scroll", () => updateGalleryState(row), { passive: true });
