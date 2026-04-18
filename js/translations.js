@@ -1,272 +1,390 @@
-window.translations = {
-  de: {
-    navHome: "Home",
-    navTariffs: "Tarife",
-    navLocations: "Standorte",
-    navApp: "App",
-    navContact: "Kontakt",
+/* =========================
+   NordFit translations.js
+   Simple page translation system
+   ========================= */
 
-    titleHome: "NordFit – Startseite",
-    titleTariffs: "NordFit – Tarife",
-    titleLocations: "NordFit – Standorte",
-    titleApp: "NordFit – App",
-    titleImpressum: "NordFit – Impressum",
-    titleContact: "NordFit – Kontakt",
+document.addEventListener("DOMContentLoaded", () => {
+  const supportedLanguages = ["de", "en", "fr", "it", "es", "pl"];
+  const defaultLanguage = "de";
 
-    heroHeading: "Für deinen Weg nach vorn",
-    heroSub: "Dein Fitnessstudio mit 24/7-Zugang",
-    heroCTA: "Tarife entdecken",
+  const langOptions = document.querySelectorAll(".lang-option");
+  const langToggleLabel = document.querySelector(".lang-toggle-label");
 
-    homeFeaturesTitle1: "24/7-Zugang",
-    homeFeaturesText1: "Trainiere, wann du willst – morgens, nachts oder zwischendurch.",
-    homeFeaturesTitle2: "Modernste Geräte",
-    homeFeaturesText2: "Klare, moderne Trainingsfläche mit hochwertigem Equipment.",
-    homeFeaturesTitle3: "Flexible Tarife",
-    homeFeaturesText3: "Faire Mitgliedschaften ohne unnötigen Quatsch und ohne Anmeldegebühr.",
-    homeDaypassTitle: "Tagespass für 4,99 €",
-    homeDaypassText: "Ideal zum Testen – 1 Tag freier Zugang zu NordFit.",
+  const pageKey = getPageKey();
+  const savedLanguage = getSavedLanguage();
+  const activeLanguage = supportedLanguages.includes(savedLanguage)
+    ? savedLanguage
+    : defaultLanguage;
 
-    homeTariffPreviewTitle: "Tarifvorschau",
-    homeTariffPreviewText: "Drei klare Modelle. Du entscheidest, was zu dir passt.",
-    homeLearnMore: "Mehr erfahren",
+  applyLanguage(activeLanguage);
 
-    homeAppTitle: "Die NordFit-App",
-    homeAppText: "Alle Buchungen, Zutritt per QR-Code, Verwaltung deiner Mitgliedschaft und mehr – alles an einem Ort.",
-    appStore: "App Store",
-    googlePlay: "Google Play",
+  langOptions.forEach((option) => {
+    option.addEventListener("click", () => {
+      const nextLang = option.dataset.lang?.trim().toLowerCase();
 
-    aboutHeading: "Lokal, modern, ehrlich",
-    aboutText: "NordFit steht für ehrliches Training, moderne Studios und einen klaren Weg nach vorn.",
+      if (!nextLang || !supportedLanguages.includes(nextLang)) return;
 
-    tariffsTitle: "Mitgliedschaften & Tarife",
-    tariffsIntro: "Mitgliedschaften können nur in der NordFit-App abgeschlossen und gekündigt werden.",
-    basicName: "Basic",
-    plusName: "Plus",
-    proName: "Pro",
-    priceBasic: "29,99 € / Monat",
-    pricePlus: "34,99 € / Monat",
-    pricePro: "39,99 € / Monat",
-    durationBasic: "Mindestlaufzeit: 8 Monate",
-    durationPlus: "Mindestlaufzeit: 6 Monate",
-    durationPro: "Mindestlaufzeit: 3 Monate",
-    cancelMonthly: "Danach monatlich kündbar",
-    noCourses: "Kein Getränke- oder Kursangebot",
-    daypassTitle: "Tagespass",
-    daypassPrice: "4,99 € für einen Tag",
-    daypassText: "Ideal zum Testen – 1 Tag freier Zugang",
+      localStorage.setItem("nordfit-language", nextLang);
+      applyLanguage(nextLang);
+    });
+  });
 
-    faqTitle: "FAQ",
-    faqQ1: "Wie funktioniert der Zutritt?",
-    faqA1: "Der Zutritt erfolgt nur über die App mittels QR-Code.",
-    faqQ2: "Gibt es Personal Training oder Kurse?",
-    faqA2: "In Studio 1 zum Start noch nicht.",
-    faqQ3: "Ist die Kündigung nach der Mindestlaufzeit monatlich möglich?",
-    faqA3: "Ja, nach der Mindestlaufzeit ist die Kündigung monatlich möglich.",
-
-    contactBlockTitle: "Fragen? Schreib uns.",
-    contactBlockText: "Bei Fragen erreichst du uns auch unter info@nordfit.de oder via Instagram @nordfit.",
-    formName: "Name",
-    formEmail: "E-Mail",
-    formMessage: "Nachricht",
-    formSend: "Senden",
-
-    locationsTitle: "Unsere Standorte",
-    locationsIntro: "Wähle dein Studio aus und schau dir die wichtigsten Infos an.",
-    locationChoose: "Studio auswählen",
-    locationStudio1: "Studio 1 – Grevesmühlen",
-    locationCardTitle: "Studio 1 – Grevesmühlen",
-    locationAddressLabel: "Adresse:",
-    locationAddressText: "Musterstraße 1, 23936 Grevesmühlen",
-    locationHoursLabel: "Öffnungszeiten:",
-    locationHoursText: "24/7 geöffnet",
-    locationInfoLabel: "Info:",
-    locationInfoText: "Modernes Studio mit gut erreichbarer Lage und Parkmöglichkeiten direkt vor Ort.",
-    locationMapTitle: "Karte",
-    locationGalleryTitle: "Bildergalerie",
-    locationGalleryText: "Platzhalterbilder – später kommen hier echte Studiofotos rein.",
-    locationImage1: "Studiofläche",
-    locationImage2: "Parkplatz / Außenbereich",
-    locationImage3: "Innenbereich",
-    locationAboutTitle: "Zum Standort",
-    locationAboutText1: "Das erste NordFit-Studio in Grevesmühlen soll modern, klar und unkompliziert sein.",
-    locationAboutText2: "Gute Erreichbarkeit, 24/7-Zugang und ein ehrliches Studiokonzept stehen im Vordergrund.",
-    locationAboutText3: "Das Dropdown oben ist bewusst so vorbereitet, dass später weitere Studios leicht ergänzt werden können.",
-
-    appPageTitle: "Die NordFit-App",
-    appPageIntro: "Alles an einem Ort: Zutritt per QR-Code, Mitgliedschaften buchen, verwalten oder kündigen, Tagespass kaufen, Öffnungszeiten prüfen und Standorte auswählen.",
-    appFeaturesTitle: "Was die App kann",
-    appFeature1: "QR-Code-Zutritt zum Studio",
-    appFeature2: "Mitgliedschaften direkt buchen",
-    appFeature3: "Verwaltung und Kündigung in der App",
-    appFeature4: "Tagespass schnell kaufen",
-    appFeature5: "Öffnungszeiten und Studioinfos ansehen",
-    appFeature6: "Standort auswählen",
-    appNotice: "Die NordFit-App befindet sich aktuell noch im Aufbau. Registriere dich später, um als Erster zu erfahren, wann sie live geht.",
-    appSectionTitle: "Einfach. Direkt. NordFit.",
-    appSectionText: "Die App ist das Zentrum deiner Mitgliedschaft. Kein unnötiger Papierkram, keine komplizierten Prozesse — alles digital, modern und klar.",
-
-    imprintTitle: "Impressum",
-    companyNameLabel: "Firmenname:",
-    companyNameText: "NordFit GmbH",
-    managerLabel: "Geschäftsführer:",
-    managerText: "Max Mustermann",
-    addressLabel: "Adresse:",
-    addressText: "Musterstraße 1, 23936 Grevesmühlen",
-    registerLabel: "Handelsregister:",
-    registerText: "HRB 12345",
-    mailLabel: "E-Mail:",
-    agbButton: "AGB",
-    privacyButton: "Datenschutz",
-    agbTitle: "AGB",
-    agbText: "Allgemeine Geschäftsbedingungen werden noch erstellt.",
-    privacyTitle: "Datenschutz",
-    privacyText: "Datenschutzerklärung folgt.",
-
-    contactPageTitle: "Kontakt",
-    contactPageIntro: "Du hast Fragen zu Tarifen, Standorten oder zur App? Dann schreib uns direkt.",
-    contactDetailsTitle: "Kontaktdaten",
-    contactPhoneLabel: "Telefon:",
-    contactReplyText: "Wir melden uns so schnell wie möglich bei dir zurück.",
-
-    footerLegal: "Impressum / AGB / Datenschutz",
-    footerContact: "Kontakt",
-    footerInstagram: "Instagram"
-  },
-
-  en: {
-    navHome: "Home",
-    navTariffs: "Memberships",
-    navLocations: "Locations",
-    navApp: "App",
-    navContact: "Contact",
-
-    titleHome: "NordFit – Home",
-    titleTariffs: "NordFit – Memberships",
-    titleLocations: "NordFit – Locations",
-    titleApp: "NordFit – App",
-    titleImpressum: "NordFit – Legal Notice",
-    titleContact: "NordFit – Contact",
-
-    heroHeading: "For your way forward",
-    heroSub: "Your gym with 24/7 access",
-    heroCTA: "Discover memberships",
-
-    homeFeaturesTitle1: "24/7 Access",
-    homeFeaturesText1: "Train whenever you want – morning, night or in between.",
-    homeFeaturesTitle2: "Latest Equipment",
-    homeFeaturesText2: "Clean, modern training space with high-quality equipment.",
-    homeFeaturesTitle3: "Flexible Plans",
-    homeFeaturesText3: "Fair memberships without pointless extras and no sign-up fee.",
-    homeDaypassTitle: "Day pass for €4.99",
-    homeDaypassText: "Perfect for trying it out – 1 day of free access to NordFit.",
-
-    homeTariffPreviewTitle: "Membership Preview",
-    homeTariffPreviewText: "Three clear models. You decide what fits you best.",
-    homeLearnMore: "Learn more",
-
-    homeAppTitle: "The NordFit App",
-    homeAppText: "All bookings, QR-code access, membership management and more – all in one place.",
-    appStore: "App Store",
-    googlePlay: "Google Play",
-
-    aboutHeading: "Local, modern, honest",
-    aboutText: "NordFit stands for honest training, modern studios and a clear path forward.",
-
-    tariffsTitle: "Memberships & Pricing",
-    tariffsIntro: "Memberships can only be started and cancelled in the NordFit app.",
-    basicName: "Basic",
-    plusName: "Plus",
-    proName: "Pro",
-    priceBasic: "€29.99 / month",
-    pricePlus: "€34.99 / month",
-    pricePro: "€39.99 / month",
-    durationBasic: "Minimum term: 8 months",
-    durationPlus: "Minimum term: 6 months",
-    durationPro: "Minimum term: 3 months",
-    cancelMonthly: "Monthly cancellation afterwards",
-    noCourses: "No drinks or classes included",
-    daypassTitle: "Day Pass",
-    daypassPrice: "€4.99 for one day",
-    daypassText: "Perfect for trying it out – 1 day of free access",
-
-    faqTitle: "FAQ",
-    faqQ1: "How does access work?",
-    faqA1: "Access is only available through the app using a QR code.",
-    faqQ2: "Are there personal training sessions or classes?",
-    faqA2: "Not in Studio 1 at launch.",
-    faqQ3: "Can I cancel monthly after the minimum term?",
-    faqA3: "Yes, cancellation is possible monthly after the minimum term.",
-
-    contactBlockTitle: "Questions? Write to us.",
-    contactBlockText: "If you have questions, you can also reach us at info@nordfit.de or via Instagram @nordfit.",
-    formName: "Name",
-    formEmail: "Email",
-    formMessage: "Message",
-    formSend: "Send",
-
-    footerLegal: "Legal / Terms / Privacy",
-    footerContact: "Contact",
-    footerInstagram: "Instagram"
-  },
-
-  fr: {
-    navHome: "Accueil",
-    navTariffs: "Tarifs",
-    navLocations: "Sites",
-    navApp: "App",
-    navContact: "Contact",
-
-    titleHome: "NordFit – Accueil",
-    titleTariffs: "NordFit – Tarifs",
-    titleLocations: "NordFit – Sites",
-    titleApp: "NordFit – Application",
-    titleImpressum: "NordFit – Mentions légales",
-    titleContact: "NordFit – Contact",
-
-    heroHeading: "Pour avancer",
-    heroSub: "Ta salle de sport avec accès 24h/24 et 7j/7",
-    heroCTA: "Découvrir les tarifs",
-
-    homeFeaturesTitle1: "Accès 24/7",
-    homeFeaturesText1: "Entraîne-toi quand tu veux – le matin, la nuit ou entre les deux.",
-    homeFeaturesTitle2: "Équipements modernes",
-    homeFeaturesText2: "Espace d’entraînement propre et moderne avec du matériel de qualité.",
-    homeFeaturesTitle3: "Tarifs flexibles",
-    homeFeaturesText3: "Des abonnements clairs, sans frais inutiles.",
-    homeDaypassTitle: "Pass journée à 4,99 €",
-    homeDaypassText: "Idéal pour tester – 1 jour d’accès libre à NordFit.",
-
-    homeTariffPreviewTitle: "Aperçu des tarifs",
-    homeTariffPreviewText: "Trois modèles clairs. À toi de choisir.",
-    homeLearnMore: "En savoir plus",
-
-    homeAppTitle: "L’application NordFit",
-    homeAppText: "Toutes les réservations, accès QR code et gestion – au même endroit.",
-    appStore: "App Store",
-    googlePlay: "Google Play",
-
-    aboutHeading: "Local, moderne, honnête",
-    aboutText: "NordFit représente un entraînement honnête et moderne.",
-
-    tariffsTitle: "Abonnements & Tarifs",
-    tariffsIntro: "Les abonnements sont gérés uniquement via l’application.",
-    basicName: "Basic",
-    plusName: "Plus",
-    proName: "Pro",
-    priceBasic: "29,99 € / mois",
-    pricePlus: "34,99 € / mois",
-    pricePro: "39,99 € / mois",
-    durationBasic: "Durée minimale : 8 mois",
-    durationPlus: "Durée minimale : 6 mois",
-    durationPro: "Durée minimale : 3 mois",
-    cancelMonthly: "Résiliation mensuelle ensuite",
-    noCourses: "Pas de boissons ni cours inclus",
-    daypassTitle: "Pass journée",
-    daypassPrice: "4,99 € pour une journée",
-    daypassText: "Idéal pour tester",
-
-    footerLegal: "Mentions / CGV / Confidentialité",
-    footerContact: "Contact",
-    footerInstagram: "Instagram"
+  function getSavedLanguage() {
+    try {
+      return localStorage.getItem("nordfit-language") || defaultLanguage;
+    } catch {
+      return defaultLanguage;
+    }
   }
-};
+
+  function getPageKey() {
+    const path = window.location.pathname.toLowerCase();
+
+    if (path.endsWith("/mitgliedschaften.html") || path.includes("mitgliedschaften")) {
+      return "mitgliedschaften";
+    }
+
+    if (path.endsWith("/standorte.html") || path.includes("standorte")) {
+      return "standorte";
+    }
+
+    if (path.endsWith("/app.html") || path.includes("/app")) {
+      return "app";
+    }
+
+    if (path.endsWith("/hausordnung.html") || path.includes("hausordnung")) {
+      return "hausordnung";
+    }
+
+    if (path.endsWith("/kontakt.html") || path.includes("kontakt")) {
+      return "kontakt";
+    }
+
+    if (path.endsWith("/impressum.html") || path.includes("impressum")) {
+      return "impressum";
+    }
+
+    return "index";
+  }
+
+  function applyLanguage(lang) {
+    updateLangLabel(lang);
+    updateDocumentLanguage(lang);
+
+    const pageTranslations = translations[pageKey];
+    if (!pageTranslations) return;
+
+    const dictionary = pageTranslations[lang] || pageTranslations[defaultLanguage];
+    if (!dictionary) return;
+
+    Object.entries(dictionary).forEach(([selector, value]) => {
+      const elements = document.querySelectorAll(selector);
+      if (!elements.length) return;
+
+      elements.forEach((element) => {
+        if (typeof value === "string") {
+          element.innerHTML = value;
+          return;
+        }
+
+        if (typeof value !== "object" || value === null) return;
+
+        if ("text" in value) {
+          element.textContent = value.text;
+        }
+
+        if ("html" in value) {
+          element.innerHTML = value.html;
+        }
+
+        if ("placeholder" in value && "placeholder" in element) {
+          element.placeholder = value.placeholder;
+        }
+
+        if ("ariaLabel" in value) {
+          element.setAttribute("aria-label", value.ariaLabel);
+        }
+
+        if ("content" in value) {
+          element.setAttribute("content", value.content);
+        }
+      });
+    });
+  }
+
+  function updateLangLabel(lang) {
+    if (!langToggleLabel) return;
+    langToggleLabel.textContent = lang.toUpperCase();
+  }
+
+  function updateDocumentLanguage(lang) {
+    document.documentElement.lang = lang;
+
+    const titleMap = {
+      de: {
+        index: "NordFit – Startseite",
+        mitgliedschaften: "NordFit – Tarife",
+        standorte: "NordFit – Standorte",
+        app: "NordFit – App",
+        hausordnung: "NordFit – Hausordnung",
+        kontakt: "NordFit – Kontakt",
+        impressum: "NordFit – Impressum",
+      },
+      en: {
+        index: "NordFit – Home",
+        mitgliedschaften: "NordFit – Memberships",
+        standorte: "NordFit – Locations",
+        app: "NordFit – App",
+        hausordnung: "NordFit – House Rules",
+        kontakt: "NordFit – Contact",
+        impressum: "NordFit – Legal",
+      },
+      fr: {
+        index: "NordFit – Accueil",
+        mitgliedschaften: "NordFit – Abonnements",
+        standorte: "NordFit – Sites",
+        app: "NordFit – Application",
+        hausordnung: "NordFit – Règlement",
+        kontakt: "NordFit – Contact",
+        impressum: "NordFit – Mentions légales",
+      },
+      it: {
+        index: "NordFit – Home",
+        mitgliedschaften: "NordFit – Abbonamenti",
+        standorte: "NordFit – Sedi",
+        app: "NordFit – App",
+        hausordnung: "NordFit – Regolamento",
+        kontakt: "NordFit – Contatto",
+        impressum: "NordFit – Note legali",
+      },
+      es: {
+        index: "NordFit – Inicio",
+        mitgliedschaften: "NordFit – Membresías",
+        standorte: "NordFit – Ubicaciones",
+        app: "NordFit – App",
+        hausordnung: "NordFit – Normas",
+        kontakt: "NordFit – Contacto",
+        impressum: "NordFit – Aviso legal",
+      },
+      pl: {
+        index: "NordFit – Strona główna",
+        mitgliedschaften: "NordFit – Karnety",
+        standorte: "NordFit – Lokalizacje",
+        app: "NordFit – Aplikacja",
+        hausordnung: "NordFit – Regulamin",
+        kontakt: "NordFit – Kontakt",
+        impressum: "NordFit – Informacje prawne",
+      },
+    };
+
+    const metaDescriptionMap = {
+      de: "NordFit – modernes Fitnessstudio mit klarer Atmosphäre, hochwertigen Trainingsbereichen und ruhigem Premium-Design.",
+      en: "NordFit – a modern gym with a clear atmosphere, premium training areas and a calm high-end design.",
+      fr: "NordFit – une salle de sport moderne avec une ambiance claire, des zones premium et un design haut de gamme apaisant.",
+      it: "NordFit – palestra moderna con atmosfera pulita, aree premium e design elegante e tranquillo.",
+      es: "NordFit – gimnasio moderno con ambiente claro, zonas premium y un diseño tranquilo y elegante.",
+      pl: "NordFit – nowoczesna siłownia z uporządkowaną atmosferą, strefami premium i spokojnym designem.",
+    };
+
+    const titleValue = titleMap[lang]?.[pageKey];
+    if (titleValue) {
+      document.title = titleValue;
+    }
+
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription && metaDescriptionMap[lang]) {
+      metaDescription.setAttribute("content", metaDescriptionMap[lang]);
+    }
+  }
+
+  const translations = {
+    index: {
+      de: {
+        ".nav-link:nth-of-type(1)": { text: "Startseite" },
+        ".nav-link:nth-of-type(2)": { text: "Tarife" },
+        ".nav-link:nth-of-type(3)": { text: "Standorte" },
+        ".nav-link:nth-of-type(4)": { text: "App" },
+        ".nav-link:nth-of-type(5)": { text: "Hausordnung" },
+        ".nav-link:nth-of-type(6)": { text: "Kontakt" },
+
+        ".home-hero .eyebrow": { text: "NordFit Studio" },
+        ".home-hero .hero-title": { html: "Ein Studio, das modern wirkt. Und ruhig bleibt." },
+        ".home-hero .hero-subtitle": {
+          html: "NordFit verbindet klare Räume, hochwertige Trainingsbereiche und eine Atmosphäre, die ruhig, modern und fokussiert wirkt."
+        },
+
+        ".hero-actions a:nth-child(1)": { text: "Mitgliedschaften" },
+        ".hero-actions a:nth-child(2)": { text: "App" },
+        ".hero-actions a:nth-child(3)": { text: "Standorte" },
+
+        ".hero-image-caption h2": { text: "Ein erster Eindruck, der Haltung zeigt." },
+        ".hero-image-caption p": {
+          html: "Schon von außen soll NordFit modern, hochwertig und ruhig wirken — nicht überladen, nicht beliebig, sondern klar, durchdacht und einladend."
+        },
+
+        ".area-headline-block h2": { text: "Für jeden Fokus ein geeigneter Bereich." },
+        ".area-headline-block p": {
+          html: "NordFit denkt nicht in einem einzigen Raum voller Geräte, sondern in klaren Zonen. So entsteht ein Studio, das strukturierter, ruhiger und hochwertiger wirkt."
+        },
+
+        ".area-section:nth-of-type(1) .eyebrow": { text: "Kraftsport" },
+        ".area-section:nth-of-type(1) h3": { text: "Krafttraining mit Ruhe und Konzentration." },
+        ".area-section:nth-of-type(1) .muted": {
+          html: "Freie Gewichte, Maschinen und klar gegliederte Flächen schaffen einen Bereich, in dem fokussiertes Krafttraining im Mittelpunkt steht — ohne unnötige Unruhe."
+        },
+
+        ".area-section:nth-of-type(2) .eyebrow": { text: "Ausdauer" },
+        ".area-section:nth-of-type(2) h3": { text: "Bewegung mit Weite und Überblick." },
+        ".area-section:nth-of-type(2) .muted": {
+          html: "Laufbänder, Fahrräder und Ausdauergeräte sind so angeordnet, dass der Bereich offen, klar und leicht wirkt — für ein Training mit Rhythmus und Ruhe."
+        },
+
+        ".area-section:nth-of-type(3) .eyebrow": { text: "Bewegung" },
+        ".area-section:nth-of-type(3) h3": { text: "Freie Übungen und echte Dynamik." },
+        ".area-section:nth-of-type(3) .muted": {
+          html: "Dieser Bereich gibt Raum für Mobilität, freie Übungen und funktionelle Bewegungen — offen gedacht, klar strukturiert und nicht unnötig vollgestellt."
+        },
+
+        ".area-section:nth-of-type(4) .eyebrow": { text: "Regeneration" },
+        ".area-section:nth-of-type(4) h3": { text: "Ruhiger aus dem Training heraus." },
+        ".area-section:nth-of-type(4) .muted": {
+          html: "Auch der Abschluss einer Einheit soll sich gut anfühlen. Deshalb gehört zu NordFit ein Bereich, der bewusst Ruhe, Erholung und einen klaren Ausklang ermöglicht."
+        },
+
+        ".section:last-of-type .eyebrow": { text: "NordFit Gefühl" },
+        ".section:last-of-type h2": { text: "Weniger Lärm. Mehr Training." },
+        ".section:last-of-type p.muted": {
+          html: "Die Startseite soll nicht alles erklären. Sie soll zeigen, wie sich NordFit anfühlt — klar, ruhig und hochwertig."
+        },
+
+        ".footer-links a:nth-child(1)": { text: "Impressum / AGB / Datenschutz" },
+        ".footer-links a:nth-child(2)": { text: "Hausordnung" },
+        ".footer-links a:nth-child(3)": { text: "Kontakt" },
+        ".footer-links a:nth-child(4)": { text: "Instagram" }
+      },
+
+      en: {
+        ".nav-link:nth-of-type(1)": { text: "Home" },
+        ".nav-link:nth-of-type(2)": { text: "Memberships" },
+        ".nav-link:nth-of-type(3)": { text: "Locations" },
+        ".nav-link:nth-of-type(4)": { text: "App" },
+        ".nav-link:nth-of-type(5)": { text: "House Rules" },
+        ".nav-link:nth-of-type(6)": { text: "Contact" },
+
+        ".home-hero .eyebrow": { text: "NordFit Studio" },
+        ".home-hero .hero-title": { html: "A studio that feels modern. And stays calm." },
+        ".home-hero .hero-subtitle": {
+          html: "NordFit combines clear spaces, premium training areas and an atmosphere that feels calm, modern and focused."
+        },
+
+        ".hero-actions a:nth-child(1)": { text: "Memberships" },
+        ".hero-actions a:nth-child(2)": { text: "App" },
+        ".hero-actions a:nth-child(3)": { text: "Locations" },
+
+        ".hero-image-caption h2": { text: "A first impression that shows intention." },
+        ".hero-image-caption p": {
+          html: "From the outside, NordFit should already feel modern, premium and calm — not overloaded, not generic, but clear, thoughtful and inviting."
+        },
+
+        ".area-headline-block h2": { text: "A dedicated area for every focus." },
+        ".area-headline-block p": {
+          html: "NordFit is not built as one room full of equipment, but as a studio with clearly defined zones. That creates a more structured, calmer and more premium feeling."
+        },
+
+        ".area-section:nth-of-type(1) .eyebrow": { text: "Strength" },
+        ".area-section:nth-of-type(1) h3": { text: "Strength training with calm and concentration." },
+        ".area-section:nth-of-type(1) .muted": {
+          html: "Free weights, machines and clearly structured layouts create an area where focused strength training stays at the center — without unnecessary visual noise."
+        },
+
+        ".area-section:nth-of-type(2) .eyebrow": { text: "Cardio" },
+        ".area-section:nth-of-type(2) h3": { text: "Movement with openness and overview." },
+        ".area-section:nth-of-type(2) .muted": {
+          html: "Treadmills, bikes and endurance machines are arranged in a way that feels open, clear and light — for training with rhythm and calm."
+        },
+
+        ".area-section:nth-of-type(3) .eyebrow": { text: "Movement" },
+        ".area-section:nth-of-type(3) h3": { text: "Free exercises and real dynamics." },
+        ".area-section:nth-of-type(3) .muted": {
+          html: "This area gives space to mobility, free exercises and functional movement — open in concept, clearly structured and intentionally not overcrowded."
+        },
+
+        ".area-section:nth-of-type(4) .eyebrow": { text: "Recovery" },
+        ".area-section:nth-of-type(4) h3": { text: "Leaving training in a calmer way." },
+        ".area-section:nth-of-type(4) .muted": {
+          html: "The end of a session should feel good too. That is why NordFit includes a space intentionally designed for calm, recovery and a clear finish."
+        },
+
+        ".section:last-of-type .eyebrow": { text: "NordFit Feeling" },
+        ".section:last-of-type h2": { text: "Less noise. More training." },
+        ".section:last-of-type p.muted": {
+          html: "The homepage should not explain everything. It should show how NordFit feels — clear, calm and premium."
+        },
+
+        ".footer-links a:nth-child(1)": { text: "Legal / Terms / Privacy" },
+        ".footer-links a:nth-child(2)": { text: "House Rules" },
+        ".footer-links a:nth-child(3)": { text: "Contact" },
+        ".footer-links a:nth-child(4)": { text: "Instagram" }
+      },
+
+      fr: {},
+      it: {},
+      es: {},
+      pl: {}
+    },
+
+    mitgliedschaften: {
+      de: {},
+      en: {},
+      fr: {},
+      it: {},
+      es: {},
+      pl: {}
+    },
+
+    standorte: {
+      de: {},
+      en: {},
+      fr: {},
+      it: {},
+      es: {},
+      pl: {}
+    },
+
+    app: {
+      de: {},
+      en: {},
+      fr: {},
+      it: {},
+      es: {},
+      pl: {}
+    },
+
+    hausordnung: {
+      de: {},
+      en: {},
+      fr: {},
+      it: {},
+      es: {},
+      pl: {}
+    },
+
+    kontakt: {
+      de: {},
+      en: {},
+      fr: {},
+      it: {},
+      es: {},
+      pl: {}
+    },
+
+    impressum: {
+      de: {},
+      en: {},
+      fr: {},
+      it: {},
+      es: {},
+      pl: {}
+    }
+  };
+});
