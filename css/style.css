@@ -424,14 +424,17 @@ select:focus {
     background-color 0.24s cubic-bezier(0.22, 1, 0.36, 1),
     color 0.24s cubic-bezier(0.22, 1, 0.36, 1),
     box-shadow 0.24s cubic-bezier(0.22, 1, 0.36, 1),
-    opacity 0.24s cubic-bezier(0.22, 1, 0.36, 1);
+    opacity 0.24s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.24s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .site-nav a:hover {
-  transform: none;
+  transform: translateY(-1px);
   color: var(--text-main);
   background: rgba(255,255,255,0.15);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.025);
+  box-shadow:
+    0 6px 16px rgba(0,0,0,0.03),
+    inset 0 1px 0 rgba(255,255,255,0.08);
 }
 
 .nav-link.active,
@@ -444,6 +447,7 @@ select:focus {
   box-shadow:
     inset 0 1px 0 rgba(255,255,255,0.04),
     0 8px 18px rgba(0,0,0,0.18) !important;
+  transform: none !important;
 }
 
 .language-dropdown {
@@ -477,14 +481,15 @@ select:focus {
     background var(--t-med),
     box-shadow var(--t-med),
     transform var(--t-med),
-    border-color var(--t-fast);
+    border-color var(--t-fast),
+    color var(--t-fast);
 }
 
 .lang-toggle:hover,
 .lang-toggle.is-open,
 .burger:hover,
 .burger.is-active {
-  transform: none;
+  transform: translateY(-1px);
   background: linear-gradient(180deg, rgba(255,255,255,0.44), rgba(255,255,255,0.16));
   border-color: rgba(255,255,255,0.24);
   box-shadow:
@@ -513,6 +518,7 @@ select:focus {
 
 .lang-toggle[aria-expanded="true"] .lang-caret {
   transform: rotate(180deg);
+  opacity: 0.85;
 }
 
 .lang-menu,
@@ -546,17 +552,37 @@ select:focus {
 }
 
 .lang-option {
+  position: relative;
   width: 100%;
   text-align: left;
   padding: 0.85rem 0.95rem;
   border-radius: 14px;
   color: var(--text-main);
   font-weight: 500;
-  transition: background var(--t-fast);
+  transition:
+    background var(--t-fast),
+    transform var(--t-fast),
+    color var(--t-fast),
+    box-shadow var(--t-fast);
 }
 
 .lang-option:hover {
   background: rgba(255,255,255,0.20);
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+}
+
+.lang-option.is-selected {
+  background: rgba(17,17,17,0.88);
+  color: #ffffff;
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.05),
+    0 8px 18px rgba(0,0,0,0.14);
+}
+
+.lang-option.is-selected:hover {
+  background: rgba(17,17,17,0.92);
+  color: #ffffff;
   transform: none;
 }
 
@@ -594,7 +620,8 @@ select:focus {
     top 0.28s var(--ease),
     transform 0.28s var(--ease),
     opacity 0.2s var(--ease),
-    width 0.28s var(--ease);
+    width 0.28s var(--ease),
+    background-color var(--t-fast);
 }
 
 .burger-lines span:nth-child(1) { top: 0; }
