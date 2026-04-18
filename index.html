@@ -130,10 +130,17 @@
                 einen Bereich, in dem fokussiertes Krafttraining im Mittelpunkt steht —
                 ohne unnötige Unruhe.
               </p>
-              <p class="gallery-hint">Nach rechts scrollen oder wischen. Bilder lassen sich groß öffnen.</p>
             </div>
 
-            <div class="gallery-row" aria-label="Galerie Kraftsport">
+            <div class="gallery-topbar" aria-label="Galerie-Steuerung Kraftsport">
+              <p class="gallery-hint">Nach rechts scrollen oder die Punkte nutzen. Bilder lassen sich groß öffnen.</p>
+              <div class="gallery-dots" aria-label="Seiten Kraftsport">
+                <button type="button" class="gallery-dot active" data-gallery-target="kraftsport-gallery" data-gallery-page="0" aria-label="Kraftsport Galerie Seite 1"></button>
+                <button type="button" class="gallery-dot" data-gallery-target="kraftsport-gallery" data-gallery-page="1" aria-label="Kraftsport Galerie Seite 2"></button>
+              </div>
+            </div>
+
+            <div class="gallery-row" id="kraftsport-gallery" aria-label="Galerie Kraftsport">
               <article class="gallery-card wide">
                 <button class="gallery-button" type="button" onclick="openModal('kraft-1-modal')">
                   <div class="gallery-image">
@@ -169,12 +176,30 @@
                   </div>
                 </button>
               </article>
-            </div>
 
-            <div class="gallery-dots" aria-hidden="true">
-              <span class="gallery-dot active"></span>
-              <span class="gallery-dot"></span>
-              <span class="gallery-dot"></span>
+              <article class="gallery-card">
+                <button class="gallery-button" type="button" onclick="openModal('kraft-4-modal')">
+                  <div class="gallery-image">
+                    <div class="gallery-placeholder">Kraftsport Bild 4</div>
+                  </div>
+                  <div class="gallery-meta">
+                    <span class="gallery-kicker">Training</span>
+                    <span class="gallery-title">Strukturiert, modern und hochwertig aufgebaut</span>
+                  </div>
+                </button>
+              </article>
+
+              <article class="gallery-card wide">
+                <button class="gallery-button" type="button" onclick="openModal('kraft-5-modal')">
+                  <div class="gallery-image">
+                    <div class="gallery-placeholder">Kraftsport Bild 5</div>
+                  </div>
+                  <div class="gallery-meta">
+                    <span class="gallery-kicker">Studiofläche</span>
+                    <span class="gallery-title">Mehr Klarheit statt unnötiger Überladung</span>
+                  </div>
+                </button>
+              </article>
             </div>
           </article>
 
@@ -187,10 +212,17 @@
                 dass der Bereich offen, klar und leicht wirkt —
                 für ein Training mit Rhythmus und Ruhe.
               </p>
-              <p class="gallery-hint">Nach rechts scrollen oder wischen. Bilder lassen sich groß öffnen.</p>
             </div>
 
-            <div class="gallery-row" aria-label="Galerie Ausdauer">
+            <div class="gallery-topbar" aria-label="Galerie-Steuerung Ausdauer">
+              <p class="gallery-hint">Nach rechts scrollen oder die Punkte nutzen. Bilder lassen sich groß öffnen.</p>
+              <div class="gallery-dots" aria-label="Seiten Ausdauer">
+                <button type="button" class="gallery-dot active" data-gallery-target="ausdauer-gallery" data-gallery-page="0" aria-label="Ausdauer Galerie Seite 1"></button>
+                <button type="button" class="gallery-dot" data-gallery-target="ausdauer-gallery" data-gallery-page="1" aria-label="Ausdauer Galerie Seite 2"></button>
+              </div>
+            </div>
+
+            <div class="gallery-row" id="ausdauer-gallery" aria-label="Galerie Ausdauer">
               <article class="gallery-card">
                 <button class="gallery-button" type="button" onclick="openModal('cardio-1-modal')">
                   <div class="gallery-image">
@@ -226,12 +258,30 @@
                   </div>
                 </button>
               </article>
-            </div>
 
-            <div class="gallery-dots" aria-hidden="true">
-              <span class="gallery-dot active"></span>
-              <span class="gallery-dot"></span>
-              <span class="gallery-dot"></span>
+              <article class="gallery-card">
+                <button class="gallery-button" type="button" onclick="openModal('cardio-4-modal')">
+                  <div class="gallery-image">
+                    <div class="gallery-placeholder">Ausdauer Bild 4</div>
+                  </div>
+                  <div class="gallery-meta">
+                    <span class="gallery-kicker">Tempo</span>
+                    <span class="gallery-title">Ausdauertraining mit Ruhe und Übersicht</span>
+                  </div>
+                </button>
+              </article>
+
+              <article class="gallery-card wide">
+                <button class="gallery-button" type="button" onclick="openModal('cardio-5-modal')">
+                  <div class="gallery-image">
+                    <div class="gallery-placeholder">Ausdauer Bild 5</div>
+                  </div>
+                  <div class="gallery-meta">
+                    <span class="gallery-kicker">Studiofluss</span>
+                    <span class="gallery-title">Offen gedacht und bewusst leicht gehalten</span>
+                  </div>
+                </button>
+              </article>
             </div>
           </article>
 
@@ -243,10 +293,17 @@
                 Dieser Bereich gibt Raum für Mobilität, freie Übungen und funktionelle Bewegungen —
                 offen gedacht, klar strukturiert und nicht unnötig vollgestellt.
               </p>
-              <p class="gallery-hint">Nach rechts scrollen oder wischen. Bilder lassen sich groß öffnen.</p>
             </div>
 
-            <div class="gallery-row" aria-label="Galerie Bewegung">
+            <div class="gallery-topbar" aria-label="Galerie-Steuerung Bewegung">
+              <p class="gallery-hint">Nach rechts scrollen oder die Punkte nutzen. Bilder lassen sich groß öffnen.</p>
+              <div class="gallery-dots" aria-label="Seiten Bewegung">
+                <button type="button" class="gallery-dot active" data-gallery-target="bewegung-gallery" data-gallery-page="0" aria-label="Bewegung Galerie Seite 1"></button>
+                <button type="button" class="gallery-dot" data-gallery-target="bewegung-gallery" data-gallery-page="1" aria-label="Bewegung Galerie Seite 2"></button>
+              </div>
+            </div>
+
+            <div class="gallery-row" id="bewegung-gallery" aria-label="Galerie Bewegung">
               <article class="gallery-card">
                 <button class="gallery-button" type="button" onclick="openModal('move-1-modal')">
                   <div class="gallery-image">
@@ -282,12 +339,30 @@
                   </div>
                 </button>
               </article>
-            </div>
 
-            <div class="gallery-dots" aria-hidden="true">
-              <span class="gallery-dot active"></span>
-              <span class="gallery-dot"></span>
-              <span class="gallery-dot"></span>
+              <article class="gallery-card">
+                <button class="gallery-button" type="button" onclick="openModal('move-4-modal')">
+                  <div class="gallery-image">
+                    <div class="gallery-placeholder">Bewegung Bild 4</div>
+                  </div>
+                  <div class="gallery-meta">
+                    <span class="gallery-kicker">Freiraum</span>
+                    <span class="gallery-title">Mehr Platz für echte Bewegungsfreiheit</span>
+                  </div>
+                </button>
+              </article>
+
+              <article class="gallery-card wide">
+                <button class="gallery-button" type="button" onclick="openModal('move-5-modal')">
+                  <div class="gallery-image">
+                    <div class="gallery-placeholder">Bewegung Bild 5</div>
+                  </div>
+                  <div class="gallery-meta">
+                    <span class="gallery-kicker">Flow</span>
+                    <span class="gallery-title">Ein Bereich mit Ruhe, Dynamik und Klarheit</span>
+                  </div>
+                </button>
+              </article>
             </div>
           </article>
 
@@ -300,10 +375,17 @@
                 Deshalb gehört zu NordFit ein Bereich, der bewusst Ruhe,
                 Erholung und einen klaren Ausklang ermöglicht.
               </p>
-              <p class="gallery-hint">Nach rechts scrollen oder wischen. Bilder lassen sich groß öffnen.</p>
             </div>
 
-            <div class="gallery-row" aria-label="Galerie Regeneration">
+            <div class="gallery-topbar" aria-label="Galerie-Steuerung Regeneration">
+              <p class="gallery-hint">Nach rechts scrollen oder die Punkte nutzen. Bilder lassen sich groß öffnen.</p>
+              <div class="gallery-dots" aria-label="Seiten Regeneration">
+                <button type="button" class="gallery-dot active" data-gallery-target="regeneration-gallery" data-gallery-page="0" aria-label="Regeneration Galerie Seite 1"></button>
+                <button type="button" class="gallery-dot" data-gallery-target="regeneration-gallery" data-gallery-page="1" aria-label="Regeneration Galerie Seite 2"></button>
+              </div>
+            </div>
+
+            <div class="gallery-row" id="regeneration-gallery" aria-label="Galerie Regeneration">
               <article class="gallery-card wide">
                 <button class="gallery-button" type="button" onclick="openModal('recovery-1-modal')">
                   <div class="gallery-image">
@@ -339,27 +421,32 @@
                   </div>
                 </button>
               </article>
-            </div>
 
-            <div class="gallery-dots" aria-hidden="true">
-              <span class="gallery-dot active"></span>
-              <span class="gallery-dot"></span>
-              <span class="gallery-dot"></span>
+              <article class="gallery-card">
+                <button class="gallery-button" type="button" onclick="openModal('recovery-4-modal')">
+                  <div class="gallery-image">
+                    <div class="gallery-placeholder">Regeneration Bild 4</div>
+                  </div>
+                  <div class="gallery-meta">
+                    <span class="gallery-kicker">Ruhe</span>
+                    <span class="gallery-title">Ein Bereich, der bewusst runterfährt</span>
+                  </div>
+                </button>
+              </article>
+
+              <article class="gallery-card wide">
+                <button class="gallery-button" type="button" onclick="openModal('recovery-5-modal')">
+                  <div class="gallery-image">
+                    <div class="gallery-placeholder">Regeneration Bild 5</div>
+                  </div>
+                  <div class="gallery-meta">
+                    <span class="gallery-kicker">Balance</span>
+                    <span class="gallery-title">Ein sauberer Übergang zwischen Training und Ruhe</span>
+                  </div>
+                </button>
+              </article>
             </div>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="glass reveal text-center" style="padding: 3rem 2rem;">
-          <p class="eyebrow">NordFit Gefühl</p>
-          <h2 class="section-title large-title">Weniger Lärm. Mehr Training.</h2>
-          <p class="muted" style="max-width: 760px; margin: 1rem auto 0;">
-            Die Startseite soll nicht alles erklären. Sie soll zeigen,
-            wie sich NordFit anfühlt — klar, ruhig und hochwertig.
-          </p>
         </div>
       </div>
     </section>
@@ -373,7 +460,6 @@
       </div>
     </div>
   </div>
-
   <div class="modal" id="kraft-2-modal" aria-hidden="true">
     <div class="modal-box glass gallery-modal-box">
       <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
@@ -382,12 +468,27 @@
       </div>
     </div>
   </div>
-
   <div class="modal" id="kraft-3-modal" aria-hidden="true">
     <div class="modal-box glass gallery-modal-box">
       <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
       <div class="gallery-modal-image-wrap">
         <div class="gallery-image"><div class="gallery-placeholder">Kraftsport Bild 3 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="kraft-4-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Kraftsport Bild 4 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="kraft-5-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Kraftsport Bild 5 groß</div></div>
       </div>
     </div>
   </div>
@@ -400,7 +501,6 @@
       </div>
     </div>
   </div>
-
   <div class="modal" id="cardio-2-modal" aria-hidden="true">
     <div class="modal-box glass gallery-modal-box">
       <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
@@ -409,12 +509,27 @@
       </div>
     </div>
   </div>
-
   <div class="modal" id="cardio-3-modal" aria-hidden="true">
     <div class="modal-box glass gallery-modal-box">
       <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
       <div class="gallery-modal-image-wrap">
         <div class="gallery-image"><div class="gallery-placeholder">Ausdauer Bild 3 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="cardio-4-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Ausdauer Bild 4 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="cardio-5-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Ausdauer Bild 5 groß</div></div>
       </div>
     </div>
   </div>
@@ -427,7 +542,6 @@
       </div>
     </div>
   </div>
-
   <div class="modal" id="move-2-modal" aria-hidden="true">
     <div class="modal-box glass gallery-modal-box">
       <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
@@ -436,12 +550,27 @@
       </div>
     </div>
   </div>
-
   <div class="modal" id="move-3-modal" aria-hidden="true">
     <div class="modal-box glass gallery-modal-box">
       <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
       <div class="gallery-modal-image-wrap">
         <div class="gallery-image"><div class="gallery-placeholder">Bewegung Bild 3 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="move-4-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Bewegung Bild 4 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="move-5-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Bewegung Bild 5 groß</div></div>
       </div>
     </div>
   </div>
@@ -454,7 +583,6 @@
       </div>
     </div>
   </div>
-
   <div class="modal" id="recovery-2-modal" aria-hidden="true">
     <div class="modal-box glass gallery-modal-box">
       <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
@@ -463,12 +591,27 @@
       </div>
     </div>
   </div>
-
   <div class="modal" id="recovery-3-modal" aria-hidden="true">
     <div class="modal-box glass gallery-modal-box">
       <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
       <div class="gallery-modal-image-wrap">
         <div class="gallery-image"><div class="gallery-placeholder">Regeneration Bild 3 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="recovery-4-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Regeneration Bild 4 groß</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="modal" id="recovery-5-modal" aria-hidden="true">
+    <div class="modal-box glass gallery-modal-box">
+      <button class="modal-close" aria-label="Bild schließen" type="button">×</button>
+      <div class="gallery-modal-image-wrap">
+        <div class="gallery-image"><div class="gallery-placeholder">Regeneration Bild 5 groß</div></div>
       </div>
     </div>
   </div>
