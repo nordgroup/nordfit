@@ -20,6 +20,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const galleryRows = document.querySelectorAll(".gallery-row");
 
   let lastFocusedElement = null;
+  const galleryInstances = [];
 
   /* =========================
      Header scroll state
@@ -172,7 +173,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
         syncLanguageUi(lang);
 
-        /* translations.js also reacts to click itself */
         window.dispatchEvent(
           new CustomEvent("nordfit:language-changed", {
             detail: { language: lang },
@@ -370,76 +370,22 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =========================
      Gallery helpers
      ========================= */
-  const galleryInstances = [];
-
   function clamp(value, min, max) {
     return Math.min(Math.max(value, min), max);
   }
 
-  function createGalleryControls(row, index) {
-    const parentSection = row.closest(".area-section");
-    if (!parentSection) return null;
+  function setupGallery(row) {
+    const shell = row.closest(".gallery-shell");
+    if (!shell) return null;
 
-    let topbar = parentSection.querySelector(".gallery-topbar");
-    if (!topbar) {
-      topbar = document.createElement("div");
-      topbar.className = "gallery-topbar";
-      row.parentNode.insertBefore(topbar, row);
-    }
-
-    let controls = topbar.querySelector(".gallery-controls");
-    if (controls) return controls;
-
-    controls = document.createElement("div");
-    controls.className = "gallery-controls";
-
-    const prevButton = document.createElement("button");
-    prevButton.type = "button";
-    prevButton.className = "gallery-arrow gallery-arrow-prev";
-    prevButton.setAttribute("aria-label", "Vorheriges Bild");
-    prevButton.innerHTML = "‹";
-
-    const sliderWrap = document.createElement("div");
-    sliderWrap.className = "gallery-slider-wrap";
-
-    const range = document.createElement("input");
-    range.type = "range";
-    range.className = "gallery-range";
-    range.min = "0";
-    range.max = "100";
-    range.step = "1";
-    range.value = "0";
-    range.setAttribute("aria-label", `Galerie ${index + 1} Schieberegler`);
-
-    const nextButton = document.createElement("button");
-    nextButton.type = "button";
-    nextButton.className = "gallery-arrow gallery-arrow-next";
-    nextButton.setAttribute("aria-label", "Nächstes Bild");
-    nextButton.innerHTML = "›";
-
-    sliderWrap.appendChild(range);
-    controls.appendChild(prevButton);
-    controls.appendChild(sliderWrap);
-    controls.appendChild(nextButton);
-    topbar.appendChild(controls);
-
-    return controls;
-  }
-
-  function setupGallery(row, index) {
     const cards = Array.from(row.querySelectorAll(".gallery-card"));
     if (!cards.length) return null;
 
-    const controls = createGalleryControls(row, index);
-    if (!controls) return null;
-
-    const prevButton = controls.querySelector(".gallery-arrow-prev");
-    const nextButton = controls.querySelector(".gallery-arrow-next");
-    const range = controls.querySelector(".gallery-range");
+    const prevButton = shell.querySelector(".gallery-arrow-left");
+    const nextButton = shell.querySelector(".gallery-arrow-right");
 
     if (!(prevButton instanceof HTMLButtonElement)) return null;
     if (!(nextButton instanceof HTMLButtonElement)) return null;
-    if (!(range instanceof HTMLInputElement)) return null;
 
     let isDragging = false;
     let dragMoved = false;
@@ -462,12 +408,6 @@ document.addEventListener("DOMContentLoaded", () => {
       return clamp(Math.round(row.scrollLeft / cardWidth), 0, cards.length - 1);
     };
 
-    const updateRange = () => {
-      const maxScroll = getMaxScroll();
-      const progress = maxScroll > 0 ? (row.scrollLeft / maxScroll) * 100 : 0;
-      range.value = String(Math.round(progress));
-    };
-
     const updateButtons = () => {
       const maxScroll = getMaxScroll();
       const atStart = row.scrollLeft <= 4;
@@ -481,7 +421,6 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const update = () => {
-      updateRange();
       updateButtons();
     };
 
@@ -504,16 +443,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     prevButton.addEventListener("click", () => scrollByOne(-1));
     nextButton.addEventListener("click", () => scrollByOne(1));
-
-    range.addEventListener("input", () => {
-      const maxScroll = getMaxScroll();
-      const nextScroll = (Number(range.value) / 100) * maxScroll;
-      row.scrollTo({
-        left: nextScroll,
-        behavior: "auto",
-      });
-      updateButtons();
-    });
 
     row.addEventListener(
       "scroll",
@@ -585,8 +514,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (galleryRows.length) {
-    galleryRows.forEach((row, index) => {
-      const instance = setupGallery(row, index);
+    galleryRows.forEach((row) => {
+      const instance = setupGallery(row);
       if (instance) {
         galleryInstances.push(instance);
       }
