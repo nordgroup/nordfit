@@ -62,7 +62,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!burger || !siteNav) return;
 
     const isOpen = siteNav.classList.contains("open");
-
     if (isOpen) {
       closeBurgerMenu();
     } else {
@@ -90,31 +89,16 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =========================
      Language dropdown
      ========================= */
-  function getStoredLanguage() {
-    try {
-      return localStorage.getItem("nordfit-language") || "de";
-    } catch {
-      return "de";
-    }
-  }
-
-  function updateLanguageUI(lang) {
-    if (langToggleLabel) {
-      langToggleLabel.textContent = lang.toUpperCase();
-    }
-
+  function markActiveLanguage(langCode) {
     if (!langOptions.length) return;
 
     langOptions.forEach((option) => {
       const optionLang = option.dataset.lang?.trim().toLowerCase();
+      const isActive = optionLang === langCode;
 
-      if (optionLang === lang) {
-        option.classList.add("is-active", "is-selected");
-        option.setAttribute("aria-current", "true");
-      } else {
-        option.classList.remove("is-active", "is-selected");
-        option.removeAttribute("aria-current");
-      }
+      option.classList.toggle("is-selected", isActive);
+      option.classList.toggle("is-active", isActive);
+      option.setAttribute("aria-pressed", isActive ? "true" : "false");
     });
   }
 
@@ -132,15 +116,12 @@ document.addEventListener("DOMContentLoaded", () => {
     langToggle.classList.add("is-open");
     langToggle.setAttribute("aria-expanded", "true");
     langMenu.classList.add("show");
-
-    updateLanguageUI(getStoredLanguage());
   }
 
   function toggleLanguageMenu() {
     if (!langToggle || !langMenu) return;
 
     const isOpen = langMenu.classList.contains("show");
-
     if (isOpen) {
       closeLanguageMenu();
     } else {
@@ -149,7 +130,25 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  updateLanguageUI(getStoredLanguage());
+  function getSavedLanguage() {
+    try {
+      return (localStorage.getItem("nordfit-language") || "de").toLowerCase();
+    } catch {
+      return "de";
+    }
+  }
+
+  function syncLanguageUi(langCode) {
+    const safeLang = (langCode || "de").toUpperCase();
+
+    if (langToggleLabel) {
+      langToggleLabel.textContent = safeLang;
+    }
+
+    markActiveLanguage((langCode || "de").toLowerCase());
+  }
+
+  syncLanguageUi(getSavedLanguage());
 
   if (langToggle && langMenu) {
     langToggle.addEventListener("click", (event) => {
@@ -171,14 +170,35 @@ document.addEventListener("DOMContentLoaded", () => {
           localStorage.setItem("nordfit-language", lang);
         } catch {}
 
-        updateLanguageUI(lang);
+        syncLanguageUi(lang);
+
+        /* translations.js also reacts to click itself */
+        window.dispatchEvent(
+          new CustomEvent("nordfit:language-changed", {
+            detail: { language: lang },
+          })
+        );
+
         closeLanguageMenu();
       });
     });
   }
 
+  window.addEventListener("storage", (event) => {
+    if (event.key === "nordfit-language") {
+      syncLanguageUi((event.newValue || "de").toLowerCase());
+    }
+  });
+
+  window.addEventListener("nordfit:language-ui-sync", (event) => {
+    const nextLanguage = event.detail?.language;
+    if (typeof nextLanguage === "string") {
+      syncLanguageUi(nextLanguage.toLowerCase());
+    }
+  });
+
   /* =========================
-     Outside click close
+     Global outside click close
      ========================= */
   document.addEventListener("click", (event) => {
     const target = event.target;
@@ -217,7 +237,9 @@ document.addEventListener("DOMContentLoaded", () => {
       closeBurgerMenu();
     }
 
-    refreshAllGalleries();
+    galleryInstances.forEach((instance) => {
+      instance.update();
+    });
   });
 
   /* =========================
@@ -249,7 +271,9 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!modal) return;
 
     lastFocusedElement =
-      document.activeElement instanceof HTMLElement ? document.activeElement : null;
+      document.activeElement instanceof HTMLElement
+        ? document.activeElement
+        : null;
 
     modal.classList.add("show");
     modal.setAttribute("aria-hidden", "false");
@@ -270,7 +294,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const anyOpenModal = document.querySelector(".modal.show");
     if (!anyOpenModal) {
       body.classList.remove("modal-open");
-
       if (lastFocusedElement instanceof HTMLElement) {
         lastFocusedElement.focus();
       }
@@ -302,7 +325,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =========================
-     Focus trap for modals
+     Basic focus trap for modals
      ========================= */
   document.addEventListener("keydown", (event) => {
     if (event.key !== "Tab") return;
@@ -322,7 +345,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const focusableElements = Array.from(
       openModal.querySelectorAll(focusableSelectors.join(","))
     ).filter((el) => {
-      return el instanceof HTMLElement && !el.hasAttribute("disabled");
+      return !(el instanceof HTMLElement) ? false : !el.hasAttribute("disabled");
     });
 
     if (!focusableElements.length) return;
@@ -345,81 +368,19 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* =========================
-     Galleries
+     Gallery helpers
      ========================= */
   const galleryInstances = [];
 
   function clamp(value, min, max) {
-    return Math.max(min, Math.min(max, value));
+    return Math.min(Math.max(value, min), max);
   }
 
-  function getGalleryCards(row) {
-    return Array.from(row.querySelectorAll(".gallery-card"));
-  }
+  function createGalleryControls(row, index) {
+    const parentSection = row.closest(".area-section");
+    if (!parentSection) return null;
 
-  function getClosestCardIndex(row) {
-    const cards = getGalleryCards(row);
-    if (!cards.length) return 0;
-
-    const rowLeft = row.scrollLeft;
-    let closestIndex = 0;
-    let smallestDistance = Infinity;
-
-    cards.forEach((card, index) => {
-      const distance = Math.abs(card.offsetLeft - rowLeft);
-      if (distance < smallestDistance) {
-        smallestDistance = distance;
-        closestIndex = index;
-      }
-    });
-
-    return closestIndex;
-  }
-
-  function scrollToCard(row, index, smooth = true) {
-    const cards = getGalleryCards(row);
-    if (!cards.length) return;
-
-    const safeIndex = clamp(index, 0, cards.length - 1);
-    const targetCard = cards[safeIndex];
-
-    row.scrollTo({
-      left: targetCard.offsetLeft,
-      behavior: smooth ? "smooth" : "auto",
-    });
-  }
-
-  function updateGalleryState(instance) {
-    const { row, prevButton, nextButton, range } = instance;
-    const cards = getGalleryCards(row);
-    if (!cards.length) return;
-
-    const activeIndex = getClosestCardIndex(row);
-    const maxIndex = cards.length - 1;
-
-    if (prevButton) {
-      const disabled = activeIndex <= 0;
-      prevButton.disabled = disabled;
-      prevButton.classList.toggle("is-disabled", disabled);
-    }
-
-    if (nextButton) {
-      const disabled = activeIndex >= maxIndex;
-      nextButton.disabled = disabled;
-      nextButton.classList.toggle("is-disabled", disabled);
-    }
-
-    if (range) {
-      range.max = String(maxIndex);
-      range.value = String(activeIndex);
-    }
-  }
-
-  function buildGalleryControls(row) {
-    const areaSection = row.closest(".area-section");
-    if (!areaSection) return null;
-
-    let topbar = areaSection.querySelector(".gallery-topbar");
+    let topbar = parentSection.querySelector(".gallery-topbar");
     if (!topbar) {
       topbar = document.createElement("div");
       topbar.className = "gallery-topbar";
@@ -427,174 +388,208 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     let controls = topbar.querySelector(".gallery-controls");
-    if (!controls) {
-      controls = document.createElement("div");
-      controls.className = "gallery-controls";
-      topbar.appendChild(controls);
-    }
+    if (controls) return controls;
 
-    let prevButton = controls.querySelector(".gallery-arrow.prev");
-    if (!prevButton) {
-      prevButton = document.createElement("button");
-      prevButton.type = "button";
-      prevButton.className = "gallery-arrow prev";
-      prevButton.setAttribute("aria-label", "Vorheriges Bild");
-      prevButton.innerHTML = "‹";
-      controls.appendChild(prevButton);
-    }
+    controls = document.createElement("div");
+    controls.className = "gallery-controls";
 
-    let sliderWrap = controls.querySelector(".gallery-slider-wrap");
-    if (!sliderWrap) {
-      sliderWrap = document.createElement("div");
-      sliderWrap.className = "gallery-slider-wrap";
-      controls.appendChild(sliderWrap);
-    }
+    const prevButton = document.createElement("button");
+    prevButton.type = "button";
+    prevButton.className = "gallery-arrow gallery-arrow-prev";
+    prevButton.setAttribute("aria-label", "Vorheriges Bild");
+    prevButton.innerHTML = "‹";
 
-    let range = sliderWrap.querySelector(".gallery-range");
-    if (!range) {
-      range = document.createElement("input");
-      range.type = "range";
-      range.className = "gallery-range";
-      range.min = "0";
-      range.step = "1";
-      range.value = "0";
-      range.setAttribute("aria-label", "Bilder wechseln");
-      sliderWrap.appendChild(range);
-    }
+    const sliderWrap = document.createElement("div");
+    sliderWrap.className = "gallery-slider-wrap";
 
-    let nextButton = controls.querySelector(".gallery-arrow.next");
-    if (!nextButton) {
-      nextButton = document.createElement("button");
-      nextButton.type = "button";
-      nextButton.className = "gallery-arrow next";
-      nextButton.setAttribute("aria-label", "Nächstes Bild");
-      nextButton.innerHTML = "›";
-      controls.appendChild(nextButton);
-    }
+    const range = document.createElement("input");
+    range.type = "range";
+    range.className = "gallery-range";
+    range.min = "0";
+    range.max = "100";
+    range.step = "1";
+    range.value = "0";
+    range.setAttribute("aria-label", `Galerie ${index + 1} Schieberegler`);
 
-    return { topbar, controls, prevButton, nextButton, range };
+    const nextButton = document.createElement("button");
+    nextButton.type = "button";
+    nextButton.className = "gallery-arrow gallery-arrow-next";
+    nextButton.setAttribute("aria-label", "Nächstes Bild");
+    nextButton.innerHTML = "›";
+
+    sliderWrap.appendChild(range);
+    controls.appendChild(prevButton);
+    controls.appendChild(sliderWrap);
+    controls.appendChild(nextButton);
+    topbar.appendChild(controls);
+
+    return controls;
   }
 
-  function setupGallery(row) {
-    const controls = buildGalleryControls(row);
-    if (!controls) return;
+  function setupGallery(row, index) {
+    const cards = Array.from(row.querySelectorAll(".gallery-card"));
+    if (!cards.length) return null;
 
-    const { prevButton, nextButton, range } = controls;
-    const cards = getGalleryCards(row);
-    if (!cards.length) return;
+    const controls = createGalleryControls(row, index);
+    if (!controls) return null;
 
-    row.dataset.galleryReady = "true";
+    const prevButton = controls.querySelector(".gallery-arrow-prev");
+    const nextButton = controls.querySelector(".gallery-arrow-next");
+    const range = controls.querySelector(".gallery-range");
 
-    const instance = {
-      row,
-      prevButton,
-      nextButton,
-      range,
-      isPointerDown: false,
-      startX: 0,
-      startScrollLeft: 0,
-      moved: false,
-      scrollTimeout: null,
+    if (!(prevButton instanceof HTMLButtonElement)) return null;
+    if (!(nextButton instanceof HTMLButtonElement)) return null;
+    if (!(range instanceof HTMLInputElement)) return null;
+
+    let isDragging = false;
+    let dragMoved = false;
+    let startX = 0;
+    let scrollStart = 0;
+    let rafId = null;
+
+    const getCardWidth = () => {
+      const firstCard = cards[0];
+      const styles = window.getComputedStyle(row);
+      const gap = parseFloat(styles.columnGap || styles.gap || "0");
+      return firstCard.getBoundingClientRect().width + gap;
     };
 
-    prevButton.addEventListener("click", () => {
-      const currentIndex = getClosestCardIndex(row);
-      scrollToCard(row, currentIndex - 1);
-    });
+    const getMaxScroll = () => Math.max(0, row.scrollWidth - row.clientWidth);
 
-    nextButton.addEventListener("click", () => {
-      const currentIndex = getClosestCardIndex(row);
-      scrollToCard(row, currentIndex + 1);
-    });
+    const getNearestIndex = () => {
+      const cardWidth = getCardWidth();
+      if (!cardWidth) return 0;
+      return clamp(Math.round(row.scrollLeft / cardWidth), 0, cards.length - 1);
+    };
+
+    const updateRange = () => {
+      const maxScroll = getMaxScroll();
+      const progress = maxScroll > 0 ? (row.scrollLeft / maxScroll) * 100 : 0;
+      range.value = String(Math.round(progress));
+    };
+
+    const updateButtons = () => {
+      const maxScroll = getMaxScroll();
+      const atStart = row.scrollLeft <= 4;
+      const atEnd = row.scrollLeft >= maxScroll - 4;
+
+      prevButton.disabled = atStart;
+      nextButton.disabled = atEnd;
+
+      prevButton.classList.toggle("is-disabled", atStart);
+      nextButton.classList.toggle("is-disabled", atEnd);
+    };
+
+    const update = () => {
+      updateRange();
+      updateButtons();
+    };
+
+    const scrollToIndex = (indexToGo) => {
+      const cardWidth = getCardWidth();
+      const maxScroll = getMaxScroll();
+      const nextScroll = clamp(indexToGo * cardWidth, 0, maxScroll);
+
+      row.scrollTo({
+        left: nextScroll,
+        behavior: "smooth",
+      });
+    };
+
+    const scrollByOne = (direction) => {
+      const currentIndex = getNearestIndex();
+      const nextIndex = clamp(currentIndex + direction, 0, cards.length - 1);
+      scrollToIndex(nextIndex);
+    };
+
+    prevButton.addEventListener("click", () => scrollByOne(-1));
+    nextButton.addEventListener("click", () => scrollByOne(1));
 
     range.addEventListener("input", () => {
-      const index = Number(range.value);
-      scrollToCard(row, index, false);
-      updateGalleryState(instance);
+      const maxScroll = getMaxScroll();
+      const nextScroll = (Number(range.value) / 100) * maxScroll;
+      row.scrollTo({
+        left: nextScroll,
+        behavior: "auto",
+      });
+      updateButtons();
     });
 
-    range.addEventListener("change", () => {
-      const index = Number(range.value);
-      scrollToCard(row, index, true);
-    });
-
-    row.addEventListener("scroll", () => {
-      window.clearTimeout(instance.scrollTimeout);
-      updateGalleryState(instance);
-
-      instance.scrollTimeout = window.setTimeout(() => {
-        updateGalleryState(instance);
-      }, 80);
-    }, { passive: true });
+    row.addEventListener(
+      "scroll",
+      () => {
+        if (rafId) cancelAnimationFrame(rafId);
+        rafId = requestAnimationFrame(update);
+      },
+      { passive: true }
+    );
 
     row.addEventListener("pointerdown", (event) => {
       if (event.pointerType === "mouse" && event.button !== 0) return;
 
-      instance.isPointerDown = true;
-      instance.startX = event.clientX;
-      instance.startScrollLeft = row.scrollLeft;
-      instance.moved = false;
-
+      isDragging = true;
+      dragMoved = false;
+      startX = event.clientX;
+      scrollStart = row.scrollLeft;
       row.classList.add("is-dragging");
       row.setPointerCapture?.(event.pointerId);
     });
 
     row.addEventListener("pointermove", (event) => {
-      if (!instance.isPointerDown) return;
+      if (!isDragging) return;
 
-      const deltaX = event.clientX - instance.startX;
-      if (Math.abs(deltaX) > 4) {
-        instance.moved = true;
+      const delta = event.clientX - startX;
+      if (Math.abs(delta) > 6) {
+        dragMoved = true;
       }
 
-      row.scrollLeft = instance.startScrollLeft - deltaX;
+      row.scrollLeft = scrollStart - delta;
     });
 
-    function endPointerDrag(event) {
-      if (!instance.isPointerDown) return;
-
-      instance.isPointerDown = false;
+    const endDrag = (event) => {
+      if (!isDragging) return;
+      isDragging = false;
       row.classList.remove("is-dragging");
+      row.releasePointerCapture?.(event.pointerId);
+      update();
+    };
 
-      try {
-        row.releasePointerCapture?.(event.pointerId);
-      } catch {}
-
-      const closestIndex = getClosestCardIndex(row);
-      scrollToCard(row, closestIndex);
-    }
-
-    row.addEventListener("pointerup", endPointerDrag);
-    row.addEventListener("pointercancel", endPointerDrag);
-    row.addEventListener("pointerleave", (event) => {
-      if (!instance.isPointerDown) return;
-      endPointerDrag(event);
+    row.addEventListener("pointerup", endDrag);
+    row.addEventListener("pointercancel", endDrag);
+    row.addEventListener("mouseleave", () => {
+      if (!isDragging) return;
+      isDragging = false;
+      row.classList.remove("is-dragging");
+      update();
     });
 
-    const buttons = row.querySelectorAll(".gallery-button");
-    buttons.forEach((button) => {
+    cards.forEach((card) => {
+      const button = card.querySelector(".gallery-button");
+      if (!(button instanceof HTMLButtonElement)) return;
+
       button.addEventListener("click", (event) => {
-        if (instance.moved) {
+        if (dragMoved) {
           event.preventDefault();
           event.stopPropagation();
-          instance.moved = false;
+          dragMoved = false;
         }
       });
     });
 
-    galleryInstances.push(instance);
-    updateGalleryState(instance);
+    update();
+
+    return {
+      row,
+      update,
+    };
   }
 
-  function refreshAllGalleries() {
-    galleryInstances.forEach((instance) => {
-      updateGalleryState(instance);
+  if (galleryRows.length) {
+    galleryRows.forEach((row, index) => {
+      const instance = setupGallery(row, index);
+      if (instance) {
+        galleryInstances.push(instance);
+      }
     });
   }
-
-  galleryRows.forEach((row) => setupGallery(row));
-
-  window.setTimeout(() => {
-    refreshAllGalleries();
-  }, 120);
 });
