@@ -879,7 +879,13 @@ textarea {
   max-width: 15ch;
 }
 
+/* GALLERY */
+
 .gallery-shell {
+  display: grid;
+  grid-template-columns: auto auto 1fr;
+  align-items: center;
+  gap: 0.85rem;
   position: relative;
 }
 
@@ -893,12 +899,33 @@ textarea {
   display: none !important;
 }
 
+.gallery-shell > .gallery-arrow {
+  position: static;
+  top: auto;
+  left: auto;
+  right: auto;
+  transform: none;
+}
+
+.gallery-shell .gallery-arrow-left {
+  order: 1;
+}
+
+.gallery-shell .gallery-arrow-right {
+  order: 2;
+}
+
+.gallery-shell .gallery-row {
+  order: 3;
+  grid-column: 1 / -1;
+}
+
 .gallery-row {
   position: relative;
   display: flex;
   gap: 1.2rem;
   overflow-x: auto;
-  padding: 0.15rem 3.4rem 0.85rem;
+  padding: 0.15rem 0 0.85rem;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
@@ -981,9 +1008,6 @@ textarea {
 }
 
 .gallery-arrow {
-  position: absolute;
-  top: calc(50% - 0.35rem);
-  z-index: 8;
   width: 46px;
   height: 46px;
   display: inline-flex;
@@ -991,37 +1015,28 @@ textarea {
   justify-content: center;
   border-radius: 999px;
   background: rgba(255,255,255,0.94);
-  border: 1px solid rgba(255,255,255,0.75);
+  border: 1px solid rgba(255,255,255,0.78);
   box-shadow:
     0 14px 28px rgba(0,0,0,0.10),
-    inset 0 1px 0 rgba(255,255,255,0.72);
+    inset 0 1px 0 rgba(255,255,255,0.78);
   color: var(--text-main);
   font-size: 1.35rem;
   line-height: 1;
-  transform: translateY(-50%);
+  backdrop-filter: blur(18px) saturate(180%);
+  -webkit-backdrop-filter: blur(18px) saturate(180%);
   transition:
     background var(--t-fast),
     box-shadow var(--t-fast),
     opacity var(--t-fast),
     transform var(--t-fast);
-  backdrop-filter: blur(18px) saturate(180%);
-  -webkit-backdrop-filter: blur(18px) saturate(180%);
-}
-
-.gallery-arrow-left {
-  left: 0;
-}
-
-.gallery-arrow-right {
-  right: 0;
 }
 
 .gallery-arrow:hover {
-  background: rgba(255,255,255,0.98);
+  background: rgba(255,255,255,0.99);
   box-shadow:
     0 18px 32px rgba(0,0,0,0.12),
-    inset 0 1px 0 rgba(255,255,255,0.82);
-  transform: translateY(calc(-50% - 1px));
+    inset 0 1px 0 rgba(255,255,255,0.84);
+  transform: translateY(-1px);
 }
 
 .gallery-arrow:disabled,
@@ -1680,9 +1695,13 @@ iframe {
     gap: 3rem;
   }
 
+  .gallery-shell {
+    gap: 0.75rem;
+  }
+
   .gallery-row {
     gap: 0.9rem;
-    padding: 0.15rem 2.9rem 0.4rem;
+    padding: 0.15rem 0 0.4rem;
   }
 
   .gallery-card,
