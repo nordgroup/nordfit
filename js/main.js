@@ -393,46 +393,40 @@ document.addEventListener("DOMContentLoaded", () => {
     let scrollStart = 0;
     let rafId = null;
 
-    const getCardLeft = (card) => {
-      return card.offsetLeft;
+    const getCardWidth = () => {
+      const firstCard = cards[0];
+      if (!firstCard) return 0;
+
+      const cardRect = firstCard.getBoundingClientRect();
+      const rowStyles = window.getComputedStyle(row);
+      const gap = parseFloat(rowStyles.columnGap || rowStyles.gap || "0");
+
+      return cardRect.width + gap;
+    };
+
+    const getCurrentIndex = () => {
+      const cardWidth = getCardWidth();
+      if (!cardWidth) return 0;
+      return clamp(Math.round(row.scrollLeft / cardWidth), 0, cards.length - 1);
     };
 
     const getMaxScroll = () => Math.max(0, row.scrollWidth - row.clientWidth);
 
-    const getNearestIndex = () => {
-      let nearestIndex = 0;
-      let smallestDistance = Number.POSITIVE_INFINITY;
-
-      cards.forEach((card, index) => {
-        const distance = Math.abs(row.scrollLeft - getCardLeft(card));
-        if (distance < smallestDistance) {
-          smallestDistance = distance;
-          nearestIndex = index;
-        }
-      });
-
-      return nearestIndex;
-    };
-
     const scrollToIndex = (indexToGo, behavior = "smooth") => {
-      const safeIndex = clamp(indexToGo, 0, cards.length - 1);
-      const targetCard = cards[safeIndex];
-      if (!targetCard) return;
-
-      const nextLeft = clamp(getCardLeft(targetCard), 0, getMaxScroll());
+      const cardWidth = getCardWidth();
+      const maxScroll = getMaxScroll();
+      const nextScroll = clamp(indexToGo * cardWidth, 0, maxScroll);
 
       row.scrollTo({
-        left: nextLeft,
+        left: nextScroll,
         behavior,
       });
     };
 
     const updateButtons = () => {
-      const currentIndex = getNearestIndex();
-      const atStart = currentIndex <= 0 && row.scrollLeft <= 8;
-      const atEnd =
-        currentIndex >= cards.length - 1 &&
-        row.scrollLeft >= getMaxScroll() - 8;
+      const currentIndex = getCurrentIndex();
+      const atStart = currentIndex <= 0;
+      const atEnd = currentIndex >= cards.length - 1;
 
       prevButton.disabled = atStart;
       nextButton.disabled = atEnd;
@@ -446,22 +440,13 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const scrollByOne = (direction) => {
-      const currentIndex = getNearestIndex();
+      const currentIndex = getCurrentIndex();
       const nextIndex = clamp(currentIndex + direction, 0, cards.length - 1);
-      scrollToIndex(nextIndex);
+      scrollToIndex(nextIndex, "smooth");
     };
 
-    prevButton.addEventListener("click", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      scrollByOne(-1);
-    });
-
-    nextButton.addEventListener("click", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      scrollByOne(1);
-    });
+    prevButton.addEventListener("click", () => scrollByOne(-1));
+    nextButton.addEventListener("click", () => scrollByOne(1));
 
     row.addEventListener(
       "scroll",
@@ -475,8 +460,6 @@ document.addEventListener("DOMContentLoaded", () => {
     row.addEventListener("pointerdown", (event) => {
       if (event.pointerType === "mouse" && event.button !== 0) return;
 
-      if (event.target.closest(".gallery-arrow")) return;
-
       isDragging = true;
       dragMoved = false;
       startX = event.clientX;
@@ -489,7 +472,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!isDragging) return;
 
       const delta = event.clientX - startX;
-
       if (Math.abs(delta) > 6) {
         dragMoved = true;
       }
@@ -504,30 +486,22 @@ document.addEventListener("DOMContentLoaded", () => {
       row.classList.remove("is-dragging");
       row.releasePointerCapture?.(event.pointerId);
 
-      const nearestIndex = getNearestIndex();
-      scrollToIndex(nearestIndex, "smooth");
-
-      window.setTimeout(() => {
-        dragMoved = false;
-      }, 120);
-
+      const currentIndex = getCurrentIndex();
+      scrollToIndex(currentIndex, "smooth");
       update();
     };
 
     row.addEventListener("pointerup", endDrag);
     row.addEventListener("pointercancel", endDrag);
+
     row.addEventListener("mouseleave", () => {
       if (!isDragging) return;
+
       isDragging = false;
       row.classList.remove("is-dragging");
 
-      const nearestIndex = getNearestIndex();
-      scrollToIndex(nearestIndex, "smooth");
-
-      window.setTimeout(() => {
-        dragMoved = false;
-      }, 120);
-
+      const currentIndex = getCurrentIndex();
+      scrollToIndex(currentIndex, "smooth");
       update();
     });
 
@@ -539,10 +513,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (dragMoved) {
           event.preventDefault();
           event.stopPropagation();
+          dragMoved = false;
         }
       });
     });
 
+    scrollToIndex(0, "auto");
     update();
 
     return {
