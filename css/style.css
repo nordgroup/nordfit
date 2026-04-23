@@ -161,6 +161,14 @@ textarea {
   padding-top: 1.25rem;
 }
 
+.section-compact-bottom {
+  padding-bottom: 1.2rem;
+}
+
+.section-no-top {
+  padding-top: 0;
+}
+
 .flex {
   display: flex;
 }
@@ -1153,7 +1161,8 @@ textarea {
 .faq-list,
 .contact-info-stack,
 .legal-info-list,
-.app-need-list {
+.app-need-list,
+.house-rules-stack {
   display: grid;
   gap: 0.95rem;
 }
@@ -1611,6 +1620,14 @@ iframe {
 
   .section-tight {
     padding-top: 1.2rem;
+  }
+
+  .section-compact-bottom {
+    padding-bottom: 1rem;
+  }
+
+  .section-no-top {
+    padding-top: 0;
   }
 
   .home-hero {
