@@ -3,34 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>NordFit – Standorte</title>
   <meta
     name="description"
     content="NordFit Standorte – klar gedacht, gut erreichbar und so gestaltet, dass der erste Eindruck direkt stimmt."
   />
+
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="container">
       <div class="site-header-inner glass">
         <a href="index.html" class="logo" aria-label="NordFit Startseite">
-          <img src="images/nordfit-logo.png" alt="NordFit-Logo" />
+          <img src="images/nordfit-logo.png" alt="NordFit Logo" />
         </a>
-
-        <button
-          id="burger"
-          class="burger"
-          type="button"
-          aria-label="Menü öffnen"
-          aria-expanded="false"
-        >
-          <span class="burger-lines" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </button>
 
         <nav class="site-nav" aria-label="Hauptnavigation">
           <ul>
@@ -48,25 +37,41 @@
             id="lang-toggle"
             class="lang-toggle"
             type="button"
+            aria-label="Sprache auswählen"
             aria-expanded="false"
+            aria-controls="lang-menu"
           >
             <span class="lang-toggle-label">DE</span>
             <span class="lang-caret" aria-hidden="true">⌄</span>
           </button>
 
-          <div id="lang-menu" class="lang-menu">
-            <button class="lang-option" data-lang="de" type="button">Deutsch</button>
-            <button class="lang-option" data-lang="en" type="button">English</button>
-            <button class="lang-option" data-lang="fr" type="button">Français</button>
-            <button class="lang-option" data-lang="es" type="button">Español</button>
-            <button class="lang-option" data-lang="it" type="button">Italiano</button>
-            <button class="lang-option" data-lang="pl" type="button">Polski</button>
-            <button class="lang-option" data-lang="nl" type="button">Nederlands</button>
-            <button class="lang-option" data-lang="sv" type="button">Svenska</button>
-            <button class="lang-option" data-lang="da" type="button">Dansk</button>
-            <button class="lang-option" data-lang="no" type="button">Norsk</button>
+          <div id="lang-menu" class="lang-menu" role="menu" aria-label="Sprachauswahl">
+            <button class="lang-option" data-lang="de" type="button" role="menuitem">Deutsch</button>
+            <button class="lang-option" data-lang="en" type="button" role="menuitem">English</button>
+            <button class="lang-option" data-lang="fr" type="button" role="menuitem">Français</button>
+            <button class="lang-option" data-lang="es" type="button" role="menuitem">Español</button>
+            <button class="lang-option" data-lang="it" type="button" role="menuitem">Italiano</button>
+            <button class="lang-option" data-lang="pl" type="button" role="menuitem">Polski</button>
+            <button class="lang-option" data-lang="nl" type="button" role="menuitem">Nederlands</button>
+            <button class="lang-option" data-lang="sv" type="button" role="menuitem">Svenska</button>
+            <button class="lang-option" data-lang="da" type="button" role="menuitem">Dansk</button>
+            <button class="lang-option" data-lang="no" type="button" role="menuitem">Norsk</button>
           </div>
         </div>
+
+        <button
+          id="burger"
+          class="burger"
+          type="button"
+          aria-label="Menü öffnen"
+          aria-expanded="false"
+        >
+          <span class="burger-lines" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
       </div>
     </div>
   </header>
@@ -78,7 +83,8 @@
           <h1 class="hero-title">Ein Standort, der direkt Sinn ergibt.</h1>
           <p class="hero-subtitle">
             Der erste NordFit Standort soll nicht nur erreichbar sein.
-            Er soll sich von Anfang an klar, ruhig und stimmig anfühlen — im Eindruck, im Ablauf und im ganzen Konzept.
+            Er soll sich von Anfang an klar, ruhig und stimmig anfühlen —
+            im Eindruck, im Ablauf und im ganzen Konzept.
           </p>
         </div>
       </div>
@@ -98,19 +104,23 @@
 
     <section class="section section-no-top">
       <div class="container">
-        <div class="glass reveal" style="padding: 1.25rem;">
-          <div class="grid-2" style="align-items: center; gap: 2rem;">
+        <div class="glass location-card reveal">
+          <div class="grid-2 location-content-grid">
             <div>
               <h2 class="section-title large-title">Grevesmühlen</h2>
-              <p class="muted" style="margin-top: 1rem; max-width: 640px;">
-                Hier beginnt NordFit mit einem Studio, das auf Ruhe, gute Erreichbarkeit
-                und einen klaren Aufbau ausgelegt ist. Kein unnötig lauter Auftritt,
-                sondern ein Ort, an dem man sich schnell orientieren kann.
-              </p>
-              <p class="muted" style="margin-top: 1rem; max-width: 640px;">
-                Geplant sind 24/7 Zugang, eine saubere App-Anbindung,
-                ein einfacher Ablauf und ein Studio, das bewusst hochwertig statt chaotisch wirkt.
-              </p>
+
+              <div class="copy-stack">
+                <p class="muted">
+                  Hier beginnt NordFit mit einem Studio, das auf Ruhe, gute Erreichbarkeit
+                  und einen klaren Aufbau ausgelegt ist. Kein unnötig lauter Auftritt,
+                  sondern ein Ort, an dem man sich schnell orientieren kann.
+                </p>
+
+                <p class="muted">
+                  Geplant sind 24/7 Zugang, eine saubere App-Anbindung,
+                  ein einfacher Ablauf und ein Studio, das bewusst hochwertig statt chaotisch wirkt.
+                </p>
+              </div>
             </div>
 
             <div class="location-hero-image">
@@ -125,14 +135,14 @@
 
     <section class="section section-tight">
       <div class="container">
-        <div class="glass reveal" style="padding: 1.5rem;">
+        <div class="glass map-card reveal">
           <h2 class="section-title">Standort ansehen</h2>
-          <p class="muted" style="margin-top: 0.9rem; max-width: 62ch;">
+          <p class="muted copy-stack">
             Wer NordFit finden will, soll nicht lange suchen müssen.
             Die Karte und die direkte Routenwahl machen den Standort sofort nachvollziehbar.
           </p>
 
-          <div style="margin-top: 1.4rem; overflow: hidden; border-radius: 28px;">
+          <div class="map-frame">
             <iframe
               src="https://www.google.com/maps?q=Grevesm%C3%BChlen&output=embed"
               width="100%"
@@ -143,7 +153,7 @@
             ></iframe>
           </div>
 
-          <div class="app-store-row" style="margin-top: 1.4rem;">
+          <div class="app-store-row">
             <a
               href="https://maps.apple.com/?q=Grevesm%C3%BChlen"
               target="_blank"
@@ -170,6 +180,14 @@
               </span>
             </a>
           </div>
+
+          <div class="info-note">
+            <p class="info-note-label">Hinweis</p>
+            <p class="info-note-text">
+              Die genaue Adresse wird ergänzt, sobald der finale Standort feststeht.
+              Bis dahin zeigt die Karte bewusst den geplanten Standortbereich Grevesmühlen.
+            </p>
+          </div>
         </div>
       </div>
     </section>
@@ -179,7 +197,8 @@
     <div class="container">
       <div class="footer-shell">
         <div class="flex footer-row">
-          <p class="muted">© 2030 NordFit/NordGroup. Do not distribute!</p>
+          <p class="muted">© 2030 NordFit/NordGroup. Interner Website-Entwurf.</p>
+
           <div class="flex footer-links">
             <a href="impressum.html">Impressum / AGB / Datenschutz</a>
             <a href="hausordnung.html">Hausordnung</a>
@@ -191,7 +210,6 @@
     </div>
   </footer>
 
-  <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
