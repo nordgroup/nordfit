@@ -3,34 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>NordFit – Hausordnung</title>
   <meta
     name="description"
     content="Die Hausordnung von NordFit – klare Regeln für ein ruhiges, sauberes und respektvolles Training."
   />
+
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="container">
       <div class="site-header-inner glass">
         <a href="index.html" class="logo" aria-label="NordFit Startseite">
-          <img src="images/nordfit-logo.png" alt="NordFit-Logo" />
+          <img src="images/nordfit-logo.png" alt="NordFit Logo" />
         </a>
-
-        <button
-          id="burger"
-          class="burger"
-          type="button"
-          aria-label="Menü öffnen"
-          aria-expanded="false"
-        >
-          <span class="burger-lines" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </button>
 
         <nav class="site-nav" aria-label="Hauptnavigation">
           <ul>
@@ -48,25 +37,41 @@
             id="lang-toggle"
             class="lang-toggle"
             type="button"
+            aria-label="Sprache auswählen"
             aria-expanded="false"
+            aria-controls="lang-menu"
           >
             <span class="lang-toggle-label">DE</span>
             <span class="lang-caret" aria-hidden="true">⌄</span>
           </button>
 
-          <div id="lang-menu" class="lang-menu">
-            <button class="lang-option" data-lang="de" type="button">Deutsch</button>
-            <button class="lang-option" data-lang="en" type="button">English</button>
-            <button class="lang-option" data-lang="fr" type="button">Français</button>
-            <button class="lang-option" data-lang="es" type="button">Español</button>
-            <button class="lang-option" data-lang="it" type="button">Italiano</button>
-            <button class="lang-option" data-lang="pl" type="button">Polski</button>
-            <button class="lang-option" data-lang="nl" type="button">Nederlands</button>
-            <button class="lang-option" data-lang="sv" type="button">Svenska</button>
-            <button class="lang-option" data-lang="da" type="button">Dansk</button>
-            <button class="lang-option" data-lang="no" type="button">Norsk</button>
+          <div id="lang-menu" class="lang-menu" role="menu" aria-label="Sprachauswahl">
+            <button class="lang-option" data-lang="de" type="button" role="menuitem">Deutsch</button>
+            <button class="lang-option" data-lang="en" type="button" role="menuitem">English</button>
+            <button class="lang-option" data-lang="fr" type="button" role="menuitem">Français</button>
+            <button class="lang-option" data-lang="es" type="button" role="menuitem">Español</button>
+            <button class="lang-option" data-lang="it" type="button" role="menuitem">Italiano</button>
+            <button class="lang-option" data-lang="pl" type="button" role="menuitem">Polski</button>
+            <button class="lang-option" data-lang="nl" type="button" role="menuitem">Nederlands</button>
+            <button class="lang-option" data-lang="sv" type="button" role="menuitem">Svenska</button>
+            <button class="lang-option" data-lang="da" type="button" role="menuitem">Dansk</button>
+            <button class="lang-option" data-lang="no" type="button" role="menuitem">Norsk</button>
           </div>
         </div>
+
+        <button
+          id="burger"
+          class="burger"
+          type="button"
+          aria-label="Menü öffnen"
+          aria-expanded="false"
+        >
+          <span class="burger-lines" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
       </div>
     </div>
   </header>
@@ -102,7 +107,8 @@
           <article class="glass section-block reveal">
             <p class="eyebrow">§ 1</p>
             <h2 class="section-title">Zutritt nur mit gültigem Zugang</h2>
-            <div class="legal-info-list" style="margin-top: 1rem;">
+
+            <div class="legal-info-list clean-list-offset">
               <div class="legal-info-row"><strong>1.1</strong> Zutritt ist nur mit gültiger Mitgliedschaft oder gültigem Tagespass möglich.</div>
               <div class="legal-info-row"><strong>1.2</strong> Der Zugang erfolgt ausschließlich über die NordFit App.</div>
               <div class="legal-info-row"><strong>1.3</strong> Der persönliche QR-Code darf nicht weitergegeben werden.</div>
@@ -112,7 +118,8 @@
           <article class="glass section-block reveal">
             <p class="eyebrow">§ 2</p>
             <h2 class="section-title">Kein Zutritt für Unbefugte</h2>
-            <div class="legal-info-list" style="margin-top: 1rem;">
+
+            <div class="legal-info-list clean-list-offset">
               <div class="legal-info-row"><strong>2.1</strong> Das Mitnehmen anderer Personen ohne gültigen Zugang ist nicht erlaubt.</div>
               <div class="legal-info-row"><strong>2.2</strong> Jeder Zutritt muss persönlich und ordnungsgemäß erfolgen.</div>
               <div class="legal-info-row"><strong>2.3</strong> Missbrauch kann zum Ausschluss vom Studio führen.</div>
@@ -122,7 +129,8 @@
           <article class="glass section-block reveal">
             <p class="eyebrow">§ 3</p>
             <h2 class="section-title">Geeignete Trainingskleidung</h2>
-            <div class="legal-info-list" style="margin-top: 1rem;">
+
+            <div class="legal-info-list clean-list-offset">
               <div class="legal-info-row"><strong>3.1</strong> Bitte trainiere in geeigneter Sportkleidung.</div>
               <div class="legal-info-row"><strong>3.2</strong> Saubere Sportschuhe sind verpflichtend.</div>
               <div class="legal-info-row"><strong>3.3</strong> Unangemessene oder stark verschmutzte Kleidung ist nicht erwünscht.</div>
@@ -132,7 +140,8 @@
           <article class="glass section-block reveal">
             <p class="eyebrow">§ 4</p>
             <h2 class="section-title">Handtuch benutzen</h2>
-            <div class="legal-info-list" style="margin-top: 1rem;">
+
+            <div class="legal-info-list clean-list-offset">
               <div class="legal-info-row"><strong>4.1</strong> Auf Geräten, Bänken und Matten ist immer ein Handtuch zu verwenden.</div>
               <div class="legal-info-row"><strong>4.2</strong> Das dient der Hygiene und dem Respekt gegenüber anderen Mitgliedern.</div>
             </div>
@@ -141,7 +150,8 @@
           <article class="glass section-block reveal">
             <p class="eyebrow">§ 5</p>
             <h2 class="section-title">Geräte ordentlich hinterlassen</h2>
-            <div class="legal-info-list" style="margin-top: 1rem;">
+
+            <div class="legal-info-list clean-list-offset">
               <div class="legal-info-row"><strong>5.1</strong> Geräte, Bänke und Hanteln sind sauber zu hinterlassen.</div>
               <div class="legal-info-row"><strong>5.2</strong> Gewichte und Zubehör sind nach dem Training zurückzuräumen.</div>
               <div class="legal-info-row"><strong>5.3</strong> Blockierte oder unnötig besetzte Flächen sind zu vermeiden.</div>
@@ -151,7 +161,8 @@
           <article class="glass section-block reveal">
             <p class="eyebrow">§ 6</p>
             <h2 class="section-title">Respekt im Umgang</h2>
-            <div class="legal-info-list" style="margin-top: 1rem;">
+
+            <div class="legal-info-list clean-list-offset">
               <div class="legal-info-row"><strong>6.1</strong> Andere Mitglieder sind respektvoll zu behandeln.</div>
               <div class="legal-info-row"><strong>6.2</strong> Belästigung, Provokation oder aggressives Verhalten werden nicht toleriert.</div>
               <div class="legal-info-row"><strong>6.3</strong> Unnötiges Filmen anderer Personen ist nicht erlaubt.</div>
@@ -161,7 +172,8 @@
           <article class="glass section-block reveal">
             <p class="eyebrow">§ 7</p>
             <h2 class="section-title">Sicher und verantwortungsvoll trainieren</h2>
-            <div class="legal-info-list" style="margin-top: 1rem;">
+
+            <div class="legal-info-list clean-list-offset">
               <div class="legal-info-row"><strong>7.1</strong> Geräte dürfen nur entsprechend ihrer vorgesehenen Funktion genutzt werden.</div>
               <div class="legal-info-row"><strong>7.2</strong> Gefährdendes Verhalten ist untersagt.</div>
               <div class="legal-info-row"><strong>7.3</strong> Mutwillige Beschädigungen führen zu Konsequenzen.</div>
@@ -171,7 +183,8 @@
           <article class="glass section-block reveal">
             <p class="eyebrow">§ 8</p>
             <h2 class="section-title">Ruhe und Ordnung im Studio</h2>
-            <div class="legal-info-list" style="margin-top: 1rem;">
+
+            <div class="legal-info-list clean-list-offset">
               <div class="legal-info-row"><strong>8.1</strong> NordFit steht für ein ruhiges Trainingserlebnis.</div>
               <div class="legal-info-row"><strong>8.2</strong> Unnötiger Lärm ist zu vermeiden.</div>
               <div class="legal-info-row"><strong>8.3</strong> Auf Rücksicht, Abstand und Ordnung ist zu achten.</div>
@@ -181,7 +194,8 @@
           <article class="glass section-block reveal">
             <p class="eyebrow">§ 9</p>
             <h2 class="section-title">Sauberkeit zählt mit</h2>
-            <div class="legal-info-list" style="margin-top: 1rem;">
+
+            <div class="legal-info-list clean-list-offset">
               <div class="legal-info-row"><strong>9.1</strong> Getränke in verschließbaren Behältern sind erlaubt.</div>
               <div class="legal-info-row"><strong>9.2</strong> Müll ist ordnungsgemäß zu entsorgen.</div>
               <div class="legal-info-row"><strong>9.3</strong> Das Studio ist sauber zu halten.</div>
@@ -191,11 +205,20 @@
           <article class="glass section-block reveal">
             <p class="eyebrow">§ 10</p>
             <h2 class="section-title">Hausrecht</h2>
-            <div class="legal-info-list" style="margin-top: 1rem;">
+
+            <div class="legal-info-list clean-list-offset">
               <div class="legal-info-row"><strong>10.1</strong> Bei Verstößen kann NordFit den Zutritt einschränken oder entziehen.</div>
               <div class="legal-info-row"><strong>10.2</strong> Das Hausrecht bleibt vorbehalten.</div>
             </div>
           </article>
+        </div>
+
+        <div class="info-note reveal">
+          <p class="info-note-label">Hinweis</p>
+          <p class="info-note-text">
+            Diese Hausordnung ist ein Entwurf für das NordFit-Konzept.
+            Vor einer offiziellen Veröffentlichung sollte sie final geprüft und an die tatsächlichen Abläufe angepasst werden.
+          </p>
         </div>
       </div>
     </section>
@@ -205,7 +228,8 @@
     <div class="container">
       <div class="footer-shell">
         <div class="flex footer-row">
-          <p class="muted">© 2030 NordFit/NordGroup. Do not distribute!</p>
+          <p class="muted">© 2030 NordFit/NordGroup. Interner Website-Entwurf.</p>
+
           <div class="flex footer-links">
             <a href="impressum.html">Impressum / AGB / Datenschutz</a>
             <a href="hausordnung.html">Hausordnung</a>
@@ -217,7 +241,6 @@
     </div>
   </footer>
 
-  <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
