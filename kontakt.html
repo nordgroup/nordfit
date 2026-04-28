@@ -3,34 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>NordFit – Kontakt</title>
   <meta
     name="description"
     content="Kontakt zu NordFit – E-Mail, Instagram und Kontaktformular."
   />
+
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="container">
       <div class="site-header-inner glass">
         <a href="index.html" class="logo" aria-label="NordFit Startseite">
-          <img src="images/nordfit-logo.png" alt="NordFit-Logo" />
+          <img src="images/nordfit-logo.png" alt="NordFit Logo" />
         </a>
-
-        <button
-          id="burger"
-          class="burger"
-          type="button"
-          aria-label="Menü öffnen"
-          aria-expanded="false"
-        >
-          <span class="burger-lines" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </button>
 
         <nav class="site-nav" aria-label="Hauptnavigation">
           <ul>
@@ -48,25 +37,41 @@
             id="lang-toggle"
             class="lang-toggle"
             type="button"
+            aria-label="Sprache auswählen"
             aria-expanded="false"
+            aria-controls="lang-menu"
           >
             <span class="lang-toggle-label">DE</span>
             <span class="lang-caret" aria-hidden="true">⌄</span>
           </button>
 
-          <div id="lang-menu" class="lang-menu">
-            <button class="lang-option" data-lang="de" type="button">Deutsch</button>
-            <button class="lang-option" data-lang="en" type="button">English</button>
-            <button class="lang-option" data-lang="fr" type="button">Français</button>
-            <button class="lang-option" data-lang="es" type="button">Español</button>
-            <button class="lang-option" data-lang="it" type="button">Italiano</button>
-            <button class="lang-option" data-lang="pl" type="button">Polski</button>
-            <button class="lang-option" data-lang="nl" type="button">Nederlands</button>
-            <button class="lang-option" data-lang="sv" type="button">Svenska</button>
-            <button class="lang-option" data-lang="da" type="button">Dansk</button>
-            <button class="lang-option" data-lang="no" type="button">Norsk</button>
+          <div id="lang-menu" class="lang-menu" role="menu" aria-label="Sprachauswahl">
+            <button class="lang-option" data-lang="de" type="button" role="menuitem">Deutsch</button>
+            <button class="lang-option" data-lang="en" type="button" role="menuitem">English</button>
+            <button class="lang-option" data-lang="fr" type="button" role="menuitem">Français</button>
+            <button class="lang-option" data-lang="es" type="button" role="menuitem">Español</button>
+            <button class="lang-option" data-lang="it" type="button" role="menuitem">Italiano</button>
+            <button class="lang-option" data-lang="pl" type="button" role="menuitem">Polski</button>
+            <button class="lang-option" data-lang="nl" type="button" role="menuitem">Nederlands</button>
+            <button class="lang-option" data-lang="sv" type="button" role="menuitem">Svenska</button>
+            <button class="lang-option" data-lang="da" type="button" role="menuitem">Dansk</button>
+            <button class="lang-option" data-lang="no" type="button" role="menuitem">Norsk</button>
           </div>
         </div>
+
+        <button
+          id="burger"
+          class="burger"
+          type="button"
+          aria-label="Menü öffnen"
+          aria-expanded="false"
+        >
+          <span class="burger-lines" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
       </div>
     </div>
   </header>
@@ -90,7 +95,7 @@
           <article class="glass section-block reveal">
             <h2 class="section-title">Kontaktwege</h2>
 
-            <div class="contact-info-stack" style="margin-top: 1.2rem;">
+            <div class="contact-info-stack clean-list-offset">
               <div class="contact-info-item">
                 <span class="contact-info-label">E-Mail</span>
                 <a href="mailto:nordgroup.business@gmail.com">nordgroup.business@gmail.com</a>
@@ -111,7 +116,7 @@
           <article class="glass contact-form-shell reveal">
             <h2 class="section-title">Kontaktformular</h2>
 
-            <form style="margin-top: 1.25rem;">
+            <form class="clean-list-offset" data-nordfit-contact-form>
               <div class="form-grid">
                 <div class="form-field">
                   <label for="contact-firstname">Vorname <span class="required-star">*</span></label>
@@ -120,6 +125,7 @@
                     id="contact-firstname"
                     name="contact-firstname"
                     placeholder="Dein Vorname"
+                    autocomplete="given-name"
                     required
                   />
                 </div>
@@ -131,6 +137,7 @@
                     id="contact-lastname"
                     name="contact-lastname"
                     placeholder="Dein Nachname"
+                    autocomplete="family-name"
                     required
                   />
                 </div>
@@ -142,18 +149,19 @@
                     id="contact-email"
                     name="contact-email"
                     placeholder="deinname@email.de"
+                    autocomplete="email"
                     required
                   />
                 </div>
 
                 <div class="form-field">
-                  <label for="contact-phone">Telefonnummer <span class="required-star">*</span></label>
+                  <label for="contact-phone">Telefonnummer</label>
                   <input
                     type="tel"
                     id="contact-phone"
                     name="contact-phone"
-                    placeholder="Deine Telefonnummer"
-                    required
+                    placeholder="Optional"
+                    autocomplete="tel"
                   />
                 </div>
 
@@ -161,13 +169,13 @@
                   <label for="contact-topic">Thema <span class="required-star">*</span></label>
                   <select id="contact-topic" name="contact-topic" required>
                     <option value="">Bitte auswählen</option>
-                    <option value="mitgliedschaft">Mitgliedschaft</option>
-                    <option value="app">App</option>
-                    <option value="zutritt">Zutritt / QR-Code</option>
-                    <option value="tagespass">Tagespass</option>
-                    <option value="standort">Standort</option>
-                    <option value="konto">Konto / Daten</option>
-                    <option value="allgemein">Allgemeine Frage</option>
+                    <option value="Mitgliedschaft">Mitgliedschaft</option>
+                    <option value="App">App</option>
+                    <option value="Zutritt / QR-Code">Zutritt / QR-Code</option>
+                    <option value="Tagespass">Tagespass</option>
+                    <option value="Standort">Standort</option>
+                    <option value="Konto / Daten">Konto / Daten</option>
+                    <option value="Allgemeine Frage">Allgemeine Frage</option>
                   </select>
                 </div>
 
@@ -189,7 +197,6 @@
                     rows="6"
                     placeholder="Schreib uns dein Anliegen ..."
                     required
-                    style="resize: none;"
                   ></textarea>
                 </div>
               </div>
@@ -199,10 +206,19 @@
                   <p class="muted">Oder direkt per Mail an nordgroup.business@gmail.com</p>
                   <p class="required-note">Felder mit * müssen ausgefüllt werden.</p>
                 </div>
+
                 <button type="submit" class="btn btn-primary">Nachricht senden</button>
               </div>
             </form>
           </article>
+        </div>
+
+        <div class="info-note reveal">
+          <p class="info-note-label">Hinweis</p>
+          <p class="info-note-text">
+            Das Kontaktformular öffnet aktuell dein E-Mail-Programm mit einer vorbereiteten Nachricht.
+            Ein direkter Versand über die Website kann später ergänzt werden.
+          </p>
         </div>
       </div>
     </section>
@@ -212,7 +228,8 @@
     <div class="container">
       <div class="footer-shell">
         <div class="flex footer-row">
-          <p class="muted">© 2030 NordFit/NordGroup. Do not distribute!</p>
+          <p class="muted">© 2030 NordFit/NordGroup. Interner Website-Entwurf.</p>
+
           <div class="flex footer-links">
             <a href="impressum.html">Impressum / AGB / Datenschutz</a>
             <a href="hausordnung.html">Hausordnung</a>
@@ -224,7 +241,6 @@
     </div>
   </footer>
 
-  <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
