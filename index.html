@@ -49,22 +49,24 @@
             class="lang-toggle"
             type="button"
             aria-expanded="false"
+            aria-controls="lang-menu"
+            aria-label="Sprache auswählen"
           >
             <span class="lang-toggle-label">DE</span>
             <span class="lang-caret" aria-hidden="true">⌄</span>
           </button>
 
-          <div id="lang-menu" class="lang-menu">
-            <button class="lang-option" data-lang="de" type="button">Deutsch</button>
-            <button class="lang-option" data-lang="en" type="button">English</button>
-            <button class="lang-option" data-lang="fr" type="button">Français</button>
-            <button class="lang-option" data-lang="es" type="button">Español</button>
-            <button class="lang-option" data-lang="it" type="button">Italiano</button>
-            <button class="lang-option" data-lang="pl" type="button">Polski</button>
-            <button class="lang-option" data-lang="nl" type="button">Nederlands</button>
-            <button class="lang-option" data-lang="sv" type="button">Svenska</button>
-            <button class="lang-option" data-lang="da" type="button">Dansk</button>
-            <button class="lang-option" data-lang="no" type="button">Norsk</button>
+          <div id="lang-menu" class="lang-menu" role="menu" aria-label="Sprachauswahl">
+            <button class="lang-option" data-lang="de" type="button" role="menuitem">Deutsch</button>
+            <button class="lang-option" data-lang="en" type="button" role="menuitem">English</button>
+            <button class="lang-option" data-lang="fr" type="button" role="menuitem">Français</button>
+            <button class="lang-option" data-lang="es" type="button" role="menuitem">Español</button>
+            <button class="lang-option" data-lang="it" type="button" role="menuitem">Italiano</button>
+            <button class="lang-option" data-lang="pl" type="button" role="menuitem">Polski</button>
+            <button class="lang-option" data-lang="nl" type="button" role="menuitem">Nederlands</button>
+            <button class="lang-option" data-lang="sv" type="button" role="menuitem">Svenska</button>
+            <button class="lang-option" data-lang="da" type="button" role="menuitem">Dansk</button>
+            <button class="lang-option" data-lang="no" type="button" role="menuitem">Norsk</button>
           </div>
         </div>
       </div>
