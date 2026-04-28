@@ -3,34 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>NordFit – Tarife</title>
   <meta
     name="description"
     content="NordFit Tarife und Tagespass – klar aufgebaut, fair erklärt und direkt digital über die App verwaltbar."
   />
+
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="container">
       <div class="site-header-inner glass">
         <a href="index.html" class="logo" aria-label="NordFit Startseite">
-          <img src="images/nordfit-logo.png" alt="NordFit-Logo" />
+          <img src="images/nordfit-logo.png" alt="NordFit Logo" />
         </a>
-
-        <button
-          id="burger"
-          class="burger"
-          type="button"
-          aria-label="Menü öffnen"
-          aria-expanded="false"
-        >
-          <span class="burger-lines" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </button>
 
         <nav class="site-nav" aria-label="Hauptnavigation">
           <ul>
@@ -48,25 +37,41 @@
             id="lang-toggle"
             class="lang-toggle"
             type="button"
+            aria-label="Sprache auswählen"
             aria-expanded="false"
+            aria-controls="lang-menu"
           >
             <span class="lang-toggle-label">DE</span>
             <span class="lang-caret" aria-hidden="true">⌄</span>
           </button>
 
-          <div id="lang-menu" class="lang-menu">
-            <button class="lang-option" data-lang="de" type="button">Deutsch</button>
-            <button class="lang-option" data-lang="en" type="button">English</button>
-            <button class="lang-option" data-lang="fr" type="button">Français</button>
-            <button class="lang-option" data-lang="es" type="button">Español</button>
-            <button class="lang-option" data-lang="it" type="button">Italiano</button>
-            <button class="lang-option" data-lang="pl" type="button">Polski</button>
-            <button class="lang-option" data-lang="nl" type="button">Nederlands</button>
-            <button class="lang-option" data-lang="sv" type="button">Svenska</button>
-            <button class="lang-option" data-lang="da" type="button">Dansk</button>
-            <button class="lang-option" data-lang="no" type="button">Norsk</button>
+          <div id="lang-menu" class="lang-menu" role="menu" aria-label="Sprachauswahl">
+            <button class="lang-option" data-lang="de" type="button" role="menuitem">Deutsch</button>
+            <button class="lang-option" data-lang="en" type="button" role="menuitem">English</button>
+            <button class="lang-option" data-lang="fr" type="button" role="menuitem">Français</button>
+            <button class="lang-option" data-lang="es" type="button" role="menuitem">Español</button>
+            <button class="lang-option" data-lang="it" type="button" role="menuitem">Italiano</button>
+            <button class="lang-option" data-lang="pl" type="button" role="menuitem">Polski</button>
+            <button class="lang-option" data-lang="nl" type="button" role="menuitem">Nederlands</button>
+            <button class="lang-option" data-lang="sv" type="button" role="menuitem">Svenska</button>
+            <button class="lang-option" data-lang="da" type="button" role="menuitem">Dansk</button>
+            <button class="lang-option" data-lang="no" type="button" role="menuitem">Norsk</button>
           </div>
         </div>
+
+        <button
+          id="burger"
+          class="burger"
+          type="button"
+          aria-label="Menü öffnen"
+          aria-expanded="false"
+        >
+          <span class="burger-lines" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
       </div>
     </div>
   </header>
@@ -98,7 +103,7 @@
 
     <section class="section pricing-section section-no-top">
       <div class="container">
-        <div class="pricing-grid">
+        <div class="pricing-grid pricing-grid-fixed">
           <article class="pricing-card card reveal">
             <div class="pricing-card-inner">
               <p class="eyebrow">Basic</p>
@@ -108,6 +113,7 @@
               <div class="pricing-details">
                 <p>8 Monate Mindestlaufzeit</p>
                 <p>Danach monatlich kündbar</p>
+                <p>Digitaler Zutritt über die NordFit App</p>
               </div>
 
               <p class="muted">
@@ -121,7 +127,9 @@
             </div>
           </article>
 
-          <article class="pricing-card card reveal">
+          <article class="pricing-card card featured-pricing reveal">
+            <span class="pricing-badge">Empfohlen</span>
+
             <div class="pricing-card-inner">
               <p class="eyebrow">Plus</p>
               <h2 class="price-line">34,90 €</h2>
@@ -130,6 +138,7 @@
               <div class="pricing-details">
                 <p>6 Monate Mindestlaufzeit</p>
                 <p>Danach monatlich kündbar</p>
+                <p>Mehr Flexibilität bei klarer Planung</p>
               </div>
 
               <p class="muted">
@@ -152,6 +161,7 @@
               <div class="pricing-details">
                 <p>3 Monate Mindestlaufzeit</p>
                 <p>Danach monatlich kündbar</p>
+                <p>Maximale Freiheit innerhalb des Konzepts</p>
               </div>
 
               <p class="muted">
@@ -166,11 +176,11 @@
           </article>
         </div>
 
-        <div class="glass daypass-shell reveal" style="margin-top: 1.5rem;">
+        <div class="glass daypass-shell reveal">
           <div>
             <p class="eyebrow">Tagespass</p>
             <h2 class="section-title">4,90 € pro Tag</h2>
-            <p class="muted" style="margin-top: 0.7rem; max-width: 56ch;">
+            <p class="muted">
               Ideal, wenn du NordFit erst kennenlernen möchtest
               oder ganz bewusst spontan trainieren willst — ohne Mitgliedschaft.
             </p>
@@ -180,6 +190,14 @@
             <a href="app.html" class="btn btn-primary">In der App buchen</a>
           </div>
         </div>
+
+        <div class="info-note reveal">
+          <p class="info-note-label">Hinweis</p>
+          <p class="info-note-text">
+            Die dargestellten Preise und Laufzeiten sind Teil des aktuellen NordFit-Konzepts
+            und können vor dem offiziellen Start noch angepasst werden.
+          </p>
+        </div>
       </div>
     </section>
   </main>
@@ -188,7 +206,8 @@
     <div class="container">
       <div class="footer-shell">
         <div class="flex footer-row">
-          <p class="muted">© 2030 NordFit/NordGroup. Do not distribute!</p>
+          <p class="muted">© 2030 NordFit/NordGroup. Interner Website-Entwurf.</p>
+
           <div class="flex footer-links">
             <a href="impressum.html">Impressum / AGB / Datenschutz</a>
             <a href="hausordnung.html">Hausordnung</a>
@@ -200,7 +219,6 @@
     </div>
   </footer>
 
-  <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
