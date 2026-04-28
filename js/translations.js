@@ -1512,4 +1512,1900 @@ document.addEventListener("DOMContentLoaded", () => {
           text: "Det är därför appen inte är en valfri detalj, utan en fast del av hela NordFit-konceptet.",
         },
         ".app-need-item:nth-of-type(1) .app-need-title": { text: "Inträde med QR-kod" },
-        ".app-need-item:nth-of-type(1) .muted": { text: "Din tillgång finns direkt i appen — snabbt, tyd
+        ".app-need-item:nth-of-type(1) .muted": { text: "Din tillgång finns direkt i appen — snabbt, tydlich und utan omvägar." },
+
+        ".app-need-item:nth-of-type(2) .app-need-title": { text: "Slutför medlemskap digitalt" },
+
+        ".app-need-item:nth-of-type(2) .muted": { text: "Boka, se och hantera allt på ett ställe." },
+
+        ".app-need-item:nth-of-type(3) .app-need-title": { text: "Köp dagspass direkt" },
+
+        ".app-need-item:nth-of-type(3) .muted": { text: "Perfekt om du först vill lära känna NordFit eller träna spontant." },
+
+        ".app-need-item:nth-of-type(4) .app-need-title": { text: "Allt tydligt samlat" },
+
+        ".app-need-item:nth-of-type(4) .muted": { text: "Plats, tillgång och personlig hantering hålls tydligt samlade." },
+
+      },
+
+      no: {
+
+        ".hero-title": { text: "Alt det viktige. I én app." },
+
+        ".hero-subtitle": {
+
+          html: "NordFit-appen er ikke bare en ekstra detalj. Den er den sentrale tilgangen til alt som hos NordFit skal fungere enkelt, tydelig og digitalt.",
+
+        },
+
+        ".store-badge:nth-of-type(1) .store-badge-small": { text: "LAST NED I" },
+
+        ".store-badge:nth-of-type(1) .store-badge-big": { text: "App Store" },
+
+        ".store-badge:nth-of-type(2) .store-badge-small": { text: "FÅ DEN PÅ" },
+
+        ".store-badge:nth-of-type(2) .store-badge-big": { text: "Google Play" },
+
+        ".info-note-label": { text: "Viktig info" },
+
+        ".info-note-text": {
+
+          html: "Uten NordFit-appen er det ingen adgang til studioet. Medlemskap, dagspass, administrasjon og QR-tilgang går fullt ut gjennom appen.",
+
+        },
+
+        ".section-title.large-title": { text: "Én konto. Én QR-kode. Én tydelig flyt." },
+
+        ".app-page-hero-grid > div:first-child > .muted:nth-of-type(1)": {
+
+          text: "Hos NordFit går alt gjennom én ren vei. Ingen papirskjemaer, ingen unødige mellomledd og ingen uklare prosesser.",
+
+        },
+
+        ".app-page-hero-grid > div:first-child > .muted:nth-of-type(2)": {
+
+          text: "I appen fullfører du medlemskapet ditt, bestiller dagspasset, administrerer opplysningene dine og mottar QR-koden som gir deg direkte adgang til studioet.",
+
+        },
+
+        ".app-page-hero-grid > div:first-child > .muted:nth-of-type(3)": {
+
+          text: "Nettopp derfor er appen ikke en valgfri detalj, men en fast del av hele NordFit-konseptet.",
+
+        },
+
+        ".app-need-item:nth-of-type(1) .app-need-title": { text: "Adgang via QR-kode" },
+
+        ".app-need-item:nth-of-type(1) .muted": { text: "Tilgangen din ligger direkte i appen — raskt, tydelig og uten omveier." },
+
+        ".app-need-item:nth-of-type(2) .app-need-title": { text: "Fullfør medlemskap digitalt" },
+
+        ".app-need-item:nth-of-type(2) .muted": { text: "Bestill, se og administrer alt på ett sted." },
+
+        ".app-need-item:nth-of-type(3) .app-need-title": { text: "Kjøp dagspass direkte" },
+
+        ".app-need-item:nth-of-type(3) .muted": { text: "Perfekt hvis du først vil bli kjent med NordFit eller trene spontant." },
+
+        ".app-need-item:nth-of-type(4) .app-need-title": { text: "Alt tydelig samlet" },
+
+        ".app-need-item:nth-of-type(4) .muted": { text: "Lokasjon, adgang og personlig administrasjon holdes tydelig samlet." },
+
+      },
+
+    },
+
+    hausordnung: {
+
+      de: {
+
+        ".hero-title": { text: "Klare Regeln. Ruhiges Training." },
+
+        ".hero-subtitle": {
+
+          html: "NordFit soll sich sauber, respektvoll und angenehm anfühlen. Diese Hausordnung schafft dafür einen klaren und verlässlichen Rahmen.",
+
+        },
+
+        ".info-note-label": { text: "Grundsatz" },
+
+        ".info-note-text": {
+
+          html: "Wer bei NordFit trainiert, soll sich auf einen fairen, ruhigen und sauberen Ablauf verlassen können. Genau dafür gelten diese Regeln — nicht als Übertreibung, sondern als Standard.",
+
+        },
+
+        ".house-rules-stack article:nth-of-type(1) .section-title": { text: "Zutritt nur mit gültigem Zugang" },
+
+        ".house-rules-stack article:nth-of-type(2) .section-title": { text: "Kein Zutritt für Unbefugte" },
+
+        ".house-rules-stack article:nth-of-type(3) .section-title": { text: "Geeignete Trainingskleidung" },
+
+        ".house-rules-stack article:nth-of-type(4) .section-title": { text: "Handtuch benutzen" },
+
+        ".house-rules-stack article:nth-of-type(5) .section-title": { text: "Geräte ordentlich hinterlassen" },
+
+        ".house-rules-stack article:nth-of-type(6) .section-title": { text: "Respekt im Umgang" },
+
+        ".house-rules-stack article:nth-of-type(7) .section-title": { text: "Sicher und verantwortungsvoll trainieren" },
+
+        ".house-rules-stack article:nth-of-type(8) .section-title": { text: "Ruhe und Ordnung im Studio" },
+
+        ".house-rules-stack article:nth-of-type(9) .section-title": { text: "Sauberkeit zählt mit" },
+
+        ".house-rules-stack article:nth-of-type(10) .section-title": { text: "Hausrecht" },
+
+      },
+
+      en: {
+
+        ".hero-title": { text: "Clear rules. Calm training." },
+
+        ".hero-subtitle": {
+
+          html: "NordFit should feel clean, respectful and pleasant. These house rules create a clear and reliable framework for that.",
+
+        },
+
+        ".info-note-label": { text: "Principle" },
+
+        ".info-note-text": {
+
+          html: "Anyone training at NordFit should be able to rely on a fair, calm and clean environment. These rules exist for exactly that — not as an overreaction, but as a standard.",
+
+        },
+
+        ".house-rules-stack article:nth-of-type(1) .section-title": { text: "Entry only with valid access" },
+
+        ".house-rules-stack article:nth-of-type(2) .section-title": { text: "No entry for unauthorized persons" },
+
+        ".house-rules-stack article:nth-of-type(3) .section-title": { text: "Appropriate training clothing" },
+
+        ".house-rules-stack article:nth-of-type(4) .section-title": { text: "Use a towel" },
+
+        ".house-rules-stack article:nth-of-type(5) .section-title": { text: "Leave equipment in order" },
+
+        ".house-rules-stack article:nth-of-type(6) .section-title": { text: "Respectful behaviour" },
+
+        ".house-rules-stack article:nth-of-type(7) .section-title": { text: "Train safely and responsibly" },
+
+        ".house-rules-stack article:nth-of-type(8) .section-title": { text: "Calm and order in the studio" },
+
+        ".house-rules-stack article:nth-of-type(9) .section-title": { text: "Cleanliness matters too" },
+
+        ".house-rules-stack article:nth-of-type(10) .section-title": { text: "House rights" },
+
+      },
+
+      fr: {
+
+        ".hero-title": { text: "Des règles claires. Un entraînement calme." },
+
+        ".hero-subtitle": {
+
+          html: "NordFit doit sembler propre, respectueux et agréable. Ce règlement crée pour cela un cadre clair et fiable.",
+
+        },
+
+        ".info-note-label": { text: "Principe" },
+
+        ".info-note-text": {
+
+          html: "Toute personne qui s’entraîne chez NordFit doit pouvoir compter sur un cadre équitable, calme et propre. Ces règles existent exactement pour cela — non pas comme exagération, mais comme standard.",
+
+        },
+
+        ".house-rules-stack article:nth-of-type(1) .section-title": { text: "Accès uniquement avec une autorisation valide" },
+
+        ".house-rules-stack article:nth-of-type(2) .section-title": { text: "Pas d’accès pour les personnes non autorisées" },
+
+        ".house-rules-stack article:nth-of-type(3) .section-title": { text: "Tenue d’entraînement appropriée" },
+
+        ".house-rules-stack article:nth-of-type(4) .section-title": { text: "Utiliser une serviette" },
+
+        ".house-rules-stack article:nth-of-type(5) .section-title": { text: "Laisser les appareils en ordre" },
+
+        ".house-rules-stack article:nth-of-type(6) .section-title": { text: "Respect dans les échanges" },
+
+        ".house-rules-stack article:nth-of-type(7) .section-title": { text: "S’entraîner en sécurité et avec responsabilité" },
+
+        ".house-rules-stack article:nth-of-type(8) .section-title": { text: "Calme et ordre dans le studio" },
+
+        ".house-rules-stack article:nth-of-type(9) .section-title": { text: "La propreté compte aussi" },
+
+        ".house-rules-stack article:nth-of-type(10) .section-title": { text: "Droit de domicile" },
+
+      },
+
+      es: {
+
+        ".hero-title": { text: "Reglas claras. Entrenamiento tranquilo." },
+
+        ".hero-subtitle": {
+
+          html: "NordFit debe sentirse limpio, respetuoso y agradable. Estas normas crean un marco claro y fiable para ello.",
+
+        },
+
+        ".info-note-label": { text: "Principio" },
+
+        ".info-note-text": {
+
+          html: "Quien entrena en NordFit debe poder confiar en un entorno justo, tranquilo y limpio. Estas reglas existen exactamente para eso: no como exageración, sino como estándar.",
+
+        },
+
+        ".house-rules-stack article:nth-of-type(1) .section-title": { text: "Acceso solo con autorización válida" },
+
+        ".house-rules-stack article:nth-of-type(2) .section-title": { text: "Sin acceso para personas no autorizadas" },
+
+        ".house-rules-stack article:nth-of-type(3) .section-title": { text: "Ropa de entrenamiento adecuada" },
+
+        ".house-rules-stack article:nth-of-type(4) .section-title": { text: "Usar toalla" },
+
+        ".house-rules-stack article:nth-of-type(5) .section-title": { text: "Dejar el equipo en orden" },
+
+        ".house-rules-stack article:nth-of-type(6) .section-title": { text: "Respeto en el trato" },
+
+        ".house-rules-stack article:nth-of-type(7) .section-title": { text: "Entrenar con seguridad y responsabilidad" },
+
+        ".house-rules-stack article:nth-of-type(8) .section-title": { text: "Calma y orden en el estudio" },
+
+        ".house-rules-stack article:nth-of-type(9) .section-title": { text: "La limpieza también cuenta" },
+
+        ".house-rules-stack article:nth-of-type(10) .section-title": { text: "Derecho de admisión" },
+
+      },
+
+      it: {
+
+        ".hero-title": { text: "Regole chiare. Allenamento tranquillo." },
+
+        ".hero-subtitle": {
+
+          html: "NordFit deve risultare pulito, rispettoso e piacevole. Questo regolamento crea per questo un quadro chiaro e affidabile.",
+
+        },
+
+        ".info-note-label": { text: "Principio" },
+
+        ".info-note-text": {
+
+          html: "Chi si allena da NordFit deve poter contare su un ambiente equo, tranquillo e pulito. Queste regole esistono esattamente per questo — non come esagerazione, ma come standard.",
+
+        },
+
+        ".house-rules-stack article:nth-of-type(1) .section-title": { text: "Accesso solo con autorizzazione valida" },
+
+        ".house-rules-stack article:nth-of-type(2) .section-title": { text: "Nessun accesso ai non autorizzati" },
+
+        ".house-rules-stack article:nth-of-type(3) .section-title": { text: "Abbigliamento adatto all’allenamento" },
+
+        ".house-rules-stack article:nth-of-type(4) .section-title": { text: "Usare un asciugamano" },
+
+        ".house-rules-stack article:nth-of-type(5) .section-title": { text: "Lasciare l’attrezzatura in ordine" },
+
+        ".house-rules-stack article:nth-of-type(6) .section-title": { text: "Rispetto nei rapporti" },
+
+        ".house-rules-stack article:nth-of-type(7) .section-title": { text: "Allenarsi in modo sicuro e responsabile" },
+
+        ".house-rules-stack article:nth-of-type(8) .section-title": { text: "Calma e ordine nello studio" },
+
+        ".house-rules-stack article:nth-of-type(9) .section-title": { text: "Anche la pulizia conta" },
+
+        ".house-rules-stack article:nth-of-type(10) .section-title": { text: "Diritto di domicilio" },
+
+      },
+
+      pl: {
+
+        ".hero-title": { text: "Jasne zasady. Spokojny trening." },
+
+        ".hero-subtitle": {
+
+          html: "NordFit ma być czysty, pełen szacunku i przyjemny. Ten regulamin tworzy do tego jasne i pewne ramy.",
+
+        },
+
+        ".info-note-label": { text: "Zasada" },
+
+        ".info-note-text": {
+
+          html: "Każdy, kto trenuje w NordFit, powinien móc liczyć na uczciwe, spokojne i czyste otoczenie. Te zasady obowiązują właśnie po to — nie jako przesada, lecz jako standard.",
+
+        },
+
+        ".house-rules-stack article:nth-of-type(1) .section-title": { text: "Wejście tylko z ważnym dostępem" },
+
+        ".house-rules-stack article:nth-of-type(2) .section-title": { text: "Brak dostępu dla osób nieuprawnionych" },
+
+        ".house-rules-stack article:nth-of-type(3) .section-title": { text: "Odpowiedni strój treningowy" },
+
+        ".house-rules-stack article:nth-of-type(4) .section-title": { text: "Używaj ręcznika" },
+
+        ".house-rules-stack article:nth-of-type(5) .section-title": { text: "Zostawiaj sprzęt w porządku" },
+
+        ".house-rules-stack article:nth-of-type(6) .section-title": { text: "Szacunek w kontakcie z innymi" },
+
+        ".house-rules-stack article:nth-of-type(7) .section-title": { text: "Trenuj bezpiecznie i odpowiedzialnie" },
+
+        ".house-rules-stack article:nth-of-type(8) .section-title": { text: "Spokój i porządek w studiu" },
+
+        ".house-rules-stack article:nth-of-type(9) .section-title": { text: "Czystość też się liczy" },
+
+        ".house-rules-stack article:nth-of-type(10) .section-title": { text: "Prawo gospodarza" },
+
+      },
+
+      nl: {
+
+        ".hero-title": { text: "Duidelijke regels. Rustig trainen." },
+
+        ".hero-subtitle": {
+
+          html: "NordFit moet schoon, respectvol en prettig aanvoelen. Deze huisregels zorgen daarvoor met een helder en betrouwbaar kader.",
+
+        },
+
+        ".info-note-label": { text: "Principe" },
+
+        ".info-note-text": {
+
+          html: "Wie bij NordFit traint, moet kunnen rekenen op een eerlijke, rustige en schone omgeving. Precies daarvoor gelden deze regels — niet als overdrijving, maar als standaard.",
+
+        },
+
+        ".house-rules-stack article:nth-of-type(1) .section-title": { text: "Toegang alleen met geldige toegang" },
+
+        ".house-rules-stack article:nth-of-type(2) .section-title": { text: "Geen toegang voor onbevoegden" },
+
+        ".house-rules-stack article:nth-of-type(3) .section-title": { text: "Geschikte trainingskleding" },
+
+        ".house-rules-stack article:nth-of-type(4) .section-title": { text: "Gebruik een handdoek" },
+
+        ".house-rules-stack article:nth-of-type(5) .section-title": { text: "Laat apparaten netjes achter" },
+
+        ".house-rules-stack article:nth-of-type(6) .section-title": { text: "Respectvolle omgang" },
+
+        ".house-rules-stack article:nth-of-type(7) .section-title": { text: "Train veilig en verantwoordelijk" },
+
+        ".house-rules-stack article:nth-of-type(8) .section-title": { text: "Rust en orde in de studio" },
+
+        ".house-rules-stack article:nth-of-type(9) .section-title": { text: "Netheid telt ook mee" },
+
+        ".house-rules-stack article:nth-of-type(10) .section-title": { text: "Huisrecht" },
+
+      },
+
+      da: {
+
+        ".hero-title": { text: "Klare regler. Rolig træning." },
+
+        ".hero-subtitle": {
+
+          html: "NordFit skal føles rent, respektfuldt og behageligt. Disse husregler skaber en klar og pålidelig ramme for det.",
+
+        },
+
+        ".info-note-label": { text: "Princip" },
+
+        ".info-note-text": {
+
+          html: "Alle, der træner hos NordFit, skal kunne stole på et fair, roligt og rent miljø. Reglerne findes netop derfor — ikke som overdrivelse, men som standard.",
+
+        },
+
+        ".house-rules-stack article:nth-of-type(1) .section-title": { text: "Adgang kun med gyldig adgang" },
+
+        ".house-rules-stack article:nth-of-type(2) .section-title": { text: "Ingen adgang for uvedkommende" },
+
+        ".house-rules-stack article:nth-of-type(3) .section-title": { text: "Passende træningstøj" },
+
+        ".house-rules-stack article:nth-of-type(4) .section-title": { text: "Brug et håndklæde" },
+
+        ".house-rules-stack article:nth-of-type(5) .section-title": { text: "Efterlad udstyr i orden" },
+
+        ".house-rules-stack article:nth-of-type(6) .section-title": { text: "Respektfuld omgang" },
+
+        ".house-rules-stack article:nth-of-type(7) .section-title": { text: "Træn sikkert og ansvarligt" },
+
+        ".house-rules-stack article:nth-of-type(8) .section-title": { text: "Ro og orden i studiet" },
+
+        ".house-rules-stack article:nth-of-type(9) .section-title": { text: "Renlighed tæller også" },
+
+        ".house-rules-stack article:nth-of-type(10) .section-title": { text: "Husret" },
+
+      },
+
+      sv: {
+
+        ".hero-title": { text: "Tydliga regler. Lugn träning." },
+
+        ".hero-subtitle": {
+
+          html: "NordFit ska kännas rent, respektfullt och behagligt. Dessa regler skapar en tydlig och pålitlig ram för det.",
+
+        },
+
+        ".info-note-label": { text: "Grundprincip" },
+
+        ".info-note-text": {
+
+          html: "Den som tränar hos NordFit ska kunna lita på en rättvis, lugn och ren miljö. Reglerna finns exakt för det — inte som överdrift, utan som standard.",
+
+        },
+
+        ".house-rules-stack article:nth-of-type(1) .section-title": { text: "Tillträde endast med giltig tillgång" },
+
+        ".house-rules-stack article:nth-of-type(2) .section-title": { text: "Inget tillträde för obehöriga" },
+
+        ".house-rules-stack article:nth-of-type(3) .section-title": { text: "Lämpliga träningskläder" },
+
+        ".house-rules-stack article:nth-of-type(4) .section-title": { text: "Använd handduk" },
+
+        ".house-rules-stack article:nth-of-type(5) .section-title": { text: "Lämna utrustningen i ordning" },
+
+        ".house-rules-stack article:nth-of-type(6) .section-title": { text: "Respektfullt beteende" },
+
+        ".house-rules-stack article:nth-of-type(7) .section-title": { text: "Träna säkert och ansvarsfullt" },
+
+        ".house-rules-stack article:nth-of-type(8) .section-title": { text: "Lugn och ordning i studion" },
+
+        ".house-rules-stack article:nth-of-type(9) .section-title": { text: "Renlighet räknas också" },
+
+        ".house-rules-stack article:nth-of-type(10) .section-title": { text: "Husregler / tillträdesrätt" },
+
+      },
+
+      no: {
+
+        ".hero-title": { text: "Klare regler. Rolig trening." },
+
+        ".hero-subtitle": {
+
+          html: "NordFit skal føles rent, respektfullt og behagelig. Disse husreglene skaper en tydelig og pålitelig ramme for det.",
+
+        },
+
+        ".info-note-label": { text: "Prinsipp" },
+
+        ".info-note-text": {
+
+          html: "Den som trener hos NordFit skal kunne stole på et rettferdig, rolig og rent miljø. Reglene finnes akkurat derfor — ikke som overdrivelse, men som standard.",
+
+        },
+
+        ".house-rules-stack article:nth-of-type(1) .section-title": { text: "Adgang kun med gyldig tilgang" },
+
+        ".house-rules-stack article:nth-of-type(2) .section-title": { text: "Ingen adgang for uvedkommende" },
+
+        ".house-rules-stack article:nth-of-type(3) .section-title": { text: "Egnet treningstøy" },
+
+        ".house-rules-stack article:nth-of-type(4) .section-title": { text: "Bruk håndkle" },
+
+        ".house-rules-stack article:nth-of-type(5) .section-title": { text: "La utstyr være ryddig" },
+
+        ".house-rules-stack article:nth-of-type(6) .section-title": { text: "Respektfull omgang" },
+
+        ".house-rules-stack article:nth-of-type(7) .section-title": { text: "Tren trygt og ansvarlig" },
+
+        ".house-rules-stack article:nth-of-type(8) .section-title": { text: "Ro og orden i studioet" },
+
+        ".house-rules-stack article:nth-of-type(9) .section-title": { text: "Renhet teller også" },
+
+        ".house-rules-stack article:nth-of-type(10) .section-title": { text: "Husrett" },
+
+      },
+
+    },
+
+    kontakt: {
+
+      de: {
+
+        ".hero-title": { text: "Direkt. Klar. Persönlich." },
+
+        ".hero-subtitle": {
+
+          html: "Wenn du Fragen zu NordFit, zur App, zu deinem Zugang oder zu einer Mitgliedschaft hast, kannst du uns hier auf dem direkten Weg erreichen.",
+
+        },
+
+        ".section-block .section-title": { text: "Kontaktwege" },
+
+        ".contact-form-shell .section-title": { text: "Kontaktformular" },
+
+        ".contact-info-item:nth-of-type(1) .contact-info-label": { text: "E-Mail" },
+
+        ".contact-info-item:nth-of-type(2) .contact-info-label": { text: "Instagram" },
+
+        ".contact-info-item:nth-of-type(3) .contact-info-label": { text: "Telefon" },
+
+        ".contact-info-item:nth-of-type(3) .muted": { text: "Bald verfügbar" },
+
+        "label[for='contact-firstname']": { html: "Vorname <span class='required-star'>*</span>" },
+
+        "label[for='contact-lastname']": { html: "Nachname <span class='required-star'>*</span>" },
+
+        "label[for='contact-email']": { html: "E-Mail <span class='required-star'>*</span>" },
+
+        "label[for='contact-phone']": { html: "Telefonnummer <span class='required-star'>*</span>" },
+
+        "label[for='contact-topic']": { html: "Thema <span class='required-star'>*</span>" },
+
+        "label[for='contact-memberid']": { text: "Member ID" },
+
+        "label[for='contact-message']": { html: "Nachricht <span class='required-star'>*</span>" },
+
+        "#contact-firstname": { placeholder: "Dein Vorname" },
+
+        "#contact-lastname": { placeholder: "Dein Nachname" },
+
+        "#contact-email": { placeholder: "deinname@email.de" },
+
+        "#contact-phone": { placeholder: "Deine Telefonnummer" },
+
+        "#contact-memberid": { placeholder: "Optional" },
+
+        "#contact-message": { placeholder: "Schreib uns dein Anliegen ..." },
+
+        "#contact-topic option:nth-child(1)": { text: "Bitte auswählen" },
+
+        "#contact-topic option:nth-child(2)": { text: "Mitgliedschaft" },
+
+        "#contact-topic option:nth-child(3)": { text: "App" },
+
+        "#contact-topic option:nth-child(4)": { text: "Zutritt / QR-Code" },
+
+        "#contact-topic option:nth-child(5)": { text: "Tagespass" },
+
+        "#contact-topic option:nth-child(6)": { text: "Standort" },
+
+        "#contact-topic option:nth-child(7)": { text: "Konto / Daten" },
+
+        "#contact-topic option:nth-child(8)": { text: "Allgemeine Frage" },
+
+        ".contact-form-footer .muted": { text: "Oder direkt per Mail an nordgroup.business@gmail.com" },
+
+        ".required-note": { text: "Felder mit * müssen ausgefüllt werden." },
+
+        ".contact-form-footer .btn": { text: "Nachricht senden" },
+
+      },
+
+      en: {
+
+        ".hero-title": { text: "Direct. Clear. Personal." },
+
+        ".hero-subtitle": {
+
+          html: "If you have questions about NordFit, the app, your access or a membership, you can reach us here in the most direct way.",
+
+        },
+
+        ".section-block .section-title": { text: "Contact options" },
+
+        ".contact-form-shell .section-title": { text: "Contact form" },
+
+        ".contact-info-item:nth-of-type(1) .contact-info-label": { text: "Email" },
+
+        ".contact-info-item:nth-of-type(2) .contact-info-label": { text: "Instagram" },
+
+        ".contact-info-item:nth-of-type(3) .contact-info-label": { text: "Phone" },
+
+        ".contact-info-item:nth-of-type(3) .muted": { text: "Coming soon" },
+
+        "label[for='contact-firstname']": { html: "First name <span class='required-star'>*</span>" },
+
+        "label[for='contact-lastname']": { html: "Last name <span class='required-star'>*</span>" },
+
+        "label[for='contact-email']": { html: "Email <span class='required-star'>*</span>" },
+
+        "label[for='contact-phone']": { html: "Phone number <span class='required-star'>*</span>" },
+
+        "label[for='contact-topic']": { html: "Topic <span class='required-star'>*</span>" },
+
+        "label[for='contact-memberid']": { text: "Member ID" },
+
+        "label[for='contact-message']": { html: "Message <span class='required-star'>*</span>" },
+
+        "#contact-firstname": { placeholder: "Your first name" },
+
+        "#contact-lastname": { placeholder: "Your last name" },
+
+        "#contact-email": { placeholder: "yourname@email.com" },
+
+        "#contact-phone": { placeholder: "Your phone number" },
+
+        "#contact-memberid": { placeholder: "Optional" },
+
+        "#contact-message": { placeholder: "Write your message ..." },
+
+        "#contact-topic option:nth-child(1)": { text: "Please choose" },
+
+        "#contact-topic option:nth-child(2)": { text: "Membership" },
+
+        "#contact-topic option:nth-child(3)": { text: "App" },
+
+        "#contact-topic option:nth-child(4)": { text: "Access / QR code" },
+
+        "#contact-topic option:nth-child(5)": { text: "Day pass" },
+
+        "#contact-topic option:nth-child(6)": { text: "Location" },
+
+        "#contact-topic option:nth-child(7)": { text: "Account / Data" },
+
+        "#contact-topic option:nth-child(8)": { text: "General question" },
+
+        ".contact-form-footer .muted": { text: "Or email us directly at nordgroup.business@gmail.com" },
+
+        ".required-note": { text: "Fields marked with * are required." },
+
+        ".contact-form-footer .btn": { text: "Send message" },
+
+      },
+
+      fr: {
+
+        ".hero-title": { text: "Direct. Clair. Personnel." },
+
+        ".hero-subtitle": {
+
+          html: "Si vous avez des questions sur NordFit, l’application, votre accès ou un abonnement, vous pouvez nous joindre ici par le chemin le plus direct.",
+
+        },
+
+        ".section-block .section-title": { text: "Moyens de contact" },
+
+        ".contact-form-shell .section-title": { text: "Formulaire de contact" },
+
+        ".contact-info-item:nth-of-type(1) .contact-info-label": { text: "E-mail" },
+
+        ".contact-info-item:nth-of-type(2) .contact-info-label": { text: "Instagram" },
+
+        ".contact-info-item:nth-of-type(3) .contact-info-label": { text: "Téléphone" },
+
+        ".contact-info-item:nth-of-type(3) .muted": { text: "Bientôt disponible" },
+
+        "label[for='contact-firstname']": { html: "Prénom <span class='required-star'>*</span>" },
+
+        "label[for='contact-lastname']": { html: "Nom <span class='required-star'>*</span>" },
+
+        "label[for='contact-email']": { html: "E-mail <span class='required-star'>*</span>" },
+
+        "label[for='contact-phone']": { html: "Numéro de téléphone <span class='required-star'>*</span>" },
+
+        "label[for='contact-topic']": { html: "Sujet <span class='required-star'>*</span>" },
+
+        "label[for='contact-memberid']": { text: "Member ID" },
+
+        "label[for='contact-message']": { html: "Message <span class='required-star'>*</span>" },
+
+        "#contact-firstname": { placeholder: "Votre prénom" },
+
+        "#contact-lastname": { placeholder: "Votre nom" },
+
+        "#contact-email": { placeholder: "votrenom@email.fr" },
+
+        "#contact-phone": { placeholder: "Votre numéro de téléphone" },
+
+        "#contact-memberid": { placeholder: "Optionnel" },
+
+        "#contact-message": { placeholder: "Écrivez-nous votre demande ..." },
+
+        "#contact-topic option:nth-child(1)": { text: "Veuillez choisir" },
+
+        "#contact-topic option:nth-child(2)": { text: "Abonnement" },
+
+        "#contact-topic option:nth-child(3)": { text: "App" },
+
+        "#contact-topic option:nth-child(4)": { text: "Accès / QR code" },
+
+        "#contact-topic option:nth-child(5)": { text: "Pass journalier" },
+
+        "#contact-topic option:nth-child(6)": { text: "Site" },
+
+        "#contact-topic option:nth-child(7)": { text: "Compte / Données" },
+
+        "#contact-topic option:nth-child(8)": { text: "Question générale" },
+
+        ".contact-form-footer .muted": { text: "Ou directement par e-mail à nordgroup.business@gmail.com" },
+
+        ".required-note": { text: "Les champs marqués * sont obligatoires." },
+
+        ".contact-form-footer .btn": { text: "Envoyer le message" },
+
+      },
+
+      es: {
+
+        ".hero-title": { text: "Directo. Claro. Personal." },
+
+        ".hero-subtitle": {
+
+          html: "Si tienes preguntas sobre NordFit, la app, tu acceso o una membresía, puedes contactarnos aquí por la vía más directa.",
+
+        },
+
+        ".section-block .section-title": { text: "Vías de contacto" },
+
+        ".contact-form-shell .section-title": { text: "Formulario de contacto" },
+
+        ".contact-info-item:nth-of-type(1) .contact-info-label": { text: "Correo" },
+
+        ".contact-info-item:nth-of-type(2) .contact-info-label": { text: "Instagram" },
+
+        ".contact-info-item:nth-of-type(3) .contact-info-label": { text: "Teléfono" },
+
+        ".contact-info-item:nth-of-type(3) .muted": { text: "Disponible pronto" },
+
+        "label[for='contact-firstname']": { html: "Nombre <span class='required-star'>*</span>" },
+
+        "label[for='contact-lastname']": { html: "Apellido <span class='required-star'>*</span>" },
+
+        "label[for='contact-email']": { html: "Correo electrónico <span class='required-star'>*</span>" },
+
+        "label[for='contact-phone']": { html: "Número de teléfono <span class='required-star'>*</span>" },
+
+        "label[for='contact-topic']": { html: "Tema <span class='required-star'>*</span>" },
+
+        "label[for='contact-memberid']": { text: "Member ID" },
+
+        "label[for='contact-message']": { html: "Mensaje <span class='required-star'>*</span>" },
+
+        "#contact-firstname": { placeholder: "Tu nombre" },
+
+        "#contact-lastname": { placeholder: "Tu apellido" },
+
+        "#contact-email": { placeholder: "tunombre@email.com" },
+
+        "#contact-phone": { placeholder: "Tu número de teléfono" },
+
+        "#contact-memberid": { placeholder: "Opcional" },
+
+        "#contact-message": { placeholder: "Escríbenos tu consulta ..." },
+
+        "#contact-topic option:nth-child(1)": { text: "Por favor elige" },
+
+        "#contact-topic option:nth-child(2)": { text: "Membresía" },
+
+        "#contact-topic option:nth-child(3)": { text: "App" },
+
+        "#contact-topic option:nth-child(4)": { text: "Acceso / Código QR" },
+
+        "#contact-topic option:nth-child(5)": { text: "Pase diario" },
+
+        "#contact-topic option:nth-child(6)": { text: "Ubicación" },
+
+        "#contact-topic option:nth-child(7)": { text: "Cuenta / Datos" },
+
+        "#contact-topic option:nth-child(8)": { text: "Pregunta general" },
+
+        ".contact-form-footer .muted": { text: "O directamente por correo a nordgroup.business@gmail.com" },
+
+        ".required-note": { text: "Los campos marcados con * son obligatorios." },
+
+        ".contact-form-footer .btn": { text: "Enviar mensaje" },
+
+      },
+
+      it: {
+
+        ".hero-title": { text: "Diretto. Chiaro. Personale." },
+
+        ".hero-subtitle": {
+
+          html: "Se hai domande su NordFit, sull’app, sul tuo accesso o su un abbonamento, puoi contattarci qui nel modo più diretto.",
+
+        },
+
+        ".section-block .section-title": { text: "Contatti" },
+
+        ".contact-form-shell .section-title": { text: "Modulo di contatto" },
+
+        ".contact-info-item:nth-of-type(1) .contact-info-label": { text: "E-mail" },
+
+        ".contact-info-item:nth-of-type(2) .contact-info-label": { text: "Instagram" },
+
+        ".contact-info-item:nth-of-type(3) .contact-info-label": { text: "Telefono" },
+
+        ".contact-info-item:nth-of-type(3) .muted": { text: "Disponibile presto" },
+
+        "label[for='contact-firstname']": { html: "Nome <span class='required-star'>*</span>" },
+
+        "label[for='contact-lastname']": { html: "Cognome <span class='required-star'>*</span>" },
+
+        "label[for='contact-email']": { html: "E-mail <span class='required-star'>*</span>" },
+
+        "label[for='contact-phone']": { html: "Numero di telefono <span class='required-star'>*</span>" },
+
+        "label[for='contact-topic']": { html: "Tema <span class='required-star'>*</span>" },
+
+        "label[for='contact-memberid']": { text: "Member ID" },
+
+        "label[for='contact-message']": { html: "Messaggio <span class='required-star'>*</span>" },
+
+        "#contact-firstname": { placeholder: "Il tuo nome" },
+
+        "#contact-lastname": { placeholder: "Il tuo cognome" },
+
+        "#contact-email": { placeholder: "iltuonome@email.it" },
+
+        "#contact-phone": { placeholder: "Il tuo numero di telefono" },
+
+        "#contact-memberid": { placeholder: "Opzionale" },
+
+        "#contact-message": { placeholder: "Scrivici la tua richiesta ..." },
+
+        "#contact-topic option:nth-child(1)": { text: "Seleziona" },
+
+        "#contact-topic option:nth-child(2)": { text: "Abbonamento" },
+
+        "#contact-topic option:nth-child(3)": { text: "App" },
+
+        "#contact-topic option:nth-child(4)": { text: "Accesso / QR code" },
+
+        "#contact-topic option:nth-child(5)": { text: "Pass giornaliero" },
+
+        "#contact-topic option:nth-child(6)": { text: "Sede" },
+
+        "#contact-topic option:nth-child(7)": { text: "Account / Dati" },
+
+        "#contact-topic option:nth-child(8)": { text: "Domanda generale" },
+
+        ".contact-form-footer .muted": { text: "Oppure direttamente via mail a nordgroup.business@gmail.com" },
+
+        ".required-note": { text: "I campi contrassegnati con * sono obbligatori." },
+
+        ".contact-form-footer .btn": { text: "Invia messaggio" },
+
+      },
+
+      pl: {
+
+        ".hero-title": { text: "Bezpośrednio. Jasno. Osobiście." },
+
+        ".hero-subtitle": {
+
+          html: "Jeśli masz pytania dotyczące NordFit, aplikacji, dostępu lub karnetu, możesz skontaktować się z nami tutaj w najprostszy sposób.",
+
+        },
+
+        ".section-block .section-title": { text: "Sposoby kontaktu" },
+
+        ".contact-form-shell .section-title": { text: "Formularz kontaktowy" },
+
+        ".contact-info-item:nth-of-type(1) .contact-info-label": { text: "E-mail" },
+
+        ".contact-info-item:nth-of-type(2) .contact-info-label": { text: "Instagram" },
+
+        ".contact-info-item:nth-of-type(3) .contact-info-label": { text: "Telefon" },
+
+        ".contact-info-item:nth-of-type(3) .muted": { text: "Wkrótce dostępne" },
+
+        "label[for='contact-firstname']": { html: "Imię <span class='required-star'>*</span>" },
+
+        "label[for='contact-lastname']": { html: "Nazwisko <span class='required-star'>*</span>" },
+
+        "label[for='contact-email']": { html: "E-mail <span class='required-star'>*</span>" },
+
+        "label[for='contact-phone']": { html: "Numer telefonu <span class='required-star'>*</span>" },
+
+        "label[for='contact-topic']": { html: "Temat <span class='required-star'>*</span>" },
+
+        "label[for='contact-memberid']": { text: "Member ID" },
+
+        "label[for='contact-message']": { html: "Wiadomość <span class='required-star'>*</span>" },
+
+        "#contact-firstname": { placeholder: "Twoje imię" },
+
+        "#contact-lastname": { placeholder: "Twoje nazwisko" },
+
+        "#contact-email": { placeholder: "twojenazwisko@email.pl" },
+
+        "#contact-phone": { placeholder: "Twój numer telefonu" },
+
+        "#contact-memberid": { placeholder: "Opcjonalnie" },
+
+        "#contact-message": { placeholder: "Napisz swoją wiadomość ..." },
+
+        "#contact-topic option:nth-child(1)": { text: "Proszę wybrać" },
+
+        "#contact-topic option:nth-child(2)": { text: "Karnet" },
+
+        "#contact-topic option:nth-child(3)": { text: "Aplikacja" },
+
+        "#contact-topic option:nth-child(4)": { text: "Dostęp / Kod QR" },
+
+        "#contact-topic option:nth-child(5)": { text: "Wejście dzienne" },
+
+        "#contact-topic option:nth-child(6)": { text: "Lokalizacja" },
+
+        "#contact-topic option:nth-child(7)": { text: "Konto / Dane" },
+
+        "#contact-topic option:nth-child(8)": { text: "Pytanie ogólne" },
+
+        ".contact-form-footer .muted": { text: "Albo bezpośrednio mailowo na nordgroup.business@gmail.com" },
+
+        ".required-note": { text: "Pola oznaczone * są wymagane." },
+
+        ".contact-form-footer .btn": { text: "Wyślij wiadomość" },
+
+      },
+
+      nl: {
+
+        ".hero-title": { text: "Direct. Helder. Persoonlijk." },
+
+        ".hero-subtitle": {
+
+          html: "Als je vragen hebt over NordFit, de app, je toegang of een lidmaatschap, kun je ons hier op de meest directe manier bereiken.",
+
+        },
+
+        ".section-block .section-title": { text: "Contactmogelijkheden" },
+
+        ".contact-form-shell .section-title": { text: "Contactformulier" },
+
+        ".contact-info-item:nth-of-type(1) .contact-info-label": { text: "E-mail" },
+
+        ".contact-info-item:nth-of-type(2) .contact-info-label": { text: "Instagram" },
+
+        ".contact-info-item:nth-of-type(3) .contact-info-label": { text: "Telefoon" },
+
+        ".contact-info-item:nth-of-type(3) .muted": { text: "Binnenkort beschikbaar" },
+
+        "label[for='contact-firstname']": { html: "Voornaam <span class='required-star'>*</span>" },
+
+        "label[for='contact-lastname']": { html: "Achternaam <span class='required-star'>*</span>" },
+
+        "label[for='contact-email']": { html: "E-mail <span class='required-star'>*</span>" },
+
+        "label[for='contact-phone']": { html: "Telefoonnummer <span class='required-star'>*</span>" },
+
+        "label[for='contact-topic']": { html: "Onderwerp <span class='required-star'>*</span>" },
+
+        "label[for='contact-memberid']": { text: "Member ID" },
+
+        "label[for='contact-message']": { html: "Bericht <span class='required-star'>*</span>" },
+
+        "#contact-firstname": { placeholder: "Je voornaam" },
+
+        "#contact-lastname": { placeholder: "Je achternaam" },
+
+        "#contact-email": { placeholder: "jenaam@email.nl" },
+
+        "#contact-phone": { placeholder: "Je telefoonnummer" },
+
+        "#contact-memberid": { placeholder: "Optioneel" },
+
+        "#contact-message": { placeholder: "Schrijf ons je bericht ..." },
+
+        "#contact-topic option:nth-child(1)": { text: "Maak een keuze" },
+
+        "#contact-topic option:nth-child(2)": { text: "Lidmaatschap" },
+
+        "#contact-topic option:nth-child(3)": { text: "App" },
+
+        "#contact-topic option:nth-child(4)": { text: "Toegang / QR-code" },
+
+        "#contact-topic option:nth-child(5)": { text: "Dagpas" },
+
+        "#contact-topic option:nth-child(6)": { text: "Locatie" },
+
+        "#contact-topic option:nth-child(7)": { text: "Account / Gegevens" },
+
+        "#contact-topic option:nth-child(8)": { text: "Algemene vraag" },
+
+        ".contact-form-footer .muted": { text: "Of direct per mail naar nordgroup.business@gmail.com" },
+
+        ".required-note": { text: "Velden met * zijn verplicht." },
+
+        ".contact-form-footer .btn": { text: "Bericht verzenden" },
+
+      },
+
+      da: {
+
+        ".hero-title": { text: "Direkte. Klart. Personligt." },
+
+        ".hero-subtitle": {
+
+          html: "Hvis du har spørgsmål om NordFit, appen, din adgang eller et medlemskab, kan du kontakte os her på den mest direkte måde.",
+
+        },
+
+        ".section-block .section-title": { text: "Kontaktmuligheder" },
+
+        ".contact-form-shell .section-title": { text: "Kontaktformular" },
+
+        ".contact-info-item:nth-of-type(1) .contact-info-label": { text: "E-mail" },
+
+        ".contact-info-item:nth-of-type(2) .contact-info-label": { text: "Instagram" },
+
+        ".contact-info-item:nth-of-type(3) .contact-info-label": { text: "Telefon" },
+
+        ".contact-info-item:nth-of-type(3) .muted": { text: "Snart tilgængelig" },
+
+        "label[for='contact-firstname']": { html: "Fornavn <span class='required-star'>*</span>" },
+
+        "label[for='contact-lastname']": { html: "Efternavn <span class='required-star'>*</span>" },
+
+        "label[for='contact-email']": { html: "E-mail <span class='required-star'>*</span>" },
+
+        "label[for='contact-phone']": { html: "Telefonnummer <span class='required-star'>*</span>" },
+
+        "label[for='contact-topic']": { html: "Emne <span class='required-star'>*</span>" },
+
+        "label[for='contact-memberid']": { text: "Member ID" },
+
+        "label[for='contact-message']": { html: "Besked <span class='required-star'>*</span>" },
+
+        "#contact-firstname": { placeholder: "Dit fornavn" },
+
+        "#contact-lastname": { placeholder: "Dit efternavn" },
+
+        "#contact-email": { placeholder: "ditnavn@email.dk" },
+
+        "#contact-phone": { placeholder: "Dit telefonnummer" },
+
+        "#contact-memberid": { placeholder: "Valgfrit" },
+
+        "#contact-message": { placeholder: "Skriv din besked ..." },
+
+        "#contact-topic option:nth-child(1)": { text: "Vælg venligst" },
+
+        "#contact-topic option:nth-child(2)": { text: "Medlemskab" },
+
+        "#contact-topic option:nth-child(3)": { text: "App" },
+
+        "#contact-topic option:nth-child(4)": { text: "Adgang / QR-kode" },
+
+        "#contact-topic option:nth-child(5)": { text: "Dagspas" },
+
+        "#contact-topic option:nth-child(6)": { text: "Lokation" },
+
+        "#contact-topic option:nth-child(7)": { text: "Konto / Data" },
+
+        "#contact-topic option:nth-child(8)": { text: "Generelt spørgsmål" },
+
+        ".contact-form-footer .muted": { text: "Eller direkte pr. mail til nordgroup.business@gmail.com" },
+
+        ".required-note": { text: "Felter markeret med * skal udfyldes." },
+
+        ".contact-form-footer .btn": { text: "Send besked" },
+
+      },
+
+      sv: {
+
+        ".hero-title": { text: "Direkt. Tydligt. Personligt." },
+
+        ".hero-subtitle": {
+
+          html: "Om du har frågor om NordFit, appen, din tillgång eller ett medlemskap kan du nå oss här på det mest direkta sättet.",
+
+        },
+
+        ".section-block .section-title": { text: "Kontaktvägar" },
+
+        ".contact-form-shell .section-title": { text: "Kontaktformulär" },
+
+        ".contact-info-item:nth-of-type(1) .contact-info-label": { text: "E-post" },
+
+        ".contact-info-item:nth-of-type(2) .contact-info-label": { text: "Instagram" },
+
+        ".contact-info-item:nth-of-type(3) .contact-info-label": { text: "Telefon" },
+
+        ".contact-info-item:nth-of-type(3) .muted": { text: "Kommer snart" },
+
+        "label[for='contact-firstname']": { html: "Förnamn <span class='required-star'>*</span>" },
+
+        "label[for='contact-lastname']": { html: "Efternamn <span class='required-star'>*</span>" },
+
+        "label[for='contact-email']": { html: "E-post <span class='required-star'>*</span>" },
+
+        "label[for='contact-phone']": { html: "Telefonnummer <span class='required-star'>*</span>" },
+
+        "label[for='contact-topic']": { html: "Ämne <span class='required-star'>*</span>" },
+
+        "label[for='contact-memberid']": { text: "Member ID" },
+
+        "label[for='contact-message']": { html: "Meddelande <span class='required-star'>*</span>" },
+
+        "#contact-firstname": { placeholder: "Ditt förnamn" },
+
+        "#contact-lastname": { placeholder: "Ditt efternamn" },
+
+        "#contact-email": { placeholder: "dittnamn@email.se" },
+
+        "#contact-phone": { placeholder: "Ditt telefonnummer" },
+
+        "#contact-memberid": { placeholder: "Valfritt" },
+
+        "#contact-message": { placeholder: "Skriv ditt meddelande ..." },
+
+        "#contact-topic option:nth-child(1)": { text: "Välj gärna" },
+
+        "#contact-topic option:nth-child(2)": { text: "Medlemskap" },
+
+        "#contact-topic option:nth-child(3)": { text: "App" },
+
+        "#contact-topic option:nth-child(4)": { text: "Tillgång / QR-kod" },
+
+        "#contact-topic option:nth-child(5)": { text: "Dagspass" },
+
+        "#contact-topic option:nth-child(6)": { text: "Plats" },
+
+        "#contact-topic option:nth-child(7)": { text: "Konto / Data" },
+
+        "#contact-topic option:nth-child(8)": { text: "Allmän fråga" },
+
+        ".contact-form-footer .muted": { text: "Eller direkt via mail till nordgroup.business@gmail.com" },
+
+        ".required-note": { text: "Fält markerade med * måste fyllas i." },
+
+        ".contact-form-footer .btn": { text: "Skicka meddelande" },
+
+      },
+
+      no: {
+
+        ".hero-title": { text: "Direkte. Tydelig. Personlig." },
+
+        ".hero-subtitle": {
+
+          html: "Hvis du har spørsmål om NordFit, appen, tilgangen din eller et medlemskap, kan du nå oss her på den mest direkte måten.",
+
+        },
+
+        ".section-block .section-title": { text: "Kontaktmuligheter" },
+
+        ".contact-form-shell .section-title": { text: "Kontaktskjema" },
+
+        ".contact-info-item:nth-of-type(1) .contact-info-label": { text: "E-post" },
+
+        ".contact-info-item:nth-of-type(2) .contact-info-label": { text: "Instagram" },
+
+        ".contact-info-item:nth-of-type(3) .contact-info-label": { text: "Telefon" },
+
+        ".contact-info-item:nth-of-type(3) .muted": { text: "Kommer snart" },
+
+        "label[for='contact-firstname']": { html: "Fornavn <span class='required-star'>*</span>" },
+
+        "label[for='contact-lastname']": { html: "Etternavn <span class='required-star'>*</span>" },
+
+        "label[for='contact-email']": { html: "E-post <span class='required-star'>*</span>" },
+
+        "label[for='contact-phone']": { html: "Telefonnummer <span class='required-star'>*</span>" },
+
+        "label[for='contact-topic']": { html: "Tema <span class='required-star'>*</span>" },
+
+        "label[for='contact-memberid']": { text: "Member ID" },
+
+        "label[for='contact-message']": { html: "Melding <span class='required-star'>*</span>" },
+
+        "#contact-firstname": { placeholder: "Ditt fornavn" },
+
+        "#contact-lastname": { placeholder: "Ditt etternavn" },
+
+        "#contact-email": { placeholder: "dittnavn@email.no" },
+
+        "#contact-phone": { placeholder: "Ditt telefonnummer" },
+
+        "#contact-memberid": { placeholder: "Valgfritt" },
+
+        "#contact-message": { placeholder: "Skriv meldingen din ..." },
+
+        "#contact-topic option:nth-child(1)": { text: "Velg gjerne" },
+
+        "#contact-topic option:nth-child(2)": { text: "Medlemskap" },
+
+        "#contact-topic option:nth-child(3)": { text: "App" },
+
+        "#contact-topic option:nth-child(4)": { text: "Tilgang / QR-kode" },
+
+        "#contact-topic option:nth-child(5)": { text: "Dagspass" },
+
+        "#contact-topic option:nth-child(6)": { text: "Lokasjon" },
+
+        "#contact-topic option:nth-child(7)": { text: "Konto / Data" },
+
+        "#contact-topic option:nth-child(8)": { text: "Generelt spørsmål" },
+
+        ".contact-form-footer .muted": { text: "Eller direkte på e-post til nordgroup.business@gmail.com" },
+
+        ".required-note": { text: "Felter merket med * må fylles ut." },
+
+        ".contact-form-footer .btn": { text: "Send melding" },
+
+      },
+
+    },
+
+    impressum: {
+
+      de: {
+
+        ".hero-title": { text: "Rechtliches. Klar formuliert." },
+
+        ".hero-subtitle": {
+
+          html: "Auch im rechtlichen Bereich soll NordFit nachvollziehbar, transparent und sauber auftreten — ohne unnötige Komplexität und ohne versteckte Formulierungen.",
+
+        },
+
+        ".legal-grid article:first-child .section-title.large-title": { text: "Impressum" },
+
+        ".legal-actions-card .section-title": { text: "Schnellzugriff" },
+
+        ".legal-actions-card > .muted": {
+
+          text: "AGB, Datenschutz und Hausordnung lassen sich hier direkt öffnen — klar erreichbar und ohne langes Suchen.",
+
+        },
+
+        ".legal-info-row:nth-of-type(1) .legal-label": { text: "Firmenname" },
+
+        ".legal-info-row:nth-of-type(2) .legal-label": { text: "E-Mail" },
+
+        ".legal-info-row:nth-of-type(3) .legal-label": { text: "Instagram" },
+
+        ".legal-info-row:nth-of-type(4) .legal-label": { text: "Adresse" },
+
+        ".legal-info-row:nth-of-type(4) strong": { text: "Bald verfügbar" },
+
+        ".legal-missing-info .muted": {
+
+          text: "Fehlende Angaben werden hier ergänzt, sobald sie final feststehen.",
+
+        },
+
+        ".legal-action-buttons .btn:nth-child(1)": { text: "AGB öffnen" },
+
+        ".legal-action-buttons .btn:nth-child(2)": { text: "Datenschutz öffnen" },
+
+        ".legal-action-buttons .btn:nth-child(3)": { text: "Hausordnung öffnen" },
+
+        "#agb-modal .section-title": { text: "Allgemeine Geschäftsbedingungen" },
+
+        "#agb-modal .muted": {
+
+          text: "Die AGB werden vor Veröffentlichung vollständig ergänzt und rechtlich sauber ausgearbeitet. Bis dahin dient dieser Bereich als sichtbarer Platzhalter.",
+
+        },
+
+        "#privacy-modal .section-title": { text: "Datenschutzerklärung" },
+
+        "#privacy-modal .muted": {
+
+          text: "Die Datenschutzerklärung wird hier vollständig ergänzt, bevor NordFit veröffentlicht wird. Sie soll verständlich formuliert und rechtlich sauber aufgebaut sein.",
+
+        },
+
+        "#rules-modal .section-title": { text: "Hausordnung" },
+
+        "#rules-modal .muted": {
+
+          text: "Die Hausordnung findest du zusätzlich als eigene Seite. Sie schafft den Rahmen für ein sauberes, ruhiges und respektvolles Training bei NordFit.",
+
+        },
+
+      },
+
+      en: {
+
+        ".hero-title": { text: "Legal. Clearly written." },
+
+        ".hero-subtitle": {
+
+          html: "Even in legal matters, NordFit should appear understandable, transparent and clean — without unnecessary complexity and without hidden wording.",
+
+        },
+
+        ".legal-grid article:first-child .section-title.large-title": { text: "Legal Notice" },
+
+        ".legal-actions-card .section-title": { text: "Quick access" },
+
+        ".legal-actions-card > .muted": {
+
+          text: "Terms, privacy and house rules can be opened directly here — easy to find and without a long search.",
+
+        },
+
+        ".legal-info-row:nth-of-type(1) .legal-label": { text: "Company name" },
+
+        ".legal-info-row:nth-of-type(2) .legal-label": { text: "Email" },
+
+        ".legal-info-row:nth-of-type(3) .legal-label": { text: "Instagram" },
+
+        ".legal-info-row:nth-of-type(4) .legal-label": { text: "Address" },
+
+        ".legal-info-row:nth-of-type(4) strong": { text: "Coming soon" },
+
+        ".legal-missing-info .muted": {
+
+          text: "Missing details will be added here as soon as they are final.",
+
+        },
+
+        ".legal-action-buttons .btn:nth-child(1)": { text: "Open terms" },
+
+        ".legal-action-buttons .btn:nth-child(2)": { text: "Open privacy" },
+
+        ".legal-action-buttons .btn:nth-child(3)": { text: "Open house rules" },
+
+        "#agb-modal .section-title": { text: "Terms and Conditions" },
+
+        "#agb-modal .muted": {
+
+          text: "The terms will be completed in full and prepared properly before publication. Until then, this section serves as a visible placeholder.",
+
+        },
+
+        "#privacy-modal .section-title": { text: "Privacy Policy" },
+
+        "#privacy-modal .muted": {
+
+          text: "The privacy policy will be completed here before NordFit is published. It should be written clearly and structured properly.",
+
+        },
+
+        "#rules-modal .section-title": { text: "House Rules" },
+
+        "#rules-modal .muted": {
+
+          text: "You can also find the house rules as a separate page. They create the framework for clean, calm and respectful training at NordFit.",
+
+        },
+
+      },
+
+      fr: {
+
+        ".hero-title": { text: "Mentions légales. Formulées clairement." },
+
+        ".hero-subtitle": {
+
+          html: "Même dans le domaine juridique, NordFit doit rester compréhensible, transparent et propre — sans complexité inutile et sans formulations cachées.",
+
+        },
+
+        ".legal-grid article:first-child .section-title.large-title": { text: "Mentions légales" },
+
+        ".legal-actions-card .section-title": { text: "Accès rapide" },
+
+        ".legal-actions-card > .muted": {
+
+          text: "CGV, confidentialité et règlement peuvent être ouverts directement ici — faciles à trouver et sans longue recherche.",
+
+        },
+
+        ".legal-info-row:nth-of-type(1) .legal-label": { text: "Nom de l’entreprise" },
+
+        ".legal-info-row:nth-of-type(2) .legal-label": { text: "E-mail" },
+
+        ".legal-info-row:nth-of-type(3) .legal-label": { text: "Instagram" },
+
+        ".legal-info-row:nth-of-type(4) .legal-label": { text: "Adresse" },
+
+        ".legal-info-row:nth-of-type(4) strong": { text: "Bientôt disponible" },
+
+        ".legal-missing-info .muted": {
+
+          text: "Les informations manquantes seront ajoutées ici dès qu’elles seront définitivement fixées.",
+
+        },
+
+        ".legal-action-buttons .btn:nth-child(1)": { text: "Ouvrir les CGV" },
+
+        ".legal-action-buttons .btn:nth-child(2)": { text: "Ouvrir la confidentialité" },
+
+        ".legal-action-buttons .btn:nth-child(3)": { text: "Ouvrir le règlement" },
+
+        "#agb-modal .section-title": { text: "Conditions générales" },
+
+        "#agb-modal .muted": {
+
+          text: "Les CGV seront complétées intégralement et préparées proprement avant publication. D’ici là, cette section sert de zone visible de remplacement.",
+
+        },
+
+        "#privacy-modal .section-title": { text: "Politique de confidentialité" },
+
+        "#privacy-modal .muted": {
+
+          text: "La politique de confidentialité sera complétée ici avant la publication de NordFit. Elle doit être claire et proprement structurée.",
+
+        },
+
+        "#rules-modal .section-title": { text: "Règlement" },
+
+        "#rules-modal .muted": {
+
+          text: "Le règlement est aussi disponible en page séparée. Il crée le cadre pour un entraînement propre, calme et respectueux chez NordFit.",
+
+        },
+
+      },
+
+      es: {
+
+        ".hero-title": { text: "Legal. Claramente formulado." },
+
+        ".hero-subtitle": {
+
+          html: "También en el ámbito legal, NordFit debe mostrarse comprensible, transparente y limpio — sin complejidad innecesaria y sin formulaciones ocultas.",
+
+        },
+
+        ".legal-grid article:first-child .section-title.large-title": { text: "Aviso legal" },
+
+        ".legal-actions-card .section-title": { text: "Acceso rápido" },
+
+        ".legal-actions-card > .muted": {
+
+          text: "Términos, privacidad y normas pueden abrirse aquí directamente — fáciles de encontrar y sin largas búsquedas.",
+
+        },
+
+        ".legal-info-row:nth-of-type(1) .legal-label": { text: "Nombre de la empresa" },
+
+        ".legal-info-row:nth-of-type(2) .legal-label": { text: "Correo" },
+
+        ".legal-info-row:nth-of-type(3) .legal-label": { text: "Instagram" },
+
+        ".legal-info-row:nth-of-type(4) .legal-label": { text: "Dirección" },
+
+        ".legal-info-row:nth-of-type(4) strong": { text: "Disponible pronto" },
+
+        ".legal-missing-info .muted": {
+
+          text: "Los datos que falten se añadirán aquí en cuanto estén definitivamente fijados.",
+
+        },
+
+        ".legal-action-buttons .btn:nth-child(1)": { text: "Abrir términos" },
+
+        ".legal-action-buttons .btn:nth-child(2)": { text: "Abrir privacidad" },
+
+        ".legal-action-buttons .btn:nth-child(3)": { text: "Abrir normas" },
+
+        "#agb-modal .section-title": { text: "Términos y condiciones" },
+
+        "#agb-modal .muted": {
+
+          text: "Los términos se completarán por completo y se prepararán correctamente antes de la publicación. Hasta entonces, esta sección sirve como marcador visible.",
+
+        },
+
+        "#privacy-modal .section-title": { text: "Política de privacidad" },
+
+        "#privacy-modal .muted": {
+
+          text: "La política de privacidad se completará aquí antes de que NordFit se publique. Debe estar escrita de forma clara y bien estructurada.",
+
+        },
+
+        "#rules-modal .section-title": { text: "Normas" },
+
+        "#rules-modal .muted": {
+
+          text: "También puedes encontrar las normas como página independiente. Crean el marco para un entrenamiento limpio, tranquilo y respetuoso en NordFit.",
+
+        },
+
+      },
+
+      it: {
+
+        ".hero-title": { text: "Aspetti legali. Formulati con chiarezza." },
+
+        ".hero-subtitle": {
+
+          html: "Anche nell’area legale, NordFit deve presentarsi in modo comprensibile, trasparente e pulito — senza complessità inutili e senza formulazioni nascoste.",
+
+        },
+
+        ".legal-grid article:first-child .section-title.large-title": { text: "Note legali" },
+
+        ".legal-actions-card .section-title": { text: "Accesso rapido" },
+
+        ".legal-actions-card > .muted": {
+
+          text: "Termini, privacy e regolamento possono essere aperti qui direttamente — facili da trovare e senza lunghe ricerche.",
+
+        },
+
+        ".legal-info-row:nth-of-type(1) .legal-label": { text: "Nome dell’azienda" },
+
+        ".legal-info-row:nth-of-type(2) .legal-label": { text: "E-mail" },
+
+        ".legal-info-row:nth-of-type(3) .legal-label": { text: "Instagram" },
+
+        ".legal-info-row:nth-of-type(4) .legal-label": { text: "Indirizzo" },
+
+        ".legal-info-row:nth-of-type(4) strong": { text: "Disponibile presto" },
+
+        ".legal-missing-info .muted": {
+
+          text: "Le informazioni mancanti saranno aggiunte qui non appena saranno definitive.",
+
+        },
+
+        ".legal-action-buttons .btn:nth-child(1)": { text: "Apri termini" },
+
+        ".legal-action-buttons .btn:nth-child(2)": { text: "Apri privacy" },
+
+        ".legal-action-buttons .btn:nth-child(3)": { text: "Apri regolamento" },
+
+        "#agb-modal .section-title": { text: "Termini e condizioni" },
+
+        "#agb-modal .muted": {
+
+          text: "I termini saranno completati integralmente e preparati correttamente prima della pubblicazione. Fino ad allora, questa sezione funge da segnaposto visibile.",
+
+        },
+
+        "#privacy-modal .section-title": { text: "Informativa sulla privacy" },
+
+        "#privacy-modal .muted": {
+
+          text: "L’informativa sulla privacy sarà completata qui prima della pubblicazione di NordFit. Deve essere scritta in modo chiaro e strutturata correttamente.",
+
+        },
+
+        "#rules-modal .section-title": { text: "Regolamento" },
+
+        "#rules-modal .muted": {
+
+          text: "Il regolamento è disponibile anche come pagina separata. Crea il quadro per un allenamento pulito, tranquillo e rispettoso da NordFit.",
+
+        },
+
+      },
+
+      pl: {
+
+        ".hero-title": { text: "Prawne. Jasno sformułowane." },
+
+        ".hero-subtitle": {
+
+          html: "Również w kwestiach prawnych NordFit ma być zrozumiały, przejrzysty i uporządkowany — bez zbędnej złożoności i bez ukrytych sformułowań.",
+
+        },
+
+        ".legal-grid article:first-child .section-title.large-title": { text: "Informacje prawne" },
+
+        ".legal-actions-card .section-title": { text: "Szybki dostęp" },
+
+        ".legal-actions-card > .muted": {
+
+          text: "Regulamin, prywatność i zasady można otworzyć tutaj bezpośrednio — łatwo dostępne i bez długiego szukania.",
+
+        },
+
+        ".legal-info-row:nth-of-type(1) .legal-label": { text: "Nazwa firmy" },
+
+        ".legal-info-row:nth-of-type(2) .legal-label": { text: "E-mail" },
+
+        ".legal-info-row:nth-of-type(3) .legal-label": { text: "Instagram" },
+
+        ".legal-info-row:nth-of-type(4) .legal-label": { text: "Adres" },
+
+        ".legal-info-row:nth-of-type(4) strong": { text: "Wkrótce dostępne" },
+
+        ".legal-missing-info .muted": {
+
+          text: "Brakujące dane zostaną tutaj uzupełnione, gdy tylko będą ostatecznie ustalone.",
+
+        },
+
+        ".legal-action-buttons .btn:nth-child(1)": { text: "Otwórz regulamin" },
+
+        ".legal-action-buttons .btn:nth-child(2)": { text: "Otwórz prywatność" },
+
+        ".legal-action-buttons .btn:nth-child(3)": { text: "Otwórz zasady" },
+
+        "#agb-modal .section-title": { text: "Regulamin i warunki" },
+
+        "#agb-modal .muted": {
+
+          text: "Regulamin zostanie uzupełniony w całości i przygotowany poprawnie przed publikacją. Do tego czasu ta sekcja służy jako widoczny placeholder.",
+
+        },
+
+        "#privacy-modal .section-title": { text: "Polityka prywatności" },
+
+        "#privacy-modal .muted": {
+
+          text: "Polityka prywatności zostanie tutaj uzupełniona przed publikacją NordFit. Powinna być napisana jasno i uporządkowana prawidłowo.",
+
+        },
+
+        "#rules-modal .section-title": { text: "Zasady" },
+
+        "#rules-modal .muted": {
+
+          text: "Zasady znajdziesz także jako osobną stronę. Tworzą one ramy dla czystego, spokojnego i pełnego szacunku treningu w NordFit.",
+
+        },
+
+      },
+
+      nl: {
+
+        ".hero-title": { text: "Juridisch. Duidelijk geformuleerd." },
+
+        ".hero-subtitle": {
+
+          html: "Ook op juridisch gebied moet NordFit begrijpelijk, transparant en netjes overkomen — zonder onnodige complexiteit en zonder verborgen formuleringen.",
+
+        },
+
+        ".legal-grid article:first-child .section-title.large-title": { text: "Juridische informatie" },
+
+        ".legal-actions-card .section-title": { text: "Snelle toegang" },
+
+        ".legal-actions-card > .muted": {
+
+          text: "Voorwaarden, privacy en huisregels kunnen hier direct worden geopend — makkelijk bereikbaar en zonder lang zoeken.",
+
+        },
+
+        ".legal-info-row:nth-of-type(1) .legal-label": { text: "Bedrijfsnaam" },
+
+        ".legal-info-row:nth-of-type(2) .legal-label": { text: "E-mail" },
+
+        ".legal-info-row:nth-of-type(3) .legal-label": { text: "Instagram" },
+
+        ".legal-info-row:nth-of-type(4) .legal-label": { text: "Adres" },
+
+        ".legal-info-row:nth-of-type(4) strong": { text: "Binnenkort beschikbaar" },
+
+        ".legal-missing-info .muted": {
+
+          text: "Ontbrekende gegevens worden hier aangevuld zodra ze definitief vaststaan.",
+
+        },
+
+        ".legal-action-buttons .btn:nth-child(1)": { text: "Voorwaarden openen" },
+
+        ".legal-action-buttons .btn:nth-child(2)": { text: "Privacy openen" },
+
+        ".legal-action-buttons .btn:nth-child(3)": { text: "Huisregels openen" },
+
+        "#agb-modal .section-title": { text: "Algemene voorwaarden" },
+
+        "#agb-modal .muted": {
+
+          text: "De voorwaarden worden voor publicatie volledig aangevuld en netjes uitgewerkt. Tot dan dient dit deel als zichtbare placeholder.",
+
+        },
+
+        "#privacy-modal .section-title": { text: "Privacyverklaring" },
+
+        "#privacy-modal .muted": {
+
+          text: "De privacyverklaring wordt hier aangevuld voordat NordFit wordt gepubliceerd. Ze moet duidelijk zijn geformuleerd en netjes zijn opgebouwd.",
+
+        },
+
+        "#rules-modal .section-title": { text: "Huisregels" },
+
+        "#rules-modal .muted": {
+
+          text: "De huisregels vind je ook als aparte pagina. Ze vormen het kader voor schoon, rustig en respectvol trainen bij NordFit.",
+
+        },
+
+      },
+
+      da: {
+
+        ".hero-title": { text: "Juridisk. Klart formuleret." },
+
+        ".hero-subtitle": {
+
+          html: "Også på det juridiske område skal NordFit fremstå forståeligt, transparent og ordentligt — uden unødig kompleksitet og uden skjulte formuleringer.",
+
+        },
+
+        ".legal-grid article:first-child .section-title.large-title": { text: "Juridisk information" },
+
+        ".legal-actions-card .section-title": { text: "Hurtig adgang" },
+
+        ".legal-actions-card > .muted": {
+
+          text: "Vilkår, privatliv og husregler kan åbnes direkte her — lette at finde og uden lang søgning.",
+
+        },
+
+        ".legal-info-row:nth-of-type(1) .legal-label": { text: "Firmanavn" },
+
+        ".legal-info-row:nth-of-type(2) .legal-label": { text: "E-mail" },
+
+        ".legal-info-row:nth-of-type(3) .legal-label": { text: "Instagram" },
+
+        ".legal-info-row:nth-of-type(4) .legal-label": { text: "Adresse" },
+
+        ".legal-info-row:nth-of-type(4) strong": { text: "Snart tilgængelig" },
+
+        ".legal-missing-info .muted": {
+
+          text: "Manglende oplysninger tilføjes her, så snart de er endeligt fastlagt.",
+
+        },
+
+        ".legal-action-buttons .btn:nth-child(1)": { text: "Åbn vilkår" },
+
+        ".legal-action-buttons .btn:nth-child(2)": { text: "Åbn privatliv" },
+
+        ".legal-action-buttons .btn:nth-child(3)": { text: "Åbn husregler" },
+
+        "#agb-modal .section-title": { text: "Vilkår og betingelser" },
+
+        "#agb-modal .muted": {
+
+          text: "Vilkårene bliver udfyldt fuldt og ordentligt før offentliggørelse. Indtil da fungerer denne del som synlig pladsholder.",
+
+        },
+
+        "#privacy-modal .section-title": { text: "Privatlivspolitik" },
+
+        "#privacy-modal .muted": {
+
+          text: "Privatlivspolitikken udfyldes her, før NordFit offentliggøres. Den skal være klart formuleret og ordentligt opbygget.",
+
+        },
+
+        "#rules-modal .section-title": { text: "Husregler" },
+
+        "#rules-modal .muted": {
+
+          text: "Husreglerne findes også som separat side. De skaber rammen for ren, rolig og respektfuld træning hos NordFit.",
+
+        },
+
+      },
+
+      sv: {
+
+        ".hero-title": { text: "Juridik. Tydligt formulerad." },
+
+        ".hero-subtitle": {
+
+          html: "Även i juridiska frågor ska NordFit framstå som begripligt, transparent och ordnat — utan onödig komplexitet och utan dolda formuleringar.",
+
+        },
+
+        ".legal-grid article:first-child .section-title.large-title": { text: "Juridisk information" },
+
+        ".legal-actions-card .section-title": { text: "Snabbåtkomst" },
+
+        ".legal-actions-card > .muted": {
+
+          text: "Villkor, integritet och regler kan öppnas direkt här — lätt att hitta och utan lång sökning.",
+
+        },
+
+        ".legal-info-row:nth-of-type(1) .legal-label": { text: "Företagsnamn" },
+
+        ".legal-info-row:nth-of-type(2) .legal-label": { text: "E-post" },
+
+        ".legal-info-row:nth-of-type(3) .legal-label": { text: "Instagram" },
+
+        ".legal-info-row:nth-of-type(4) .legal-label": { text: "Adress" },
+
+        ".legal-info-row:nth-of-type(4) strong": { text: "Kommer snart" },
+
+        ".legal-missing-info .muted": {
+
+          text: "Saknade uppgifter läggs till här så snart de är slutgiltigt fastställda.",
+
+        },
+
+        ".legal-action-buttons .btn:nth-child(1)": { text: "Öppna villkor" },
+
+        ".legal-action-buttons .btn:nth-child(2)": { text: "Öppna integritet" },
+
+        ".legal-action-buttons .btn:nth-child(3)": { text: "Öppna regler" },
+
+        "#agb-modal .section-title": { text: "Allmänna villkor" },
+
+        "#agb-modal .muted": {
+
+          text: "Villkoren kompletteras fullt ut och förbereds ordentligt före publicering. Tills dess fungerar detta område som synlig platshållare.",
+
+        },
+
+        "#privacy-modal .section-title": { text: "Integritetspolicy" },
+
+        "#privacy-modal .muted": {
+
+          text: "Integritetspolicyn fylls i här innan NordFit publiceras. Den ska vara tydligt skriven och ordentligt strukturerad.",
+
+        },
+
+        "#rules-modal .section-title": { text: "Regler" },
+
+        "#rules-modal .muted": {
+
+          text: "Reglerna finns också som separat sida. De skapar ramen för ren, lugn och respektfull träning hos NordFit.",
+
+        },
+
+      },
+
+      no: {
+
+        ".hero-title": { text: "Juridisk. Tydelig formulert." },
+
+        ".hero-subtitle": {
+
+          html: "Også på det juridiske området skal NordFit fremstå forståelig, transparent og ryddig — uten unødvendig kompleksitet og uten skjulte formuleringer.",
+
+        },
+
+        ".legal-grid article:first-child .section-title.large-title": { text: "Juridisk informasjon" },
+
+        ".legal-actions-card .section-title": { text: "Hurtigtilgang" },
+
+        ".legal-actions-card > .muted": {
+
+          text: "Vilkår, personvern og husregler kan åpnes direkte her — lette å finne og uten lang leting.",
+
+        },
+
+        ".legal-info-row:nth-of-type(1) .legal-label": { text: "Firmanavn" },
+
+        ".legal-info-row:nth-of-type(2) .legal-label": { text: "E-post" },
+
+        ".legal-info-row:nth-of-type(3) .legal-label": { text: "Instagram" },
+
+        ".legal-info-row:nth-of-type(4) .legal-label": { text: "Adresse" },
+
+        ".legal-info-row:nth-of-type(4) strong": { text: "Kommer snart" },
+
+        ".legal-missing-info .muted": {
+
+          text: "Manglende opplysninger legges til her så snart de er endelig fastsatt.",
+
+        },
+
+        ".legal-action-buttons .btn:nth-child(1)": { text: "Åpne vilkår" },
+
+        ".legal-action-buttons .btn:nth-child(2)": { text: "Åpne personvern" },
+
+        ".legal-action-buttons .btn:nth-child(3)": { text: "Åpne husregler" },
+
+        "#agb-modal .section-title": { text: "Vilkår og betingelser" },
+
+        "#agb-modal .muted": {
+
+          text: "Vilkårene blir fullført fullt ut og klargjort ordentlig før publisering. Inntil da fungerer dette området som synlig plassholder.",
+
+        },
+
+        "#privacy-modal .section-title": { text: "Personvernerklæring" },
+
+        "#privacy-modal .muted": {
+
+          text: "Personvernerklæringen fylles inn her før NordFit publiseres. Den skal være tydelig formulert og ordentlig bygget opp.",
+
+        },
+
+        "#rules-modal .section-title": { text: "Husregler" },
+
+        "#rules-modal .muted": {
+
+          text: "Husreglene finner du også som egen side. De skaper rammen for ren, rolig og respektfull trening hos NordFit.",
+
+        },
+
+      },
+
+    },
+
+  };
+
+});
