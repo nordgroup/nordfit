@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const langToggleLabel = document.querySelector(".lang-toggle-label");
 
   const modalElements = document.querySelectorAll(".modal");
-  const modalTriggers = document.querySelectorAll("[data-modal-target]");
   const revealElements = document.querySelectorAll(".reveal");
   const galleryRows = document.querySelectorAll(".gallery-row");
   const contactForms = document.querySelectorAll("form[data-nordfit-contact-form]");
@@ -25,6 +24,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const galleryInstances = [];
 
   const supportedLanguages = ["de", "en", "fr", "es", "it", "pl", "nl", "sv", "da", "no"];
+
+  function isMobileNav() {
+    return window.innerWidth <= 980;
+  }
+
+  function updateHeaderScrollState() {
+    if (!headerInner) return;
+    headerInner.classList.toggle("scrolled", window.scrollY > 10);
+  }
+
+  updateHeaderScrollState();
+  window.addEventListener("scroll", updateHeaderScrollState, { passive: true });
 
   function getSavedLanguage() {
     try {
@@ -60,13 +71,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function updateHeaderScrollState() {
-    if (!headerInner) return;
-    headerInner.classList.toggle("scrolled", window.scrollY > 10);
-  }
-
-  updateHeaderScrollState();
-  window.addEventListener("scroll", updateHeaderScrollState, { passive: true });
+  syncLanguageUi(getSavedLanguage());
 
   function closeBurgerMenu() {
     if (!burger || !siteNav) return;
@@ -91,8 +96,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function toggleBurgerMenu() {
     if (!burger || !siteNav) return;
 
-    const isOpen = siteNav.classList.contains("open");
-    if (isOpen) {
+    if (siteNav.classList.contains("open")) {
       closeBurgerMenu();
     } else {
       openBurgerMenu();
@@ -120,15 +124,12 @@ document.addEventListener("DOMContentLoaded", () => {
   function toggleLanguageMenu() {
     if (!langToggle || !langMenu) return;
 
-    const isOpen = langMenu.classList.contains("show");
-    if (isOpen) {
+    if (langMenu.classList.contains("show")) {
       closeLanguageMenu();
     } else {
       openLanguageMenu();
     }
   }
-
-  syncLanguageUi(getSavedLanguage());
 
   if (burger && siteNav) {
     burger.addEventListener("click", (event) => {
@@ -137,9 +138,15 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleBurgerMenu();
     });
 
+    burger.addEventListener("touchend", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      toggleBurgerMenu();
+    }, { passive: false });
+
     siteNav.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
-        if (window.innerWidth <= 980) {
+        if (isMobileNav()) {
           closeBurgerMenu();
         }
       });
@@ -179,18 +186,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  window.addEventListener("storage", (event) => {
-    if (event.key !== "nordfit-language") return;
-    syncLanguageUi(event.newValue || "de");
-  });
-
-  window.addEventListener("nordfit:language-ui-sync", (event) => {
-    const nextLanguage = event.detail?.language;
-    if (typeof nextLanguage === "string") {
-      syncLanguageUi(nextLanguage);
-    }
-  });
-
   document.addEventListener("click", (event) => {
     const target = event.target;
 
@@ -206,7 +201,7 @@ document.addEventListener("DOMContentLoaded", () => {
       closeLanguageMenu();
     }
 
-    if (!clickedInsideBurger && window.innerWidth <= 980) {
+    if (!clickedInsideBurger && isMobileNav()) {
       closeBurgerMenu();
     }
   });
@@ -220,7 +215,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 980) {
+    if (!isMobileNav()) {
       closeBurgerMenu();
     }
 
@@ -320,13 +315,14 @@ document.addEventListener("DOMContentLoaded", () => {
   window.openModal = openModalById;
   window.closeAllNordFitModals = closeAllModals;
 
-  modalTriggers.forEach((trigger) => {
-    trigger.addEventListener("click", (event) => {
-      event.preventDefault();
+  document.addEventListener("click", (event) => {
+    const trigger = event.target.closest("[data-modal-target]");
+    if (!trigger) return;
 
-      const modalId = trigger.getAttribute("data-modal-target");
-      openModalById(modalId);
-    });
+    event.preventDefault();
+
+    const modalId = trigger.getAttribute("data-modal-target");
+    openModalById(modalId);
   });
 
   modalElements.forEach((modal) => {
