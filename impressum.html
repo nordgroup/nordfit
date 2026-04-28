@@ -3,34 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>NordFit – Impressum</title>
   <meta
     name="description"
     content="Impressum, AGB und Datenschutz von NordFit."
   />
+
   <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
   <header class="site-header">
     <div class="container">
       <div class="site-header-inner glass">
         <a href="index.html" class="logo" aria-label="NordFit Startseite">
-          <img src="images/nordfit-logo.png" alt="NordFit-Logo" />
+          <img src="images/nordfit-logo.png" alt="NordFit Logo" />
         </a>
-
-        <button
-          id="burger"
-          class="burger"
-          type="button"
-          aria-label="Menü öffnen"
-          aria-expanded="false"
-        >
-          <span class="burger-lines" aria-hidden="true">
-            <span></span>
-            <span></span>
-            <span></span>
-          </span>
-        </button>
 
         <nav class="site-nav" aria-label="Hauptnavigation">
           <ul>
@@ -48,25 +37,41 @@
             id="lang-toggle"
             class="lang-toggle"
             type="button"
+            aria-label="Sprache auswählen"
             aria-expanded="false"
+            aria-controls="lang-menu"
           >
             <span class="lang-toggle-label">DE</span>
             <span class="lang-caret" aria-hidden="true">⌄</span>
           </button>
 
-          <div id="lang-menu" class="lang-menu">
-            <button class="lang-option" data-lang="de" type="button">Deutsch</button>
-            <button class="lang-option" data-lang="en" type="button">English</button>
-            <button class="lang-option" data-lang="fr" type="button">Français</button>
-            <button class="lang-option" data-lang="es" type="button">Español</button>
-            <button class="lang-option" data-lang="it" type="button">Italiano</button>
-            <button class="lang-option" data-lang="pl" type="button">Polski</button>
-            <button class="lang-option" data-lang="nl" type="button">Nederlands</button>
-            <button class="lang-option" data-lang="sv" type="button">Svenska</button>
-            <button class="lang-option" data-lang="da" type="button">Dansk</button>
-            <button class="lang-option" data-lang="no" type="button">Norsk</button>
+          <div id="lang-menu" class="lang-menu" role="menu" aria-label="Sprachauswahl">
+            <button class="lang-option" data-lang="de" type="button" role="menuitem">Deutsch</button>
+            <button class="lang-option" data-lang="en" type="button" role="menuitem">English</button>
+            <button class="lang-option" data-lang="fr" type="button" role="menuitem">Français</button>
+            <button class="lang-option" data-lang="es" type="button" role="menuitem">Español</button>
+            <button class="lang-option" data-lang="it" type="button" role="menuitem">Italiano</button>
+            <button class="lang-option" data-lang="pl" type="button" role="menuitem">Polski</button>
+            <button class="lang-option" data-lang="nl" type="button" role="menuitem">Nederlands</button>
+            <button class="lang-option" data-lang="sv" type="button" role="menuitem">Svenska</button>
+            <button class="lang-option" data-lang="da" type="button" role="menuitem">Dansk</button>
+            <button class="lang-option" data-lang="no" type="button" role="menuitem">Norsk</button>
           </div>
         </div>
+
+        <button
+          id="burger"
+          class="burger"
+          type="button"
+          aria-label="Menü öffnen"
+          aria-expanded="false"
+        >
+          <span class="burger-lines" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </button>
       </div>
     </div>
   </header>
@@ -86,25 +91,29 @@
 
     <section class="section section-tight">
       <div class="container">
-        <div class="glass reveal" style="padding: 1.35rem;">
+        <div class="glass legal-shell reveal">
           <div class="legal-grid">
             <article class="glass section-block">
               <h2 class="section-title large-title">Impressum</h2>
 
-              <div class="legal-info-list" style="margin-top: 1.2rem;">
+              <div class="legal-info-list clean-list-offset">
                 <div class="legal-info-row">
                   <span class="legal-label">Firmenname</span>
-                  <strong>NordFit / Nordgroup</strong>
+                  <strong>NordFit / NordGroup</strong>
                 </div>
 
                 <div class="legal-info-row">
                   <span class="legal-label">E-Mail</span>
-                  <strong><a href="mailto:nordgroup.business@gmail.com">nordgroup.business@gmail.com</a></strong>
+                  <strong>
+                    <a href="mailto:nordgroup.business@gmail.com">nordgroup.business@gmail.com</a>
+                  </strong>
                 </div>
 
                 <div class="legal-info-row">
                   <span class="legal-label">Instagram</span>
-                  <strong><a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">@nordfit.business</a></strong>
+                  <strong>
+                    <a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">@nordfit.business</a>
+                  </strong>
                 </div>
 
                 <div class="legal-info-row">
@@ -113,68 +122,161 @@
                 </div>
               </div>
 
-              <div class="legal-missing-info" style="margin-top: 1rem;">
+              <div class="legal-missing-info">
                 <p class="muted">
-                  Fehlende Angaben werden hier ergänzt, sobald sie final feststehen.
+                  Fehlende Angaben werden ergänzt, sobald sie final feststehen.
+                  Dieses Impressum ist aktuell ein Entwurf und noch keine vollständige Anbieterkennzeichnung.
                 </p>
               </div>
             </article>
 
             <article class="card legal-actions-card">
               <h2 class="section-title">Schnellzugriff</h2>
-              <p class="muted" style="margin-top: 0.9rem;">
+              <p class="muted copy-stack">
                 AGB, Datenschutz und Hausordnung lassen sich hier direkt öffnen —
                 klar erreichbar und ohne langes Suchen.
               </p>
 
               <div class="legal-action-buttons">
-                <button class="btn btn-primary" type="button" onclick="openModal('agb-modal')">
+                <button class="btn btn-primary" type="button" data-modal-target="agb-modal">
                   AGB öffnen
                 </button>
-                <button class="btn btn-secondary" type="button" onclick="openModal('privacy-modal')">
+
+                <button class="btn btn-secondary" type="button" data-modal-target="privacy-modal">
                   Datenschutz öffnen
                 </button>
-                <button class="btn btn-secondary" type="button" onclick="openModal('rules-modal')">
+
+                <button class="btn btn-secondary" type="button" data-modal-target="rules-modal">
                   Hausordnung öffnen
                 </button>
               </div>
             </article>
           </div>
         </div>
+
+        <div class="info-note reveal">
+          <p class="info-note-label">Wichtiger Hinweis</p>
+          <p class="info-note-text">
+            Diese rechtlichen Inhalte sind aktuell Konzepttexte. Vor einer echten Veröffentlichung
+            sollten Impressum, AGB und Datenschutz vollständig ergänzt und rechtlich geprüft werden.
+          </p>
+        </div>
       </div>
     </section>
   </main>
 
   <div class="modal" id="agb-modal" aria-hidden="true">
-    <div class="modal-box glass">
+    <div class="modal-box glass" role="dialog" aria-modal="true" aria-labelledby="agb-title">
       <button class="modal-close" aria-label="Modal schließen" type="button">×</button>
-      <h2 class="section-title">Allgemeine Geschäftsbedingungen</h2>
-      <p class="muted" style="margin-top: 1rem;">
-        Die AGB werden vor Veröffentlichung vollständig ergänzt und rechtlich sauber ausgearbeitet.
-        Bis dahin dient dieser Bereich als sichtbarer Platzhalter.
-      </p>
+
+      <h2 class="section-title" id="agb-title">Allgemeine Geschäftsbedingungen</h2>
+
+      <div class="modal-text-stack">
+        <p>
+          Diese AGB sind ein Entwurf für das NordFit-Konzept. Sie dienen aktuell als sichtbarer Platzhalter,
+          bis die finalen Vertragsbedingungen vollständig ausgearbeitet wurden.
+        </p>
+
+        <ol>
+          <li>
+            Mitgliedschaften, Tagespässe und der Studiozugang sollen grundsätzlich digital über die NordFit App verwaltet werden.
+          </li>
+          <li>
+            Die konkreten Laufzeiten, Preise, Kündigungsbedingungen und Zahlungswege werden vor dem offiziellen Start final festgelegt.
+          </li>
+          <li>
+            Der Zutritt zum Studio soll nur mit gültiger Mitgliedschaft oder gültigem Tagespass möglich sein.
+          </li>
+          <li>
+            Die persönliche Weitergabe von Zugangsdaten oder QR-Codes ist nicht vorgesehen und kann zum Ausschluss führen.
+          </li>
+          <li>
+            Für Schäden, Fehlverhalten, Missbrauch oder Verstöße gegen die Hausordnung können gesonderte Regelungen gelten.
+          </li>
+        </ol>
+
+        <p>
+          Vor Veröffentlichung müssen diese AGB rechtlich sauber formuliert, vollständig ergänzt
+          und an die tatsächliche Unternehmensform sowie die finalen Abläufe angepasst werden.
+        </p>
+      </div>
     </div>
   </div>
 
   <div class="modal" id="privacy-modal" aria-hidden="true">
-    <div class="modal-box glass">
+    <div class="modal-box glass" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
       <button class="modal-close" aria-label="Modal schließen" type="button">×</button>
-      <h2 class="section-title">Datenschutzerklärung</h2>
-      <p class="muted" style="margin-top: 1rem;">
-        Die Datenschutzerklärung wird hier vollständig ergänzt, bevor NordFit veröffentlicht wird.
-        Sie soll verständlich formuliert und rechtlich sauber aufgebaut sein.
-      </p>
+
+      <h2 class="section-title" id="privacy-title">Datenschutzerklärung</h2>
+
+      <div class="modal-text-stack">
+        <p>
+          Diese Datenschutzerklärung ist ein Entwurf. Sie zeigt, welche Bereiche später sauber erklärt werden müssen,
+          bevor NordFit öffentlich genutzt wird.
+        </p>
+
+        <ol>
+          <li>
+            Beim Besuch der Website können technische Daten verarbeitet werden, zum Beispiel Browserinformationen,
+            aufgerufene Seiten oder technische Zugriffsdaten.
+          </li>
+          <li>
+            Bei Kontaktaufnahme per E-Mail oder Kontaktformular können Name, E-Mail-Adresse, Telefonnummer,
+            Thema und Nachricht verarbeitet werden.
+          </li>
+          <li>
+            Für eine spätere App können weitere Daten relevant werden, zum Beispiel Mitgliedschaftsdaten,
+            Zahlungsinformationen, QR-Code-Zugang und Verwaltungsdaten.
+          </li>
+          <li>
+            Daten sollen nur verarbeitet werden, soweit sie für Kontakt, Verwaltung, Sicherheit,
+            Vertragsabwicklung oder den Studiozugang erforderlich sind.
+          </li>
+          <li>
+            Externe Dienste wie Karten, Instagram-Links oder spätere App-/Zahlungsanbieter müssen vor Veröffentlichung
+            vollständig und transparent genannt werden.
+          </li>
+        </ol>
+
+        <p>
+          Diese Erklärung ersetzt keine finale Datenschutzerklärung. Sobald NordFit konkret veröffentlicht wird,
+          müssen die tatsächlichen Dienste, Verantwortlichen, Rechtsgrundlagen, Speicherdauern und Betroffenenrechte
+          vollständig ergänzt werden.
+        </p>
+      </div>
     </div>
   </div>
 
   <div class="modal" id="rules-modal" aria-hidden="true">
-    <div class="modal-box glass">
+    <div class="modal-box glass" role="dialog" aria-modal="true" aria-labelledby="rules-title">
       <button class="modal-close" aria-label="Modal schließen" type="button">×</button>
-      <h2 class="section-title">Hausordnung</h2>
-      <p class="muted" style="margin-top: 1rem;">
-        Die Hausordnung findest du zusätzlich als eigene Seite.
-        Sie schafft den Rahmen für ein sauberes, ruhiges und respektvolles Training bei NordFit.
-      </p>
+
+      <h2 class="section-title" id="rules-title">Hausordnung</h2>
+
+      <div class="modal-text-stack">
+        <p>
+          Die Hausordnung findest du zusätzlich als eigene Seite. Sie schafft den Rahmen für ein sauberes,
+          ruhiges und respektvolles Training bei NordFit.
+        </p>
+
+        <ul>
+          <li>Zutritt nur mit gültiger Mitgliedschaft oder gültigem Tagespass.</li>
+          <li>Zugang ausschließlich über die NordFit App.</li>
+          <li>Keine Weitergabe persönlicher QR-Codes.</li>
+          <li>Geeignete Trainingskleidung und saubere Sportschuhe.</li>
+          <li>Handtuchpflicht auf Geräten, Bänken und Matten.</li>
+          <li>Geräte, Hanteln und Zubehör ordentlich zurücklassen.</li>
+          <li>Respektvoller Umgang mit anderen Mitgliedern.</li>
+          <li>Keine Belästigung, Provokation oder aggressives Verhalten.</li>
+          <li>Ruhiges, sauberes und verantwortungsvolles Training.</li>
+        </ul>
+
+        <p>
+          Die vollständige Hausordnung steht auf der separaten Hausordnungsseite.
+        </p>
+
+        <a href="hausordnung.html" class="btn btn-primary">Zur Hausordnung</a>
+      </div>
     </div>
   </div>
 
@@ -182,7 +284,8 @@
     <div class="container">
       <div class="footer-shell">
         <div class="flex footer-row">
-          <p class="muted">© 2030 NordFit/NordGroup. Do not distribute!</p>
+          <p class="muted">© 2030 NordFit/NordGroup. Interner Website-Entwurf.</p>
+
           <div class="flex footer-links">
             <a href="impressum.html">Impressum / AGB / Datenschutz</a>
             <a href="hausordnung.html">Hausordnung</a>
@@ -194,7 +297,6 @@
     </div>
   </footer>
 
-  <script src="js/translations.js"></script>
   <script src="js/main.js"></script>
 </body>
 </html>
