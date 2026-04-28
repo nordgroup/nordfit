@@ -21,11 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let lastFocusedElement = null;
   const galleryInstances = [];
-  let resizeTimeout = null;
 
-  /* =========================
-     Header scroll state
-     ========================= */
   const updateHeaderScrollState = () => {
     if (!headerInner) return;
     headerInner.classList.toggle("scrolled", window.scrollY > 10);
@@ -34,30 +30,24 @@ document.addEventListener("DOMContentLoaded", () => {
   updateHeaderScrollState();
   window.addEventListener("scroll", updateHeaderScrollState, { passive: true });
 
-  /* =========================
-     Burger menu
-     ========================= */
-  const closeBurgerMenu = () => {
+  function closeBurgerMenu() {
     if (!burger || !siteNav) return;
-
     burger.classList.remove("is-active");
     burger.setAttribute("aria-expanded", "false");
     siteNav.classList.remove("open");
     body.classList.remove("nav-open");
-  };
+  }
 
-  const openBurgerMenu = () => {
+  function openBurgerMenu() {
     if (!burger || !siteNav) return;
-
     burger.classList.add("is-active");
     burger.setAttribute("aria-expanded", "true");
     siteNav.classList.add("open");
     body.classList.add("nav-open");
-  };
+  }
 
-  const toggleBurgerMenu = () => {
+  function toggleBurgerMenu() {
     if (!burger || !siteNav) return;
-
     const isOpen = siteNav.classList.contains("open");
     if (isOpen) {
       closeBurgerMenu();
@@ -65,45 +55,49 @@ document.addEventListener("DOMContentLoaded", () => {
       closeLanguageMenu();
       openBurgerMenu();
     }
-  };
+  }
 
-  if (burger && siteNav) {
-    burger.addEventListener("click", (event) => {
-      event.stopPropagation();
-      toggleBurgerMenu();
-    });
-
-    siteNav.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        if (window.innerWidth <= 768) {
-          closeBurgerMenu();
-        }
-      });
+  function markActiveLanguage(langCode) {
+    langOptions.forEach((option) => {
+      const optionLang = (option.dataset.lang || "").trim().toLowerCase();
+      const isActive = optionLang === langCode;
+      option.classList.toggle("is-selected", isActive);
+      option.classList.toggle("is-active", isActive);
+      option.setAttribute("aria-pressed", isActive ? "true" : "false");
     });
   }
 
-  /* =========================
-     Language dropdown
-     ========================= */
+  function closeLanguageMenu() {
+    if (!langToggle || !langMenu) return;
+    langToggle.classList.remove("is-open");
+    langToggle.setAttribute("aria-expanded", "false");
+    langMenu.classList.remove("show");
+  }
+
+  function openLanguageMenu() {
+    if (!langToggle || !langMenu) return;
+    langToggle.classList.add("is-open");
+    langToggle.setAttribute("aria-expanded", "true");
+    langMenu.classList.add("show");
+  }
+
+  function toggleLanguageMenu() {
+    if (!langToggle || !langMenu) return;
+    const isOpen = langMenu.classList.contains("show");
+    if (isOpen) {
+      closeLanguageMenu();
+    } else {
+      closeBurgerMenu();
+      openLanguageMenu();
+    }
+  }
+
   function getSavedLanguage() {
     try {
       return (localStorage.getItem("nordfit-language") || "de").toLowerCase();
     } catch {
       return "de";
     }
-  }
-
-  function markActiveLanguage(langCode) {
-    if (!langOptions.length) return;
-
-    langOptions.forEach((option) => {
-      const optionLang = option.dataset.lang?.trim().toLowerCase();
-      const isActive = optionLang === langCode;
-
-      option.classList.toggle("is-selected", isActive);
-      option.classList.toggle("is-active", isActive);
-      option.setAttribute("aria-pressed", isActive ? "true" : "false");
-    });
   }
 
   function syncLanguageUi(langCode) {
@@ -116,38 +110,28 @@ document.addEventListener("DOMContentLoaded", () => {
     markActiveLanguage(safeLang);
   }
 
-  function closeLanguageMenu() {
-    if (!langToggle || !langMenu) return;
-
-    langToggle.classList.remove("is-open");
-    langToggle.setAttribute("aria-expanded", "false");
-    langMenu.classList.remove("show");
-  }
-
-  function openLanguageMenu() {
-    if (!langToggle || !langMenu) return;
-
-    langToggle.classList.add("is-open");
-    langToggle.setAttribute("aria-expanded", "true");
-    langMenu.classList.add("show");
-  }
-
-  function toggleLanguageMenu() {
-    if (!langToggle || !langMenu) return;
-
-    const isOpen = langMenu.classList.contains("show");
-    if (isOpen) {
-      closeLanguageMenu();
-    } else {
-      closeBurgerMenu();
-      openLanguageMenu();
-    }
-  }
-
   syncLanguageUi(getSavedLanguage());
+
+  if (burger && siteNav) {
+    burger.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      toggleBurgerMenu();
+    });
+
+    const navLinks = siteNav.querySelectorAll("a");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (window.innerWidth <= 768) {
+          closeBurgerMenu();
+        }
+      });
+    });
+  }
 
   if (langToggle && langMenu) {
     langToggle.addEventListener("click", (event) => {
+      event.preventDefault();
       event.stopPropagation();
       toggleLanguageMenu();
     });
@@ -159,8 +143,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (langOptions.length) {
     langOptions.forEach((option) => {
-      option.addEventListener("click", () => {
-        const lang = option.dataset.lang?.trim().toLowerCase() || "de";
+      option.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+
+        const lang = (option.dataset.lang || "").trim().toLowerCase();
+        if (!lang) return;
 
         try {
           localStorage.setItem("nordfit-language", lang);
@@ -192,17 +180,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* =========================
-     Global outside click close
-     ========================= */
   document.addEventListener("click", (event) => {
     const target = event.target;
 
     const clickedInsideLang =
-      langToggle?.contains(target) || langMenu?.contains(target);
+      (langToggle && langToggle.contains(target)) ||
+      (langMenu && langMenu.contains(target));
 
     const clickedInsideBurger =
-      burger?.contains(target) || siteNav?.contains(target);
+      (burger && burger.contains(target)) ||
+      (siteNav && siteNav.contains(target));
 
     if (!clickedInsideLang) {
       closeLanguageMenu();
@@ -213,9 +200,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* =========================
-     Escape key
-     ========================= */
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
       closeLanguageMenu();
@@ -224,28 +208,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* =========================
-     Resize handling
-     ========================= */
   window.addEventListener("resize", () => {
     if (window.innerWidth > 768) {
       closeBurgerMenu();
     }
 
-    if (resizeTimeout) {
-      clearTimeout(resizeTimeout);
-    }
-
-    resizeTimeout = setTimeout(() => {
-      galleryInstances.forEach((instance) => {
-        instance.update(true);
-      });
-    }, 90);
+    galleryInstances.forEach((instance) => instance.update());
   });
 
-  /* =========================
-     Reveal on scroll
-     ========================= */
   if (revealElements.length) {
     const revealObserver = new IntersectionObserver(
       (entries, observer) => {
@@ -264,9 +234,6 @@ document.addEventListener("DOMContentLoaded", () => {
     revealElements.forEach((element) => revealObserver.observe(element));
   }
 
-  /* =========================
-     Modal helpers
-     ========================= */
   function openModalById(modalId) {
     const modal = document.getElementById(modalId);
     if (!modal) return;
@@ -325,9 +292,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* =========================
-     Basic focus trap for modals
-     ========================= */
   document.addEventListener("keydown", (event) => {
     if (event.key !== "Tab") return;
 
@@ -368,9 +332,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  /* =========================
-     Gallery helpers
-     ========================= */
   function clamp(value, min, max) {
     return Math.min(Math.max(value, min), max);
   }
@@ -425,10 +386,9 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const updateButtons = () => {
-      const maxScroll = getMaxScroll();
       const currentIndex = getCurrentIndex();
-      const atStart = row.scrollLeft <= 4 || currentIndex <= 0;
-      const atEnd = row.scrollLeft >= maxScroll - 4 || currentIndex >= cards.length - 1;
+      const atStart = currentIndex <= 0;
+      const atEnd = currentIndex >= cards.length - 1;
 
       prevButton.disabled = atStart;
       nextButton.disabled = atEnd;
@@ -437,12 +397,7 @@ document.addEventListener("DOMContentLoaded", () => {
       nextButton.classList.toggle("is-disabled", atEnd);
     };
 
-    const update = (snapAfterResize = false) => {
-      if (snapAfterResize) {
-        const currentIndex = getCurrentIndex();
-        scrollToIndex(currentIndex, "auto");
-      }
-
+    const update = () => {
       updateButtons();
     };
 
@@ -459,7 +414,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "scroll",
       () => {
         if (rafId) cancelAnimationFrame(rafId);
-        rafId = requestAnimationFrame(updateButtons);
+        rafId = requestAnimationFrame(update);
       },
       { passive: true }
     );
@@ -495,11 +450,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const currentIndex = getCurrentIndex();
       scrollToIndex(currentIndex, "smooth");
-
-      setTimeout(() => {
-        updateButtons();
-        dragMoved = false;
-      }, 180);
+      update();
     };
 
     row.addEventListener("pointerup", endDrag);
@@ -513,11 +464,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const currentIndex = getCurrentIndex();
       scrollToIndex(currentIndex, "smooth");
-
-      setTimeout(() => {
-        updateButtons();
-        dragMoved = false;
-      }, 180);
+      update();
     });
 
     cards.forEach((card) => {
@@ -528,6 +475,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (dragMoved) {
           event.preventDefault();
           event.stopPropagation();
+          dragMoved = false;
         }
       });
     });
