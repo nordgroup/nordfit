@@ -21,18 +21,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let lastFocusedElement = null;
   const galleryInstances = [];
+  let resizeTimeout = null;
 
   /* =========================
      Header scroll state
      ========================= */
   const updateHeaderScrollState = () => {
     if (!headerInner) return;
-
-    if (window.scrollY > 10) {
-      headerInner.classList.add("scrolled");
-    } else {
-      headerInner.classList.remove("scrolled");
-    }
+    headerInner.classList.toggle("scrolled", window.scrollY > 10);
   };
 
   updateHeaderScrollState();
@@ -77,8 +73,7 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleBurgerMenu();
     });
 
-    const navLinks = siteNav.querySelectorAll("a");
-    navLinks.forEach((link) => {
+    siteNav.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         if (window.innerWidth <= 768) {
           closeBurgerMenu();
@@ -90,6 +85,14 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =========================
      Language dropdown
      ========================= */
+  function getSavedLanguage() {
+    try {
+      return (localStorage.getItem("nordfit-language") || "de").toLowerCase();
+    } catch {
+      return "de";
+    }
+  }
+
   function markActiveLanguage(langCode) {
     if (!langOptions.length) return;
 
@@ -101,6 +104,16 @@ document.addEventListener("DOMContentLoaded", () => {
       option.classList.toggle("is-active", isActive);
       option.setAttribute("aria-pressed", isActive ? "true" : "false");
     });
+  }
+
+  function syncLanguageUi(langCode) {
+    const safeLang = (langCode || "de").toLowerCase();
+
+    if (langToggleLabel) {
+      langToggleLabel.textContent = safeLang.toUpperCase();
+    }
+
+    markActiveLanguage(safeLang);
   }
 
   function closeLanguageMenu() {
@@ -129,24 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
       closeBurgerMenu();
       openLanguageMenu();
     }
-  }
-
-  function getSavedLanguage() {
-    try {
-      return (localStorage.getItem("nordfit-language") || "de").toLowerCase();
-    } catch {
-      return "de";
-    }
-  }
-
-  function syncLanguageUi(langCode) {
-    const safeLang = (langCode || "de").toUpperCase();
-
-    if (langToggleLabel) {
-      langToggleLabel.textContent = safeLang;
-    }
-
-    markActiveLanguage((langCode || "de").toLowerCase());
   }
 
   syncLanguageUi(getSavedLanguage());
@@ -237,9 +232,15 @@ document.addEventListener("DOMContentLoaded", () => {
       closeBurgerMenu();
     }
 
-    galleryInstances.forEach((instance) => {
-      instance.update();
-    });
+    if (resizeTimeout) {
+      clearTimeout(resizeTimeout);
+    }
+
+    resizeTimeout = setTimeout(() => {
+      galleryInstances.forEach((instance) => {
+        instance.update(true);
+      });
+    }, 90);
   });
 
   /* =========================
@@ -345,7 +346,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const focusableElements = Array.from(
       openModal.querySelectorAll(focusableSelectors.join(","))
     ).filter((el) => {
-      return !(el instanceof HTMLElement) ? false : !el.hasAttribute("disabled");
+      return el instanceof HTMLElement && !el.hasAttribute("disabled");
     });
 
     if (!focusableElements.length) return;
@@ -424,9 +425,10 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     const updateButtons = () => {
+      const maxScroll = getMaxScroll();
       const currentIndex = getCurrentIndex();
-      const atStart = currentIndex <= 0;
-      const atEnd = currentIndex >= cards.length - 1;
+      const atStart = row.scrollLeft <= 4 || currentIndex <= 0;
+      const atEnd = row.scrollLeft >= maxScroll - 4 || currentIndex >= cards.length - 1;
 
       prevButton.disabled = atStart;
       nextButton.disabled = atEnd;
@@ -435,7 +437,12 @@ document.addEventListener("DOMContentLoaded", () => {
       nextButton.classList.toggle("is-disabled", atEnd);
     };
 
-    const update = () => {
+    const update = (snapAfterResize = false) => {
+      if (snapAfterResize) {
+        const currentIndex = getCurrentIndex();
+        scrollToIndex(currentIndex, "auto");
+      }
+
       updateButtons();
     };
 
@@ -452,7 +459,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "scroll",
       () => {
         if (rafId) cancelAnimationFrame(rafId);
-        rafId = requestAnimationFrame(update);
+        rafId = requestAnimationFrame(updateButtons);
       },
       { passive: true }
     );
@@ -488,7 +495,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const currentIndex = getCurrentIndex();
       scrollToIndex(currentIndex, "smooth");
-      update();
+
+      setTimeout(() => {
+        updateButtons();
+        dragMoved = false;
+      }, 180);
     };
 
     row.addEventListener("pointerup", endDrag);
@@ -502,7 +513,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const currentIndex = getCurrentIndex();
       scrollToIndex(currentIndex, "smooth");
-      update();
+
+      setTimeout(() => {
+        updateButtons();
+        dragMoved = false;
+      }, 180);
     });
 
     cards.forEach((card) => {
@@ -513,7 +528,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (dragMoved) {
           event.preventDefault();
           event.stopPropagation();
-          dragMoved = false;
         }
       });
     });
