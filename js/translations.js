@@ -1512,8 +1512,7 @@ document.addEventListener("DOMContentLoaded", () => {
           text: "Det är därför appen inte är en valfri detalj, utan en fast del av hela NordFit-konceptet.",
         },
         ".app-need-item:nth-of-type(1) .app-need-title": { text: "Inträde med QR-kod" },
-        ".app-need-item:nth-of-type(1) .muted": { text: "Din tillgång finns direkt i appen — snabbt, tydlich und utan omvägar." },
-
+        ".app-need-item:nth-of-type(1) .muted": { text: "Din tillgång finns direkt i appen — snabbt, tydligt och utan omvägar." },
         ".app-need-item:nth-of-type(2) .app-need-title": { text: "Slutför medlemskap digitalt" },
 
         ".app-need-item:nth-of-type(2) .muted": { text: "Boka, se och hantera allt på ett ställe." },
