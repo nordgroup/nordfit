@@ -2,11 +2,11 @@
    NordFit translations.js
    Stable translation system
    Languages:
-   de, en, fr, es, it, pl, nl, sv, da, no
+   de, en, fr, es, it, pl, nl, da, sv, no
    ========================= */
 
 document.addEventListener("DOMContentLoaded", () => {
-  const supportedLanguages = ["de", "en", "fr", "es", "it", "pl", "nl", "sv", "da", "no"];
+  const supportedLanguages = ["de", "en", "fr", "es", "it", "pl", "nl", "da", "sv", "no"];
   const defaultLanguage = "de";
 
   const pageKey = getPageKey();
@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateLanguageMenuLabels(lang);
     updateCommonNav(lang);
     updateCommonFooter(lang);
-    updateFooterCopyright(lang);
+    updateCommonStaticText(lang);
 
     const pageTranslations = translations[pageKey];
     if (!pageTranslations) return;
@@ -144,11 +144,13 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function updateFooterCopyright(lang) {
-    const footerText = footerCopyright[lang] || footerCopyright[defaultLanguage];
-    const footerCopyrightElement = document.querySelector(".footer-row > p.muted");
-    if (!footerCopyrightElement) return;
-    footerCopyrightElement.textContent = footerText;
+  function updateCommonStaticText(lang) {
+    const copyrightText =
+      copyrightLabels[lang] || copyrightLabels[defaultLanguage];
+
+    document.querySelectorAll(".footer-row > .muted").forEach((element) => {
+      element.textContent = copyrightText;
+    });
   }
 
   function updateDocumentLanguage(lang) {
@@ -170,15 +172,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const navLabels = {
     de: ["Startseite", "Tarife", "Standorte", "App", "Hausordnung", "Kontakt"],
-    en: ["Home", "Plans", "Locations", "App", "House Rules", "Contact"],
-    fr: ["Accueil", "Tarifs", "Sites", "App", "Règlement", "Contact"],
-    es: ["Inicio", "Tarifas", "Ubicaciones", "App", "Normas", "Contacto"],
-    it: ["Home", "Tariffe", "Sedi", "App", "Regolamento", "Contatto"],
-    pl: ["Start", "Cennik", "Lokalizacje", "Aplikacja", "Regulamin", "Kontakt"],
-    nl: ["Home", "Tarieven", "Locaties", "App", "Huisregels", "Contact"],
-    sv: ["Hem", "Priser", "Platser", "App", "Regler", "Kontakt"],
-    da: ["Hjem", "Priser", "Lokationer", "App", "Husregler", "Kontakt"],
-    no: ["Hjem", "Priser", "Lokasjoner", "App", "Husregler", "Kontakt"],
+    en: ["Home", "Memberships", "Locations", "App", "House Rules", "Contact"],
+    fr: ["Accueil", "Abonnements", "Sites", "App", "Règlement", "Contact"],
+    es: ["Inicio", "Membresías", "Ubicaciones", "App", "Normas", "Contacto"],
+    it: ["Home", "Abbonamenti", "Sedi", "App", "Regolamento", "Contatto"],
+    pl: ["Start", "Karnety", "Lokalizacje", "Aplikacja", "Regulamin", "Kontakt"],
+    nl: ["Home", "Lidmaatschappen", "Locaties", "App", "Huisregels", "Contact"],
+    da: ["Hjem", "Medlemskaber", "Lokationer", "App", "Husregler", "Kontakt"],
+    sv: ["Hem", "Medlemskap", "Platser", "App", "Regler", "Kontakt"],
+    no: ["Hjem", "Medlemskap", "Lokasjoner", "App", "Husregler", "Kontakt"],
   };
 
   const footerLabels = {
@@ -187,37 +189,37 @@ document.addEventListener("DOMContentLoaded", () => {
     fr: ["Mentions / CGV / Confidentialité", "Règlement", "Contact", "Instagram"],
     es: ["Legal / Términos / Privacidad", "Normas", "Contacto", "Instagram"],
     it: ["Note legali / Termini / Privacy", "Regolamento", "Contatto", "Instagram"],
-    pl: ["Informacje prawne / Regulamin / Prywatność", "Regulamin", "Kontakt", "Instagram"],
+    pl: ["Dane prawne / Regulamin / Prywatność", "Regulamin", "Kontakt", "Instagram"],
     nl: ["Juridisch / Voorwaarden / Privacy", "Huisregels", "Contact", "Instagram"],
-    sv: ["Juridik / Villkor / Integritet", "Regler", "Kontakt", "Instagram"],
     da: ["Jura / Vilkår / Privatliv", "Husregler", "Kontakt", "Instagram"],
+    sv: ["Juridik / Villkor / Integritet", "Regler", "Kontakt", "Instagram"],
     no: ["Juridisk / Vilkår / Personvern", "Husregler", "Kontakt", "Instagram"],
   };
 
-  const footerCopyright = {
-    de: "© 2030 NordFit / NordGroup. Do not distribute!",
-    en: "© 2030 NordFit / NordGroup. Do not distribute!",
-    fr: "© 2030 NordFit / NordGroup. Do not distribute!",
-    es: "© 2030 NordFit / NordGroup. Do not distribute!",
-    it: "© 2030 NordFit / NordGroup. Do not distribute!",
-    pl: "© 2030 NordFit / NordGroup. Do not distribute!",
-    nl: "© 2030 NordFit / NordGroup. Do not distribute!",
-    sv: "© 2030 NordFit / NordGroup. Do not distribute!",
-    da: "© 2030 NordFit / NordGroup. Do not distribute!",
-    no: "© 2030 NordFit / NordGroup. Do not distribute!",
+  const copyrightLabels = {
+    de: "© 2030 NordFit/NordGroup. Do not distribute!",
+    en: "© 2030 NordFit/NordGroup. Do not distribute!",
+    fr: "© 2030 NordFit/NordGroup. Ne pas distribuer !",
+    es: "© 2030 NordFit/NordGroup. No distribuir.",
+    it: "© 2030 NordFit/NordGroup. Non distribuire.",
+    pl: "© 2030 NordFit/NordGroup. Nie rozpowszechniać.",
+    nl: "© 2030 NordFit/NordGroup. Niet verspreiden.",
+    da: "© 2030 NordFit/NordGroup. Må ikke distribueres.",
+    sv: "© 2030 NordFit/NordGroup. Får inte distribueras.",
+    no: "© 2030 NordFit/NordGroup. Må ikke distribueres.",
   };
 
   const languageLabels = {
-    de: ["Deutsch", "English", "Français", "Español", "Italiano", "Polski", "Nederlands", "Svenska", "Dansk", "Norsk"],
-    en: ["German", "English", "French", "Spanish", "Italian", "Polish", "Dutch", "Swedish", "Danish", "Norwegian"],
-    fr: ["Allemand", "Anglais", "Français", "Espagnol", "Italien", "Polonais", "Néerlandais", "Suédois", "Danois", "Norvégien"],
-    es: ["Alemán", "Inglés", "Francés", "Español", "Italiano", "Polaco", "Neerlandés", "Sueco", "Danés", "Noruego"],
-    it: ["Tedesco", "Inglese", "Francese", "Spagnolo", "Italiano", "Polacco", "Olandese", "Svedese", "Danese", "Norvegese"],
-    pl: ["Niemiecki", "Angielski", "Francuski", "Hiszpański", "Włoski", "Polski", "Niderlandzki", "Szwedzki", "Duński", "Norweski"],
-    nl: ["Duits", "Engels", "Frans", "Spaans", "Italiaans", "Pools", "Nederlands", "Zweeds", "Deens", "Noors"],
-    sv: ["Tyska", "Engelska", "Franska", "Spanska", "Italienska", "Polska", "Nederländska", "Svenska", "Danska", "Norska"],
-    da: ["Tysk", "Engelsk", "Fransk", "Spansk", "Italiensk", "Polsk", "Nederlandsk", "Svensk", "Dansk", "Norsk"],
-    no: ["Tysk", "Engelsk", "Fransk", "Spansk", "Italiensk", "Polsk", "Nederlandsk", "Svensk", "Dansk", "Norsk"],
+    de: ["Deutsch", "English", "Français", "Español", "Italiano", "Polski", "Nederlands", "Dansk", "Svenska", "Norsk"],
+    en: ["German", "English", "French", "Spanish", "Italian", "Polish", "Dutch", "Danish", "Swedish", "Norwegian"],
+    fr: ["Allemand", "Anglais", "Français", "Espagnol", "Italien", "Polonais", "Néerlandais", "Danois", "Suédois", "Norvégien"],
+    es: ["Alemán", "Inglés", "Francés", "Español", "Italiano", "Polaco", "Neerlandés", "Danés", "Sueco", "Noruego"],
+    it: ["Tedesco", "Inglese", "Francese", "Spagnolo", "Italiano", "Polacco", "Olandese", "Danese", "Svedese", "Norvegese"],
+    pl: ["Niemiecki", "Angielski", "Francuski", "Hiszpański", "Włoski", "Polski", "Niderlandzki", "Duński", "Szwedzki", "Norweski"],
+    nl: ["Duits", "Engels", "Frans", "Spaans", "Italiaans", "Pools", "Nederlands", "Deens", "Zweeds", "Noors"],
+    da: ["Tysk", "Engelsk", "Fransk", "Spansk", "Italiensk", "Polsk", "Nederlandsk", "Dansk", "Svensk", "Norsk"],
+    sv: ["Tyska", "Engelska", "Franska", "Spanska", "Italienska", "Polska", "Nederländska", "Danska", "Svenska", "Norska"],
+    no: ["Tysk", "Engelsk", "Fransk", "Spansk", "Italiensk", "Polsk", "Nederlandsk", "Dansk", "Svensk", "Norsk"],
   };
 
   const titles = {
@@ -232,7 +234,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     en: {
       index: "NordFit – Home",
-      mitgliedschaften: "NordFit – Plans",
+      mitgliedschaften: "NordFit – Memberships",
       standorte: "NordFit – Locations",
       app: "NordFit – App",
       hausordnung: "NordFit – House Rules",
@@ -241,7 +243,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     fr: {
       index: "NordFit – Accueil",
-      mitgliedschaften: "NordFit – Tarifs",
+      mitgliedschaften: "NordFit – Abonnements",
       standorte: "NordFit – Sites",
       app: "NordFit – App",
       hausordnung: "NordFit – Règlement",
@@ -250,7 +252,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     es: {
       index: "NordFit – Inicio",
-      mitgliedschaften: "NordFit – Tarifas",
+      mitgliedschaften: "NordFit – Membresías",
       standorte: "NordFit – Ubicaciones",
       app: "NordFit – App",
       hausordnung: "NordFit – Normas",
@@ -259,7 +261,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     it: {
       index: "NordFit – Home",
-      mitgliedschaften: "NordFit – Tariffe",
+      mitgliedschaften: "NordFit – Abbonamenti",
       standorte: "NordFit – Sedi",
       app: "NordFit – App",
       hausordnung: "NordFit – Regolamento",
@@ -268,7 +270,7 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     pl: {
       index: "NordFit – Strona główna",
-      mitgliedschaften: "NordFit – Cennik",
+      mitgliedschaften: "NordFit – Karnety",
       standorte: "NordFit – Lokalizacje",
       app: "NordFit – Aplikacja",
       hausordnung: "NordFit – Regulamin",
@@ -277,34 +279,34 @@ document.addEventListener("DOMContentLoaded", () => {
     },
     nl: {
       index: "NordFit – Home",
-      mitgliedschaften: "NordFit – Tarieven",
+      mitgliedschaften: "NordFit – Lidmaatschappen",
       standorte: "NordFit – Locaties",
       app: "NordFit – App",
       hausordnung: "NordFit – Huisregels",
       kontakt: "NordFit – Contact",
       impressum: "NordFit – Juridisch",
     },
-    sv: {
-      index: "NordFit – Hem",
-      mitgliedschaften: "NordFit – Priser",
-      standorte: "NordFit – Platser",
-      app: "NordFit – App",
-      hausordnung: "NordFit – Regler",
-      kontakt: "NordFit – Kontakt",
-      impressum: "NordFit – Juridik",
-    },
     da: {
       index: "NordFit – Hjem",
-      mitgliedschaften: "NordFit – Priser",
+      mitgliedschaften: "NordFit – Medlemskaber",
       standorte: "NordFit – Lokationer",
       app: "NordFit – App",
       hausordnung: "NordFit – Husregler",
       kontakt: "NordFit – Kontakt",
       impressum: "NordFit – Jura",
     },
+    sv: {
+      index: "NordFit – Hem",
+      mitgliedschaften: "NordFit – Medlemskap",
+      standorte: "NordFit – Platser",
+      app: "NordFit – App",
+      hausordnung: "NordFit – Regler",
+      kontakt: "NordFit – Kontakt",
+      impressum: "NordFit – Juridik",
+    },
     no: {
       index: "NordFit – Hjem",
-      mitgliedschaften: "NordFit – Priser",
+      mitgliedschaften: "NordFit – Medlemskap",
       standorte: "NordFit – Lokasjoner",
       app: "NordFit – App",
       hausordnung: "NordFit – Husregler",
@@ -324,82 +326,82 @@ document.addEventListener("DOMContentLoaded", () => {
       impressum: "Impressum, AGB und Datenschutz von NordFit.",
     },
     en: {
-      index: "NordFit – a modern gym with a clear atmosphere, premium training areas and a calm premium feel.",
-      mitgliedschaften: "NordFit plans and day pass – clearly structured, fair and fully managed through the app.",
-      standorte: "NordFit locations – clearly designed, easy to reach and built to feel right from the first impression.",
+      index: "NordFit – a modern gym with a clear atmosphere, premium training areas and a calm high-end design.",
+      mitgliedschaften: "NordFit memberships and day pass – clear structure, fair wording and full digital handling in the app.",
+      standorte: "NordFit locations – clearly planned, easy to reach and designed to feel right from the first impression.",
       app: "The NordFit app is your access to membership, day pass and QR code entry – clear, direct and fully digital.",
-      hausordnung: "NordFit house rules – clear standards for calm, clean and respectful training.",
+      hausordnung: "The NordFit house rules – clear standards for calm, clean and respectful training.",
       kontakt: "Contact NordFit – email, Instagram and contact form.",
       impressum: "Legal notice, terms and privacy of NordFit.",
     },
     fr: {
-      index: "NordFit – une salle moderne avec une atmosphère claire, des zones premium et un design calme.",
-      mitgliedschaften: "Tarifs NordFit et pass journalier – clairs, équitables et gérés directement via l’app.",
-      standorte: "Sites NordFit – bien pensés, faciles d’accès et conçus pour convaincre dès le premier regard.",
-      app: "L’app NordFit donne accès à l’abonnement, au pass journalier et à l’entrée par QR code.",
+      index: "NordFit – une salle de sport moderne avec une ambiance claire, des zones premium et un design haut de gamme apaisant.",
+      mitgliedschaften: "Abonnements NordFit et pass journalier – structure claire, formulation équitable et gestion numérique via l’application.",
+      standorte: "Sites NordFit – clairement pensés, faciles d’accès et conçus pour convaincre dès la première impression.",
+      app: "L’application NordFit donne accès à l’abonnement, au pass journalier et à l’entrée QR code – claire, directe et entièrement numérique.",
       hausordnung: "Le règlement NordFit – des règles claires pour un entraînement calme, propre et respectueux.",
       kontakt: "Contact NordFit – e-mail, Instagram et formulaire de contact.",
-      impressum: "Mentions légales, CGV et confidentialité de NordFit.",
+      impressum: "Mentions légales, conditions générales et confidentialité de NordFit.",
     },
     es: {
-      index: "NordFit – gimnasio moderno con ambiente claro, zonas premium y una estética tranquila.",
-      mitgliedschaften: "Tarifas NordFit y pase diario – claras, justas y gestionadas directamente desde la app.",
-      standorte: "Ubicaciones NordFit – bien pensadas, accesibles y diseñadas para convencer desde el primer momento.",
-      app: "La app de NordFit te da acceso a membresía, pase diario y entrada con código QR.",
+      index: "NordFit – gimnasio moderno con ambiente claro, zonas premium y un diseño tranquilo y elegante.",
+      mitgliedschaften: "Membresías y pase diario de NordFit – estructura clara, explicación justa y gestión digital en la app.",
+      standorte: "Ubicaciones de NordFit – claramente pensadas, fáciles de alcanzar y diseñadas para convencer desde la primera impresión.",
+      app: "La app de NordFit es tu acceso a membresía, pase diario y entrada con código QR – clara, directa y totalmente digital.",
       hausordnung: "Las normas de NordFit – reglas claras para un entrenamiento tranquilo, limpio y respetuoso.",
       kontakt: "Contacto de NordFit – correo, Instagram y formulario de contacto.",
       impressum: "Aviso legal, condiciones y privacidad de NordFit.",
     },
     it: {
-      index: "NordFit – palestra moderna con atmosfera pulita, aree premium e design tranquillo.",
-      mitgliedschaften: "Tariffe NordFit e pass giornaliero – chiare, corrette e gestite direttamente nell’app.",
-      standorte: "Sedi NordFit – ben pensate, facili da raggiungere e progettate per convincere subito.",
-      app: "L’app NordFit dà accesso ad abbonamento, pass giornaliero e ingresso con QR code.",
+      index: "NordFit – palestra moderna con atmosfera pulita, aree premium e design elegante e tranquillo.",
+      mitgliedschaften: "Abbonamenti NordFit e pass giornaliero – struttura chiara, spiegazione corretta e gestione digitale tramite app.",
+      standorte: "Sedi NordFit – pensate con chiarezza, facili da raggiungere e progettate per convincere fin dal primo impatto.",
+      app: "L’app NordFit è il tuo accesso ad abbonamento, pass giornaliero e ingresso tramite QR code – chiara, diretta e completamente digitale.",
       hausordnung: "Il regolamento NordFit – regole chiare per un allenamento tranquillo, pulito e rispettoso.",
       kontakt: "Contatto NordFit – e-mail, Instagram e modulo di contatto.",
-      impressum: "Note legali, termini e privacy di NordFit.",
+      impressum: "Note legali, condizioni e privacy di NordFit.",
     },
     pl: {
-      index: "NordFit – nowoczesna siłownia z uporządkowaną atmosferą, strefami premium i spokojnym stylem.",
-      mitgliedschaften: "Cennik NordFit i wejściówka dzienna – jasno opisane, uczciwe i zarządzane bezpośrednio w aplikacji.",
-      standorte: "Lokalizacje NordFit – dobrze przemyślane, łatwo dostępne i zaprojektowane tak, by od razu robiły dobre wrażenie.",
-      app: "Aplikacja NordFit daje dostęp do karnetu, wejściówki dziennej i wejścia przez kod QR.",
+      index: "NordFit – nowoczesna siłownia z uporządkowaną atmosferą, strefami premium i spokojnym designem.",
+      mitgliedschaften: "Karnety NordFit i wejściówka dzienna – jasna struktura, uczciwy opis i pełna obsługa cyfrowa w aplikacji.",
+      standorte: "Lokalizacje NordFit – jasno zaplanowane, łatwo dostępne i stworzone tak, by robić dobre pierwsze wrażenie.",
+      app: "Aplikacja NordFit daje dostęp do karnetu, wejściówki dziennej i wejścia przez kod QR – jasno, bezpośrednio i całkowicie cyfrowo.",
       hausordnung: "Regulamin NordFit – jasne zasady spokojnego, czystego i pełnego szacunku treningu.",
       kontakt: "Kontakt z NordFit – e-mail, Instagram i formularz kontaktowy.",
-      impressum: "Informacje prawne, regulamin i prywatność NordFit.",
+      impressum: "Dane prawne, regulamin i prywatność NordFit.",
     },
     nl: {
-      index: "NordFit – moderne sportschool met een heldere sfeer, premium zones en een rustige uitstraling.",
-      mitgliedschaften: "NordFit tarieven en dagpas – duidelijk, eerlijk en rechtstreeks via de app beheerd.",
-      standorte: "NordFit locaties – slim ontworpen, goed bereikbaar en gemaakt om direct goed aan te voelen.",
-      app: "De NordFit app geeft toegang tot lidmaatschap, dagpas en QR-code toegang.",
+      index: "NordFit – moderne sportschool met een heldere sfeer, premium trainingsruimtes en een rustige uitstraling.",
+      mitgliedschaften: "NordFit lidmaatschappen en dagpas – duidelijke opbouw, eerlijke uitleg en volledig digitaal beheer in de app.",
+      standorte: "NordFit locaties – helder doordacht, goed bereikbaar en ontworpen voor een sterke eerste indruk.",
+      app: "De NordFit app geeft toegang tot lidmaatschap, dagpas en QR-code toegang – helder, direct en volledig digitaal.",
       hausordnung: "De huisregels van NordFit – duidelijke regels voor rustig, schoon en respectvol trainen.",
       kontakt: "Contact met NordFit – e-mail, Instagram en contactformulier.",
       impressum: "Juridische informatie, voorwaarden en privacy van NordFit.",
     },
-    sv: {
-      index: "NordFit – ett modernt gym med tydlig känsla, premiumytor och lugn design.",
-      mitgliedschaften: "NordFit priser och dagspass – tydligt, rättvist och direkt hanterat i appen.",
-      standorte: "NordFit platser – genomtänkta, lättillgängliga och skapade för att kännas rätt direkt.",
-      app: "NordFit-appen ger tillgång till medlemskap, dagspass och QR-kodsinträde.",
-      hausordnung: "NordFits regler – tydliga regler för lugn, ren och respektfull träning.",
-      kontakt: "Kontakt med NordFit – e-post, Instagram och kontaktformulär.",
-      impressum: "Juridisk information, villkor och integritet för NordFit.",
-    },
     da: {
       index: "NordFit – moderne fitness med klar stemning, premiumområder og roligt design.",
-      mitgliedschaften: "NordFit priser og dagspas – klart forklaret, fair og administreret direkte i appen.",
-      standorte: "NordFit lokationer – gennemtænkte, lette at nå og designet til at føles rigtige med det samme.",
-      app: "NordFit-appen giver adgang til medlemskab, dagspas og QR-kode adgang.",
+      mitgliedschaften: "NordFit medlemskaber og dagspas – klar struktur, fair forklaring og fuld digital håndtering i appen.",
+      standorte: "NordFit lokationer – klart planlagt, lette at nå og designet til at give det rigtige første indtryk.",
+      app: "NordFit-appen giver adgang til medlemskab, dagspas og QR-kode adgang – klart, direkte og fuldt digitalt.",
       hausordnung: "NordFits husregler – klare regler for rolig, ren og respektfuld træning.",
       kontakt: "Kontakt NordFit – e-mail, Instagram og kontaktformular.",
       impressum: "Juridisk information, vilkår og privatliv for NordFit.",
     },
+    sv: {
+      index: "NordFit – ett modernt gym med tydlig känsla, premiumytor och lugn design.",
+      mitgliedschaften: "NordFit medlemskap och dagspass – tydlig struktur, rättvis förklaring och full digital hantering i appen.",
+      standorte: "NordFit platser – tydligt planerade, lätta att nå och utformade för rätt första intryck.",
+      app: "NordFit-appen ger tillgång till medlemskap, dagspass och QR-kodsinträde – tydligt, direkt och helt digitalt.",
+      hausordnung: "NordFits regler – tydliga regler för lugn, ren och respektfull träning.",
+      kontakt: "Kontakt med NordFit – e-post, Instagram och kontaktformulär.",
+      impressum: "Juridisk information, villkor och integritet för NordFit.",
+    },
     no: {
       index: "NordFit – moderne treningssenter med tydelig følelse, premiumområder og rolig design.",
-      mitgliedschaften: "NordFit priser og dagspass – tydelig, rettferdig og administrert direkte i appen.",
-      standorte: "NordFit lokasjoner – gjennomtenkte, enkle å nå og laget for å føles riktige med én gang.",
-      app: "NordFit-appen gir tilgang til medlemskap, dagspass og QR-kode inngang.",
+      mitgliedschaften: "NordFit medlemskap og dagspass – tydelig struktur, ryddig forklaring og full digital håndtering i appen.",
+      standorte: "NordFit lokasjoner – tydelig planlagt, lette å nå og designet for et riktig førsteinntrykk.",
+      app: "NordFit-appen gir tilgang til medlemskap, dagspass og QR-kode inngang – tydelig, direkte og fullt digitalt.",
       hausordnung: "NordFits husregler – tydelige regler for rolig, ren og respektfull trening.",
       kontakt: "Kontakt NordFit – e-post, Instagram og kontaktskjema.",
       impressum: "Juridisk informasjon, vilkår og personvern for NordFit.",
@@ -428,44 +430,20 @@ document.addEventListener("DOMContentLoaded", () => {
       en: {
         ".hero-title": { text: "A studio that feels modern. And stays calm." },
         ".hero-subtitle": {
-          html: "NordFit is built for people who do not want to simply tick off a workout, but want a place that feels clear, thoughtfully designed and right from the very first moment.",
+          html: "NordFit is made for people who do not want to simply tick training off, but want a place that feels clear, thoughtfully premium and right from the very first moment.",
         },
-        ".hero-actions a:nth-child(1)": { text: "Plans" },
+        ".hero-actions a:nth-child(1)": { text: "Memberships" },
         ".hero-actions a:nth-child(2)": { text: "App" },
         ".hero-actions a:nth-child(3)": { text: "Locations" },
-        ".hero-image-caption h2": { text: "A first impression that never needs to be loud." },
+        ".hero-image-caption h2": { text: "A first impression that does not need to be loud." },
         ".hero-image-caption p": {
-          html: "From the outside, NordFit should already feel modern, calm and clean. Not overloaded, not generic — but clear enough that you instantly feel the attention to detail.",
+          html: "From the outside, NordFit should already feel modern, calm and clean. Not overloaded, not generic — but clear enough that you immediately feel the attention to detail.",
         },
         ".area-section:nth-of-type(1) .area-copy h3": { text: "Strength Training" },
         ".area-section:nth-of-type(2) .area-copy h3": { text: "Cardio" },
         ".area-section:nth-of-type(3) .area-copy h3": { text: "Functional Training" },
         ".area-section:nth-of-type(4) .area-copy h3": { text: "Recovery" },
       },
-      fr: {
-        ".hero-title": { text: "Un studio moderne. Et qui reste calme." }
-      },
-      es: {
-        ".hero-title": { text: "Un estudio moderno. Y que sigue siendo tranquilo." }
-      },
-      it: {
-        ".hero-title": { text: "Uno studio moderno. E che resta calmo." }
-      },
-      pl: {
-        ".hero-title": { text: "Nowoczesne studio. I spokojna atmosfera." }
-      },
-      nl: {
-        ".hero-title": { text: "Een studio die modern voelt. En rustig blijft." }
-      },
-      sv: {
-        ".hero-title": { text: "En studio som känns modern. Och förblir lugn." }
-      },
-      da: {
-        ".hero-title": { text: "Et studio, der føles moderne. Og forbliver roligt." }
-      },
-      no: {
-        ".hero-title": { text: "Et studio som føles moderne. Og forblir rolig." }
-      }
     },
 
     mitgliedschaften: {
@@ -478,23 +456,71 @@ document.addEventListener("DOMContentLoaded", () => {
         ".info-note-text": {
           html: "Abschluss, Verwaltung und Kündigung laufen vollständig über die NordFit App. So bleibt alles an einem Ort — klar, direkt und ohne unnötige Umwege.",
         },
+        ".pricing-card:nth-of-type(1) .eyebrow": { text: "Basic" },
+        ".pricing-card:nth-of-type(2) .eyebrow": { text: "Plus" },
+        ".pricing-card:nth-of-type(3) .eyebrow": { text: "Pro" },
+        ".pricing-card:nth-of-type(1) .price-line + .muted": { text: "pro Monat" },
+        ".pricing-card:nth-of-type(2) .price-line + .muted": { text: "pro Monat" },
+        ".pricing-card:nth-of-type(3) .price-line + .muted": { text: "pro Monat" },
+        ".pricing-card:nth-of-type(1) .pricing-details p:nth-child(1)": { text: "8 Monate Mindestlaufzeit" },
+        ".pricing-card:nth-of-type(1) .pricing-details p:nth-child(2)": { text: "Danach monatlich kündbar" },
+        ".pricing-card:nth-of-type(2) .pricing-details p:nth-child(1)": { text: "6 Monate Mindestlaufzeit" },
+        ".pricing-card:nth-of-type(2) .pricing-details p:nth-child(2)": { text: "Danach monatlich kündbar" },
+        ".pricing-card:nth-of-type(3) .pricing-details p:nth-child(1)": { text: "3 Monate Mindestlaufzeit" },
+        ".pricing-card:nth-of-type(3) .pricing-details p:nth-child(2)": { text: "Danach monatlich kündbar" },
+        ".pricing-card:nth-of-type(1) .pricing-card-inner > p.muted:last-of-type": {
+          text: "Der passende Einstieg, wenn du regelmäßig trainieren willst und dabei bewusst auf ein starkes Preis-Leistungs-Verhältnis achtest.",
+        },
+        ".pricing-card:nth-of-type(2) .pricing-card-inner > p.muted:last-of-type": {
+          text: "Für alle, die planbar bleiben möchten, aber spürbar mehr Flexibilität in ihrem Tarif bevorzugen.",
+        },
+        ".pricing-card:nth-of-type(3) .pricing-card-inner > p.muted:last-of-type": {
+          text: "Die flexibelste Mitgliedschaft für alle, die möglichst frei bleiben und trotzdem direkt starten wollen.",
+        },
+        ".pricing-card-action .btn": { text: "In der App abschließen" },
         ".daypass-shell .eyebrow": { text: "Tagespass" },
         ".daypass-shell .section-title": { text: "4,90 € pro Tag" },
+        ".daypass-shell .muted": {
+          text: "Ideal, wenn du NordFit erst kennenlernen möchtest oder ganz bewusst spontan trainieren willst — ohne Mitgliedschaft.",
+        },
         ".daypass-shell .btn": { text: "In der App buchen" },
       },
+
       en: {
         ".hero-title": { text: "Plans that stay clear." },
         ".hero-subtitle": {
-          html: "At NordFit, it should be easy to see what is included, how long your plan runs and how flexibly you can decide again later on.",
+          html: "At NordFit, it should be easy to understand at a glance what is included, how long your plan runs and how flexibly you can decide again later.",
         },
         ".info-note-label": { text: "Important info" },
         ".info-note-text": {
-          html: "Sign-up, management and cancellation are handled entirely through the NordFit app. That keeps everything in one place — clear, direct and free from unnecessary detours.",
+          html: "Sign-up, management and cancellation are handled entirely through the NordFit app. That keeps everything in one place — clear, direct and without unnecessary detours.",
         },
+        ".pricing-card:nth-of-type(1) .price-line + .muted": { text: "per month" },
+        ".pricing-card:nth-of-type(2) .price-line + .muted": { text: "per month" },
+        ".pricing-card:nth-of-type(3) .price-line + .muted": { text: "per month" },
+        ".pricing-card:nth-of-type(1) .pricing-details p:nth-child(1)": { text: "8 month minimum term" },
+        ".pricing-card:nth-of-type(1) .pricing-details p:nth-child(2)": { text: "Monthly cancellation afterwards" },
+        ".pricing-card:nth-of-type(2) .pricing-details p:nth-child(1)": { text: "6 month minimum term" },
+        ".pricing-card:nth-of-type(2) .pricing-details p:nth-child(2)": { text: "Monthly cancellation afterwards" },
+        ".pricing-card:nth-of-type(3) .pricing-details p:nth-child(1)": { text: "3 month minimum term" },
+        ".pricing-card:nth-of-type(3) .pricing-details p:nth-child(2)": { text: "Monthly cancellation afterwards" },
+        ".pricing-card:nth-of-type(1) .pricing-card-inner > p.muted:last-of-type": {
+          text: "The right entry if you want to train regularly while keeping a strong eye on value.",
+        },
+        ".pricing-card:nth-of-type(2) .pricing-card-inner > p.muted:last-of-type": {
+          text: "For people who want structure but clearly more flexibility in their plan.",
+        },
+        ".pricing-card:nth-of-type(3) .pricing-card-inner > p.muted:last-of-type": {
+          text: "The most flexible membership for anyone who wants to stay as free as possible and still start right away.",
+        },
+        ".pricing-card-action .btn": { text: "Complete in the app" },
         ".daypass-shell .eyebrow": { text: "Day Pass" },
         ".daypass-shell .section-title": { text: "€4.90 per day" },
+        ".daypass-shell .muted": {
+          text: "Ideal if you want to get to know NordFit first or train spontaneously without a membership.",
+        },
         ".daypass-shell .btn": { text: "Book in the app" },
-      }
+      },
     },
 
     standorte: {
@@ -507,31 +533,50 @@ document.addEventListener("DOMContentLoaded", () => {
         ".info-note-text": {
           html: "NordFit startet bewusst mit einem Standort, der nicht überladen wirkt. Weniger Ablenkung, mehr Struktur und ein Studio, das man sofort versteht.",
         },
-        ".section-no-top .grid-2 > div:first-child .section-title.large-title": { text: "Grevesmühlen" },
+        ".section-title.large-title": { text: "Grevesmühlen" },
         ".image-frame-label": { text: "Studio Hauptbild" },
-        ".section.section-tight .glass.reveal .section-title": { text: "Standort ansehen" },
+        "section.section-no-top .glass .grid-2 > div:first-child .muted:nth-of-type(1)": {
+          text: "Hier beginnt NordFit mit einem Studio, das auf Ruhe, gute Erreichbarkeit und einen klaren Aufbau ausgelegt ist. Kein unnötig lauter Auftritt, sondern ein Ort, an dem man sich schnell orientieren kann.",
+        },
+        "section.section-no-top .glass .grid-2 > div:first-child .muted:nth-of-type(2)": {
+          text: "Geplant sind 24/7 Zugang, eine saubere App-Anbindung, ein einfacher Ablauf und ein Studio, das bewusst hochwertig statt chaotisch wirkt.",
+        },
+        "section.section-tight .glass .section-title": { text: "Standort ansehen" },
+        "section.section-tight .glass > .muted": {
+          text: "Wer NordFit finden will, soll nicht lange suchen müssen. Die Karte und die direkte Routenwahl machen den Standort sofort nachvollziehbar.",
+        },
         ".store-badge:nth-of-type(1) .store-badge-small": { text: "ÖFFNEN IN" },
         ".store-badge:nth-of-type(1) .store-badge-big": { text: "Apple Karten" },
         ".store-badge:nth-of-type(2) .store-badge-small": { text: "ÖFFNEN IN" },
         ".store-badge:nth-of-type(2) .store-badge-big": { text: "Google Maps" },
       },
+
       en: {
         ".hero-title": { text: "A location that makes sense right away." },
         ".hero-subtitle": {
-          html: "The first NordFit location should not simply be easy to reach. It should feel clear, calm and right from the beginning — in its look, in its flow and in the concept as a whole.",
+          html: "The first NordFit location should not only be easy to reach. It should feel clear, calm and right from the very beginning — in the impression, in the flow and in the whole concept.",
         },
         ".info-note-label": { text: "Info" },
         ".info-note-text": {
           html: "NordFit intentionally starts with a location that does not feel overloaded. Less distraction, more structure and a studio you understand immediately.",
         },
-        ".section-no-top .grid-2 > div:first-child .section-title.large-title": { text: "Grevesmühlen" },
+        ".section-title.large-title": { text: "Grevesmühlen" },
         ".image-frame-label": { text: "Main studio image" },
-        ".section.section-tight .glass.reveal .section-title": { text: "View location" },
+        "section.section-no-top .glass .grid-2 > div:first-child .muted:nth-of-type(1)": {
+          text: "This is where NordFit begins: with a studio built around calm, accessibility and a clear structure. Not needlessly loud, but a place where you can find your way quickly.",
+        },
+        "section.section-no-top .glass .grid-2 > div:first-child .muted:nth-of-type(2)": {
+          text: "The plan includes 24/7 access, clean app integration, a simple flow and a studio that feels intentionally premium rather than chaotic.",
+        },
+        "section.section-tight .glass .section-title": { text: "View location" },
+        "section.section-tight .glass > .muted": {
+          text: "If you want to find NordFit, you should not have to search for long. The map and direct route options make the location immediately understandable.",
+        },
         ".store-badge:nth-of-type(1) .store-badge-small": { text: "OPEN IN" },
         ".store-badge:nth-of-type(1) .store-badge-big": { text: "Apple Maps" },
         ".store-badge:nth-of-type(2) .store-badge-small": { text: "OPEN IN" },
         ".store-badge:nth-of-type(2) .store-badge-big": { text: "Google Maps" },
-      }
+      },
     },
 
     app: {
@@ -540,23 +585,66 @@ document.addEventListener("DOMContentLoaded", () => {
         ".hero-subtitle": {
           html: "Die NordFit App ist nicht bloß ein Extra. Sie ist der zentrale Zugang zu allem, was bei NordFit bewusst einfach, klar und digital funktionieren soll.",
         },
+        ".store-badge:nth-of-type(1) .store-badge-small": { text: "LADEN IM" },
+        ".store-badge:nth-of-type(1) .store-badge-big": { text: "App Store" },
+        ".store-badge:nth-of-type(2) .store-badge-small": { text: "JETZT BEI" },
+        ".store-badge:nth-of-type(2) .store-badge-big": { text: "Google Play" },
         ".info-note-label": { text: "Wichtige Info" },
         ".info-note-text": {
           html: "Ohne NordFit App gibt es keinen Zutritt zum Studio. Mitgliedschaft, Tagespass, Verwaltung und QR-Code laufen vollständig darüber.",
         },
-        ".section-no-top .section-title.large-title": { text: "Ein Konto. Ein QR-Code. Ein klarer Ablauf." },
+        ".section-title.large-title": { text: "Ein Konto. Ein QR-Code. Ein klarer Ablauf." },
+        ".app-page-hero-grid > div:first-child > p.muted:nth-of-type(1)": {
+          text: "Bei NordFit läuft alles über einen einzigen, sauberen Weg. Keine Papierformulare, keine unnötigen Zwischenschritte und kein unklarer Ablauf.",
+        },
+        ".app-page-hero-grid > div:first-child > p.muted:nth-of-type(2)": {
+          text: "In der App schließt du deine Mitgliedschaft ab, buchst deinen Tagespass, verwaltest deine Daten und bekommst den QR-Code, mit dem du direkt ins Studio kommst.",
+        },
+        ".app-page-hero-grid > div:first-child > p.muted:nth-of-type(3)": {
+          text: "Genau deshalb ist die App kein optionales Detail, sondern ein fester Teil des gesamten NordFit Konzepts.",
+        },
+        ".app-need-item:nth-of-type(1) .app-need-title": { text: "Zutritt per QR-Code" },
+        ".app-need-item:nth-of-type(1) .muted": { text: "Dein Zugang liegt direkt in der App — schnell, klar und ohne Umwege." },
+        ".app-need-item:nth-of-type(2) .app-need-title": { text: "Mitgliedschaft digital abschließen" },
+        ".app-need-item:nth-of-type(2) .muted": { text: "Buchen, einsehen und verwalten an einem Ort." },
+        ".app-need-item:nth-of-type(3) .app-need-title": { text: "Tagespass direkt kaufen" },
+        ".app-need-item:nth-of-type(3) .muted": { text: "Ideal, wenn du NordFit erst kennenlernen oder spontan trainieren möchtest." },
+        ".app-need-item:nth-of-type(4) .app-need-title": { text: "Alles sauber im Blick" },
+        ".app-need-item:nth-of-type(4) .muted": { text: "Standort, Zugang und persönliche Verwaltung bleiben klar gebündelt." },
       },
+
       en: {
         ".hero-title": { text: "Everything important. In one app." },
         ".hero-subtitle": {
-          html: "The NordFit app is not just an extra. It is the central access point to everything at NordFit that is designed to work in a simple, clear and digital way.",
+          html: "The NordFit app is not just an extra. It is the central access point to everything that is meant to work simply, clearly and digitally at NordFit.",
         },
+        ".store-badge:nth-of-type(1) .store-badge-small": { text: "DOWNLOAD ON THE" },
+        ".store-badge:nth-of-type(1) .store-badge-big": { text: "App Store" },
+        ".store-badge:nth-of-type(2) .store-badge-small": { text: "GET IT ON" },
+        ".store-badge:nth-of-type(2) .store-badge-big": { text: "Google Play" },
         ".info-note-label": { text: "Important info" },
         ".info-note-text": {
-          html: "Without the NordFit app, there is no entry to the studio. Membership, day pass, account management and QR code access all run through it.",
+          html: "Without the NordFit app, there is no entry to the studio. Membership, day pass, management and QR code all run through it.",
         },
-        ".section-no-top .section-title.large-title": { text: "One account. One QR code. One clear flow." },
-      }
+        ".section-title.large-title": { text: "One account. One QR code. One clear flow." },
+        ".app-page-hero-grid > div:first-child > p.muted:nth-of-type(1)": {
+          text: "At NordFit, everything runs through one clean path. No paper forms, no unnecessary extra steps and no unclear process.",
+        },
+        ".app-page-hero-grid > div:first-child > p.muted:nth-of-type(2)": {
+          text: "In the app, you complete your membership, book your day pass, manage your details and receive the QR code that gets you straight into the studio.",
+        },
+        ".app-page-hero-grid > div:first-child > p.muted:nth-of-type(3)": {
+          text: "That is exactly why the app is not an optional detail, but a fixed part of the entire NordFit concept.",
+        },
+        ".app-need-item:nth-of-type(1) .app-need-title": { text: "Entry by QR code" },
+        ".app-need-item:nth-of-type(1) .muted": { text: "Your access lives directly in the app — fast, clear and without detours." },
+        ".app-need-item:nth-of-type(2) .app-need-title": { text: "Complete membership digitally" },
+        ".app-need-item:nth-of-type(2) .muted": { text: "Book it, view it and manage it in one place." },
+        ".app-need-item:nth-of-type(3) .app-need-title": { text: "Buy a day pass directly" },
+        ".app-need-item:nth-of-type(3) .muted": { text: "Ideal if you want to get to know NordFit first or train spontaneously." },
+        ".app-need-item:nth-of-type(4) .app-need-title": { text: "Everything clearly in view" },
+        ".app-need-item:nth-of-type(4) .muted": { text: "Location, access and personal management stay clearly bundled." },
+      },
     },
 
     hausordnung: {
@@ -569,37 +657,18 @@ document.addEventListener("DOMContentLoaded", () => {
         ".info-note-text": {
           html: "Wer bei NordFit trainiert, soll sich auf einen fairen, ruhigen und sauberen Ablauf verlassen können. Genau dafür gelten diese Regeln — nicht als Übertreibung, sondern als Standard.",
         },
-        ".house-rules-stack > article:nth-of-type(1) .section-title": { text: "Zutritt nur mit gültigem Zugang" },
-        ".house-rules-stack > article:nth-of-type(2) .section-title": { text: "Kein Zutritt für Unbefugte" },
-        ".house-rules-stack > article:nth-of-type(3) .section-title": { text: "Geeignete Trainingskleidung" },
-        ".house-rules-stack > article:nth-of-type(4) .section-title": { text: "Handtuch benutzen" },
-        ".house-rules-stack > article:nth-of-type(5) .section-title": { text: "Geräte ordentlich hinterlassen" },
-        ".house-rules-stack > article:nth-of-type(6) .section-title": { text: "Respekt im Umgang" },
-        ".house-rules-stack > article:nth-of-type(7) .section-title": { text: "Sicher und verantwortungsvoll trainieren" },
-        ".house-rules-stack > article:nth-of-type(8) .section-title": { text: "Ruhe und Ordnung im Studio" },
-        ".house-rules-stack > article:nth-of-type(9) .section-title": { text: "Sauberkeit zählt mit" },
-        ".house-rules-stack > article:nth-of-type(10) .section-title": { text: "Hausrecht" },
       },
+
       en: {
         ".hero-title": { text: "Clear rules. Calm training." },
         ".hero-subtitle": {
-          html: "NordFit should feel clean, respectful and pleasant. These house rules create a clear and reliable framework for that.",
+          html: "NordFit should feel clean, respectful and easy to enjoy. These house rules create a clear and reliable framework for that.",
         },
         ".info-note-label": { text: "Principle" },
         ".info-note-text": {
-          html: "Anyone training at NordFit should be able to rely on a fair, calm and clean environment. These rules exist for exactly that — not as overstatement, but as a standard.",
+          html: "Anyone training at NordFit should be able to rely on a fair, calm and clean environment. These rules exist for exactly that — not as exaggeration, but as a standard.",
         },
-        ".house-rules-stack > article:nth-of-type(1) .section-title": { text: "Entry only with valid access" },
-        ".house-rules-stack > article:nth-of-type(2) .section-title": { text: "No entry for unauthorized persons" },
-        ".house-rules-stack > article:nth-of-type(3) .section-title": { text: "Appropriate training clothing" },
-        ".house-rules-stack > article:nth-of-type(4) .section-title": { text: "Use a towel" },
-        ".house-rules-stack > article:nth-of-type(5) .section-title": { text: "Leave equipment in order" },
-        ".house-rules-stack > article:nth-of-type(6) .section-title": { text: "Respect in how you treat others" },
-        ".house-rules-stack > article:nth-of-type(7) .section-title": { text: "Train safely and responsibly" },
-        ".house-rules-stack > article:nth-of-type(8) .section-title": { text: "Calm and order in the studio" },
-        ".house-rules-stack > article:nth-of-type(9) .section-title": { text: "Cleanliness matters too" },
-        ".house-rules-stack > article:nth-of-type(10) .section-title": { text: "House rights" },
-      }
+      },
     },
 
     kontakt: {
@@ -614,8 +683,32 @@ document.addEventListener("DOMContentLoaded", () => {
         ".contact-info-item:nth-of-type(2) .contact-info-label": { text: "Instagram" },
         ".contact-info-item:nth-of-type(3) .contact-info-label": { text: "Telefon" },
         ".contact-info-item:nth-of-type(3) .muted": { text: "Bald verfügbar" },
+        "label[for='contact-firstname']": { html: "Vorname <span class='required-star'>*</span>" },
+        "label[for='contact-lastname']": { html: "Nachname <span class='required-star'>*</span>" },
+        "label[for='contact-email']": { html: "E-Mail <span class='required-star'>*</span>" },
+        "label[for='contact-phone']": { html: "Telefonnummer <span class='required-star'>*</span>" },
+        "label[for='contact-topic']": { html: "Thema <span class='required-star'>*</span>" },
+        "label[for='contact-memberid']": { text: "Member ID" },
+        "label[for='contact-message']": { html: "Nachricht <span class='required-star'>*</span>" },
+        "#contact-firstname": { placeholder: "Dein Vorname" },
+        "#contact-lastname": { placeholder: "Dein Nachname" },
+        "#contact-email": { placeholder: "deinname@email.de" },
+        "#contact-phone": { placeholder: "Deine Telefonnummer" },
+        "#contact-memberid": { placeholder: "Optional" },
+        "#contact-message": { placeholder: "Schreib uns dein Anliegen ..." },
+        "#contact-topic option:nth-child(1)": { text: "Bitte auswählen" },
+        "#contact-topic option:nth-child(2)": { text: "Mitgliedschaft" },
+        "#contact-topic option:nth-child(3)": { text: "App" },
+        "#contact-topic option:nth-child(4)": { text: "Zutritt / QR-Code" },
+        "#contact-topic option:nth-child(5)": { text: "Tagespass" },
+        "#contact-topic option:nth-child(6)": { text: "Standort" },
+        "#contact-topic option:nth-child(7)": { text: "Konto / Daten" },
+        "#contact-topic option:nth-child(8)": { text: "Allgemeine Frage" },
+        ".contact-form-footer .muted": { text: "Oder direkt per Mail an nordgroup.business@gmail.com" },
+        ".required-note": { text: "Felder mit * müssen ausgefüllt werden." },
         ".contact-form-footer .btn": { text: "Nachricht senden" },
       },
+
       en: {
         ".hero-title": { text: "Direct. Clear. Personal." },
         ".hero-subtitle": {
@@ -627,8 +720,31 @@ document.addEventListener("DOMContentLoaded", () => {
         ".contact-info-item:nth-of-type(2) .contact-info-label": { text: "Instagram" },
         ".contact-info-item:nth-of-type(3) .contact-info-label": { text: "Phone" },
         ".contact-info-item:nth-of-type(3) .muted": { text: "Coming soon" },
+        "label[for='contact-firstname']": { html: "First name <span class='required-star'>*</span>" },
+        "label[for='contact-lastname']": { html: "Last name <span class='required-star'>*</span>" },
+        "label[for='contact-email']": { html: "Email <span class='required-star'>*</span>" },
+        "label[for='contact-phone']": { html: "Phone number <span class='required-star'>*</span>" },
+        "label[for='contact-topic']": { html: "Topic <span class='required-star'>*</span>" },
+        "label[for='contact-memberid']": { text: "Member ID" },
+        "label[for='contact-message']": { html: "Message <span class='required-star'>*</span>" },
+        "#contact-firstname": { placeholder: "Your first name" },
+        "#contact-lastname": { placeholder: "Your last name" },
+        "#contact-email": { placeholder: "yourname@email.com" },
+        "#contact-phone": { placeholder: "Your phone number" },
+        "#contact-memberid": { placeholder: "Optional" },
+        "#contact-message": { placeholder: "Write your message here ..." },
+        "#contact-topic option:nth-child(1)": { text: "Please choose" },
+        "#contact-topic option:nth-child(2)": { text: "Membership" },
+        "#contact-topic option:nth-child(3)": { text: "App" },
+        "#contact-topic option:nth-child(4)": { text: "Access / QR code" },
+        "#contact-topic option:nth-child(5)": { text: "Day pass" },
+        "#contact-topic option:nth-child(6)": { text: "Location" },
+        "#contact-topic option:nth-child(7)": { text: "Account / Data" },
+        "#contact-topic option:nth-child(8)": { text: "General question" },
+        ".contact-form-footer .muted": { text: "Or email us directly at nordgroup.business@gmail.com" },
+        ".required-note": { text: "Fields marked with * are required." },
         ".contact-form-footer .btn": { text: "Send message" },
-      }
+      },
     },
 
     impressum: {
@@ -637,29 +753,70 @@ document.addEventListener("DOMContentLoaded", () => {
         ".hero-subtitle": {
           html: "Auch im rechtlichen Bereich soll NordFit nachvollziehbar, transparent und sauber auftreten — ohne unnötige Komplexität und ohne versteckte Formulierungen.",
         },
-        ".legal-grid .section-block .section-title.large-title": { text: "Impressum" },
+        ".glass .section-title.large-title": { text: "Impressum" },
         ".legal-actions-card .section-title": { text: "Schnellzugriff" },
+        ".legal-actions-card .muted": {
+          text: "AGB, Datenschutz und Hausordnung lassen sich hier direkt öffnen — klar erreichbar und ohne langes Suchen.",
+        },
+        ".legal-info-row:nth-of-type(1) .legal-label": { text: "Firmenname" },
+        ".legal-info-row:nth-of-type(2) .legal-label": { text: "E-Mail" },
+        ".legal-info-row:nth-of-type(3) .legal-label": { text: "Instagram" },
+        ".legal-info-row:nth-of-type(4) .legal-label": { text: "Adresse" },
+        ".legal-info-row:nth-of-type(4) strong": { text: "Bald verfügbar" },
+        ".legal-missing-info .muted": {
+          text: "Fehlende Angaben werden hier ergänzt, sobald sie final feststehen.",
+        },
         ".legal-action-buttons .btn:nth-child(1)": { text: "AGB öffnen" },
         ".legal-action-buttons .btn:nth-child(2)": { text: "Datenschutz öffnen" },
         ".legal-action-buttons .btn:nth-child(3)": { text: "Hausordnung öffnen" },
         "#agb-modal .section-title": { text: "Allgemeine Geschäftsbedingungen" },
+        "#agb-modal .muted": {
+          text: "Die AGB werden vor Veröffentlichung vollständig ergänzt und rechtlich sauber ausgearbeitet. Bis dahin dient dieser Bereich als sichtbarer Platzhalter.",
+        },
         "#privacy-modal .section-title": { text: "Datenschutzerklärung" },
+        "#privacy-modal .muted": {
+          text: "Die Datenschutzerklärung wird hier vollständig ergänzt, bevor NordFit veröffentlicht wird. Sie soll verständlich formuliert und rechtlich sauber aufgebaut sein.",
+        },
         "#rules-modal .section-title": { text: "Hausordnung" },
+        "#rules-modal .muted": {
+          text: "Die Hausordnung findest du zusätzlich als eigene Seite. Sie schafft den Rahmen für ein sauberes, ruhiges und respektvolles Training bei NordFit.",
+        },
       },
+
       en: {
         ".hero-title": { text: "Legal. Clearly written." },
         ".hero-subtitle": {
-          html: "Even in legal matters, NordFit should appear understandable, transparent and clean — without unnecessary complexity and without hidden wording.",
+          html: "NordFit should appear understandable, transparent and clean even in the legal area — without unnecessary complexity and without hidden wording.",
         },
-        ".legal-grid .section-block .section-title.large-title": { text: "Legal Notice" },
+        ".glass .section-title.large-title": { text: "Legal Notice" },
         ".legal-actions-card .section-title": { text: "Quick access" },
+        ".legal-actions-card .muted": {
+          text: "Terms, privacy and house rules can be opened directly here — easy to reach and without unnecessary searching.",
+        },
+        ".legal-info-row:nth-of-type(1) .legal-label": { text: "Company name" },
+        ".legal-info-row:nth-of-type(2) .legal-label": { text: "Email" },
+        ".legal-info-row:nth-of-type(3) .legal-label": { text: "Instagram" },
+        ".legal-info-row:nth-of-type(4) .legal-label": { text: "Address" },
+        ".legal-info-row:nth-of-type(4) strong": { text: "Coming soon" },
+        ".legal-missing-info .muted": {
+          text: "Missing details will be added here as soon as they are final.",
+        },
         ".legal-action-buttons .btn:nth-child(1)": { text: "Open terms" },
         ".legal-action-buttons .btn:nth-child(2)": { text: "Open privacy" },
         ".legal-action-buttons .btn:nth-child(3)": { text: "Open house rules" },
         "#agb-modal .section-title": { text: "Terms and Conditions" },
+        "#agb-modal .muted": {
+          text: "The terms will be fully completed and legally prepared before publication. Until then, this section serves as a visible placeholder.",
+        },
         "#privacy-modal .section-title": { text: "Privacy Policy" },
+        "#privacy-modal .muted": {
+          text: "The privacy policy will be completed here before NordFit is published. It should be easy to understand and legally sound.",
+        },
         "#rules-modal .section-title": { text: "House Rules" },
-      }
-    }
+        "#rules-modal .muted": {
+          text: "You can also find the house rules as a separate page. They create the framework for clean, calm and respectful training at NordFit.",
+        },
+      },
+    },
   };
 });
