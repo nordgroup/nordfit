@@ -1,214 +1,193 @@
 document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
 
-  const headerInner = document.querySelector(".site-header-inner");
   const burger = document.getElementById("burger");
   const siteNav = document.querySelector(".site-nav");
 
   const langToggle = document.getElementById("lang-toggle");
   const langMenu = document.getElementById("lang-menu");
-  const langOptions = document.querySelectorAll(".lang-option");
-  const langToggleLabel = document.querySelector(".lang-toggle-label");
+  const langOptions = Array.from(document.querySelectorAll(".lang-option"));
 
-  function updateHeaderScrollState() {
-    if (!headerInner) return;
-    headerInner.classList.toggle("scrolled", window.scrollY > 10);
-  }
-
-  updateHeaderScrollState();
-  window.addEventListener("scroll", updateHeaderScrollState, { passive: true });
+  const revealElements = document.querySelectorAll(".reveal");
+  const galleryShells = document.querySelectorAll("[data-gallery]");
 
   function closeBurgerMenu() {
     if (!burger || !siteNav) return;
     burger.classList.remove("is-active");
+    siteNav.classList.remove("is-open");
     burger.setAttribute("aria-expanded", "false");
-    siteNav.classList.remove("open");
-    body.classList.remove("nav-open");
-  }
-
-  function openBurgerMenu() {
-    if (!burger || !siteNav) return;
-    burger.classList.add("is-active");
-    burger.setAttribute("aria-expanded", "true");
-    siteNav.classList.add("open");
-    body.classList.add("nav-open");
+    body.classList.remove("menu-open");
   }
 
   function toggleBurgerMenu() {
     if (!burger || !siteNav) return;
-    const isOpen = siteNav.classList.contains("open");
-    if (isOpen) {
-      closeBurgerMenu();
-    } else {
-      closeLanguageMenu();
-      openBurgerMenu();
-    }
+    const isOpen = siteNav.classList.toggle("is-open");
+    burger.classList.toggle("is-active", isOpen);
+    burger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    body.classList.toggle("menu-open", isOpen);
   }
 
-  function closeLanguageMenu() {
-    if (!langToggle || !langMenu) return;
-    langToggle.classList.remove("is-open");
-    langToggle.setAttribute("aria-expanded", "false");
-    langMenu.classList.remove("show");
-  }
+  if (burger && siteNav) {
+    burger.addEventListener("click", toggleBurgerMenu);
 
-  function openLanguageMenu() {
-    if (!langToggle || !langMenu) return;
-    langToggle.classList.add("is-open");
-    langToggle.setAttribute("aria-expanded", "true");
-    langMenu.classList.add("show");
-  }
-
-  function toggleLanguageMenu() {
-    if (!langToggle || !langMenu) return;
-    const isOpen = langMenu.classList.contains("show");
-    if (isOpen) {
-      closeLanguageMenu();
-    } else {
-      closeBurgerMenu();
-      openLanguageMenu();
-    }
-  }
-
-  function getSavedLanguage() {
-    try {
-      return (localStorage.getItem("nordfit-language") || "de").toLowerCase();
-    } catch {
-      return "de";
-    }
-  }
-
-  function markActiveLanguage(lang) {
-    langOptions.forEach((option) => {
-      const optionLang = (option.dataset.lang || "").trim().toLowerCase();
-      const isActive = optionLang === lang;
-      option.classList.toggle("is-selected", isActive);
-      option.classList.toggle("is-active", isActive);
-      option.setAttribute("aria-pressed", isActive ? "true" : "false");
-    });
-  }
-
-  function syncLanguageUi(lang) {
-    const safeLang = (lang || "de").toLowerCase();
-
-    if (langToggleLabel) {
-      langToggleLabel.textContent = safeLang.toUpperCase();
-    }
-
-    markActiveLanguage(safeLang);
-  }
-
-  syncLanguageUi(getSavedLanguage());
-
-  if (burger) {
-    burger.addEventListener("click", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      toggleBurgerMenu();
-    });
-  }
-
-  if (langToggle) {
-    langToggle.addEventListener("click", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      toggleLanguageMenu();
-    });
-  }
-
-  if (langMenu) {
-    langMenu.addEventListener("click", (event) => {
-      event.stopPropagation();
-    });
-  }
-
-  langOptions.forEach((option) => {
-    option.addEventListener("click", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-
-      const lang = (option.dataset.lang || "").trim().toLowerCase();
-      if (!lang) return;
-
-      try {
-        localStorage.setItem("nordfit-language", lang);
-      } catch {}
-
-      syncLanguageUi(lang);
-
-      window.dispatchEvent(
-        new CustomEvent("nordfit:language-changed", {
-          detail: { language: lang },
-        })
-      );
-
-      closeLanguageMenu();
-    });
-  });
-
-  window.addEventListener("nordfit:language-ui-sync", (event) => {
-    const nextLang = event.detail?.language;
-    if (typeof nextLang === "string") {
-      syncLanguageUi(nextLang);
-    }
-  });
-
-  document.addEventListener("click", (event) => {
-    const target = event.target;
-
-    const clickedInsideLang =
-      (langToggle && langToggle.contains(target)) ||
-      (langMenu && langMenu.contains(target));
-
-    const clickedInsideBurger =
-      (burger && burger.contains(target)) ||
-      (siteNav && siteNav.contains(target));
-
-    if (!clickedInsideLang) {
-      closeLanguageMenu();
-    }
-
-    if (!clickedInsideBurger && window.innerWidth <= 768) {
-      closeBurgerMenu();
-    }
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeLanguageMenu();
-      closeBurgerMenu();
-    }
-  });
-
-  if (siteNav) {
-    siteNav.querySelectorAll("a").forEach((link) => {
+    document.querySelectorAll(".site-nav a").forEach((link) => {
       link.addEventListener("click", () => {
-        if (window.innerWidth <= 768) {
-          closeBurgerMenu();
-        }
+        closeBurgerMenu();
       });
     });
   }
 
-  window.addEventListener("resize", () => {
-    if (window.innerWidth > 768) {
-      closeBurgerMenu();
+  function closeLangMenu() {
+    if (!langToggle || !langMenu) return;
+    langToggle.classList.remove("is-open");
+    langMenu.classList.remove("is-open");
+    langToggle.setAttribute("aria-expanded", "false");
+  }
+
+  function openLangMenu() {
+    if (!langToggle || !langMenu) return;
+    langToggle.classList.add("is-open");
+    langMenu.classList.add("is-open");
+    langToggle.setAttribute("aria-expanded", "true");
+  }
+
+  function toggleLangMenu(event) {
+    event.stopPropagation();
+    if (!langToggle || !langMenu) return;
+
+    const isOpen = langMenu.classList.contains("is-open");
+    if (isOpen) {
+      closeLangMenu();
+    } else {
+      openLangMenu();
     }
+  }
+
+  if (langToggle && langMenu) {
+    langToggle.addEventListener("click", toggleLangMenu);
+
+    langOptions.forEach((option) => {
+      option.addEventListener("click", (event) => {
+        event.stopPropagation();
+        closeLangMenu();
+
+        const nextLang = option.dataset.lang?.trim().toLowerCase();
+        if (!nextLang) return;
+
+        window.dispatchEvent(
+          new CustomEvent("nordfit:language-changed", {
+            detail: { language: nextLang },
+          })
+        );
+      });
+    });
+
+    document.addEventListener("click", (event) => {
+      const clickedInsideDropdown = event.target.closest(".language-dropdown");
+      if (!clickedInsideDropdown) {
+        closeLangMenu();
+      }
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeLangMenu();
+        closeBurgerMenu();
+        closeAllModals();
+      }
+    });
+  }
+
+  function revealOnScroll() {
+    if (!revealElements.length) return;
+
+    revealElements.forEach((element) => {
+      const rect = element.getBoundingClientRect();
+      const visible = rect.top < window.innerHeight - 80;
+      if (visible) {
+        element.classList.add("is-visible");
+      }
+    });
+  }
+
+  revealOnScroll();
+  window.addEventListener("scroll", revealOnScroll, { passive: true });
+  window.addEventListener("resize", revealOnScroll);
+
+  galleryShells.forEach((shell) => {
+    const row = shell.querySelector(".gallery-row");
+    const prev = shell.querySelector(".gallery-arrow-left");
+    const next = shell.querySelector(".gallery-arrow-right");
+
+    if (!row || !prev || !next) return;
+
+    const getScrollAmount = () => {
+      const firstCard = row.querySelector(".gallery-card");
+      if (!firstCard) return 320;
+
+      const styles = window.getComputedStyle(row);
+      const gap = parseFloat(styles.columnGap || styles.gap || "24");
+      return firstCard.offsetWidth + gap;
+    };
+
+    prev.addEventListener("click", () => {
+      row.scrollBy({
+        left: -getScrollAmount(),
+        behavior: "smooth",
+      });
+    });
+
+    next.addEventListener("click", () => {
+      row.scrollBy({
+        left: getScrollAmount(),
+        behavior: "smooth",
+      });
+    });
   });
 
-  const revealElements = document.querySelectorAll(".reveal");
-  if (revealElements.length) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.12 }
-    );
+  function openModalById(modalId) {
+    const modal = document.getElementById(modalId);
+    if (!modal) return;
 
-    revealElements.forEach((el) => observer.observe(el));
+    modal.classList.add("is-open");
+    modal.setAttribute("aria-hidden", "false");
+    body.classList.add("modal-open");
   }
+
+  function closeModal(modal) {
+    if (!modal) return;
+    modal.classList.remove("is-open");
+    modal.setAttribute("aria-hidden", "true");
+
+    const anyOpenModal = document.querySelector(".modal.is-open");
+    if (!anyOpenModal) {
+      body.classList.remove("modal-open");
+    }
+  }
+
+  function closeAllModals() {
+    document.querySelectorAll(".modal.is-open").forEach((modal) => {
+      closeModal(modal);
+    });
+  }
+
+  window.openModal = openModalById;
+
+  document.querySelectorAll(".modal").forEach((modal) => {
+    const closeButton = modal.querySelector(".modal-close");
+
+    if (closeButton) {
+      closeButton.addEventListener("click", () => closeModal(modal));
+    }
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        closeModal(modal);
+      }
+    });
+  });
+
+  window.addEventListener("nordfit:language-ui-sync", () => {
+    closeLangMenu();
+  });
 });
