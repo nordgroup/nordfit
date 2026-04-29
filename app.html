@@ -4,11 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title data-i18n="meta.title">NordFit – App</title>
+  <title>NordFit – App</title>
   <meta
     name="description"
-    content="Die NordFit App bündelt Zugang, Mitgliedschaft, Tagespass und QR-Code an einem Ort."
-    data-i18n-content="meta.description"
+    content="Die NordFit App ist dein digitaler Zugang zu Mitgliedschaft, Tagespass und QR-Code-Zutritt."
   />
 
   <link rel="stylesheet" href="css/style.css" />
@@ -24,41 +23,14 @@
 
         <nav class="site-nav" aria-label="Hauptnavigation">
           <ul>
-            <li><a href="index.html" class="nav-link" data-i18n="nav.home">Startseite</a></li>
-            <li><a href="mitgliedschaften.html" class="nav-link" data-i18n="nav.pricing">Tarife</a></li>
-            <li><a href="standorte.html" class="nav-link" data-i18n="nav.locations">Standorte</a></li>
-            <li><a href="app.html" class="nav-link active" data-i18n="nav.app">App</a></li>
-            <li><a href="hausordnung.html" class="nav-link" data-i18n="nav.rules">Hausordnung</a></li>
-            <li><a href="kontakt.html" class="nav-link" data-i18n="nav.contact">Kontakt</a></li>
+            <li><a href="index.html" class="nav-link">Startseite</a></li>
+            <li><a href="mitgliedschaften.html" class="nav-link">Tarife</a></li>
+            <li><a href="standorte.html" class="nav-link">Standorte</a></li>
+            <li><a href="app.html" class="nav-link active">App</a></li>
+            <li><a href="hausordnung.html" class="nav-link">Hausordnung</a></li>
+            <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
           </ul>
         </nav>
-
-        <div class="language-dropdown">
-          <button
-            id="lang-toggle"
-            class="lang-toggle"
-            type="button"
-            aria-label="Sprache auswählen"
-            aria-expanded="false"
-            aria-controls="lang-menu"
-          >
-            <span class="lang-toggle-label">DE</span>
-            <span class="lang-caret" aria-hidden="true">⌄</span>
-          </button>
-
-          <div id="lang-menu" class="lang-menu" role="menu" aria-label="Sprachauswahl">
-            <button class="lang-option" data-lang="de" type="button" role="menuitem">Deutsch</button>
-            <button class="lang-option" data-lang="en" type="button" role="menuitem">English</button>
-            <button class="lang-option" data-lang="fr" type="button" role="menuitem">Français</button>
-            <button class="lang-option" data-lang="es" type="button" role="menuitem">Español</button>
-            <button class="lang-option" data-lang="it" type="button" role="menuitem">Italiano</button>
-            <button class="lang-option" data-lang="pl" type="button" role="menuitem">Polski</button>
-            <button class="lang-option" data-lang="nl" type="button" role="menuitem">Nederlands</button>
-            <button class="lang-option" data-lang="sv" type="button" role="menuitem">Svenska</button>
-            <button class="lang-option" data-lang="da" type="button" role="menuitem">Dansk</button>
-            <button class="lang-option" data-lang="no" type="button" role="menuitem">Norsk</button>
-          </div>
-        </div>
 
         <button
           id="burger"
@@ -81,17 +53,28 @@
     <section class="section home-hero-section">
       <div class="container">
         <div class="home-hero">
-          <h1 class="hero-title small-hero" data-i18n="appPage.heroTitle">
-            Ein Zugang. Alles drin.
-          </h1>
+          <h1 class="hero-title small-hero">Dein Zugang. Alles in einer App.</h1>
 
-          <p class="hero-subtitle" data-i18n="appPage.heroSubtitle">
-            Die NordFit App bündelt Mitgliedschaft, Tagespass und QR-Code-Zutritt an einem Ort. Klar genug, damit du nicht suchen musst.
+          <p class="hero-subtitle">
+            Mitgliedschaft abschließen, Tagespass buchen und per QR-Code ins Studio kommen. Die NordFit App bündelt alles, was dein Training einfacher macht.
           </p>
 
-          <div class="hero-actions">
-            <a href="mitgliedschaften.html" class="btn btn-primary" data-i18n="appPage.finalPrimary">Tarife ansehen</a>
-            <a href="kontakt.html" class="btn btn-secondary" data-i18n="appPage.finalSecondary">Frage stellen</a>
+          <div class="app-store-row centered">
+            <a href="#" class="store-badge store-badge-dark" aria-label="NordFit im App Store laden">
+              <span class="store-badge-icon" aria-hidden="true"></span>
+              <span class="store-badge-text">
+                <span class="store-badge-small">BALD IM</span>
+                <span class="store-badge-big">App Store</span>
+              </span>
+            </a>
+
+            <a href="#" class="store-badge store-badge-light" aria-label="NordFit bei Google Play ansehen">
+              <span class="store-badge-icon" aria-hidden="true">▶</span>
+              <span class="store-badge-text">
+                <span class="store-badge-small">BALD BEI</span>
+                <span class="store-badge-big">Google Play</span>
+              </span>
+            </a>
           </div>
         </div>
       </div>
@@ -99,91 +82,82 @@
 
     <section class="section section-tight">
       <div class="container">
-        <div class="hero-media">
-          <div class="app-screen-stage">
-            <img
-              src="images/nordfit-app-screen.png"
-              alt="Ansicht der NordFit App"
-              class="app-screen-image"
-              data-i18n-attr="alt:appPage.appImageAlt"
-            />
+        <div class="glass app-detail-card">
+          <div class="grid-2 app-content-grid app-page-hero-grid">
+            <div>
+              <p class="eyebrow">NordFit App</p>
+              <h2 class="section-title large-title">Ein Konto. Ein QR-Code. Ein klarer Ablauf.</h2>
+
+              <div class="copy-stack">
+                <p class="muted">
+                  Die App ist der digitale Mittelpunkt von NordFit. Du brauchst keinen Papiervertrag, keine Karte und keinen komplizierten Ablauf.
+                </p>
+
+                <p class="muted">
+                  In der App wählst du deinen Tarif, buchst bei Bedarf einen Tagespass und erhältst deinen persönlichen QR-Code für den Studiozugang.
+                </p>
+
+                <p class="muted">
+                  So bleibt alles an einem Ort: Zugang, Mitgliedschaft und Verwaltung.
+                </p>
+              </div>
+            </div>
+
+            <div class="app-screen-stage">
+              <div class="phone-mockup">
+                <div class="phone-notch"></div>
+                <div class="phone-screen">
+                  <div class="phone-logo-dot"></div>
+                  <div class="phone-line phone-line-wide"></div>
+                  <div class="phone-line"></div>
+                  <div class="phone-qr">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-
-          <div class="floating-note">
-            <span data-i18n="appPage.floatingLabel">NordFit Zugang</span>
-            <strong data-i18n="appPage.floatingText">Digital. Direkt. Übersichtlich.</strong>
-          </div>
-        </div>
-
-        <div class="app-store-row centered">
-          <a href="#" class="store-badge store-badge-dark" aria-label="NordFit im App Store laden">
-            <span class="store-badge-icon" aria-hidden="true"></span>
-            <span class="store-badge-text">
-              <span class="store-badge-small" data-i18n="appPage.appStoreSmall">LADEN IM</span>
-              <span class="store-badge-big" data-i18n="appPage.appStoreBig">App Store</span>
-            </span>
-          </a>
-
-          <a href="#" class="store-badge store-badge-light" aria-label="NordFit bei Google Play ansehen">
-            <span class="store-badge-icon" aria-hidden="true">▶</span>
-            <span class="store-badge-text">
-              <span class="store-badge-small" data-i18n="appPage.googlePlaySmall">JETZT BEI</span>
-              <span class="store-badge-big" data-i18n="appPage.googlePlayBig">Google Play</span>
-            </span>
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-intro center">
-          <h2 class="section-title large-title" data-i18n="appPage.feelingTitle">
-            Weniger Wege. Mehr Überblick.
-          </h2>
-
-          <p class="muted" data-i18n="appPage.feelingText">
-            Die App soll nicht technisch wirken. Sie soll einfach nur das tun, was du brauchst: Zugang, Tarif, Tagespass und Verwaltung sauber bündeln.
-          </p>
-        </div>
-
-        <div class="feature-grid">
-          <article class="feature-card card">
-            <span class="feature-number">01</span>
-            <h3 data-i18n="appPage.featureOneTitle">Zugang</h3>
-            <p data-i18n="appPage.featureOneText">
-              Dein QR-Code liegt direkt in der App. Öffnen, scannen, trainieren.
-            </p>
-          </article>
-
-          <article class="feature-card card">
-            <span class="feature-number">02</span>
-            <h3 data-i18n="appPage.featureTwoTitle">Mitgliedschaft</h3>
-            <p data-i18n="appPage.featureTwoText">
-              Tarif abschließen, Daten prüfen und alles sauber an einem Ort behalten.
-            </p>
-          </article>
-
-          <article class="feature-card card">
-            <span class="feature-number">03</span>
-            <h3 data-i18n="appPage.featureThreeTitle">Tagespass</h3>
-            <p data-i18n="appPage.featureThreeText">
-              Spontan trainieren, ohne Vertrag. Einmal buchen, einmal nutzen.
-            </p>
-          </article>
         </div>
       </div>
     </section>
 
     <section class="section section-light">
       <div class="container">
-        <div class="apple-panel dark">
-          <div class="apple-panel-content">
-            <h3 data-i18n="appPage.panelTitle">Alles, was Zugang braucht.</h3>
-            <p class="muted" data-i18n="appPage.panelText">
-              NordFit bleibt bewusst digital. Nicht, weil es kompliziert sein soll — sondern weil ein klarer Ablauf einfacher ist.
+        <div class="section-intro center">
+          <h2 class="section-title large-title">Gemacht für weniger Umwege.</h2>
+
+          <p class="muted">
+            Die wichtigsten Funktionen bleiben bewusst klar. Nicht mehr, als du brauchst — aber genau das, was deinen Besuch leichter macht.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card card">
+            <span class="feature-number">01</span>
+            <h3>QR-Code-Zutritt</h3>
+            <p>
+              Dein Studiozugang liegt direkt in der App. Öffnen, scannen, trainieren.
             </p>
-          </div>
+          </article>
+
+          <article class="feature-card card">
+            <span class="feature-number">02</span>
+            <h3>Mitgliedschaft</h3>
+            <p>
+              Tarif auswählen, abschließen und später verwalten — digital und übersichtlich.
+            </p>
+          </article>
+
+          <article class="feature-card card">
+            <span class="feature-number">03</span>
+            <h3>Tagespass</h3>
+            <p>
+              Spontan trainieren, ohne Mitgliedschaft. Ideal zum Testen oder für einzelne Tage.
+            </p>
+          </article>
         </div>
       </div>
     </section>
@@ -191,17 +165,15 @@
     <section class="section section-final-cta">
       <div class="container">
         <div class="final-cta">
-          <h2 class="section-title large-title" data-i18n="appPage.finalTitle">
-            Einfach starten. Ohne Papier.
-          </h2>
+          <h2 class="section-title large-title">Digital, weil es einfacher ist.</h2>
 
-          <p class="muted" data-i18n="appPage.finalText">
-            Mitgliedschaft und Tagespass laufen über die App. So bleibt der Einstieg klar und der Zugang direkt.
+          <p class="muted">
+            NordFit soll nicht mit Papierkram starten. Die App macht den Ablauf klarer — vom ersten Tarif bis zum Zutritt ins Studio.
           </p>
 
           <div class="hero-actions">
-            <a href="mitgliedschaften.html" class="btn btn-primary" data-i18n="appPage.finalPrimary">Tarife ansehen</a>
-            <a href="kontakt.html" class="btn btn-secondary" data-i18n="appPage.finalSecondary">Frage stellen</a>
+            <a href="mitgliedschaften.html" class="btn btn-primary">Tarife ansehen</a>
+            <a href="kontakt.html" class="btn btn-secondary">Frage stellen</a>
           </div>
         </div>
       </div>
@@ -212,12 +184,12 @@
     <div class="container">
       <div class="footer-shell">
         <div class="flex footer-row">
-          <p class="muted" data-i18n="footer.copyright">© 2030 NordFit/NordGroup. Do not distribute!</p>
+          <p class="muted">© 2030 NordFit/NordGroup. Do not distribute!</p>
 
           <div class="flex footer-links">
-            <a href="impressum.html" data-i18n="footer.legal">Impressum / AGB / Datenschutz</a>
-            <a href="hausordnung.html" data-i18n="footer.rules">Hausordnung</a>
-            <a href="kontakt.html" data-i18n="footer.contact">Kontakt</a>
+            <a href="impressum.html">Impressum / AGB / Datenschutz</a>
+            <a href="hausordnung.html">Hausordnung</a>
+            <a href="kontakt.html">Kontakt</a>
             <a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
         </div>
@@ -226,6 +198,5 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script src="js/translations.js"></script>
 </body>
 </html>
