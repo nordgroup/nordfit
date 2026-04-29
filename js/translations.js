@@ -2,7 +2,7 @@
    NordFit translations.js
    Stable data-i18n system
    Support:
-   index.html + mitgliedschaften.html + standorte.html + app.html + kontakt.html
+   index.html + mitgliedschaften.html + standorte.html + app.html + kontakt.html + impressum.html
    Full content: DE + EN
    Other languages: nav/footer + EN content fallback
    ========================= */
@@ -486,16 +486,13 @@ document.addEventListener("DOMContentLoaded", () => {
         heroTitle: "Sag kurz Bescheid.",
         heroSubtitle:
           "Fragen zu NordFit, Tarifen, Standort oder Zugang? Schreib direkt. Klar, einfach, ohne Umwege.",
-
         emailTitle: "E-Mail",
         instagramTitle: "Instagram",
         phoneTitle: "Telefon",
         phoneText: "Bald verfügbar.",
-
         formTitle: "Schreib deine Nachricht.",
         formSubtitle:
           "Das Formular öffnet dein Mailprogramm mit einer vorbereiteten Nachricht an NordFit.",
-
         firstnameLabel: "Vorname *",
         lastnameLabel: "Nachname *",
         emailLabel: "E-Mail *",
@@ -503,13 +500,11 @@ document.addEventListener("DOMContentLoaded", () => {
         topicLabel: "Thema *",
         memberIdLabel: "Member ID",
         messageLabel: "Nachricht *",
-
         firstnamePlaceholder: "Dein Vorname",
         lastnamePlaceholder: "Dein Nachname",
         emailPlaceholder: "deinname@email.de",
         optionalPlaceholder: "Optional",
         messagePlaceholder: "Schreib kurz, worum es geht ...",
-
         topicChoose: "Bitte auswählen",
         topicMembership: "Mitgliedschaft",
         topicApp: "App",
@@ -518,16 +513,71 @@ document.addEventListener("DOMContentLoaded", () => {
         topicLocation: "Standort",
         topicAccount: "Konto / Daten",
         topicGeneral: "Allgemeine Frage",
-
         formHint: "Alternativ kannst du direkt per Mail schreiben.",
         requiredHint: "Felder mit * müssen ausgefüllt werden.",
         submitButton: "Nachricht senden",
-
         finalTitle: "Lieber kurz fragen als lange suchen.",
         finalText:
           "Wenn etwas unklar ist, reicht eine kurze Nachricht. NordFit soll einfach verständlich bleiben.",
         finalPrimary: "Tarife ansehen",
         finalSecondary: "Standort ansehen",
+      },
+
+      legalPage: {
+        heroTitle: "Rechtliches. Klar sortiert.",
+        heroSubtitle:
+          "Impressum, AGB und Datenschutz sollen bei NordFit nicht versteckt wirken. Alles Wichtige bleibt auffindbar und sauber getrennt.",
+        imprintTitle: "Impressum",
+        providerLabel: "Angaben gemäß § 5 DDG",
+        addressLabel: "Anschrift",
+        addressValue: "(Straße) (Hausnummer), (PLZ) (Ort)",
+        representedByLabel: "Vertreten durch",
+        representedByValue: "(Vorname Nachname)",
+        emailLabel: "E-Mail",
+        phoneLabel: "Telefon",
+        phoneValue: "(Telefonnummer)",
+        instagramLabel: "Instagram",
+        vatLabel: "Umsatzsteuer-ID",
+        vatValue: "(falls vorhanden)",
+        missingInfo: "Fehlende Angaben werden ergänzt, sobald sie final feststehen.",
+        quickTitle: "Schnellzugriff",
+        quickText:
+          "Öffne hier die wichtigsten rechtlichen Bereiche, ohne lange zu suchen.",
+        termsButton: "AGB öffnen",
+        privacyButton: "Datenschutz öffnen",
+        rulesButton: "Hausordnung öffnen",
+        finalTitle: "Transparent bleiben.",
+        finalText:
+          "Die rechtlichen Inhalte werden vor Veröffentlichung vollständig geprüft und ergänzt.",
+        finalPrimary: "Kontakt aufnehmen",
+        finalSecondary: "Hausordnung ansehen",
+        termsTitle: "Allgemeine Geschäftsbedingungen",
+        termsIntro:
+          "Diese AGB regeln die Nutzung von NordFit, Mitgliedschaften, Tagespässen und den digitalen Zugang.",
+        termsOne: "Mitgliedschaften werden digital abgeschlossen und verwaltet.",
+        termsTwo:
+          "Zutritt ist nur mit gültiger Mitgliedschaft oder gültigem Tagespass möglich.",
+        termsThree: "Der persönliche QR-Code ist nicht übertragbar.",
+        termsFour: "Tagespässe gelten einmalig für den gebuchten Tag.",
+        termsFive: "Änderungen und Kündigungen erfolgen digital.",
+        termsSix: "Die Hausordnung ist einzuhalten.",
+        termsOutro:
+          "Weitere Regelungen zu Zahlung, Laufzeit, Kündigung, Haftung und Datenschutz werden vor Veröffentlichung ergänzt.",
+        privacyTitle: "Datenschutzerklärung",
+        privacyIntro:
+          "NordFit verarbeitet personenbezogene Daten nur, soweit dies für Kontakt, Mitgliedschaft, Zugang, Verwaltung und Sicherheit erforderlich ist.",
+        privacyOne:
+          "Beim Besuch der Website können technische Zugriffsdaten verarbeitet werden.",
+        privacyTwo:
+          "Bei Kontaktaufnahme können Name, E-Mail-Adresse, Telefonnummer, Thema und Nachricht verarbeitet werden.",
+        privacyThree:
+          "Für Mitgliedschaft und Tagespass können Vertrags-, Zahlungs- und Zugangsdaten verarbeitet werden.",
+        privacyFour:
+          "Daten werden nicht länger gespeichert, als es für den jeweiligen Zweck erforderlich ist.",
+        privacyFive:
+          "Betroffene Personen haben Rechte auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung.",
+        privacyOutro:
+          "Die vollständige Datenschutzerklärung wird vor Veröffentlichung ergänzt und rechtlich geprüft.",
       },
     },
 
@@ -690,16 +740,13 @@ document.addEventListener("DOMContentLoaded", () => {
         heroTitle: "Send a quick note.",
         heroSubtitle:
           "Questions about NordFit, plans, location or access? Write directly. Clear, simple, no detours.",
-
         emailTitle: "Email",
         instagramTitle: "Instagram",
         phoneTitle: "Phone",
         phoneText: "Coming soon.",
-
         formTitle: "Write your message.",
         formSubtitle:
           "The form opens your mail app with a prepared message to NordFit.",
-
         firstnameLabel: "First name *",
         lastnameLabel: "Last name *",
         emailLabel: "Email *",
@@ -707,13 +754,11 @@ document.addEventListener("DOMContentLoaded", () => {
         topicLabel: "Topic *",
         memberIdLabel: "Member ID",
         messageLabel: "Message *",
-
         firstnamePlaceholder: "Your first name",
         lastnamePlaceholder: "Your last name",
         emailPlaceholder: "yourname@email.com",
         optionalPlaceholder: "Optional",
         messagePlaceholder: "Briefly write what it is about ...",
-
         topicChoose: "Please choose",
         topicMembership: "Membership",
         topicApp: "App",
@@ -722,16 +767,71 @@ document.addEventListener("DOMContentLoaded", () => {
         topicLocation: "Location",
         topicAccount: "Account / Data",
         topicGeneral: "General question",
-
         formHint: "Alternatively, you can email us directly.",
         requiredHint: "Fields marked with * are required.",
         submitButton: "Send message",
-
         finalTitle: "Better to ask briefly than search for long.",
         finalText:
           "If something is unclear, a short message is enough. NordFit should stay easy to understand.",
         finalPrimary: "View plans",
         finalSecondary: "View location",
+      },
+
+      legalPage: {
+        heroTitle: "Legal. Clearly organized.",
+        heroSubtitle:
+          "Legal notice, terms and privacy should not feel hidden at NordFit. Everything important stays easy to find and clearly separated.",
+        imprintTitle: "Legal notice",
+        providerLabel: "Information according to § 5 DDG",
+        addressLabel: "Address",
+        addressValue: "(Street) (Number), (ZIP) (City)",
+        representedByLabel: "Represented by",
+        representedByValue: "(First name Last name)",
+        emailLabel: "Email",
+        phoneLabel: "Phone",
+        phoneValue: "(Phone number)",
+        instagramLabel: "Instagram",
+        vatLabel: "VAT ID",
+        vatValue: "(if available)",
+        missingInfo: "Missing details will be added once they are final.",
+        quickTitle: "Quick access",
+        quickText:
+          "Open the most important legal sections here without searching for long.",
+        termsButton: "Open terms",
+        privacyButton: "Open privacy",
+        rulesButton: "Open house rules",
+        finalTitle: "Stay transparent.",
+        finalText:
+          "The legal content will be fully checked and completed before publication.",
+        finalPrimary: "Get in touch",
+        finalSecondary: "View house rules",
+        termsTitle: "Terms and Conditions",
+        termsIntro:
+          "These terms regulate the use of NordFit, memberships, day passes and digital access.",
+        termsOne: "Memberships are completed and managed digitally.",
+        termsTwo:
+          "Access is only possible with a valid membership or valid day pass.",
+        termsThree: "The personal QR code is not transferable.",
+        termsFour: "Day passes are valid once for the booked day.",
+        termsFive: "Changes and cancellations are handled digitally.",
+        termsSix: "The house rules must be followed.",
+        termsOutro:
+          "Further rules on payment, term, cancellation, liability and privacy will be added before publication.",
+        privacyTitle: "Privacy Policy",
+        privacyIntro:
+          "NordFit processes personal data only as far as necessary for contact, membership, access, management and security.",
+        privacyOne:
+          "When visiting the website, technical access data may be processed.",
+        privacyTwo:
+          "When contacting NordFit, name, email address, phone number, topic and message may be processed.",
+        privacyThree:
+          "For membership and day passes, contract, payment and access data may be processed.",
+        privacyFour:
+          "Data is not stored longer than necessary for the respective purpose.",
+        privacyFive:
+          "Data subjects have rights to access, correction, deletion and restriction of processing.",
+        privacyOutro:
+          "The full privacy policy will be added and legally checked before publication.",
       },
     },
   };
