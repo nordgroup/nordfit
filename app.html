@@ -7,7 +7,7 @@
   <title>NordFit – App</title>
   <meta
     name="description"
-    content="Die NordFit App ist dein Zugang zu Mitgliedschaft, Tagespass und QR-Code-Zutritt. Klar, direkt und vollständig digital."
+    content="Die NordFit App ist dein digitaler Zugang zu Mitgliedschaft, Tagespass, QR-Code und persönlicher Verwaltung."
   />
 
   <link rel="stylesheet" href="css/style.css" />
@@ -65,6 +65,7 @@
           type="button"
           aria-label="Menü öffnen"
           aria-expanded="false"
+          aria-controls="primary-navigation"
         >
           <span class="burger-lines" aria-hidden="true">
             <span></span>
@@ -80,17 +81,22 @@
     <section class="section home-hero-section">
       <div class="container">
         <div class="home-hero reveal">
-          <h1 class="hero-title">Alles Wichtige. In einer App.</h1>
+          <p class="eyebrow hero-eyebrow">NordFit App</p>
+
+          <h1 class="hero-title small-hero">
+            Dein Studiozugang in einer App.
+          </h1>
+
           <p class="hero-subtitle">
-            Mit der NordFit App buchst du deine Mitgliedschaft, kaufst deinen Tagespass
-            und öffnest den Studiozugang per QR-Code.
+            Mitgliedschaft abschließen, Tagespass buchen und den QR-Code für den Zutritt öffnen:
+            Die NordFit App bündelt alles, was du für dein Training brauchst.
           </p>
 
           <div class="app-store-row centered">
             <a href="#" class="store-badge store-badge-dark" aria-label="NordFit im App Store laden">
               <span class="store-badge-icon" aria-hidden="true"></span>
               <span class="store-badge-text">
-                <span class="store-badge-small">LADEN IM</span>
+                <span class="store-badge-small">GEPLANT FÜR</span>
                 <span class="store-badge-big">App Store</span>
               </span>
             </a>
@@ -98,7 +104,7 @@
             <a href="#" class="store-badge store-badge-light" aria-label="NordFit bei Google Play ansehen">
               <span class="store-badge-icon" aria-hidden="true">▶</span>
               <span class="store-badge-text">
-                <span class="store-badge-small">JETZT BEI</span>
+                <span class="store-badge-small">GEPLANT FÜR</span>
                 <span class="store-badge-big">Google Play</span>
               </span>
             </a>
@@ -110,10 +116,10 @@
     <section class="section section-tight section-compact-bottom">
       <div class="container">
         <div class="info-note reveal">
-          <p class="info-note-label">App Zugang</p>
+          <p class="info-note-label">Wichtige Info</p>
           <p class="info-note-text">
-            Die App bündelt Mitgliedschaft, Tagespass, persönliche Daten und QR-Code-Zutritt
-            an einem Ort. So bleibt der Ablauf klar und direkt.
+            Ohne App gibt es keinen digitalen Zutritt. Mitgliedschaft, Tagespass,
+            QR-Code und persönliche Verwaltung laufen bei NordFit bewusst über einen klaren Weg.
           </p>
         </div>
       </div>
@@ -124,22 +130,23 @@
         <div class="glass app-detail-card reveal">
           <div class="grid-2 app-content-grid app-page-hero-grid">
             <div>
-              <h2 class="section-title large-title">Ein Konto. Ein QR-Code. Ein klarer Ablauf.</h2>
+              <p class="eyebrow">Ablauf</p>
+              <h2 class="section-title large-title">Ein Konto. Ein QR-Code. Ein klarer Weg.</h2>
 
               <div class="copy-stack">
                 <p class="muted">
-                  NordFit läuft digital. Du wählst deinen Tarif, verwaltest deine Daten
-                  und hast deinen Zugang immer direkt auf dem Smartphone.
+                  NordFit soll digital einfach bleiben. Du wählst deinen Tarif,
+                  verwaltest deine Daten und hast deinen Zugang direkt auf dem Smartphone.
                 </p>
 
                 <p class="muted">
-                  Der QR-Code in der App ist dein Schlüssel zum Studio. Kein Papier,
-                  keine langen Wege, kein unnötiges Hin und Her.
+                  Dein QR-Code ist der Schlüssel zum Studio. Kein Papier,
+                  keine unnötigen Zwischenschritte und kein komplizierter Ablauf.
                 </p>
 
                 <p class="muted">
-                  Auch Tagespässe lassen sich direkt buchen. Ideal, wenn du spontan trainieren
-                  oder NordFit erstmal für einen Tag nutzen möchtest.
+                  Auch Tagespässe lassen sich über die App buchen. Ideal, wenn du NordFit
+                  erst testen oder spontan trainieren möchtest.
                 </p>
               </div>
 
@@ -150,18 +157,18 @@
                 </div>
 
                 <div class="app-need-item">
-                  <span class="app-need-title">Mitgliedschaft digital abschließen</span>
-                  <span class="muted">Tarif auswählen, abschließen und jederzeit im Blick behalten.</span>
+                  <span class="app-need-title">Mitgliedschaft abschließen</span>
+                  <span class="muted">Tarif auswählen, abschließen und später sauber verwalten.</span>
                 </div>
 
                 <div class="app-need-item">
-                  <span class="app-need-title">Tagespass direkt kaufen</span>
-                  <span class="muted">Einmaliger Zugang für spontanes Training ohne Vertragslaufzeit.</span>
+                  <span class="app-need-title">Tagespass buchen</span>
+                  <span class="muted">Einmaliger Zugang für spontanes Training ohne Mitgliedschaft.</span>
                 </div>
 
                 <div class="app-need-item">
-                  <span class="app-need-title">Alles sauber gebündelt</span>
-                  <span class="muted">Zugang, Standort, Daten und Verwaltung bleiben an einem Ort.</span>
+                  <span class="app-need-title">Alles an einem Ort</span>
+                  <span class="muted">Zugang, Standort, Daten und Verwaltung bleiben klar gebündelt.</span>
                 </div>
               </div>
             </div>
@@ -173,6 +180,26 @@
                 class="app-screen-image"
               />
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-final-cta">
+      <div class="container">
+        <div class="final-cta glass reveal">
+          <p class="eyebrow">Noch nicht veröffentlicht</p>
+          <h2 class="section-title large-title">
+            Die App ist Teil des geplanten NordFit Systems.
+          </h2>
+          <p class="muted">
+            Sobald NordFit final startet, werden hier die echten Store-Links ergänzt.
+            Bis dahin bleibt die Seite ehrlich: Die App ist geplant, aber noch nicht live.
+          </p>
+
+          <div class="hero-actions">
+            <a href="mitgliedschaften.html" class="btn btn-primary">Tarife ansehen</a>
+            <a href="kontakt.html" class="btn btn-secondary">Frage stellen</a>
           </div>
         </div>
       </div>
@@ -197,5 +224,6 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/translations.js"></script>
 </body>
 </html>
