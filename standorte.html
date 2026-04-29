@@ -7,7 +7,7 @@
   <title data-i18n="meta.title">NordFit – Standorte</title>
   <meta
     name="description"
-    content="NordFit Standort Grevesmühlen. Klar erreichbar, ruhig geplant und direkt über Karten auffindbar."
+    content="NordFit Standort Grevesmühlen. Klar erreichbar, ruhig geplant und direkt über die Karte auffindbar."
     data-i18n-content="meta.description"
   />
 
@@ -100,7 +100,7 @@
     <section class="section section-tight">
       <div class="container">
         <div class="hero-media">
-          <div class="image-frame image-frame-large">
+          <div class="image-frame">
             <span class="image-frame-label" data-i18n="locations.imageLabel">Studio Außenansicht</span>
           </div>
 
@@ -120,8 +120,7 @@
           </h2>
 
           <p class="muted" data-i18n="locations.feelingText">
-            NordFit soll nicht wie ein lauter Fitness-Tempel wirken. Der Standort soll klar sein:
-            ankommen, Zugang öffnen, trainieren, fertig.
+            NordFit soll nicht wie ein lauter Fitness-Tempel wirken. Der Standort soll klar sein: ankommen, Zugang öffnen, trainieren, fertig.
           </p>
         </div>
 
@@ -165,63 +164,67 @@
           </p>
         </div>
 
-        <div class="map-card card">
-          <div class="legal-info-list">
-            <div class="legal-info-row">
-              <span class="legal-label" data-i18n="locations.addressLabel">Adresse</span>
-              <strong data-i18n="locations.addressValue">(Straße) (Hausnummer), (PLZ) Grevesmühlen</strong>
+        <div class="legal-grid">
+          <article class="card legal-shell">
+            <div class="legal-info-list">
+              <div class="legal-info-row">
+                <span class="legal-label" data-i18n="locations.addressLabel">Adresse</span>
+                <strong data-i18n="locations.addressValue">(Straße) (Hausnummer), (PLZ) Grevesmühlen</strong>
+              </div>
+
+              <div class="legal-info-row">
+                <span class="legal-label" data-i18n="locations.accessLabel">Zugang</span>
+                <strong data-i18n="locations.accessValue">Digital über NordFit Zugang</strong>
+              </div>
+
+              <div class="legal-info-row">
+                <span class="legal-label" data-i18n="locations.cityLabel">Standort</span>
+                <strong data-i18n="locations.cityValue">Grevesmühlen</strong>
+              </div>
             </div>
 
-            <div class="legal-info-row">
-              <span class="legal-label" data-i18n="locations.accessLabel">Zugang</span>
-              <strong data-i18n="locations.accessValue">Digital über NordFit Zugang</strong>
+            <div class="app-store-row">
+              <a
+                href="https://maps.apple.com/?q=Grevesm%C3%BChlen"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="store-badge store-badge-light"
+              >
+                <span class="store-badge-icon" aria-hidden="true">⌘</span>
+                <span class="store-badge-text">
+                  <span class="store-badge-small" data-i18n="locations.openIn">ÖFFNEN IN</span>
+                  <span class="store-badge-big" data-i18n="locations.appleMaps">Apple Karten</span>
+                </span>
+              </a>
+
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Grevesm%C3%BChlen"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="store-badge store-badge-dark"
+              >
+                <span class="store-badge-icon" aria-hidden="true">⌖</span>
+                <span class="store-badge-text">
+                  <span class="store-badge-small" data-i18n="locations.openIn">ÖFFNEN IN</span>
+                  <span class="store-badge-big" data-i18n="locations.googleMaps">Google Maps</span>
+                </span>
+              </a>
             </div>
+          </article>
 
-            <div class="legal-info-row">
-              <span class="legal-label" data-i18n="locations.cityLabel">Standort</span>
-              <strong data-i18n="locations.cityValue">Grevesmühlen</strong>
+          <article class="card map-card">
+            <div class="map-frame">
+              <iframe
+                src="https://www.google.com/maps?q=Grevesm%C3%BChlen&output=embed"
+                width="100%"
+                height="420"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                title="NordFit Standort Karte"
+                data-i18n-attr="title:locations.mapIframeTitle"
+              ></iframe>
             </div>
-          </div>
-
-          <div class="map-frame">
-            <iframe
-              src="https://www.google.com/maps?q=Grevesm%C3%BChlen&output=embed"
-              width="100%"
-              height="420"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="NordFit Standort Karte"
-              data-i18n-attr="title:locations.mapIframeTitle"
-            ></iframe>
-          </div>
-
-          <div class="app-store-row">
-            <a
-              href="https://maps.apple.com/?q=Grevesm%C3%BChlen"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="store-badge store-badge-light"
-            >
-              <span class="store-badge-icon" aria-hidden="true">⌘</span>
-              <span class="store-badge-text">
-                <span class="store-badge-small" data-i18n="locations.openIn">ÖFFNEN IN</span>
-                <span class="store-badge-big" data-i18n="locations.appleMaps">Apple Karten</span>
-              </span>
-            </a>
-
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=Grevesm%C3%BChlen"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="store-badge store-badge-dark"
-            >
-              <span class="store-badge-icon" aria-hidden="true">⌖</span>
-              <span class="store-badge-text">
-                <span class="store-badge-small" data-i18n="locations.openIn">ÖFFNEN IN</span>
-                <span class="store-badge-big" data-i18n="locations.googleMaps">Google Maps</span>
-              </span>
-            </a>
-          </div>
+          </article>
         </div>
       </div>
     </section>
@@ -234,8 +237,7 @@
           </h2>
 
           <p class="muted" data-i18n="locations.finalText">
-            Für NordFit zählt nicht nur die Adresse. Wichtig ist, dass der Ort zum Konzept passt:
-            ruhig, verständlich und gut erreichbar.
+            Für NordFit zählt nicht nur die Adresse. Wichtig ist, dass der Ort zum Konzept passt: ruhig, verständlich und gut erreichbar.
           </p>
 
           <div class="hero-actions">
