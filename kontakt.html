@@ -7,7 +7,7 @@
   <title>NordFit – Kontakt</title>
   <meta
     name="description"
-    content="Kontakt zu NordFit. Schreibe uns per E-Mail, Instagram oder direkt über das Kontaktformular."
+    content="Kontakt zu NordFit – per E-Mail, Instagram oder direkt über das Kontaktformular."
   />
 
   <link rel="stylesheet" href="css/style.css" />
@@ -65,6 +65,7 @@
           type="button"
           aria-label="Menü öffnen"
           aria-expanded="false"
+          aria-controls="primary-navigation"
         >
           <span class="burger-lines" aria-hidden="true">
             <span></span>
@@ -80,10 +81,15 @@
     <section class="section home-hero-section">
       <div class="container">
         <div class="home-hero reveal">
-          <h1 class="hero-title small-hero">Direkt. Klar. Persönlich.</h1>
+          <p class="eyebrow hero-eyebrow">Kontakt</p>
+
+          <h1 class="hero-title small-hero">
+            Schreib uns direkt.
+          </h1>
+
           <p class="hero-subtitle">
-            Du hast eine Frage zu NordFit, zur App, zum Zugang oder zu deiner Mitgliedschaft?
-            Schreib uns einfach. Wir melden uns so schnell wie möglich zurück.
+            Ob Frage zur App, zu Tarifen, zum Standort oder zum Zugang:
+            Du erreichst NordFit unkompliziert per Mail, Instagram oder über das Formular.
           </p>
         </div>
       </div>
@@ -93,7 +99,8 @@
       <div class="container">
         <div class="grid-2 contact-hero-grid">
           <article class="glass section-block reveal">
-            <h2 class="section-title">Kontaktwege</h2>
+            <p class="eyebrow">Kontaktwege</p>
+            <h2 class="section-title">So erreichst du uns.</h2>
 
             <div class="contact-info-stack clean-list-offset">
               <div class="contact-info-item">
@@ -108,13 +115,14 @@
 
               <div class="contact-info-item">
                 <span class="contact-info-label">Telefon</span>
-                <a href="tel:(Telefonnummer)">(Telefonnummer)</a>
+                <span class="muted">Bald verfügbar</span>
               </div>
             </div>
           </article>
 
           <article class="glass contact-form-shell reveal">
-            <h2 class="section-title">Kontaktformular</h2>
+            <p class="eyebrow">Formular</p>
+            <h2 class="section-title">Nachricht senden</h2>
 
             <form class="clean-list-offset" data-nordfit-contact-form>
               <div class="form-grid">
@@ -203,14 +211,34 @@
 
               <div class="contact-form-footer">
                 <div>
-                  <p class="muted">Du kannst uns alternativ direkt per Mail schreiben.</p>
+                  <p class="muted">Beim Absenden öffnet sich dein Mailprogramm mit einer vorbereiteten Nachricht.</p>
                   <p class="required-note">Felder mit * müssen ausgefüllt werden.</p>
                 </div>
 
-                <button type="submit" class="btn btn-primary">Nachricht senden</button>
+                <button type="submit" class="btn btn-primary">Nachricht vorbereiten</button>
               </div>
             </form>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-final-cta">
+      <div class="container">
+        <div class="final-cta glass reveal">
+          <p class="eyebrow">Kurz gesagt</p>
+          <h2 class="section-title large-title">
+            Lieber klar fragen als lange suchen.
+          </h2>
+          <p class="muted">
+            Wenn etwas noch offen ist, melde dich einfach.
+            NordFit soll verständlich bleiben — auch bevor alles final live ist.
+          </p>
+
+          <div class="hero-actions">
+            <a href="mitgliedschaften.html" class="btn btn-primary">Tarife ansehen</a>
+            <a href="standorte.html" class="btn btn-secondary">Standort ansehen</a>
+          </div>
         </div>
       </div>
     </section>
@@ -234,5 +262,6 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/translations.js"></script>
 </body>
 </html>
