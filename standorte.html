@@ -4,10 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>NordFit – Standorte</title>
+  <title data-i18n="meta.title">NordFit – Standorte</title>
   <meta
     name="description"
-    content="NordFit Standorte – geplant für Grevesmühlen, klar erreichbar und ruhig im Aufbau."
+    content="NordFit Standort Grevesmühlen. Klar erreichbar, ruhig geplant und direkt über Karten auffindbar."
+    data-i18n-content="meta.description"
   />
 
   <link rel="stylesheet" href="css/style.css" />
@@ -16,19 +17,19 @@
 <body>
   <header class="site-header">
     <div class="container">
-      <div class="site-header-inner glass">
+      <div class="site-header-inner">
         <a href="index.html" class="logo" aria-label="NordFit Startseite">
           <img src="images/nordfit-logo.png" alt="NordFit Logo" />
         </a>
 
         <nav class="site-nav" aria-label="Hauptnavigation">
           <ul>
-            <li><a href="index.html" class="nav-link">Startseite</a></li>
-            <li><a href="mitgliedschaften.html" class="nav-link">Tarife</a></li>
-            <li><a href="standorte.html" class="nav-link active">Standorte</a></li>
-            <li><a href="app.html" class="nav-link">App</a></li>
-            <li><a href="hausordnung.html" class="nav-link">Hausordnung</a></li>
-            <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+            <li><a href="index.html" class="nav-link" data-i18n="nav.home">Startseite</a></li>
+            <li><a href="mitgliedschaften.html" class="nav-link" data-i18n="nav.pricing">Tarife</a></li>
+            <li><a href="standorte.html" class="nav-link active" data-i18n="nav.locations">Standorte</a></li>
+            <li><a href="app.html" class="nav-link" data-i18n="nav.app">App</a></li>
+            <li><a href="hausordnung.html" class="nav-link" data-i18n="nav.rules">Hausordnung</a></li>
+            <li><a href="kontakt.html" class="nav-link" data-i18n="nav.contact">Kontakt</a></li>
           </ul>
         </nav>
 
@@ -65,7 +66,6 @@
           type="button"
           aria-label="Menü öffnen"
           aria-expanded="false"
-          aria-controls="primary-navigation"
         >
           <span class="burger-lines" aria-hidden="true">
             <span></span>
@@ -81,21 +81,17 @@
     <section class="section home-hero-section">
       <div class="container">
         <div class="home-hero">
-          <p class="eyebrow hero-eyebrow">Standort</p>
-
-          <h1 class="hero-title small-hero">
-            Geplant für Grevesmühlen.
+          <h1 class="hero-title small-hero" data-i18n="locations.heroTitle">
+            Grevesmühlen. Klarer Startpunkt.
           </h1>
 
-          <p class="hero-subtitle">
-            Der erste NordFit Standort soll gut erreichbar sein, ruhig wirken
-            und direkt verständlich funktionieren. Die genaue Adresse folgt,
-            sobald der Standort final feststeht.
+          <p class="hero-subtitle" data-i18n="locations.heroSubtitle">
+            Der erste NordFit Standort soll ruhig erreichbar sein, sauber wirken und ohne Umwege verstanden werden.
           </p>
 
           <div class="hero-actions">
-            <a href="kontakt.html" class="btn btn-primary">Frage zum Standort stellen</a>
-            <a href="mitgliedschaften.html" class="btn btn-secondary">Tarife ansehen</a>
+            <a href="#karte" class="btn btn-primary" data-i18n="locations.primaryCta">Karte ansehen</a>
+            <a href="kontakt.html" class="btn btn-secondary" data-i18n="locations.secondaryCta">Frage stellen</a>
           </div>
         </div>
       </div>
@@ -103,138 +99,126 @@
 
     <section class="section section-tight">
       <div class="container">
-        <div class="glass location-card">
-          <div class="grid-2 location-content-grid">
-            <div>
-              <p class="eyebrow">NordFit Grevesmühlen</p>
-              <h2 class="section-title large-title">
-                Ein Standort, der ruhig starten soll.
-              </h2>
+        <div class="hero-media">
+          <div class="image-frame image-frame-large">
+            <span class="image-frame-label" data-i18n="locations.imageLabel">Studio Außenansicht</span>
+          </div>
 
-              <div class="copy-stack">
-                <p class="muted">
-                  NordFit soll nicht mit einem überladenen Eindruck beginnen.
-                  Der Standort ist als klarer, moderner Einstieg gedacht:
-                  übersichtlich, sauber und ohne unnötige Hektik.
-                </p>
-
-                <p class="muted">
-                  Wichtig ist ein Ablauf, den man sofort versteht:
-                  ankommen, Zugang öffnen, trainieren und wieder rausgehen.
-                  Genau dieses einfache Gefühl soll der erste Standort vermitteln.
-                </p>
-              </div>
-
-              <div class="legal-info-list clean-list-offset">
-                <div class="legal-info-row">
-                  <span class="legal-label">Ort</span>
-                  <strong>Grevesmühlen</strong>
-                </div>
-
-                <div class="legal-info-row">
-                  <span class="legal-label">Status</span>
-                  <strong>In Planung</strong>
-                </div>
-
-                <div class="legal-info-row">
-                  <span class="legal-label">Adresse</span>
-                  <strong>Folgt nach finaler Standortentscheidung</strong>
-                </div>
-
-                <div class="legal-info-row">
-                  <span class="legal-label">Ausrichtung</span>
-                  <strong>Klar, modern, ruhig</strong>
-                </div>
-              </div>
-            </div>
-
-            <div class="location-hero-image">
-              <div class="image-frame image-frame-large">
-                <span class="image-frame-label">Standortbild folgt</span>
-              </div>
-            </div>
+          <div class="floating-note">
+            <span data-i18n="locations.floatingLabel">Geplanter Standort</span>
+            <strong data-i18n="locations.floatingText">Grevesmühlen</strong>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-tight">
+    <section class="section">
       <div class="container">
-        <div class="section-intro">
-          <p class="eyebrow">Warum Grevesmühlen?</p>
-          <h2 class="section-title large-title">
-            Klein genug für Ruhe. Groß genug für Bedarf.
+        <div class="section-intro center">
+          <h2 class="section-title large-title" data-i18n="locations.feelingTitle">
+            Gut erreichbar. Nicht überladen.
           </h2>
-          <p class="muted">
-            Grevesmühlen passt zum NordFit-Gedanken, weil der erste Standort nicht wie ein riesiger,
-            anonymer Fitnesskomplex wirken soll. Das Studio soll erreichbar bleiben,
-            aber trotzdem genug Eigenständigkeit haben.
+
+          <p class="muted" data-i18n="locations.feelingText">
+            NordFit soll nicht wie ein lauter Fitness-Tempel wirken. Der Standort soll klar sein:
+            ankommen, Zugang öffnen, trainieren, fertig.
           </p>
         </div>
 
         <div class="feature-grid">
           <article class="feature-card card">
             <span class="feature-number">01</span>
-            <h3>Erreichbar</h3>
-            <p>
-              Der Standort soll so gewählt werden, dass man ihn ohne komplizierte Wege findet
-              und der Besuch im Alltag realistisch bleibt.
+            <h3 data-i18n="locations.featureOneTitle">Ort</h3>
+            <p data-i18n="locations.featureOneText">
+              Grevesmühlen als ruhiger Startpunkt zwischen Alltag, Erreichbarkeit und nordischem Gefühl.
             </p>
           </article>
 
           <article class="feature-card card">
             <span class="feature-number">02</span>
-            <h3>Übersichtlich</h3>
-            <p>
-              NordFit soll nicht verwirrend wirken. Gute Orientierung ist wichtiger
-              als unnötig viele Bereiche auf engem Raum.
+            <h3 data-i18n="locations.featureTwoTitle">Zugang</h3>
+            <p data-i18n="locations.featureTwoText">
+              Der Besuch soll einfach bleiben. Kein komplizierter Ablauf, kein unnötiger Empfangsweg.
             </p>
           </article>
 
           <article class="feature-card card">
             <span class="feature-number">03</span>
-            <h3>Ruhiger Start</h3>
-            <p>
-              Erst ein Standort, dafür sauber gedacht. Lieber klar starten
-              als zu früh zu viel versprechen.
+            <h3 data-i18n="locations.featureThreeTitle">Eindruck</h3>
+            <p data-i18n="locations.featureThreeText">
+              Modern, ruhig und sauber. Der Standort soll direkt nach NordFit wirken — nicht beliebig.
             </p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-tight">
+    <section class="section section-light" id="karte">
       <div class="container">
-        <div class="glass map-card">
-          <p class="eyebrow">Karte</p>
-          <h2 class="section-title">Die Karte kommt, sobald die Adresse feststeht.</h2>
+        <div class="section-intro center">
+          <h2 class="section-title large-title" data-i18n="locations.mapTitle">
+            Standort finden.
+          </h2>
 
-          <div class="copy-stack">
-            <p class="muted">
-              Auf dieser Seite wird bewusst keine Fake-Karte angezeigt.
-              Eine falsche Route würde unprofessionell wirken und könnte Besucher verwirren.
-            </p>
+          <p class="muted" data-i18n="locations.mapText">
+            Die genaue Adresse wird ergänzt, sobald der Standort final feststeht. Bis dahin bleibt Grevesmühlen als geplanter Bereich sichtbar.
+          </p>
+        </div>
 
-            <p class="muted">
-              Sobald die genaue Adresse final ist, kommen hier direkte Links zu Apple Karten
-              und Google Maps hinein.
-            </p>
+        <div class="map-card card">
+          <div class="legal-info-list">
+            <div class="legal-info-row">
+              <span class="legal-label" data-i18n="locations.addressLabel">Adresse</span>
+              <strong data-i18n="locations.addressValue">(Straße) (Hausnummer), (PLZ) Grevesmühlen</strong>
+            </div>
+
+            <div class="legal-info-row">
+              <span class="legal-label" data-i18n="locations.accessLabel">Zugang</span>
+              <strong data-i18n="locations.accessValue">Digital über NordFit Zugang</strong>
+            </div>
+
+            <div class="legal-info-row">
+              <span class="legal-label" data-i18n="locations.cityLabel">Standort</span>
+              <strong data-i18n="locations.cityValue">Grevesmühlen</strong>
+            </div>
+          </div>
+
+          <div class="map-frame">
+            <iframe
+              src="https://www.google.com/maps?q=Grevesm%C3%BChlen&output=embed"
+              width="100%"
+              height="420"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="NordFit Standort Karte"
+              data-i18n-attr="title:locations.mapIframeTitle"
+            ></iframe>
           </div>
 
           <div class="app-store-row">
-            <a href="kontakt.html" class="store-badge store-badge-light">
-              <span class="store-badge-icon" aria-hidden="true">⌁</span>
+            <a
+              href="https://maps.apple.com/?q=Grevesm%C3%BChlen"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="store-badge store-badge-light"
+            >
+              <span class="store-badge-icon" aria-hidden="true">⌘</span>
               <span class="store-badge-text">
-                <span class="store-badge-small">FRAGE ZUM</span>
-                <span class="store-badge-big">Standort stellen</span>
+                <span class="store-badge-small" data-i18n="locations.openIn">ÖFFNEN IN</span>
+                <span class="store-badge-big" data-i18n="locations.appleMaps">Apple Karten</span>
               </span>
             </a>
 
-            <a href="mitgliedschaften.html" class="store-badge store-badge-dark">
-              <span class="store-badge-icon" aria-hidden="true">◆</span>
+            <a
+              href="https://www.google.com/maps/search/?api=1&query=Grevesm%C3%BChlen"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="store-badge store-badge-dark"
+            >
+              <span class="store-badge-icon" aria-hidden="true">⌖</span>
               <span class="store-badge-text">
-                <span class="store-badge-small">WEITER ZU</span>
-                <span class="store-badge-big">Tarifen</span>
+                <span class="store-badge-small" data-i18n="locations.openIn">ÖFFNEN IN</span>
+                <span class="store-badge-big" data-i18n="locations.googleMaps">Google Maps</span>
               </span>
             </a>
           </div>
@@ -244,19 +228,19 @@
 
     <section class="section section-final-cta">
       <div class="container">
-        <div class="final-cta glass">
-          <p class="eyebrow">Standortstatus</p>
-          <h2 class="section-title large-title">
-            Lieber ehrlich unfertig als falsch fertig.
+        <div class="final-cta">
+          <h2 class="section-title large-title" data-i18n="locations.finalTitle">
+            Ein Standort soll sich richtig anfühlen.
           </h2>
-          <p class="muted">
-            NordFit ist noch im Aufbau. Deshalb stehen hier nur Informationen,
-            die zum aktuellen Planungsstand passen.
+
+          <p class="muted" data-i18n="locations.finalText">
+            Für NordFit zählt nicht nur die Adresse. Wichtig ist, dass der Ort zum Konzept passt:
+            ruhig, verständlich und gut erreichbar.
           </p>
 
           <div class="hero-actions">
-            <a href="kontakt.html" class="btn btn-primary">Kontakt aufnehmen</a>
-            <a href="index.html" class="btn btn-secondary">Zur Startseite</a>
+            <a href="mitgliedschaften.html" class="btn btn-primary" data-i18n="locations.finalPrimary">Tarife ansehen</a>
+            <a href="kontakt.html" class="btn btn-secondary" data-i18n="locations.finalSecondary">Kontakt aufnehmen</a>
           </div>
         </div>
       </div>
@@ -267,12 +251,12 @@
     <div class="container">
       <div class="footer-shell">
         <div class="flex footer-row">
-          <p class="muted">© 2030 NordFit/NordGroup. Do not distribute!</p>
+          <p class="muted" data-i18n="footer.copyright">© 2030 NordFit/NordGroup. Do not distribute!</p>
 
           <div class="flex footer-links">
-            <a href="impressum.html">Impressum / AGB / Datenschutz</a>
-            <a href="hausordnung.html">Hausordnung</a>
-            <a href="kontakt.html">Kontakt</a>
+            <a href="impressum.html" data-i18n="footer.legal">Impressum / AGB / Datenschutz</a>
+            <a href="hausordnung.html" data-i18n="footer.rules">Hausordnung</a>
+            <a href="kontakt.html" data-i18n="footer.contact">Kontakt</a>
             <a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
         </div>
