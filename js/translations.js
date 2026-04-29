@@ -1,7 +1,7 @@
 /* =========================
    NordFit translations.js
    Stable data-i18n system
-   Support: index.html + mitgliedschaften.html + standorte.html
+   Support: index.html + mitgliedschaften.html + standorte.html + app.html
    Full content: DE + EN
    Other languages: nav/footer + EN content fallback
    ========================= */
@@ -462,6 +462,45 @@ document.addEventListener("DOMContentLoaded", () => {
         finalPrimary: "Tarife ansehen",
         finalSecondary: "Kontakt aufnehmen",
       },
+
+      appPage: {
+        heroTitle: "Ein Zugang. Alles drin.",
+        heroSubtitle:
+          "Die NordFit App ist der ruhige Mittelpunkt: Mitgliedschaft, Tagespass und QR-Code-Zutritt an einem Ort.",
+
+        appStoreSmall: "LADEN IM",
+        appStoreBig: "App Store",
+        googlePlaySmall: "JETZT BEI",
+        googlePlayBig: "Google Play",
+
+        appImageAlt: "Ansicht der NordFit App",
+        floatingLabel: "NordFit Zugang",
+        floatingText: "Digital. Direkt. Übersichtlich.",
+
+        feelingTitle: "Weniger Wege. Mehr Überblick.",
+        feelingText:
+          "Die App soll nicht kompliziert wirken. Sie soll genau das bündeln, was du brauchst — und alles andere weglassen.",
+
+        featureOneTitle: "Zugang",
+        featureOneText:
+          "Dein QR-Code liegt direkt in der App. Öffnen, scannen, trainieren.",
+        featureTwoTitle: "Mitgliedschaft",
+        featureTwoText:
+          "Tarif abschließen, Daten prüfen und alles sauber an einem Ort behalten.",
+        featureThreeTitle: "Tagespass",
+        featureThreeText:
+          "Spontan trainieren, ohne Vertrag. Einmal buchen, einmal nutzen.",
+
+        panelTitle: "Alles, was Zugang braucht.",
+        panelText:
+          "NordFit bleibt bewusst digital. Nicht, weil es technisch wirken soll — sondern weil ein klarer Ablauf einfacher ist.",
+
+        finalTitle: "Einfach starten. Ohne Papier.",
+        finalText:
+          "Mitgliedschaft und Tagespass führen über die App. So bleibt der Einstieg klar und der Zugang direkt.",
+        finalPrimary: "Tarife ansehen",
+        finalSecondary: "Frage stellen",
+      },
     },
 
     en: {
@@ -599,6 +638,45 @@ document.addEventListener("DOMContentLoaded", () => {
           "For NordFit, the address is not the only thing that matters. The place has to fit the concept: calm, understandable and easy to reach.",
         finalPrimary: "View plans",
         finalSecondary: "Get in touch",
+      },
+
+      appPage: {
+        heroTitle: "One access. Everything inside.",
+        heroSubtitle:
+          "The NordFit app is the calm center: membership, day pass and QR entry in one place.",
+
+        appStoreSmall: "DOWNLOAD ON THE",
+        appStoreBig: "App Store",
+        googlePlaySmall: "GET IT ON",
+        googlePlayBig: "Google Play",
+
+        appImageAlt: "View of the NordFit app",
+        floatingLabel: "NordFit access",
+        floatingText: "Digital. Direct. Clear.",
+
+        feelingTitle: "Fewer steps. More overview.",
+        feelingText:
+          "The app should not feel complicated. It should bring together exactly what you need — and leave out everything else.",
+
+        featureOneTitle: "Access",
+        featureOneText:
+          "Your QR code lives directly in the app. Open, scan, train.",
+        featureTwoTitle: "Membership",
+        featureTwoText:
+          "Choose your plan, check your details and keep everything neatly in one place.",
+        featureThreeTitle: "Day pass",
+        featureThreeText:
+          "Train spontaneously, without a contract. Book once, use once.",
+
+        panelTitle: "Everything access needs.",
+        panelText:
+          "NordFit stays intentionally digital. Not to feel technical — but because a clear flow is simpler.",
+
+        finalTitle: "Start simply. Without paper.",
+        finalText:
+          "Membership and day pass run through the app. That keeps the start clear and access direct.",
+        finalPrimary: "View plans",
+        finalSecondary: "Ask a question",
       },
     },
   };
