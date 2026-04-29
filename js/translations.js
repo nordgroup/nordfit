@@ -1,7 +1,7 @@
 /* =========================
    NordFit translations.js
    Stable data-i18n system
-   Full support: index.html
+   Support: index.html + mitgliedschaften.html
    ========================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -114,14 +114,8 @@ document.addEventListener("DOMContentLoaded", () => {
     );
   }
 
-  const translations = {
+  const common = {
     de: {
-      meta: {
-        title: "NordFit – Startseite",
-        description:
-          "NordFit ist ein modernes Fitnessstudio-Konzept mit ruhigem Design, klarer Struktur und hochwertigem Trainingsgefühl.",
-      },
-
       nav: {
         home: "Startseite",
         pricing: "Tarife",
@@ -129,6 +123,177 @@ document.addEventListener("DOMContentLoaded", () => {
         app: "App",
         rules: "Hausordnung",
         contact: "Kontakt",
+      },
+      footer: {
+        copyright: "© 2030 NordFit/NordGroup. Do not distribute!",
+        legal: "Impressum / AGB / Datenschutz",
+        rules: "Hausordnung",
+        contact: "Kontakt",
+      },
+    },
+
+    en: {
+      nav: {
+        home: "Home",
+        pricing: "Plans",
+        locations: "Locations",
+        app: "App",
+        rules: "House Rules",
+        contact: "Contact",
+      },
+      footer: {
+        copyright: "© 2030 NordFit/NordGroup. Do not distribute!",
+        legal: "Legal / Terms / Privacy",
+        rules: "House Rules",
+        contact: "Contact",
+      },
+    },
+
+    fr: {
+      nav: {
+        home: "Accueil",
+        pricing: "Tarifs",
+        locations: "Sites",
+        app: "App",
+        rules: "Règlement",
+        contact: "Contact",
+      },
+      footer: {
+        copyright: "© 2030 NordFit/NordGroup. Ne pas distribuer !",
+        legal: "Mentions / CGV / Confidentialité",
+        rules: "Règlement",
+        contact: "Contact",
+      },
+    },
+
+    es: {
+      nav: {
+        home: "Inicio",
+        pricing: "Tarifas",
+        locations: "Ubicaciones",
+        app: "App",
+        rules: "Normas",
+        contact: "Contacto",
+      },
+      footer: {
+        copyright: "© 2030 NordFit/NordGroup. No distribuir.",
+        legal: "Legal / Términos / Privacidad",
+        rules: "Normas",
+        contact: "Contacto",
+      },
+    },
+
+    it: {
+      nav: {
+        home: "Home",
+        pricing: "Tariffe",
+        locations: "Sedi",
+        app: "App",
+        rules: "Regolamento",
+        contact: "Contatto",
+      },
+      footer: {
+        copyright: "© 2030 NordFit/NordGroup. Non distribuire.",
+        legal: "Note legali / Termini / Privacy",
+        rules: "Regolamento",
+        contact: "Contatto",
+      },
+    },
+
+    pl: {
+      nav: {
+        home: "Start",
+        pricing: "Karnety",
+        locations: "Lokalizacje",
+        app: "Aplikacja",
+        rules: "Regulamin",
+        contact: "Kontakt",
+      },
+      footer: {
+        copyright: "© 2030 NordFit/NordGroup. Nie rozpowszechniać.",
+        legal: "Dane prawne / Regulamin / Prywatność",
+        rules: "Regulamin",
+        contact: "Kontakt",
+      },
+    },
+
+    nl: {
+      nav: {
+        home: "Home",
+        pricing: "Tarieven",
+        locations: "Locaties",
+        app: "App",
+        rules: "Huisregels",
+        contact: "Contact",
+      },
+      footer: {
+        copyright: "© 2030 NordFit/NordGroup. Niet verspreiden.",
+        legal: "Juridisch / Voorwaarden / Privacy",
+        rules: "Huisregels",
+        contact: "Contact",
+      },
+    },
+
+    sv: {
+      nav: {
+        home: "Hem",
+        pricing: "Priser",
+        locations: "Platser",
+        app: "App",
+        rules: "Regler",
+        contact: "Kontakt",
+      },
+      footer: {
+        copyright: "© 2030 NordFit/NordGroup. Får ej distribueras.",
+        legal: "Juridik / Villkor / Integritet",
+        rules: "Regler",
+        contact: "Kontakt",
+      },
+    },
+
+    da: {
+      nav: {
+        home: "Hjem",
+        pricing: "Priser",
+        locations: "Lokationer",
+        app: "App",
+        rules: "Husregler",
+        contact: "Kontakt",
+      },
+      footer: {
+        copyright: "© 2030 NordFit/NordGroup. Må ikke distribueres.",
+        legal: "Jura / Vilkår / Privatliv",
+        rules: "Husregler",
+        contact: "Kontakt",
+      },
+    },
+
+    no: {
+      nav: {
+        home: "Hjem",
+        pricing: "Priser",
+        locations: "Lokasjoner",
+        app: "App",
+        rules: "Husregler",
+        contact: "Kontakt",
+      },
+      footer: {
+        copyright: "© 2030 NordFit/NordGroup. Skal ikke distribueres.",
+        legal: "Juridisk / Vilkår / Personvern",
+        rules: "Husregler",
+        contact: "Kontakt",
+      },
+    },
+  };
+
+  const translations = {
+    de: {
+      ...common.de,
+
+      meta: {
+        title: "NordFit – Startseite",
+        description:
+          "NordFit ist ein modernes Fitnessstudio-Konzept mit ruhigem Design, klarer Struktur und hochwertigem Trainingsgefühl.",
       },
 
       home: {
@@ -140,11 +305,9 @@ document.addEventListener("DOMContentLoaded", () => {
         heroImageAlt: "Außenansicht des geplanten NordFit Studios",
         floatingLabel: "Geplant für NordFit",
         floatingText: "Weniger Lärm. Mehr Fokus.",
-
         feelingTitle: "Nicht größer. Klarer.",
         feelingText:
           "NordFit soll nicht mit Reizen beeindrucken, sondern mit Ordnung. Ein Studio, das man sofort versteht — und gern wieder betritt.",
-
         featureOneTitle: "Ankommen",
         featureOneText:
           "Klare Orientierung vom ersten Schritt an. Kein Suchen, kein Gedränge, kein unnötiger Ablauf.",
@@ -154,7 +317,6 @@ document.addEventListener("DOMContentLoaded", () => {
         featureThreeTitle: "Runterkommen",
         featureThreeText:
           "Nach dem Training bleibt das Gefühl ruhig. Kein harter Bruch, kein lauter Abgang.",
-
         panelOneTitle: "Kraft. Ohne Krach.",
         panelOneText:
           "Der Kraftbereich soll direkt, aufgeräumt und fokussiert wirken. Alles, was du brauchst — ohne überladene Studiowirkung.",
@@ -164,7 +326,6 @@ document.addEventListener("DOMContentLoaded", () => {
         panelThreeTitle: "Ein Besuch, der sauber endet.",
         panelThreeText:
           "Training hört nicht beim letzten Satz auf. Ein ruhiger Abschluss macht den Besuch runder.",
-
         finalTitle: "Leise im Auftritt. Klar im Konzept.",
         finalText:
           "Tarife, Standort und App bleiben bewusst auf eigenen Seiten. So wirkt NordFit nicht voller — sondern verständlicher.",
@@ -172,28 +333,51 @@ document.addEventListener("DOMContentLoaded", () => {
         finalSecondary: "Kontakt aufnehmen",
       },
 
-      footer: {
-        copyright: "© 2030 NordFit/NordGroup. Do not distribute!",
-        legal: "Impressum / AGB / Datenschutz",
-        rules: "Hausordnung",
-        contact: "Kontakt",
+      pricing: {
+        heroTitle: "Drei Tarife. Eine klare Entscheidung.",
+        heroSubtitle:
+          "Wähle, wie flexibel du bleiben möchtest. Basic, Plus und Pro unterscheiden sich nur in Laufzeit und Freiheit — nicht im Trainingsgefühl.",
+        basicLabel: "Basic",
+        plusLabel: "Plus",
+        proLabel: "Pro",
+        perMonth: "pro Monat",
+        basicDetailOne: "8 Monate Mindestlaufzeit",
+        plusDetailOne: "6 Monate Mindestlaufzeit",
+        proDetailOne: "3 Monate Mindestlaufzeit",
+        cancelMonthly: "Danach monatlich kündbar",
+        accessIncluded: "Zutritt über NordFit Zugang",
+        moreFlexible: "Mehr Flexibilität bei klarer Planung",
+        maximumFreedom: "Maximale Freiheit im NordFit Modell",
+        basicText:
+          "Für alle, die regelmäßig trainieren möchten und bewusst den günstigsten Einstieg wählen.",
+        plusText:
+          "Der ausgewogene Tarif, wenn du planbar bleiben willst, aber nicht zu lange gebunden sein möchtest.",
+        proText:
+          "Für alle, die möglichst frei bleiben möchten und trotzdem direkt mit voller Ruhe starten wollen.",
+        recommended: "Empfohlen",
+        choosePlan: "Tarif wählen",
+        daypassTitle: "Ein Tag. Kein Vertrag.",
+        daypassText:
+          "Der Tagespass ist für spontanes Training gedacht. Einmal buchen, einmal trainieren, ohne Mitgliedschaft.",
+        daypassButton: "Tagespass buchen",
+        daypassPrice: "4,90 € einmalig",
+        daypassPanelText:
+          "Ideal, wenn du NordFit erst ausprobieren möchtest oder nur für einen Tag trainieren willst.",
+        finalTitle: "Weniger vergleichen. Einfach wählen.",
+        finalText:
+          "Jeder Tarif führt ins gleiche Studio. Der Unterschied liegt nur darin, wie viel Flexibilität du möchtest.",
+        finalPrimary: "In der App starten",
+        finalSecondary: "Frage stellen",
       },
     },
 
     en: {
+      ...common.en,
+
       meta: {
         title: "NordFit – Home",
         description:
           "NordFit is a modern gym concept with calm design, clear structure and a premium training feel.",
-      },
-
-      nav: {
-        home: "Home",
-        pricing: "Plans",
-        locations: "Locations",
-        app: "App",
-        rules: "House Rules",
-        contact: "Contact",
       },
 
       home: {
@@ -205,11 +389,9 @@ document.addEventListener("DOMContentLoaded", () => {
         heroImageAlt: "Exterior view of the planned NordFit studio",
         floatingLabel: "Planned for NordFit",
         floatingText: "Less noise. More focus.",
-
         feelingTitle: "Not bigger. Clearer.",
         feelingText:
           "NordFit is not meant to impress with noise. It is meant to feel ordered — a studio you understand right away and want to return to.",
-
         featureOneTitle: "Arrive",
         featureOneText:
           "Clear orientation from the first step. No searching, no crowding, no unnecessary process.",
@@ -219,7 +401,6 @@ document.addEventListener("DOMContentLoaded", () => {
         featureThreeTitle: "Cool down",
         featureThreeText:
           "After training, the feeling stays calm. No hard break, no loud exit.",
-
         panelOneTitle: "Strength. Without noise.",
         panelOneText:
           "The strength area should feel direct, tidy and focused. Everything you need — without an overloaded studio feel.",
@@ -229,7 +410,6 @@ document.addEventListener("DOMContentLoaded", () => {
         panelThreeTitle: "A visit that ends cleanly.",
         panelThreeText:
           "Training does not end with the last set. A calm finish makes the visit feel more complete.",
-
         finalTitle: "Quiet in appearance. Clear in concept.",
         finalText:
           "Plans, location and app intentionally stay on their own pages. NordFit feels not fuller — but easier to understand.",
@@ -237,531 +417,409 @@ document.addEventListener("DOMContentLoaded", () => {
         finalSecondary: "Get in touch",
       },
 
-      footer: {
-        copyright: "© 2030 NordFit/NordGroup. Do not distribute!",
-        legal: "Legal / Terms / Privacy",
-        rules: "House Rules",
-        contact: "Contact",
+      pricing: {
+        heroTitle: "Three plans. One clear choice.",
+        heroSubtitle:
+          "Choose how flexible you want to stay. Basic, Plus and Pro differ only in term and freedom — not in the training feel.",
+        basicLabel: "Basic",
+        plusLabel: "Plus",
+        proLabel: "Pro",
+        perMonth: "per month",
+        basicDetailOne: "8 month minimum term",
+        plusDetailOne: "6 month minimum term",
+        proDetailOne: "3 month minimum term",
+        cancelMonthly: "Monthly cancellation afterwards",
+        accessIncluded: "Access through NordFit entry",
+        moreFlexible: "More flexibility with clear planning",
+        maximumFreedom: "Maximum freedom in the NordFit model",
+        basicText:
+          "For anyone who wants to train regularly and deliberately choose the lowest entry price.",
+        plusText:
+          "The balanced plan if you want structure, but do not want to be tied down for too long.",
+        proText:
+          "For anyone who wants maximum freedom while still starting with full calm and clarity.",
+        recommended: "Recommended",
+        choosePlan: "Choose plan",
+        daypassTitle: "One day. No contract.",
+        daypassText:
+          "The day pass is made for spontaneous training. Book once, train once, without membership.",
+        daypassButton: "Book day pass",
+        daypassPrice: "€4.90 once",
+        daypassPanelText:
+          "Ideal if you want to try NordFit first or train for just one day.",
+        finalTitle: "Compare less. Choose simply.",
+        finalText:
+          "Every plan leads to the same studio. The only difference is how much flexibility you want.",
+        finalPrimary: "Start in the app",
+        finalSecondary: "Ask a question",
       },
     },
 
     fr: {
+      ...common.fr,
       meta: {
         title: "NordFit – Accueil",
         description:
           "NordFit est un concept de salle de sport moderne avec un design calme, une structure claire et une sensation premium.",
       },
-
-      nav: {
-        home: "Accueil",
-        pricing: "Tarifs",
-        locations: "Sites",
-        app: "App",
-        rules: "Règlement",
-        contact: "Contact",
-      },
-
-      home: {
-        heroTitle: "Calme dans l’espace. Fort à l’entraînement.",
+      home: common.en.home || {},
+      pricing: {
+        heroTitle: "Trois tarifs. Un choix clair.",
         heroSubtitle:
-          "Un concept de studio moderne avec des chemins clairs, des zones propres et un entraînement qui ne ressemble pas au chaos.",
-        primaryCta: "Voir les tarifs",
-        secondaryCta: "Voir le site",
-        heroImageAlt: "Vue extérieure du studio NordFit prévu",
-        floatingLabel: "Prévu pour NordFit",
-        floatingText: "Moins de bruit. Plus de concentration.",
-
-        feelingTitle: "Pas plus grand. Plus clair.",
-        feelingText:
-          "NordFit ne doit pas impressionner par le bruit, mais par l’ordre. Un studio que l’on comprend immédiatement — et où l’on revient volontiers.",
-
-        featureOneTitle: "Arriver",
-        featureOneText:
-          "Une orientation claire dès le premier pas. Pas de recherche, pas de foule, pas de détour inutile.",
-        featureTwoTitle: "S’entraîner",
-        featureTwoText:
-          "Force, cardio et mouvement doivent rester clairement séparés, sans agrandir artificiellement le studio.",
-        featureThreeTitle: "Redescendre",
-        featureThreeText:
-          "Après l’entraînement, la sensation reste calme. Pas de rupture brusque, pas de sortie bruyante.",
-
-        panelOneTitle: "Force. Sans bruit.",
-        panelOneText:
-          "L’espace force doit être direct, rangé et concentré. Tout ce qu’il faut — sans impression de surcharge.",
-        panelTwoTitle: "Cardio. Air. Mouvement.",
-        panelTwoText:
-          "L’endurance et le mouvement libre ont besoin d’espace, dans la pièce comme dans la tête. NordFit doit créer ce sentiment d’ouverture.",
-        panelThreeTitle: "Une visite qui se termine proprement.",
-        panelThreeText:
-          "L’entraînement ne s’arrête pas au dernier effort. Une fin calme rend toute la visite plus complète.",
-
-        finalTitle: "Discret dans l’apparence. Clair dans le concept.",
+          "Choisissez votre niveau de flexibilité. Basic, Plus et Pro diffèrent seulement par la durée et la liberté — pas par l’expérience d’entraînement.",
+        basicLabel: "Basic",
+        plusLabel: "Plus",
+        proLabel: "Pro",
+        perMonth: "par mois",
+        basicDetailOne: "Durée minimale de 8 mois",
+        plusDetailOne: "Durée minimale de 6 mois",
+        proDetailOne: "Durée minimale de 3 mois",
+        cancelMonthly: "Puis résiliable chaque mois",
+        accessIncluded: "Accès via NordFit",
+        moreFlexible: "Plus de flexibilité avec une structure claire",
+        maximumFreedom: "Liberté maximale dans le modèle NordFit",
+        basicText:
+          "Pour celles et ceux qui veulent s’entraîner régulièrement avec le prix d’entrée le plus bas.",
+        plusText:
+          "Le tarif équilibré si vous voulez rester structuré sans vous engager trop longtemps.",
+        proText:
+          "Pour celles et ceux qui veulent rester aussi libres que possible tout en commençant clairement.",
+        recommended: "Recommandé",
+        choosePlan: "Choisir",
+        daypassTitle: "Un jour. Aucun contrat.",
+        daypassText:
+          "Le pass journalier est pensé pour un entraînement spontané. Réserver une fois, s’entraîner une fois, sans abonnement.",
+        daypassButton: "Réserver le pass",
+        daypassPrice: "4,90 € une fois",
+        daypassPanelText:
+          "Idéal pour essayer NordFit ou s’entraîner seulement une journée.",
+        finalTitle: "Moins comparer. Choisir simplement.",
         finalText:
-          "Les tarifs, le site et l’app restent volontairement sur leurs propres pages. NordFit ne paraît pas plus rempli — mais plus compréhensible.",
-        finalPrimary: "Voir les tarifs",
-        finalSecondary: "Nous contacter",
-      },
-
-      footer: {
-        copyright: "© 2030 NordFit/NordGroup. Ne pas distribuer !",
-        legal: "Mentions / CGV / Confidentialité",
-        rules: "Règlement",
-        contact: "Contact",
+          "Chaque tarif mène au même studio. La seule différence est votre niveau de flexibilité.",
+        finalPrimary: "Commencer dans l’app",
+        finalSecondary: "Poser une question",
       },
     },
 
     es: {
+      ...common.es,
       meta: {
         title: "NordFit – Inicio",
         description:
           "NordFit es un concepto de gimnasio moderno con diseño tranquilo, estructura clara y sensación premium.",
       },
-
-      nav: {
-        home: "Inicio",
-        pricing: "Tarifas",
-        locations: "Ubicaciones",
-        app: "App",
-        rules: "Normas",
-        contact: "Contacto",
-      },
-
-      home: {
-        heroTitle: "Calma en el espacio. Fuerza en el entrenamiento.",
+      home: common.en.home || {},
+      pricing: {
+        heroTitle: "Tres tarifas. Una decisión clara.",
         heroSubtitle:
-          "Un concepto de estudio moderno con recorridos claros, zonas limpias y entrenamiento que no se siente como caos.",
-        primaryCta: "Ver tarifas",
-        secondaryCta: "Ver ubicación",
-        heroImageAlt: "Vista exterior del estudio NordFit planificado",
-        floatingLabel: "Planificado para NordFit",
-        floatingText: "Menos ruido. Más foco.",
-
-        feelingTitle: "No más grande. Más claro.",
-        feelingText:
-          "NordFit no debe impresionar con estímulos, sino con orden. Un estudio que se entiende al instante — y al que apetece volver.",
-
-        featureOneTitle: "Llegar",
-        featureOneText:
-          "Orientación clara desde el primer paso. Sin búsquedas, sin aglomeraciones, sin procesos innecesarios.",
-        featureTwoTitle: "Entrenar",
-        featureTwoText:
-          "Fuerza, cardio y movimiento deben sentirse claramente separados sin hacer el estudio artificialmente grande.",
-        featureThreeTitle: "Bajar el ritmo",
-        featureThreeText:
-          "Después de entrenar, la sensación sigue tranquila. Sin corte brusco, sin salida ruidosa.",
-
-        panelOneTitle: "Fuerza. Sin ruido.",
-        panelOneText:
-          "La zona de fuerza debe sentirse directa, ordenada y enfocada. Todo lo que necesitas — sin sensación de sobrecarga.",
-        panelTwoTitle: "Cardio. Aire. Movimiento.",
-        panelTwoText:
-          "La resistencia y el movimiento libre necesitan espacio en la sala y en la cabeza. NordFit debe crear justo esa sensación abierta.",
-        panelThreeTitle: "Una visita que termina limpia.",
-        panelThreeText:
-          "El entrenamiento no termina con la última serie. Un cierre tranquilo hace que la visita se sienta más completa.",
-
-        finalTitle: "Silencioso en presencia. Claro en concepto.",
+          "Elige cuánta flexibilidad quieres. Basic, Plus y Pro solo se diferencian en duración y libertad — no en la experiencia de entrenamiento.",
+        basicLabel: "Basic",
+        plusLabel: "Plus",
+        proLabel: "Pro",
+        perMonth: "al mes",
+        basicDetailOne: "8 meses de permanencia mínima",
+        plusDetailOne: "6 meses de permanencia mínima",
+        proDetailOne: "3 meses de permanencia mínima",
+        cancelMonthly: "Después cancelación mensual",
+        accessIncluded: "Acceso mediante NordFit",
+        moreFlexible: "Más flexibilidad con planificación clara",
+        maximumFreedom: "Máxima libertad en el modelo NordFit",
+        basicText:
+          "Para quienes quieren entrenar regularmente y elegir conscientemente el precio de entrada más bajo.",
+        plusText:
+          "La tarifa equilibrada si quieres estructura sin comprometerte demasiado tiempo.",
+        proText:
+          "Para quienes quieren la máxima libertad y empezar con claridad.",
+        recommended: "Recomendado",
+        choosePlan: "Elegir tarifa",
+        daypassTitle: "Un día. Sin contrato.",
+        daypassText:
+          "El pase diario es para entrenar espontáneamente. Reservas una vez, entrenas una vez, sin membresía.",
+        daypassButton: "Reservar pase",
+        daypassPrice: "4,90 € una vez",
+        daypassPanelText:
+          "Ideal si quieres probar NordFit primero o entrenar solo un día.",
+        finalTitle: "Compara menos. Elige simple.",
         finalText:
-          "Tarifas, ubicación y app permanecen en páginas propias. NordFit no se siente más lleno — sino más fácil de entender.",
-        finalPrimary: "Ver tarifas",
-        finalSecondary: "Contactar",
-      },
-
-      footer: {
-        copyright: "© 2030 NordFit/NordGroup. No distribuir.",
-        legal: "Legal / Términos / Privacidad",
-        rules: "Normas",
-        contact: "Contacto",
+          "Todas las tarifas llevan al mismo estudio. La diferencia es cuánta flexibilidad quieres.",
+        finalPrimary: "Empezar en la app",
+        finalSecondary: "Hacer una pregunta",
       },
     },
 
     it: {
+      ...common.it,
       meta: {
         title: "NordFit – Home",
         description:
           "NordFit è un concept di palestra moderna con design calmo, struttura chiara e sensazione premium.",
       },
-
-      nav: {
-        home: "Home",
-        pricing: "Tariffe",
-        locations: "Sedi",
-        app: "App",
-        rules: "Regolamento",
-        contact: "Contatto",
-      },
-
-      home: {
-        heroTitle: "Calmo nello spazio. Forte nell’allenamento.",
+      home: common.en.home || {},
+      pricing: {
+        heroTitle: "Tre tariffe. Una scelta chiara.",
         heroSubtitle:
-          "Un concept di studio moderno con percorsi chiari, aree pulite e allenamento che non sembra caos.",
-        primaryCta: "Vedi tariffe",
-        secondaryCta: "Vedi sede",
-        heroImageAlt: "Vista esterna dello studio NordFit previsto",
-        floatingLabel: "Previsto per NordFit",
-        floatingText: "Meno rumore. Più focus.",
-
-        feelingTitle: "Non più grande. Più chiaro.",
-        feelingText:
-          "NordFit non deve impressionare con stimoli, ma con ordine. Uno studio che si capisce subito — e in cui si torna volentieri.",
-
-        featureOneTitle: "Arrivare",
-        featureOneText:
-          "Orientamento chiaro dal primo passo. Niente ricerca, niente caos, nessun percorso inutile.",
-        featureTwoTitle: "Allenarsi",
-        featureTwoText:
-          "Forza, cardio e movimento devono risultare ben separati senza rendere lo studio artificialmente grande.",
-        featureThreeTitle: "Rallentare",
-        featureThreeText:
-          "Dopo l’allenamento resta una sensazione calma. Nessuna rottura brusca, nessuna uscita rumorosa.",
-
-        panelOneTitle: "Forza. Senza rumore.",
-        panelOneText:
-          "L’area forza deve essere diretta, ordinata e focalizzata. Tutto ciò che serve — senza effetto studio sovraccarico.",
-        panelTwoTitle: "Cardio. Aria. Movimento.",
-        panelTwoText:
-          "Resistenza e movimento libero hanno bisogno di spazio, nella stanza e nella testa. NordFit deve dare proprio questa sensazione aperta.",
-        panelThreeTitle: "Una visita che finisce bene.",
-        panelThreeText:
-          "L’allenamento non finisce con l’ultima serie. Una chiusura calma rende la visita più completa.",
-
-        finalTitle: "Silenzioso nell’aspetto. Chiaro nel concetto.",
+          "Scegli quanta flessibilità vuoi. Basic, Plus e Pro cambiano solo per durata e libertà — non per esperienza di allenamento.",
+        basicLabel: "Basic",
+        plusLabel: "Plus",
+        proLabel: "Pro",
+        perMonth: "al mese",
+        basicDetailOne: "Durata minima di 8 mesi",
+        plusDetailOne: "Durata minima di 6 mesi",
+        proDetailOne: "Durata minima di 3 mesi",
+        cancelMonthly: "Poi cancellazione mensile",
+        accessIncluded: "Accesso tramite NordFit",
+        moreFlexible: "Più flessibilità con pianificazione chiara",
+        maximumFreedom: "Massima libertà nel modello NordFit",
+        basicText:
+          "Per chi vuole allenarsi regolarmente e scegliere il prezzo d’ingresso più basso.",
+        plusText:
+          "La tariffa equilibrata se vuoi struttura senza restare vincolato troppo a lungo.",
+        proText:
+          "Per chi vuole restare il più libero possibile e iniziare con chiarezza.",
+        recommended: "Consigliato",
+        choosePlan: "Scegli tariffa",
+        daypassTitle: "Un giorno. Nessun contratto.",
+        daypassText:
+          "Il pass giornaliero è pensato per allenarsi spontaneamente. Prenoti una volta, ti alleni una volta, senza abbonamento.",
+        daypassButton: "Prenota pass",
+        daypassPrice: "4,90 € una volta",
+        daypassPanelText:
+          "Ideale se vuoi provare NordFit o allenarti solo per un giorno.",
+        finalTitle: "Confronta meno. Scegli semplice.",
         finalText:
-          "Tariffe, sede e app restano su pagine dedicate. NordFit non sembra più pieno — sembra più comprensibile.",
-        finalPrimary: "Vedi tariffe",
-        finalSecondary: "Contattaci",
-      },
-
-      footer: {
-        copyright: "© 2030 NordFit/NordGroup. Non distribuire.",
-        legal: "Note legali / Termini / Privacy",
-        rules: "Regolamento",
-        contact: "Contatto",
+          "Ogni tariffa porta allo stesso studio. Cambia solo quanta flessibilità vuoi.",
+        finalPrimary: "Inizia nell’app",
+        finalSecondary: "Fai una domanda",
       },
     },
 
     pl: {
+      ...common.pl,
       meta: {
         title: "NordFit – Strona główna",
         description:
           "NordFit to koncepcja nowoczesnej siłowni ze spokojnym designem, jasną strukturą i premium odczuciem treningu.",
       },
-
-      nav: {
-        home: "Start",
-        pricing: "Karnety",
-        locations: "Lokalizacje",
-        app: "Aplikacja",
-        rules: "Regulamin",
-        contact: "Kontakt",
-      },
-
-      home: {
-        heroTitle: "Spokój w przestrzeni. Siła w treningu.",
+      home: common.en.home || {},
+      pricing: {
+        heroTitle: "Trzy karnety. Jedna jasna decyzja.",
         heroSubtitle:
-          "Nowoczesna koncepcja studia z jasnym układem, czystymi strefami i treningiem, który nie przypomina chaosu.",
-        primaryCta: "Zobacz karnety",
-        secondaryCta: "Zobacz lokalizację",
-        heroImageAlt: "Widok zewnętrzny planowanego studia NordFit",
-        floatingLabel: "Planowane dla NordFit",
-        floatingText: "Mniej hałasu. Więcej skupienia.",
-
-        feelingTitle: "Nie większe. Czytelniejsze.",
-        feelingText:
-          "NordFit nie ma imponować bodźcami, lecz porządkiem. Studio, które rozumiesz od razu — i do którego chcesz wracać.",
-
-        featureOneTitle: "Wejście",
-        featureOneText:
-          "Jasna orientacja od pierwszego kroku. Bez szukania, bez tłoku, bez zbędnych etapów.",
-        featureTwoTitle: "Trening",
-        featureTwoText:
-          "Siła, cardio i ruch mają być czytelnie oddzielone, bez sztucznego powiększania studia.",
-        featureThreeTitle: "Wyciszenie",
-        featureThreeText:
-          "Po treningu uczucie zostaje spokojne. Bez nagłego przerwania, bez głośnego wyjścia.",
-
-        panelOneTitle: "Siła. Bez hałasu.",
-        panelOneText:
-          "Strefa siłowa ma być bezpośrednia, uporządkowana i skupiona. Wszystko, czego potrzebujesz — bez przeładowania.",
-        panelTwoTitle: "Cardio. Powietrze. Ruch.",
-        panelTwoText:
-          "Wytrzymałość i swobodny ruch potrzebują miejsca w sali i w głowie. NordFit ma dawać właśnie takie otwarte wrażenie.",
-        panelThreeTitle: "Wizyta, która kończy się spokojnie.",
-        panelThreeText:
-          "Trening nie kończy się na ostatniej serii. Spokojne zakończenie sprawia, że całość działa lepiej.",
-
-        finalTitle: "Ciche w wyglądzie. Jasne w koncepcji.",
+          "Wybierz, jak elastycznie chcesz zostać. Basic, Plus i Pro różnią się tylko okresem i swobodą — nie odczuciem treningu.",
+        basicLabel: "Basic",
+        plusLabel: "Plus",
+        proLabel: "Pro",
+        perMonth: "miesięcznie",
+        basicDetailOne: "Minimalny okres 8 miesięcy",
+        plusDetailOne: "Minimalny okres 6 miesięcy",
+        proDetailOne: "Minimalny okres 3 miesięcy",
+        cancelMonthly: "Potem wypowiedzenie miesięczne",
+        accessIncluded: "Dostęp przez NordFit",
+        moreFlexible: "Więcej elastyczności przy jasnym planie",
+        maximumFreedom: "Maksymalna swoboda w modelu NordFit",
+        basicText:
+          "Dla osób, które chcą trenować regularnie i świadomie wybrać najniższy próg wejścia.",
+        plusText:
+          "Zrównoważony karnet, gdy chcesz mieć strukturę, ale nie wiązać się zbyt długo.",
+        proText:
+          "Dla osób, które chcą jak najwięcej swobody i jasnego startu.",
+        recommended: "Polecany",
+        choosePlan: "Wybierz karnet",
+        daypassTitle: "Jeden dzień. Bez umowy.",
+        daypassText:
+          "Wejście dzienne jest stworzone do spontanicznego treningu. Rezerwujesz raz, trenujesz raz, bez członkostwa.",
+        daypassButton: "Zarezerwuj dzień",
+        daypassPrice: "4,90 € jednorazowo",
+        daypassPanelText:
+          "Idealne, jeśli chcesz najpierw wypróbować NordFit albo trenować tylko jeden dzień.",
+        finalTitle: "Mniej porównywania. Prosty wybór.",
         finalText:
-          "Karnety, lokalizacja i aplikacja są celowo na osobnych stronach. NordFit nie wydaje się pełniejszy — tylko bardziej zrozumiały.",
-        finalPrimary: "Zobacz karnety",
-        finalSecondary: "Kontakt",
-      },
-
-      footer: {
-        copyright: "© 2030 NordFit/NordGroup. Nie rozpowszechniać.",
-        legal: "Dane prawne / Regulamin / Prywatność",
-        rules: "Regulamin",
-        contact: "Kontakt",
+          "Każdy karnet prowadzi do tego samego studia. Różnica polega tylko na elastyczności.",
+        finalPrimary: "Start w aplikacji",
+        finalSecondary: "Zadaj pytanie",
       },
     },
 
     nl: {
+      ...common.nl,
       meta: {
         title: "NordFit – Home",
         description:
           "NordFit is een modern sportschoolconcept met rustig design, duidelijke structuur en premium trainingsgevoel.",
       },
-
-      nav: {
-        home: "Home",
-        pricing: "Tarieven",
-        locations: "Locaties",
-        app: "App",
-        rules: "Huisregels",
-        contact: "Contact",
-      },
-
-      home: {
-        heroTitle: "Rust in de ruimte. Sterk in training.",
+      home: common.en.home || {},
+      pricing: {
+        heroTitle: "Drie tarieven. Eén duidelijke keuze.",
         heroSubtitle:
-          "Een modern studioconcept met duidelijke routes, schone zones en training die niet als chaos voelt.",
-        primaryCta: "Bekijk tarieven",
-        secondaryCta: "Bekijk locatie",
-        heroImageAlt: "Buitenaanzicht van de geplande NordFit-studio",
-        floatingLabel: "Gepland voor NordFit",
-        floatingText: "Minder lawaai. Meer focus.",
-
-        feelingTitle: "Niet groter. Duidelijker.",
-        feelingText:
-          "NordFit moet niet indruk maken met prikkels, maar met orde. Een studio die je meteen begrijpt — en graag weer binnenloopt.",
-
-        featureOneTitle: "Aankomen",
-        featureOneText:
-          "Duidelijke oriëntatie vanaf de eerste stap. Geen zoeken, geen drukte, geen onnodig proces.",
-        featureTwoTitle: "Trainen",
-        featureTwoText:
-          "Kracht, cardio en beweging moeten duidelijk gescheiden voelen zonder de studio kunstmatig groot te maken.",
-        featureThreeTitle: "Afkoelen",
-        featureThreeText:
-          "Na het trainen blijft het gevoel rustig. Geen harde breuk, geen luid vertrek.",
-
-        panelOneTitle: "Kracht. Zonder lawaai.",
-        panelOneText:
-          "De krachtzone moet direct, opgeruimd en gefocust aanvoelen. Alles wat je nodig hebt — zonder overvolle studiosfeer.",
-        panelTwoTitle: "Cardio. Lucht. Beweging.",
-        panelTwoText:
-          "Uithouding en vrije beweging hebben ruimte nodig in de zaal en in je hoofd. NordFit moet precies dat open gevoel geven.",
-        panelThreeTitle: "Een bezoek dat schoon eindigt.",
-        panelThreeText:
-          "Training eindigt niet bij de laatste set. Een rustig einde maakt het bezoek completer.",
-
-        finalTitle: "Rustig in uitstraling. Helder in concept.",
+          "Kies hoeveel flexibiliteit je wilt. Basic, Plus en Pro verschillen alleen in looptijd en vrijheid — niet in trainingsgevoel.",
+        basicLabel: "Basic",
+        plusLabel: "Plus",
+        proLabel: "Pro",
+        perMonth: "per maand",
+        basicDetailOne: "8 maanden minimale looptijd",
+        plusDetailOne: "6 maanden minimale looptijd",
+        proDetailOne: "3 maanden minimale looptijd",
+        cancelMonthly: "Daarna maandelijks opzegbaar",
+        accessIncluded: "Toegang via NordFit",
+        moreFlexible: "Meer flexibiliteit met duidelijke planning",
+        maximumFreedom: "Maximale vrijheid in het NordFit-model",
+        basicText:
+          "Voor iedereen die regelmatig wil trainen en bewust de laagste instapprijs kiest.",
+        plusText:
+          "Het gebalanceerde tarief als je structuur wilt zonder te lang vast te zitten.",
+        proText:
+          "Voor iedereen die zo vrij mogelijk wil blijven en toch helder wil starten.",
+        recommended: "Aanbevolen",
+        choosePlan: "Kies tarief",
+        daypassTitle: "Eén dag. Geen contract.",
+        daypassText:
+          "De dagpas is gemaakt voor spontaan trainen. Eén keer boeken, één keer trainen, zonder lidmaatschap.",
+        daypassButton: "Dagpas boeken",
+        daypassPrice: "€ 4,90 eenmalig",
+        daypassPanelText:
+          "Ideaal als je NordFit eerst wilt proberen of slechts één dag wilt trainen.",
+        finalTitle: "Minder vergelijken. Gewoon kiezen.",
         finalText:
-          "Tarieven, locatie en app blijven bewust op eigen pagina’s. NordFit voelt niet voller — maar begrijpelijker.",
-        finalPrimary: "Bekijk tarieven",
-        finalSecondary: "Contact opnemen",
-      },
-
-      footer: {
-        copyright: "© 2030 NordFit/NordGroup. Niet verspreiden.",
-        legal: "Juridisch / Voorwaarden / Privacy",
-        rules: "Huisregels",
-        contact: "Contact",
+          "Elk tarief leidt naar dezelfde studio. Het verschil is alleen hoeveel flexibiliteit je wilt.",
+        finalPrimary: "Start in de app",
+        finalSecondary: "Stel een vraag",
       },
     },
 
     sv: {
+      ...common.sv,
       meta: {
         title: "NordFit – Hem",
         description:
           "NordFit är ett modernt gymkoncept med lugn design, tydlig struktur och premiumkänsla.",
       },
-
-      nav: {
-        home: "Hem",
-        pricing: "Priser",
-        locations: "Platser",
-        app: "App",
-        rules: "Regler",
-        contact: "Kontakt",
-      },
-
-      home: {
-        heroTitle: "Lugnt i rummet. Starkt i träningen.",
+      home: common.en.home || {},
+      pricing: {
+        heroTitle: "Tre priser. Ett tydligt val.",
         heroSubtitle:
-          "Ett modernt studiokoncept med tydligt flöde, rena ytor och träning som inte känns som kaos.",
-        primaryCta: "Se priser",
-        secondaryCta: "Se plats",
-        heroImageAlt: "Exteriör av den planerade NordFit-studion",
-        floatingLabel: "Planerat för NordFit",
-        floatingText: "Mindre ljud. Mer fokus.",
-
-        feelingTitle: "Inte större. Tydligare.",
-        feelingText:
-          "NordFit ska inte imponera med intryck, utan med ordning. En studio du förstår direkt — och gärna återvänder till.",
-
-        featureOneTitle: "Anlända",
-        featureOneText:
-          "Tydlig orientering från första steget. Inget letande, ingen trängsel, ingen onödig process.",
-        featureTwoTitle: "Träna",
-        featureTwoText:
-          "Styrka, cardio och rörelse ska kännas tydligt separerade utan att studion görs konstlat stor.",
-        featureThreeTitle: "Varva ner",
-        featureThreeText:
-          "Efter träningen stannar känslan lugn. Ingen hård brytning, ingen högljudd utgång.",
-
-        panelOneTitle: "Styrka. Utan brus.",
-        panelOneText:
-          "Styrkeområdet ska kännas direkt, ordnat och fokuserat. Allt du behöver — utan överlastad studiokänsla.",
-        panelTwoTitle: "Cardio. Luft. Rörelse.",
-        panelTwoText:
-          "Uthållighet och fri rörelse behöver plats i rummet och i huvudet. NordFit ska ge just den öppna känslan.",
-        panelThreeTitle: "Ett besök som slutar rent.",
-        panelThreeText:
-          "Träning slutar inte med sista setet. Ett lugnt avslut gör besöket mer komplett.",
-
-        finalTitle: "Tyst i uttrycket. Tydligt i konceptet.",
+          "Välj hur flexibel du vill vara. Basic, Plus och Pro skiljer sig bara i bindningstid och frihet — inte i träningskänslan.",
+        basicLabel: "Basic",
+        plusLabel: "Plus",
+        proLabel: "Pro",
+        perMonth: "per månad",
+        basicDetailOne: "8 månaders bindningstid",
+        plusDetailOne: "6 månaders bindningstid",
+        proDetailOne: "3 månaders bindningstid",
+        cancelMonthly: "Därefter månadsvis uppsägning",
+        accessIncluded: "Tillgång via NordFit",
+        moreFlexible: "Mer flexibilitet med tydlig planering",
+        maximumFreedom: "Maximal frihet i NordFit-modellen",
+        basicText:
+          "För dig som vill träna regelbundet och välja den lägsta startnivån.",
+        plusText:
+          "Det balanserade valet om du vill ha struktur utan att vara bunden för länge.",
+        proText:
+          "För dig som vill vara så fri som möjligt och ändå börja tydligt.",
+        recommended: "Rekommenderad",
+        choosePlan: "Välj pris",
+        daypassTitle: "En dag. Inget avtal.",
+        daypassText:
+          "Dagspasset är gjort för spontan träning. Boka en gång, träna en gång, utan medlemskap.",
+        daypassButton: "Boka dagspass",
+        daypassPrice: "4,90 € en gång",
+        daypassPanelText:
+          "Perfekt om du vill prova NordFit först eller träna bara en dag.",
+        finalTitle: "Jämför mindre. Välj enklare.",
         finalText:
-          "Priser, plats och app ligger medvetet på egna sidor. NordFit känns inte fylligare — utan lättare att förstå.",
-        finalPrimary: "Se priser",
-        finalSecondary: "Kontakta oss",
-      },
-
-      footer: {
-        copyright: "© 2030 NordFit/NordGroup. Får ej distribueras.",
-        legal: "Juridik / Villkor / Integritet",
-        rules: "Regler",
-        contact: "Kontakt",
+          "Alla priser leder till samma studio. Skillnaden är hur mycket flexibilitet du vill ha.",
+        finalPrimary: "Starta i appen",
+        finalSecondary: "Ställ en fråga",
       },
     },
 
     da: {
+      ...common.da,
       meta: {
         title: "NordFit – Hjem",
         description:
           "NordFit er et moderne fitnesskoncept med roligt design, klar struktur og premium træningsfølelse.",
       },
-
-      nav: {
-        home: "Hjem",
-        pricing: "Priser",
-        locations: "Lokationer",
-        app: "App",
-        rules: "Husregler",
-        contact: "Kontakt",
-      },
-
-      home: {
-        heroTitle: "Roligt i rummet. Stærkt i træningen.",
+      home: common.en.home || {},
+      pricing: {
+        heroTitle: "Tre priser. Ét klart valg.",
         heroSubtitle:
-          "Et moderne studiokoncept med klare veje, rene områder og træning, der ikke føles som kaos.",
-        primaryCta: "Se priser",
-        secondaryCta: "Se lokation",
-        heroImageAlt: "Udvendig visning af det planlagte NordFit-studio",
-        floatingLabel: "Planlagt til NordFit",
-        floatingText: "Mindre støj. Mere fokus.",
-
-        feelingTitle: "Ikke større. Klarere.",
-        feelingText:
-          "NordFit skal ikke imponere med indtryk, men med orden. Et studio, man forstår med det samme — og gerne vender tilbage til.",
-
-        featureOneTitle: "Ankomme",
-        featureOneText:
-          "Klar orientering fra første skridt. Ingen søgen, ingen trængsel, ingen unødvendig proces.",
-        featureTwoTitle: "Træne",
-        featureTwoText:
-          "Styrke, cardio og bevægelse skal føles klart adskilt uden at gøre studiet kunstigt stort.",
-        featureThreeTitle: "Falde ned",
-        featureThreeText:
-          "Efter træning bliver følelsen rolig. Ingen hård afbrydelse, ingen larmende udgang.",
-
-        panelOneTitle: "Styrke. Uden støj.",
-        panelOneText:
-          "Styrkeområdet skal føles direkte, ryddeligt og fokuseret. Alt det nødvendige — uden overfyldt studiofølelse.",
-        panelTwoTitle: "Cardio. Luft. Bevægelse.",
-        panelTwoText:
-          "Udholdenhed og fri bevægelse har brug for plads i rummet og i hovedet. NordFit skal give netop den åbne følelse.",
-        panelThreeTitle: "Et besøg, der ender rent.",
-        panelThreeText:
-          "Træning slutter ikke ved sidste sæt. En rolig afslutning gør besøget mere helt.",
-
-        finalTitle: "Stille i udtrykket. Klart i konceptet.",
+          "Vælg hvor fleksibel du vil være. Basic, Plus og Pro adskiller sig kun i løbetid og frihed — ikke i træningsfølelse.",
+        basicLabel: "Basic",
+        plusLabel: "Plus",
+        proLabel: "Pro",
+        perMonth: "pr. måned",
+        basicDetailOne: "8 måneders minimumsperiode",
+        plusDetailOne: "6 måneders minimumsperiode",
+        proDetailOne: "3 måneders minimumsperiode",
+        cancelMonthly: "Derefter månedlig opsigelse",
+        accessIncluded: "Adgang via NordFit",
+        moreFlexible: "Mere fleksibilitet med klar planlægning",
+        maximumFreedom: "Maksimal frihed i NordFit-modellen",
+        basicText:
+          "Til dig, der vil træne regelmæssigt og vælge den laveste startpris.",
+        plusText:
+          "Den balancerede pris, hvis du vil have struktur uden at binde dig for længe.",
+        proText:
+          "Til dig, der vil være så fri som muligt og stadig starte klart.",
+        recommended: "Anbefalet",
+        choosePlan: "Vælg pris",
+        daypassTitle: "Én dag. Ingen kontrakt.",
+        daypassText:
+          "Dagspasset er lavet til spontan træning. Book én gang, træn én gang, uden medlemskab.",
+        daypassButton: "Book dagspas",
+        daypassPrice: "4,90 € én gang",
+        daypassPanelText:
+          "Ideelt, hvis du vil prøve NordFit først eller træne kun én dag.",
+        finalTitle: "Sammenlign mindre. Vælg enkelt.",
         finalText:
-          "Priser, lokation og app bliver bevidst på egne sider. NordFit virker ikke mere fyldt — men lettere at forstå.",
-        finalPrimary: "Se priser",
-        finalSecondary: "Kontakt os",
-      },
-
-      footer: {
-        copyright: "© 2030 NordFit/NordGroup. Må ikke distribueres.",
-        legal: "Jura / Vilkår / Privatliv",
-        rules: "Husregler",
-        contact: "Kontakt",
+          "Alle priser fører til samme studio. Forskellen er kun, hvor fleksibel du vil være.",
+        finalPrimary: "Start i appen",
+        finalSecondary: "Stil et spørgsmål",
       },
     },
 
     no: {
+      ...common.no,
       meta: {
         title: "NordFit – Hjem",
         description:
           "NordFit er et moderne treningskonsept med rolig design, tydelig struktur og premium treningsfølelse.",
       },
-
-      nav: {
-        home: "Hjem",
-        pricing: "Priser",
-        locations: "Lokasjoner",
-        app: "App",
-        rules: "Husregler",
-        contact: "Kontakt",
-      },
-
-      home: {
-        heroTitle: "Rolig i rommet. Sterk i treningen.",
+      home: common.en.home || {},
+      pricing: {
+        heroTitle: "Tre priser. Ett tydelig valg.",
         heroSubtitle:
-          "Et moderne studiokonsept med tydelig flyt, rene soner og trening som ikke føles som kaos.",
-        primaryCta: "Se priser",
-        secondaryCta: "Se lokasjon",
-        heroImageAlt: "Utvendig visning av det planlagte NordFit-studioet",
-        floatingLabel: "Planlagt for NordFit",
-        floatingText: "Mindre støy. Mer fokus.",
-
-        feelingTitle: "Ikke større. Tydeligere.",
-        feelingText:
-          "NordFit skal ikke imponere med inntrykk, men med orden. Et studio du forstår med en gang — og gjerne kommer tilbake til.",
-
-        featureOneTitle: "Ankomme",
-        featureOneText:
-          "Tydelig orientering fra første steg. Ingen leting, ingen trengsel, ingen unødvendig prosess.",
-        featureTwoTitle: "Trene",
-        featureTwoText:
-          "Styrke, cardio og bevegelse skal føles tydelig adskilt uten å gjøre studioet kunstig stort.",
-        featureThreeTitle: "Roe ned",
-        featureThreeText:
-          "Etter trening forblir følelsen rolig. Ingen hard avslutning, ingen bråkete utgang.",
-
-        panelOneTitle: "Styrke. Uten støy.",
-        panelOneText:
-          "Styrkeområdet skal føles direkte, ryddig og fokusert. Alt du trenger — uten overlesset studiofølelse.",
-        panelTwoTitle: "Cardio. Luft. Bevegelse.",
-        panelTwoText:
-          "Utholdenhet og fri bevegelse trenger plass i rommet og i hodet. NordFit skal gi akkurat den åpne følelsen.",
-        panelThreeTitle: "Et besøk som ender rent.",
-        panelThreeText:
-          "Trening slutter ikke med siste sett. En rolig avslutning gjør besøket mer komplett.",
-
-        finalTitle: "Stille i uttrykket. Klart i konseptet.",
+          "Velg hvor fleksibel du vil være. Basic, Plus og Pro skiller seg bare i bindingstid og frihet — ikke i treningsfølelse.",
+        basicLabel: "Basic",
+        plusLabel: "Plus",
+        proLabel: "Pro",
+        perMonth: "per måned",
+        basicDetailOne: "8 måneders bindingstid",
+        plusDetailOne: "6 måneders bindingstid",
+        proDetailOne: "3 måneders bindingstid",
+        cancelMonthly: "Deretter månedlig oppsigelse",
+        accessIncluded: "Tilgang via NordFit",
+        moreFlexible: "Mer fleksibilitet med tydelig plan",
+        maximumFreedom: "Maksimal frihet i NordFit-modellen",
+        basicText:
+          "For deg som vil trene regelmessig og velge den laveste inngangsprisen.",
+        plusText:
+          "Den balanserte prisen hvis du vil ha struktur uten å binde deg for lenge.",
+        proText:
+          "For deg som vil være så fri som mulig og likevel starte tydelig.",
+        recommended: "Anbefalt",
+        choosePlan: "Velg pris",
+        daypassTitle: "Én dag. Ingen kontrakt.",
+        daypassText:
+          "Dagspasset er laget for spontan trening. Bestill én gang, tren én gang, uten medlemskap.",
+        daypassButton: "Bestill dagspass",
+        daypassPrice: "4,90 € én gang",
+        daypassPanelText:
+          "Perfekt hvis du vil prøve NordFit først eller bare trene én dag.",
+        finalTitle: "Sammenlign mindre. Velg enkelt.",
         finalText:
-          "Priser, lokasjon og app ligger bevisst på egne sider. NordFit føles ikke fullere — men lettere å forstå.",
-        finalPrimary: "Se priser",
-        finalSecondary: "Kontakt oss",
-      },
-
-      footer: {
-        copyright: "© 2030 NordFit/NordGroup. Skal ikke distribueres.",
-        legal: "Juridisk / Vilkår / Personvern",
-        rules: "Husregler",
-        contact: "Kontakt",
+          "Alle priser fører til samme studio. Forskjellen er bare hvor fleksibel du vil være.",
+        finalPrimary: "Start i appen",
+        finalSecondary: "Still et spørsmål",
       },
     },
   };
@@ -771,7 +829,6 @@ document.addEventListener("DOMContentLoaded", () => {
   langOptions.forEach((option) => {
     option.addEventListener("click", () => {
       const nextLang = getSafeLanguage(option.dataset.lang);
-
       saveLanguage(nextLang);
       applyLanguage(nextLang);
     });
@@ -779,7 +836,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   window.addEventListener("nordfit:language-changed", (event) => {
     const nextLang = getSafeLanguage(event.detail?.language);
-
     saveLanguage(nextLang);
     applyLanguage(nextLang);
   });
