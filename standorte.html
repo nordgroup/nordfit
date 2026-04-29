@@ -7,7 +7,7 @@
   <title>NordFit – Standorte</title>
   <meta
     name="description"
-    content="NordFit Standorte. Klar erreichbar, modern gestaltet und direkt über die Karte auffindbar."
+    content="NordFit Standorte – klar erreichbar, ruhig gestaltet und digital mit der NordFit App verbunden."
   />
 
   <link rel="stylesheet" href="css/style.css" />
@@ -65,6 +65,7 @@
           type="button"
           aria-label="Menü öffnen"
           aria-expanded="false"
+          aria-controls="primary-navigation"
         >
           <span class="burger-lines" aria-hidden="true">
             <span></span>
@@ -80,10 +81,15 @@
     <section class="section home-hero-section">
       <div class="container">
         <div class="home-hero reveal">
-          <h1 class="hero-title">Ein Standort, der direkt Sinn ergibt.</h1>
+          <p class="eyebrow hero-eyebrow">Standort</p>
+
+          <h1 class="hero-title small-hero">
+            Ein Studio, das erreichbar bleibt.
+          </h1>
+
           <p class="hero-subtitle">
-            NordFit Grevesmühlen verbindet gute Erreichbarkeit mit einem ruhigen Studioauftritt.
-            Klar aufgebaut, modern gestaltet und direkt über die App nutzbar.
+            Der erste NordFit Standort ist für Grevesmühlen geplant:
+            ruhig im Auftreten, klar im Ablauf und digital mit der App verbunden.
           </p>
         </div>
       </div>
@@ -99,20 +105,27 @@
 
               <div class="copy-stack">
                 <p class="muted">
-                  Das Studio ist auf einen klaren Ablauf ausgelegt. Ankommen, Zugang öffnen,
-                  trainieren und wieder rausgehen. Ohne unnötige Hektik und ohne überladene Atmosphäre.
+                  NordFit soll so funktionieren, dass du dich schnell zurechtfindest:
+                  ankommen, Zugang öffnen, trainieren und wieder rausgehen.
+                  Ohne unnötige Hektik und ohne überladene Atmosphäre.
                 </p>
 
                 <p class="muted">
-                  Durch den digitalen Zutritt über die NordFit App bleibt der Besuch unkompliziert.
-                  Mitgliedschaft, Tagespass und Zugang laufen an einem Ort zusammen.
+                  Der digitale Zugang über die NordFit App bündelt Mitgliedschaft,
+                  Tagespass und QR-Code an einem Ort. Dadurch bleibt der Besuch klar,
+                  einfach und gut planbar.
                 </p>
               </div>
 
               <div class="legal-info-list clean-list-offset">
                 <div class="legal-info-row">
+                  <span class="legal-label">Ort</span>
+                  <strong>Grevesmühlen</strong>
+                </div>
+
+                <div class="legal-info-row">
                   <span class="legal-label">Adresse</span>
-                  <strong>(Straße) (Hausnummer), (PLZ) (Ort)</strong>
+                  <strong>Folgt, sobald der Standort final feststeht</strong>
                 </div>
 
                 <div class="legal-info-row">
@@ -121,15 +134,15 @@
                 </div>
 
                 <div class="legal-info-row">
-                  <span class="legal-label">Standort</span>
-                  <strong>Grevesmühlen</strong>
+                  <span class="legal-label">Konzept</span>
+                  <strong>Ruhiges Studio mit klarer Struktur</strong>
                 </div>
               </div>
             </div>
 
             <div class="location-hero-image">
               <div class="image-frame image-frame-large">
-                <span class="image-frame-label">Studio Außenansicht</span>
+                <span class="image-frame-label">Standortbild folgt</span>
               </div>
             </div>
           </div>
@@ -140,52 +153,62 @@
     <section class="section section-tight">
       <div class="container">
         <div class="glass map-card reveal">
-          <h2 class="section-title">Standort ansehen</h2>
+          <h2 class="section-title">Karte folgt nach finaler Adresse.</h2>
 
           <div class="copy-stack">
             <p class="muted">
-              Die Karte zeigt den NordFit Standort in Grevesmühlen.
-              Für die genaue Route kannst du Apple Karten oder Google Maps öffnen.
+              Sobald die genaue Adresse feststeht, wird hier eine direkte Karte eingebunden.
+              Dann kannst du den Standort sofort in Apple Karten oder Google Maps öffnen.
             </p>
-          </div>
 
-          <div class="map-frame">
-            <iframe
-              src="https://www.google.com/maps?q=(Stra%C3%9Fe)%20(Hausnummer)%20(PLZ)%20(Ort)&output=embed"
-              width="100%"
-              height="420"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="NordFit Standort Karte"
-            ></iframe>
+            <p class="muted">
+              Bis dahin bleibt die Seite bewusst ehrlich: kein falscher Pin,
+              keine Platzhalter-Route und keine Karte, die irgendwo landet.
+            </p>
           </div>
 
           <div class="app-store-row">
             <a
-              href="https://maps.apple.com/?q=(Stra%C3%9Fe)%20(Hausnummer)%20(PLZ)%20(Ort)"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="kontakt.html"
               class="store-badge store-badge-light"
             >
-              <span class="store-badge-icon" aria-hidden="true">⌘</span>
+              <span class="store-badge-icon" aria-hidden="true">⌁</span>
               <span class="store-badge-text">
-                <span class="store-badge-small">ÖFFNEN IN</span>
-                <span class="store-badge-big">Apple Karten</span>
+                <span class="store-badge-small">FRAGE ZUM</span>
+                <span class="store-badge-big">Standort stellen</span>
               </span>
             </a>
 
             <a
-              href="https://www.google.com/maps/search/?api=1&query=(Stra%C3%9Fe)%20(Hausnummer)%20(PLZ)%20(Ort)"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="app.html"
               class="store-badge store-badge-dark"
             >
-              <span class="store-badge-icon" aria-hidden="true">⌖</span>
+              <span class="store-badge-icon" aria-hidden="true">◆</span>
               <span class="store-badge-text">
-                <span class="store-badge-small">ÖFFNEN IN</span>
-                <span class="store-badge-big">Google Maps</span>
+                <span class="store-badge-small">ZUGANG ÜBER</span>
+                <span class="store-badge-big">NordFit App</span>
               </span>
             </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-final-cta">
+      <div class="container">
+        <div class="final-cta glass reveal">
+          <p class="eyebrow">Geplant für den Start</p>
+          <h2 class="section-title large-title">
+            Erst ein Standort. Dafür sauber gedacht.
+          </h2>
+          <p class="muted">
+            NordFit soll nicht mit möglichst viel Chaos starten, sondern mit einem Studio,
+            das verständlich, ordentlich und angenehm wirkt.
+          </p>
+
+          <div class="hero-actions">
+            <a href="mitgliedschaften.html" class="btn btn-primary">Tarife ansehen</a>
+            <a href="kontakt.html" class="btn btn-secondary">Kontakt aufnehmen</a>
           </div>
         </div>
       </div>
@@ -210,5 +233,6 @@
   </footer>
 
   <script src="js/main.js"></script>
+  <script src="js/translations.js"></script>
 </body>
 </html>
