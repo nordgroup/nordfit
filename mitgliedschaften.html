@@ -4,10 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>NordFit – Tarife</title>
+  <title data-i18n="meta.title">NordFit – Tarife</title>
   <meta
     name="description"
-    content="NordFit Tarife und Tagespass – klare Preise, verständliche Laufzeiten und ein einfacher Einstieg."
+    content="NordFit Tarife: Basic, Plus, Pro und Tagespass. Klar aufgebaut, fair erklärt und einfach zu verstehen."
+    data-i18n-content="meta.description"
   />
 
   <link rel="stylesheet" href="css/style.css" />
@@ -16,19 +17,19 @@
 <body>
   <header class="site-header">
     <div class="container">
-      <div class="site-header-inner glass">
+      <div class="site-header-inner">
         <a href="index.html" class="logo" aria-label="NordFit Startseite">
           <img src="images/nordfit-logo.png" alt="NordFit Logo" />
         </a>
 
         <nav class="site-nav" aria-label="Hauptnavigation">
           <ul>
-            <li><a href="index.html" class="nav-link">Startseite</a></li>
-            <li><a href="mitgliedschaften.html" class="nav-link active">Tarife</a></li>
-            <li><a href="standorte.html" class="nav-link">Standorte</a></li>
-            <li><a href="app.html" class="nav-link">App</a></li>
-            <li><a href="hausordnung.html" class="nav-link">Hausordnung</a></li>
-            <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+            <li><a href="index.html" class="nav-link" data-i18n="nav.home">Startseite</a></li>
+            <li><a href="mitgliedschaften.html" class="nav-link active" data-i18n="nav.pricing">Tarife</a></li>
+            <li><a href="standorte.html" class="nav-link" data-i18n="nav.locations">Standorte</a></li>
+            <li><a href="app.html" class="nav-link" data-i18n="nav.app">App</a></li>
+            <li><a href="hausordnung.html" class="nav-link" data-i18n="nav.rules">Hausordnung</a></li>
+            <li><a href="kontakt.html" class="nav-link" data-i18n="nav.contact">Kontakt</a></li>
           </ul>
         </nav>
 
@@ -65,7 +66,6 @@
           type="button"
           aria-label="Menü öffnen"
           aria-expanded="false"
-          aria-controls="primary-navigation"
         >
           <span class="burger-lines" aria-hidden="true">
             <span></span>
@@ -81,122 +81,113 @@
     <section class="section home-hero-section">
       <div class="container">
         <div class="home-hero">
-          <p class="eyebrow hero-eyebrow">Tarife</p>
-
-          <h1 class="hero-title small-hero">
-            Drei Tarife. Ein klarer Einstieg.
+          <h1 class="hero-title small-hero" data-i18n="pricing.heroTitle">
+            Drei Tarife. Eine klare Entscheidung.
           </h1>
 
-          <p class="hero-subtitle">
-            Wähle den Tarif, der zu deinem Alltag passt. NordFit bleibt bewusst einfach:
-            klare Preise, verständliche Laufzeiten und ein Zugang, der digital abgeschlossen wird.
+          <p class="hero-subtitle" data-i18n="pricing.heroSubtitle">
+            Wähle, wie flexibel du bleiben möchtest. Basic, Plus und Pro unterscheiden sich nur in Laufzeit und Freiheit — nicht im Trainingsgefühl.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="section section-tight section-compact-bottom">
+    <section class="section section-tight">
       <div class="container">
-        <div class="info-note">
-          <p class="info-note-label">Kurz erklärt</p>
-          <p class="info-note-text">
-            Je kürzer die Mindestlaufzeit, desto flexibler der Tarif. Nach der Mindestlaufzeit
-            sind alle Tarife monatlich kündbar.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="section pricing-section section-tight">
-      <div class="container">
-        <div class="pricing-grid pricing-grid-fixed">
+        <div class="pricing-grid">
           <article class="pricing-card card">
             <div class="pricing-card-inner">
-              <p class="eyebrow">Basic</p>
-
+              <p class="eyebrow" data-i18n="pricing.basicLabel">Basic</p>
               <h2 class="price-line">29,90 €</h2>
-              <p class="muted">pro Monat</p>
+              <p class="muted" data-i18n="pricing.perMonth">pro Monat</p>
 
               <div class="pricing-details">
-                <p>8 Monate Mindestlaufzeit</p>
-                <p>Danach monatlich kündbar</p>
-                <p>Für regelmäßiges Training</p>
+                <p data-i18n="pricing.basicDetailOne">8 Monate Mindestlaufzeit</p>
+                <p data-i18n="pricing.cancelMonthly">Danach monatlich kündbar</p>
+                <p data-i18n="pricing.accessIncluded">Zutritt über NordFit Zugang</p>
               </div>
 
-              <p class="muted">
-                Der einfache Einstieg, wenn du regelmäßig trainieren möchtest
-                und dir ein klarer, günstiger Tarif reicht.
+              <p class="muted" data-i18n="pricing.basicText">
+                Für alle, die regelmäßig trainieren möchten und bewusst den günstigsten Einstieg wählen.
               </p>
             </div>
 
             <div class="pricing-card-action">
-              <a href="app.html" class="btn btn-primary">In der App abschließen</a>
+              <a href="app.html" class="btn btn-primary" data-i18n="pricing.choosePlan">Tarif wählen</a>
             </div>
           </article>
 
           <article class="pricing-card card featured-pricing">
-            <span class="pricing-badge">Empfohlen</span>
+            <span class="pricing-badge" data-i18n="pricing.recommended">Empfohlen</span>
 
             <div class="pricing-card-inner">
-              <p class="eyebrow">Plus</p>
-
+              <p class="eyebrow" data-i18n="pricing.plusLabel">Plus</p>
               <h2 class="price-line">34,90 €</h2>
-              <p class="muted">pro Monat</p>
+              <p class="muted" data-i18n="pricing.perMonth">pro Monat</p>
 
               <div class="pricing-details">
-                <p>6 Monate Mindestlaufzeit</p>
-                <p>Danach monatlich kündbar</p>
-                <p>Mehr Flexibilität</p>
+                <p data-i18n="pricing.plusDetailOne">6 Monate Mindestlaufzeit</p>
+                <p data-i18n="pricing.cancelMonthly">Danach monatlich kündbar</p>
+                <p data-i18n="pricing.moreFlexible">Mehr Flexibilität bei klarer Planung</p>
               </div>
 
-              <p class="muted">
-                Der ausgewogene Tarif, wenn du planbar bleiben willst,
-                aber nicht zu lange gebunden sein möchtest.
+              <p class="muted" data-i18n="pricing.plusText">
+                Der ausgewogene Tarif, wenn du planbar bleiben willst, aber nicht zu lange gebunden sein möchtest.
               </p>
             </div>
 
             <div class="pricing-card-action">
-              <a href="app.html" class="btn btn-primary">In der App abschließen</a>
+              <a href="app.html" class="btn btn-primary" data-i18n="pricing.choosePlan">Tarif wählen</a>
             </div>
           </article>
 
           <article class="pricing-card card">
             <div class="pricing-card-inner">
-              <p class="eyebrow">Pro</p>
-
+              <p class="eyebrow" data-i18n="pricing.proLabel">Pro</p>
               <h2 class="price-line">39,90 €</h2>
-              <p class="muted">pro Monat</p>
+              <p class="muted" data-i18n="pricing.perMonth">pro Monat</p>
 
               <div class="pricing-details">
-                <p>3 Monate Mindestlaufzeit</p>
-                <p>Danach monatlich kündbar</p>
-                <p>Maximale Freiheit</p>
+                <p data-i18n="pricing.proDetailOne">3 Monate Mindestlaufzeit</p>
+                <p data-i18n="pricing.cancelMonthly">Danach monatlich kündbar</p>
+                <p data-i18n="pricing.maximumFreedom">Maximale Freiheit im NordFit Modell</p>
               </div>
 
-              <p class="muted">
-                Für alle, die möglichst flexibel bleiben möchten
-                und trotzdem direkt mit NordFit starten wollen.
+              <p class="muted" data-i18n="pricing.proText">
+                Für alle, die möglichst frei bleiben möchten und trotzdem direkt mit voller Ruhe starten wollen.
               </p>
             </div>
 
             <div class="pricing-card-action">
-              <a href="app.html" class="btn btn-primary">In der App abschließen</a>
+              <a href="app.html" class="btn btn-primary" data-i18n="pricing.choosePlan">Tarif wählen</a>
             </div>
           </article>
         </div>
+      </div>
+    </section>
 
-        <div class="glass daypass-shell">
-          <div>
-            <p class="eyebrow">Tagespass</p>
-            <h2 class="section-title">4,90 € einmalig</h2>
-            <p class="muted">
-              Für spontanes Training oder zum Kennenlernen. Einmal buchen,
-              für den gewählten Tag trainieren und NordFit ohne Mitgliedschaft testen.
-            </p>
+    <section class="section section-light">
+      <div class="container">
+        <div class="section-intro center">
+          <h2 class="section-title large-title" data-i18n="pricing.daypassTitle">
+            Ein Tag. Kein Vertrag.
+          </h2>
+
+          <p class="muted" data-i18n="pricing.daypassText">
+            Der Tagespass ist für spontanes Training gedacht. Einmal buchen, einmal trainieren, ohne Mitgliedschaft.
+          </p>
+
+          <div class="hero-actions">
+            <a href="app.html" class="btn btn-primary" data-i18n="pricing.daypassButton">Tagespass buchen</a>
           </div>
+        </div>
 
-          <div>
-            <a href="app.html" class="btn btn-primary">Tagespass buchen</a>
+        <div class="apple-panel">
+          <div class="apple-panel-content">
+            <h3 data-i18n="pricing.daypassPrice">4,90 € einmalig</h3>
+            <p class="muted" data-i18n="pricing.daypassPanelText">
+              Ideal, wenn du NordFit erst ausprobieren möchtest oder nur für einen Tag trainieren willst.
+            </p>
           </div>
         </div>
       </div>
@@ -204,19 +195,18 @@
 
     <section class="section section-final-cta">
       <div class="container">
-        <div class="final-cta glass">
-          <p class="eyebrow">Noch unsicher?</p>
-          <h2 class="section-title large-title">
-            Lieber einfach anfangen als ewig vergleichen.
+        <div class="final-cta">
+          <h2 class="section-title large-title" data-i18n="pricing.finalTitle">
+            Weniger vergleichen. Einfach wählen.
           </h2>
-          <p class="muted">
-            Basic ist der günstige Einstieg. Plus ist der ruhige Mittelweg.
-            Pro ist die flexibelste Variante.
+
+          <p class="muted" data-i18n="pricing.finalText">
+            Jeder Tarif führt ins gleiche Studio. Der Unterschied liegt nur darin, wie viel Flexibilität du möchtest.
           </p>
 
           <div class="hero-actions">
-            <a href="kontakt.html" class="btn btn-primary">Frage stellen</a>
-            <a href="standorte.html" class="btn btn-secondary">Standort ansehen</a>
+            <a href="app.html" class="btn btn-primary" data-i18n="pricing.finalPrimary">In der App starten</a>
+            <a href="kontakt.html" class="btn btn-secondary" data-i18n="pricing.finalSecondary">Frage stellen</a>
           </div>
         </div>
       </div>
@@ -227,12 +217,12 @@
     <div class="container">
       <div class="footer-shell">
         <div class="flex footer-row">
-          <p class="muted">© 2030 NordFit/NordGroup. Do not distribute!</p>
+          <p class="muted" data-i18n="footer.copyright">© 2030 NordFit/NordGroup. Do not distribute!</p>
 
           <div class="flex footer-links">
-            <a href="impressum.html">Impressum / AGB / Datenschutz</a>
-            <a href="hausordnung.html">Hausordnung</a>
-            <a href="kontakt.html">Kontakt</a>
+            <a href="impressum.html" data-i18n="footer.legal">Impressum / AGB / Datenschutz</a>
+            <a href="hausordnung.html" data-i18n="footer.rules">Hausordnung</a>
+            <a href="kontakt.html" data-i18n="footer.contact">Kontakt</a>
             <a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
         </div>
