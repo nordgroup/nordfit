@@ -1,7 +1,7 @@
 /* =========================
    NordFit translations.js
    Stable data-i18n system
-   Current full support: index.html
+   Full support: index.html
    ========================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", () => {
       meta: {
         title: "NordFit – Startseite",
         description:
-          "NordFit ist ein modernes Fitnessstudio mit ruhiger Atmosphäre, klarem Aufbau und hochwertigem Trainingsgefühl.",
+          "NordFit ist ein modernes Fitnessstudio-Konzept mit ruhigem Design, klarer Struktur und hochwertigem Trainingsgefühl.",
       },
 
       nav: {
@@ -132,50 +132,42 @@ document.addEventListener("DOMContentLoaded", () => {
       },
 
       home: {
-        eyebrow: "NordFit",
-        heroTitle: "Fitness, das ruhig aussieht. Und stark wirkt.",
+        heroTitle: "Ruhig im Raum. Stark im Training.",
         heroSubtitle:
-          "NordFit ist als modernes Studio geplant: klare Räume, gute Orientierung und eine Atmosphäre, die Training nicht lauter macht, als es sein muss.",
+          "Ein modernes Studio-Konzept für klare Wege, saubere Flächen und Training, das sich nicht nach Chaos anfühlt.",
         primaryCta: "Tarife ansehen",
         secondaryCta: "Standort ansehen",
         heroImageAlt: "Außenansicht des geplanten NordFit Studios",
-        floatingLabel: "Erster Eindruck",
-        floatingText: "Klar, hochwertig und bewusst nicht überladen.",
+        floatingLabel: "Geplant für NordFit",
+        floatingText: "Weniger Lärm. Mehr Fokus.",
 
-        feelingEyebrow: "Studio-Gefühl",
-        feelingTitle: "Nicht mehr. Besser.",
+        feelingTitle: "Nicht größer. Klarer.",
         feelingText:
-          "NordFit soll kein Studio sein, das dich mit Eindrücken erschlägt. Es soll sich sauber, ruhig und direkt verständlich anfühlen.",
+          "NordFit soll nicht mit Reizen beeindrucken, sondern mit Ordnung. Ein Studio, das man sofort versteht — und gern wieder betritt.",
 
-        featureOneTitle: "Klare Wege",
+        featureOneTitle: "Ankommen",
         featureOneText:
-          "Du sollst dich schnell zurechtfinden: ankommen, Zugang öffnen, trainieren. Ohne unnötiges Suchen.",
-        featureTwoTitle: "Ruhiger Look",
+          "Klare Orientierung vom ersten Schritt an. Kein Suchen, kein Gedränge, kein unnötiger Ablauf.",
+        featureTwoTitle: "Trainieren",
         featureTwoText:
-          "Modern, aber nicht kalt. Hochwertig, aber nicht abgehoben. Genau dieser Mittelweg macht NordFit aus.",
-        featureThreeTitle: "Weniger Chaos",
+          "Kraft, Cardio und Bewegung sollen sauber getrennt wirken, ohne das Studio künstlich groß zu machen.",
+        featureThreeTitle: "Runterkommen",
         featureThreeText:
-          "Training braucht Energie. Die Umgebung soll dir nicht zusätzlich Unruhe geben, sondern Fokus leichter machen.",
+          "Nach dem Training bleibt das Gefühl ruhig. Kein harter Bruch, kein lauter Abgang.",
 
-        panelOneEyebrow: "Krafttraining",
-        panelOneTitle: "Stark trainieren. Ohne Studiolärm im Kopf.",
+        panelOneTitle: "Kraft. Ohne Krach.",
         panelOneText:
-          "Der Kraftbereich soll konzentriert wirken: Geräte, freie Gewichte und klare Flächen, damit du nicht erst gegen das Studio antrainieren musst.",
-
-        panelTwoEyebrow: "Cardio & Bewegung",
-        panelTwoTitle: "Ausdauer, freie Bewegung und genug Luft.",
+          "Der Kraftbereich soll direkt, aufgeräumt und fokussiert wirken. Alles, was du brauchst — ohne überladene Studiowirkung.",
+        panelTwoTitle: "Cardio. Luft. Bewegung.",
         panelTwoText:
-          "Cardio und Functional Training sollen offen und leicht zugänglich bleiben. Nicht versteckt, nicht eng, nicht kompliziert.",
-
-        panelThreeEyebrow: "Regeneration",
-        panelThreeTitle: "Runterkommen gehört auch dazu.",
+          "Ausdauer und freie Bewegung brauchen Platz im Kopf und im Raum. NordFit soll genau dieses offene Gefühl geben.",
+        panelThreeTitle: "Ein Besuch, der sauber endet.",
         panelThreeText:
-          "Nach dem Training soll NordFit nicht abrupt enden. Ein ruhiger Abschluss macht aus einem Besuch ein besseres Gefühl.",
+          "Training hört nicht beim letzten Satz auf. Ein ruhiger Abschluss macht den Besuch runder.",
 
-        finalEyebrow: "NordFit im Aufbau",
-        finalTitle: "Ein Studio muss nicht laut sein, um ernst genommen zu werden.",
+        finalTitle: "Leise im Auftritt. Klar im Konzept.",
         finalText:
-          "Die Startseite zeigt den ersten Eindruck. Tarife, Standort und App bleiben bewusst auf eigenen Seiten, damit alles klar getrennt ist.",
+          "Tarife, Standort und App bleiben bewusst auf eigenen Seiten. So wirkt NordFit nicht voller — sondern verständlicher.",
         finalPrimary: "Tarife ansehen",
         finalSecondary: "Kontakt aufnehmen",
       },
@@ -192,7 +184,7 @@ document.addEventListener("DOMContentLoaded", () => {
       meta: {
         title: "NordFit – Home",
         description:
-          "NordFit is a modern gym concept with a calm atmosphere, clear structure and a premium training feel.",
+          "NordFit is a modern gym concept with calm design, clear structure and a premium training feel.",
       },
 
       nav: {
@@ -205,50 +197,42 @@ document.addEventListener("DOMContentLoaded", () => {
       },
 
       home: {
-        eyebrow: "NordFit",
-        heroTitle: "Fitness that looks calm. And feels strong.",
+        heroTitle: "Calm in space. Strong in training.",
         heroSubtitle:
-          "NordFit is planned as a modern studio: clear spaces, easy orientation and an atmosphere that does not make training louder than it needs to be.",
+          "A modern studio concept for clear flow, clean areas and training that does not feel like chaos.",
         primaryCta: "View plans",
         secondaryCta: "View location",
         heroImageAlt: "Exterior view of the planned NordFit studio",
-        floatingLabel: "First impression",
-        floatingText: "Clear, premium and intentionally not overloaded.",
+        floatingLabel: "Planned for NordFit",
+        floatingText: "Less noise. More focus.",
 
-        feelingEyebrow: "Studio feel",
-        feelingTitle: "Not more. Better.",
+        feelingTitle: "Not bigger. Clearer.",
         feelingText:
-          "NordFit should not be a studio that overwhelms you with noise and impressions. It should feel clean, calm and easy to understand right away.",
+          "NordFit is not meant to impress with noise. It is meant to feel ordered — a studio you understand right away and want to return to.",
 
-        featureOneTitle: "Clear flow",
+        featureOneTitle: "Arrive",
         featureOneText:
-          "You should quickly know where to go: arrive, open access, train. Without unnecessary searching.",
-        featureTwoTitle: "Calm look",
+          "Clear orientation from the first step. No searching, no crowding, no unnecessary process.",
+        featureTwoTitle: "Train",
         featureTwoText:
-          "Modern, but not cold. Premium, but not distant. That balance is what NordFit is built around.",
-        featureThreeTitle: "Less chaos",
+          "Strength, cardio and movement should feel clearly separated without making the studio artificially large.",
+        featureThreeTitle: "Cool down",
         featureThreeText:
-          "Training needs energy. The environment should not add more noise — it should make focus easier.",
+          "After training, the feeling stays calm. No hard break, no loud exit.",
 
-        panelOneEyebrow: "Strength training",
-        panelOneTitle: "Train strong. Without studio noise in your head.",
+        panelOneTitle: "Strength. Without noise.",
         panelOneText:
-          "The strength area should feel focused: equipment, free weights and clear zones, so you do not have to train against the room first.",
-
-        panelTwoEyebrow: "Cardio & movement",
-        panelTwoTitle: "Endurance, free movement and enough space.",
+          "The strength area should feel direct, tidy and focused. Everything you need — without an overloaded studio feel.",
+        panelTwoTitle: "Cardio. Air. Movement.",
         panelTwoText:
-          "Cardio and functional training should stay open and easy to access. Not hidden, not cramped, not complicated.",
-
-        panelThreeEyebrow: "Recovery",
-        panelThreeTitle: "Cooling down matters too.",
+          "Endurance and free movement need space in the room and in your head. NordFit should create exactly that open feeling.",
+        panelThreeTitle: "A visit that ends cleanly.",
         panelThreeText:
-          "A NordFit visit should not end abruptly after training. A calmer finish makes the whole visit feel better.",
+          "Training does not end with the last set. A calm finish makes the visit feel more complete.",
 
-        finalEyebrow: "NordFit in progress",
-        finalTitle: "A gym does not have to be loud to be taken seriously.",
+        finalTitle: "Quiet in appearance. Clear in concept.",
         finalText:
-          "The homepage shows the first impression. Plans, location and app stay on their own pages so everything remains clearly separated.",
+          "Plans, location and app intentionally stay on their own pages. NordFit feels not fuller — but easier to understand.",
         finalPrimary: "View plans",
         finalSecondary: "Get in touch",
       },
@@ -265,7 +249,7 @@ document.addEventListener("DOMContentLoaded", () => {
       meta: {
         title: "NordFit – Accueil",
         description:
-          "NordFit est un concept de salle de sport moderne avec une atmosphère calme, une structure claire et une sensation premium.",
+          "NordFit est un concept de salle de sport moderne avec un design calme, une structure claire et une sensation premium.",
       },
 
       nav: {
@@ -278,50 +262,42 @@ document.addEventListener("DOMContentLoaded", () => {
       },
 
       home: {
-        eyebrow: "NordFit",
-        heroTitle: "Un fitness calme à regarder. Fort à ressentir.",
+        heroTitle: "Calme dans l’espace. Fort à l’entraînement.",
         heroSubtitle:
-          "NordFit est pensé comme un studio moderne : des espaces clairs, une orientation simple et une atmosphère qui ne rend pas l’entraînement plus bruyant qu’il ne doit l’être.",
+          "Un concept de studio moderne avec des chemins clairs, des zones propres et un entraînement qui ne ressemble pas au chaos.",
         primaryCta: "Voir les tarifs",
         secondaryCta: "Voir le site",
         heroImageAlt: "Vue extérieure du studio NordFit prévu",
-        floatingLabel: "Première impression",
-        floatingText: "Clair, premium et volontairement non surchargé.",
+        floatingLabel: "Prévu pour NordFit",
+        floatingText: "Moins de bruit. Plus de concentration.",
 
-        feelingEyebrow: "Sensation du studio",
-        feelingTitle: "Pas plus. Mieux.",
+        feelingTitle: "Pas plus grand. Plus clair.",
         feelingText:
-          "NordFit ne doit pas être une salle qui vous submerge. Le lieu doit être propre, calme et compréhensible dès le départ.",
+          "NordFit ne doit pas impressionner par le bruit, mais par l’ordre. Un studio que l’on comprend immédiatement — et où l’on revient volontiers.",
 
-        featureOneTitle: "Des chemins clairs",
+        featureOneTitle: "Arriver",
         featureOneText:
-          "Vous devez comprendre rapidement le fonctionnement : arriver, ouvrir l’accès, vous entraîner. Sans chercher inutilement.",
-        featureTwoTitle: "Un style calme",
+          "Une orientation claire dès le premier pas. Pas de recherche, pas de foule, pas de détour inutile.",
+        featureTwoTitle: "S’entraîner",
         featureTwoText:
-          "Moderne, mais pas froid. Premium, mais pas distant. C’est cet équilibre qui définit NordFit.",
-        featureThreeTitle: "Moins de chaos",
+          "Force, cardio et mouvement doivent rester clairement séparés, sans agrandir artificiellement le studio.",
+        featureThreeTitle: "Redescendre",
         featureThreeText:
-          "L’entraînement demande de l’énergie. L’environnement ne doit pas ajouter du bruit, mais faciliter la concentration.",
+          "Après l’entraînement, la sensation reste calme. Pas de rupture brusque, pas de sortie bruyante.",
 
-        panelOneEyebrow: "Musculation",
-        panelOneTitle: "S’entraîner fort. Sans bruit dans la tête.",
+        panelOneTitle: "Force. Sans bruit.",
         panelOneText:
-          "L’espace musculation doit rester concentré : machines, poids libres et zones claires, sans devoir lutter contre la salle.",
-
-        panelTwoEyebrow: "Cardio & mouvement",
-        panelTwoTitle: "Endurance, mouvement libre et assez d’espace.",
+          "L’espace force doit être direct, rangé et concentré. Tout ce qu’il faut — sans impression de surcharge.",
+        panelTwoTitle: "Cardio. Air. Mouvement.",
         panelTwoText:
-          "Le cardio et l’entraînement fonctionnel doivent rester ouverts et faciles d’accès. Pas cachés, pas serrés, pas compliqués.",
-
-        panelThreeEyebrow: "Récupération",
-        panelThreeTitle: "Redescendre fait aussi partie du tout.",
+          "L’endurance et le mouvement libre ont besoin d’espace, dans la pièce comme dans la tête. NordFit doit créer ce sentiment d’ouverture.",
+        panelThreeTitle: "Une visite qui se termine proprement.",
         panelThreeText:
-          "Une visite NordFit ne doit pas s’arrêter brusquement après l’entraînement. Une fin plus calme améliore toute l’expérience.",
+          "L’entraînement ne s’arrête pas au dernier effort. Une fin calme rend toute la visite plus complète.",
 
-        finalEyebrow: "NordFit en construction",
-        finalTitle: "Une salle n’a pas besoin d’être bruyante pour être prise au sérieux.",
+        finalTitle: "Discret dans l’apparence. Clair dans le concept.",
         finalText:
-          "La page d’accueil montre la première impression. Les tarifs, le site et l’app restent sur leurs propres pages pour garder une structure claire.",
+          "Les tarifs, le site et l’app restent volontairement sur leurs propres pages. NordFit ne paraît pas plus rempli — mais plus compréhensible.",
         finalPrimary: "Voir les tarifs",
         finalSecondary: "Nous contacter",
       },
@@ -338,7 +314,7 @@ document.addEventListener("DOMContentLoaded", () => {
       meta: {
         title: "NordFit – Inicio",
         description:
-          "NordFit es un concepto de gimnasio moderno con ambiente tranquilo, estructura clara y sensación premium.",
+          "NordFit es un concepto de gimnasio moderno con diseño tranquilo, estructura clara y sensación premium.",
       },
 
       nav: {
@@ -351,50 +327,42 @@ document.addEventListener("DOMContentLoaded", () => {
       },
 
       home: {
-        eyebrow: "NordFit",
-        heroTitle: "Fitness que se ve tranquilo. Y se siente fuerte.",
+        heroTitle: "Calma en el espacio. Fuerza en el entrenamiento.",
         heroSubtitle:
-          "NordFit está pensado como un estudio moderno: espacios claros, orientación sencilla y una atmósfera que no hace el entrenamiento más ruidoso de lo necesario.",
+          "Un concepto de estudio moderno con recorridos claros, zonas limpias y entrenamiento que no se siente como caos.",
         primaryCta: "Ver tarifas",
         secondaryCta: "Ver ubicación",
         heroImageAlt: "Vista exterior del estudio NordFit planificado",
-        floatingLabel: "Primera impresión",
-        floatingText: "Claro, premium y deliberadamente no sobrecargado.",
+        floatingLabel: "Planificado para NordFit",
+        floatingText: "Menos ruido. Más foco.",
 
-        feelingEyebrow: "Sensación del estudio",
-        feelingTitle: "No más. Mejor.",
+        feelingTitle: "No más grande. Más claro.",
         feelingText:
-          "NordFit no debe ser un estudio que te abrume. Debe sentirse limpio, tranquilo y fácil de entender desde el primer momento.",
+          "NordFit no debe impresionar con estímulos, sino con orden. Un estudio que se entiende al instante — y al que apetece volver.",
 
-        featureOneTitle: "Flujo claro",
+        featureOneTitle: "Llegar",
         featureOneText:
-          "Debes orientarte rápido: llegar, abrir el acceso, entrenar. Sin búsquedas innecesarias.",
-        featureTwoTitle: "Aspecto tranquilo",
+          "Orientación clara desde el primer paso. Sin búsquedas, sin aglomeraciones, sin procesos innecesarios.",
+        featureTwoTitle: "Entrenar",
         featureTwoText:
-          "Moderno, pero no frío. Premium, pero no distante. Ese equilibrio define NordFit.",
-        featureThreeTitle: "Menos caos",
+          "Fuerza, cardio y movimiento deben sentirse claramente separados sin hacer el estudio artificialmente grande.",
+        featureThreeTitle: "Bajar el ritmo",
         featureThreeText:
-          "Entrenar requiere energía. El entorno no debe añadir ruido, sino hacer más fácil concentrarse.",
+          "Después de entrenar, la sensación sigue tranquila. Sin corte brusco, sin salida ruidosa.",
 
-        panelOneEyebrow: "Fuerza",
-        panelOneTitle: "Entrena fuerte. Sin ruido de gimnasio en la cabeza.",
+        panelOneTitle: "Fuerza. Sin ruido.",
         panelOneText:
-          "La zona de fuerza debe sentirse enfocada: máquinas, peso libre y áreas claras, sin tener que luchar contra el espacio.",
-
-        panelTwoEyebrow: "Cardio y movimiento",
-        panelTwoTitle: "Resistencia, movimiento libre y suficiente espacio.",
+          "La zona de fuerza debe sentirse directa, ordenada y enfocada. Todo lo que necesitas — sin sensación de sobrecarga.",
+        panelTwoTitle: "Cardio. Aire. Movimiento.",
         panelTwoText:
-          "Cardio y entrenamiento funcional deben ser abiertos y fáciles de usar. No escondidos, no apretados, no complicados.",
-
-        panelThreeEyebrow: "Recuperación",
-        panelThreeTitle: "Bajar el ritmo también cuenta.",
+          "La resistencia y el movimiento libre necesitan espacio en la sala y en la cabeza. NordFit debe crear justo esa sensación abierta.",
+        panelThreeTitle: "Una visita que termina limpia.",
         panelThreeText:
-          "Una visita a NordFit no debe terminar de golpe tras entrenar. Un cierre más tranquilo mejora toda la experiencia.",
+          "El entrenamiento no termina con la última serie. Un cierre tranquilo hace que la visita se sienta más completa.",
 
-        finalEyebrow: "NordFit en desarrollo",
-        finalTitle: "Un gimnasio no tiene que ser ruidoso para ser tomado en serio.",
+        finalTitle: "Silencioso en presencia. Claro en concepto.",
         finalText:
-          "La página de inicio muestra la primera impresión. Tarifas, ubicación y app permanecen en páginas propias para que todo quede claro.",
+          "Tarifas, ubicación y app permanecen en páginas propias. NordFit no se siente más lleno — sino más fácil de entender.",
         finalPrimary: "Ver tarifas",
         finalSecondary: "Contactar",
       },
@@ -411,7 +379,7 @@ document.addEventListener("DOMContentLoaded", () => {
       meta: {
         title: "NordFit – Home",
         description:
-          "NordFit è un concept di palestra moderna con atmosfera calma, struttura chiara e sensazione premium.",
+          "NordFit è un concept di palestra moderna con design calmo, struttura chiara e sensazione premium.",
       },
 
       nav: {
@@ -424,50 +392,42 @@ document.addEventListener("DOMContentLoaded", () => {
       },
 
       home: {
-        eyebrow: "NordFit",
-        heroTitle: "Fitness che sembra calmo. E si sente forte.",
+        heroTitle: "Calmo nello spazio. Forte nell’allenamento.",
         heroSubtitle:
-          "NordFit è pensato come uno studio moderno: spazi chiari, orientamento semplice e un’atmosfera che non rende l’allenamento più rumoroso del necessario.",
+          "Un concept di studio moderno con percorsi chiari, aree pulite e allenamento che non sembra caos.",
         primaryCta: "Vedi tariffe",
         secondaryCta: "Vedi sede",
         heroImageAlt: "Vista esterna dello studio NordFit previsto",
-        floatingLabel: "Prima impressione",
-        floatingText: "Chiaro, premium e volutamente non sovraccarico.",
+        floatingLabel: "Previsto per NordFit",
+        floatingText: "Meno rumore. Più focus.",
 
-        feelingEyebrow: "Sensazione dello studio",
-        feelingTitle: "Non di più. Meglio.",
+        feelingTitle: "Non più grande. Più chiaro.",
         feelingText:
-          "NordFit non deve essere uno studio che ti travolge. Deve sembrare pulito, calmo e subito comprensibile.",
+          "NordFit non deve impressionare con stimoli, ma con ordine. Uno studio che si capisce subito — e in cui si torna volentieri.",
 
-        featureOneTitle: "Percorsi chiari",
+        featureOneTitle: "Arrivare",
         featureOneText:
-          "Devi orientarti subito: arrivare, aprire l’accesso, allenarti. Senza cercare inutilmente.",
-        featureTwoTitle: "Look calmo",
+          "Orientamento chiaro dal primo passo. Niente ricerca, niente caos, nessun percorso inutile.",
+        featureTwoTitle: "Allenarsi",
         featureTwoText:
-          "Moderno, ma non freddo. Premium, ma non distante. Questo equilibrio definisce NordFit.",
-        featureThreeTitle: "Meno caos",
+          "Forza, cardio e movimento devono risultare ben separati senza rendere lo studio artificialmente grande.",
+        featureThreeTitle: "Rallentare",
         featureThreeText:
-          "L’allenamento richiede energia. L’ambiente non deve aggiungere rumore, ma facilitare la concentrazione.",
+          "Dopo l’allenamento resta una sensazione calma. Nessuna rottura brusca, nessuna uscita rumorosa.",
 
-        panelOneEyebrow: "Forza",
-        panelOneTitle: "Allenati forte. Senza rumore in testa.",
+        panelOneTitle: "Forza. Senza rumore.",
         panelOneText:
-          "L’area forza deve essere concentrata: macchine, pesi liberi e zone chiare, senza dover combattere contro lo spazio.",
-
-        panelTwoEyebrow: "Cardio e movimento",
-        panelTwoTitle: "Resistenza, movimento libero e abbastanza spazio.",
+          "L’area forza deve essere diretta, ordinata e focalizzata. Tutto ciò che serve — senza effetto studio sovraccarico.",
+        panelTwoTitle: "Cardio. Aria. Movimento.",
         panelTwoText:
-          "Cardio e functional training devono restare aperti e facili da usare. Non nascosti, non stretti, non complicati.",
-
-        panelThreeEyebrow: "Recupero",
-        panelThreeTitle: "Anche rallentare fa parte del percorso.",
+          "Resistenza e movimento libero hanno bisogno di spazio, nella stanza e nella testa. NordFit deve dare proprio questa sensazione aperta.",
+        panelThreeTitle: "Una visita che finisce bene.",
         panelThreeText:
-          "Una visita NordFit non deve finire bruscamente dopo l’allenamento. Una chiusura più calma migliora tutta l’esperienza.",
+          "L’allenamento non finisce con l’ultima serie. Una chiusura calma rende la visita più completa.",
 
-        finalEyebrow: "NordFit in costruzione",
-        finalTitle: "Una palestra non deve essere rumorosa per essere presa sul serio.",
+        finalTitle: "Silenzioso nell’aspetto. Chiaro nel concetto.",
         finalText:
-          "La homepage mostra la prima impressione. Tariffe, sede e app restano su pagine proprie per mantenere tutto chiaro.",
+          "Tariffe, sede e app restano su pagine dedicate. NordFit non sembra più pieno — sembra più comprensibile.",
         finalPrimary: "Vedi tariffe",
         finalSecondary: "Contattaci",
       },
@@ -484,7 +444,7 @@ document.addEventListener("DOMContentLoaded", () => {
       meta: {
         title: "NordFit – Strona główna",
         description:
-          "NordFit to koncepcja nowoczesnej siłowni ze spokojną atmosferą, jasną strukturą i premium odczuciem treningu.",
+          "NordFit to koncepcja nowoczesnej siłowni ze spokojnym designem, jasną strukturą i premium odczuciem treningu.",
       },
 
       nav: {
@@ -497,50 +457,42 @@ document.addEventListener("DOMContentLoaded", () => {
       },
 
       home: {
-        eyebrow: "NordFit",
-        heroTitle: "Fitness, który wygląda spokojnie. I działa mocno.",
+        heroTitle: "Spokój w przestrzeni. Siła w treningu.",
         heroSubtitle:
-          "NordFit jest planowany jako nowoczesne studio: jasne przestrzenie, łatwa orientacja i atmosfera, która nie robi treningu głośniejszym niż trzeba.",
+          "Nowoczesna koncepcja studia z jasnym układem, czystymi strefami i treningiem, który nie przypomina chaosu.",
         primaryCta: "Zobacz karnety",
         secondaryCta: "Zobacz lokalizację",
         heroImageAlt: "Widok zewnętrzny planowanego studia NordFit",
-        floatingLabel: "Pierwsze wrażenie",
-        floatingText: "Jasne, premium i celowo nieprzeładowane.",
+        floatingLabel: "Planowane dla NordFit",
+        floatingText: "Mniej hałasu. Więcej skupienia.",
 
-        feelingEyebrow: "Odczucie studia",
-        feelingTitle: "Nie więcej. Lepiej.",
+        feelingTitle: "Nie większe. Czytelniejsze.",
         feelingText:
-          "NordFit nie ma przytłaczać. Ma być czyste, spokojne i od razu zrozumiałe.",
+          "NordFit nie ma imponować bodźcami, lecz porządkiem. Studio, które rozumiesz od razu — i do którego chcesz wracać.",
 
-        featureOneTitle: "Jasny układ",
+        featureOneTitle: "Wejście",
         featureOneText:
-          "Masz szybko wiedzieć, gdzie iść: przyjść, otworzyć dostęp, trenować. Bez zbędnego szukania.",
-        featureTwoTitle: "Spokojny wygląd",
+          "Jasna orientacja od pierwszego kroku. Bez szukania, bez tłoku, bez zbędnych etapów.",
+        featureTwoTitle: "Trening",
         featureTwoText:
-          "Nowocześnie, ale nie zimno. Premium, ale nie z dystansem. Na tym balansie opiera się NordFit.",
-        featureThreeTitle: "Mniej chaosu",
+          "Siła, cardio i ruch mają być czytelnie oddzielone, bez sztucznego powiększania studia.",
+        featureThreeTitle: "Wyciszenie",
         featureThreeText:
-          "Trening wymaga energii. Otoczenie nie powinno dodawać hałasu, tylko ułatwiać skupienie.",
+          "Po treningu uczucie zostaje spokojne. Bez nagłego przerwania, bez głośnego wyjścia.",
 
-        panelOneEyebrow: "Trening siłowy",
-        panelOneTitle: "Trenuj mocno. Bez hałasu studia w głowie.",
+        panelOneTitle: "Siła. Bez hałasu.",
         panelOneText:
-          "Strefa siłowa ma być skupiona: sprzęt, wolne ciężary i jasne obszary, bez walki z przestrzenią.",
-
-        panelTwoEyebrow: "Cardio i ruch",
-        panelTwoTitle: "Wytrzymałość, swobodny ruch i wystarczająco miejsca.",
+          "Strefa siłowa ma być bezpośrednia, uporządkowana i skupiona. Wszystko, czego potrzebujesz — bez przeładowania.",
+        panelTwoTitle: "Cardio. Powietrze. Ruch.",
         panelTwoText:
-          "Cardio i trening funkcjonalny mają być otwarte i łatwo dostępne. Nie ukryte, nie ciasne, nie skomplikowane.",
-
-        panelThreeEyebrow: "Regeneracja",
-        panelThreeTitle: "Wyciszenie też ma znaczenie.",
+          "Wytrzymałość i swobodny ruch potrzebują miejsca w sali i w głowie. NordFit ma dawać właśnie takie otwarte wrażenie.",
+        panelThreeTitle: "Wizyta, która kończy się spokojnie.",
         panelThreeText:
-          "Wizyta w NordFit nie powinna kończyć się nagle po treningu. Spokojniejszy koniec daje lepsze odczucie całości.",
+          "Trening nie kończy się na ostatniej serii. Spokojne zakończenie sprawia, że całość działa lepiej.",
 
-        finalEyebrow: "NordFit w budowie",
-        finalTitle: "Siłownia nie musi być głośna, żeby traktować ją poważnie.",
+        finalTitle: "Ciche w wyglądzie. Jasne w koncepcji.",
         finalText:
-          "Strona główna pokazuje pierwsze wrażenie. Karnety, lokalizacja i aplikacja są na osobnych stronach, żeby wszystko było jasne.",
+          "Karnety, lokalizacja i aplikacja są celowo na osobnych stronach. NordFit nie wydaje się pełniejszy — tylko bardziej zrozumiały.",
         finalPrimary: "Zobacz karnety",
         finalSecondary: "Kontakt",
       },
@@ -557,7 +509,7 @@ document.addEventListener("DOMContentLoaded", () => {
       meta: {
         title: "NordFit – Home",
         description:
-          "NordFit is een modern sportschoolconcept met een rustige sfeer, duidelijke structuur en premium trainingsgevoel.",
+          "NordFit is een modern sportschoolconcept met rustig design, duidelijke structuur en premium trainingsgevoel.",
       },
 
       nav: {
@@ -570,50 +522,42 @@ document.addEventListener("DOMContentLoaded", () => {
       },
 
       home: {
-        eyebrow: "NordFit",
-        heroTitle: "Fitness die rustig oogt. En sterk voelt.",
+        heroTitle: "Rust in de ruimte. Sterk in training.",
         heroSubtitle:
-          "NordFit is gepland als moderne studio: duidelijke ruimtes, eenvoudige oriëntatie en een sfeer die training niet luider maakt dan nodig.",
+          "Een modern studioconcept met duidelijke routes, schone zones en training die niet als chaos voelt.",
         primaryCta: "Bekijk tarieven",
         secondaryCta: "Bekijk locatie",
         heroImageAlt: "Buitenaanzicht van de geplande NordFit-studio",
-        floatingLabel: "Eerste indruk",
-        floatingText: "Helder, premium en bewust niet overladen.",
+        floatingLabel: "Gepland voor NordFit",
+        floatingText: "Minder lawaai. Meer focus.",
 
-        feelingEyebrow: "Studiogevoel",
-        feelingTitle: "Niet meer. Beter.",
+        feelingTitle: "Niet groter. Duidelijker.",
         feelingText:
-          "NordFit moet je niet overspoelen met prikkels. Het moet schoon, rustig en direct begrijpelijk aanvoelen.",
+          "NordFit moet niet indruk maken met prikkels, maar met orde. Een studio die je meteen begrijpt — en graag weer binnenloopt.",
 
-        featureOneTitle: "Duidelijke routes",
+        featureOneTitle: "Aankomen",
         featureOneText:
-          "Je moet snel weten waar je heen moet: aankomen, toegang openen, trainen. Zonder onnodig zoeken.",
-        featureTwoTitle: "Rustige uitstraling",
+          "Duidelijke oriëntatie vanaf de eerste stap. Geen zoeken, geen drukte, geen onnodig proces.",
+        featureTwoTitle: "Trainen",
         featureTwoText:
-          "Modern, maar niet koud. Premium, maar niet afstandelijk. Die balans vormt NordFit.",
-        featureThreeTitle: "Minder chaos",
+          "Kracht, cardio en beweging moeten duidelijk gescheiden voelen zonder de studio kunstmatig groot te maken.",
+        featureThreeTitle: "Afkoelen",
         featureThreeText:
-          "Training vraagt energie. De omgeving moet geen extra onrust geven, maar focus makkelijker maken.",
+          "Na het trainen blijft het gevoel rustig. Geen harde breuk, geen luid vertrek.",
 
-        panelOneEyebrow: "Krachttraining",
-        panelOneTitle: "Sterk trainen. Zonder studiogeluid in je hoofd.",
+        panelOneTitle: "Kracht. Zonder lawaai.",
         panelOneText:
-          "De krachtzone moet gefocust voelen: apparaten, losse gewichten en duidelijke zones, zonder tegen de ruimte te moeten trainen.",
-
-        panelTwoEyebrow: "Cardio & beweging",
-        panelTwoTitle: "Uithouding, vrije beweging en genoeg ruimte.",
+          "De krachtzone moet direct, opgeruimd en gefocust aanvoelen. Alles wat je nodig hebt — zonder overvolle studiosfeer.",
+        panelTwoTitle: "Cardio. Lucht. Beweging.",
         panelTwoText:
-          "Cardio en functionele training moeten open en makkelijk toegankelijk blijven. Niet verstopt, niet krap, niet ingewikkeld.",
-
-        panelThreeEyebrow: "Herstel",
-        panelThreeTitle: "Afkoelen hoort er ook bij.",
+          "Uithouding en vrije beweging hebben ruimte nodig in de zaal en in je hoofd. NordFit moet precies dat open gevoel geven.",
+        panelThreeTitle: "Een bezoek dat schoon eindigt.",
         panelThreeText:
-          "Een NordFit-bezoek moet niet abrupt eindigen na het trainen. Een rustiger einde maakt de hele ervaring beter.",
+          "Training eindigt niet bij de laatste set. Een rustig einde maakt het bezoek completer.",
 
-        finalEyebrow: "NordFit in opbouw",
-        finalTitle: "Een sportschool hoeft niet luid te zijn om serieus te voelen.",
+        finalTitle: "Rustig in uitstraling. Helder in concept.",
         finalText:
-          "De homepage toont de eerste indruk. Tarieven, locatie en app blijven op eigen pagina’s zodat alles duidelijk gescheiden blijft.",
+          "Tarieven, locatie en app blijven bewust op eigen pagina’s. NordFit voelt niet voller — maar begrijpelijker.",
         finalPrimary: "Bekijk tarieven",
         finalSecondary: "Contact opnemen",
       },
@@ -630,7 +574,7 @@ document.addEventListener("DOMContentLoaded", () => {
       meta: {
         title: "NordFit – Hem",
         description:
-          "NordFit är ett modernt gymkoncept med lugn atmosfär, tydlig struktur och premiumkänsla.",
+          "NordFit är ett modernt gymkoncept med lugn design, tydlig struktur och premiumkänsla.",
       },
 
       nav: {
@@ -643,50 +587,42 @@ document.addEventListener("DOMContentLoaded", () => {
       },
 
       home: {
-        eyebrow: "NordFit",
-        heroTitle: "Fitness som ser lugn ut. Och känns stark.",
+        heroTitle: "Lugnt i rummet. Starkt i träningen.",
         heroSubtitle:
-          "NordFit planeras som en modern studio: tydliga ytor, enkel orientering och en atmosfär som inte gör träningen högre än den behöver vara.",
+          "Ett modernt studiokoncept med tydligt flöde, rena ytor och träning som inte känns som kaos.",
         primaryCta: "Se priser",
         secondaryCta: "Se plats",
         heroImageAlt: "Exteriör av den planerade NordFit-studion",
-        floatingLabel: "Första intryck",
-        floatingText: "Tydligt, premium och medvetet inte överlastat.",
+        floatingLabel: "Planerat för NordFit",
+        floatingText: "Mindre ljud. Mer fokus.",
 
-        feelingEyebrow: "Studiokänsla",
-        feelingTitle: "Inte mer. Bättre.",
+        feelingTitle: "Inte större. Tydligare.",
         feelingText:
-          "NordFit ska inte överväldiga dig med intryck. Det ska kännas rent, lugnt och lätt att förstå direkt.",
+          "NordFit ska inte imponera med intryck, utan med ordning. En studio du förstår direkt — och gärna återvänder till.",
 
-        featureOneTitle: "Tydligt flöde",
+        featureOneTitle: "Anlända",
         featureOneText:
-          "Du ska snabbt hitta rätt: komma in, öppna tillgången, träna. Utan onödigt letande.",
-        featureTwoTitle: "Lugn look",
+          "Tydlig orientering från första steget. Inget letande, ingen trängsel, ingen onödig process.",
+        featureTwoTitle: "Träna",
         featureTwoText:
-          "Modernt, men inte kallt. Premium, men inte distanserat. Den balansen är NordFit.",
-        featureThreeTitle: "Mindre kaos",
+          "Styrka, cardio och rörelse ska kännas tydligt separerade utan att studion görs konstlat stor.",
+        featureThreeTitle: "Varva ner",
         featureThreeText:
-          "Träning kräver energi. Miljön ska inte lägga till oväsen, utan göra fokus enklare.",
+          "Efter träningen stannar känslan lugn. Ingen hård brytning, ingen högljudd utgång.",
 
-        panelOneEyebrow: "Styrketräning",
-        panelOneTitle: "Träna starkt. Utan studiobrus i huvudet.",
+        panelOneTitle: "Styrka. Utan brus.",
         panelOneText:
-          "Styrkeområdet ska kännas fokuserat: maskiner, fria vikter och tydliga ytor, utan att du först måste kämpa mot rummet.",
-
-        panelTwoEyebrow: "Cardio & rörelse",
-        panelTwoTitle: "Uthållighet, fri rörelse och tillräckligt med luft.",
+          "Styrkeområdet ska kännas direkt, ordnat och fokuserat. Allt du behöver — utan överlastad studiokänsla.",
+        panelTwoTitle: "Cardio. Luft. Rörelse.",
         panelTwoText:
-          "Cardio och funktionell träning ska vara öppna och lätta att använda. Inte gömda, inte trånga, inte komplicerade.",
-
-        panelThreeEyebrow: "Återhämtning",
-        panelThreeTitle: "Att varva ner hör också till.",
+          "Uthållighet och fri rörelse behöver plats i rummet och i huvudet. NordFit ska ge just den öppna känslan.",
+        panelThreeTitle: "Ett besök som slutar rent.",
         panelThreeText:
-          "Ett NordFit-besök ska inte sluta tvärt efter träningen. Ett lugnare avslut gör hela upplevelsen bättre.",
+          "Träning slutar inte med sista setet. Ett lugnt avslut gör besöket mer komplett.",
 
-        finalEyebrow: "NordFit under uppbyggnad",
-        finalTitle: "Ett gym behöver inte vara högljutt för att tas på allvar.",
+        finalTitle: "Tyst i uttrycket. Tydligt i konceptet.",
         finalText:
-          "Startsidan visar första intrycket. Priser, plats och app finns på egna sidor så att allt hålls tydligt separerat.",
+          "Priser, plats och app ligger medvetet på egna sidor. NordFit känns inte fylligare — utan lättare att förstå.",
         finalPrimary: "Se priser",
         finalSecondary: "Kontakta oss",
       },
@@ -703,7 +639,7 @@ document.addEventListener("DOMContentLoaded", () => {
       meta: {
         title: "NordFit – Hjem",
         description:
-          "NordFit er et moderne fitnesskoncept med rolig atmosfære, klar struktur og premium træningsfølelse.",
+          "NordFit er et moderne fitnesskoncept med roligt design, klar struktur og premium træningsfølelse.",
       },
 
       nav: {
@@ -716,50 +652,42 @@ document.addEventListener("DOMContentLoaded", () => {
       },
 
       home: {
-        eyebrow: "NordFit",
-        heroTitle: "Fitness, der ser roligt ud. Og føles stærkt.",
+        heroTitle: "Roligt i rummet. Stærkt i træningen.",
         heroSubtitle:
-          "NordFit planlægges som et moderne studio: klare rum, nem orientering og en atmosfære, der ikke gør træning mere larmende end nødvendigt.",
+          "Et moderne studiokoncept med klare veje, rene områder og træning, der ikke føles som kaos.",
         primaryCta: "Se priser",
         secondaryCta: "Se lokation",
         heroImageAlt: "Udvendig visning af det planlagte NordFit-studio",
-        floatingLabel: "Første indtryk",
-        floatingText: "Klart, premium og bevidst ikke overfyldt.",
+        floatingLabel: "Planlagt til NordFit",
+        floatingText: "Mindre støj. Mere fokus.",
 
-        feelingEyebrow: "Studiofølelse",
-        feelingTitle: "Ikke mere. Bedre.",
+        feelingTitle: "Ikke større. Klarere.",
         feelingText:
-          "NordFit skal ikke overvælde dig med indtryk. Det skal føles rent, roligt og let at forstå med det samme.",
+          "NordFit skal ikke imponere med indtryk, men med orden. Et studio, man forstår med det samme — og gerne vender tilbage til.",
 
-        featureOneTitle: "Klare veje",
+        featureOneTitle: "Ankomme",
         featureOneText:
-          "Du skal hurtigt finde rundt: ankomme, åbne adgang, træne. Uden unødvendig søgen.",
-        featureTwoTitle: "Roligt look",
+          "Klar orientering fra første skridt. Ingen søgen, ingen trængsel, ingen unødvendig proces.",
+        featureTwoTitle: "Træne",
         featureTwoText:
-          "Moderne, men ikke koldt. Premium, men ikke distanceret. Den balance er NordFit.",
-        featureThreeTitle: "Mindre kaos",
+          "Styrke, cardio og bevægelse skal føles klart adskilt uden at gøre studiet kunstigt stort.",
+        featureThreeTitle: "Falde ned",
         featureThreeText:
-          "Træning kræver energi. Omgivelserne skal ikke tilføje støj, men gøre fokus lettere.",
+          "Efter træning bliver følelsen rolig. Ingen hård afbrydelse, ingen larmende udgang.",
 
-        panelOneEyebrow: "Styrketræning",
-        panelOneTitle: "Træn stærkt. Uden studiestøj i hovedet.",
+        panelOneTitle: "Styrke. Uden støj.",
         panelOneText:
-          "Styrkeområdet skal føles fokuseret: maskiner, frie vægte og klare zoner, uden at du først skal kæmpe mod rummet.",
-
-        panelTwoEyebrow: "Cardio & bevægelse",
-        panelTwoTitle: "Udholdenhed, fri bevægelse og nok plads.",
+          "Styrkeområdet skal føles direkte, ryddeligt og fokuseret. Alt det nødvendige — uden overfyldt studiofølelse.",
+        panelTwoTitle: "Cardio. Luft. Bevægelse.",
         panelTwoText:
-          "Cardio og funktionel træning skal være åbent og let tilgængeligt. Ikke gemt, ikke trangt, ikke kompliceret.",
-
-        panelThreeEyebrow: "Restitution",
-        panelThreeTitle: "At falde ned hører også med.",
+          "Udholdenhed og fri bevægelse har brug for plads i rummet og i hovedet. NordFit skal give netop den åbne følelse.",
+        panelThreeTitle: "Et besøg, der ender rent.",
         panelThreeText:
-          "Et NordFit-besøg skal ikke stoppe brat efter træning. En roligere afslutning gør hele oplevelsen bedre.",
+          "Træning slutter ikke ved sidste sæt. En rolig afslutning gør besøget mere helt.",
 
-        finalEyebrow: "NordFit under opbygning",
-        finalTitle: "Et fitnessstudio behøver ikke være højt for at blive taget seriøst.",
+        finalTitle: "Stille i udtrykket. Klart i konceptet.",
         finalText:
-          "Forsiden viser første indtryk. Priser, lokation og app ligger på egne sider, så alt forbliver klart adskilt.",
+          "Priser, lokation og app bliver bevidst på egne sider. NordFit virker ikke mere fyldt — men lettere at forstå.",
         finalPrimary: "Se priser",
         finalSecondary: "Kontakt os",
       },
@@ -776,7 +704,7 @@ document.addEventListener("DOMContentLoaded", () => {
       meta: {
         title: "NordFit – Hjem",
         description:
-          "NordFit er et moderne treningskonsept med rolig atmosfære, tydelig struktur og premium treningsfølelse.",
+          "NordFit er et moderne treningskonsept med rolig design, tydelig struktur og premium treningsfølelse.",
       },
 
       nav: {
@@ -789,50 +717,42 @@ document.addEventListener("DOMContentLoaded", () => {
       },
 
       home: {
-        eyebrow: "NordFit",
-        heroTitle: "Fitness som ser rolig ut. Og føles sterk.",
+        heroTitle: "Rolig i rommet. Sterk i treningen.",
         heroSubtitle:
-          "NordFit planlegges som et moderne studio: tydelige rom, enkel orientering og en atmosfære som ikke gjør treningen mer bråkete enn nødvendig.",
+          "Et moderne studiokonsept med tydelig flyt, rene soner og trening som ikke føles som kaos.",
         primaryCta: "Se priser",
         secondaryCta: "Se lokasjon",
         heroImageAlt: "Utvendig visning av det planlagte NordFit-studioet",
-        floatingLabel: "Førsteinntrykk",
-        floatingText: "Tydelig, premium og bevisst ikke overlesset.",
+        floatingLabel: "Planlagt for NordFit",
+        floatingText: "Mindre støy. Mer fokus.",
 
-        feelingEyebrow: "Studiofølelse",
-        feelingTitle: "Ikke mer. Bedre.",
+        feelingTitle: "Ikke større. Tydeligere.",
         feelingText:
-          "NordFit skal ikke overvelde deg med inntrykk. Det skal føles rent, rolig og lett å forstå med en gang.",
+          "NordFit skal ikke imponere med inntrykk, men med orden. Et studio du forstår med en gang — og gjerne kommer tilbake til.",
 
-        featureOneTitle: "Tydelig flyt",
+        featureOneTitle: "Ankomme",
         featureOneText:
-          "Du skal raskt finne frem: komme inn, åpne tilgang, trene. Uten unødvendig leting.",
-        featureTwoTitle: "Rolig uttrykk",
+          "Tydelig orientering fra første steg. Ingen leting, ingen trengsel, ingen unødvendig prosess.",
+        featureTwoTitle: "Trene",
         featureTwoText:
-          "Moderne, men ikke kaldt. Premium, men ikke distansert. Den balansen er NordFit.",
-        featureThreeTitle: "Mindre kaos",
+          "Styrke, cardio og bevegelse skal føles tydelig adskilt uten å gjøre studioet kunstig stort.",
+        featureThreeTitle: "Roe ned",
         featureThreeText:
-          "Trening krever energi. Omgivelsene skal ikke legge til støy, men gjøre fokus lettere.",
+          "Etter trening forblir følelsen rolig. Ingen hard avslutning, ingen bråkete utgang.",
 
-        panelOneEyebrow: "Styrketrening",
-        panelOneTitle: "Tren sterkt. Uten studiostøy i hodet.",
+        panelOneTitle: "Styrke. Uten støy.",
         panelOneText:
-          "Styrkeområdet skal føles fokusert: apparater, frivekter og tydelige soner, uten at du først må kjempe mot rommet.",
-
-        panelTwoEyebrow: "Cardio og bevegelse",
-        panelTwoTitle: "Utholdenhet, fri bevegelse og nok plass.",
+          "Styrkeområdet skal føles direkte, ryddig og fokusert. Alt du trenger — uten overlesset studiofølelse.",
+        panelTwoTitle: "Cardio. Luft. Bevegelse.",
         panelTwoText:
-          "Cardio og funksjonell trening skal være åpent og lett tilgjengelig. Ikke gjemt, ikke trangt, ikke komplisert.",
-
-        panelThreeEyebrow: "Restitusjon",
-        panelThreeTitle: "Å roe ned hører også med.",
+          "Utholdenhet og fri bevegelse trenger plass i rommet og i hodet. NordFit skal gi akkurat den åpne følelsen.",
+        panelThreeTitle: "Et besøk som ender rent.",
         panelThreeText:
-          "Et NordFit-besøk skal ikke stoppe brått etter trening. En roligere avslutning gjør hele opplevelsen bedre.",
+          "Trening slutter ikke med siste sett. En rolig avslutning gjør besøket mer komplett.",
 
-        finalEyebrow: "NordFit under oppbygging",
-        finalTitle: "Et treningssenter trenger ikke være høylytt for å tas seriøst.",
+        finalTitle: "Stille i uttrykket. Klart i konseptet.",
         finalText:
-          "Forsiden viser førsteinntrykket. Priser, lokasjon og app ligger på egne sider, så alt holdes tydelig adskilt.",
+          "Priser, lokasjon og app ligger bevisst på egne sider. NordFit føles ikke fullere — men lettere å forstå.",
         finalPrimary: "Se priser",
         finalSecondary: "Kontakt oss",
       },
