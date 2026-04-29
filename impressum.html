@@ -4,10 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>NordFit – Impressum</title>
+  <title data-i18n="meta.title">NordFit – Impressum</title>
   <meta
     name="description"
-    content="Impressum, rechtliche Hinweise, AGB und Datenschutzinformationen von NordFit."
+    content="Impressum, AGB und Datenschutz von NordFit."
+    data-i18n-content="meta.description"
   />
 
   <link rel="stylesheet" href="css/style.css" />
@@ -16,19 +17,19 @@
 <body>
   <header class="site-header">
     <div class="container">
-      <div class="site-header-inner glass">
+      <div class="site-header-inner">
         <a href="index.html" class="logo" aria-label="NordFit Startseite">
           <img src="images/nordfit-logo.png" alt="NordFit Logo" />
         </a>
 
         <nav class="site-nav" aria-label="Hauptnavigation">
           <ul>
-            <li><a href="index.html" class="nav-link">Startseite</a></li>
-            <li><a href="mitgliedschaften.html" class="nav-link">Tarife</a></li>
-            <li><a href="standorte.html" class="nav-link">Standorte</a></li>
-            <li><a href="app.html" class="nav-link">App</a></li>
-            <li><a href="hausordnung.html" class="nav-link">Hausordnung</a></li>
-            <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
+            <li><a href="index.html" class="nav-link" data-i18n="nav.home">Startseite</a></li>
+            <li><a href="mitgliedschaften.html" class="nav-link" data-i18n="nav.pricing">Tarife</a></li>
+            <li><a href="standorte.html" class="nav-link" data-i18n="nav.locations">Standorte</a></li>
+            <li><a href="app.html" class="nav-link" data-i18n="nav.app">App</a></li>
+            <li><a href="hausordnung.html" class="nav-link" data-i18n="nav.rules">Hausordnung</a></li>
+            <li><a href="kontakt.html" class="nav-link" data-i18n="nav.contact">Kontakt</a></li>
           </ul>
         </nav>
 
@@ -65,7 +66,6 @@
           type="button"
           aria-label="Menü öffnen"
           aria-expanded="false"
-          aria-controls="primary-navigation"
         >
           <span class="burger-lines" aria-hidden="true">
             <span></span>
@@ -80,16 +80,14 @@
   <main>
     <section class="section home-hero-section">
       <div class="container">
-        <div class="home-hero reveal">
-          <p class="eyebrow hero-eyebrow">Rechtliches</p>
-
-          <h1 class="hero-title small-hero">
-            Klar, sichtbar und ohne Verstecken.
+        <div class="home-hero">
+          <h1 class="hero-title small-hero" data-i18n="legalPage.heroTitle">
+            Rechtliches. Klar sortiert.
           </h1>
 
-          <p class="hero-subtitle">
-            Hier findest du die rechtlichen Angaben zu NordFit sowie die Bereiche für AGB,
-            Datenschutz und Hausordnung. Einige Daten werden ergänzt, sobald sie final feststehen.
+          <p class="hero-subtitle" data-i18n="legalPage.heroSubtitle">
+            Impressum, AGB und Datenschutz sollen bei NordFit nicht versteckt wirken.
+            Alles Wichtige bleibt auffindbar und sauber getrennt.
           </p>
         </div>
       </div>
@@ -97,85 +95,101 @@
 
     <section class="section section-tight">
       <div class="container">
-        <div class="glass legal-shell reveal">
-          <div class="legal-grid">
-            <article class="glass section-block">
-              <p class="eyebrow">Impressum</p>
-              <h2 class="section-title large-title">Angaben zum Anbieter</h2>
+        <div class="legal-grid">
+          <article class="card legal-shell">
+            <h2 class="section-title large-title" data-i18n="legalPage.imprintTitle">
+              Impressum
+            </h2>
 
-              <div class="legal-info-list clean-list-offset">
-                <div class="legal-info-row">
-                  <span class="legal-label">Projekt / Marke</span>
-                  <strong>NordFit / NordGroup</strong>
-                </div>
-
-                <div class="legal-info-row">
-                  <span class="legal-label">Anschrift</span>
-                  <strong>Wird ergänzt, sobald die Betreiberangaben final feststehen</strong>
-                </div>
-
-                <div class="legal-info-row">
-                  <span class="legal-label">Vertreten durch</span>
-                  <strong>Wird ergänzt</strong>
-                </div>
-
-                <div class="legal-info-row">
-                  <span class="legal-label">E-Mail</span>
-                  <strong>
-                    <a href="mailto:nordgroup.business@gmail.com">nordgroup.business@gmail.com</a>
-                  </strong>
-                </div>
-
-                <div class="legal-info-row">
-                  <span class="legal-label">Telefon</span>
-                  <strong>Bald verfügbar</strong>
-                </div>
-
-                <div class="legal-info-row">
-                  <span class="legal-label">Instagram</span>
-                  <strong>
-                    <a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">@nordfit.business</a>
-                  </strong>
-                </div>
-
-                <div class="legal-info-row">
-                  <span class="legal-label">Umsatzsteuer-ID</span>
-                  <strong>Wird ergänzt, falls erforderlich</strong>
-                </div>
+            <div class="legal-info-list clean-list-offset">
+              <div class="legal-info-row">
+                <span class="legal-label" data-i18n="legalPage.providerLabel">Angaben gemäß § 5 DDG</span>
+                <strong>NordFit / NordGroup</strong>
               </div>
 
-              <div class="info-note legal-missing-info">
-                <p class="info-note-label">Hinweis</p>
-                <p class="info-note-text">
-                  Diese Angaben sind noch nicht als finales Impressum für einen echten Geschäftsbetrieb gedacht.
-                  Vor Veröffentlichung müssen die rechtlich erforderlichen Daten vollständig ergänzt werden.
-                </p>
+              <div class="legal-info-row">
+                <span class="legal-label" data-i18n="legalPage.addressLabel">Anschrift</span>
+                <strong data-i18n="legalPage.addressValue">(Straße) (Hausnummer), (PLZ) (Ort)</strong>
               </div>
-            </article>
 
-            <article class="card legal-actions-card">
-              <p class="eyebrow">Schnellzugriff</p>
-              <h2 class="section-title">Rechtliche Bereiche</h2>
-
-              <p class="muted copy-stack">
-                Öffne hier die wichtigsten Bereiche direkt. Die Texte sind als Arbeitsstand gedacht
-                und sollten vor echter Nutzung final geprüft werden.
-              </p>
-
-              <div class="legal-action-buttons">
-                <button class="btn btn-primary" type="button" data-modal-target="agb-modal">
-                  AGB öffnen
-                </button>
-
-                <button class="btn btn-secondary" type="button" data-modal-target="privacy-modal">
-                  Datenschutz öffnen
-                </button>
-
-                <button class="btn btn-secondary" type="button" data-modal-target="rules-modal">
-                  Hausordnung öffnen
-                </button>
+              <div class="legal-info-row">
+                <span class="legal-label" data-i18n="legalPage.representedByLabel">Vertreten durch</span>
+                <strong data-i18n="legalPage.representedByValue">(Vorname Nachname)</strong>
               </div>
-            </article>
+
+              <div class="legal-info-row">
+                <span class="legal-label" data-i18n="legalPage.emailLabel">E-Mail</span>
+                <strong>
+                  <a href="mailto:nordgroup.business@gmail.com">nordgroup.business@gmail.com</a>
+                </strong>
+              </div>
+
+              <div class="legal-info-row">
+                <span class="legal-label" data-i18n="legalPage.phoneLabel">Telefon</span>
+                <strong>
+                  <a href="tel:(Telefonnummer)" data-i18n="legalPage.phoneValue">(Telefonnummer)</a>
+                </strong>
+              </div>
+
+              <div class="legal-info-row">
+                <span class="legal-label" data-i18n="legalPage.instagramLabel">Instagram</span>
+                <strong>
+                  <a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">@nordfit.business</a>
+                </strong>
+              </div>
+
+              <div class="legal-info-row">
+                <span class="legal-label" data-i18n="legalPage.vatLabel">Umsatzsteuer-ID</span>
+                <strong data-i18n="legalPage.vatValue">(falls vorhanden)</strong>
+              </div>
+            </div>
+
+            <p class="muted legal-missing-info" data-i18n="legalPage.missingInfo">
+              Fehlende Angaben werden ergänzt, sobald sie final feststehen.
+            </p>
+          </article>
+
+          <aside class="card legal-actions-card">
+            <h2 class="section-title" data-i18n="legalPage.quickTitle">
+              Schnellzugriff
+            </h2>
+
+            <p class="muted" data-i18n="legalPage.quickText">
+              Öffne hier die wichtigsten rechtlichen Bereiche, ohne lange zu suchen.
+            </p>
+
+            <div class="legal-action-buttons">
+              <button class="btn btn-primary" type="button" data-modal-target="agb-modal" data-i18n="legalPage.termsButton">
+                AGB öffnen
+              </button>
+
+              <button class="btn btn-secondary" type="button" data-modal-target="privacy-modal" data-i18n="legalPage.privacyButton">
+                Datenschutz öffnen
+              </button>
+
+              <a href="hausordnung.html" class="btn btn-secondary" data-i18n="legalPage.rulesButton">
+                Hausordnung öffnen
+              </a>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-final-cta">
+      <div class="container">
+        <div class="final-cta">
+          <h2 class="section-title large-title" data-i18n="legalPage.finalTitle">
+            Transparent bleiben.
+          </h2>
+
+          <p class="muted" data-i18n="legalPage.finalText">
+            Die rechtlichen Inhalte werden vor Veröffentlichung vollständig geprüft und ergänzt.
+          </p>
+
+          <div class="hero-actions">
+            <a href="kontakt.html" class="btn btn-primary" data-i18n="legalPage.finalPrimary">Kontakt aufnehmen</a>
+            <a href="hausordnung.html" class="btn btn-secondary" data-i18n="legalPage.finalSecondary">Hausordnung ansehen</a>
           </div>
         </div>
       </div>
@@ -183,93 +197,58 @@
   </main>
 
   <div class="modal" id="agb-modal" aria-hidden="true">
-    <div class="modal-box glass" role="dialog" aria-modal="true" aria-labelledby="agb-title">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="agb-title">
       <button class="modal-close" aria-label="Modal schließen" type="button">×</button>
 
-      <h2 class="section-title" id="agb-title">Allgemeine Geschäftsbedingungen</h2>
+      <h2 class="section-title" id="agb-title" data-i18n="legalPage.termsTitle">
+        Allgemeine Geschäftsbedingungen
+      </h2>
 
       <div class="modal-text-stack">
-        <p>
-          Diese AGB sind ein Entwurf für die geplante Nutzung von NordFit.
-          Sie beschreiben grundlegend Mitgliedschaften, Tagespässe und den digitalen Zugang über die NordFit App.
+        <p data-i18n="legalPage.termsIntro">
+          Diese AGB regeln die Nutzung von NordFit, Mitgliedschaften, Tagespässen und den digitalen Zugang.
         </p>
 
         <ol>
-          <li>Mitgliedschaften werden über die NordFit App abgeschlossen und verwaltet.</li>
-          <li>Der Zutritt zum Studio ist nur mit gültiger Mitgliedschaft oder gültigem Tagespass möglich.</li>
-          <li>Der persönliche QR-Code ist nicht übertragbar und darf nicht an andere Personen weitergegeben werden.</li>
-          <li>Tagespässe gelten für den jeweils gebuchten Tag und begründen keine dauerhafte Mitgliedschaft.</li>
-          <li>Kündigungen und Änderungen der Mitgliedschaft sollen digital über die NordFit App erfolgen.</li>
-          <li>Mitglieder verpflichten sich, die Hausordnung einzuhalten und Geräte sowie Räume sorgfältig zu behandeln.</li>
-          <li>Bei Missbrauch, Störungen oder Verstößen kann NordFit den Zutritt einschränken oder entziehen.</li>
+          <li data-i18n="legalPage.termsOne">Mitgliedschaften werden digital abgeschlossen und verwaltet.</li>
+          <li data-i18n="legalPage.termsTwo">Zutritt ist nur mit gültiger Mitgliedschaft oder gültigem Tagespass möglich.</li>
+          <li data-i18n="legalPage.termsThree">Der persönliche QR-Code ist nicht übertragbar.</li>
+          <li data-i18n="legalPage.termsFour">Tagespässe gelten einmalig für den gebuchten Tag.</li>
+          <li data-i18n="legalPage.termsFive">Änderungen und Kündigungen erfolgen digital.</li>
+          <li data-i18n="legalPage.termsSix">Die Hausordnung ist einzuhalten.</li>
         </ol>
 
-        <p>
-          Dieser Text ist nicht final rechtlich geprüft. Vor Veröffentlichung müssen Laufzeiten,
-          Zahlungsbedingungen, Kündigungsregeln, Haftung und Datenschutz sauber ergänzt werden.
+        <p data-i18n="legalPage.termsOutro">
+          Weitere Regelungen zu Zahlung, Laufzeit, Kündigung, Haftung und Datenschutz werden vor Veröffentlichung ergänzt.
         </p>
       </div>
     </div>
   </div>
 
   <div class="modal" id="privacy-modal" aria-hidden="true">
-    <div class="modal-box glass" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
       <button class="modal-close" aria-label="Modal schließen" type="button">×</button>
 
-      <h2 class="section-title" id="privacy-title">Datenschutzerklärung</h2>
+      <h2 class="section-title" id="privacy-title" data-i18n="legalPage.privacyTitle">
+        Datenschutzerklärung
+      </h2>
 
       <div class="modal-text-stack">
-        <p>
-          Diese Datenschutzerklärung ist ein Arbeitsstand. Sie beschreibt grob,
-          welche Daten im Zusammenhang mit Kontakt, Mitgliedschaft, App-Zugang und Verwaltung verarbeitet werden könnten.
+        <p data-i18n="legalPage.privacyIntro">
+          NordFit verarbeitet personenbezogene Daten nur, soweit dies für Kontakt, Mitgliedschaft, Zugang, Verwaltung und Sicherheit erforderlich ist.
         </p>
 
         <ol>
-          <li>Beim Besuch der Website können technische Zugriffsdaten verarbeitet werden.</li>
-          <li>Bei Kontaktaufnahme können Name, E-Mail-Adresse, Telefonnummer, Thema und Nachricht verarbeitet werden.</li>
-          <li>Für Mitgliedschaft und Tagespass können Vertrags-, Zahlungs- und Zugangsdaten erforderlich sein.</li>
-          <li>Die Verarbeitung soll zur Bereitstellung der Leistungen, Kommunikation und Verwaltung des Studiozugangs erfolgen.</li>
-          <li>Personenbezogene Daten sollen nicht länger gespeichert werden, als es für den jeweiligen Zweck erforderlich ist.</li>
-          <li>Betroffene Personen haben je nach Rechtslage Rechte auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung.</li>
+          <li data-i18n="legalPage.privacyOne">Beim Besuch der Website können technische Zugriffsdaten verarbeitet werden.</li>
+          <li data-i18n="legalPage.privacyTwo">Bei Kontaktaufnahme können Name, E-Mail-Adresse, Telefonnummer, Thema und Nachricht verarbeitet werden.</li>
+          <li data-i18n="legalPage.privacyThree">Für Mitgliedschaft und Tagespass können Vertrags-, Zahlungs- und Zugangsdaten verarbeitet werden.</li>
+          <li data-i18n="legalPage.privacyFour">Daten werden nicht länger gespeichert, als es für den jeweiligen Zweck erforderlich ist.</li>
+          <li data-i18n="legalPage.privacyFive">Betroffene Personen haben Rechte auf Auskunft, Berichtigung, Löschung und Einschränkung der Verarbeitung.</li>
         </ol>
 
-        <p>
-          Verantwortliche Stelle, vollständige Rechtsgrundlagen, Speicherdauer, Drittanbieter,
-          App-Dienste und technische Details müssen vor Veröffentlichung final ergänzt werden.
+        <p data-i18n="legalPage.privacyOutro">
+          Die vollständige Datenschutzerklärung wird vor Veröffentlichung ergänzt und rechtlich geprüft.
         </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="modal" id="rules-modal" aria-hidden="true">
-    <div class="modal-box glass" role="dialog" aria-modal="true" aria-labelledby="rules-title">
-      <button class="modal-close" aria-label="Modal schließen" type="button">×</button>
-
-      <h2 class="section-title" id="rules-title">Hausordnung</h2>
-
-      <div class="modal-text-stack">
-        <p>
-          Die Hausordnung sorgt dafür, dass NordFit sauber, ruhig und respektvoll bleibt.
-          Sie gilt für alle Personen, die das Studio nutzen.
-        </p>
-
-        <ul>
-          <li>Zutritt nur mit gültiger Mitgliedschaft oder gültigem Tagespass.</li>
-          <li>Zugang über die NordFit App und den persönlichen QR-Code.</li>
-          <li>Keine Weitergabe des QR-Codes an andere Personen.</li>
-          <li>Geeignete Trainingskleidung und saubere Sportschuhe.</li>
-          <li>Handtuchpflicht auf Geräten, Bänken und Matten.</li>
-          <li>Geräte, Hanteln und Zubehör nach dem Training zurückräumen.</li>
-          <li>Respektvoller Umgang mit anderen Mitgliedern.</li>
-          <li>Keine Belästigung, Provokation oder aggressives Verhalten.</li>
-          <li>Ruhiges, sauberes und verantwortungsvolles Training.</li>
-        </ul>
-
-        <p>
-          Die vollständige Hausordnung findest du zusätzlich auf der eigenen Hausordnungsseite.
-        </p>
-
-        <a href="hausordnung.html" class="btn btn-primary">Zur Hausordnung</a>
       </div>
     </div>
   </div>
@@ -278,12 +257,12 @@
     <div class="container">
       <div class="footer-shell">
         <div class="flex footer-row">
-          <p class="muted">© 2030 NordFit/NordGroup. Do not distribute!</p>
+          <p class="muted" data-i18n="footer.copyright">© 2030 NordFit/NordGroup. Do not distribute!</p>
 
           <div class="flex footer-links">
-            <a href="impressum.html">Impressum / AGB / Datenschutz</a>
-            <a href="hausordnung.html">Hausordnung</a>
-            <a href="kontakt.html">Kontakt</a>
+            <a href="impressum.html" data-i18n="footer.legal">Impressum / AGB / Datenschutz</a>
+            <a href="hausordnung.html" data-i18n="footer.rules">Hausordnung</a>
+            <a href="kontakt.html" data-i18n="footer.contact">Kontakt</a>
             <a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
         </div>
