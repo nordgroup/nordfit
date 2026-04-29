@@ -1,6 +1,6 @@
 /* =========================
    NordFit main.js
-   Header / Burger / Sprache / Modals / Reveal / Galleries / Forms
+   Header / Burger / Sprache / Modals / Galleries / Forms
    ========================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -16,55 +16,49 @@ document.addEventListener("DOMContentLoaded", () => {
   const langToggleLabel = document.querySelector(".lang-toggle-label");
 
   const modalElements = document.querySelectorAll(".modal");
-  const revealElements = document.querySelectorAll(".reveal");
   const galleryRows = document.querySelectorAll(".gallery-row");
   const contactForms = document.querySelectorAll("form[data-nordfit-contact-form]");
 
+  const supportedLanguages = ["de", "en", "fr", "es", "it", "pl", "nl", "sv", "da", "no"];
+  const defaultLanguage = "de";
+
   let lastFocusedElement = null;
   const galleryInstances = [];
-
-  const supportedLanguages = ["de", "en", "fr", "es", "it", "pl", "nl", "sv", "da", "no"];
 
   function isMobileNav() {
     return window.innerWidth <= 980;
   }
 
-  function updateHeaderScrollState() {
-    if (!headerInner) return;
-    headerInner.classList.toggle("scrolled", window.scrollY > 10);
+  function getSafeLanguage(lang) {
+    const cleanLang = String(lang || "").trim().toLowerCase();
+    return supportedLanguages.includes(cleanLang) ? cleanLang : defaultLanguage;
   }
-
-  updateHeaderScrollState();
-  window.addEventListener("scroll", updateHeaderScrollState, { passive: true });
 
   function getSavedLanguage() {
     try {
-      const saved = (localStorage.getItem("nordfit-language") || "de").toLowerCase();
-      return supportedLanguages.includes(saved) ? saved : "de";
+      return getSafeLanguage(localStorage.getItem("nordfit-language") || defaultLanguage);
     } catch {
-      return "de";
+      return defaultLanguage;
     }
   }
 
-  function saveLanguage(langCode) {
+  function saveLanguage(lang) {
     try {
-      localStorage.setItem("nordfit-language", langCode);
+      localStorage.setItem("nordfit-language", getSafeLanguage(lang));
     } catch {
       /* localStorage can be unavailable in private/restricted mode */
     }
   }
 
   function syncLanguageUi(langCode) {
-    const safeLang = supportedLanguages.includes((langCode || "").toLowerCase())
-      ? langCode.toLowerCase()
-      : "de";
+    const safeLang = getSafeLanguage(langCode);
 
     if (langToggleLabel) {
       langToggleLabel.textContent = safeLang.toUpperCase();
     }
 
     langOptions.forEach((option) => {
-      const optionLang = (option.dataset.lang || "").trim().toLowerCase();
+      const optionLang = getSafeLanguage(option.dataset.lang);
       const isActive = optionLang === safeLang;
 
       option.classList.toggle("is-selected", isActive);
@@ -73,7 +67,10 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  syncLanguageUi(getSavedLanguage());
+  function updateHeaderScrollState() {
+    if (!headerInner) return;
+    headerInner.classList.toggle("scrolled", window.scrollY > 10);
+  }
 
   function closeBurgerMenu() {
     if (!burger || !siteNav) return;
@@ -133,126 +130,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  if (burger && siteNav) {
-    burger.addEventListener("click", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      toggleBurgerMenu();
-    });
-
-    siteNav.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        if (isMobileNav()) {
-          closeBurgerMenu();
-        }
-      });
-    });
-  }
-
-  if (langToggle && langMenu) {
-    langToggle.addEventListener("click", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      toggleLanguageMenu();
-    });
-
-    langMenu.addEventListener("click", (event) => {
-      event.stopPropagation();
-    });
-  }
-
-  langOptions.forEach((option) => {
-    option.addEventListener("click", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-
-      const lang = (option.dataset.lang || "").trim().toLowerCase();
-      if (!supportedLanguages.includes(lang)) return;
-
-      saveLanguage(lang);
-      syncLanguageUi(lang);
-
-      window.dispatchEvent(
-        new CustomEvent("nordfit:language-changed", {
-          detail: { language: lang },
-        })
-      );
-
-      closeLanguageMenu();
-    });
-  });
-
-  window.addEventListener("nordfit:language-ui-sync", (event) => {
-    const lang = event.detail?.language?.trim()?.toLowerCase();
-    if (!lang || !supportedLanguages.includes(lang)) return;
-    syncLanguageUi(lang);
-  });
-
-  document.addEventListener("click", (event) => {
-    const target = event.target;
-
-    const clickedInsideLang =
-      (langToggle && langToggle.contains(target)) ||
-      (langMenu && langMenu.contains(target));
-
-    const clickedInsideBurger =
-      (burger && burger.contains(target)) ||
-      (siteNav && siteNav.contains(target));
-
-    if (!clickedInsideLang) {
-      closeLanguageMenu();
-    }
-
-    if (!clickedInsideBurger && isMobileNav()) {
-      closeBurgerMenu();
-    }
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key !== "Escape") return;
-
-    closeLanguageMenu();
-    closeBurgerMenu();
-    closeAllModals();
-  });
-
-  window.addEventListener(
-    "resize",
-    () => {
-      if (!isMobileNav()) {
-        closeBurgerMenu();
-      }
-
-      galleryInstances.forEach((instance) => instance.update());
-    },
-    { passive: true }
-  );
-
-  if (revealElements.length) {
-    if ("IntersectionObserver" in window) {
-      const revealObserver = new IntersectionObserver(
-        (entries, observer) => {
-          entries.forEach((entry) => {
-            if (!entry.isIntersecting) return;
-
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          });
-        },
-        {
-          threshold: 0.12,
-          rootMargin: "0px 0px -40px 0px",
-        }
-      );
-
-      revealElements.forEach((element) => revealObserver.observe(element));
-    } else {
-      revealElements.forEach((element) => element.classList.add("visible"));
-    }
-  }
-
   function getFocusableElements(container) {
-    const focusableSelectors = [
+    const selectors = [
       "button",
       "[href]",
       "input",
@@ -261,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "[tabindex]:not([tabindex='-1'])",
     ];
 
-    return Array.from(container.querySelectorAll(focusableSelectors.join(","))).filter((element) => {
+    return Array.from(container.querySelectorAll(selectors.join(","))).filter((element) => {
       return (
         element instanceof HTMLElement &&
         !element.hasAttribute("disabled") &&
@@ -280,9 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
     closeBurgerMenu();
 
     lastFocusedElement =
-      document.activeElement instanceof HTMLElement
-        ? document.activeElement
-        : null;
+      document.activeElement instanceof HTMLElement ? document.activeElement : null;
 
     modal.classList.add("show");
     modal.setAttribute("aria-hidden", "false");
@@ -317,61 +194,6 @@ document.addEventListener("DOMContentLoaded", () => {
   function closeAllModals() {
     modalElements.forEach((modal) => closeModal(modal));
   }
-
-  window.openModal = openModalById;
-  window.closeAllNordFitModals = closeAllModals;
-
-  document.addEventListener("click", (event) => {
-    const trigger = event.target.closest("[data-modal-target]");
-    if (!trigger) return;
-
-    event.preventDefault();
-
-    const modalId = trigger.getAttribute("data-modal-target");
-    openModalById(modalId);
-  });
-
-  modalElements.forEach((modal) => {
-    const closeButton = modal.querySelector(".modal-close");
-
-    if (closeButton) {
-      closeButton.addEventListener("click", (event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        closeModal(modal);
-      });
-    }
-
-    modal.addEventListener("click", (event) => {
-      if (event.target === modal) {
-        closeModal(modal);
-      }
-    });
-  });
-
-  document.addEventListener("keydown", (event) => {
-    if (event.key !== "Tab") return;
-
-    const openModal = document.querySelector(".modal.show");
-    if (!openModal) return;
-
-    const focusableElements = getFocusableElements(openModal);
-    if (!focusableElements.length) return;
-
-    const first = focusableElements[0];
-    const last = focusableElements[focusableElements.length - 1];
-    const active = document.activeElement;
-
-    if (event.shiftKey) {
-      if (active === first || !openModal.contains(active)) {
-        event.preventDefault();
-        last.focus();
-      }
-    } else if (active === last) {
-      event.preventDefault();
-      first.focus();
-    }
-  });
 
   function clamp(value, min, max) {
     return Math.min(Math.max(value, min), max);
@@ -474,7 +296,10 @@ document.addEventListener("DOMContentLoaded", () => {
       scrollStart = row.scrollLeft;
 
       row.classList.add("is-dragging");
-      row.setPointerCapture?.(event.pointerId);
+
+      if (typeof row.setPointerCapture === "function") {
+        row.setPointerCapture(event.pointerId);
+      }
     });
 
     row.addEventListener("pointermove", (event) => {
@@ -494,7 +319,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       isDragging = false;
       row.classList.remove("is-dragging");
-      row.releasePointerCapture?.(event.pointerId);
+
+      if (typeof row.releasePointerCapture === "function") {
+        try {
+          row.releasePointerCapture(event.pointerId);
+        } catch {
+          /* pointer may already be released */
+        }
+      }
 
       const currentIndex = getCurrentIndex();
       scrollToIndex(currentIndex, "smooth");
@@ -503,7 +335,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     row.addEventListener("pointerup", endDrag);
     row.addEventListener("pointercancel", endDrag);
-    row.addEventListener("pointerleave", endDrag);
+
+    row.addEventListener("mouseleave", () => {
+      if (!isDragging) return;
+
+      isDragging = false;
+      row.classList.remove("is-dragging");
+
+      const currentIndex = getCurrentIndex();
+      scrollToIndex(currentIndex, "smooth");
+      update();
+    });
 
     cards.forEach((card) => {
       const button = card.querySelector(".gallery-button");
@@ -527,6 +369,193 @@ document.addEventListener("DOMContentLoaded", () => {
     };
   }
 
+  function setupContactForms() {
+    contactForms.forEach((form) => {
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const mail = "nordgroup.business@gmail.com";
+        const formData = new FormData(form);
+
+        const firstname = String(formData.get("contact-firstname") || "").trim();
+        const lastname = String(formData.get("contact-lastname") || "").trim();
+        const email = String(formData.get("contact-email") || "").trim();
+        const phone = String(formData.get("contact-phone") || "").trim();
+        const topic = String(formData.get("contact-topic") || "").trim();
+        const memberId = String(formData.get("contact-memberid") || "").trim();
+        const message = String(formData.get("contact-message") || "").trim();
+
+        const subject = encodeURIComponent(`NordFit Kontaktanfrage: ${topic || "Allgemein"}`);
+
+        const bodyLines = [
+          "Neue Kontaktanfrage über die NordFit Website",
+          "",
+          `Name: ${firstname} ${lastname}`.trim(),
+          `E-Mail: ${email}`,
+          phone ? `Telefon: ${phone}` : "Telefon: nicht angegeben",
+          `Thema: ${topic || "nicht ausgewählt"}`,
+          memberId ? `Member ID: ${memberId}` : "Member ID: nicht angegeben",
+          "",
+          "Nachricht:",
+          message,
+        ];
+
+        const mailBody = encodeURIComponent(bodyLines.join("\n"));
+
+        window.location.href = `mailto:${mail}?subject=${subject}&body=${mailBody}`;
+      });
+    });
+  }
+
+  updateHeaderScrollState();
+  window.addEventListener("scroll", updateHeaderScrollState, { passive: true });
+
+  syncLanguageUi(getSavedLanguage());
+
+  if (burger && siteNav) {
+    burger.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      toggleBurgerMenu();
+    });
+
+    siteNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        if (isMobileNav()) {
+          closeBurgerMenu();
+        }
+      });
+    });
+  }
+
+  if (langToggle && langMenu) {
+    langToggle.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      toggleLanguageMenu();
+    });
+
+    langMenu.addEventListener("click", (event) => {
+      event.stopPropagation();
+    });
+  }
+
+  langOptions.forEach((option) => {
+    option.addEventListener("click", (event) => {
+      event.preventDefault();
+      event.stopPropagation();
+
+      const lang = getSafeLanguage(option.dataset.lang);
+
+      saveLanguage(lang);
+      syncLanguageUi(lang);
+
+      window.dispatchEvent(
+        new CustomEvent("nordfit:language-changed", {
+          detail: { language: lang },
+        })
+      );
+
+      closeLanguageMenu();
+    });
+  });
+
+  window.addEventListener("nordfit:language-ui-sync", (event) => {
+    const lang = getSafeLanguage(event.detail?.language);
+    syncLanguageUi(lang);
+  });
+
+  document.addEventListener("click", (event) => {
+    const target = event.target;
+
+    const clickedInsideLang =
+      (langToggle && langToggle.contains(target)) ||
+      (langMenu && langMenu.contains(target));
+
+    const clickedInsideBurger =
+      (burger && burger.contains(target)) ||
+      (siteNav && siteNav.contains(target));
+
+    if (!clickedInsideLang) {
+      closeLanguageMenu();
+    }
+
+    if (!clickedInsideBurger && isMobileNav()) {
+      closeBurgerMenu();
+    }
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+
+    closeLanguageMenu();
+    closeBurgerMenu();
+    closeAllModals();
+  });
+
+  window.addEventListener("resize", () => {
+    if (!isMobileNav()) {
+      closeBurgerMenu();
+    }
+
+    galleryInstances.forEach((instance) => instance.update());
+  });
+
+  window.openModal = openModalById;
+  window.closeAllNordFitModals = closeAllModals;
+
+  document.addEventListener("click", (event) => {
+    const trigger = event.target.closest("[data-modal-target]");
+    if (!trigger) return;
+
+    event.preventDefault();
+
+    const modalId = trigger.getAttribute("data-modal-target");
+    openModalById(modalId);
+  });
+
+  modalElements.forEach((modal) => {
+    const closeButton = modal.querySelector(".modal-close");
+
+    if (closeButton) {
+      closeButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        event.stopPropagation();
+        closeModal(modal);
+      });
+    }
+
+    modal.addEventListener("click", (event) => {
+      if (event.target === modal) {
+        closeModal(modal);
+      }
+    });
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Tab") return;
+
+    const openModal = document.querySelector(".modal.show");
+    if (!openModal) return;
+
+    const focusableElements = getFocusableElements(openModal);
+    if (!focusableElements.length) return;
+
+    const first = focusableElements[0];
+    const last = focusableElements[focusableElements.length - 1];
+    const active = document.activeElement;
+
+    if (event.shiftKey) {
+      if (active === first || !openModal.contains(active)) {
+        event.preventDefault();
+        last.focus();
+      }
+    } else if (active === last) {
+      event.preventDefault();
+      first.focus();
+    }
+  });
+
   galleryRows.forEach((row) => {
     const instance = setupGallery(row);
     if (instance) {
@@ -534,39 +563,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  contactForms.forEach((form) => {
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      const mail = "nordgroup.business@gmail.com";
-      const formData = new FormData(form);
-
-      const firstname = String(formData.get("contact-firstname") || "").trim();
-      const lastname = String(formData.get("contact-lastname") || "").trim();
-      const email = String(formData.get("contact-email") || "").trim();
-      const phone = String(formData.get("contact-phone") || "").trim();
-      const topic = String(formData.get("contact-topic") || "").trim();
-      const memberId = String(formData.get("contact-memberid") || "").trim();
-      const message = String(formData.get("contact-message") || "").trim();
-
-      const subject = encodeURIComponent(`NordFit Kontaktanfrage: ${topic || "Allgemein"}`);
-
-      const bodyLines = [
-        "Neue Kontaktanfrage über die NordFit Website",
-        "",
-        `Name: ${firstname} ${lastname}`.trim(),
-        `E-Mail: ${email}`,
-        phone ? `Telefon: ${phone}` : "Telefon: nicht angegeben",
-        `Thema: ${topic || "nicht ausgewählt"}`,
-        memberId ? `Member ID: ${memberId}` : "Member ID: nicht angegeben",
-        "",
-        "Nachricht:",
-        message,
-      ];
-
-      const mailBody = encodeURIComponent(bodyLines.join("\n"));
-
-      window.location.href = `mailto:${mail}?subject=${subject}&body=${mailBody}`;
-    });
-  });
+  setupContactForms();
 });
