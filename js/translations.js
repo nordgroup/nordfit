@@ -2,7 +2,7 @@
    NordFit translations.js
    Stable data-i18n system
    Support:
-   index.html + mitgliedschaften.html + standorte.html + app.html + kontakt.html + impressum.html
+   index.html + mitgliedschaften.html + standorte.html + app.html + kontakt.html + impressum.html + hausordnung.html
    Full content: DE + EN
    Other languages: nav/footer + EN content fallback
    ========================= */
@@ -579,6 +579,82 @@ document.addEventListener("DOMContentLoaded", () => {
         privacyOutro:
           "Die vollständige Datenschutzerklärung wird vor Veröffentlichung ergänzt und rechtlich geprüft.",
       },
+
+      rulesPage: {
+        heroTitle: "Klare Regeln. Ruhiges Training.",
+        heroSubtitle:
+          "NordFit soll sauber, respektvoll und angenehm bleiben. Diese Regeln halten den Rahmen klar — für alle, die trainieren.",
+        introTitle: "Ein Studio funktioniert, wenn alle mitdenken.",
+        introText:
+          "Die Hausordnung ist nicht dafür da, Training kompliziert zu machen. Sie sorgt dafür, dass NordFit ruhig, sauber und fair bleibt.",
+        principleOneTitle: "Zugang",
+        principleOneText:
+          "Zutritt nur mit gültiger Mitgliedschaft oder Tagespass. Der QR-Code bleibt persönlich.",
+        principleTwoTitle: "Respekt",
+        principleTwoText:
+          "Keine Belästigung, keine Provokation, kein unnötiger Lärm. Jeder soll konzentriert trainieren können.",
+        principleThreeTitle: "Ordnung",
+        principleThreeText:
+          "Geräte sauber hinterlassen, Gewichte zurücklegen und Trainingsflächen freihalten.",
+
+        ruleOneTitle: "Zutritt nur mit gültigem Zugang",
+        ruleOneA: "Zutritt ist nur mit gültiger Mitgliedschaft oder gültigem Tagespass möglich.",
+        ruleOneB: "Der Zugang erfolgt über den persönlichen QR-Code.",
+        ruleOneC: "Der QR-Code darf nicht an andere Personen weitergegeben werden.",
+
+        ruleTwoTitle: "Kein Zutritt für Unbefugte",
+        ruleTwoA: "Das Mitnehmen anderer Personen ohne gültigen Zugang ist nicht erlaubt.",
+        ruleTwoB: "Jeder Zutritt muss persönlich und ordnungsgemäß erfolgen.",
+        ruleTwoC: "Missbrauch kann zum Ausschluss vom Studio führen.",
+
+        ruleThreeTitle: "Geeignete Trainingskleidung",
+        ruleThreeA: "Bitte trainiere in geeigneter Sportkleidung.",
+        ruleThreeB: "Saubere Sportschuhe sind verpflichtend.",
+        ruleThreeC:
+          "Stark verschmutzte oder ungeeignete Kleidung ist im Trainingsbereich nicht erwünscht.",
+
+        ruleFourTitle: "Handtuch benutzen",
+        ruleFourA: "Auf Geräten, Bänken und Matten ist immer ein Handtuch zu verwenden.",
+        ruleFourB: "Das schützt die Geräte und hält das Training für alle hygienisch.",
+
+        ruleFiveTitle: "Geräte ordentlich hinterlassen",
+        ruleFiveA: "Geräte, Bänke und Hanteln sind sauber zu hinterlassen.",
+        ruleFiveB: "Gewichte und Zubehör gehören nach dem Training zurück an ihren Platz.",
+        ruleFiveC: "Trainingsflächen sollen nicht unnötig blockiert werden.",
+
+        ruleSixTitle: "Respekt im Umgang",
+        ruleSixA: "Andere Mitglieder sind respektvoll zu behandeln.",
+        ruleSixB:
+          "Belästigung, Provokation und aggressives Verhalten werden nicht toleriert.",
+        ruleSixC:
+          "Andere Personen dürfen nicht ungefragt gefilmt oder fotografiert werden.",
+
+        ruleSevenTitle: "Sicher und verantwortungsvoll trainieren",
+        ruleSevenA: "Geräte dürfen nur so genutzt werden, wie sie vorgesehen sind.",
+        ruleSevenB: "Gefährdendes Verhalten ist untersagt.",
+        ruleSevenC: "Mutwillige Beschädigungen führen zu Konsequenzen.",
+
+        ruleEightTitle: "Ruhe und Ordnung im Studio",
+        ruleEightA: "NordFit steht für ein ruhiges Trainingserlebnis.",
+        ruleEightB: "Unnötiger Lärm ist zu vermeiden.",
+        ruleEightC: "Bitte achte auf Rücksicht, Abstand und Ordnung.",
+
+        ruleNineTitle: "Sauberkeit zählt mit",
+        ruleNineA: "Getränke sind in verschließbaren Behältern erlaubt.",
+        ruleNineB: "Müll ist ordentlich zu entsorgen.",
+        ruleNineC: "Das Studio ist sauber zu halten.",
+
+        ruleTenTitle: "Hausrecht",
+        ruleTenA:
+          "Bei Verstößen kann NordFit den Zutritt einschränken oder entziehen.",
+        ruleTenB: "Das Hausrecht bleibt vorbehalten.",
+
+        finalTitle: "Fair bleiben. Ruhig trainieren.",
+        finalText:
+          "Genau darum geht es: ein Studio, das für alle angenehm bleibt — klar, sauber und respektvoll.",
+        finalPrimary: "Tarife ansehen",
+        finalSecondary: "Frage stellen",
+      },
     },
 
     en: {
@@ -832,6 +908,79 @@ document.addEventListener("DOMContentLoaded", () => {
           "Data subjects have rights to access, correction, deletion and restriction of processing.",
         privacyOutro:
           "The full privacy policy will be added and legally checked before publication.",
+      },
+
+      rulesPage: {
+        heroTitle: "Clear rules. Calm training.",
+        heroSubtitle:
+          "NordFit should stay clean, respectful and pleasant. These rules keep the framework clear — for everyone who trains.",
+        introTitle: "A studio works when everyone pays attention.",
+        introText:
+          "The house rules are not there to make training complicated. They keep NordFit calm, clean and fair.",
+        principleOneTitle: "Access",
+        principleOneText:
+          "Entry only with a valid membership or day pass. The QR code stays personal.",
+        principleTwoTitle: "Respect",
+        principleTwoText:
+          "No harassment, no provocation, no unnecessary noise. Everyone should be able to train with focus.",
+        principleThreeTitle: "Order",
+        principleThreeText:
+          "Leave equipment clean, return weights and keep training areas free.",
+
+        ruleOneTitle: "Entry only with valid access",
+        ruleOneA: "Entry is only possible with a valid membership or valid day pass.",
+        ruleOneB: "Access is handled through the personal QR code.",
+        ruleOneC: "The QR code must not be shared with other people.",
+
+        ruleTwoTitle: "No entry for unauthorized persons",
+        ruleTwoA: "Bringing other people without valid access is not allowed.",
+        ruleTwoB: "Every entry must be personal and proper.",
+        ruleTwoC: "Misuse can lead to exclusion from the studio.",
+
+        ruleThreeTitle: "Appropriate training clothing",
+        ruleThreeA: "Please train in suitable sportswear.",
+        ruleThreeB: "Clean sports shoes are required.",
+        ruleThreeC:
+          "Heavily dirty or unsuitable clothing is not wanted in the training area.",
+
+        ruleFourTitle: "Use a towel",
+        ruleFourA: "A towel must always be used on equipment, benches and mats.",
+        ruleFourB: "This protects the equipment and keeps training hygienic for everyone.",
+
+        ruleFiveTitle: "Leave equipment in order",
+        ruleFiveA: "Equipment, benches and dumbbells must be left clean.",
+        ruleFiveB: "Weights and accessories belong back in their place after training.",
+        ruleFiveC: "Training areas should not be blocked unnecessarily.",
+
+        ruleSixTitle: "Respectful behaviour",
+        ruleSixA: "Other members must be treated respectfully.",
+        ruleSixB: "Harassment, provocation and aggressive behaviour are not tolerated.",
+        ruleSixC: "Other people must not be filmed or photographed without permission.",
+
+        ruleSevenTitle: "Train safely and responsibly",
+        ruleSevenA: "Equipment may only be used as intended.",
+        ruleSevenB: "Dangerous behaviour is prohibited.",
+        ruleSevenC: "Intentional damage will have consequences.",
+
+        ruleEightTitle: "Calm and order in the studio",
+        ruleEightA: "NordFit stands for a calm training experience.",
+        ruleEightB: "Unnecessary noise should be avoided.",
+        ruleEightC: "Please pay attention to consideration, distance and order.",
+
+        ruleNineTitle: "Cleanliness matters too",
+        ruleNineA: "Drinks are allowed in sealable containers.",
+        ruleNineB: "Trash must be disposed of properly.",
+        ruleNineC: "The studio must be kept clean.",
+
+        ruleTenTitle: "House rights",
+        ruleTenA: "In case of violations, NordFit may restrict or withdraw access.",
+        ruleTenB: "House rights remain reserved.",
+
+        finalTitle: "Stay fair. Train calmly.",
+        finalText:
+          "That is the point: a studio that stays pleasant for everyone — clear, clean and respectful.",
+        finalPrimary: "View plans",
+        finalSecondary: "Ask a question",
       },
     },
   };
