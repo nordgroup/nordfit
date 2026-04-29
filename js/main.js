@@ -49,7 +49,9 @@ document.addEventListener("DOMContentLoaded", () => {
   function saveLanguage(langCode) {
     try {
       localStorage.setItem("nordfit-language", langCode);
-    } catch {}
+    } catch {
+      /* localStorage can be unavailable in private/restricted mode */
+    }
   }
 
   function syncLanguageUi(langCode) {
@@ -138,12 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
       toggleBurgerMenu();
     });
 
-    burger.addEventListener("touchend", (event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      toggleBurgerMenu();
-    }, { passive: false });
-
     siteNav.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         if (isMobileNav()) {
@@ -186,6 +182,12 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  window.addEventListener("nordfit:language-ui-sync", (event) => {
+    const lang = event.detail?.language?.trim()?.toLowerCase();
+    if (!lang || !supportedLanguages.includes(lang)) return;
+    syncLanguageUi(lang);
+  });
+
   document.addEventListener("click", (event) => {
     const target = event.target;
 
@@ -214,13 +216,17 @@ document.addEventListener("DOMContentLoaded", () => {
     closeAllModals();
   });
 
-  window.addEventListener("resize", () => {
-    if (!isMobileNav()) {
-      closeBurgerMenu();
-    }
+  window.addEventListener(
+    "resize",
+    () => {
+      if (!isMobileNav()) {
+        closeBurgerMenu();
+      }
 
-    galleryInstances.forEach((instance) => instance.update());
-  });
+      galleryInstances.forEach((instance) => instance.update());
+    },
+    { passive: true }
+  );
 
   if (revealElements.length) {
     if ("IntersectionObserver" in window) {
@@ -425,7 +431,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function updateButtons() {
       const maxScroll = getMaxScroll();
-      const tolerance = 4;
+      const tolerance = 5;
 
       const atStart = row.scrollLeft <= tolerance;
       const atEnd = row.scrollLeft >= maxScroll - tolerance || maxScroll <= tolerance;
@@ -497,17 +503,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     row.addEventListener("pointerup", endDrag);
     row.addEventListener("pointercancel", endDrag);
-
-    row.addEventListener("mouseleave", () => {
-      if (!isDragging) return;
-
-      isDragging = false;
-      row.classList.remove("is-dragging");
-
-      const currentIndex = getCurrentIndex();
-      scrollToIndex(currentIndex, "smooth");
-      update();
-    });
+    row.addEventListener("pointerleave", endDrag);
 
     cards.forEach((card) => {
       const button = card.querySelector(".gallery-button");
