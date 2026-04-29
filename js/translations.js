@@ -1,7 +1,8 @@
 /* =========================
    NordFit translations.js
    Stable data-i18n system
-   Support: index.html + mitgliedschaften.html + standorte.html + app.html
+   Support:
+   index.html + mitgliedschaften.html + standorte.html + app.html + kontakt.html
    Full content: DE + EN
    Other languages: nav/footer + EN content fallback
    ========================= */
@@ -342,11 +343,9 @@ document.addEventListener("DOMContentLoaded", () => {
         heroImageAlt: "Außenansicht des geplanten NordFit Studios",
         floatingLabel: "Geplant für NordFit",
         floatingText: "Weniger Lärm. Mehr Fokus.",
-
         feelingTitle: "Nicht größer. Klarer.",
         feelingText:
           "NordFit soll nicht mit Reizen beeindrucken, sondern mit Ordnung. Ein Studio, das man sofort versteht — und gern wieder betritt.",
-
         featureOneTitle: "Ankommen",
         featureOneText:
           "Klare Orientierung vom ersten Schritt an. Kein Suchen, kein Gedränge, kein unnötiger Ablauf.",
@@ -356,7 +355,6 @@ document.addEventListener("DOMContentLoaded", () => {
         featureThreeTitle: "Runterkommen",
         featureThreeText:
           "Nach dem Training bleibt das Gefühl ruhig. Kein harter Bruch, kein lauter Abgang.",
-
         panelOneTitle: "Kraft. Ohne Krach.",
         panelOneText:
           "Der Kraftbereich soll direkt, aufgeräumt und fokussiert wirken. Alles, was du brauchst — ohne überladene Studiowirkung.",
@@ -366,7 +364,6 @@ document.addEventListener("DOMContentLoaded", () => {
         panelThreeTitle: "Ein Besuch, der sauber endet.",
         panelThreeText:
           "Training hört nicht beim letzten Satz auf. Ein ruhiger Abschluss macht den Besuch runder.",
-
         finalTitle: "Leise im Auftritt. Klar im Konzept.",
         finalText:
           "Tarife, Standort und App bleiben bewusst auf eigenen Seiten. So wirkt NordFit nicht voller — sondern verständlicher.",
@@ -378,12 +375,10 @@ document.addEventListener("DOMContentLoaded", () => {
         heroTitle: "Drei Tarife. Eine klare Entscheidung.",
         heroSubtitle:
           "Wähle, wie flexibel du bleiben möchtest. Basic, Plus und Pro unterscheiden sich nur in Laufzeit und Freiheit — nicht im Trainingsgefühl.",
-
         basicLabel: "Basic",
         plusLabel: "Plus",
         proLabel: "Pro",
         perMonth: "pro Monat",
-
         basicDetailOne: "8 Monate Mindestlaufzeit",
         plusDetailOne: "6 Monate Mindestlaufzeit",
         proDetailOne: "3 Monate Mindestlaufzeit",
@@ -391,17 +386,14 @@ document.addEventListener("DOMContentLoaded", () => {
         accessIncluded: "Zutritt über NordFit Zugang",
         moreFlexible: "Mehr Flexibilität bei klarer Planung",
         maximumFreedom: "Maximale Freiheit im NordFit Modell",
-
         basicText:
           "Für alle, die regelmäßig trainieren möchten und bewusst den günstigsten Einstieg wählen.",
         plusText:
           "Der ausgewogene Tarif, wenn du planbar bleiben willst, aber nicht zu lange gebunden sein möchtest.",
         proText:
           "Für alle, die möglichst frei bleiben möchten und trotzdem direkt mit voller Ruhe starten wollen.",
-
         recommended: "Empfohlen",
         choosePlan: "Tarif wählen",
-
         daypassTitle: "Ein Tag. Kein Vertrag.",
         daypassText:
           "Der Tagespass ist für spontanes Training gedacht. Einmal buchen, einmal trainieren, ohne Mitgliedschaft.",
@@ -409,7 +401,6 @@ document.addEventListener("DOMContentLoaded", () => {
         daypassPrice: "4,90 € einmalig",
         daypassPanelText:
           "Ideal, wenn du NordFit erst ausprobieren möchtest oder nur für einen Tag trainieren willst.",
-
         finalTitle: "Weniger vergleichen. Einfach wählen.",
         finalText:
           "Jeder Tarif führt ins gleiche Studio. Der Unterschied liegt nur darin, wie viel Flexibilität du möchtest.",
@@ -423,15 +414,12 @@ document.addEventListener("DOMContentLoaded", () => {
           "Der erste NordFit Standort soll ruhig erreichbar sein, sauber wirken und ohne Umwege verstanden werden.",
         primaryCta: "Karte ansehen",
         secondaryCta: "Frage stellen",
-
         imageLabel: "Studio Außenansicht",
         floatingLabel: "Geplanter Standort",
         floatingText: "Grevesmühlen",
-
         feelingTitle: "Gut erreichbar. Nicht überladen.",
         feelingText:
           "NordFit soll nicht wie ein lauter Fitness-Tempel wirken. Der Standort soll klar sein: ankommen, Zugang öffnen, trainieren, fertig.",
-
         featureOneTitle: "Ort",
         featureOneText:
           "Grevesmühlen als ruhiger Startpunkt zwischen Alltag, Erreichbarkeit und nordischem Gefühl.",
@@ -441,7 +429,6 @@ document.addEventListener("DOMContentLoaded", () => {
         featureThreeTitle: "Eindruck",
         featureThreeText:
           "Modern, ruhig und sauber. Der Standort soll direkt nach NordFit wirken — nicht beliebig.",
-
         mapTitle: "Standort finden.",
         mapText:
           "Die genaue Adresse wird ergänzt, sobald der Standort final feststeht. Bis dahin bleibt Grevesmühlen als geplanter Bereich sichtbar.",
@@ -455,7 +442,6 @@ document.addEventListener("DOMContentLoaded", () => {
         openIn: "ÖFFNEN IN",
         appleMaps: "Apple Karten",
         googleMaps: "Google Maps",
-
         finalTitle: "Ein Standort soll sich richtig anfühlen.",
         finalText:
           "Für NordFit zählt nicht nur die Adresse. Wichtig ist, dass der Ort zum Konzept passt: ruhig, verständlich und gut erreichbar.",
@@ -467,20 +453,16 @@ document.addEventListener("DOMContentLoaded", () => {
         heroTitle: "Ein Zugang. Alles drin.",
         heroSubtitle:
           "Die NordFit App ist der ruhige Mittelpunkt: Mitgliedschaft, Tagespass und QR-Code-Zutritt an einem Ort.",
-
         appStoreSmall: "LADEN IM",
         appStoreBig: "App Store",
         googlePlaySmall: "JETZT BEI",
         googlePlayBig: "Google Play",
-
         appImageAlt: "Ansicht der NordFit App",
         floatingLabel: "NordFit Zugang",
         floatingText: "Digital. Direkt. Übersichtlich.",
-
         feelingTitle: "Weniger Wege. Mehr Überblick.",
         feelingText:
           "Die App soll nicht kompliziert wirken. Sie soll genau das bündeln, was du brauchst — und alles andere weglassen.",
-
         featureOneTitle: "Zugang",
         featureOneText:
           "Dein QR-Code liegt direkt in der App. Öffnen, scannen, trainieren.",
@@ -490,16 +472,62 @@ document.addEventListener("DOMContentLoaded", () => {
         featureThreeTitle: "Tagespass",
         featureThreeText:
           "Spontan trainieren, ohne Vertrag. Einmal buchen, einmal nutzen.",
-
         panelTitle: "Alles, was Zugang braucht.",
         panelText:
           "NordFit bleibt bewusst digital. Nicht, weil es technisch wirken soll — sondern weil ein klarer Ablauf einfacher ist.",
-
         finalTitle: "Einfach starten. Ohne Papier.",
         finalText:
           "Mitgliedschaft und Tagespass führen über die App. So bleibt der Einstieg klar und der Zugang direkt.",
         finalPrimary: "Tarife ansehen",
         finalSecondary: "Frage stellen",
+      },
+
+      contactPage: {
+        heroTitle: "Sag kurz Bescheid.",
+        heroSubtitle:
+          "Fragen zu NordFit, Tarifen, Standort oder Zugang? Schreib direkt. Klar, einfach, ohne Umwege.",
+
+        emailTitle: "E-Mail",
+        instagramTitle: "Instagram",
+        phoneTitle: "Telefon",
+        phoneText: "Bald verfügbar.",
+
+        formTitle: "Schreib deine Nachricht.",
+        formSubtitle:
+          "Das Formular öffnet dein Mailprogramm mit einer vorbereiteten Nachricht an NordFit.",
+
+        firstnameLabel: "Vorname *",
+        lastnameLabel: "Nachname *",
+        emailLabel: "E-Mail *",
+        phoneLabel: "Telefonnummer",
+        topicLabel: "Thema *",
+        memberIdLabel: "Member ID",
+        messageLabel: "Nachricht *",
+
+        firstnamePlaceholder: "Dein Vorname",
+        lastnamePlaceholder: "Dein Nachname",
+        emailPlaceholder: "deinname@email.de",
+        optionalPlaceholder: "Optional",
+        messagePlaceholder: "Schreib kurz, worum es geht ...",
+
+        topicChoose: "Bitte auswählen",
+        topicMembership: "Mitgliedschaft",
+        topicApp: "App",
+        topicAccess: "Zutritt / QR-Code",
+        topicDaypass: "Tagespass",
+        topicLocation: "Standort",
+        topicAccount: "Konto / Daten",
+        topicGeneral: "Allgemeine Frage",
+
+        formHint: "Alternativ kannst du direkt per Mail schreiben.",
+        requiredHint: "Felder mit * müssen ausgefüllt werden.",
+        submitButton: "Nachricht senden",
+
+        finalTitle: "Lieber kurz fragen als lange suchen.",
+        finalText:
+          "Wenn etwas unklar ist, reicht eine kurze Nachricht. NordFit soll einfach verständlich bleiben.",
+        finalPrimary: "Tarife ansehen",
+        finalSecondary: "Standort ansehen",
       },
     },
 
@@ -519,11 +547,9 @@ document.addEventListener("DOMContentLoaded", () => {
         heroImageAlt: "Exterior view of the planned NordFit studio",
         floatingLabel: "Planned for NordFit",
         floatingText: "Less noise. More focus.",
-
         feelingTitle: "Not bigger. Clearer.",
         feelingText:
           "NordFit is not meant to impress with noise. It is meant to feel ordered — a studio you understand right away and want to return to.",
-
         featureOneTitle: "Arrive",
         featureOneText:
           "Clear orientation from the first step. No searching, no crowding, no unnecessary process.",
@@ -533,7 +559,6 @@ document.addEventListener("DOMContentLoaded", () => {
         featureThreeTitle: "Cool down",
         featureThreeText:
           "After training, the feeling stays calm. No hard break, no loud exit.",
-
         panelOneTitle: "Strength. Without noise.",
         panelOneText:
           "The strength area should feel direct, tidy and focused. Everything you need — without an overloaded studio feel.",
@@ -543,7 +568,6 @@ document.addEventListener("DOMContentLoaded", () => {
         panelThreeTitle: "A visit that ends cleanly.",
         panelThreeText:
           "Training does not end with the last set. A calm finish makes the visit feel more complete.",
-
         finalTitle: "Quiet in appearance. Clear in concept.",
         finalText:
           "Plans, location and app intentionally stay on their own pages. NordFit feels not fuller — but easier to understand.",
@@ -555,12 +579,10 @@ document.addEventListener("DOMContentLoaded", () => {
         heroTitle: "Three plans. One clear choice.",
         heroSubtitle:
           "Choose how flexible you want to stay. Basic, Plus and Pro differ only in term and freedom — not in the training feel.",
-
         basicLabel: "Basic",
         plusLabel: "Plus",
         proLabel: "Pro",
         perMonth: "per month",
-
         basicDetailOne: "8 month minimum term",
         plusDetailOne: "6 month minimum term",
         proDetailOne: "3 month minimum term",
@@ -568,17 +590,14 @@ document.addEventListener("DOMContentLoaded", () => {
         accessIncluded: "Access through NordFit entry",
         moreFlexible: "More flexibility with clear planning",
         maximumFreedom: "Maximum freedom in the NordFit model",
-
         basicText:
           "For anyone who wants to train regularly and deliberately choose the lowest entry price.",
         plusText:
           "The balanced plan if you want structure, but do not want to be tied down for too long.",
         proText:
           "For anyone who wants maximum freedom while still starting with full calm and clarity.",
-
         recommended: "Recommended",
         choosePlan: "Choose plan",
-
         daypassTitle: "One day. No contract.",
         daypassText:
           "The day pass is made for spontaneous training. Book once, train once, without membership.",
@@ -586,7 +605,6 @@ document.addEventListener("DOMContentLoaded", () => {
         daypassPrice: "€4.90 once",
         daypassPanelText:
           "Ideal if you want to try NordFit first or train for just one day.",
-
         finalTitle: "Compare less. Choose simply.",
         finalText:
           "Every plan leads to the same studio. The only difference is how much flexibility you want.",
@@ -600,15 +618,12 @@ document.addEventListener("DOMContentLoaded", () => {
           "The first NordFit location should be easy to reach, feel clean and make sense without extra explanation.",
         primaryCta: "View map",
         secondaryCta: "Ask a question",
-
         imageLabel: "Studio exterior",
         floatingLabel: "Planned location",
         floatingText: "Grevesmühlen",
-
         feelingTitle: "Easy to reach. Not overloaded.",
         feelingText:
           "NordFit should not feel like a loud fitness temple. The location should be simple: arrive, open access, train, done.",
-
         featureOneTitle: "Place",
         featureOneText:
           "Grevesmühlen as a calm starting point between everyday life, accessibility and a northern feel.",
@@ -618,7 +633,6 @@ document.addEventListener("DOMContentLoaded", () => {
         featureThreeTitle: "Impression",
         featureThreeText:
           "Modern, calm and clean. The location should feel like NordFit right away — not generic.",
-
         mapTitle: "Find the location.",
         mapText:
           "The exact address will be added once the location is final. Until then, Grevesmühlen remains visible as the planned area.",
@@ -632,7 +646,6 @@ document.addEventListener("DOMContentLoaded", () => {
         openIn: "OPEN IN",
         appleMaps: "Apple Maps",
         googleMaps: "Google Maps",
-
         finalTitle: "A location should feel right.",
         finalText:
           "For NordFit, the address is not the only thing that matters. The place has to fit the concept: calm, understandable and easy to reach.",
@@ -644,20 +657,16 @@ document.addEventListener("DOMContentLoaded", () => {
         heroTitle: "One access. Everything inside.",
         heroSubtitle:
           "The NordFit app is the calm center: membership, day pass and QR entry in one place.",
-
         appStoreSmall: "DOWNLOAD ON THE",
         appStoreBig: "App Store",
         googlePlaySmall: "GET IT ON",
         googlePlayBig: "Google Play",
-
         appImageAlt: "View of the NordFit app",
         floatingLabel: "NordFit access",
         floatingText: "Digital. Direct. Clear.",
-
         feelingTitle: "Fewer steps. More overview.",
         feelingText:
           "The app should not feel complicated. It should bring together exactly what you need — and leave out everything else.",
-
         featureOneTitle: "Access",
         featureOneText:
           "Your QR code lives directly in the app. Open, scan, train.",
@@ -667,16 +676,62 @@ document.addEventListener("DOMContentLoaded", () => {
         featureThreeTitle: "Day pass",
         featureThreeText:
           "Train spontaneously, without a contract. Book once, use once.",
-
         panelTitle: "Everything access needs.",
         panelText:
           "NordFit stays intentionally digital. Not to feel technical — but because a clear flow is simpler.",
-
         finalTitle: "Start simply. Without paper.",
         finalText:
           "Membership and day pass run through the app. That keeps the start clear and access direct.",
         finalPrimary: "View plans",
         finalSecondary: "Ask a question",
+      },
+
+      contactPage: {
+        heroTitle: "Send a quick note.",
+        heroSubtitle:
+          "Questions about NordFit, plans, location or access? Write directly. Clear, simple, no detours.",
+
+        emailTitle: "Email",
+        instagramTitle: "Instagram",
+        phoneTitle: "Phone",
+        phoneText: "Coming soon.",
+
+        formTitle: "Write your message.",
+        formSubtitle:
+          "The form opens your mail app with a prepared message to NordFit.",
+
+        firstnameLabel: "First name *",
+        lastnameLabel: "Last name *",
+        emailLabel: "Email *",
+        phoneLabel: "Phone number",
+        topicLabel: "Topic *",
+        memberIdLabel: "Member ID",
+        messageLabel: "Message *",
+
+        firstnamePlaceholder: "Your first name",
+        lastnamePlaceholder: "Your last name",
+        emailPlaceholder: "yourname@email.com",
+        optionalPlaceholder: "Optional",
+        messagePlaceholder: "Briefly write what it is about ...",
+
+        topicChoose: "Please choose",
+        topicMembership: "Membership",
+        topicApp: "App",
+        topicAccess: "Access / QR code",
+        topicDaypass: "Day pass",
+        topicLocation: "Location",
+        topicAccount: "Account / Data",
+        topicGeneral: "General question",
+
+        formHint: "Alternatively, you can email us directly.",
+        requiredHint: "Fields marked with * are required.",
+        submitButton: "Send message",
+
+        finalTitle: "Better to ask briefly than search for long.",
+        finalText:
+          "If something is unclear, a short message is enough. NordFit should stay easy to understand.",
+        finalPrimary: "View plans",
+        finalSecondary: "View location",
       },
     },
   };
