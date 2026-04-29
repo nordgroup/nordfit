@@ -4,10 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>NordFit – Kontakt</title>
+  <title data-i18n="meta.title">NordFit – Kontakt</title>
   <meta
     name="description"
-    content="Kontakt zu NordFit – per E-Mail, Instagram oder über das Kontaktformular."
+    content="Kontakt zu NordFit. Schreibe eine Nachricht, stelle eine Frage oder erreiche NordFit direkt per E-Mail oder Instagram."
+    data-i18n-content="meta.description"
   />
 
   <link rel="stylesheet" href="css/style.css" />
@@ -16,19 +17,19 @@
 <body>
   <header class="site-header">
     <div class="container">
-      <div class="site-header-inner glass">
+      <div class="site-header-inner">
         <a href="index.html" class="logo" aria-label="NordFit Startseite">
           <img src="images/nordfit-logo.png" alt="NordFit Logo" />
         </a>
 
         <nav class="site-nav" aria-label="Hauptnavigation">
           <ul>
-            <li><a href="index.html" class="nav-link">Startseite</a></li>
-            <li><a href="mitgliedschaften.html" class="nav-link">Tarife</a></li>
-            <li><a href="standorte.html" class="nav-link">Standorte</a></li>
-            <li><a href="app.html" class="nav-link">App</a></li>
-            <li><a href="hausordnung.html" class="nav-link">Hausordnung</a></li>
-            <li><a href="kontakt.html" class="nav-link active">Kontakt</a></li>
+            <li><a href="index.html" class="nav-link" data-i18n="nav.home">Startseite</a></li>
+            <li><a href="mitgliedschaften.html" class="nav-link" data-i18n="nav.pricing">Tarife</a></li>
+            <li><a href="standorte.html" class="nav-link" data-i18n="nav.locations">Standorte</a></li>
+            <li><a href="app.html" class="nav-link" data-i18n="nav.app">App</a></li>
+            <li><a href="hausordnung.html" class="nav-link" data-i18n="nav.rules">Hausordnung</a></li>
+            <li><a href="kontakt.html" class="nav-link active" data-i18n="nav.contact">Kontakt</a></li>
           </ul>
         </nav>
 
@@ -65,7 +66,6 @@
           type="button"
           aria-label="Menü öffnen"
           aria-expanded="false"
-          aria-controls="primary-navigation"
         >
           <span class="burger-lines" aria-hidden="true">
             <span></span>
@@ -81,15 +81,12 @@
     <section class="section home-hero-section">
       <div class="container">
         <div class="home-hero">
-          <p class="eyebrow hero-eyebrow">Kontakt</p>
-
-          <h1 class="hero-title small-hero">
-            Schreib uns einfach.
+          <h1 class="hero-title small-hero" data-i18n="contactPage.heroTitle">
+            Sag kurz Bescheid.
           </h1>
 
-          <p class="hero-subtitle">
-            Du hast eine Frage zu NordFit, zur App, zu Tarifen oder zum Standort?
-            Dann erreichst du uns direkt per Mail, Instagram oder über das Formular.
+          <p class="hero-subtitle" data-i18n="contactPage.heroSubtitle">
+            Fragen zu NordFit, Tarifen, Standort oder Zugang? Schreib direkt. Klar, einfach, ohne Umwege.
           </p>
         </div>
       </div>
@@ -97,156 +94,171 @@
 
     <section class="section section-tight">
       <div class="container">
-        <div class="grid-2 contact-hero-grid">
-          <article class="glass section-block">
-            <p class="eyebrow">Kontaktwege</p>
-            <h2 class="section-title">Direkt erreichbar.</h2>
-
-            <div class="copy-stack">
-              <p class="muted">
-                Für kurze Fragen ist E-Mail oder Instagram meistens am einfachsten.
-                Eine Telefonnummer wird ergänzt, sobald sie offiziell genutzt wird.
-              </p>
-            </div>
-
-            <div class="contact-info-stack clean-list-offset">
-              <div class="contact-info-item">
-                <span class="contact-info-label">E-Mail</span>
-                <a href="mailto:nordgroup.business@gmail.com">nordgroup.business@gmail.com</a>
-              </div>
-
-              <div class="contact-info-item">
-                <span class="contact-info-label">Instagram</span>
-                <a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">@nordfit.business</a>
-              </div>
-
-              <div class="contact-info-item">
-                <span class="contact-info-label">Telefon</span>
-                <span class="muted">Bald verfügbar</span>
-              </div>
-            </div>
+        <div class="feature-grid">
+          <article class="feature-card card">
+            <span class="feature-number">01</span>
+            <h3 data-i18n="contactPage.emailTitle">E-Mail</h3>
+            <p>
+              <a href="mailto:nordgroup.business@gmail.com">nordgroup.business@gmail.com</a>
+            </p>
           </article>
 
-          <article class="glass contact-form-shell">
-            <p class="eyebrow">Formular</p>
-            <h2 class="section-title">Nachricht vorbereiten.</h2>
+          <article class="feature-card card">
+            <span class="feature-number">02</span>
+            <h3 data-i18n="contactPage.instagramTitle">Instagram</h3>
+            <p>
+              <a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">@nordfit.business</a>
+            </p>
+          </article>
 
-            <form class="clean-list-offset" data-nordfit-contact-form>
-              <div class="form-grid">
-                <div class="form-field">
-                  <label for="contact-firstname">Vorname <span class="required-star">*</span></label>
-                  <input
-                    type="text"
-                    id="contact-firstname"
-                    name="contact-firstname"
-                    placeholder="Dein Vorname"
-                    autocomplete="given-name"
-                    required
-                  />
-                </div>
-
-                <div class="form-field">
-                  <label for="contact-lastname">Nachname <span class="required-star">*</span></label>
-                  <input
-                    type="text"
-                    id="contact-lastname"
-                    name="contact-lastname"
-                    placeholder="Dein Nachname"
-                    autocomplete="family-name"
-                    required
-                  />
-                </div>
-
-                <div class="form-field">
-                  <label for="contact-email">E-Mail <span class="required-star">*</span></label>
-                  <input
-                    type="email"
-                    id="contact-email"
-                    name="contact-email"
-                    placeholder="deinname@email.de"
-                    autocomplete="email"
-                    required
-                  />
-                </div>
-
-                <div class="form-field">
-                  <label for="contact-phone">Telefonnummer</label>
-                  <input
-                    type="tel"
-                    id="contact-phone"
-                    name="contact-phone"
-                    placeholder="Optional"
-                    autocomplete="tel"
-                  />
-                </div>
-
-                <div class="form-field">
-                  <label for="contact-topic">Thema <span class="required-star">*</span></label>
-                  <select id="contact-topic" name="contact-topic" required>
-                    <option value="">Bitte auswählen</option>
-                    <option value="Mitgliedschaft">Mitgliedschaft</option>
-                    <option value="App">App</option>
-                    <option value="Zutritt / QR-Code">Zutritt / QR-Code</option>
-                    <option value="Tagespass">Tagespass</option>
-                    <option value="Standort">Standort</option>
-                    <option value="Konto / Daten">Konto / Daten</option>
-                    <option value="Allgemeine Frage">Allgemeine Frage</option>
-                  </select>
-                </div>
-
-                <div class="form-field">
-                  <label for="contact-memberid">Member ID</label>
-                  <input
-                    type="text"
-                    id="contact-memberid"
-                    name="contact-memberid"
-                    placeholder="Optional"
-                  />
-                </div>
-
-                <div class="form-field form-field-full">
-                  <label for="contact-message">Nachricht <span class="required-star">*</span></label>
-                  <textarea
-                    id="contact-message"
-                    name="contact-message"
-                    rows="6"
-                    placeholder="Schreib uns dein Anliegen ..."
-                    required
-                  ></textarea>
-                </div>
-              </div>
-
-              <div class="contact-form-footer">
-                <div>
-                  <p class="muted">
-                    Beim Absenden öffnet sich dein Mailprogramm mit einer vorbereiteten Nachricht.
-                  </p>
-                  <p class="required-note">Felder mit * müssen ausgefüllt werden.</p>
-                </div>
-
-                <button type="submit" class="btn btn-primary">Nachricht vorbereiten</button>
-              </div>
-            </form>
+          <article class="feature-card card">
+            <span class="feature-number">03</span>
+            <h3 data-i18n="contactPage.phoneTitle">Telefon</h3>
+            <p class="muted" data-i18n="contactPage.phoneText">
+              Bald verfügbar.
+            </p>
           </article>
         </div>
       </div>
     </section>
 
+    <section class="section section-light">
+      <div class="container">
+        <div class="section-intro center">
+          <h2 class="section-title large-title" data-i18n="contactPage.formTitle">
+            Schreib deine Nachricht.
+          </h2>
+
+          <p class="muted" data-i18n="contactPage.formSubtitle">
+            Das Formular öffnet dein Mailprogramm mit einer vorbereiteten Nachricht an NordFit.
+          </p>
+        </div>
+
+        <article class="contact-form-shell card">
+          <form data-nordfit-contact-form>
+            <div class="form-grid">
+              <div class="form-field">
+                <label for="contact-firstname" data-i18n="contactPage.firstnameLabel">Vorname *</label>
+                <input
+                  type="text"
+                  id="contact-firstname"
+                  name="contact-firstname"
+                  placeholder="Dein Vorname"
+                  autocomplete="given-name"
+                  data-i18n-attr="placeholder:contactPage.firstnamePlaceholder"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="contact-lastname" data-i18n="contactPage.lastnameLabel">Nachname *</label>
+                <input
+                  type="text"
+                  id="contact-lastname"
+                  name="contact-lastname"
+                  placeholder="Dein Nachname"
+                  autocomplete="family-name"
+                  data-i18n-attr="placeholder:contactPage.lastnamePlaceholder"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="contact-email" data-i18n="contactPage.emailLabel">E-Mail *</label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  name="contact-email"
+                  placeholder="deinname@email.de"
+                  autocomplete="email"
+                  data-i18n-attr="placeholder:contactPage.emailPlaceholder"
+                  required
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="contact-phone" data-i18n="contactPage.phoneLabel">Telefonnummer</label>
+                <input
+                  type="tel"
+                  id="contact-phone"
+                  name="contact-phone"
+                  placeholder="Optional"
+                  autocomplete="tel"
+                  data-i18n-attr="placeholder:contactPage.optionalPlaceholder"
+                />
+              </div>
+
+              <div class="form-field">
+                <label for="contact-topic" data-i18n="contactPage.topicLabel">Thema *</label>
+                <select id="contact-topic" name="contact-topic" required>
+                  <option value="" data-i18n="contactPage.topicChoose">Bitte auswählen</option>
+                  <option value="Mitgliedschaft" data-i18n="contactPage.topicMembership">Mitgliedschaft</option>
+                  <option value="App" data-i18n="contactPage.topicApp">App</option>
+                  <option value="Zutritt / QR-Code" data-i18n="contactPage.topicAccess">Zutritt / QR-Code</option>
+                  <option value="Tagespass" data-i18n="contactPage.topicDaypass">Tagespass</option>
+                  <option value="Standort" data-i18n="contactPage.topicLocation">Standort</option>
+                  <option value="Konto / Daten" data-i18n="contactPage.topicAccount">Konto / Daten</option>
+                  <option value="Allgemeine Frage" data-i18n="contactPage.topicGeneral">Allgemeine Frage</option>
+                </select>
+              </div>
+
+              <div class="form-field">
+                <label for="contact-memberid" data-i18n="contactPage.memberIdLabel">Member ID</label>
+                <input
+                  type="text"
+                  id="contact-memberid"
+                  name="contact-memberid"
+                  placeholder="Optional"
+                  data-i18n-attr="placeholder:contactPage.optionalPlaceholder"
+                />
+              </div>
+
+              <div class="form-field form-field-full">
+                <label for="contact-message" data-i18n="contactPage.messageLabel">Nachricht *</label>
+                <textarea
+                  id="contact-message"
+                  name="contact-message"
+                  rows="6"
+                  placeholder="Schreib kurz, worum es geht ..."
+                  data-i18n-attr="placeholder:contactPage.messagePlaceholder"
+                  required
+                ></textarea>
+              </div>
+            </div>
+
+            <div class="contact-form-footer">
+              <div>
+                <p class="muted" data-i18n="contactPage.formHint">
+                  Alternativ kannst du direkt per Mail schreiben.
+                </p>
+                <p class="required-note" data-i18n="contactPage.requiredHint">
+                  Felder mit * müssen ausgefüllt werden.
+                </p>
+              </div>
+
+              <button type="submit" class="btn btn-primary" data-i18n="contactPage.submitButton">
+                Nachricht senden
+              </button>
+            </div>
+          </form>
+        </article>
+      </div>
+    </section>
+
     <section class="section section-final-cta">
       <div class="container">
-        <div class="final-cta glass">
-          <p class="eyebrow">Gut zu wissen</p>
-          <h2 class="section-title large-title">
-            Keine komplizierten Wege.
+        <div class="final-cta">
+          <h2 class="section-title large-title" data-i18n="contactPage.finalTitle">
+            Lieber kurz fragen als lange suchen.
           </h2>
-          <p class="muted">
-            NordFit ist noch im Aufbau. Wenn etwas offen ist, frag lieber direkt —
-            dann bleibt es klar statt verwirrend.
+
+          <p class="muted" data-i18n="contactPage.finalText">
+            Wenn etwas unklar ist, reicht eine kurze Nachricht. NordFit soll einfach verständlich bleiben.
           </p>
 
           <div class="hero-actions">
-            <a href="standorte.html" class="btn btn-primary">Standort ansehen</a>
-            <a href="mitgliedschaften.html" class="btn btn-secondary">Tarife ansehen</a>
+            <a href="mitgliedschaften.html" class="btn btn-primary" data-i18n="contactPage.finalPrimary">Tarife ansehen</a>
+            <a href="standorte.html" class="btn btn-secondary" data-i18n="contactPage.finalSecondary">Standort ansehen</a>
           </div>
         </div>
       </div>
@@ -257,12 +269,12 @@
     <div class="container">
       <div class="footer-shell">
         <div class="flex footer-row">
-          <p class="muted">© 2030 NordFit/NordGroup. Do not distribute!</p>
+          <p class="muted" data-i18n="footer.copyright">© 2030 NordFit/NordGroup. Do not distribute!</p>
 
           <div class="flex footer-links">
-            <a href="impressum.html">Impressum / AGB / Datenschutz</a>
-            <a href="hausordnung.html">Hausordnung</a>
-            <a href="kontakt.html">Kontakt</a>
+            <a href="impressum.html" data-i18n="footer.legal">Impressum / AGB / Datenschutz</a>
+            <a href="hausordnung.html" data-i18n="footer.rules">Hausordnung</a>
+            <a href="kontakt.html" data-i18n="footer.contact">Kontakt</a>
             <a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
         </div>
