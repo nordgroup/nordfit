@@ -1123,8 +1123,8 @@ ul {
   display: flex;
   gap: 0.75rem;
   overflow-x: auto;
-  padding: 0.25rem 0.25rem 1rem;
-  margin-bottom: clamp(2.2rem, 4vw, 3.4rem);
+  padding: 1.15rem 2rem 1.65rem;
+  margin: -1rem -2rem clamp(2.2rem, 4vw, 3.4rem);
   scroll-snap-type: x proximity;
   scrollbar-width: none;
   -webkit-overflow-scrolling: touch;
@@ -1156,7 +1156,9 @@ ul {
     background var(--fast),
     border-color var(--fast),
     box-shadow var(--medium),
-    transform var(--fast);
+    transform var(--fast),
+    opacity var(--fast),
+    filter var(--fast);
 }
 
 .location-choice:hover {
@@ -1177,6 +1179,28 @@ ul {
     0 20px 46px rgba(46, 145, 63, 0.22);
 }
 
+.location-choice.is-planned,
+.location-choice:disabled {
+  cursor: not-allowed;
+  opacity: 0.48;
+  filter: grayscale(1);
+  transform: none;
+  pointer-events: none;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.68),
+    0 10px 26px rgba(0, 0, 0, 0.035);
+}
+
+.location-choice.is-planned:hover,
+.location-choice:disabled:hover {
+  transform: none;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.76), rgba(255, 255, 255, 0.54));
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.68),
+    0 10px 26px rgba(0, 0, 0, 0.035);
+}
+
 .location-choice span {
   font-size: 1.02rem;
   font-weight: 760;
@@ -1192,6 +1216,13 @@ ul {
 
 .location-choice.is-active small {
   color: rgba(255, 255, 255, 0.78);
+}
+
+.location-choice.is-planned span,
+.location-choice.is-planned small,
+.location-choice:disabled span,
+.location-choice:disabled small {
+  color: rgba(29, 29, 31, 0.42);
 }
 
 .location-showcase {
@@ -2568,11 +2599,9 @@ select:focus {
   }
 
   .location-picker {
-    width: calc(100% + 1.2rem);
-    margin-left: -0.6rem;
-    padding-left: 0.6rem;
-    padding-right: 0.6rem;
-    margin-bottom: 2rem;
+    width: calc(100% + 2.4rem);
+    margin: -0.8rem -1.2rem 2rem;
+    padding: 1rem 1.2rem 1.45rem;
   }
 
   .location-choice {
