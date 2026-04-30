@@ -836,7 +836,24 @@ ul {
   letter-spacing: -0.02em;
 }
 
-/* Pricing */
+/* Mitgliedschaften / Pricing */
+
+.pricing-page-section {
+  padding-top: 6.2rem;
+  padding-bottom: 4.8rem;
+  background:
+    radial-gradient(circle at 50% 16%, rgba(46, 145, 63, 0.08), transparent 28rem),
+    linear-gradient(180deg, #fbfbfd 0%, #ffffff 55%, #f5f5f7 100%);
+}
+
+.pricing-page-intro {
+  margin-bottom: clamp(3.2rem, 6vw, 5rem);
+}
+
+.pricing-main-title {
+  max-width: 760px;
+  margin-inline: auto;
+}
 
 .pricing-section {
   padding-top: 2rem;
@@ -851,54 +868,123 @@ ul {
 }
 
 .pricing-card {
-  min-height: 590px;
+  min-height: 620px;
   display: flex;
   flex-direction: column;
-  padding: 1.68rem;
+  padding: 1.55rem;
 }
 
 .pricing-card-inner {
+  min-height: 100%;
   display: flex;
-  flex: 1;
   flex-direction: column;
+}
+
+.pricing-card-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.pricing-card h2,
+.pricing-card h3 {
+  max-width: 12ch;
+  margin-bottom: 1.2rem;
+  color: var(--text);
+  font-size: clamp(1.85rem, 2.6vw, 2.7rem);
+  line-height: 1.02;
+  letter-spacing: -0.065em;
+  text-wrap: balance;
+}
+
+.price-wrap {
+  display: grid;
+  gap: 0.16rem;
 }
 
 .price-line {
   margin: 0.28rem 0 0.2rem;
+  color: var(--text);
   font-size: clamp(2.75rem, 4.2vw, 4.25rem);
   line-height: 0.92;
   letter-spacing: -0.08em;
+  white-space: nowrap;
 }
 
-.pricing-details {
+.duration-pill {
+  width: fit-content;
+  margin: 1.25rem 0 1.35rem;
+  padding: 0.58rem 0.82rem;
+  border-radius: var(--radius-pill);
+  color: var(--nf-green-dark);
+  background: rgba(46, 145, 63, 0.09);
+  border: 1px solid rgba(46, 145, 63, 0.22);
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: -0.015em;
+}
+
+.duration-pill-featured {
+  color: #ffffff;
+  background: linear-gradient(180deg, var(--nf-green-light), var(--nf-green));
+  border-color: rgba(46, 145, 63, 0.16);
+  box-shadow: 0 12px 26px rgba(46, 145, 63, 0.22);
+}
+
+.pricing-check-list {
   display: grid;
-  gap: 0.62rem;
-  margin: 1.42rem 0 1.18rem;
+  gap: 0.75rem;
+  margin-top: 0.2rem;
 }
 
-.pricing-details p {
-  padding: 0.8rem 0.88rem;
-  border-radius: 18px;
-  color: var(--text);
-  background: rgba(255, 255, 255, 0.68);
-  border: 1px solid rgba(0, 0, 0, 0.045);
-  font-weight: 660;
-  letter-spacing: -0.018em;
+.pricing-check-list li {
+  position: relative;
+  padding-left: 1.65rem;
+  color: var(--text-soft);
+  font-size: 1rem;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
 }
 
-.pricing-card-action {
-  margin-top: 1.35rem;
+.pricing-check-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 0.02rem;
+  width: 1.05rem;
+  height: 1.05rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  color: #ffffff;
+  background: var(--nf-green);
+  font-size: 0.7rem;
+  font-weight: 900;
 }
 
+.pricing-card-bottom {
+  display: grid;
+  gap: 1.15rem;
+  margin-top: auto;
+  padding-top: 1.8rem;
+}
+
+.pricing-card-bottom .btn,
 .pricing-card-action .btn {
   width: 100%;
 }
 
 .featured-pricing {
+  position: relative;
   border-color: rgba(46, 145, 63, 0.26);
   box-shadow:
     0 24px 64px rgba(46, 145, 63, 0.12),
     inset 0 1px 0 rgba(255, 255, 255, 0.86);
+  transform: translateY(-12px);
+}
+
+.featured-pricing:hover {
+  transform: translateY(-12px);
 }
 
 .pricing-badge {
@@ -917,33 +1003,73 @@ ul {
   box-shadow: 0 10px 24px rgba(46, 145, 63, 0.22);
 }
 
-.daypass-shell {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.2rem;
-  margin-top: 1.35rem;
-  padding: 1.78rem;
+.pricing-note {
+  margin-top: 2rem;
 }
 
-.daypass-shell p.muted {
-  max-width: 60ch;
-  margin-top: 0.65rem;
+/* Tagespass */
+
+.daypass-section {
+  padding-top: 0;
+  padding-bottom: 4.8rem;
+  background: #f5f5f7;
+}
+
+.daypass-shell {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 1.2rem;
+  padding: clamp(1.35rem, 3vw, 2rem);
 }
 
 .daypass-shell::after {
-  content: "Einmaliger Zugang";
-  position: absolute;
-  top: 1rem;
-  right: 1rem;
-  display: inline-flex;
-  padding: 0.42rem 0.72rem;
+  display: none;
+}
+
+.daypass-copy {
+  max-width: 680px;
+}
+
+.daypass-copy p.muted {
+  margin-top: 0.75rem;
+}
+
+.daypass-price-box {
+  min-width: 260px;
+  display: grid;
+  align-content: center;
+  gap: 1rem;
+  padding: 1.15rem;
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.74);
+}
+
+.daypass-badge {
+  width: fit-content;
+  padding: 0.44rem 0.72rem;
   border-radius: var(--radius-pill);
   color: var(--nf-green-dark);
-  font-size: 0.76rem;
-  font-weight: 830;
   background: rgba(46, 145, 63, 0.09);
-  border: 1px solid rgba(46, 145, 63, 0.13);
+  border: 1px solid rgba(46, 145, 63, 0.16);
+  font-size: 0.78rem;
+  font-weight: 830;
+  letter-spacing: -0.01em;
+}
+
+.daypass-price-box .btn {
+  width: 100%;
+}
+
+.pricing-final-section {
+  min-height: 68vh;
+}
+
+.pricing-final-section .product-copy h2 {
+  max-width: 980px;
+  margin-inline: auto;
 }
 
 /* Location / images / map */
@@ -1598,7 +1724,21 @@ select:focus {
 @media (max-width: 1100px) {
   .pricing-grid,
   .pricing-grid-fixed {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
+    max-width: 640px;
+    margin-inline: auto;
+  }
+
+  .pricing-card,
+  .featured-pricing,
+  .featured-pricing:hover {
+    min-height: auto;
+    transform: none;
+  }
+
+  .pricing-card h2,
+  .pricing-card h3 {
+    max-width: 16ch;
   }
 
   .feature-grid {
@@ -2054,15 +2194,39 @@ select:focus {
     padding: 1.25rem;
   }
 
-  .pricing-grid,
-  .pricing-grid-fixed,
-  .rules-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
+  .pricing-page-section {
+    padding-top: 4.8rem;
+    padding-bottom: 3.4rem;
+  }
+
+  .pricing-page-intro {
+    margin-bottom: 2.7rem;
   }
 
   .pricing-card {
     min-height: auto;
+  }
+
+  .pricing-card h2,
+  .pricing-card h3 {
+    font-size: clamp(1.65rem, 8vw, 2.25rem);
+  }
+
+  .price-line {
+    font-size: clamp(2.8rem, 14vw, 4rem);
+  }
+
+  .duration-pill {
+    margin-top: 1rem;
+    margin-bottom: 1.15rem;
+  }
+
+  .pricing-check-list {
+    gap: 0.7rem;
+  }
+
+  .pricing-card-bottom {
+    padding-top: 1.45rem;
   }
 
   .daypass-shell,
@@ -2073,14 +2237,16 @@ select:focus {
   }
 
   .daypass-shell {
-    padding: 1.25rem;
+    gap: 1rem;
   }
 
-  .daypass-shell::after {
-    position: static;
-    order: -1;
-    width: fit-content;
-    margin-bottom: 0.15rem;
+  .daypass-price-box {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .pricing-final-section {
+    min-height: 58vh;
   }
 
   .form-grid {
@@ -2189,9 +2355,22 @@ select:focus {
     width: min(92vw, 330px);
   }
 
+  .pricing-card {
+    padding: 1.12rem;
+  }
+
+  .pricing-badge {
+    top: 0.82rem;
+    right: 0.82rem;
+  }
+
   .section-title,
   .large-title {
     font-size: clamp(1.95rem, 9.5vw, 2.7rem);
+  }
+
+  .daypass-price-box {
+    border-radius: 24px;
   }
 
   .image-frame {
