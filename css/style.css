@@ -1,25 +1,21 @@
 :root {
   --nf-green: #2e913f;
   --nf-green-dark: #1f6f2e;
-  --nf-green-light: #62bf72;
-  --nf-green-soft: rgba(46, 145, 63, 0.08);
-  --nf-green-line: rgba(46, 145, 63, 0.18);
+  --nf-green-light: #65c276;
 
   --bg: #ffffff;
   --bg-soft: #f5f5f7;
-  --bg-card: #fbfbfd;
+  --bg-soft-2: #fbfbfd;
 
   --text: #1d1d1f;
   --text-soft: #3a3a3c;
   --muted: #6e6e73;
-  --muted-light: #86868b;
   --white: #ffffff;
 
   --line: rgba(0, 0, 0, 0.08);
   --line-soft: rgba(0, 0, 0, 0.045);
 
-  --glass-bg: rgba(255, 255, 255, 0.56);
-  --glass-bg-strong: rgba(255, 255, 255, 0.76);
+  --glass-bg: rgba(255, 255, 255, 0.62);
   --glass-line: rgba(255, 255, 255, 0.72);
 
   --shadow-xs: 0 8px 24px rgba(0, 0, 0, 0.035);
@@ -38,7 +34,6 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --fast: 0.18s var(--ease);
   --medium: 0.32s var(--ease);
-  --slow: 0.7s var(--ease);
 }
 
 *,
@@ -215,7 +210,7 @@ ul {
 
 .site-header-inner.scrolled {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.54));
+    linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.56));
   border-color: rgba(255, 255, 255, 0.84);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.9),
@@ -362,7 +357,7 @@ ul {
   transform: translateX(-50%) rotate(-45deg);
 }
 
-/* Full-width home */
+/* Startseite */
 
 .home-product-page {
   display: grid;
@@ -384,7 +379,7 @@ ul {
 .product-copy {
   position: relative;
   z-index: 3;
-  max-width: 860px;
+  max-width: 880px;
   margin-inline: auto;
 }
 
@@ -469,31 +464,22 @@ ul {
   background: rgba(255, 255, 255, 0.18);
 }
 
-.product-visual {
-  position: relative;
-  z-index: 1;
-  width: min(100%, 960px);
-  height: clamp(260px, 34vw, 470px);
-  margin-top: 2.7rem;
-  pointer-events: none;
-}
-
 .product-hero-main {
   min-height: calc(100vh - 88px);
   background:
-    radial-gradient(circle at 50% 78%, rgba(46, 145, 63, 0.12), transparent 32rem),
-    linear-gradient(180deg, #fbfbfd 0%, #ffffff 52%, #f5f5f7 100%);
+    radial-gradient(circle at 50% 78%, rgba(46, 145, 63, 0.13), transparent 32rem),
+    linear-gradient(180deg, #fbfbfd 0%, #ffffff 50%, #f5f5f7 100%);
 }
 
-.product-hero-green {
+.product-hero-light {
   background:
-    radial-gradient(circle at 50% 78%, rgba(46, 145, 63, 0.18), transparent 34rem),
-    linear-gradient(180deg, #f1faf3 0%, #fbfffc 52%, #ffffff 100%);
+    radial-gradient(circle at 50% 82%, rgba(46, 145, 63, 0.08), transparent 30rem),
+    linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
 }
 
 .product-hero-dark {
   background:
-    radial-gradient(circle at 50% 76%, rgba(46, 145, 63, 0.28), transparent 34rem),
+    radial-gradient(circle at 50% 78%, rgba(46, 145, 63, 0.28), transparent 34rem),
     linear-gradient(180deg, #111312 0%, #171a18 56%, #0c0d0c 100%);
 }
 
@@ -508,8 +494,8 @@ ul {
 
 .product-hero-app {
   background:
-    radial-gradient(circle at 50% 78%, rgba(46, 145, 63, 0.12), transparent 30rem),
-    linear-gradient(180deg, #f5f5f7 0%, #ffffff 62%, #f5f5f7 100%);
+    radial-gradient(circle at 50% 80%, rgba(46, 145, 63, 0.12), transparent 30rem),
+    linear-gradient(180deg, #f5f5f7 0%, #ffffff 58%, #f5f5f7 100%);
 }
 
 .product-hero-final {
@@ -517,211 +503,78 @@ ul {
   background: #ffffff;
 }
 
-/* Home visual: stage */
+/* Startseiten-Bild */
 
-.nordfit-stage {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: min(88vw, 900px);
-  height: min(36vw, 380px);
-  transform: translate(-50%, -48%);
-  perspective: 1200px;
+.home-hero-image-wrap {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 1080px);
+  margin: 3.2rem auto 0;
+  padding-inline: 1rem;
 }
 
-.nordfit-stage-panel {
-  position: absolute;
-  inset: 0;
-  border-radius: 42px;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 255, 255, 0.5)),
-    radial-gradient(circle at 50% 0%, rgba(46, 145, 63, 0.14), transparent 60%);
-  border: 1px solid rgba(255, 255, 255, 0.88);
-  box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.9),
-    0 42px 90px rgba(0, 0, 0, 0.13);
-  backdrop-filter: blur(24px) saturate(170%);
-  -webkit-backdrop-filter: blur(24px) saturate(170%);
-  transform: rotateX(58deg);
-  transform-origin: center;
-}
-
-.stage-pill {
-  position: absolute;
-  display: block;
-  height: 28px;
-  border-radius: var(--radius-pill);
-  background: linear-gradient(180deg, var(--nf-green-light), var(--nf-green));
-  box-shadow: 0 18px 42px rgba(46, 145, 63, 0.26);
-}
-
-.stage-pill-one {
-  width: 28%;
-  left: 11%;
-  top: 24%;
-}
-
-.stage-pill-two {
-  width: 20%;
-  right: 16%;
-  top: 38%;
-  opacity: 0.78;
-}
-
-.stage-pill-three {
-  width: 34%;
-  left: 34%;
-  bottom: 22%;
-  opacity: 0.58;
-}
-
-.stage-path {
-  position: absolute;
-  left: 12%;
-  right: 12%;
-  top: 52%;
-  height: 2px;
-  border-radius: var(--radius-pill);
-  background: rgba(46, 145, 63, 0.22);
-}
-
-/* Home visual: studio map */
-
-.studio-map {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: min(88vw, 880px);
-  height: min(38vw, 390px);
-  transform: translate(-50%, -50%) perspective(1100px) rotateX(56deg);
+.home-hero-image-placeholder {
+  min-height: clamp(280px, 42vw, 540px);
   display: grid;
-  grid-template-columns: 1.25fr 0.72fr;
-  grid-template-rows: 1fr 1fr;
-  gap: 18px;
-  padding: 24px;
-  border-radius: 42px;
+  place-items: center;
+  text-align: center;
+  border-radius: var(--radius-xl);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.42));
-  border: 1px solid rgba(46, 145, 63, 0.18);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.62), rgba(255, 255, 255, 0.34)),
+    radial-gradient(circle at 50% 30%, rgba(46, 145, 63, 0.12), transparent 32rem),
+    #f5f5f7;
+  border: 1px solid rgba(255, 255, 255, 0.78);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.86),
-    0 42px 90px rgba(46, 145, 63, 0.18);
-  backdrop-filter: blur(20px) saturate(160%);
-  -webkit-backdrop-filter: blur(20px) saturate(160%);
-}
-
-.studio-map-room {
-  position: relative;
+    0 34px 84px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  border-radius: 28px;
-  background: rgba(255, 255, 255, 0.74);
-  border: 1px solid rgba(46, 145, 63, 0.12);
 }
 
-.studio-map-room::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    radial-gradient(circle at 30% 20%, rgba(46, 145, 63, 0.16), transparent 52%);
+.home-hero-image-placeholder span {
+  display: block;
+  color: var(--text);
+  font-size: clamp(1.65rem, 3vw, 3rem);
+  font-weight: 760;
+  line-height: 1;
+  letter-spacing: -0.06em;
 }
 
-.studio-map-room span {
-  position: absolute;
-  left: 20px;
-  bottom: 18px;
-  color: rgba(31, 111, 46, 0.78);
-  font-size: 0.9rem;
-  font-weight: 780;
+.home-hero-image-placeholder strong {
+  display: block;
+  margin-top: 0.55rem;
+  color: var(--muted);
+  font-size: 1rem;
+  font-weight: 650;
   letter-spacing: -0.02em;
 }
 
-.studio-map-room-large {
-  grid-row: 1 / -1;
-}
+/* Später echtes Hero-Bild: Lege images/home-hero.jpg ab und gib dem Placeholder zusätzlich ein img, oder ersetze den Inhalt. */
 
-.studio-map-route {
-  position: absolute;
-  left: 17%;
-  right: 13%;
-  top: 50%;
-  height: 3px;
-  border-radius: var(--radius-pill);
-  background: linear-gradient(90deg, transparent, rgba(46, 145, 63, 0.62), transparent);
-}
-
-/* Home visual: focus bars */
-
-.focus-bars {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: min(86vw, 840px);
-  height: min(34vw, 360px);
-  transform: translate(-50%, -50%);
-}
-
-.focus-bar {
-  position: absolute;
-  left: 50%;
-  display: block;
-  width: min(72vw, 650px);
-  height: 42px;
-  border-radius: var(--radius-pill);
-  background:
-    linear-gradient(90deg, transparent, rgba(95, 189, 112, 0.74), transparent);
-  filter: blur(0.2px);
-  box-shadow:
-    0 0 34px rgba(46, 145, 63, 0.16),
-    0 0 80px rgba(46, 145, 63, 0.11);
-}
-
-.focus-bar-one {
-  top: 20%;
-  transform: translateX(-50%) rotate(-8deg);
-}
-
-.focus-bar-two {
-  top: 40%;
-  transform: translateX(-50%) rotate(4deg);
-  opacity: 0.82;
-}
-
-.focus-bar-three {
-  top: 60%;
-  transform: translateX(-50%) rotate(-3deg);
-  opacity: 0.6;
-}
-
-.focus-bar-four {
-  top: 78%;
-  transform: translateX(-50%) rotate(8deg);
-  opacity: 0.38;
+.home-phone-stage {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 860px);
+  height: 520px;
+  margin: 3rem auto 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* Phone mockup */
 
 .phone-mockup {
-  position: absolute;
-  left: 50%;
-  top: 48%;
+  position: relative;
   width: min(58vw, 310px);
   height: min(104vw, 610px);
   max-height: 520px;
-  transform: translate(-50%, -50%) rotate(-4deg);
+  transform: rotate(-4deg);
   border-radius: 42px;
   background: #111;
   padding: 11px;
   box-shadow:
     0 44px 90px rgba(0, 0, 0, 0.18),
     0 0 0 1px rgba(255, 255, 255, 0.28);
-}
-
-.app-screen-stage .phone-mockup {
-  position: relative;
-  left: auto;
-  top: auto;
-  transform: rotate(-4deg);
 }
 
 .phone-notch {
@@ -787,7 +640,7 @@ ul {
   background: var(--nf-green);
 }
 
-/* Typography */
+/* Typo für Unterseiten */
 
 .hero-title {
   font-size: clamp(3.4rem, 8vw, 7.2rem);
@@ -883,7 +736,7 @@ ul {
   border-color: rgba(46, 145, 63, 0.24);
 }
 
-/* Page hero */
+/* Unterseiten Layout */
 
 .home-hero-section {
   padding-top: 5rem;
@@ -921,7 +774,7 @@ ul {
   letter-spacing: -0.02em;
 }
 
-/* Glass + cards */
+/* Glass + Cards */
 
 .glass,
 .card {
@@ -962,6 +815,8 @@ ul {
 .app-detail-card {
   padding: 1.75rem;
 }
+
+/* Feature Cards */
 
 .feature-grid {
   display: grid;
@@ -1318,6 +1173,12 @@ iframe {
   align-items: center;
   justify-content: center;
   padding: 2rem;
+}
+
+.app-screen-stage .phone-mockup {
+  position: relative;
+  left: auto;
+  top: auto;
 }
 
 /* Contact */
@@ -1782,21 +1643,7 @@ select:focus {
   transform: none;
 }
 
-/* Animations */
-
-@keyframes cleanDropdownIn {
-  from {
-    opacity: 0;
-    transform: translateY(-8px) scale(0.985);
-    filter: blur(3px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-    filter: blur(0);
-  }
-}
+/* Animation */
 
 @keyframes mobileNavDropIn {
   from {
@@ -1973,48 +1820,22 @@ select:focus {
     font-size: 0.96rem;
   }
 
-  .product-visual {
-    height: 285px;
-    margin-top: 2rem;
+  .home-hero-image-wrap {
+    margin-top: 2.1rem;
+    padding-inline: 0;
   }
 
-  .nordfit-stage {
-    width: 92vw;
-    height: 250px;
+  .home-hero-image-placeholder {
+    min-height: 330px;
+    border-radius: 32px;
   }
 
-  .studio-map {
-    width: 92vw;
-    height: 250px;
-    gap: 12px;
-    padding: 16px;
-  }
-
-  .studio-map-room {
-    border-radius: 20px;
-  }
-
-  .studio-map-room span {
-    left: 14px;
-    bottom: 12px;
-    font-size: 0.78rem;
-  }
-
-  .focus-bars {
-    width: 92vw;
-    height: 280px;
-  }
-
-  .focus-bar {
-    height: 34px;
+  .home-phone-stage {
+    height: 430px;
+    margin-top: 2.3rem;
   }
 
   .phone-mockup {
-    width: 225px;
-    height: 430px;
-  }
-
-  .app-screen-stage .phone-mockup {
     width: 225px;
     height: 430px;
   }
@@ -2190,24 +2011,11 @@ select:focus {
     font-size: clamp(2.52rem, 13.5vw, 3.55rem);
   }
 
-  .product-visual {
-    height: 240px;
+  .home-hero-image-placeholder {
+    min-height: 275px;
   }
 
-  .nordfit-stage {
-    height: 205px;
-  }
-
-  .studio-map {
-    height: 220px;
-  }
-
-  .focus-bars {
-    height: 230px;
-  }
-
-  .phone-mockup,
-  .app-screen-stage .phone-mockup {
+  .phone-mockup {
     width: 200px;
     height: 390px;
   }
