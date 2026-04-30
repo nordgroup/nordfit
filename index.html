@@ -4,11 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title data-i18n="meta.title">NordFit – Startseite</title>
+  <title>NordFit – Für deinen Weg nach vorn</title>
   <meta
     name="description"
-    content="NordFit ist ein modernes Fitnessstudio mit 24/7-Zugang, klarer Struktur und App-basiertem Zugang."
-    data-i18n-content="meta.description"
+    content="NordFit ist ein modernes Fitnessstudio mit 24/7-Zugang, klarer Struktur und einer App für Mitgliedschaft, Tagespass und Zutritt."
   />
 
   <link rel="stylesheet" href="css/style.css" />
@@ -24,41 +23,14 @@
 
         <nav class="site-nav" aria-label="Hauptnavigation">
           <ul>
-            <li><a href="index.html" class="nav-link active" data-i18n="nav.home">Startseite</a></li>
-            <li><a href="mitgliedschaften.html" class="nav-link" data-i18n="nav.pricing">Tarife</a></li>
-            <li><a href="standorte.html" class="nav-link" data-i18n="nav.locations">Standorte</a></li>
-            <li><a href="app.html" class="nav-link" data-i18n="nav.app">App</a></li>
-            <li><a href="hausordnung.html" class="nav-link" data-i18n="nav.rules">Hausordnung</a></li>
-            <li><a href="kontakt.html" class="nav-link" data-i18n="nav.contact">Kontakt</a></li>
+            <li><a href="index.html" class="nav-link active">Startseite</a></li>
+            <li><a href="mitgliedschaften.html" class="nav-link">Tarife</a></li>
+            <li><a href="standorte.html" class="nav-link">Standorte</a></li>
+            <li><a href="app.html" class="nav-link">App</a></li>
+            <li><a href="hausordnung.html" class="nav-link">Hausordnung</a></li>
+            <li><a href="kontakt.html" class="nav-link">Kontakt</a></li>
           </ul>
         </nav>
-
-        <div class="language-dropdown">
-          <button
-            id="lang-toggle"
-            class="lang-toggle"
-            type="button"
-            aria-label="Sprache auswählen"
-            aria-expanded="false"
-            aria-controls="lang-menu"
-          >
-            <span class="lang-toggle-label">DE</span>
-            <span class="lang-caret" aria-hidden="true">⌄</span>
-          </button>
-
-          <div id="lang-menu" class="lang-menu" role="menu" aria-label="Sprachauswahl">
-            <button class="lang-option" data-lang="de" type="button" role="menuitem">Deutsch</button>
-            <button class="lang-option" data-lang="en" type="button" role="menuitem">English</button>
-            <button class="lang-option" data-lang="fr" type="button" role="menuitem">Français</button>
-            <button class="lang-option" data-lang="es" type="button" role="menuitem">Español</button>
-            <button class="lang-option" data-lang="it" type="button" role="menuitem">Italiano</button>
-            <button class="lang-option" data-lang="pl" type="button" role="menuitem">Polski</button>
-            <button class="lang-option" data-lang="nl" type="button" role="menuitem">Nederlands</button>
-            <button class="lang-option" data-lang="sv" type="button" role="menuitem">Svenska</button>
-            <button class="lang-option" data-lang="da" type="button" role="menuitem">Dansk</button>
-            <button class="lang-option" data-lang="no" type="button" role="menuitem">Norsk</button>
-          </div>
-        </div>
 
         <button
           id="burger"
@@ -80,129 +52,103 @@
   <main class="home-product-page">
     <section class="product-hero product-hero-main">
       <div class="product-copy">
-        <h1 data-i18n="home.heroTitle">
-          Für deinen Weg nach vorn.
-        </h1>
+        <h1>Für deinen Weg nach vorn.</h1>
 
-        <p data-i18n="home.heroSubtitle">
-          Ein modernes Fitnessstudio mit 24/7-Zugang, klarer Struktur und einer App, die Mitgliedschaft, Tagespass und Studiozugang einfach zusammenbringt.
+        <p>
+          Ein modernes Fitnessstudio mit 24/7-Zugang, klarer Struktur und einer App
+          für Mitgliedschaft, Tagespass und Zutritt.
         </p>
 
         <div class="product-actions">
-          <a href="mitgliedschaften.html" class="product-link product-link-primary" data-i18n="home.primaryCta">
+          <a href="mitgliedschaften.html" class="product-link product-link-primary">
             Tarife ansehen
           </a>
-          <a href="standorte.html" class="product-link product-link-secondary" data-i18n="home.secondaryCta">
+
+          <a href="standorte.html" class="product-link product-link-secondary">
             Standort ansehen
           </a>
         </div>
       </div>
 
-      <div class="product-visual product-visual-clean" aria-hidden="true">
-        <div class="nordfit-stage">
-          <div class="nordfit-stage-panel">
-            <span class="stage-pill stage-pill-one"></span>
-            <span class="stage-pill stage-pill-two"></span>
-            <span class="stage-pill stage-pill-three"></span>
-            <span class="stage-path"></span>
-          </div>
+      <div class="home-hero-image-wrap">
+        <div class="home-hero-image-placeholder">
+          <span>Studio Hero Bild</span>
+          <strong>images/home-hero.jpg</strong>
         </div>
       </div>
     </section>
 
-    <section class="product-hero product-hero-green">
+    <section class="product-hero product-hero-light">
       <div class="product-copy">
-        <h2 data-i18n="home.feelingTitle">
-          Ein Studio, das dich nicht erschlägt.
-        </h2>
+        <h2>Training, das nicht kompliziert wirkt.</h2>
 
-        <p data-i18n="home.feelingText">
-          NordFit soll klar aufgebaut sein: ankommen, orientieren, trainieren. Ohne unnötige Reize, ohne komplizierte Wege, ohne das Gefühl von Chaos.
+        <p>
+          NordFit ist auf klare Wege ausgelegt: ankommen, Zugang öffnen, trainieren.
+          Ohne unnötige Reize. Ohne Umwege. Ohne Chaos.
         </p>
 
         <div class="product-actions">
-          <a href="standorte.html" class="product-link product-link-primary" data-i18n="home.locationCta">
+          <a href="standorte.html" class="product-link product-link-primary">
             Standort ansehen
           </a>
-          <a href="kontakt.html" class="product-link product-link-secondary" data-i18n="home.contactCta">
-            Kontakt aufnehmen
-          </a>
-        </div>
-      </div>
 
-      <div class="product-visual product-visual-lines" aria-hidden="true">
-        <div class="studio-map">
-          <div class="studio-map-room studio-map-room-large">
-            <span>Training</span>
-          </div>
-          <div class="studio-map-room studio-map-room-small">
-            <span>Cardio</span>
-          </div>
-          <div class="studio-map-room studio-map-room-small">
-            <span>Zugang</span>
-          </div>
-          <div class="studio-map-route"></div>
+          <a href="hausordnung.html" class="product-link product-link-secondary">
+            Hausordnung
+          </a>
         </div>
       </div>
     </section>
 
     <section class="product-hero product-hero-dark">
       <div class="product-copy product-copy-light">
-        <h2 data-i18n="home.panelOneTitle">
-          Training mit Fokus.
-        </h2>
+        <h2>24/7 bereit, wenn du es bist.</h2>
 
-        <p data-i18n="home.panelOneText">
-          Kraft, Cardio und freie Bewegung sollen sich ruhig und hochwertig anfühlen. Nicht laut. Nicht überladen. Sondern so, dass du wirklich bei deinem Training bleibst.
+        <p>
+          Trainiere dann, wenn es in deinen Alltag passt. Früh, spät oder spontan —
+          der Zugang läuft digital über die NordFit App.
         </p>
 
         <div class="product-actions">
-          <a href="mitgliedschaften.html" class="product-link product-link-primary" data-i18n="home.finalPrimary">
+          <a href="app.html" class="product-link product-link-primary">
+            App ansehen
+          </a>
+
+          <a href="mitgliedschaften.html" class="product-link product-link-secondary product-link-light">
             Tarife ansehen
           </a>
-          <a href="hausordnung.html" class="product-link product-link-secondary product-link-light" data-i18n="nav.rules">
-            Hausordnung
-          </a>
-        </div>
-      </div>
-
-      <div class="product-visual product-visual-dark" aria-hidden="true">
-        <div class="focus-bars">
-          <span class="focus-bar focus-bar-one"></span>
-          <span class="focus-bar focus-bar-two"></span>
-          <span class="focus-bar focus-bar-three"></span>
-          <span class="focus-bar focus-bar-four"></span>
         </div>
       </div>
     </section>
 
     <section class="product-hero product-hero-app">
       <div class="product-copy">
-        <h2 data-i18n="home.appTitle">
-          Dein Zugang. Alles in einer App.
-        </h2>
+        <h2>Alles Wichtige in einer App.</h2>
 
-        <p data-i18n="home.appText">
-          Mitgliedschaft abschließen, Tagespass buchen und per QR-Code ins Studio kommen. Alles digital, klar und direkt.
+        <p>
+          Mitgliedschaft abschließen, Tagespass buchen und per QR-Code ins Studio kommen.
+          Einfach gebündelt, damit dein Training nicht mit Papierkram beginnt.
         </p>
 
         <div class="product-actions">
-          <a href="app.html" class="product-link product-link-primary" data-i18n="home.appCta">
+          <a href="app.html" class="product-link product-link-primary">
             App ansehen
           </a>
-          <a href="mitgliedschaften.html" class="product-link product-link-secondary" data-i18n="nav.pricing">
-            Tarife
+
+          <a href="kontakt.html" class="product-link product-link-secondary">
+            Frage stellen
           </a>
         </div>
       </div>
 
-      <div class="product-visual product-visual-phone" aria-hidden="true">
+      <div class="home-phone-stage" aria-hidden="true">
         <div class="phone-mockup">
           <div class="phone-notch"></div>
+
           <div class="phone-screen">
             <div class="phone-logo-dot"></div>
             <div class="phone-line phone-line-wide"></div>
             <div class="phone-line"></div>
+
             <div class="phone-qr">
               <span></span>
               <span></span>
@@ -216,19 +162,19 @@
 
     <section class="product-hero product-hero-final">
       <div class="product-copy">
-        <h2 data-i18n="home.finalTitle">
-          Klar starten. Ruhig weitermachen.
-        </h2>
+        <h2>Klar starten. Ruhig weitermachen.</h2>
 
-        <p data-i18n="home.finalText">
-          NordFit ist für Menschen gedacht, die Training nicht komplizierter machen wollen, sondern einfacher. Ein Ort, ein Zugang, ein klarer Weg nach vorn.
+        <p>
+          NordFit soll sich einfach anfühlen: faire Tarife, digitaler Zugang,
+          klare Regeln und ein Studio, das dich nicht erschlägt.
         </p>
 
         <div class="product-actions">
-          <a href="mitgliedschaften.html" class="product-link product-link-primary" data-i18n="home.finalPrimary">
+          <a href="mitgliedschaften.html" class="product-link product-link-primary">
             Tarife ansehen
           </a>
-          <a href="kontakt.html" class="product-link product-link-secondary" data-i18n="home.finalSecondary">
+
+          <a href="kontakt.html" class="product-link product-link-secondary">
             Kontakt aufnehmen
           </a>
         </div>
@@ -240,12 +186,12 @@
     <div class="container">
       <div class="footer-shell">
         <div class="flex footer-row">
-          <p class="muted" data-i18n="footer.copyright">© 2030 NordFit/NordGroup. Do not distribute!</p>
+          <p class="muted">© 2030 NordFit/NordGroup. Do not distribute!</p>
 
           <div class="flex footer-links">
-            <a href="impressum.html" data-i18n="footer.legal">Impressum / AGB / Datenschutz</a>
-            <a href="hausordnung.html" data-i18n="footer.rules">Hausordnung</a>
-            <a href="kontakt.html" data-i18n="footer.contact">Kontakt</a>
+            <a href="impressum.html">Impressum / AGB / Datenschutz</a>
+            <a href="hausordnung.html">Hausordnung</a>
+            <a href="kontakt.html">Kontakt</a>
             <a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
         </div>
@@ -254,6 +200,5 @@
   </footer>
 
   <script src="js/main.js"></script>
-  <script src="js/translations.js"></script>
 </body>
 </html>
