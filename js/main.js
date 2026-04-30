@@ -20,7 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const closeMobileMenu = () => setMenuState(false);
-  const openMobileMenu = () => setMenuState(true);
 
   if (burger && nav) {
     burger.addEventListener("click", () => {
@@ -190,5 +189,65 @@ document.addEventListener("DOMContentLoaded", () => {
         behavior: "smooth"
       });
     });
+  });
+
+  const locationButtons = document.querySelectorAll("[data-location-button]");
+
+  const locationImage = document.getElementById("location-image");
+  const locationImageLabel = document.getElementById("location-image-label");
+  const locationStatus = document.getElementById("location-status");
+  const locationLine = document.getElementById("location-line");
+  const locationName = document.getElementById("location-name");
+  const locationTitle = document.getElementById("location-title");
+  const locationDescription = document.getElementById("location-description");
+
+  const factStatus = document.getElementById("fact-status");
+  const factAccess = document.getElementById("fact-access");
+  const factAreas = document.getElementById("fact-areas");
+  const factBooking = document.getElementById("fact-booking");
+
+  const mapTitle = document.getElementById("map-title");
+  const mapStatus = document.getElementById("map-status");
+  const locationMap = document.getElementById("location-map");
+
+  const updateLocation = (button) => {
+    if (!button) return;
+
+    locationButtons.forEach((item) => {
+      const isActive = item === button;
+      item.classList.toggle("is-active", isActive);
+      item.setAttribute("aria-pressed", String(isActive));
+    });
+
+    const data = button.dataset;
+
+    if (locationImage) {
+      locationImage.src = data.image || "";
+      locationImage.alt = data.name || "NordFit Standort";
+    }
+
+    if (locationImageLabel) locationImageLabel.textContent = data.name || "";
+    if (locationStatus) locationStatus.textContent = data.status || "";
+    if (locationLine) locationLine.textContent = data.locationLine || "";
+    if (locationName) locationName.textContent = data.name || "";
+    if (locationTitle) locationTitle.textContent = data.title || "";
+    if (locationDescription) locationDescription.textContent = data.description || "";
+
+    if (factStatus) factStatus.textContent = data.status || "";
+    if (factAccess) factAccess.textContent = data.access || "";
+    if (factAreas) factAreas.textContent = data.areas || "";
+    if (factBooking) factBooking.textContent = data.booking || "";
+
+    if (mapTitle) mapTitle.textContent = data.name || "";
+    if (mapStatus) mapStatus.textContent = data.status || "";
+
+    if (locationMap && data.map) {
+      locationMap.src = data.map;
+      locationMap.title = `Karte: ${data.name}`;
+    }
+  };
+
+  locationButtons.forEach((button) => {
+    button.addEventListener("click", () => updateLocation(button));
   });
 });
