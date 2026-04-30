@@ -106,14 +106,6 @@
       font-weight: 850;
     }
 
-    .contact-form-field small {
-      margin-top: 0.42rem;
-      color: var(--muted);
-      font-size: 0.86rem;
-      line-height: 1.38;
-      letter-spacing: -0.01em;
-    }
-
     .contact-form-field input,
     .contact-form-field select,
     .contact-form-field textarea {
@@ -140,13 +132,6 @@
         filter var(--fast),
         background-color var(--fast),
         box-shadow var(--fast);
-    }
-
-    .contact-submit-button:disabled {
-      opacity: 0.42;
-      filter: grayscale(0.45);
-      cursor: not-allowed;
-      box-shadow: none;
     }
 
     .contact-form-bottom {
@@ -401,78 +386,31 @@
             </p>
           </div>
 
-          <form id="nordfit-contact-form" data-nordfit-contact-form>
+          <form id="nordfit-contact-form" novalidate>
             <div class="contact-form-grid-premium">
               <div class="contact-form-field">
                 <label for="contact-firstname">Vorname <span>*</span></label>
-                <input
-                  id="contact-firstname"
-                  name="contact-firstname"
-                  type="text"
-                  placeholder="Dein Vorname"
-                  autocomplete="given-name"
-                  minlength="2"
-                  maxlength="60"
-                  required
-                />
+                <input id="contact-firstname" name="contact-firstname" type="text" placeholder="Dein Vorname" autocomplete="given-name" minlength="2" maxlength="60" required />
               </div>
 
               <div class="contact-form-field">
                 <label for="contact-lastname">Nachname <span>*</span></label>
-                <input
-                  id="contact-lastname"
-                  name="contact-lastname"
-                  type="text"
-                  placeholder="Dein Nachname"
-                  autocomplete="family-name"
-                  minlength="2"
-                  maxlength="80"
-                  required
-                />
+                <input id="contact-lastname" name="contact-lastname" type="text" placeholder="Dein Nachname" autocomplete="family-name" minlength="2" maxlength="80" required />
               </div>
 
               <div class="contact-form-field">
                 <label for="contact-email">E-Mail <span>*</span></label>
-                <input
-                  id="contact-email"
-                  name="contact-email"
-                  type="email"
-                  placeholder="dein.name@email.de"
-                  autocomplete="email"
-                  maxlength="120"
-                  required
-                />
+                <input id="contact-email" name="contact-email" type="email" placeholder="dein.name@email.de" autocomplete="email" maxlength="120" required />
               </div>
 
               <div class="contact-form-field">
                 <label for="contact-phone">Telefonnummer</label>
-                <input
-                  id="contact-phone"
-                  name="contact-phone"
-                  type="tel"
-                  placeholder="+49 170 1234567"
-                  autocomplete="tel"
-                  inputmode="tel"
-                  pattern="^\+?[0-9\s\/-]{8,24}$"
-                  maxlength="26"
-                  title="Bitte gib eine gültige Telefonnummer ein."
-                />
+                <input id="contact-phone" name="contact-phone" type="tel" placeholder="+49 170 1234567" autocomplete="tel" inputmode="tel" maxlength="26" />
               </div>
 
               <div class="contact-form-field">
                 <label for="contact-postal">Postleitzahl</label>
-                <input
-                  id="contact-postal"
-                  name="contact-postal"
-                  type="text"
-                  placeholder="12345"
-                  autocomplete="postal-code"
-                  inputmode="numeric"
-                  pattern="^[0-9]{5}$"
-                  maxlength="5"
-                  list="postal-suggestions"
-                  title="Bitte gib eine deutsche Postleitzahl mit 5 Zahlen ein."
-                />
+                <input id="contact-postal" name="contact-postal" type="text" placeholder="12345" autocomplete="postal-code" inputmode="numeric" maxlength="5" list="postal-suggestions" />
                 <datalist id="postal-suggestions">
                   <option value="23936" label="Grevesmühlen"></option>
                   <option value="23552" label="Lübeck Innenstadt"></option>
@@ -485,17 +423,7 @@
 
               <div class="contact-form-field">
                 <label for="contact-street">Straße</label>
-                <input
-                  id="contact-street"
-                  name="contact-street"
-                  type="text"
-                  placeholder="Musterstraße"
-                  autocomplete="address-line1"
-                  minlength="2"
-                  maxlength="90"
-                  pattern="^[A-Za-zÄÖÜäöüß .'\-]{2,90}$"
-                  title="Bitte gib einen gültigen Straßennamen ein."
-                />
+                <input id="contact-street" name="contact-street" type="text" placeholder="Musterstraße" autocomplete="address-line1" minlength="2" maxlength="90" />
               </div>
 
               <div class="contact-form-field contact-field-wide">
@@ -522,30 +450,13 @@
 
               <div class="contact-form-field">
                 <label for="contact-memberid">Member-ID</label>
-                <input
-                  id="contact-memberid"
-                  name="contact-memberid"
-                  type="text"
-                  placeholder="NF-12345"
-                  autocomplete="off"
-                  pattern="^[A-Za-z]{2}-[0-9]{5}$"
-                  maxlength="8"
-                  title="Bitte nutze das Format: NF-12345."
-                />
+                <input id="contact-memberid" name="contact-memberid" type="text" placeholder="NF-12345" autocomplete="off" maxlength="8" />
               </div>
 
               <div class="contact-form-field contact-field-full">
                 <label for="contact-message">Nachricht <span>*</span></label>
-                <textarea
-                  id="contact-message"
-                  name="contact-message"
-                  placeholder="Schreib hier deine Nachricht an NordFit..."
-                  maxlength="4999"
-                  required
-                ></textarea>
-                <small>
-                  <span id="message-count">0</span>/4999 Zeichen
-                </small>
+                <textarea id="contact-message" name="contact-message" placeholder="Schreib hier deine Nachricht an NordFit..." maxlength="4999" required></textarea>
+                <small><span id="message-count">0</span>/4999 Zeichen</small>
               </div>
             </div>
 
@@ -554,7 +465,7 @@
                 <strong>*</strong> Pflichtfelder müssen ausgefüllt werden.
               </p>
 
-              <button id="contact-submit" class="btn btn-primary contact-submit-button" type="submit" disabled>
+              <button id="contact-submit" class="btn btn-primary contact-submit-button" type="submit">
                 Senden
               </button>
             </div>
@@ -593,9 +504,7 @@
 
             <article class="contact-method-card">
               <span>Instagram</span>
-              <a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">
-                @nordfit.business
-              </a>
+              <a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">@nordfit.business</a>
             </article>
 
             <article class="contact-method-card">
@@ -617,13 +526,8 @@
         </p>
 
         <div class="product-actions">
-          <a href="mitgliedschaften.html" class="product-link product-link-primary">
-            Tarife ansehen
-          </a>
-
-          <a href="standorte.html" class="product-link product-link-secondary">
-            Standorte ansehen
-          </a>
+          <a href="mitgliedschaften.html" class="product-link product-link-primary">Tarife ansehen</a>
+          <a href="standorte.html" class="product-link product-link-secondary">Standorte ansehen</a>
         </div>
       </div>
     </section>
@@ -651,88 +555,101 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const form = document.getElementById("nordfit-contact-form");
-      const submitButton = document.getElementById("contact-submit");
       const errorBox = document.getElementById("contact-error-box");
-
       const message = document.getElementById("contact-message");
       const messageCount = document.getElementById("message-count");
-      const memberId = document.getElementById("contact-memberid");
 
-      const requiredFields = [
-        document.getElementById("contact-firstname"),
-        document.getElementById("contact-lastname"),
-        document.getElementById("contact-email"),
-        document.getElementById("contact-topic"),
-        document.getElementById("contact-message")
-      ];
+      const fields = {
+        firstName: document.getElementById("contact-firstname"),
+        lastName: document.getElementById("contact-lastname"),
+        email: document.getElementById("contact-email"),
+        phone: document.getElementById("contact-phone"),
+        postal: document.getElementById("contact-postal"),
+        street: document.getElementById("contact-street"),
+        topic: document.getElementById("contact-topic"),
+        memberId: document.getElementById("contact-memberid"),
+        message: document.getElementById("contact-message")
+      };
+
+      const showErrors = (errors) => {
+        if (!errorBox) return;
+
+        if (!errors.length) {
+          errorBox.classList.remove("show");
+          errorBox.textContent = "";
+          return;
+        }
+
+        errorBox.innerHTML = `Bitte prüfe deine Angaben:<br>${errors.map((error) => `• ${error}`).join("<br>")}`;
+        errorBox.classList.add("show");
+        errorBox.scrollIntoView({ behavior: "smooth", block: "center" });
+      };
+
+      const isValidEmail = (value) => {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+      };
+
+      const validateForm = () => {
+        const errors = [];
+
+        const firstName = fields.firstName.value.trim();
+        const lastName = fields.lastName.value.trim();
+        const email = fields.email.value.trim();
+        const phone = fields.phone.value.trim();
+        const postal = fields.postal.value.trim();
+        const street = fields.street.value.trim();
+        const topic = fields.topic.value.trim();
+        const memberId = fields.memberId.value.trim();
+        const messageText = fields.message.value.trim();
+
+        if (firstName.length < 2) {
+          errors.push("Vorname fehlt oder ist zu kurz.");
+        }
+
+        if (lastName.length < 2) {
+          errors.push("Nachname fehlt oder ist zu kurz.");
+        }
+
+        if (!email || !isValidEmail(email)) {
+          errors.push("E-Mail fehlt oder ist nicht gültig.");
+        }
+
+        if (!topic) {
+          errors.push("Bitte wähle ein Thema aus.");
+        }
+
+        if (!messageText) {
+          errors.push("Nachricht fehlt.");
+        }
+
+        if (phone && !/^\+?[0-9\s\/-]{8,24}$/.test(phone)) {
+          errors.push("Telefonnummer sieht noch nicht gültig aus.");
+        }
+
+        if (postal && !/^[0-9]{5}$/.test(postal)) {
+          errors.push("Postleitzahl muss aus genau 5 Zahlen bestehen.");
+        }
+
+        if (street && !/^[A-Za-zÄÖÜäöüß .'\-]{2,90}$/.test(street)) {
+          errors.push("Straße enthält Zeichen, die nicht passen.");
+        }
+
+        if (memberId && !/^[A-Za-z]{2}-[0-9]{5}$/.test(memberId)) {
+          errors.push("Member-ID muss so aussehen: NF-12345.");
+        }
+
+        return errors;
+      };
 
       const autoResizeTextarea = () => {
         if (!message) return;
-
         message.style.height = "auto";
         message.style.height = `${message.scrollHeight}px`;
       };
 
       const updateCounter = () => {
         if (!message || !messageCount) return;
-
         messageCount.textContent = String(message.value.length);
-      };
-
-      const validateMemberId = () => {
-        if (!memberId) return;
-
-        const value = memberId.value.trim();
-
-        if (!value) {
-          memberId.setCustomValidity("");
-          return;
-        }
-
-        const isValid = /^[A-Za-z]{2}-[0-9]{5}$/.test(value);
-
-        memberId.setCustomValidity(
-          isValid ? "" : "Bitte nutze das Format: NF-12345."
-        );
-      };
-
-      const getMissingMessages = () => {
-        const messages = [];
-
-        requiredFields.forEach((field) => {
-          if (!field) return;
-
-          if (!field.checkValidity()) {
-            const label = document.querySelector(`label[for="${field.id}"]`);
-            const cleanLabel = label ? label.textContent.replace("*", "").trim() : "Ein Pflichtfeld";
-            messages.push(`${cleanLabel} fehlt oder ist nicht korrekt ausgefüllt.`);
-          }
-        });
-
-        if (memberId && !memberId.checkValidity()) {
-          messages.push("Member-ID hat nicht das richtige Format. Beispiel: NF-12345.");
-        }
-
-        return messages;
-      };
-
-      const updateSubmitState = () => {
-        if (!form || !submitButton) return;
-
-        validateMemberId();
-
-        const requiredFieldsValid = requiredFields.every((field) => field && field.checkValidity());
-        const optionalFieldsValid = Array.from(form.elements).every((field) => {
-          if (!field.willValidate) return true;
-          return field.checkValidity();
-        });
-
-        submitButton.disabled = !(requiredFieldsValid && optionalFieldsValid);
-
-        if (errorBox && requiredFieldsValid && optionalFieldsValid) {
-          errorBox.classList.remove("show");
-          errorBox.textContent = "";
-        }
       };
 
       if (message) {
@@ -742,80 +659,56 @@
         message.addEventListener("input", () => {
           autoResizeTextarea();
           updateCounter();
-          updateSubmitState();
         });
       }
 
-      if (memberId) {
-        memberId.addEventListener("input", () => {
-          validateMemberId();
-          updateSubmitState();
-        });
-      }
+      if (!form) return;
 
-      if (form) {
-        Array.from(form.elements).forEach((field) => {
-          field.addEventListener("input", updateSubmitState);
-          field.addEventListener("change", updateSubmitState);
-          field.addEventListener("blur", updateSubmitState);
-        });
+      form.addEventListener("submit", (event) => {
+        event.preventDefault();
 
-        form.addEventListener("submit", (event) => {
-          event.preventDefault();
+        const errors = validateForm();
 
-          validateMemberId();
-          updateSubmitState();
+        if (errors.length) {
+          showErrors(errors);
+          return;
+        }
 
-          if (!form.checkValidity()) {
-            const messages = getMissingMessages();
+        showErrors([]);
 
-            if (errorBox) {
-              errorBox.innerHTML = messages.length
-                ? `Bitte prüfe deine Angaben:<br>${messages.map((message) => `• ${message}`).join("<br>")}`
-                : "Bitte prüfe deine Angaben.";
-              errorBox.classList.add("show");
-            }
+        const formData = new FormData(form);
 
-            form.reportValidity();
-            return;
-          }
+        const firstName = formData.get("contact-firstname") || "";
+        const lastName = formData.get("contact-lastname") || "";
+        const email = formData.get("contact-email") || "";
+        const phone = formData.get("contact-phone") || "Nicht angegeben";
+        const postal = formData.get("contact-postal") || "Nicht angegeben";
+        const street = formData.get("contact-street") || "Nicht angegeben";
+        const topic = formData.get("contact-topic") || "";
+        const member = formData.get("contact-memberid") || "Nicht angegeben";
+        const text = formData.get("contact-message") || "";
 
-          const formData = new FormData(form);
+        const subject = encodeURIComponent(`NordFit Kontakt – ${topic}`);
 
-          const firstName = formData.get("contact-firstname") || "";
-          const lastName = formData.get("contact-lastname") || "";
-          const email = formData.get("contact-email") || "";
-          const phone = formData.get("contact-phone") || "Nicht angegeben";
-          const postal = formData.get("contact-postal") || "Nicht angegeben";
-          const street = formData.get("contact-street") || "Nicht angegeben";
-          const topic = formData.get("contact-topic") || "";
-          const member = formData.get("contact-memberid") || "Nicht angegeben";
-          const text = formData.get("contact-message") || "";
+        const body = [
+          "Neue Kontaktanfrage über die NordFit Website",
+          "",
+          `Vorname: ${firstName}`,
+          `Nachname: ${lastName}`,
+          `E-Mail: ${email}`,
+          `Telefonnummer: ${phone}`,
+          `Postleitzahl: ${postal}`,
+          `Straße: ${street}`,
+          `Thema: ${topic}`,
+          `Member-ID: ${member}`,
+          "",
+          "Nachricht:",
+          text
+        ].join("\n");
 
-          const subject = encodeURIComponent(`NordFit Kontakt – ${topic}`);
-
-          const body = [
-            "Neue Kontaktanfrage über die NordFit Website",
-            "",
-            `Vorname: ${firstName}`,
-            `Nachname: ${lastName}`,
-            `E-Mail: ${email}`,
-            `Telefonnummer: ${phone}`,
-            `Postleitzahl: ${postal}`,
-            `Straße: ${street}`,
-            `Thema: ${topic}`,
-            `Member-ID: ${member}`,
-            "",
-            "Nachricht:",
-            text
-          ].join("\n");
-
-          window.location.href =
-            `mailto:nordgroup.business@gmail.com?subject=${subject}&body=${encodeURIComponent(body)}`;
-        });
-
-        updateSubmitState();
-      }
+        window.location.href =
+          `mailto:nordgroup.business@gmail.com?subject=${subject}&body=${encodeURIComponent(body)}`;
+      });
     });
   </script>
 </body>
