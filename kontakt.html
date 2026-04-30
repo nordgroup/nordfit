@@ -390,27 +390,71 @@
             <div class="contact-form-grid-premium">
               <div class="contact-form-field">
                 <label for="contact-firstname">Vorname <span>*</span></label>
-                <input id="contact-firstname" name="contact-firstname" type="text" placeholder="Dein Vorname" autocomplete="given-name" minlength="2" maxlength="60" required />
+                <input
+                  id="contact-firstname"
+                  name="contact-firstname"
+                  type="text"
+                  placeholder="Dein Vorname"
+                  autocomplete="given-name"
+                  minlength="2"
+                  maxlength="60"
+                  required
+                />
               </div>
 
               <div class="contact-form-field">
                 <label for="contact-lastname">Nachname <span>*</span></label>
-                <input id="contact-lastname" name="contact-lastname" type="text" placeholder="Dein Nachname" autocomplete="family-name" minlength="2" maxlength="80" required />
+                <input
+                  id="contact-lastname"
+                  name="contact-lastname"
+                  type="text"
+                  placeholder="Dein Nachname"
+                  autocomplete="family-name"
+                  minlength="2"
+                  maxlength="80"
+                  required
+                />
               </div>
 
               <div class="contact-form-field">
                 <label for="contact-email">E-Mail <span>*</span></label>
-                <input id="contact-email" name="contact-email" type="email" placeholder="dein.name@email.de" autocomplete="email" maxlength="120" required />
+                <input
+                  id="contact-email"
+                  name="contact-email"
+                  type="email"
+                  placeholder="dein.name@email.de"
+                  autocomplete="email"
+                  maxlength="120"
+                  required
+                />
               </div>
 
               <div class="contact-form-field">
                 <label for="contact-phone">Telefonnummer</label>
-                <input id="contact-phone" name="contact-phone" type="tel" placeholder="+49 170 1234567" autocomplete="tel" inputmode="tel" maxlength="26" />
+                <input
+                  id="contact-phone"
+                  name="contact-phone"
+                  type="tel"
+                  placeholder="+49 170 1234567"
+                  autocomplete="tel"
+                  inputmode="tel"
+                  maxlength="26"
+                />
               </div>
 
               <div class="contact-form-field">
                 <label for="contact-postal">Postleitzahl</label>
-                <input id="contact-postal" name="contact-postal" type="text" placeholder="12345" autocomplete="postal-code" inputmode="numeric" maxlength="5" list="postal-suggestions" />
+                <input
+                  id="contact-postal"
+                  name="contact-postal"
+                  type="text"
+                  placeholder="12345"
+                  autocomplete="postal-code"
+                  inputmode="numeric"
+                  maxlength="5"
+                  list="postal-suggestions"
+                />
+
                 <datalist id="postal-suggestions">
                   <option value="23936" label="Grevesmühlen"></option>
                   <option value="23552" label="Lübeck Innenstadt"></option>
@@ -423,7 +467,15 @@
 
               <div class="contact-form-field">
                 <label for="contact-street">Straße</label>
-                <input id="contact-street" name="contact-street" type="text" placeholder="Musterstraße" autocomplete="address-line1" minlength="2" maxlength="90" />
+                <input
+                  id="contact-street"
+                  name="contact-street"
+                  type="text"
+                  placeholder="Musterstraße"
+                  autocomplete="address-line1"
+                  minlength="2"
+                  maxlength="90"
+                />
               </div>
 
               <div class="contact-form-field contact-field-wide">
@@ -450,13 +502,29 @@
 
               <div class="contact-form-field">
                 <label for="contact-memberid">Member-ID</label>
-                <input id="contact-memberid" name="contact-memberid" type="text" placeholder="NF-12345" autocomplete="off" maxlength="8" />
+                <input
+                  id="contact-memberid"
+                  name="contact-memberid"
+                  type="text"
+                  placeholder="NF-12345"
+                  autocomplete="off"
+                  maxlength="8"
+                />
               </div>
 
               <div class="contact-form-field contact-field-full">
                 <label for="contact-message">Nachricht <span>*</span></label>
-                <textarea id="contact-message" name="contact-message" placeholder="Schreib hier deine Nachricht an NordFit..." maxlength="4999" required></textarea>
-                <small><span id="message-count">0</span>/4999 Zeichen</small>
+                <textarea
+                  id="contact-message"
+                  name="contact-message"
+                  placeholder="Schreib hier deine Nachricht an NordFit..."
+                  maxlength="4999"
+                  required
+                ></textarea>
+
+                <small>
+                  <span id="message-count">0</span>/4999 Zeichen
+                </small>
               </div>
             </div>
 
@@ -504,7 +572,9 @@
 
             <article class="contact-method-card">
               <span>Instagram</span>
-              <a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">@nordfit.business</a>
+              <a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">
+                @nordfit.business
+              </a>
             </article>
 
             <article class="contact-method-card">
@@ -526,8 +596,13 @@
         </p>
 
         <div class="product-actions">
-          <a href="mitgliedschaften.html" class="product-link product-link-primary">Tarife ansehen</a>
-          <a href="standorte.html" class="product-link product-link-secondary">Standorte ansehen</a>
+          <a href="mitgliedschaften.html" class="product-link product-link-primary">
+            Tarife ansehen
+          </a>
+
+          <a href="standorte.html" class="product-link product-link-secondary">
+            Standorte ansehen
+          </a>
         </div>
       </div>
     </section>
@@ -643,12 +718,14 @@
 
       const autoResizeTextarea = () => {
         if (!message) return;
+
         message.style.height = "auto";
         message.style.height = `${message.scrollHeight}px`;
       };
 
       const updateCounter = () => {
         if (!message || !messageCount) return;
+
         messageCount.textContent = String(message.value.length);
       };
 
@@ -678,32 +755,59 @@
 
         const formData = new FormData(form);
 
-        const firstName = formData.get("contact-firstname") || "";
-        const lastName = formData.get("contact-lastname") || "";
-        const email = formData.get("contact-email") || "";
-        const phone = formData.get("contact-phone") || "Nicht angegeben";
-        const postal = formData.get("contact-postal") || "Nicht angegeben";
-        const street = formData.get("contact-street") || "Nicht angegeben";
-        const topic = formData.get("contact-topic") || "";
-        const member = formData.get("contact-memberid") || "Nicht angegeben";
-        const text = formData.get("contact-message") || "";
+        const firstName = String(formData.get("contact-firstname") || "").trim();
+        const lastName = String(formData.get("contact-lastname") || "").trim();
+        const email = String(formData.get("contact-email") || "").trim();
+        const phone = String(formData.get("contact-phone") || "").trim() || "Nicht angegeben";
+        const postal = String(formData.get("contact-postal") || "").trim() || "Nicht angegeben";
+        const street = String(formData.get("contact-street") || "").trim() || "Nicht angegeben";
+        const topic = String(formData.get("contact-topic") || "").trim();
+        const member = String(formData.get("contact-memberid") || "").trim() || "Nicht angegeben";
+        const text = String(formData.get("contact-message") || "").trim();
 
-        const subject = encodeURIComponent(`NordFit Kontakt – ${topic}`);
+        const now = new Date();
+
+        const sentAt = now.toLocaleString("de-DE", {
+          dateStyle: "medium",
+          timeStyle: "short"
+        });
+
+        const subject = encodeURIComponent(
+          `NordFit Kontaktformular – ${topic} – ${firstName} ${lastName}`
+        );
 
         const body = [
-          "Neue Kontaktanfrage über die NordFit Website",
+          "NORDFIT KONTAKTANFRAGE",
+          "==================================================",
           "",
-          `Vorname: ${firstName}`,
-          `Nachname: ${lastName}`,
-          `E-Mail: ${email}`,
+          "ÜBERSICHT",
+          "--------------------------------------------------",
+          `Eingang über: NordFit Website`,
+          `Zeitpunkt: ${sentAt}`,
+          `Thema: ${topic}`,
+          `Status: Neu`,
+          "",
+          "KUNDENDATEN",
+          "--------------------------------------------------",
+          `Name: ${firstName} ${lastName}`,
+          `E-Mail für Rückantwort: ${email}`,
           `Telefonnummer: ${phone}`,
           `Postleitzahl: ${postal}`,
           `Straße: ${street}`,
-          `Thema: ${topic}`,
           `Member-ID: ${member}`,
           "",
-          "Nachricht:",
-          text
+          "ANLIEGEN",
+          "--------------------------------------------------",
+          `Kategorie: ${topic}`,
+          "",
+          "NACHRICHT",
+          "--------------------------------------------------",
+          text,
+          "",
+          "==================================================",
+          "INTERNER HINWEIS",
+          "Bitte bei der Antwort bevorzugt die oben angegebene E-Mail-Adresse nutzen.",
+          "Diese Anfrage wurde über das NordFit Kontaktformular vorbereitet."
         ].join("\n");
 
         window.location.href =
