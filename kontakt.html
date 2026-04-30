@@ -7,7 +7,7 @@
   <title>NordFit – Kontakt</title>
   <meta
     name="description"
-    content="Kontakt zu NordFit: Schreib uns direkt über das Kontaktformular oder nutze E-Mail und Instagram."
+    content="Kontakt zu NordFit: Schreib uns direkt über das Kontaktformular oder nutze E-Mail, Instagram und die Telefonzeiten."
   />
 
   <link rel="stylesheet" href="css/style.css" />
@@ -265,6 +265,51 @@
       letter-spacing: -0.02em;
     }
 
+    .contact-phone-status {
+      color: var(--nf-green-dark);
+      font-size: clamp(1.08rem, 1.6vw, 1.28rem);
+      font-weight: 790;
+      letter-spacing: -0.025em;
+    }
+
+    .contact-phone-hours {
+      display: grid;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+      padding-top: 0.9rem;
+      border-top: 1px solid rgba(0, 0, 0, 0.065);
+    }
+
+    .contact-phone-hours-title {
+      color: var(--text);
+      font-size: 0.92rem;
+      font-weight: 780;
+      letter-spacing: -0.015em;
+    }
+
+    .contact-phone-hours-grid {
+      display: grid;
+      gap: 0.38rem;
+    }
+
+    .contact-phone-hours-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.35;
+      letter-spacing: -0.015em;
+    }
+
+    .contact-phone-hours-row strong {
+      color: var(--text-soft);
+      font-size: 0.96rem;
+      font-weight: 710;
+      letter-spacing: -0.015em;
+    }
+
     @media (max-width: 980px) {
       .contact-form-head {
         align-items: flex-start;
@@ -318,6 +363,12 @@
 
       .contact-other-section {
         padding-bottom: 4.8rem;
+      }
+
+      .contact-phone-hours-row {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 0.08rem;
       }
     }
   </style>
@@ -559,8 +610,8 @@
             <h2>Auch direkt erreichbar.</h2>
 
             <p>
-              Du möchtest lieber ohne Formular schreiben? Dann nutze E-Mail oder Instagram.
-              Die Telefonnummer wird ergänzt, sobald NordFit sie offiziell bereitstellt.
+              Du möchtest lieber ohne Formular schreiben? Dann nutze E-Mail, Instagram
+              oder später die telefonische Kontaktmöglichkeit während der angegebenen Zeiten.
             </p>
           </article>
 
@@ -579,7 +630,49 @@
 
             <article class="contact-method-card">
               <span>Telefon</span>
-              <p>Bald verfügbar</p>
+
+              <p class="contact-phone-status">Bald verfügbar</p>
+
+              <div class="contact-phone-hours">
+                <p class="contact-phone-hours-title">Telefonzeiten</p>
+
+                <div class="contact-phone-hours-grid">
+                  <div class="contact-phone-hours-row">
+                    <strong>Montag</strong>
+                    <p>09:00–12:00 Uhr</p>
+                  </div>
+
+                  <div class="contact-phone-hours-row">
+                    <strong>Dienstag</strong>
+                    <p>09:00–12:00 Uhr</p>
+                  </div>
+
+                  <div class="contact-phone-hours-row">
+                    <strong>Mittwoch</strong>
+                    <p>13:00–14:00 Uhr</p>
+                  </div>
+
+                  <div class="contact-phone-hours-row">
+                    <strong>Donnerstag</strong>
+                    <p>13:00–14:00 Uhr</p>
+                  </div>
+
+                  <div class="contact-phone-hours-row">
+                    <strong>Freitag</strong>
+                    <p>13:00–14:00 Uhr</p>
+                  </div>
+
+                  <div class="contact-phone-hours-row">
+                    <strong>Samstag</strong>
+                    <p>10:00–11:30 Uhr</p>
+                  </div>
+
+                  <div class="contact-phone-hours-row">
+                    <strong>Sonntag</strong>
+                    <p>10:00–11:30 Uhr</p>
+                  </div>
+                </div>
+              </div>
             </article>
           </div>
         </div>
