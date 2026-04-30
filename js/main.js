@@ -8,41 +8,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalTriggers = document.querySelectorAll("[data-modal-target]");
   const modalCloseButtons = document.querySelectorAll(".modal-close");
 
-  const closeMobileMenu = () => {
+  const setMenuState = (isOpen) => {
     if (!burger || !nav) return;
 
-    burger.classList.remove("is-active");
-    nav.classList.remove("open");
-    body.classList.remove("nav-open");
-    burger.setAttribute("aria-expanded", "false");
-    burger.setAttribute("aria-label", "Menü öffnen");
+    burger.classList.toggle("is-active", isOpen);
+    nav.classList.toggle("open", isOpen);
+    body.classList.toggle("nav-open", isOpen);
+
+    burger.setAttribute("aria-expanded", String(isOpen));
+    burger.setAttribute("aria-label", isOpen ? "Menü schließen" : "Menü öffnen");
   };
 
-  const openMobileMenu = () => {
-    if (!burger || !nav) return;
-
-    burger.classList.add("is-active");
-    nav.classList.add("open");
-    body.classList.add("nav-open");
-    burger.setAttribute("aria-expanded", "true");
-    burger.setAttribute("aria-label", "Menü schließen");
-  };
+  const closeMobileMenu = () => setMenuState(false);
+  const openMobileMenu = () => setMenuState(true);
 
   if (burger && nav) {
     burger.addEventListener("click", () => {
       const isOpen = nav.classList.contains("open");
-
-      if (isOpen) {
-        closeMobileMenu();
-      } else {
-        openMobileMenu();
-      }
+      setMenuState(!isOpen);
     });
 
     navLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        closeMobileMenu();
-      });
+      link.addEventListener("click", closeMobileMenu);
     });
 
     document.addEventListener("keydown", (event) => {
@@ -80,9 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
     body.classList.add("modal-open");
 
     const closeButton = modal.querySelector(".modal-close");
-    if (closeButton) {
-      closeButton.focus();
-    }
+    if (closeButton) closeButton.focus();
   };
 
   const closeModal = (modal) => {
@@ -114,9 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   modals.forEach((modal) => {
     modal.addEventListener("click", (event) => {
-      if (event.target === modal) {
-        closeModal(modal);
-      }
+      if (event.target === modal) closeModal(modal);
     });
   });
 
@@ -150,9 +133,8 @@ document.addEventListener("DOMContentLoaded", () => {
         message
       ].join("\n");
 
-      const mailtoUrl = `mailto:nordgroup.business@gmail.com?subject=${subject}&body=${encodeURIComponent(bodyText)}`;
-
-      window.location.href = mailtoUrl;
+      window.location.href =
+        `mailto:nordgroup.business@gmail.com?subject=${subject}&body=${encodeURIComponent(bodyText)}`;
     });
   }
 
