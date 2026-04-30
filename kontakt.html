@@ -134,6 +134,21 @@
       line-height: 1.5;
     }
 
+    .contact-submit-button {
+      transition:
+        opacity var(--fast),
+        filter var(--fast),
+        background-color var(--fast),
+        box-shadow var(--fast);
+    }
+
+    .contact-submit-button:disabled {
+      opacity: 0.42;
+      filter: grayscale(0.45);
+      cursor: not-allowed;
+      box-shadow: none;
+    }
+
     .contact-form-bottom {
       display: flex;
       align-items: center;
@@ -151,6 +166,23 @@
 
     .contact-required-note strong {
       color: #b42318;
+    }
+
+    .contact-error-box {
+      display: none;
+      margin-top: 1rem;
+      padding: 1rem 1.1rem;
+      border-radius: 20px;
+      color: #7a271a;
+      background: rgba(180, 35, 24, 0.08);
+      border: 1px solid rgba(180, 35, 24, 0.14);
+      font-size: 0.95rem;
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+    }
+
+    .contact-error-box.show {
+      display: block;
     }
 
     .contact-privacy-note {
@@ -413,36 +445,33 @@
               </div>
 
               <div class="contact-form-field">
-                <label for="contact-phone">Telefonnummer <span>*</span></label>
+                <label for="contact-phone">Telefonnummer</label>
                 <input
                   id="contact-phone"
                   name="contact-phone"
                   type="tel"
-                  placeholder="+49 176 59284788"
+                  placeholder="+49 170 1234567"
                   autocomplete="tel"
                   inputmode="tel"
-                  pattern="^\+?[0-9\s\/-]{8,22}$"
-                  maxlength="24"
-                  title="Bitte gib eine gültige Telefonnummer ein, zum Beispiel +49 176 59284788."
-                  required
+                  pattern="^\+?[0-9\s\/-]{8,24}$"
+                  maxlength="26"
+                  title="Bitte gib eine gültige Telefonnummer ein."
                 />
-                <small>Mit Landesvorwahl ist am saubersten, z. B. +49 176 59284788.</small>
               </div>
 
               <div class="contact-form-field">
-                <label for="contact-postal">Postleitzahl <span>*</span></label>
+                <label for="contact-postal">Postleitzahl</label>
                 <input
                   id="contact-postal"
                   name="contact-postal"
                   type="text"
-                  placeholder="23936"
+                  placeholder="12345"
                   autocomplete="postal-code"
                   inputmode="numeric"
                   pattern="^[0-9]{5}$"
                   maxlength="5"
                   list="postal-suggestions"
                   title="Bitte gib eine deutsche Postleitzahl mit 5 Zahlen ein."
-                  required
                 />
                 <datalist id="postal-suggestions">
                   <option value="23936" label="Grevesmühlen"></option>
@@ -456,20 +485,18 @@
               </div>
 
               <div class="contact-form-field">
-                <label for="contact-street">Straße ohne Hausnummer <span>*</span></label>
+                <label for="contact-street">Straße</label>
                 <input
                   id="contact-street"
                   name="contact-street"
                   type="text"
                   placeholder="Musterstraße"
-                  autocomplete="street-address"
+                  autocomplete="address-line1"
                   minlength="2"
                   maxlength="90"
                   pattern="^[A-Za-zÄÖÜäöüß .'\-]{2,90}$"
-                  title="Bitte gib nur den Straßennamen ohne Hausnummer ein."
-                  required
+                  title="Bitte gib einen gültigen Straßennamen ein."
                 />
-                <small>Bitte ohne Hausnummer eintragen.</small>
               </div>
 
               <div class="contact-form-field contact-field-wide">
@@ -506,7 +533,6 @@
                   maxlength="8"
                   title="Format: zwei Buchstaben, Bindestrich, fünf Zahlen. Beispiel: NF-12345."
                 />
-                <small>Optional. Format: NF-12345</small>
               </div>
 
               <div class="contact-form-field contact-field-full">
@@ -529,10 +555,12 @@
                 <strong>*</strong> Pflichtfelder müssen ausgefüllt werden.
               </p>
 
-              <button class="btn btn-primary" type="submit">
-                Nachricht vorbereiten
+              <button id="contact-submit" class="btn btn-primary contact-submit-button" type="submit" disabled>
+                Senden
               </button>
             </div>
+
+            <div id="contact-error-box" class="contact-error-box" aria-live="polite"></div>
 
             <p class="contact-privacy-note">
               Deine Angaben werden zur Bearbeitung deiner Anfrage genutzt. Bitte sende keine besonders sensiblen Daten
@@ -624,19 +652,88 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const form = document.getElementById("nordfit-contact-form");
+      const submitButton = document.getElementById("contact-submit");
+      const errorBox = document.getElementById("contact-error-box");
+
       const message = document.getElementById("contact-message");
       const messageCount = document.getElementById("message-count");
       const memberId = document.getElementById("contact-memberid");
 
+      const requiredFields = [
+        document.getElementById("contact-firstname"),
+        document.getElementById("contact-lastname"),
+        document.getElementById("contact-email"),
+        document.getElementById("contact-topic"),
+        document.getElementById("contact-message")
+      ];
+
       const autoResizeTextarea = () => {
         if (!message) return;
+
         message.style.height = "auto";
         message.style.height = `${message.scrollHeight}px`;
       };
 
       const updateCounter = () => {
         if (!message || !messageCount) return;
+
         messageCount.textContent = String(message.value.length);
+      };
+
+      const validateMemberId = () => {
+        if (!memberId) return;
+
+        const value = memberId.value.trim();
+
+        if (!value) {
+          memberId.setCustomValidity("");
+          return;
+        }
+
+        const isValid = /^[A-Za-z]{2}-[0-9]{5}$/.test(value);
+
+        memberId.setCustomValidity(
+          isValid ? "" : "Bitte nutze das Format: zwei Buchstaben, Bindestrich, fünf Zahlen. Beispiel: NF-12345."
+        );
+      };
+
+      const getMissingMessages = () => {
+        const messages = [];
+
+        requiredFields.forEach((field) => {
+          if (!field) return;
+
+          if (!field.checkValidity()) {
+            const label = document.querySelector(`label[for="${field.id}"]`);
+            const cleanLabel = label ? label.textContent.replace("*", "").trim() : "Ein Pflichtfeld";
+            messages.push(`${cleanLabel} fehlt oder ist nicht korrekt ausgefüllt.`);
+          }
+        });
+
+        if (memberId && !memberId.checkValidity()) {
+          messages.push("Member-ID hat nicht das richtige Format.");
+        }
+
+        return messages;
+      };
+
+      const updateSubmitState = () => {
+        if (!form || !submitButton) return;
+
+        validateMemberId();
+
+        const requiredFieldsValid = requiredFields.every((field) => field && field.checkValidity());
+        const optionalFieldsValid = Array.from(form.elements).every((field) => {
+          if (!field.willValidate) return true;
+          return field.checkValidity();
+        });
+
+        submitButton.disabled = !(requiredFieldsValid && optionalFieldsValid);
+
+        if (errorBox && requiredFieldsValid && optionalFieldsValid) {
+          errorBox.classList.remove("show");
+          errorBox.textContent = "";
+        }
       };
 
       if (message) {
@@ -646,73 +743,80 @@
         message.addEventListener("input", () => {
           autoResizeTextarea();
           updateCounter();
+          updateSubmitState();
         });
       }
 
       if (memberId) {
         memberId.addEventListener("input", () => {
-          const value = memberId.value.trim();
-
-          if (!value) {
-            memberId.setCustomValidity("");
-            return;
-          }
-
-          const isValid = /^[A-Za-z]{2}-[0-9]{5}$/.test(value);
-
-          memberId.setCustomValidity(
-            isValid ? "" : "Bitte nutze das Format: zwei Buchstaben, Bindestrich, fünf Zahlen. Beispiel: NF-12345."
-          );
+          validateMemberId();
+          updateSubmitState();
         });
       }
 
-      if (!form) return;
+      if (form) {
+        Array.from(form.elements).forEach((field) => {
+          field.addEventListener("input", updateSubmitState);
+          field.addEventListener("change", updateSubmitState);
+          field.addEventListener("blur", updateSubmitState);
+        });
 
-      form.addEventListener("submit", (event) => {
-        event.preventDefault();
+        form.addEventListener("submit", (event) => {
+          event.preventDefault();
 
-        if (memberId) {
-          memberId.dispatchEvent(new Event("input"));
-        }
+          validateMemberId();
+          updateSubmitState();
 
-        if (!form.checkValidity()) {
-          form.reportValidity();
-          return;
-        }
+          if (!form.checkValidity()) {
+            const messages = getMissingMessages();
 
-        const formData = new FormData(form);
+            if (errorBox) {
+              errorBox.innerHTML = messages.length
+                ? `Bitte prüfe deine Angaben:<br>${messages.map((message) => `• ${message}`).join("<br>")}`
+                : "Bitte prüfe deine Angaben.";
+              errorBox.classList.add("show");
+            }
 
-        const firstName = formData.get("contact-firstname") || "";
-        const lastName = formData.get("contact-lastname") || "";
-        const email = formData.get("contact-email") || "";
-        const phone = formData.get("contact-phone") || "";
-        const postal = formData.get("contact-postal") || "";
-        const street = formData.get("contact-street") || "";
-        const topic = formData.get("contact-topic") || "";
-        const member = formData.get("contact-memberid") || "Nicht angegeben";
-        const text = formData.get("contact-message") || "";
+            form.reportValidity();
+            return;
+          }
 
-        const subject = encodeURIComponent(`NordFit Kontakt – ${topic}`);
+          const formData = new FormData(form);
 
-        const body = [
-          "Neue Kontaktanfrage über die NordFit Website",
-          "",
-          `Vorname: ${firstName}`,
-          `Nachname: ${lastName}`,
-          `E-Mail: ${email}`,
-          `Telefonnummer: ${phone}`,
-          `Postleitzahl: ${postal}`,
-          `Straße: ${street}`,
-          `Thema: ${topic}`,
-          `Member-ID: ${member}`,
-          "",
-          "Nachricht:",
-          text
-        ].join("\n");
+          const firstName = formData.get("contact-firstname") || "";
+          const lastName = formData.get("contact-lastname") || "";
+          const email = formData.get("contact-email") || "";
+          const phone = formData.get("contact-phone") || "Nicht angegeben";
+          const postal = formData.get("contact-postal") || "Nicht angegeben";
+          const street = formData.get("contact-street") || "Nicht angegeben";
+          const topic = formData.get("contact-topic") || "";
+          const member = formData.get("contact-memberid") || "Nicht angegeben";
+          const text = formData.get("contact-message") || "";
 
-        window.location.href =
-          `mailto:nordgroup.business@gmail.com?subject=${subject}&body=${encodeURIComponent(body)}`;
-      });
+          const subject = encodeURIComponent(`NordFit Kontakt – ${topic}`);
+
+          const body = [
+            "Neue Kontaktanfrage über die NordFit Website",
+            "",
+            `Vorname: ${firstName}`,
+            `Nachname: ${lastName}`,
+            `E-Mail: ${email}`,
+            `Telefonnummer: ${phone}`,
+            `Postleitzahl: ${postal}`,
+            `Straße: ${street}`,
+            `Thema: ${topic}`,
+            `Member-ID: ${member}`,
+            "",
+            "Nachricht:",
+            text
+          ].join("\n");
+
+          window.location.href =
+            `mailto:nordgroup.business@gmail.com?subject=${subject}&body=${encodeURIComponent(body)}`;
+        });
+
+        updateSubmitState();
+      }
     });
   </script>
 </body>
