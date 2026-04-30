@@ -7,7 +7,7 @@
   <title>NordFit – Standorte</title>
   <meta
     name="description"
-    content="NordFit Standorte. Klar erreichbar, modern gedacht und direkt über die Karte auffindbar."
+    content="NordFit Standorte: Studio Grevesmühlen und weitere geplante Studios im Norden. Adresse, Studioinfos und Karte auf einen Blick."
   />
 
   <link rel="stylesheet" href="css/style.css" />
@@ -50,144 +50,243 @@
   </header>
 
   <main>
-    <section class="section home-hero-section">
+    <section class="section locations-page-section">
       <div class="container">
-        <div class="home-hero">
-          <h1 class="hero-title small-hero">Ein Standort, der leicht zu finden ist.</h1>
+        <div class="section-intro center locations-page-intro">
+          <p class="eyebrow">Standorte</p>
 
-          <p class="hero-subtitle">
-            NordFit startet mit einem klar gedachten Standort in Grevesmühlen. Gut erreichbar, digital nutzbar und so aufgebaut, dass dein Besuch ohne Umwege beginnt.
+          <h1 class="section-title locations-main-title">
+            Dein Studio. Klar erreichbar.
+          </h1>
+
+          <p>
+            Wähle einen Standort aus und sieh dir Studioinfos, Status und Karte an.
+            Weitere NordFit Studios im Norden sind bereits in Planung.
           </p>
         </div>
-      </div>
-    </section>
 
-    <section class="section section-tight">
-      <div class="container">
-        <div class="glass location-card">
-          <div class="grid-2 location-content-grid">
-            <div>
-              <p class="eyebrow">NordFit Standort</p>
-              <h2 class="section-title large-title">Grevesmühlen</h2>
+        <div class="location-picker" aria-label="Standort auswählen">
+          <button
+            class="location-choice is-active"
+            type="button"
+            data-location-button
+            data-location="grevesmuehlen"
+            data-name="Studio Grevesmühlen"
+            data-status="In Planung"
+            data-location-line="Grevesmühlen, Mecklenburg-Vorpommern"
+            data-title="Ruhig gelegen. Klar aufgebaut. Digital zugänglich."
+            data-description="Das NordFit Studio Grevesmühlen ist als moderner 24/7-Standort geplant: klare Trainingsbereiche, digitaler Zugang über die App und ein ruhiges Studioerlebnis ohne unnötige Ablenkung."
+            data-access="24/7 per App geplant"
+            data-areas="Krafttraining, Cardio, Functional"
+            data-booking="über die NordFit App geplant"
+            data-image="images/studio-grevesmuehlen.jpg"
+            data-map="https://www.google.com/maps?q=Grevesm%C3%BChlen%2C%20Mecklenburg-Vorpommern&output=embed"
+            aria-pressed="true"
+          >
+            <span>Studio Grevesmühlen</span>
+            <small>Aktiver Standort</small>
+          </button>
 
-              <div class="copy-stack">
-                <p class="muted">
-                  Der erste NordFit Standort soll ruhig, übersichtlich und einfach zugänglich sein. Du kommst an, öffnest deinen Zugang über die App und startest direkt mit deinem Training.
-                </p>
+          <button
+            class="location-choice"
+            type="button"
+            data-location-button
+            data-location="luebeck"
+            data-name="Studio Lübeck"
+            data-status="In Planung"
+            data-location-line="Lübeck, Schleswig-Holstein"
+            data-title="Ein NordFit Standort für Lübeck ist geplant."
+            data-description="Für Lübeck ist ein weiterer NordFit Standort vorgesehen. Sobald ein konkreter Standort feststeht, erscheinen hier Adresse, Bild, Karte und Studioinformationen."
+            data-access="geplant"
+            data-areas="noch offen"
+            data-booking="noch nicht verfügbar"
+            data-image="images/studio-grevesmuehlen.jpg"
+            data-map="https://www.google.com/maps?q=L%C3%BCbeck%2C%20Schleswig-Holstein&output=embed"
+            aria-pressed="false"
+          >
+            <span>Studio Lübeck</span>
+            <small>In Planung</small>
+          </button>
 
-                <p class="muted">
-                  Die genaue Adresse wird ergänzt, sobald der Standort final feststeht. Bis dahin bleibt Grevesmühlen als geplanter Startbereich gesetzt.
-                </p>
+          <button
+            class="location-choice"
+            type="button"
+            data-location-button
+            data-location="wismar"
+            data-name="Studio Wismar"
+            data-status="In Planung"
+            data-location-line="Wismar, Mecklenburg-Vorpommern"
+            data-title="Ein NordFit Standort für Wismar ist geplant."
+            data-description="Für Wismar ist ein weiterer NordFit Standort vorgesehen. Sobald ein konkreter Standort feststeht, erscheinen hier Adresse, Bild, Karte und Studioinformationen."
+            data-access="geplant"
+            data-areas="noch offen"
+            data-booking="noch nicht verfügbar"
+            data-image="images/studio-grevesmuehlen.jpg"
+            data-map="https://www.google.com/maps?q=Wismar%2C%20Mecklenburg-Vorpommern&output=embed"
+            aria-pressed="false"
+          >
+            <span>Studio Wismar</span>
+            <small>In Planung</small>
+          </button>
+
+          <button
+            class="location-choice"
+            type="button"
+            data-location-button
+            data-location="schwerin"
+            data-name="Studio Schwerin"
+            data-status="In Planung"
+            data-location-line="Schwerin, Mecklenburg-Vorpommern"
+            data-title="Ein NordFit Standort für Schwerin ist geplant."
+            data-description="Für Schwerin ist ein weiterer NordFit Standort vorgesehen. Sobald ein konkreter Standort feststeht, erscheinen hier Adresse, Bild, Karte und Studioinformationen."
+            data-access="geplant"
+            data-areas="noch offen"
+            data-booking="noch nicht verfügbar"
+            data-image="images/studio-grevesmuehlen.jpg"
+            data-map="https://www.google.com/maps?q=Schwerin%2C%20Mecklenburg-Vorpommern&output=embed"
+            aria-pressed="false"
+          >
+            <span>Studio Schwerin</span>
+            <small>In Planung</small>
+          </button>
+
+          <button
+            class="location-choice"
+            type="button"
+            data-location-button
+            data-location="rostock"
+            data-name="Studio Rostock"
+            data-status="In Planung"
+            data-location-line="Rostock, Mecklenburg-Vorpommern"
+            data-title="Ein NordFit Standort für Rostock ist geplant."
+            data-description="Für Rostock ist ein weiterer NordFit Standort vorgesehen. Sobald ein konkreter Standort feststeht, erscheinen hier Adresse, Bild, Karte und Studioinformationen."
+            data-access="geplant"
+            data-areas="noch offen"
+            data-booking="noch nicht verfügbar"
+            data-image="images/studio-grevesmuehlen.jpg"
+            data-map="https://www.google.com/maps?q=Rostock%2C%20Mecklenburg-Vorpommern&output=embed"
+            aria-pressed="false"
+          >
+            <span>Studio Rostock</span>
+            <small>In Planung</small>
+          </button>
+        </div>
+
+        <section class="location-showcase" aria-live="polite">
+          <div class="location-image-panel">
+            <img
+              id="location-image"
+              src="images/studio-grevesmuehlen.jpg"
+              alt="NordFit Studio Grevesmühlen"
+            />
+
+            <span id="location-image-label" class="location-image-label">
+              Studio Grevesmühlen
+            </span>
+          </div>
+
+          <div class="location-info-panel glass">
+            <div class="location-info-head">
+              <p id="location-status" class="location-status-pill">
+                In Planung
+              </p>
+
+              <p id="location-line" class="muted">
+                Grevesmühlen, Mecklenburg-Vorpommern
+              </p>
+            </div>
+
+            <h2 id="location-name">Studio Grevesmühlen</h2>
+
+            <h3 id="location-title">
+              Ruhig gelegen. Klar aufgebaut. Digital zugänglich.
+            </h3>
+
+            <p id="location-description">
+              Das NordFit Studio Grevesmühlen ist als moderner 24/7-Standort geplant:
+              klare Trainingsbereiche, digitaler Zugang über die App und ein ruhiges
+              Studioerlebnis ohne unnötige Ablenkung.
+            </p>
+
+            <div class="location-facts">
+              <div>
+                <span>Status</span>
+                <strong id="fact-status">In Planung</strong>
               </div>
 
-              <div class="legal-info-list clean-list-offset">
-                <div class="legal-info-row">
-                  <span class="legal-label">Standort</span>
-                  <strong>Grevesmühlen</strong>
-                </div>
+              <div>
+                <span>Zugang</span>
+                <strong id="fact-access">24/7 per App geplant</strong>
+              </div>
 
-                <div class="legal-info-row">
-                  <span class="legal-label">Adresse</span>
-                  <strong>(Straße) (Hausnummer), (PLZ) Grevesmühlen</strong>
-                </div>
+              <div>
+                <span>Bereiche</span>
+                <strong id="fact-areas">Krafttraining, Cardio, Functional</strong>
+              </div>
 
-                <div class="legal-info-row">
-                  <span class="legal-label">Zugang</span>
-                  <strong>Digital über die NordFit App</strong>
-                </div>
-
-                <div class="legal-info-row">
-                  <span class="legal-label">Status</span>
-                  <strong>In Planung</strong>
-                </div>
+              <div>
+                <span>Buchung</span>
+                <strong id="fact-booking">über die NordFit App geplant</strong>
               </div>
             </div>
 
-            <div class="location-hero-image">
-              <div class="image-frame image-frame-large">
-                <span class="image-frame-label">Standortbild folgt</span>
-              </div>
+            <div class="product-actions location-actions">
+              <a href="mitgliedschaften.html" class="product-link product-link-primary">
+                Tarife ansehen
+              </a>
+
+              <a href="app.html" class="product-link product-link-secondary">
+                App ansehen
+              </a>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <section class="section section-tight">
-      <div class="container">
-        <div class="glass map-card">
-          <div class="grid-2 location-content-grid">
-            <div>
-              <p class="eyebrow">Route</p>
-              <h2 class="section-title">Standort ansehen.</h2>
-
-              <div class="copy-stack">
-                <p class="muted">
-                  Die Karte zeigt aktuell den Bereich Grevesmühlen. Sobald die finale Adresse feststeht, wird die Karte direkt auf den genauen Standort gesetzt.
-                </p>
-
-                <p class="muted">
-                  Für die spätere Anfahrt kannst du den Standort direkt in Apple Karten oder Google Maps öffnen.
-                </p>
+        <section class="location-map-section">
+          <div class="map-card glass">
+            <div class="map-card-head">
+              <div>
+                <p class="eyebrow">Karte</p>
+                <h2 id="map-title">Studio Grevesmühlen</h2>
               </div>
 
-              <div class="app-store-row">
-                <a
-                  href="https://maps.apple.com/?q=Grevesm%C3%BChlen"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="store-badge store-badge-light"
-                >
-                  <span class="store-badge-icon" aria-hidden="true">⌘</span>
-                  <span class="store-badge-text">
-                    <span class="store-badge-small">ÖFFNEN IN</span>
-                    <span class="store-badge-big">Apple Karten</span>
-                  </span>
-                </a>
-
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=Grevesm%C3%BChlen"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="store-badge store-badge-dark"
-                >
-                  <span class="store-badge-icon" aria-hidden="true">⌖</span>
-                  <span class="store-badge-text">
-                    <span class="store-badge-small">ÖFFNEN IN</span>
-                    <span class="store-badge-big">Google Maps</span>
-                  </span>
-                </a>
-              </div>
+              <p id="map-status" class="location-status-pill">
+                In Planung
+              </p>
             </div>
 
-            <div class="map-frame">
+            <div class="map-frame location-map-frame">
               <iframe
-                src="https://www.google.com/maps?q=Grevesm%C3%BChlen&output=embed"
-                width="100%"
-                height="420"
+                id="location-map"
+                title="Karte: Studio Grevesmühlen"
+                src="https://www.google.com/maps?q=Grevesm%C3%BChlen%2C%20Mecklenburg-Vorpommern&output=embed"
                 loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade"
-                title="NordFit Standort Grevesmühlen Karte"
+                allowfullscreen
               ></iframe>
             </div>
           </div>
-        </div>
+        </section>
       </div>
     </section>
 
-    <section class="section section-final-cta">
-      <div class="container">
-        <div class="final-cta">
-          <h2 class="section-title large-title">Ein Ort. Ein Zugang. Ein klarer Ablauf.</h2>
+    <section class="product-hero product-hero-final locations-final-section">
+      <div class="product-copy">
+        <h2>Weitere Studios. Schritt für Schritt.</h2>
 
-          <p class="muted">
-            NordFit soll nicht kompliziert wirken. Standort, Zugang und Mitgliedschaft bleiben bewusst einfach und digital verbunden.
-          </p>
+        <p>
+          NordFit startet bewusst klar und wächst geplant weiter. Erst sauber aufbauen,
+          dann ruhig erweitern.
+        </p>
 
-          <div class="hero-actions">
-            <a href="app.html" class="btn btn-primary">App ansehen</a>
-            <a href="kontakt.html" class="btn btn-secondary">Frage stellen</a>
-          </div>
+        <div class="product-actions">
+          <a href="mitgliedschaften.html" class="product-link product-link-primary">
+            Tarife ansehen
+          </a>
+
+          <a href="kontakt.html" class="product-link product-link-secondary">
+            Kontakt
+          </a>
         </div>
       </div>
     </section>
