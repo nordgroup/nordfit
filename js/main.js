@@ -191,6 +191,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  const locationPicker = document.querySelector(".location-picker");
   const locationButtons = document.querySelectorAll("[data-location-button]");
 
   const locationImage = document.getElementById("location-image");
@@ -212,6 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const updateLocation = (button) => {
     if (!button) return;
+    if (button.getAttribute("aria-disabled") === "true") return;
 
     locationButtons.forEach((item) => {
       const isActive = item === button;
@@ -245,9 +247,29 @@ document.addEventListener("DOMContentLoaded", () => {
       locationMap.src = data.map;
       locationMap.title = `Karte: ${data.name}`;
     }
+
+    button.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center"
+    });
   };
 
   locationButtons.forEach((button) => {
     button.addEventListener("click", () => updateLocation(button));
   });
+
+  if (locationPicker) {
+    const activeLocation = locationPicker.querySelector(".location-choice.is-active");
+
+    window.setTimeout(() => {
+      if (!activeLocation) return;
+
+      activeLocation.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center"
+      });
+    }, 120);
+  }
 });
