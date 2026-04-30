@@ -180,12 +180,12 @@ ul {
   padding: 0.5rem 0.72rem 0.5rem 0.9rem;
   border-radius: var(--radius-pill);
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.38));
-  border: 1px solid rgba(255, 255, 255, 0.72);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.46));
+  border: 1px solid rgba(255, 255, 255, 0.78);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.88),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.25),
-    0 18px 54px rgba(0, 0, 0, 0.105);
+    inset 0 1px 0 rgba(255, 255, 255, 0.92),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.28),
+    0 18px 48px rgba(0, 0, 0, 0.095);
   backdrop-filter: blur(42px) saturate(190%);
   -webkit-backdrop-filter: blur(42px) saturate(190%);
   transition:
@@ -201,20 +201,19 @@ ul {
   z-index: -1;
   border-radius: inherit;
   background:
-    radial-gradient(circle at 12% 0%, rgba(255, 255, 255, 0.86), transparent 32%),
-    radial-gradient(circle at 84% 100%, rgba(46, 145, 63, 0.12), transparent 36%),
-    linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.05));
+    radial-gradient(circle at 18% 0%, rgba(255, 255, 255, 0.82), transparent 30%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.28), rgba(255, 255, 255, 0.04));
   pointer-events: none;
 }
 
 .site-header-inner.scrolled {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.56));
-  border-color: rgba(255, 255, 255, 0.84);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.62));
+  border-color: rgba(255, 255, 255, 0.86);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.9),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.28),
-    0 22px 62px rgba(0, 0, 0, 0.13);
+    inset 0 1px 0 rgba(255, 255, 255, 0.94),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.32),
+    0 20px 56px rgba(0, 0, 0, 0.12);
 }
 
 .logo {
@@ -262,10 +261,10 @@ ul {
 
 .site-nav a:hover {
   color: var(--text);
-  background: rgba(255, 255, 255, 0.42);
+  background: rgba(255, 255, 255, 0.48);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.72),
-    0 10px 22px rgba(0, 0, 0, 0.055);
+    0 10px 22px rgba(0, 0, 0, 0.05);
   transform: translateY(-1px);
 }
 
@@ -508,7 +507,7 @@ ul {
   position: relative;
   z-index: 2;
   width: min(100% - 2rem, 1180px);
-  margin: 3.25rem auto 0;
+  margin: 4.15rem auto 0;
   border-radius: 46px;
   overflow: hidden;
   background: var(--bg-soft);
@@ -524,8 +523,8 @@ ul {
   inset: 0;
   pointer-events: none;
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.08), transparent 24%),
-    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.1), transparent 34rem);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.06), transparent 22%),
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.08), transparent 34rem);
 }
 
 .home-hero-image {
@@ -535,94 +534,42 @@ ul {
   object-position: center;
 }
 
-.home-phone-stage {
+/* App-Bild */
+
+.home-app-image-stage {
   position: relative;
   z-index: 2;
-  width: min(100%, 860px);
-  height: 520px;
-  margin: 3rem auto 0;
+  width: min(100%, 900px);
+  margin: 3.25rem auto 0;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
-/* Phone mockup */
-
-.phone-mockup {
-  position: relative;
-  width: min(58vw, 310px);
-  height: min(104vw, 610px);
-  max-height: 520px;
-  transform: rotate(-4deg);
-  border-radius: 42px;
-  background: #111;
-  padding: 11px;
-  box-shadow:
-    0 44px 90px rgba(0, 0, 0, 0.18),
-    0 0 0 1px rgba(255, 255, 255, 0.28);
-}
-
-.phone-notch {
+.home-app-image-stage::before {
+  content: "";
   position: absolute;
-  top: 20px;
   left: 50%;
-  z-index: 3;
-  width: 82px;
-  height: 23px;
-  transform: translateX(-50%);
+  top: 53%;
+  width: min(78vw, 720px);
+  height: min(44vw, 420px);
+  transform: translate(-50%, -50%);
   border-radius: 999px;
-  background: #111;
-}
-
-.phone-screen {
-  position: relative;
-  height: 100%;
-  overflow: hidden;
-  border-radius: 32px;
   background:
-    radial-gradient(circle at 50% 18%, rgba(46, 145, 63, 0.2), transparent 12rem),
-    linear-gradient(180deg, #ffffff 0%, #f5f5f7 100%);
-  padding: 4.6rem 1.2rem 1.2rem;
+    radial-gradient(circle, rgba(46, 145, 63, 0.13), transparent 66%);
+  filter: blur(8px);
+  pointer-events: none;
 }
 
-.phone-logo-dot {
-  width: 54px;
-  height: 54px;
-  margin-inline: auto;
-  border-radius: 18px;
-  background: linear-gradient(180deg, var(--nf-green-light), var(--nf-green));
-  box-shadow: 0 16px 34px rgba(46, 145, 63, 0.22);
-}
-
-.phone-line {
-  width: 58%;
-  height: 11px;
-  margin: 0.8rem auto 0;
-  border-radius: 999px;
-  background: rgba(29, 29, 31, 0.12);
-}
-
-.phone-line-wide {
-  width: 78%;
-  margin-top: 1.3rem;
-}
-
-.phone-qr {
-  width: 128px;
-  height: 128px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-  margin: 2.2rem auto 0;
-  padding: 14px;
-  border-radius: 26px;
-  background: #ffffff;
-  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.08);
-}
-
-.phone-qr span {
-  border-radius: 10px;
-  background: var(--nf-green);
+.home-app-image {
+  position: relative;
+  z-index: 1;
+  width: min(78vw, 520px);
+  height: auto;
+  object-fit: contain;
+  filter:
+    drop-shadow(0 34px 64px rgba(0, 0, 0, 0.16))
+    drop-shadow(0 8px 18px rgba(0, 0, 0, 0.08));
 }
 
 /* Typo für Unterseiten */
@@ -1158,12 +1105,6 @@ iframe {
   align-items: center;
   justify-content: center;
   padding: 2rem;
-}
-
-.app-screen-stage .phone-mockup {
-  position: relative;
-  left: auto;
-  top: auto;
 }
 
 /* Contact */
@@ -1810,7 +1751,7 @@ select:focus {
 
   .home-hero-image-wrap {
     width: min(100%, 1180px);
-    margin-top: 2.1rem;
+    margin-top: 2.7rem;
     border-radius: 32px;
   }
 
@@ -1818,14 +1759,12 @@ select:focus {
     height: 330px;
   }
 
-  .home-phone-stage {
-    height: 430px;
-    margin-top: 2.3rem;
+  .home-app-image-stage {
+    margin-top: 2.6rem;
   }
 
-  .phone-mockup {
-    width: 225px;
-    height: 430px;
+  .home-app-image {
+    width: min(86vw, 420px);
   }
 
   .section {
@@ -2003,14 +1942,8 @@ select:focus {
     height: 275px;
   }
 
-  .phone-mockup {
-    width: 200px;
-    height: 390px;
-  }
-
-  .phone-qr {
-    width: 108px;
-    height: 108px;
+  .home-app-image {
+    width: min(92vw, 360px);
   }
 
   .section-title,
