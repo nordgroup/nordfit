@@ -14,40 +14,36 @@
 
   <style>
     .pricing-page-section {
-      padding-top: 6.8rem;
-      padding-bottom: 5.8rem;
+      padding-top: 5.4rem;
+      padding-bottom: 5.6rem;
       background:
-        radial-gradient(circle at 50% 18%, rgba(46, 145, 63, 0.085), transparent 34rem),
+        radial-gradient(circle at 50% 13%, rgba(46, 145, 63, 0.085), transparent 34rem),
         linear-gradient(180deg, #fbfbfd 0%, #ffffff 48%, #f5f5f7 100%);
     }
 
     .pricing-page-intro {
-      max-width: 820px;
-      margin-bottom: clamp(3.6rem, 6vw, 5.4rem);
+      max-width: 980px;
+      margin-bottom: clamp(3rem, 5vw, 4.5rem);
     }
 
     .pricing-page-intro .eyebrow {
-      margin-bottom: 0.72rem;
+      margin-bottom: 0.58rem;
     }
 
     .pricing-main-title {
-      max-width: 780px;
+      max-width: 980px;
       margin-inline: auto;
       color: var(--text);
-      font-size: clamp(3.2rem, 6vw, 6.1rem);
+      font-size: clamp(3rem, 5.4vw, 5.6rem);
       line-height: 0.94;
       letter-spacing: -0.052em;
       font-weight: 760;
       text-wrap: balance;
+      white-space: nowrap;
     }
 
-    .pricing-page-intro p:not(.eyebrow) {
-      max-width: 690px;
-      margin-top: 1.05rem;
-      color: var(--text-soft);
-      font-size: clamp(1.04rem, 1.28vw, 1.18rem);
-      line-height: 1.5;
-      letter-spacing: -0.012em;
+    .tariff-scroll-wrap {
+      width: 100%;
     }
 
     .tariff-grid {
@@ -58,7 +54,7 @@
     }
 
     .tariff-card {
-      min-height: 455px;
+      min-height: 505px;
       display: flex;
       flex-direction: column;
       padding: clamp(1.35rem, 2vw, 1.7rem);
@@ -193,6 +189,37 @@
       padding-top: 2rem;
     }
 
+    .tariff-checks {
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .tariff-checks li {
+      position: relative;
+      padding-left: 1.55rem;
+      color: var(--text-soft);
+      font-size: 0.95rem;
+      line-height: 1.35;
+      letter-spacing: -0.008em;
+    }
+
+    .tariff-checks li::before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      top: 0.04rem;
+      width: 1rem;
+      height: 1rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      color: #ffffff;
+      background: var(--nf-green);
+      font-size: 0.66rem;
+      font-weight: 900;
+    }
+
     .tariff-runtime {
       padding: 0.88rem 1rem;
       border-radius: 22px;
@@ -310,16 +337,48 @@
 
     @media (max-width: 768px) {
       .pricing-page-section {
-        padding-top: 5rem;
-        padding-bottom: 4.5rem;
+        padding-top: 4.65rem;
+        padding-bottom: 4.4rem;
+      }
+
+      .pricing-page-intro {
+        margin-bottom: 2.4rem;
       }
 
       .pricing-main-title {
-        font-size: clamp(2.7rem, 12vw, 4.1rem);
+        font-size: clamp(2.55rem, 12vw, 4rem);
+        white-space: normal;
+      }
+
+      .tariff-scroll-wrap {
+        width: auto;
+        margin-inline: calc(50% - 50vw);
+        overflow-x: auto;
+        overflow-y: visible;
+        scroll-snap-type: x mandatory;
+        scroll-padding-inline: max(1rem, calc((100vw - 82vw) / 2));
+        padding: 0 max(1rem, calc((100vw - 82vw) / 2)) 1.25rem;
+        scrollbar-width: none;
+        -webkit-overflow-scrolling: touch;
+      }
+
+      .tariff-scroll-wrap::-webkit-scrollbar {
+        display: none;
+      }
+
+      .tariff-grid {
+        display: flex;
+        max-width: none;
+        margin-inline: 0;
+        gap: 0.9rem;
+        align-items: stretch;
       }
 
       .tariff-card {
+        flex: 0 0 82vw;
+        min-height: 500px;
         border-radius: 30px;
+        scroll-snap-align: center;
       }
 
       .tariff-name {
@@ -336,6 +395,17 @@
 
       .daypass-price-box-clean {
         max-width: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .tariff-card {
+        flex-basis: 84vw;
+      }
+
+      .tariff-scroll-wrap {
+        scroll-padding-inline: max(0.9rem, calc((100vw - 84vw) / 2));
+        padding-inline: max(0.9rem, calc((100vw - 84vw) / 2));
       }
     }
   </style>
@@ -384,91 +454,102 @@
           <p class="eyebrow">Mitgliedschaften</p>
 
           <h1 class="pricing-main-title">
-            Klarer Preis.<br />
-            Klarer Zugang.
+            Tarife und Tagespass.
           </h1>
-
-          <p>
-            Wähle die Mitgliedschaft, die zu deinem Alltag passt. Zugang und Verwaltung
-            laufen digital über die NordFit App.
-          </p>
         </div>
 
-        <div class="tariff-grid">
-          <article class="tariff-card">
-            <h2 class="tariff-name">NordFit <span>Basic</span></h2>
+        <div class="tariff-scroll-wrap">
+          <div class="tariff-grid">
+            <article class="tariff-card">
+              <h2 class="tariff-name">NordFit <span>Basic</span></h2>
 
-            <div class="tariff-price-area">
-              <div class="tariff-price-row">
-                <p class="tariff-price">29,99 €</p>
-                <p class="tariff-price-unit">pro Monat</p>
-              </div>
-            </div>
-
-            <div class="tariff-bottom">
-              <div class="tariff-runtime">
-                <span>Mindestlaufzeit</span>
-                <strong>12 Monate</strong>
+              <div class="tariff-price-area">
+                <div class="tariff-price-row">
+                  <p class="tariff-price">29,99 €</p>
+                  <p class="tariff-price-unit">pro Monat</p>
+                </div>
               </div>
 
-              <a href="app.html" class="btn btn-primary">
-                In der App buchen
-              </a>
-            </div>
-          </article>
+              <div class="tariff-bottom">
+                <ul class="tariff-checks">
+                  <li>24/7-Zugang</li>
+                  <li>QR-Code-Zutritt über die App</li>
+                </ul>
 
-          <article class="tariff-card is-plus">
-            <h2 class="tariff-name">NordFit <span>Plus</span></h2>
-
-            <div class="tariff-price-area">
-              <div class="tariff-price-row has-discount">
-                <p class="tariff-price">34,99 €</p>
-                <p class="tariff-price-unit">pro Monat</p>
-              </div>
-
-              <div class="tariff-discount">
-                <div class="tariff-discount-row">
-                  <p class="tariff-discount-price">33,00 €</p>
-                  <p class="tariff-discount-unit">pro Monat</p>
+                <div class="tariff-runtime">
+                  <span>Mindestlaufzeit</span>
+                  <strong>12 Monate</strong>
                 </div>
 
-                <p class="tariff-discount-note">* für die ersten 3 Monate</p>
+                <a href="app.html" class="btn btn-primary">
+                  In der App buchen
+                </a>
               </div>
-            </div>
+            </article>
 
-            <div class="tariff-bottom">
-              <div class="tariff-runtime">
-                <span>Mindestlaufzeit</span>
-                <strong>6 Monate</strong>
-              </div>
+            <article class="tariff-card is-plus">
+              <h2 class="tariff-name">NordFit <span>Plus</span></h2>
 
-              <a href="app.html" class="btn btn-primary">
-                In der App buchen
-              </a>
-            </div>
-          </article>
+              <div class="tariff-price-area">
+                <div class="tariff-price-row has-discount">
+                  <p class="tariff-price">34,99 €</p>
+                  <p class="tariff-price-unit">pro Monat</p>
+                </div>
 
-          <article class="tariff-card">
-            <h2 class="tariff-name">NordFit <span>Pro</span></h2>
+                <div class="tariff-discount">
+                  <div class="tariff-discount-row">
+                    <p class="tariff-discount-price">33,00 €</p>
+                    <p class="tariff-discount-unit">pro Monat</p>
+                  </div>
 
-            <div class="tariff-price-area">
-              <div class="tariff-price-row">
-                <p class="tariff-price">39,99 €</p>
-                <p class="tariff-price-unit">pro Monat</p>
-              </div>
-            </div>
-
-            <div class="tariff-bottom">
-              <div class="tariff-runtime">
-                <span>Mindestlaufzeit</span>
-                <strong>3 Monate</strong>
+                  <p class="tariff-discount-note">* für die ersten 3 Monate</p>
+                </div>
               </div>
 
-              <a href="app.html" class="btn btn-primary">
-                In der App buchen
-              </a>
-            </div>
-          </article>
+              <div class="tariff-bottom">
+                <ul class="tariff-checks">
+                  <li>24/7-Zugang</li>
+                  <li>QR-Code-Zutritt über die App</li>
+                </ul>
+
+                <div class="tariff-runtime">
+                  <span>Mindestlaufzeit</span>
+                  <strong>6 Monate</strong>
+                </div>
+
+                <a href="app.html" class="btn btn-primary">
+                  In der App buchen
+                </a>
+              </div>
+            </article>
+
+            <article class="tariff-card">
+              <h2 class="tariff-name">NordFit <span>Pro</span></h2>
+
+              <div class="tariff-price-area">
+                <div class="tariff-price-row">
+                  <p class="tariff-price">39,99 €</p>
+                  <p class="tariff-price-unit">pro Monat</p>
+                </div>
+              </div>
+
+              <div class="tariff-bottom">
+                <ul class="tariff-checks">
+                  <li>24/7-Zugang</li>
+                  <li>QR-Code-Zutritt über die App</li>
+                </ul>
+
+                <div class="tariff-runtime">
+                  <span>Mindestlaufzeit</span>
+                  <strong>3 Monate</strong>
+                </div>
+
+                <a href="app.html" class="btn btn-primary">
+                  In der App buchen
+                </a>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -502,6 +583,11 @@
             </div>
 
             <div class="tariff-bottom">
+              <ul class="tariff-checks">
+                <li>24 Stunden Zugang</li>
+                <li>QR-Code-Zutritt über die App</li>
+              </ul>
+
               <div class="tariff-runtime">
                 <span>Zugang</span>
                 <strong>24 Stunden</strong>
