@@ -11,6 +11,69 @@
   />
 
   <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    .intro-offer-wrap {
+      display: grid;
+      gap: 0.12rem;
+      margin-top: 0.25rem;
+    }
+
+    .old-price-line {
+      width: fit-content;
+      position: relative;
+      color: #b42318;
+      font-size: clamp(1.65rem, 2.6vw, 2.55rem);
+      line-height: 0.95;
+      letter-spacing: -0.065em;
+      font-weight: 560;
+    }
+
+    .old-price-line::after {
+      content: "";
+      position: absolute;
+      left: -0.08em;
+      right: -0.08em;
+      top: 52%;
+      height: 3px;
+      border-radius: 999px;
+      background: #d92d20;
+      transform: rotate(-6deg);
+      transform-origin: center;
+    }
+
+    .intro-price-line {
+      margin-top: 0.1rem;
+      color: var(--text);
+      font-size: clamp(2.95rem, 4.6vw, 4.55rem);
+      line-height: 0.92;
+      letter-spacing: -0.085em;
+      white-space: nowrap;
+    }
+
+    .intro-offer-note {
+      width: fit-content;
+      margin-top: 0.55rem;
+      padding: 0.42rem 0.7rem;
+      border-radius: 999px;
+      color: var(--nf-green-dark);
+      background: rgba(46, 145, 63, 0.09);
+      border: 1px solid rgba(46, 145, 63, 0.18);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: -0.012em;
+    }
+
+    @media (max-width: 768px) {
+      .old-price-line {
+        font-size: clamp(1.55rem, 7vw, 2.15rem);
+      }
+
+      .intro-price-line {
+        font-size: clamp(2.85rem, 14vw, 4rem);
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -105,7 +168,7 @@
           </article>
 
           <article class="card pricing-card featured-pricing">
-            <span class="pricing-badge">Empfohlen</span>
+            <span class="pricing-badge">Einführungsangebot</span>
 
             <div class="pricing-card-inner">
               <div class="pricing-card-top">
@@ -115,9 +178,11 @@
 
                 <h2>Mehr Freiheit. Weniger Bindung.</h2>
 
-                <div class="price-wrap">
-                  <p class="price-line">34,99 €</p>
+                <div class="price-wrap intro-offer-wrap">
+                  <p class="old-price-line">34,99 €</p>
+                  <p class="intro-price-line">33,00 €</p>
                   <p class="muted">pro Monat</p>
+                  <p class="intro-offer-note">für die ersten Mitglieder</p>
                 </div>
 
                 <div class="duration-pill duration-pill-featured">
