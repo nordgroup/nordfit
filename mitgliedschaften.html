@@ -147,17 +147,35 @@
 
     .tariff-discount {
       display: grid;
-      gap: 0.1rem;
-      margin-top: 0.15rem;
+      gap: 0.12rem;
+      margin-top: 0.12rem;
+    }
+
+    .tariff-discount-row {
+      display: flex;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 0.26rem 0.34rem;
     }
 
     .tariff-discount-price {
       color: #b42318;
-      font-size: clamp(1.35rem, 1.75vw, 1.75rem);
+      font-size: clamp(1.38rem, 1.8vw, 1.82rem);
       line-height: 1;
       letter-spacing: -0.035em;
       font-weight: 760;
       font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    .tariff-discount-unit {
+      padding-bottom: 0.13rem;
+      color: #b42318;
+      font-size: 0.74rem;
+      line-height: 1.1;
+      letter-spacing: -0.006em;
+      font-weight: 700;
+      white-space: nowrap;
     }
 
     .tariff-discount-note {
@@ -204,10 +222,6 @@
     .tariff-bottom .btn {
       width: 100%;
       min-height: 52px;
-    }
-
-    .pricing-note {
-      margin-top: 1.8rem;
     }
 
     .daypass-section {
@@ -413,8 +427,12 @@
               </div>
 
               <div class="tariff-discount">
-                <p class="tariff-discount-price">32,50 € pro Monat</p>
-                <p class="tariff-discount-note">* nur für die ersten 3 Monate</p>
+                <div class="tariff-discount-row">
+                  <p class="tariff-discount-price">33,00 €</p>
+                  <p class="tariff-discount-unit">pro Monat</p>
+                </div>
+
+                <p class="tariff-discount-note">* für die ersten 3 Monate</p>
               </div>
             </div>
 
@@ -452,14 +470,6 @@
             </div>
           </article>
         </div>
-
-        <div class="info-note pricing-note">
-          <p class="info-note-label">Hinweis</p>
-          <p class="info-note-text">
-            Die Mitgliedschaft wird digital vorbereitet. Der Zugang zum Studio erfolgt
-            nach Aktivierung über die NordFit App.
-          </p>
-        </div>
       </div>
     </section>
 
@@ -484,7 +494,10 @@
               </div>
 
               <div class="tariff-discount">
-                <p class="tariff-discount-price">7,50 € einmalig</p>
+                <div class="tariff-discount-row">
+                  <p class="tariff-discount-price">7,50 €</p>
+                  <p class="tariff-discount-unit">einmalig</p>
+                </div>
               </div>
             </div>
 
