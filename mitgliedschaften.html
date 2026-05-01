@@ -83,7 +83,7 @@
     }
 
     .tariff-name {
-      color: var(--nf-green);
+      color: var(--text);
       font-size: clamp(2.05rem, 2.8vw, 3rem);
       line-height: 1;
       letter-spacing: -0.045em;
@@ -91,48 +91,14 @@
       text-wrap: balance;
     }
 
+    .tariff-name span {
+      color: var(--nf-green);
+    }
+
     .tariff-price-area {
       display: grid;
       gap: 0.45rem;
       margin-top: 2.35rem;
-    }
-
-    .tariff-old-price {
-      position: relative;
-      width: fit-content;
-      display: inline-flex;
-      align-items: flex-end;
-      gap: 0.32rem;
-      color: #b42318;
-    }
-
-    .tariff-old-price::after {
-      content: "";
-      position: absolute;
-      left: -0.08em;
-      right: -0.08em;
-      top: 52%;
-      height: 2.5px;
-      border-radius: 999px;
-      background: #d92d20;
-      transform: rotate(-5deg);
-    }
-
-    .tariff-old-price strong {
-      color: #b42318;
-      font-size: clamp(1.42rem, 2vw, 1.95rem);
-      line-height: 0.95;
-      letter-spacing: -0.04em;
-      font-weight: 650;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .tariff-old-price span {
-      padding-bottom: 0.13rem;
-      color: #b42318;
-      font-size: 0.74rem;
-      font-weight: 700;
-      white-space: nowrap;
     }
 
     .tariff-price-row {
@@ -161,18 +127,45 @@
       white-space: nowrap;
     }
 
-    .tariff-note {
-      color: var(--text-soft);
-      font-size: 0.86rem;
-      line-height: 1.35;
-      letter-spacing: -0.006em;
+    .tariff-price-row.has-discount .tariff-price {
+      position: relative;
+      width: fit-content;
     }
 
-    .tariff-after {
-      color: var(--muted);
-      font-size: 0.86rem;
-      line-height: 1.35;
+    .tariff-price-row.has-discount .tariff-price::after {
+      content: "";
+      position: absolute;
+      left: -0.04em;
+      right: -0.04em;
+      top: 52%;
+      height: 3px;
+      border-radius: 999px;
+      background: #d92d20;
+      transform: rotate(-5deg);
+      transform-origin: center;
+    }
+
+    .tariff-discount {
+      display: grid;
+      gap: 0.1rem;
+      margin-top: 0.15rem;
+    }
+
+    .tariff-discount-price {
+      color: #b42318;
+      font-size: clamp(1.35rem, 1.75vw, 1.75rem);
+      line-height: 1;
+      letter-spacing: -0.035em;
+      font-weight: 760;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .tariff-discount-note {
+      color: #b42318;
+      font-size: 0.84rem;
+      line-height: 1.32;
       letter-spacing: -0.006em;
+      font-weight: 650;
     }
 
     .tariff-bottom {
@@ -235,12 +228,16 @@
 
     .daypass-copy h2 {
       max-width: 780px;
-      color: var(--nf-green);
+      color: var(--text);
       font-size: clamp(2.35rem, 4.25vw, 4.55rem);
       line-height: 0.96;
       letter-spacing: -0.048em;
       font-weight: 760;
       text-wrap: balance;
+    }
+
+    .daypass-copy h2 span {
+      color: var(--nf-green);
     }
 
     .daypass-copy p:not(.eyebrow) {
@@ -385,7 +382,7 @@
 
         <div class="tariff-grid">
           <article class="tariff-card">
-            <h2 class="tariff-name">NordFit Basic</h2>
+            <h2 class="tariff-name">NordFit <span>Basic</span></h2>
 
             <div class="tariff-price-area">
               <div class="tariff-price-row">
@@ -400,28 +397,25 @@
                 <strong>12 Monate</strong>
               </div>
 
-              <a href="app.html" class="btn btn-secondary">
+              <a href="app.html" class="btn btn-primary">
                 In der App buchen
               </a>
             </div>
           </article>
 
           <article class="tariff-card is-plus">
-            <h2 class="tariff-name">NordFit Plus</h2>
+            <h2 class="tariff-name">NordFit <span>Plus</span></h2>
 
             <div class="tariff-price-area">
-              <div class="tariff-old-price">
-                <strong>34,99 €</strong>
-                <span>pro Monat</span>
-              </div>
-
-              <div class="tariff-price-row">
-                <p class="tariff-price">32,50 €*</p>
+              <div class="tariff-price-row has-discount">
+                <p class="tariff-price">34,99 €</p>
                 <p class="tariff-price-unit">pro Monat</p>
               </div>
 
-              <p class="tariff-note">* nur für die ersten 3 Monate</p>
-              <p class="tariff-after">Danach 34,99 € pro Monat.</p>
+              <div class="tariff-discount">
+                <p class="tariff-discount-price">32,50 € pro Monat</p>
+                <p class="tariff-discount-note">* nur für die ersten 3 Monate</p>
+              </div>
             </div>
 
             <div class="tariff-bottom">
@@ -437,7 +431,7 @@
           </article>
 
           <article class="tariff-card">
-            <h2 class="tariff-name">NordFit Pro</h2>
+            <h2 class="tariff-name">NordFit <span>Pro</span></h2>
 
             <div class="tariff-price-area">
               <div class="tariff-price-row">
@@ -452,7 +446,7 @@
                 <strong>3 Monate</strong>
               </div>
 
-              <a href="app.html" class="btn btn-secondary">
+              <a href="app.html" class="btn btn-primary">
                 In der App buchen
               </a>
             </div>
@@ -475,7 +469,7 @@
           <div class="daypass-copy">
             <p class="eyebrow">Tagespass</p>
 
-            <h2>NordFit Tagespass</h2>
+            <h2>NordFit <span>Tagespass</span></h2>
 
             <p>
               Zum Testen: einmal trainieren, einen Tag lang Zugang nutzen und NordFit kennenlernen.
@@ -484,14 +478,13 @@
 
           <div class="daypass-price-box-clean">
             <div class="tariff-price-area">
-              <div class="tariff-old-price">
-                <strong>9,99 €</strong>
-                <span>einmalig</span>
+              <div class="tariff-price-row has-discount">
+                <p class="tariff-price">9,99 €</p>
+                <p class="tariff-price-unit">einmalig</p>
               </div>
 
-              <div class="tariff-price-row">
-                <p class="tariff-price">7,50 €</p>
-                <p class="tariff-price-unit">einmalig</p>
+              <div class="tariff-discount">
+                <p class="tariff-discount-price">7,50 € einmalig</p>
               </div>
             </div>
 
