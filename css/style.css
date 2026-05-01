@@ -27,6 +27,8 @@
 
   --max-width: 1240px;
 
+  --font-main: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
   --fast: 0.18s var(--ease);
   --medium: 0.32s var(--ease);
@@ -55,11 +57,13 @@ body {
   min-height: 100vh;
   color: var(--text);
   background: var(--bg);
-  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-main);
   font-size: 16px;
   line-height: 1.52;
+  letter-spacing: -0.011em;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  font-synthesis-weight: none;
 }
 
 body.nav-open,
@@ -252,7 +256,7 @@ ul {
   color: rgba(29, 29, 31, 0.78);
   font-size: 0.94rem;
   font-weight: 620;
-  letter-spacing: -0.018em;
+  letter-spacing: -0.012em;
   transition:
     background var(--fast),
     color var(--fast),
@@ -381,7 +385,7 @@ ul {
   color: var(--text);
   font-size: clamp(3.15rem, 7.7vw, 7.55rem);
   line-height: 0.91;
-  letter-spacing: -0.087em;
+  letter-spacing: -0.064em;
   text-wrap: balance;
 }
 
@@ -391,8 +395,8 @@ ul {
   margin: 1rem auto 0;
   color: var(--text-soft);
   font-size: clamp(1.15rem, 1.85vw, 1.55rem);
-  line-height: 1.28;
-  letter-spacing: -0.04em;
+  line-height: 1.32;
+  letter-spacing: -0.024em;
   text-wrap: balance;
 }
 
@@ -414,7 +418,7 @@ ul {
   border-radius: var(--radius-pill);
   font-size: 1rem;
   font-weight: 680;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.014em;
   transition:
     background-color var(--fast),
     color var(--fast),
@@ -597,7 +601,7 @@ ul {
 .hero-title {
   font-size: clamp(3.4rem, 8vw, 7.2rem);
   line-height: 0.91;
-  letter-spacing: -0.082em;
+  letter-spacing: -0.062em;
   text-wrap: balance;
 }
 
@@ -611,21 +615,21 @@ ul {
   color: var(--muted);
   font-size: clamp(1.1rem, 1.55vw, 1.38rem);
   line-height: 1.45;
-  letter-spacing: -0.026em;
+  letter-spacing: -0.018em;
   text-wrap: balance;
 }
 
 .section-title {
   font-size: clamp(2.1rem, 3.3vw, 3.25rem);
   line-height: 1;
-  letter-spacing: -0.062em;
+  letter-spacing: -0.046em;
   text-wrap: balance;
 }
 
 .large-title {
   font-size: clamp(2.65rem, 5.6vw, 5.65rem);
-  line-height: 0.93;
-  letter-spacing: -0.082em;
+  line-height: 0.94;
+  letter-spacing: -0.06em;
 }
 
 .eyebrow {
@@ -633,7 +637,7 @@ ul {
   color: var(--muted);
   font-size: 0.78rem;
   font-weight: 840;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
@@ -647,7 +651,7 @@ ul {
   padding: 0.92rem 1.36rem;
   border-radius: var(--radius-pill);
   font-weight: 730;
-  letter-spacing: -0.018em;
+  letter-spacing: -0.012em;
   transition:
     background-color var(--fast),
     color var(--fast),
@@ -712,7 +716,7 @@ ul {
   margin: 1rem auto 0;
   font-size: clamp(1.04rem, 1.35vw, 1.19rem);
   line-height: 1.56;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.014em;
 }
 
 /* Glass + Cards */
@@ -771,21 +775,21 @@ ul {
   color: var(--nf-green);
   font-size: 0.8rem;
   font-weight: 850;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
 }
 
 .feature-card h3 {
   margin-bottom: 0.72rem;
   font-size: clamp(1.65rem, 2.25vw, 2.35rem);
-  line-height: 1.02;
-  letter-spacing: -0.06em;
+  line-height: 1.03;
+  letter-spacing: -0.044em;
 }
 
 .feature-card p {
   color: var(--muted);
   font-size: 1.03rem;
   line-height: 1.55;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.014em;
 }
 
 /* Info note */
@@ -825,7 +829,7 @@ ul {
   color: var(--nf-green-dark);
   font-size: 0.78rem;
   font-weight: 850;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
@@ -833,7 +837,7 @@ ul {
   max-width: 82ch;
   color: var(--text-soft);
   font-size: 1.04rem;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.014em;
 }
 
 /* Mitgliedschaften / Pricing */
@@ -910,7 +914,7 @@ ul {
   border: 1px solid rgba(46, 145, 63, 0.15);
   font-size: 0.72rem;
   font-weight: 820;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.006em;
 }
 
 .pricing-card h2,
@@ -919,8 +923,8 @@ ul {
   margin-bottom: 1.2rem;
   color: var(--text);
   font-size: clamp(1.85rem, 2.6vw, 2.7rem);
-  line-height: 1.02;
-  letter-spacing: -0.065em;
+  line-height: 1.03;
+  letter-spacing: -0.048em;
   text-wrap: balance;
 }
 
@@ -934,8 +938,9 @@ ul {
   color: var(--text);
   font-size: clamp(2.75rem, 4.2vw, 4.25rem);
   line-height: 0.92;
-  letter-spacing: -0.08em;
+  letter-spacing: -0.058em;
   white-space: nowrap;
+  font-variant-numeric: tabular-nums;
 }
 
 .duration-pill {
@@ -948,7 +953,7 @@ ul {
   border: 1px solid rgba(46, 145, 63, 0.22);
   font-size: 0.88rem;
   font-weight: 800;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.008em;
 }
 
 .duration-pill-featured {
@@ -970,7 +975,7 @@ ul {
   color: var(--text-soft);
   font-size: 1rem;
   line-height: 1.35;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.012em;
 }
 
 .pricing-check-list li::before {
@@ -1026,7 +1031,7 @@ ul {
   color: var(--white);
   font-size: 0.76rem;
   font-weight: 850;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.018em;
   background: linear-gradient(180deg, var(--nf-green-light), var(--nf-green));
   box-shadow: 0 10px 24px rgba(46, 145, 63, 0.22);
 }
@@ -1084,7 +1089,7 @@ ul {
   border: 1px solid rgba(46, 145, 63, 0.16);
   font-size: 0.78rem;
   font-weight: 830;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.006em;
 }
 
 .daypass-price-box .btn {
@@ -1205,14 +1210,14 @@ ul {
 .location-choice span {
   font-size: 1.02rem;
   font-weight: 760;
-  letter-spacing: -0.028em;
+  letter-spacing: -0.018em;
 }
 
 .location-choice small {
   color: var(--muted);
   font-size: 0.82rem;
   font-weight: 650;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.006em;
 }
 
 .location-choice.is-active small {
@@ -1281,7 +1286,7 @@ ul {
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   font-size: 0.84rem;
   font-weight: 780;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
 }
 
 .location-info-panel {
@@ -1313,14 +1318,14 @@ ul {
   border: 1px solid rgba(46, 145, 63, 0.18);
   font-size: 0.78rem;
   font-weight: 830;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.006em;
 }
 
 .location-info-panel h2 {
   color: var(--text);
   font-size: clamp(2.5rem, 4.8vw, 4.85rem);
   line-height: 0.94;
-  letter-spacing: -0.082em;
+  letter-spacing: -0.062em;
   text-wrap: balance;
 }
 
@@ -1330,7 +1335,7 @@ ul {
   color: var(--text);
   font-size: clamp(1.6rem, 2.4vw, 2.2rem);
   line-height: 1.05;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.044em;
   text-wrap: balance;
 }
 
@@ -1339,7 +1344,7 @@ ul {
   color: var(--text-soft);
   font-size: 1.04rem;
   line-height: 1.55;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.014em;
 }
 
 .location-facts {
@@ -1361,7 +1366,7 @@ ul {
   color: var(--muted);
   font-size: 0.76rem;
   font-weight: 820;
-  letter-spacing: 0.055em;
+  letter-spacing: 0.045em;
   text-transform: uppercase;
 }
 
@@ -1369,7 +1374,7 @@ ul {
   color: var(--text);
   font-size: 0.99rem;
   line-height: 1.32;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.014em;
 }
 
 .location-actions {
@@ -1401,7 +1406,7 @@ ul {
   color: var(--text);
   font-size: clamp(1.8rem, 3vw, 2.7rem);
   line-height: 1;
-  letter-spacing: -0.06em;
+  letter-spacing: -0.044em;
 }
 
 .location-map-frame {
@@ -1517,8 +1522,8 @@ ul {
   max-width: 820px;
   color: var(--text);
   font-size: clamp(2.2rem, 4.4vw, 4.5rem);
-  line-height: 0.94;
-  letter-spacing: -0.082em;
+  line-height: 0.95;
+  letter-spacing: -0.062em;
   text-wrap: balance;
 }
 
@@ -1528,7 +1533,7 @@ ul {
   color: var(--text-soft);
   font-size: 1.08rem;
   line-height: 1.55;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.014em;
 }
 
 .house-applies-card {
@@ -1554,14 +1559,14 @@ ul {
   background: rgba(255, 255, 255, 0.68);
   border: 1px solid rgba(0, 0, 0, 0.045);
   font-weight: 760;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.014em;
 }
 
 .house-applies-card p {
   color: var(--muted);
   font-size: 1rem;
   line-height: 1.55;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
 }
 
 .house-premium-rules {
@@ -1657,7 +1662,7 @@ ul {
   color: var(--nf-green-dark);
   font-size: 0.78rem;
   font-weight: 840;
-  letter-spacing: 0.025em;
+  letter-spacing: 0.02em;
   background: rgba(255, 255, 255, 0.76);
   border: 1px solid rgba(255, 255, 255, 0.76);
   backdrop-filter: blur(20px);
@@ -1744,7 +1749,7 @@ iframe {
 .store-badge-small {
   color: inherit;
   font-size: 0.66rem;
-  letter-spacing: 0.045em;
+  letter-spacing: 0.04em;
   opacity: 0.76;
 }
 
@@ -1752,7 +1757,7 @@ iframe {
   margin-top: 0.08rem;
   font-size: 1rem;
   font-weight: 780;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.014em;
 }
 
 .app-screen-stage {
@@ -1794,7 +1799,7 @@ iframe {
   color: var(--muted);
   font-size: 0.78rem;
   font-weight: 840;
-  letter-spacing: 0.058em;
+  letter-spacing: 0.048em;
   text-transform: uppercase;
 }
 
@@ -1832,7 +1837,7 @@ iframe {
 .form-field label {
   margin-bottom: 0.45rem;
   font-weight: 710;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.014em;
 }
 
 input,
@@ -1939,14 +1944,14 @@ select:focus {
   color: var(--nf-green);
   font-size: 0.8rem;
   font-weight: 860;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
 }
 
 .rule-card h3 {
   margin-bottom: 0.8rem;
   font-size: clamp(1.45rem, 2.2vw, 2rem);
   line-height: 1.05;
-  letter-spacing: -0.055em;
+  letter-spacing: -0.04em;
 }
 
 .rule-card ul {
@@ -1961,7 +1966,7 @@ select:focus {
   color: var(--muted);
   font-size: 0.98rem;
   line-height: 1.48;
-  letter-spacing: -0.015em;
+  letter-spacing: -0.01em;
 }
 
 .rule-card li::before {
@@ -2057,7 +2062,7 @@ select:focus {
 .area-copy h3 {
   font-size: clamp(1.8rem, 2.8vw, 2.6rem);
   line-height: 1.04;
-  letter-spacing: -0.045em;
+  letter-spacing: -0.034em;
 }
 
 .gallery-shell {
@@ -2144,7 +2149,7 @@ select:focus {
   color: var(--muted);
   font-weight: 740;
   line-height: 1.45;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.006em;
 }
 
 .gallery-arrow {
@@ -2199,7 +2204,7 @@ select:focus {
   max-width: 460px;
   font-size: 0.92rem;
   line-height: 1.45;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.006em;
 }
 
 .footer-links {
@@ -2560,7 +2565,7 @@ select:focus {
     font-size: clamp(1.85rem, 7vw, 2.55rem);
     font-weight: 760;
     line-height: 1.16;
-    letter-spacing: -0.06em;
+    letter-spacing: -0.044em;
     transition:
       color 0.22s var(--ease),
       transform 0.22s var(--ease),
@@ -2636,7 +2641,7 @@ select:focus {
   .product-copy h2,
   .app-showcase-copy h2 {
     font-size: clamp(2.85rem, 13vw, 4.35rem);
-    letter-spacing: -0.08em;
+    letter-spacing: -0.056em;
   }
 
   .product-copy p,
@@ -2703,7 +2708,7 @@ select:focus {
 
   .hero-title {
     font-size: clamp(2.65rem, 13.5vw, 3.9rem);
-    letter-spacing: -0.075em;
+    letter-spacing: -0.052em;
   }
 
   .small-hero {
