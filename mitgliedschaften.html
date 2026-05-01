@@ -42,13 +42,37 @@
       transform-origin: center;
     }
 
-    .intro-price-line {
+    .intro-price-row {
+      display: flex;
+      align-items: flex-end;
+      flex-wrap: wrap;
+      gap: 0.42rem 0.55rem;
       margin-top: 0.1rem;
+    }
+
+    .intro-price-line {
       color: var(--text);
       font-size: clamp(2.95rem, 4.6vw, 4.55rem);
       line-height: 0.92;
       letter-spacing: -0.085em;
       white-space: nowrap;
+    }
+
+    .intro-price-detail {
+      padding-bottom: 0.42rem;
+      color: var(--text);
+      font-size: clamp(0.92rem, 1.15vw, 1.02rem);
+      line-height: 1.18;
+      letter-spacing: -0.025em;
+      font-weight: 720;
+    }
+
+    .intro-offer-smallprint {
+      margin-top: 0.3rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.38;
+      letter-spacing: -0.012em;
     }
 
     @media (max-width: 768px) {
@@ -58,6 +82,10 @@
 
       .intro-price-line {
         font-size: clamp(2.85rem, 14vw, 4rem);
+      }
+
+      .intro-price-detail {
+        padding-bottom: 0.26rem;
       }
     }
   </style>
@@ -167,8 +195,16 @@
 
                 <div class="price-wrap intro-offer-wrap">
                   <p class="old-price-line">34,99 €</p>
-                  <p class="intro-price-line">33,00 €</p>
+
+                  <div class="intro-price-row">
+                    <p class="intro-price-line">31,00 €*</p>
+                    <p class="intro-price-detail">für die ersten 3 Monate</p>
+                  </div>
+
                   <p class="muted">pro Monat</p>
+                  <p class="intro-offer-smallprint">
+                    Danach 34,99 € pro Monat.
+                  </p>
                 </div>
 
                 <div class="duration-pill duration-pill-featured">
