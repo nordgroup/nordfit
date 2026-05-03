@@ -13,71 +13,102 @@
   <link rel="stylesheet" href="css/style.css" />
 
   <style>
-    .contact-page-section {
-      padding-top: 6.2rem;
-      padding-bottom: 6.5rem;
-      background:
-        radial-gradient(circle at 50% 14%, rgba(46, 145, 63, 0.09), transparent 30rem),
-        linear-gradient(180deg, #fbfbfd 0%, #ffffff 48%, #f5f5f7 100%);
+    .contact-page {
+      background: #f5f5f7;
     }
 
-    .contact-page-intro {
-      max-width: 940px;
-      margin: 0 auto clamp(2.8rem, 5vw, 4.4rem);
+    .contact-hero-clean {
+      position: relative;
+      overflow: hidden;
+      padding: 5.7rem 0 4.1rem;
+      background:
+        radial-gradient(circle at 50% 14%, rgba(46, 145, 63, 0.1), transparent 31rem),
+        linear-gradient(180deg, #fbfbfd 0%, #ffffff 52%, #f5f5f7 100%);
+    }
+
+    .contact-hero-inner {
+      max-width: 960px;
+      margin-inline: auto;
       text-align: center;
     }
 
-    .contact-page-intro h1 {
+    .contact-hero-title {
       color: var(--text);
-      font-size: clamp(3rem, 7.2vw, 7rem);
-      line-height: 0.91;
-      letter-spacing: -0.087em;
+      font-size: clamp(2.75rem, 5.8vw, 5.9rem);
+      line-height: 0.94;
+      letter-spacing: -0.06em;
+      font-weight: 760;
       text-wrap: balance;
     }
 
-    .contact-page-intro p {
-      max-width: 740px;
+    .contact-hero-title span {
+      color: var(--nf-green);
+    }
+
+    .contact-hero-text {
+      max-width: 760px;
       margin: 1rem auto 0;
       color: var(--text-soft);
-      font-size: clamp(1.08rem, 1.55vw, 1.34rem);
-      line-height: 1.42;
-      letter-spacing: -0.03em;
+      font-size: clamp(1.03rem, 1.35vw, 1.22rem);
+      line-height: 1.5;
+      letter-spacing: -0.018em;
       text-wrap: balance;
     }
 
-    .contact-form-premium {
-      padding: clamp(1.25rem, 3vw, 2rem);
-      border-radius: 40px;
+    .contact-content {
+      padding: 0 0 5.8rem;
+      background: #f5f5f7;
     }
 
-    .contact-form-head {
+    .contact-form-shell-clean {
+      padding: clamp(1.25rem, 3vw, 2rem);
+      border-radius: 40px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(46, 145, 63, 0.055), transparent 18rem),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.62));
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.88),
+        0 24px 70px rgba(0, 0, 0, 0.06);
+      backdrop-filter: blur(28px) saturate(170%);
+      -webkit-backdrop-filter: blur(28px) saturate(170%);
+    }
+
+    .contact-form-head-clean {
       display: flex;
       align-items: flex-end;
       justify-content: space-between;
       gap: 1.25rem;
-      margin-bottom: 1.45rem;
+      margin-bottom: 1.55rem;
     }
 
-    .contact-form-head h2 {
+    .contact-form-head-clean h2 {
       color: var(--text);
-      font-size: clamp(2.1rem, 4vw, 4.2rem);
-      line-height: 0.95;
-      letter-spacing: -0.078em;
+      font-size: clamp(2.15rem, 4.25vw, 4.35rem);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+      font-weight: 760;
       text-wrap: balance;
     }
 
-    .contact-form-head p {
+    .contact-form-head-clean p {
       max-width: 520px;
       color: var(--muted);
       font-size: 1rem;
       line-height: 1.5;
-      letter-spacing: -0.015em;
+      letter-spacing: -0.014em;
     }
 
-    .contact-form-grid-premium {
+    .contact-grid-clean {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 1rem;
+    }
+
+    .contact-field {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
     }
 
     .contact-field-wide {
@@ -88,29 +119,25 @@
       grid-column: 1 / -1;
     }
 
-    .contact-form-field {
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .contact-form-field label {
+    .contact-field label {
       margin-bottom: 0.45rem;
       color: var(--text);
+      font-size: 0.96rem;
       font-weight: 760;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.018em;
     }
 
-    .contact-form-field label span {
+    .contact-field label span {
       color: #b42318;
       font-weight: 850;
     }
 
-    .contact-form-field input,
-    .contact-form-field select,
-    .contact-form-field textarea {
+    .contact-field input,
+    .contact-field select,
+    .contact-field textarea {
       min-height: 58px;
       border-radius: 20px;
+      color: var(--text);
       background: rgba(255, 255, 255, 0.78);
       border: 1px solid rgba(0, 0, 0, 0.12);
       box-shadow:
@@ -118,7 +145,7 @@
         0 10px 24px rgba(0, 0, 0, 0.025);
     }
 
-    .contact-form-field textarea {
+    .contact-field textarea {
       min-height: 180px;
       max-height: 520px;
       overflow-y: hidden;
@@ -126,15 +153,14 @@
       line-height: 1.5;
     }
 
-    .contact-submit-button {
-      transition:
-        opacity var(--fast),
-        filter var(--fast),
-        background-color var(--fast),
-        box-shadow var(--fast);
+    .contact-field small {
+      margin-top: 0.45rem;
+      color: var(--muted);
+      font-size: 0.88rem;
+      letter-spacing: -0.01em;
     }
 
-    .contact-form-bottom {
+    .contact-form-bottom-clean {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -183,54 +209,63 @@
       font-weight: 760;
     }
 
-    .contact-other-section {
-      padding-top: 0;
-      padding-bottom: 6rem;
+    .contact-methods-section-clean {
+      padding: 0 0 5.8rem;
       background: #f5f5f7;
     }
 
-    .contact-other-shell {
+    .contact-methods-shell-clean {
       display: grid;
-      grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
-      gap: 1.25rem;
+      grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+      gap: 1.15rem;
       align-items: stretch;
     }
 
-    .contact-other-copy {
+    .contact-methods-copy-clean {
       min-height: 360px;
       display: flex;
       flex-direction: column;
       justify-content: center;
       padding: clamp(1.35rem, 3vw, 2rem);
-      border-radius: 36px;
+      border-radius: 38px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(46, 145, 63, 0.055), transparent 18rem),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.62));
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.88),
+        0 24px 70px rgba(0, 0, 0, 0.06);
+      backdrop-filter: blur(28px) saturate(170%);
+      -webkit-backdrop-filter: blur(28px) saturate(170%);
     }
 
-    .contact-other-copy h2 {
+    .contact-methods-copy-clean h2 {
       color: var(--text);
-      font-size: clamp(2.1rem, 4.4vw, 4.6rem);
-      line-height: 0.94;
-      letter-spacing: -0.082em;
+      font-size: clamp(2.15rem, 4.25vw, 4.35rem);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+      font-weight: 760;
       text-wrap: balance;
     }
 
-    .contact-other-copy p {
+    .contact-methods-copy-clean p:not(.eyebrow) {
       max-width: 560px;
       margin-top: 1rem;
       color: var(--text-soft);
-      font-size: 1.06rem;
+      font-size: 1.02rem;
       line-height: 1.55;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.014em;
     }
 
-    .contact-methods {
+    .contact-methods-list-clean {
       display: grid;
-      gap: 0.85rem;
+      gap: 0.9rem;
     }
 
-    .contact-method-card {
+    .contact-method-card-clean {
       display: grid;
-      gap: 0.4rem;
-      padding: 1.25rem;
+      gap: 0.42rem;
+      padding: 1.2rem;
       border-radius: 28px;
       background:
         linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.58));
@@ -242,34 +277,21 @@
       -webkit-backdrop-filter: blur(24px) saturate(160%);
     }
 
-    .contact-method-card span {
+    .contact-method-card-clean span {
       color: var(--muted);
-      font-size: 0.78rem;
-      font-weight: 850;
+      font-size: 0.76rem;
+      font-weight: 860;
       letter-spacing: 0.06em;
       text-transform: uppercase;
     }
 
-    .contact-method-card a,
-    .contact-method-card strong {
-      color: var(--nf-green-dark);
-      font-size: clamp(1.08rem, 1.6vw, 1.28rem);
-      font-weight: 790;
-      letter-spacing: -0.025em;
-      word-break: break-word;
-    }
-
-    .contact-method-card p {
-      color: var(--muted);
-      font-size: clamp(1.05rem, 1.35vw, 1.2rem);
-      letter-spacing: -0.02em;
-    }
-
+    .contact-method-card-clean a,
     .contact-phone-status {
       color: var(--nf-green-dark);
-      font-size: clamp(1.08rem, 1.6vw, 1.28rem);
+      font-size: clamp(1.05rem, 1.45vw, 1.22rem);
       font-weight: 790;
-      letter-spacing: -0.025em;
+      letter-spacing: -0.02em;
+      word-break: break-word;
     }
 
     .contact-phone-hours {
@@ -310,13 +332,20 @@
       letter-spacing: -0.015em;
     }
 
+    .contact-final-clean {
+      min-height: 60vh;
+      background:
+        radial-gradient(circle at 50% 78%, rgba(46, 145, 63, 0.08), transparent 30rem),
+        #ffffff;
+    }
+
     @media (max-width: 980px) {
-      .contact-form-head {
+      .contact-form-head-clean {
         align-items: flex-start;
         flex-direction: column;
       }
 
-      .contact-form-grid-premium {
+      .contact-grid-clean {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
@@ -324,26 +353,49 @@
         grid-column: 1 / -1;
       }
 
-      .contact-other-shell {
+      .contact-methods-shell-clean {
         grid-template-columns: 1fr;
       }
 
-      .contact-other-copy {
+      .contact-methods-copy-clean {
         min-height: auto;
       }
     }
 
     @media (max-width: 680px) {
-      .contact-page-section {
-        padding-top: 4.8rem;
+      .contact-hero-clean {
+        padding-top: 4.75rem;
+        padding-bottom: 3.8rem;
+      }
+
+      .contact-hero-title {
+        font-size: clamp(2.45rem, 11.5vw, 3.95rem);
+        line-height: 0.96;
+        letter-spacing: -0.056em;
+      }
+
+      .contact-hero-text {
+        max-width: 35ch;
+        font-size: 1.02rem;
+      }
+
+      .contact-content,
+      .contact-methods-section-clean {
         padding-bottom: 4.8rem;
       }
 
-      .contact-form-premium {
+      .contact-form-shell-clean {
         border-radius: 30px;
+        padding: 1.15rem;
       }
 
-      .contact-form-grid-premium {
+      .contact-form-head-clean h2,
+      .contact-methods-copy-clean h2 {
+        font-size: clamp(2rem, 9.5vw, 3.2rem);
+        line-height: 1;
+      }
+
+      .contact-grid-clean {
         grid-template-columns: 1fr;
       }
 
@@ -352,23 +404,35 @@
         grid-column: 1;
       }
 
-      .contact-form-bottom {
+      .contact-form-bottom-clean {
         align-items: stretch;
         flex-direction: column;
       }
 
-      .contact-form-bottom .btn {
+      .contact-form-bottom-clean .btn {
         width: 100%;
       }
 
-      .contact-other-section {
-        padding-bottom: 4.8rem;
+      .contact-methods-copy-clean,
+      .contact-method-card-clean {
+        border-radius: 28px;
+        padding: 1.15rem;
       }
 
       .contact-phone-hours-row {
         align-items: flex-start;
         flex-direction: column;
         gap: 0.08rem;
+      }
+
+      .contact-final-clean {
+        min-height: 56vh;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .contact-hero-title {
+        font-size: clamp(2.25rem, 11vw, 3.35rem);
       }
     }
   </style>
@@ -410,25 +474,32 @@
     </div>
   </header>
 
-  <main>
-    <section class="contact-page-section">
+  <main class="contact-page">
+    <section class="contact-hero-clean">
       <div class="container">
-        <div class="contact-page-intro">
+        <div class="contact-hero-inner">
           <p class="eyebrow">Kontakt</p>
 
-          <h1>Schreib uns direkt.</h1>
+          <h1 class="contact-hero-title">
+            Schreib uns.<br />
+            <span>Klar und direkt.</span>
+          </h1>
 
-          <p>
-            Hast du Fragen zu Mitgliedschaften, Standort, App oder dem NordFit-Konzept?
-            Schick uns dein Anliegen. Wir melden uns so schnell wie möglich zurück.
+          <p class="contact-hero-text">
+            Fragen zu Mitgliedschaft, Tagespass, App, Standort oder NordFit allgemein?
+            Schick dein Anliegen über das Formular oder nutze eine der Kontaktmöglichkeiten.
           </p>
         </div>
+      </div>
+    </section>
 
-        <section class="contact-form-premium glass" aria-labelledby="contact-form-title">
-          <div class="contact-form-head">
+    <section class="contact-content">
+      <div class="container">
+        <section class="contact-form-shell-clean" aria-labelledby="contact-form-title">
+          <div class="contact-form-head-clean">
             <div>
               <p class="eyebrow">Kontaktformular</p>
-              <h2 id="contact-form-title">Dein Anliegen. Klar gebündelt.</h2>
+              <h2 id="contact-form-title">Dein Anliegen. Sauber gebündelt.</h2>
             </div>
 
             <p>
@@ -438,8 +509,8 @@
           </div>
 
           <form id="nordfit-contact-form" novalidate>
-            <div class="contact-form-grid-premium">
-              <div class="contact-form-field">
+            <div class="contact-grid-clean">
+              <div class="contact-field">
                 <label for="contact-firstname">Vorname <span>*</span></label>
                 <input
                   id="contact-firstname"
@@ -453,7 +524,7 @@
                 />
               </div>
 
-              <div class="contact-form-field">
+              <div class="contact-field">
                 <label for="contact-lastname">Nachname <span>*</span></label>
                 <input
                   id="contact-lastname"
@@ -467,7 +538,7 @@
                 />
               </div>
 
-              <div class="contact-form-field">
+              <div class="contact-field">
                 <label for="contact-email">E-Mail <span>*</span></label>
                 <input
                   id="contact-email"
@@ -480,7 +551,7 @@
                 />
               </div>
 
-              <div class="contact-form-field">
+              <div class="contact-field">
                 <label for="contact-phone">Telefonnummer</label>
                 <input
                   id="contact-phone"
@@ -493,7 +564,7 @@
                 />
               </div>
 
-              <div class="contact-form-field">
+              <div class="contact-field">
                 <label for="contact-postal">Postleitzahl</label>
                 <input
                   id="contact-postal"
@@ -516,7 +587,7 @@
                 </datalist>
               </div>
 
-              <div class="contact-form-field">
+              <div class="contact-field">
                 <label for="contact-street">Straße</label>
                 <input
                   id="contact-street"
@@ -529,7 +600,7 @@
                 />
               </div>
 
-              <div class="contact-form-field contact-field-wide">
+              <div class="contact-field contact-field-wide">
                 <label for="contact-topic">Thema <span>*</span></label>
                 <select id="contact-topic" name="contact-topic" required>
                   <option value="">Bitte Thema auswählen</option>
@@ -551,7 +622,7 @@
                 </select>
               </div>
 
-              <div class="contact-form-field">
+              <div class="contact-field">
                 <label for="contact-memberid">Member-ID</label>
                 <input
                   id="contact-memberid"
@@ -563,7 +634,7 @@
                 />
               </div>
 
-              <div class="contact-form-field contact-field-full">
+              <div class="contact-field contact-field-full">
                 <label for="contact-message">Nachricht <span>*</span></label>
                 <textarea
                   id="contact-message"
@@ -579,12 +650,12 @@
               </div>
             </div>
 
-            <div class="contact-form-bottom">
+            <div class="contact-form-bottom-clean">
               <p class="contact-required-note">
                 <strong>*</strong> Pflichtfelder müssen ausgefüllt werden.
               </p>
 
-              <button id="contact-submit" class="btn btn-primary contact-submit-button" type="submit">
+              <button id="contact-submit" class="btn btn-primary" type="submit">
                 Senden
               </button>
             </div>
@@ -601,34 +672,34 @@
       </div>
     </section>
 
-    <section class="contact-other-section">
+    <section class="contact-methods-section-clean">
       <div class="container">
-        <div class="contact-other-shell">
-          <article class="contact-other-copy glass">
+        <div class="contact-methods-shell-clean">
+          <article class="contact-methods-copy-clean">
             <p class="eyebrow">Andere Kontaktmöglichkeiten</p>
 
-            <h2>Auch direkt erreichbar.</h2>
+            <h2>Auch ohne Formular erreichbar.</h2>
 
             <p>
-              Du möchtest lieber ohne Formular schreiben? Dann nutze E-Mail, Instagram
-              oder später die telefonische Kontaktmöglichkeit während der angegebenen Zeiten.
+              Schreib uns direkt per E-Mail, folge NordFit auf Instagram oder nutze später
+              die telefonische Kontaktmöglichkeit während der angegebenen Zeiten.
             </p>
           </article>
 
-          <div class="contact-methods">
-            <article class="contact-method-card">
+          <div class="contact-methods-list-clean">
+            <article class="contact-method-card-clean">
               <span>E-Mail</span>
               <a href="mailto:nordgroup.business@gmail.com">nordgroup.business@gmail.com</a>
             </article>
 
-            <article class="contact-method-card">
+            <article class="contact-method-card-clean">
               <span>Instagram</span>
               <a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">
                 @nordfit.business
               </a>
             </article>
 
-            <article class="contact-method-card">
+            <article class="contact-method-card-clean">
               <span>Telefon</span>
 
               <p class="contact-phone-status">Bald verfügbar</p>
@@ -679,7 +750,7 @@
       </div>
     </section>
 
-    <section class="product-hero product-hero-final">
+    <section class="product-hero product-hero-final contact-final-clean">
       <div class="product-copy">
         <h2>Schreib, wenn etwas offen ist.</h2>
 
@@ -753,9 +824,7 @@
         errorBox.scrollIntoView({ behavior: "smooth", block: "center" });
       };
 
-      const isValidEmail = (value) => {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
-      };
+      const isValidEmail = (value) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
 
       const validateForm = () => {
         const errors = [];
@@ -811,16 +880,26 @@
 
       const autoResizeTextarea = () => {
         if (!message) return;
-
         message.style.height = "auto";
         message.style.height = `${message.scrollHeight}px`;
       };
 
       const updateCounter = () => {
         if (!message || !messageCount) return;
-
         messageCount.textContent = String(message.value.length);
       };
+
+      const liveValidate = () => {
+        if (!errorBox || !errorBox.classList.contains("show")) return;
+        const errors = validateForm();
+        showErrors(errors);
+      };
+
+      Object.values(fields).forEach((field) => {
+        if (!field) return;
+        field.addEventListener("input", liveValidate);
+        field.addEventListener("change", liveValidate);
+      });
 
       if (message) {
         autoResizeTextarea();
@@ -880,7 +959,7 @@
           `Thema: ${topic}`,
           `Status: Neu`,
           "",
-          "KUNDENDATEN",
+          "KONTAKTDATEN",
           "--------------------------------------------------",
           `Name: ${firstName} ${lastName}`,
           `E-Mail für Rückantwort: ${email}`,
@@ -888,10 +967,6 @@
           `Postleitzahl: ${postal}`,
           `Straße: ${street}`,
           `Member-ID: ${member}`,
-          "",
-          "ANLIEGEN",
-          "--------------------------------------------------",
-          `Kategorie: ${topic}`,
           "",
           "NACHRICHT",
           "--------------------------------------------------",
