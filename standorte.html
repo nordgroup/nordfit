@@ -63,12 +63,13 @@
     .location-picker-wrap {
       position: relative;
       z-index: 4;
-      width: min(100% - 2rem, 920px);
+      width: min(100% - 2rem, 1160px);
       margin: -1.1rem auto 2.8rem;
     }
 
     .location-picker-clean {
       display: flex;
+      justify-content: center;
       gap: 0.72rem;
       overflow-x: auto;
       overflow-y: visible;
@@ -382,6 +383,10 @@
     }
 
     @media (max-width: 1100px) {
+      .location-picker-clean {
+        justify-content: flex-start;
+      }
+
       .location-showcase-clean {
         grid-template-columns: 1fr;
       }
@@ -415,20 +420,29 @@
       }
 
       .location-picker-clean {
+        justify-content: flex-start;
         border-radius: 0;
         border-left: 0;
         border-right: 0;
-        padding: 0.95rem max(1rem, calc((100vw - 245px) / 2)) 1.25rem;
+        padding: 0.9rem max(1rem, calc((100vw - 230px) / 2)) 1.1rem;
         background:
-          linear-gradient(180deg, rgba(255, 255, 255, 0.38), rgba(255, 255, 255, 0.16));
+          linear-gradient(180deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.14));
         box-shadow: none;
-        scroll-padding-inline: max(1rem, calc((100vw - 245px) / 2));
+        scroll-padding-inline: max(1rem, calc((100vw - 230px) / 2));
       }
 
       .location-choice-clean {
-        flex-basis: 245px;
-        min-height: 78px;
+        flex-basis: 230px;
+        min-height: 74px;
         border-radius: 24px;
+      }
+
+      .location-choice-clean span {
+        font-size: 0.98rem;
+      }
+
+      .location-choice-clean small {
+        font-size: 0.8rem;
       }
 
       .location-showcase-clean {
@@ -508,12 +522,12 @@
       }
 
       .location-picker-clean {
-        padding-inline: max(0.9rem, calc((100vw - 235px) / 2));
-        scroll-padding-inline: max(0.9rem, calc((100vw - 235px) / 2));
+        padding-inline: max(0.9rem, calc((100vw - 220px) / 2));
+        scroll-padding-inline: max(0.9rem, calc((100vw - 220px) / 2));
       }
 
       .location-choice-clean {
-        flex-basis: 235px;
+        flex-basis: 220px;
       }
 
       .location-image-card {
