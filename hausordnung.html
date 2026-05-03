@@ -11,6 +11,350 @@
   />
 
   <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    .house-page {
+      background: #f5f5f7;
+    }
+
+    .house-hero-clean {
+      position: relative;
+      overflow: hidden;
+      padding: 5.7rem 0 4.2rem;
+      background:
+        radial-gradient(circle at 50% 14%, rgba(46, 145, 63, 0.1), transparent 31rem),
+        linear-gradient(180deg, #fbfbfd 0%, #ffffff 52%, #f5f5f7 100%);
+    }
+
+    .house-hero-inner {
+      max-width: 960px;
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .house-hero-title {
+      color: var(--text);
+      font-size: clamp(2.75rem, 5.8vw, 5.9rem);
+      line-height: 0.94;
+      letter-spacing: -0.06em;
+      font-weight: 760;
+      text-wrap: balance;
+    }
+
+    .house-hero-title span {
+      color: var(--nf-green);
+    }
+
+    .house-hero-text {
+      max-width: 760px;
+      margin: 1rem auto 0;
+      color: var(--text-soft);
+      font-size: clamp(1.03rem, 1.35vw, 1.22rem);
+      line-height: 1.5;
+      letter-spacing: -0.018em;
+      text-wrap: balance;
+    }
+
+    .house-content {
+      padding: 0 0 5.8rem;
+      background: #f5f5f7;
+    }
+
+    .house-principle-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      gap: 1.15rem;
+      margin-bottom: 1.15rem;
+    }
+
+    .house-principle-card-clean,
+    .house-applies-card-clean {
+      padding: clamp(1.35rem, 3vw, 2rem);
+      border-radius: 38px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(46, 145, 63, 0.055), transparent 18rem),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.62));
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.88),
+        0 24px 70px rgba(0, 0, 0, 0.06);
+      backdrop-filter: blur(28px) saturate(170%);
+      -webkit-backdrop-filter: blur(28px) saturate(170%);
+    }
+
+    .house-principle-card-clean {
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    .house-principle-card-clean h2 {
+      max-width: 820px;
+      color: var(--text);
+      font-size: clamp(2.15rem, 4.25vw, 4.35rem);
+      line-height: 0.96;
+      letter-spacing: -0.06em;
+      font-weight: 760;
+      text-wrap: balance;
+    }
+
+    .house-principle-card-clean p:not(.eyebrow),
+    .house-applies-card-clean p {
+      max-width: 760px;
+      margin-top: 1rem;
+      color: var(--text-soft);
+      font-size: 1.02rem;
+      line-height: 1.55;
+      letter-spacing: -0.014em;
+    }
+
+    .house-applies-card-clean {
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .house-applies-list-clean {
+      display: grid;
+      gap: 0.7rem;
+      margin: 1.1rem 0;
+    }
+
+    .house-applies-list-clean span {
+      min-height: 50px;
+      display: flex;
+      align-items: center;
+      padding: 0.82rem 0.95rem;
+      border-radius: 18px;
+      color: var(--text);
+      background: rgba(255, 255, 255, 0.7);
+      border: 1px solid rgba(0, 0, 0, 0.045);
+      font-size: 0.98rem;
+      font-weight: 760;
+      letter-spacing: -0.018em;
+    }
+
+    .house-rules-grid-clean {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.05rem;
+      margin-top: 1.15rem;
+    }
+
+    .house-rule-card-clean {
+      min-height: 390px;
+      display: flex;
+      flex-direction: column;
+      padding: 1.28rem;
+      border-radius: 32px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(46, 145, 63, 0.065), transparent 15rem),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.64));
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.86),
+        0 20px 58px rgba(0, 0, 0, 0.052);
+      backdrop-filter: blur(24px) saturate(170%);
+      -webkit-backdrop-filter: blur(24px) saturate(170%);
+    }
+
+    .house-rule-number {
+      width: fit-content;
+      margin-bottom: 2.4rem;
+      color: var(--nf-green);
+      font-size: 0.78rem;
+      font-weight: 860;
+      letter-spacing: 0.06em;
+    }
+
+    .house-rule-card-clean h3 {
+      max-width: 12ch;
+      margin-bottom: 0.9rem;
+      color: var(--text);
+      font-size: clamp(1.65rem, 2.45vw, 2.35rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+      font-weight: 760;
+      text-wrap: balance;
+    }
+
+    .house-rule-card-clean ul {
+      display: grid;
+      gap: 0.62rem;
+      margin-top: auto;
+    }
+
+    .house-rule-card-clean li {
+      position: relative;
+      padding-left: 1.05rem;
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.46;
+      letter-spacing: -0.012em;
+    }
+
+    .house-rule-card-clean li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.68em;
+      width: 5px;
+      height: 5px;
+      border-radius: 999px;
+      background: var(--nf-green);
+    }
+
+    .house-note-grid-clean {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.05rem;
+      margin-top: 1.15rem;
+    }
+
+    .house-note-card {
+      min-height: 210px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 1.25rem;
+      border-radius: 30px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.84), rgba(255, 255, 255, 0.6));
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.86),
+        0 18px 48px rgba(0, 0, 0, 0.052);
+      backdrop-filter: blur(24px) saturate(160%);
+      -webkit-backdrop-filter: blur(24px) saturate(160%);
+    }
+
+    .house-note-label {
+      margin-bottom: 0.4rem;
+      color: var(--nf-green-dark);
+      font-size: 0.76rem;
+      font-weight: 860;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .house-note-card p:not(.house-note-label) {
+      color: var(--text-soft);
+      font-size: 1rem;
+      line-height: 1.55;
+      letter-spacing: -0.014em;
+    }
+
+    .house-final-clean {
+      min-height: 60vh;
+      background:
+        radial-gradient(circle at 50% 78%, rgba(46, 145, 63, 0.08), transparent 30rem),
+        #ffffff;
+    }
+
+    @media (max-width: 1100px) {
+      .house-rules-grid-clean {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .house-principle-shell {
+        grid-template-columns: 1fr;
+      }
+
+      .house-principle-card-clean,
+      .house-applies-card-clean {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .house-hero-clean {
+        padding-top: 4.75rem;
+        padding-bottom: 3.8rem;
+      }
+
+      .house-hero-title {
+        font-size: clamp(2.45rem, 11.5vw, 3.95rem);
+        line-height: 0.96;
+        letter-spacing: -0.056em;
+      }
+
+      .house-hero-text {
+        max-width: 35ch;
+        font-size: 1.02rem;
+      }
+
+      .house-content {
+        padding-bottom: 4.8rem;
+      }
+
+      .house-principle-shell {
+        gap: 1rem;
+      }
+
+      .house-principle-card-clean,
+      .house-applies-card-clean {
+        border-radius: 30px;
+        padding: 1.15rem;
+      }
+
+      .house-principle-card-clean h2 {
+        font-size: clamp(2rem, 9.5vw, 3.2rem);
+        line-height: 1;
+      }
+
+      .house-principle-card-clean p:not(.eyebrow),
+      .house-applies-card-clean p {
+        font-size: 0.98rem;
+      }
+
+      .house-rules-grid-clean {
+        grid-template-columns: 1fr;
+        gap: 0.95rem;
+      }
+
+      .house-rule-card-clean {
+        min-height: auto;
+        border-radius: 28px;
+        padding: 1.15rem;
+      }
+
+      .house-rule-number {
+        margin-bottom: 1.75rem;
+      }
+
+      .house-rule-card-clean h3 {
+        max-width: 14ch;
+        font-size: clamp(1.55rem, 7.4vw, 2.15rem);
+      }
+
+      .house-note-grid-clean {
+        grid-template-columns: 1fr;
+        gap: 0.95rem;
+      }
+
+      .house-note-card {
+        min-height: auto;
+        border-radius: 28px;
+        padding: 1.15rem;
+      }
+
+      .house-final-clean {
+        min-height: 56vh;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .house-hero-title {
+        font-size: clamp(2.25rem, 11vw, 3.35rem);
+      }
+
+      .house-applies-list-clean span {
+        min-height: 46px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -49,24 +393,29 @@
     </div>
   </header>
 
-  <main>
-    <section class="product-hero product-hero-light house-hero">
-      <div class="product-copy">
-        <p class="eyebrow">Hausordnung</p>
+  <main class="house-page">
+    <section class="house-hero-clean">
+      <div class="container">
+        <div class="house-hero-inner">
+          <p class="eyebrow">Hausordnung</p>
 
-        <h1>Regeln, die Ruhe schaffen.</h1>
+          <h1 class="house-hero-title">
+            Ruhig trainieren.<br />
+            <span>Fair miteinander.</span>
+          </h1>
 
-        <p>
-          Klare Regeln für Zugang, Training, Sauberkeit und Rücksicht.
-          Damit NordFit sich für alle sicher, fair und angenehm anfühlt.
-        </p>
+          <p class="house-hero-text">
+            Klare Regeln für Zugang, Training, Sauberkeit, Rücksicht und Sicherheit.
+            Damit NordFit für alle angenehm, sauber und verlässlich bleibt.
+          </p>
+        </div>
       </div>
     </section>
 
-    <section class="section section-light house-rules-section">
+    <section class="house-content">
       <div class="container">
-        <div class="house-principle-grid">
-          <article class="glass house-principle-card">
+        <div class="house-principle-shell">
+          <article class="house-principle-card-clean">
             <p class="eyebrow">Grundsatz</p>
 
             <h2>Ein Studio funktioniert nur, wenn alle mitziehen.</h2>
@@ -78,38 +427,40 @@
             </p>
           </article>
 
-          <aside class="glass house-applies-card">
-            <p class="eyebrow">Gilt für</p>
+          <aside class="house-applies-card-clean">
+            <div>
+              <p class="eyebrow">Gilt für</p>
 
-            <div class="house-applies-list">
-              <span>Mitglieder</span>
-              <span>Tagespass-Nutzer</span>
-              <span>Besucher</span>
+              <div class="house-applies-list-clean">
+                <span>Mitglieder</span>
+                <span>Tagespass-Nutzer</span>
+                <span>Besucher</span>
+              </div>
             </div>
 
             <p>
-              Bei Fragen, Unsicherheit oder Problemen gilt: Bitte rechtzeitig melden,
+              Bei Fragen, Unsicherheit oder Problemen gilt: lieber früh melden,
               bevor etwas gefährlich wird, andere gestört werden oder Schäden entstehen.
             </p>
           </aside>
         </div>
 
-        <div class="rules-grid house-premium-rules">
-          <article class="rule-card card">
-            <span class="rule-number">01</span>
+        <div class="house-rules-grid-clean">
+          <article class="house-rule-card-clean">
+            <span class="house-rule-number">01</span>
 
             <h3>Zutritt nur persönlich.</h3>
 
             <ul>
               <li>Zutritt nur mit gültiger Mitgliedschaft oder aktivem Tagespass.</li>
-              <li>App-Zugang, QR-Code oder Zugangsdaten dürfen nicht weitergegeben werden.</li>
+              <li>App-Zugang, QR-Code und Zugangsdaten dürfen nicht weitergegeben werden.</li>
               <li>Das Mitnehmen weiterer Personen beim Ein- oder Ausgang ist nicht erlaubt.</li>
               <li>Bei Missbrauch kann der Zugang gesperrt und das Hausrecht ausgeübt werden.</li>
             </ul>
           </article>
 
-          <article class="rule-card card">
-            <span class="rule-number">02</span>
+          <article class="house-rule-card-clean">
+            <span class="house-rule-number">02</span>
 
             <h3>Rücksicht bleibt Pflicht.</h3>
 
@@ -121,8 +472,8 @@
             </ul>
           </article>
 
-          <article class="rule-card card">
-            <span class="rule-number">03</span>
+          <article class="house-rule-card-clean">
+            <span class="house-rule-number">03</span>
 
             <h3>Sauber trainieren.</h3>
 
@@ -134,8 +485,8 @@
             </ul>
           </article>
 
-          <article class="rule-card card">
-            <span class="rule-number">04</span>
+          <article class="house-rule-card-clean">
+            <span class="house-rule-number">04</span>
 
             <h3>Geräte ordentlich nutzen.</h3>
 
@@ -147,8 +498,8 @@
             </ul>
           </article>
 
-          <article class="rule-card card">
-            <span class="rule-number">05</span>
+          <article class="house-rule-card-clean">
+            <span class="house-rule-number">05</span>
 
             <h3>Sicherheit geht vor.</h3>
 
@@ -160,8 +511,8 @@
             </ul>
           </article>
 
-          <article class="rule-card card">
-            <span class="rule-number">06</span>
+          <article class="house-rule-card-clean">
+            <span class="house-rule-number">06</span>
 
             <h3>Privatsphäre respektieren.</h3>
 
@@ -174,11 +525,11 @@
           </article>
         </div>
 
-        <div class="house-legal-grid">
-          <article class="info-note">
-            <p class="info-note-label">Videoüberwachung & Datenschutz</p>
+        <div class="house-note-grid-clean">
+          <article class="house-note-card">
+            <p class="house-note-label">Videoüberwachung & Datenschutz</p>
 
-            <p class="info-note-text">
+            <p>
               Eine Videoüberwachung kann in gekennzeichneten Bereichen zur Wahrnehmung
               berechtigter Sicherheitsinteressen erfolgen. Umkleide- und Sanitärbereiche
               sind hiervon ausgenommen. Weitere Informationen ergeben sich aus den
@@ -186,10 +537,10 @@
             </p>
           </article>
 
-          <article class="info-note">
-            <p class="info-note-label">Konsequenzen bei Verstößen</p>
+          <article class="house-note-card">
+            <p class="house-note-label">Konsequenzen bei Verstößen</p>
 
-            <p class="info-note-text">
+            <p>
               Verstöße gegen die Hausordnung können je nach Einzelfall zu Verwarnung,
               Zugangssperre, Hausverbot oder weiteren Maßnahmen führen. Schäden durch
               unsachgemäße Nutzung können dem Verursacher in Rechnung gestellt werden.
@@ -199,7 +550,7 @@
       </div>
     </section>
 
-    <section class="product-hero product-hero-final house-final">
+    <section class="product-hero product-hero-final house-final-clean">
       <div class="product-copy">
         <h2>Fair bleiben. Ruhig weitermachen.</h2>
 
