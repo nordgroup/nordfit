@@ -11,6 +11,583 @@
   />
 
   <link rel="stylesheet" href="css/style.css" />
+
+  <style>
+    .app-page {
+      background: #ffffff;
+    }
+
+    .app-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 6.6rem 0 5.8rem;
+      min-height: calc(100vh - 88px);
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 68% 50%, rgba(46, 145, 63, 0.13), transparent 34rem),
+        radial-gradient(circle at 50% 100%, rgba(46, 145, 63, 0.07), transparent 30rem),
+        linear-gradient(180deg, #fbfbfd 0%, #ffffff 54%, #f5f5f7 100%);
+    }
+
+    .app-hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(340px, 0.8fr);
+      align-items: center;
+      gap: clamp(2.2rem, 6vw, 6rem);
+    }
+
+    .app-hero-copy {
+      max-width: 710px;
+    }
+
+    .app-hero-title {
+      color: var(--text);
+      font-size: clamp(3.1rem, 6.4vw, 6.7rem);
+      line-height: 0.92;
+      letter-spacing: -0.06em;
+      font-weight: 760;
+      text-wrap: balance;
+    }
+
+    .app-hero-title span {
+      color: var(--nf-green);
+    }
+
+    .app-hero-text {
+      max-width: 620px;
+      margin-top: 1.15rem;
+      color: var(--text-soft);
+      font-size: clamp(1.08rem, 1.45vw, 1.28rem);
+      line-height: 1.45;
+      letter-spacing: -0.02em;
+      text-wrap: balance;
+    }
+
+    .app-store-row-clean {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.82rem;
+      margin-top: 1.65rem;
+    }
+
+    .store-badge-clean {
+      min-width: 174px;
+      min-height: 58px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.72rem;
+      padding: 0.72rem 0.96rem;
+      border-radius: 18px;
+      transition:
+        transform var(--fast),
+        opacity var(--fast),
+        box-shadow var(--fast),
+        border-color var(--fast);
+    }
+
+    .store-badge-clean:hover {
+      transform: translateY(-1px);
+    }
+
+    .store-badge-clean-dark {
+      color: #ffffff;
+      background:
+        linear-gradient(180deg, #1d1d1f, #09090a);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.12),
+        0 16px 34px rgba(0, 0, 0, 0.18);
+    }
+
+    .store-badge-clean-light {
+      color: var(--text);
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.62));
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 16px 34px rgba(0, 0, 0, 0.055);
+      backdrop-filter: blur(24px) saturate(170%);
+      -webkit-backdrop-filter: blur(24px) saturate(170%);
+    }
+
+    .store-badge-clean-icon {
+      width: 28px;
+      flex: 0 0 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.45rem;
+      line-height: 1;
+    }
+
+    .store-badge-clean-text {
+      display: grid;
+      gap: 0.04rem;
+      line-height: 1.05;
+    }
+
+    .store-badge-clean-small {
+      font-size: 0.68rem;
+      font-weight: 650;
+      letter-spacing: 0.02em;
+      opacity: 0.72;
+    }
+
+    .store-badge-clean-big {
+      font-size: 1.05rem;
+      font-weight: 820;
+      letter-spacing: -0.026em;
+    }
+
+    .app-hero-visual {
+      position: relative;
+      min-height: 620px;
+      display: grid;
+      place-items: center;
+      isolation: isolate;
+    }
+
+    .app-hero-visual::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 52%;
+      width: min(42vw, 540px);
+      height: min(42vw, 540px);
+      transform: translate(-50%, -50%);
+      border-radius: 999px;
+      background:
+        radial-gradient(circle, rgba(46, 145, 63, 0.16), rgba(46, 145, 63, 0.08) 42%, transparent 70%);
+      filter: blur(18px);
+      z-index: -1;
+    }
+
+    .app-phone {
+      width: min(38vw, 470px);
+      max-height: 720px;
+      object-fit: contain;
+      filter:
+        drop-shadow(0 38px 72px rgba(0, 0, 0, 0.18))
+        drop-shadow(0 10px 22px rgba(0, 0, 0, 0.08));
+    }
+
+    .app-feature-section {
+      position: relative;
+      padding: 6rem 0;
+      background: #f5f5f7;
+    }
+
+    .app-section-intro {
+      max-width: 860px;
+      margin: 0 auto 3rem;
+      text-align: center;
+    }
+
+    .app-section-title {
+      color: var(--text);
+      font-size: clamp(2.45rem, 4.7vw, 5rem);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+      font-weight: 760;
+      text-wrap: balance;
+    }
+
+    .app-section-intro p:not(.eyebrow) {
+      max-width: 690px;
+      margin: 1rem auto 0;
+      color: var(--text-soft);
+      font-size: clamp(1.02rem, 1.32vw, 1.16rem);
+      line-height: 1.5;
+      letter-spacing: -0.012em;
+    }
+
+    .app-feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.15rem;
+    }
+
+    .app-feature-card {
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(1.35rem, 2vw, 1.75rem);
+      border-radius: 34px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(46, 145, 63, 0.07), transparent 14rem),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.64));
+      border: 1px solid rgba(255, 255, 255, 0.76);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.88),
+        0 22px 60px rgba(0, 0, 0, 0.055);
+      backdrop-filter: blur(24px) saturate(170%);
+      -webkit-backdrop-filter: blur(24px) saturate(170%);
+    }
+
+    .app-feature-number {
+      width: fit-content;
+      margin-bottom: 2.4rem;
+      color: var(--nf-green);
+      font-size: 0.78rem;
+      font-weight: 860;
+      letter-spacing: 0.06em;
+    }
+
+    .app-feature-card h3 {
+      color: var(--text);
+      font-size: clamp(1.85rem, 2.65vw, 2.65rem);
+      line-height: 1;
+      letter-spacing: -0.052em;
+      font-weight: 760;
+      text-wrap: balance;
+    }
+
+    .app-feature-card p {
+      margin-top: 0.85rem;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.52;
+      letter-spacing: -0.012em;
+    }
+
+    .app-flow-section {
+      padding: 6rem 0;
+      background:
+        radial-gradient(circle at 50% 10%, rgba(46, 145, 63, 0.075), transparent 32rem),
+        linear-gradient(180deg, #ffffff 0%, #fbfbfd 52%, #f5f5f7 100%);
+    }
+
+    .app-flow-shell {
+      display: grid;
+      grid-template-columns: minmax(0, 0.88fr) minmax(340px, 0.72fr);
+      gap: clamp(1.25rem, 4vw, 4rem);
+      align-items: center;
+      padding: clamp(1.35rem, 3vw, 2.2rem);
+      border-radius: 42px;
+      background:
+        linear-gradient(180deg, rgba(255, 255, 255, 0.86), rgba(255, 255, 255, 0.62));
+      border: 1px solid rgba(255, 255, 255, 0.78);
+      box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.9),
+        0 28px 80px rgba(0, 0, 0, 0.07);
+      backdrop-filter: blur(28px) saturate(170%);
+      -webkit-backdrop-filter: blur(28px) saturate(170%);
+    }
+
+    .app-flow-copy h2 {
+      color: var(--text);
+      font-size: clamp(2.35rem, 4.4vw, 4.8rem);
+      line-height: 0.95;
+      letter-spacing: -0.055em;
+      font-weight: 760;
+      text-wrap: balance;
+    }
+
+    .app-flow-copy > p {
+      max-width: 650px;
+      margin-top: 1rem;
+      color: var(--text-soft);
+      font-size: 1.05rem;
+      line-height: 1.55;
+      letter-spacing: -0.012em;
+    }
+
+    .app-flow-list {
+      display: grid;
+      gap: 0.85rem;
+      margin-top: 1.6rem;
+    }
+
+    .app-flow-item {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 0.82rem;
+      align-items: start;
+      padding: 1rem;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.68);
+      border: 1px solid rgba(0, 0, 0, 0.045);
+    }
+
+    .app-flow-dot {
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      color: #ffffff;
+      background: linear-gradient(180deg, var(--nf-green-light), var(--nf-green));
+      box-shadow: 0 10px 22px rgba(46, 145, 63, 0.18);
+      font-size: 0.82rem;
+      font-weight: 850;
+    }
+
+    .app-flow-item strong {
+      display: block;
+      color: var(--text);
+      font-size: 1rem;
+      line-height: 1.25;
+      letter-spacing: -0.018em;
+      font-weight: 760;
+    }
+
+    .app-flow-item span:not(.app-flow-dot) {
+      display: block;
+      margin-top: 0.2rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.42;
+      letter-spacing: -0.01em;
+    }
+
+    .app-flow-visual {
+      min-height: 520px;
+      display: grid;
+      place-items: center;
+      position: relative;
+    }
+
+    .app-flow-visual::before {
+      content: "";
+      position: absolute;
+      width: min(100%, 420px);
+      height: min(100%, 420px);
+      border-radius: 999px;
+      background: radial-gradient(circle, rgba(46, 145, 63, 0.13), transparent 70%);
+      filter: blur(14px);
+    }
+
+    .app-flow-visual img {
+      position: relative;
+      z-index: 1;
+      width: min(82%, 400px);
+      max-height: 600px;
+      object-fit: contain;
+      filter:
+        drop-shadow(0 34px 68px rgba(0, 0, 0, 0.16))
+        drop-shadow(0 8px 18px rgba(0, 0, 0, 0.08));
+    }
+
+    .app-note-section {
+      padding: 0 0 5.8rem;
+      background: #f5f5f7;
+    }
+
+    .app-final-cta {
+      min-height: 66vh;
+      padding: 6rem 1.2rem;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      background:
+        radial-gradient(circle at 50% 78%, rgba(46, 145, 63, 0.08), transparent 30rem),
+        #ffffff;
+    }
+
+    .app-final-copy {
+      max-width: 900px;
+      margin-inline: auto;
+    }
+
+    .app-final-copy h2 {
+      color: var(--text);
+      font-size: clamp(2.8rem, 5.8vw, 6rem);
+      line-height: 0.93;
+      letter-spacing: -0.06em;
+      font-weight: 760;
+      text-wrap: balance;
+    }
+
+    .app-final-copy p {
+      max-width: 650px;
+      margin: 1rem auto 0;
+      color: var(--text-soft);
+      font-size: clamp(1.04rem, 1.35vw, 1.2rem);
+      line-height: 1.5;
+      letter-spacing: -0.012em;
+      text-wrap: balance;
+    }
+
+    .app-final-copy .app-store-row-clean {
+      justify-content: center;
+    }
+
+    @media (max-width: 1100px) {
+      .app-hero-grid,
+      .app-flow-shell {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .app-hero-copy,
+      .app-flow-copy {
+        margin-inline: auto;
+      }
+
+      .app-hero-text,
+      .app-flow-copy > p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .app-store-row-clean {
+        justify-content: center;
+      }
+
+      .app-hero-visual {
+        min-height: 540px;
+      }
+
+      .app-phone {
+        width: min(70vw, 440px);
+      }
+
+      .app-feature-grid {
+        grid-template-columns: 1fr;
+        max-width: 680px;
+        margin-inline: auto;
+      }
+
+      .app-feature-card {
+        min-height: 260px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .app-hero {
+        min-height: auto;
+        padding: 5.2rem 0 4.4rem;
+      }
+
+      .app-hero-grid {
+        gap: 2.4rem;
+      }
+
+      .app-hero-title {
+        font-size: clamp(2.55rem, 12vw, 4.1rem);
+        letter-spacing: -0.055em;
+      }
+
+      .app-hero-text {
+        max-width: 34ch;
+        font-size: 1.04rem;
+      }
+
+      .app-store-row-clean {
+        width: 100%;
+        display: grid;
+        gap: 0.7rem;
+        margin-top: 1.45rem;
+      }
+
+      .store-badge-clean {
+        width: min(100%, 420px);
+        min-height: 58px;
+        margin-inline: auto;
+        border-radius: 18px;
+      }
+
+      .store-badge-clean-big {
+        font-size: 1.02rem;
+      }
+
+      .app-hero-visual {
+        min-height: 455px;
+        overflow: hidden;
+      }
+
+      .app-hero-visual::before {
+        width: 430px;
+        height: 430px;
+      }
+
+      .app-phone {
+        width: min(88vw, 350px);
+        transform: translateY(0.5rem);
+      }
+
+      .app-feature-section,
+      .app-flow-section {
+        padding: 4.6rem 0;
+      }
+
+      .app-section-title,
+      .app-flow-copy h2 {
+        font-size: clamp(2.25rem, 10vw, 3.55rem);
+      }
+
+      .app-section-intro {
+        margin-bottom: 2.2rem;
+      }
+
+      .app-feature-card,
+      .app-flow-shell {
+        border-radius: 30px;
+      }
+
+      .app-flow-shell {
+        padding: 1.15rem;
+      }
+
+      .app-flow-list {
+        text-align: left;
+      }
+
+      .app-flow-visual {
+        min-height: 430px;
+      }
+
+      .app-flow-visual img {
+        width: min(88vw, 330px);
+      }
+
+      .app-note-section {
+        padding-bottom: 4.6rem;
+      }
+
+      .app-final-cta {
+        min-height: 58vh;
+        padding: 4.8rem 1rem;
+      }
+
+      .app-final-copy h2 {
+        font-size: clamp(2.55rem, 12vw, 4.1rem);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .app-hero {
+        padding-top: 4.8rem;
+      }
+
+      .store-badge-clean {
+        min-height: 56px;
+        padding: 0.68rem 0.9rem;
+      }
+
+      .store-badge-clean-icon {
+        width: 26px;
+        flex-basis: 26px;
+        font-size: 1.35rem;
+      }
+
+      .app-hero-visual {
+        min-height: 410px;
+      }
+
+      .app-phone {
+        width: min(92vw, 315px);
+      }
+
+      .app-feature-card {
+        min-height: 240px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -49,113 +626,114 @@
     </div>
   </header>
 
-  <main>
-    <section class="app-showcase-section">
-      <div class="container app-showcase-container">
-        <div class="app-showcase-copy">
+  <main class="app-page">
+    <section class="app-hero">
+      <div class="container app-hero-grid">
+        <div class="app-hero-copy">
           <p class="eyebrow">NordFit App</p>
 
-          <h1 class="section-title large-title">
-            Alles Wichtige in einer App.
+          <h1 class="app-hero-title">
+            Dein Zugang.<br />
+            Alles in <span>einer App.</span>
           </h1>
 
-          <p>
-            Zugang öffnen, Mitgliedschaft verwalten und Tagespass buchen.
-            Klar gebündelt, damit dein Training nicht mit Papierkram beginnt.
+          <p class="app-hero-text">
+            Mitgliedschaft buchen, Tagespass nutzen und per QR-Code ins Studio.
+            Klar, digital und ohne Papierkram.
           </p>
 
-          <div class="app-store-row">
+          <div class="app-store-row-clean">
             <a
-              class="store-badge store-badge-dark"
+              class="store-badge-clean store-badge-clean-dark"
               href="https://search.itunes.apple.com/WebObjects/MZSearch.woa/wa/search?media=software&term=NordFit"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="NordFit im App Store suchen"
             >
-              <span class="store-badge-icon" aria-hidden="true"></span>
-              <span class="store-badge-text">
-                <span class="store-badge-small">Suchen im</span>
-                <span class="store-badge-big">App Store</span>
+              <span class="store-badge-clean-icon" aria-hidden="true"></span>
+              <span class="store-badge-clean-text">
+                <span class="store-badge-clean-small">Suchen im</span>
+                <span class="store-badge-clean-big">App Store</span>
               </span>
             </a>
 
             <a
-              class="store-badge store-badge-light"
+              class="store-badge-clean store-badge-clean-light"
               href="https://play.google.com/store/search?q=NordFit&c=apps"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="NordFit bei Google Play suchen"
             >
-              <span class="store-badge-icon" aria-hidden="true">▶</span>
-              <span class="store-badge-text">
-                <span class="store-badge-small">Suchen bei</span>
-                <span class="store-badge-big">Google Play</span>
+              <span class="store-badge-clean-icon" aria-hidden="true">▶</span>
+              <span class="store-badge-clean-text">
+                <span class="store-badge-clean-small">Suchen bei</span>
+                <span class="store-badge-clean-big">Google Play</span>
               </span>
             </a>
           </div>
         </div>
 
-        <div class="app-showcase-visual" aria-hidden="true">
+        <div class="app-hero-visual" aria-hidden="true">
           <img
             src="images/app-screen.png"
             alt=""
-            class="app-showcase-image"
+            class="app-phone"
           />
         </div>
       </div>
     </section>
 
-    <section class="section section-light">
+    <section class="app-feature-section">
       <div class="container">
-        <div class="section-intro center">
+        <div class="app-section-intro">
           <p class="eyebrow">Funktionen</p>
 
-          <h2 class="section-title">
-            Klar starten. Ohne Umwege.
+          <h2 class="app-section-title">
+            Alles, was du vor dem Training brauchst.
           </h2>
 
           <p>
-            Die App ist der digitale Mittelpunkt von NordFit. Sie soll dir Zugang,
-            Buchung und Verwaltung so einfach wie möglich machen.
+            Die App ist der digitale Mittelpunkt von NordFit. Zugang, Buchung und Verwaltung
+            sollen so klar sein, dass du dich auf dein Training konzentrieren kannst.
           </p>
         </div>
 
-        <div class="feature-grid">
-          <article class="card feature-card">
+        <div class="app-feature-grid">
+          <article class="app-feature-card">
             <div>
-              <span class="feature-number">01</span>
+              <span class="app-feature-number">01</span>
 
               <h3>Zugang per QR-Code.</h3>
 
               <p>
-                App öffnen, QR-Code anzeigen und ins Studio kommen. Der Zugang ist
-                digital geplant und passt zum 24/7-Konzept.
+                Öffne die App, zeig deinen QR-Code und betrete das Studio.
+                Der Zutritt ist digital geplant und passend zum 24/7-Konzept.
               </p>
             </div>
           </article>
 
-          <article class="card feature-card">
+          <article class="app-feature-card">
             <div>
-              <span class="feature-number">02</span>
+              <span class="app-feature-number">02</span>
 
-              <h3>Mitgliedschaft buchen.</h3>
+              <h3>Mitgliedschaft verwalten.</h3>
 
               <p>
-                Basic, Plus oder Pro auswählen und deine Mitgliedschaft digital
-                vorbereiten. Klarer Tarif, klarer Ablauf.
+                Wähle deinen Tarif, behalte deinen Status im Blick und verwalte
+                deinen Zugang ohne unnötigen Papierkram.
               </p>
             </div>
           </article>
 
-          <article class="card feature-card">
+          <article class="app-feature-card">
             <div>
-              <span class="feature-number">03</span>
+              <span class="app-feature-number">03</span>
 
-              <h3>Tagespass nutzen.</h3>
+              <h3>Tagespass aktivieren.</h3>
 
               <p>
-                Spontan trainieren, ohne direkt eine Mitgliedschaft abzuschließen.
-                Ein Zugang, ein Tag, ein klarer Preis.
+                Kaufe den Tagespass vorher und aktiviere ihn erst beim echten Zutritt
+                ins Studio. Danach läuft er 24 Stunden.
               </p>
             </div>
           </article>
@@ -163,57 +741,108 @@
       </div>
     </section>
 
-    <section class="product-hero product-hero-light">
-      <div class="product-copy">
-        <h2>Dein Zugang. Immer dabei.</h2>
+    <section class="app-flow-section">
+      <div class="container">
+        <div class="app-flow-shell">
+          <div class="app-flow-copy">
+            <p class="eyebrow">Ablauf</p>
 
-        <p>
-          Die NordFit App ist dafür gedacht, dein Training einfacher zu machen:
-          buchen, öffnen, starten — ruhig, digital und übersichtlich.
-        </p>
+            <h2>
+              Kaufen. Öffnen. Trainieren.
+            </h2>
 
-        <div class="product-actions">
-          <a href="mitgliedschaften.html" class="product-link product-link-primary">
-            Tarife ansehen
-          </a>
+            <p>
+              NordFit soll sich nicht nach Verwaltung anfühlen. Die App bündelt deinen Zugang,
+              deinen Tarif und deinen Tagespass an einem Ort.
+            </p>
 
-          <a href="standorte.html" class="product-link product-link-secondary">
-            Standort ansehen
-          </a>
+            <div class="app-flow-list">
+              <div class="app-flow-item">
+                <span class="app-flow-dot">1</span>
+                <div>
+                  <strong>App öffnen</strong>
+                  <span>Mitgliedschaft oder Tagespass auswählen und digital vorbereiten.</span>
+                </div>
+              </div>
+
+              <div class="app-flow-item">
+                <span class="app-flow-dot">2</span>
+                <div>
+                  <strong>QR-Code nutzen</strong>
+                  <span>Beim Studiozutritt den QR-Code anzeigen und den Zugang aktivieren.</span>
+                </div>
+              </div>
+
+              <div class="app-flow-item">
+                <span class="app-flow-dot">3</span>
+                <div>
+                  <strong>Training starten</strong>
+                  <span>Reingehen, trainieren und alles Weitere ruhig in der App behalten.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="app-flow-visual" aria-hidden="true">
+            <img
+              src="images/app-screen.png"
+              alt=""
+            />
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="app-note-section">
       <div class="container">
         <div class="info-note">
           <p class="info-note-label">Hinweis</p>
 
           <p class="info-note-text">
-            Die App-Funktionen sind als Konzept für NordFit geplant. Sobald ein Studio
-            aktiv vorbereitet wird, können Buchung, Zugang und konkrete Abläufe weiter
-            technisch ausgearbeitet werden.
+            Die App-Funktionen sind als Konzept für NordFit geplant. Sobald ein Studio aktiv
+            vorbereitet wird, können Buchung, Zugang und konkrete technische Abläufe final
+            ausgearbeitet werden.
           </p>
         </div>
       </div>
     </section>
 
-    <section class="product-hero product-hero-final">
-      <div class="product-copy">
+    <section class="app-final-cta">
+      <div class="app-final-copy">
         <h2>Bereit, wenn du es bist.</h2>
 
         <p>
-          Ob Mitgliedschaft oder Tagespass: NordFit soll dir den Einstieg leicht machen
-          und dein Training ruhig begleiten.
+          Lade die App, wähle deinen Zugang und starte dein Training genau dann,
+          wenn es für dich passt.
         </p>
 
-        <div class="product-actions">
-          <a href="mitgliedschaften.html" class="product-link product-link-primary">
-            Tarife ansehen
+        <div class="app-store-row-clean">
+          <a
+            class="store-badge-clean store-badge-clean-dark"
+            href="https://search.itunes.apple.com/WebObjects/MZSearch.woa/wa/search?media=software&term=NordFit"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="NordFit im App Store suchen"
+          >
+            <span class="store-badge-clean-icon" aria-hidden="true"></span>
+            <span class="store-badge-clean-text">
+              <span class="store-badge-clean-small">Suchen im</span>
+              <span class="store-badge-clean-big">App Store</span>
+            </span>
           </a>
 
-          <a href="kontakt.html" class="product-link product-link-secondary">
-            Kontakt
+          <a
+            class="store-badge-clean store-badge-clean-light"
+            href="https://play.google.com/store/search?q=NordFit&c=apps"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="NordFit bei Google Play suchen"
+          >
+            <span class="store-badge-clean-icon" aria-hidden="true">▶</span>
+            <span class="store-badge-clean-text">
+              <span class="store-badge-clean-small">Suchen bei</span>
+              <span class="store-badge-clean-big">Google Play</span>
+            </span>
           </a>
         </div>
       </div>
