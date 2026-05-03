@@ -55,15 +55,14 @@
       text-wrap: balance;
     }
 
-    .legal-segment-wrap {
-      position: sticky;
-      top: 0.8rem;
-      z-index: 50;
+    .legal-tabs-wrap {
       width: min(100% - 2rem, 720px);
       margin: -1.7rem auto 3rem;
+      position: relative;
+      z-index: 30;
     }
 
-    .legal-segment {
+    .legal-tabs {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 0.35rem;
@@ -79,28 +78,30 @@
       -webkit-backdrop-filter: blur(28px) saturate(175%);
     }
 
-    .legal-segment a {
+    .legal-tab-button {
       min-height: 42px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       border-radius: 999px;
       color: rgba(29, 29, 31, 0.78);
+      background: transparent;
       font-size: 0.93rem;
       font-weight: 760;
       letter-spacing: -0.018em;
       transition:
         color var(--fast),
         background var(--fast),
-        box-shadow var(--fast);
+        box-shadow var(--fast),
+        transform var(--fast);
     }
 
-    .legal-segment a:hover {
+    .legal-tab-button:hover {
       color: var(--text);
       background: rgba(255, 255, 255, 0.62);
     }
 
-    .legal-segment a:first-child {
+    .legal-tab-button.is-active {
       color: #ffffff;
       background: linear-gradient(180deg, var(--nf-green-light), var(--nf-green));
       box-shadow: 0 12px 28px rgba(46, 145, 63, 0.22);
@@ -111,13 +112,28 @@
       background: #f5f5f7;
     }
 
-    .legal-stack {
-      display: grid;
-      gap: 1.25rem;
+    .legal-panel {
+      display: none;
+    }
+
+    .legal-panel.is-active {
+      display: block;
+      animation: legalPanelIn 0.34s var(--ease) both;
+    }
+
+    @keyframes legalPanelIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .legal-document {
-      scroll-margin-top: 7rem;
       padding: clamp(1.25rem, 2.7vw, 2rem);
       border-radius: 38px;
       background:
@@ -129,6 +145,7 @@
         0 24px 70px rgba(0, 0, 0, 0.06);
       backdrop-filter: blur(28px) saturate(170%);
       -webkit-backdrop-filter: blur(28px) saturate(170%);
+      overflow: hidden;
     }
 
     .legal-document-head {
@@ -143,6 +160,7 @@
       letter-spacing: -0.064em;
       font-weight: 760;
       text-wrap: balance;
+      overflow-wrap: break-word;
     }
 
     .legal-document-head p:not(.eyebrow) {
@@ -163,6 +181,7 @@
     .legal-card {
       display: grid;
       gap: 0.45rem;
+      min-width: 0;
       padding: 1.05rem 1.08rem;
       border-radius: 24px;
       background: rgba(255, 255, 255, 0.7);
@@ -192,6 +211,7 @@
       font-size: 0.98rem;
       line-height: 1.58;
       letter-spacing: -0.014em;
+      overflow-wrap: break-word;
     }
 
     .legal-card strong,
@@ -224,6 +244,7 @@
     }
 
     .legal-text-card {
+      min-width: 0;
       padding: 1.08rem 1.12rem;
       border-radius: 24px;
       background: rgba(255, 255, 255, 0.7);
@@ -240,6 +261,7 @@
       line-height: 1.08;
       letter-spacing: -0.045em;
       font-weight: 760;
+      overflow-wrap: break-word;
     }
 
     .legal-text-card ul {
@@ -270,7 +292,7 @@
         grid-column: auto;
       }
 
-      .legal-segment-wrap {
+      .legal-tabs-wrap {
         width: min(100% - 1.2rem, 720px);
       }
     }
@@ -282,25 +304,27 @@
       }
 
       .legal-hero-title {
-        font-size: clamp(2.45rem, 11.2vw, 4rem);
+        font-size: clamp(2.35rem, 10.4vw, 3.75rem);
+        line-height: 0.96;
+        letter-spacing: -0.055em;
       }
 
       .legal-hero-text {
-        max-width: 36ch;
+        max-width: 34ch;
+        font-size: 1.02rem;
       }
 
-      .legal-segment-wrap {
+      .legal-tabs-wrap {
         margin-top: -1.45rem;
         margin-bottom: 2.2rem;
-        top: 0.72rem;
       }
 
-      .legal-segment {
+      .legal-tabs {
         gap: 0.28rem;
         padding: 0.32rem;
       }
 
-      .legal-segment a {
+      .legal-tab-button {
         min-height: 40px;
         font-size: 0.82rem;
       }
@@ -310,12 +334,24 @@
       }
 
       .legal-document {
+        width: min(100%, 100%);
         border-radius: 30px;
         padding: 1.12rem;
       }
 
+      .legal-document-head {
+        margin-bottom: 1.25rem;
+      }
+
       .legal-document-head h2 {
-        font-size: clamp(2rem, 9.8vw, 3.25rem);
+        font-size: clamp(1.85rem, 8.3vw, 2.85rem);
+        line-height: 1.02;
+        letter-spacing: -0.055em;
+        max-width: 100%;
+      }
+
+      .legal-document-head p:not(.eyebrow) {
+        font-size: 0.98rem;
       }
 
       .legal-card,
@@ -326,8 +362,13 @@
     }
 
     @media (max-width: 420px) {
-      .legal-segment a {
+      .legal-tab-button {
         font-size: 0.78rem;
+      }
+
+      .legal-document-head h2 {
+        font-size: clamp(1.72rem, 7.8vw, 2.55rem);
+        letter-spacing: -0.052em;
       }
     }
   </style>
@@ -388,18 +429,50 @@
       </div>
     </section>
 
-    <div class="legal-segment-wrap">
-      <nav class="legal-segment" aria-label="Rechtliche Bereiche">
-        <a href="#impressum">Impressum</a>
-        <a href="#datenschutz">Datenschutz</a>
-        <a href="#agb">AGB</a>
-      </nav>
+    <div class="legal-tabs-wrap">
+      <div class="legal-tabs" role="tablist" aria-label="Rechtliche Bereiche">
+        <button
+          class="legal-tab-button is-active"
+          type="button"
+          role="tab"
+          aria-selected="true"
+          aria-controls="panel-impressum"
+          id="tab-impressum"
+          data-tab="impressum"
+        >
+          Impressum
+        </button>
+
+        <button
+          class="legal-tab-button"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-datenschutz"
+          id="tab-datenschutz"
+          data-tab="datenschutz"
+        >
+          Datenschutz
+        </button>
+
+        <button
+          class="legal-tab-button"
+          type="button"
+          role="tab"
+          aria-selected="false"
+          aria-controls="panel-agb"
+          id="tab-agb"
+          data-tab="agb"
+        >
+          AGB
+        </button>
+      </div>
     </div>
 
     <section class="legal-content">
       <div class="container">
-        <div class="legal-stack">
-          <article class="legal-document" id="impressum">
+        <div class="legal-panel is-active" id="panel-impressum" role="tabpanel" aria-labelledby="tab-impressum">
+          <article class="legal-document">
             <div class="legal-document-head">
               <p class="eyebrow">Impressum</p>
 
@@ -482,8 +555,10 @@
               </p>
             </div>
           </article>
+        </div>
 
-          <article class="legal-document" id="datenschutz">
+        <div class="legal-panel" id="panel-datenschutz" role="tabpanel" aria-labelledby="tab-datenschutz" hidden>
+          <article class="legal-document">
             <div class="legal-document-head">
               <p class="eyebrow">Datenschutz</p>
 
@@ -498,9 +573,7 @@
             <div class="legal-text-stack">
               <section class="legal-text-card">
                 <h3>1. Verantwortlicher</h3>
-                <p>
-                  Verantwortlich für die Verarbeitung personenbezogener Daten ist:
-                </p>
+                <p>Verantwortlich für die Verarbeitung personenbezogener Daten ist:</p>
                 <p>
                   <strong>NordFit / NordGroup</strong><br />
                   [vollständiger Betreibername ergänzen]<br />
@@ -616,8 +689,10 @@
               </section>
             </div>
           </article>
+        </div>
 
-          <article class="legal-document" id="agb">
+        <div class="legal-panel" id="panel-agb" role="tabpanel" aria-labelledby="tab-agb" hidden>
+          <article class="legal-document">
             <div class="legal-document-head">
               <p class="eyebrow">AGB</p>
 
@@ -641,9 +716,7 @@
 
               <section class="legal-text-card">
                 <h3>2. Vertragspartner</h3>
-                <p>
-                  Vertragspartner ist:
-                </p>
+                <p>Vertragspartner ist:</p>
                 <p>
                   <strong>NordFit / NordGroup</strong><br />
                   [vollständiger Betreibername ergänzen]<br />
@@ -803,5 +876,32 @@
   </footer>
 
   <script src="js/main.js"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const tabButtons = document.querySelectorAll(".legal-tab-button");
+      const panels = document.querySelectorAll(".legal-panel");
+
+      const activateTab = (target) => {
+        tabButtons.forEach((button) => {
+          const isActive = button.dataset.tab === target;
+          button.classList.toggle("is-active", isActive);
+          button.setAttribute("aria-selected", isActive ? "true" : "false");
+        });
+
+        panels.forEach((panel) => {
+          const isActive = panel.id === `panel-${target}`;
+          panel.classList.toggle("is-active", isActive);
+          panel.hidden = !isActive;
+        });
+      };
+
+      tabButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          activateTab(button.dataset.tab);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
