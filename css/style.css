@@ -73,7 +73,7 @@ body.page-enter {
 
 body.page-ready {
   opacity: 1;
-  transform: translateY(0);
+  transform: none;
   transition:
     opacity 0.24s var(--ease),
     transform 0.24s var(--ease);
