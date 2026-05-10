@@ -8,6 +8,58 @@ document.addEventListener("DOMContentLoaded", () => {
   const modalTriggers = document.querySelectorAll("[data-modal-target]");
   const modalCloseButtons = document.querySelectorAll(".modal-close");
 
+  /* Seitenwechsel-Animation */
+
+  body.classList.add("page-enter");
+
+  window.requestAnimationFrame(() => {
+    window.requestAnimationFrame(() => {
+      body.classList.add("page-ready");
+      body.classList.remove("page-enter");
+    });
+  });
+
+  const isInternalPageLink = (link) => {
+    if (!link) return false;
+
+    const href = link.getAttribute("href");
+
+    if (!href) return false;
+    if (href.startsWith("#")) return false;
+    if (href.startsWith("mailto:")) return false;
+    if (href.startsWith("tel:")) return false;
+    if (href.startsWith("http://")) return false;
+    if (href.startsWith("https://")) return false;
+    if (link.target === "_blank") return false;
+
+    return true;
+  };
+
+  document.querySelectorAll("a").forEach((link) => {
+    if (!isInternalPageLink(link)) return;
+
+    link.addEventListener("click", (event) => {
+      const href = link.getAttribute("href");
+
+      if (!href) return;
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+      event.preventDefault();
+
+      body.classList.add("page-leaving");
+
+      window.setTimeout(() => {
+        window.location.href = href;
+      }, 220);
+    });
+  });
+
+  window.addEventListener("pageshow", () => {
+    body.classList.remove("page-leaving");
+  });
+
+  /* Mobile-Menü */
+
   const setMenuState = (isOpen) => {
     if (!burger || !nav) return;
 
@@ -45,6 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
+  /* Header beim Scrollen */
+
   const updateHeaderScrollState = () => {
     if (!headerInner) return;
 
@@ -57,6 +111,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   updateHeaderScrollState();
   window.addEventListener("scroll", updateHeaderScrollState, { passive: true });
+
+  /* Modals */
 
   const openModal = (modal) => {
     if (!modal) return;
@@ -102,6 +158,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  /* Kontaktformular – ältere Variante als Fallback */
+
   const contactForm = document.querySelector("[data-nordfit-contact-form]");
 
   if (contactForm) {
@@ -136,6 +194,8 @@ document.addEventListener("DOMContentLoaded", () => {
         `mailto:nordgroup.business@gmail.com?subject=${subject}&body=${encodeURIComponent(bodyText)}`;
     });
   }
+
+  /* Galerie ziehen */
 
   const galleryRows = document.querySelectorAll(".gallery-row");
 
@@ -190,6 +250,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   });
+
+  /* Alte Standort-Logik als Fallback */
 
   const locationPicker = document.querySelector(".location-picker");
   const locationButtons = document.querySelectorAll("[data-location-button]");
