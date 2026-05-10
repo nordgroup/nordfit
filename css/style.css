@@ -186,7 +186,7 @@ ul {
 /* Grundabstand wegen festem Header */
 
 main > section:first-child {
-  padding-top: max(7.8rem, 11vh);
+  padding-top: max(9rem, 13vh);
 }
 
 /* Header */
@@ -411,6 +411,12 @@ main > section:first-child {
   padding: 7.5rem 1.5rem 3.5rem;
   text-align: center;
   isolation: isolate;
+}
+
+.home-first-hero {
+  min-height: 100vh;
+  padding-top: max(10.4rem, 15vh);
+  padding-bottom: 4.5rem;
 }
 
 .product-copy {
@@ -2688,7 +2694,7 @@ select:focus {
 
 @media (max-width: 768px) {
   main > section:first-child {
-    padding-top: max(7.25rem, 13vh);
+    padding-top: max(8.6rem, 15vh);
   }
 
   .container {
@@ -2698,6 +2704,12 @@ select:focus {
   .product-hero {
     min-height: 86vh;
     padding: 6.5rem 1rem 3rem;
+  }
+
+  .home-first-hero {
+    min-height: 100vh;
+    padding-top: max(9.3rem, 16vh);
+    padding-bottom: 3.9rem;
   }
 
   .product-hero-main {
@@ -2731,7 +2743,7 @@ select:focus {
 
   .home-hero-image-wrap {
     width: min(100%, 1180px);
-    margin-top: 2.7rem;
+    margin-top: 3.2rem;
     border-radius: 32px;
   }
 
@@ -3085,7 +3097,7 @@ select:focus {
 
 @media (max-width: 480px) {
   main > section:first-child {
-    padding-top: max(6.9rem, 12vh);
+    padding-top: max(8.1rem, 14vh);
   }
 
   .container {
@@ -3121,6 +3133,12 @@ select:focus {
 
   .product-hero {
     min-height: 82vh;
+  }
+
+  .home-first-hero {
+    min-height: 100vh;
+    padding-top: max(8.8rem, 15vh);
+    padding-bottom: 3.5rem;
   }
 
   .product-hero-main {
