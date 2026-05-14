@@ -7,7 +7,7 @@
   <title>NordFit – Kontakt</title>
   <meta
     name="description"
-    content="Kontakt zu NordFit: Schreib uns direkt über das Kontaktformular oder nutze E-Mail, Instagram und die Telefonzeiten."
+    content="Kontakt zu NordFit: Schreib uns direkt über das Kontaktformular oder nutze E-Mail und Instagram. Antwort in der Regel innerhalb von 2–3 Werktagen."
   />
 
   <link rel="stylesheet" href="css/style.css" />
@@ -286,7 +286,7 @@
     }
 
     .contact-method-card-clean a,
-    .contact-phone-status {
+    .contact-support-status {
       color: var(--nf-green-dark);
       font-size: clamp(1.05rem, 1.45vw, 1.22rem);
       font-weight: 790;
@@ -294,60 +294,12 @@
       word-break: break-word;
     }
 
-    .contact-phone-hours {
-      display: grid;
-      gap: 0.68rem;
-      margin-top: 0.75rem;
-      padding-top: 0.95rem;
-      border-top: 1px solid rgba(0, 0, 0, 0.065);
-    }
-
-    .contact-phone-hours-title {
-      color: var(--text);
-      font-size: 0.92rem;
-      font-weight: 780;
-      letter-spacing: -0.015em;
-    }
-
-    .contact-phone-hours-note {
-      max-width: 44rem;
+    .contact-support-note {
+      margin-top: 0.32rem;
       color: var(--muted);
-      font-size: 0.9rem;
+      font-size: 0.94rem;
       line-height: 1.45;
       letter-spacing: -0.01em;
-    }
-
-    .contact-phone-hours-grid {
-      display: grid;
-      gap: 0.36rem;
-      margin-top: 0.1rem;
-    }
-
-    .contact-phone-hours-row {
-      display: grid;
-      grid-template-columns: minmax(7.5rem, 0.42fr) minmax(0, 1fr);
-      align-items: center;
-      gap: 1rem;
-      padding: 0.58rem 0.72rem;
-      border-radius: 16px;
-      background: rgba(255, 255, 255, 0.5);
-      border: 1px solid rgba(0, 0, 0, 0.035);
-      color: var(--muted);
-      font-size: 0.96rem;
-      line-height: 1.35;
-      letter-spacing: -0.015em;
-    }
-
-    .contact-phone-hours-row strong {
-      color: var(--text-soft);
-      font-size: 0.96rem;
-      font-weight: 730;
-      letter-spacing: -0.015em;
-    }
-
-    .contact-phone-hours-row p {
-      color: var(--muted);
-      text-align: left;
     }
 
     .contact-final-clean {
@@ -437,11 +389,6 @@
         padding: 1.15rem;
       }
 
-      .contact-phone-hours-row {
-        grid-template-columns: 1fr;
-        gap: 0.08rem;
-      }
-
       .contact-final-clean {
         min-height: 56vh;
       }
@@ -504,7 +451,7 @@
 
           <p class="contact-hero-text">
             Fragen zu Mitgliedschaft, Tagespass, App, Standort oder NordFit allgemein?
-            Schick dein Anliegen über das Formular oder nutze eine der Kontaktmöglichkeiten.
+            Schick dein Anliegen über das Formular oder nutze E-Mail und Instagram.
           </p>
         </div>
       </div>
@@ -565,19 +512,6 @@
                   autocomplete="email"
                   maxlength="120"
                   required
-                />
-              </div>
-
-              <div class="contact-field">
-                <label for="contact-phone">Telefonnummer</label>
-                <input
-                  id="contact-phone"
-                  name="contact-phone"
-                  type="tel"
-                  placeholder="+49 170 1234567"
-                  autocomplete="tel"
-                  inputmode="tel"
-                  maxlength="26"
                 />
               </div>
 
@@ -698,8 +632,8 @@
             <h2>Auch ohne Formular erreichbar.</h2>
 
             <p>
-              Schreib uns direkt per E-Mail, folge NordFit auf Instagram oder nutze später
-              die telefonische Kontaktmöglichkeit während der angegebenen Zeiten.
+              Schreib uns direkt per E-Mail oder über Instagram. NordFit antwortet ruhig,
+              gesammelt und ohne Telefonstress.
             </p>
           </article>
 
@@ -710,57 +644,44 @@
             </article>
 
             <article class="contact-method-card-clean">
-              <span>Instagram</span>
+              <span>Kontaktformular</span>
+              <a href="#contact-form-title">Formular auf dieser Seite nutzen</a>
+            </article>
+
+            <article class="contact-method-card-clean">
+              <span>Instagram – NordFit</span>
               <a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">
                 @nordfit.business
               </a>
             </article>
 
             <article class="contact-method-card-clean">
-              <span>Telefon</span>
+              <span>Instagram – NordGroup</span>
+              <a href="https://instagram.com/nordgroup.business" target="_blank" rel="noopener noreferrer">
+                @nordgroup.business
+              </a>
+            </article>
 
-              <p class="contact-phone-status">Bald verfügbar</p>
+            <article class="contact-method-card-clean">
+              <span>Supportzeiten</span>
+              <p class="contact-support-status">
+                Montag bis Freitag
+              </p>
 
-              <div class="contact-phone-hours">
-                <p class="contact-phone-hours-title">Telefonzeiten</p>
+              <p class="contact-support-note">
+                Antwort in der Regel innerhalb von 2–3 Werktagen.
+              </p>
+            </article>
 
-                <p class="contact-phone-hours-note">
-                  Telefonisch erreichbar zu folgenden Zeiten. Der Studiozugang bleibt unabhängig davon
-                  24/7 über die App möglich.
-                </p>
+            <article class="contact-method-card-clean">
+              <span>Öffnungszeiten</span>
+              <p class="contact-support-status">
+                Studiozugang 24/7 per App
+              </p>
 
-                <div class="contact-phone-hours-grid">
-                  <div class="contact-phone-hours-row">
-                    <strong>Montag</strong>
-                    <p>09:00–11:00 Uhr</p>
-                  </div>
-
-                  <div class="contact-phone-hours-row">
-                    <strong>Dienstag</strong>
-                    <p>09:00–11:00 Uhr</p>
-                  </div>
-
-                  <div class="contact-phone-hours-row">
-                    <strong>Mittwoch</strong>
-                    <p>09:00–11:00 Uhr</p>
-                  </div>
-
-                  <div class="contact-phone-hours-row">
-                    <strong>Donnerstag</strong>
-                    <p>09:00–11:00 Uhr</p>
-                  </div>
-
-                  <div class="contact-phone-hours-row">
-                    <strong>Freitag</strong>
-                    <p>14:00–16:00 Uhr</p>
-                  </div>
-
-                  <div class="contact-phone-hours-row">
-                    <strong>Samstag</strong>
-                    <p>14:00–16:00 Uhr</p>
-                  </div>
-                </div>
-              </div>
+              <p class="contact-support-note">
+                Der Studiozugang läuft unabhängig vom Support digital über die NordFit App.
+              </p>
             </article>
           </div>
         </div>
@@ -796,67 +717,79 @@
           <div class="footer-column">
             <p class="footer-column-title">Seiten</p>
 
-            <div class="footer-link-list">
+            <nav class="footer-link-list" aria-label="Footer Navigation">
               <a href="index.html">Startseite</a>
               <a href="mitgliedschaften.html">Tarife</a>
               <a href="standorte.html">Standorte</a>
               <a href="app.html">App</a>
               <a href="hausordnung.html">Hausordnung</a>
               <a href="kontakt.html">Kontakt</a>
-            </div>
+            </nav>
           </div>
 
           <div class="footer-column">
             <p class="footer-column-title">Rechtliches</p>
 
-            <div class="footer-link-list">
+            <nav class="footer-link-list" aria-label="Rechtliche Seiten">
               <a href="impressum.html">Impressum</a>
-              <a href="impressum.html">Datenschutz</a>
               <a href="impressum.html">AGB</a>
-            </div>
+              <a href="impressum.html">Datenschutz</a>
+            </nav>
           </div>
 
           <div class="footer-column">
-            <p class="footer-column-title">Kontakt</p>
+            <p class="footer-column-title">Kontakt & Support</p>
 
             <div class="footer-contact-list">
-              <a href="mailto:nordgroup.business@gmail.com">nordgroup.business@gmail.com</a>
-              <p>Telefon: bald verfügbar</p>
+              <a href="mailto:nordgroup.business@gmail.com">
+                nordgroup.business@gmail.com
+              </a>
+
+              <a href="kontakt.html">
+                Kontaktformular öffnen
+              </a>
             </div>
 
-            <div class="footer-phone-times">
-              <p class="footer-phone-title">Telefonzeiten</p>
+            <div class="footer-phone-times" aria-label="Supportzeiten">
+              <p class="footer-phone-title">Supportzeiten</p>
 
               <div class="footer-phone-row">
-                <span>Mo–Do</span>
-                <strong>09:00–11:00 Uhr</strong>
+                <span>Mo–Fr</span>
+                <strong>Antwort in der Regel innerhalb von 2–3 Werktagen</strong>
               </div>
+            </div>
+
+            <div class="footer-phone-times" aria-label="Öffnungszeiten">
+              <p class="footer-phone-title">Öffnungszeiten</p>
 
               <div class="footer-phone-row">
-                <span>Fr–Sa</span>
-                <strong>14:00–16:00 Uhr</strong>
+                <span>Studio</span>
+                <strong>24/7 per App</strong>
               </div>
-
-              <p class="footer-phone-note">
-                Der Studiozugang bleibt unabhängig davon jederzeit per App möglich.
-              </p>
             </div>
           </div>
 
           <div class="footer-column">
             <p class="footer-column-title">Social</p>
 
-            <div class="footer-link-list">
+            <nav class="footer-link-list" aria-label="Social Media">
               <a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">
-                Instagram
+                Instagram – NordFit
               </a>
-            </div>
+
+              <a href="https://instagram.com/nordgroup.business" target="_blank" rel="noopener noreferrer">
+                Instagram – NordGroup
+              </a>
+            </nav>
           </div>
         </div>
 
         <div class="footer-bottom">
           <p>© 2029 NordFit / NordGroup. Alle Rechte vorbehalten.</p>
-          <p class="footer-bottom-note">Modernes Training im Norden.</p>
+
+          <p class="footer-bottom-note">
+            NordFit ist ein Projekt von NordGroup.
+          </p>
         </div>
       </div>
     </div>
@@ -875,7 +808,6 @@
         firstName: document.getElementById("contact-firstname"),
         lastName: document.getElementById("contact-lastname"),
         email: document.getElementById("contact-email"),
-        phone: document.getElementById("contact-phone"),
         postal: document.getElementById("contact-postal"),
         street: document.getElementById("contact-street"),
         topic: document.getElementById("contact-topic"),
@@ -905,7 +837,6 @@
         const firstName = fields.firstName.value.trim();
         const lastName = fields.lastName.value.trim();
         const email = fields.email.value.trim();
-        const phone = fields.phone.value.trim();
         const postal = fields.postal.value.trim();
         const street = fields.street.value.trim();
         const topic = fields.topic.value.trim();
@@ -930,10 +861,6 @@
 
         if (!messageText) {
           errors.push("Nachricht fehlt.");
-        }
-
-        if (phone && !/^\+?[0-9\s\/-]{8,24}$/.test(phone)) {
-          errors.push("Telefonnummer sieht noch nicht gültig aus.");
         }
 
         if (postal && !/^[0-9]{5}$/.test(postal)) {
@@ -1003,7 +930,6 @@
         const firstName = String(formData.get("contact-firstname") || "").trim();
         const lastName = String(formData.get("contact-lastname") || "").trim();
         const email = String(formData.get("contact-email") || "").trim();
-        const phone = String(formData.get("contact-phone") || "").trim() || "Nicht angegeben";
         const postal = String(formData.get("contact-postal") || "").trim() || "Nicht angegeben";
         const street = String(formData.get("contact-street") || "").trim() || "Nicht angegeben";
         const topic = String(formData.get("contact-topic") || "").trim();
@@ -1027,16 +953,15 @@
           "",
           "ÜBERSICHT",
           "--------------------------------------------------",
-          `Eingang über: NordFit Website`,
+          "Eingang über: NordFit Website",
           `Zeitpunkt: ${sentAt}`,
           `Thema: ${topic}`,
-          `Status: Neu`,
+          "Status: Neu",
           "",
           "KONTAKTDATEN",
           "--------------------------------------------------",
           `Name: ${firstName} ${lastName}`,
           `E-Mail für Rückantwort: ${email}`,
-          `Telefonnummer: ${phone}`,
           `Postleitzahl: ${postal}`,
           `Straße: ${street}`,
           `Member-ID: ${member}`,
@@ -1047,7 +972,7 @@
           "",
           "==================================================",
           "INTERNER HINWEIS",
-          "Bitte bei der Antwort bevorzugt die oben angegebene E-Mail-Adresse nutzen.",
+          "Bitte bei der Antwort die oben angegebene E-Mail-Adresse nutzen.",
           "Diese Anfrage wurde über das NordFit Kontaktformular vorbereitet."
         ].join("\n");
 
