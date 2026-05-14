@@ -1,48 +1,44 @@
 document.addEventListener("DOMContentLoaded", async () => {
   const body = document.body;
 
-  /* Komponenten laden: Header + Footer */
-
-  const includeComponent = async (selector, filePath) => {
+  const loadComponent = async (selector, file) => {
     const target = document.querySelector(selector);
-
     if (!target) return;
 
     try {
-      const response = await fetch(filePath);
+      const response = await fetch(file);
 
       if (!response.ok) {
-        throw new Error(`Komponente konnte nicht geladen werden: ${filePath}`);
+        throw new Error(`Komponente konnte nicht geladen werden: ${file}`);
       }
 
-      const html = await response.text();
-      target.outerHTML = html;
+      target.innerHTML = await response.text();
     } catch (error) {
       console.error(error);
     }
   };
 
-  await Promise.all([
-    includeComponent('[data-include="header"]', "components/header.html"),
-    includeComponent('[data-include="footer"]', "components/footer.html")
-  ]);
+  const setActiveNavLink = () => {
+    const currentPage = window.location.pathname.split("/").pop() || "index.html";
+    const navLinks = document.querySelectorAll(".nav-link");
 
-  /* Aktiven Navigationspunkt automatisch setzen */
+    navLinks.forEach((link) => {
+      const href = link.getAttribute("href");
+      const isActive = href === currentPage || (currentPage === "" && href === "index.html");
 
-  const currentPage = window.location.pathname.split("/").pop() || "index.html";
-  const navLinksForActiveState = document.querySelectorAll(".site-nav a");
+      link.classList.toggle("active", isActive);
+      if (isActive) {
+        link.setAttribute("aria-current", "page");
+      } else {
+        link.removeAttribute("aria-current");
+      }
+    });
+  };
 
-  navLinksForActiveState.forEach((link) => {
-    const href = link.getAttribute("href");
+  await loadComponent("[data-header]", "components/header.html");
+  await loadComponent("[data-footer]", "components/footer.html");
 
-    link.classList.remove("active");
-
-    if (href === currentPage) {
-      link.classList.add("active");
-    }
-  });
-
-  /* Elemente nach Komponenten-Ladevorgang neu holen */
+  setActiveNavLink();
 
   const headerInner = document.querySelector(".site-header-inner");
   const burger = document.getElementById("burger");
@@ -117,15 +113,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   const closeMobileMenu = () => setMenuState(false);
 
-  const closeAllModals = () => {
-    modals.forEach((modal) => {
-      modal.classList.remove("show");
-      modal.setAttribute("aria-hidden", "true");
-    });
-
-    body.classList.remove("modal-open");
-  };
-
   if (burger && nav) {
     burger.addEventListener("click", () => {
       const isOpen = nav.classList.contains("open");
@@ -134,13 +121,6 @@ document.addEventListener("DOMContentLoaded", async () => {
 
     navLinks.forEach((link) => {
       link.addEventListener("click", closeMobileMenu);
-    });
-
-    document.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        closeMobileMenu();
-        closeAllModals();
-      }
     });
 
     window.addEventListener("resize", () => {
@@ -192,6 +172,17 @@ document.addEventListener("DOMContentLoaded", async () => {
     body.classList.remove("modal-open");
   };
 
+  const closeAllModals = () => {
+    modals.forEach((modal) => closeModal(modal));
+  };
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeMobileMenu();
+      closeAllModals();
+    }
+  });
+
   modalTriggers.forEach((trigger) => {
     trigger.addEventListener("click", () => {
       const modalId = trigger.getAttribute("data-modal-target");
@@ -226,7 +217,6 @@ document.addEventListener("DOMContentLoaded", async () => {
       const firstName = formData.get("contact-firstname") || "";
       const lastName = formData.get("contact-lastname") || "";
       const email = formData.get("contact-email") || "";
-      const phone = formData.get("contact-phone") || "";
       const topic = formData.get("contact-topic") || "";
       const memberId = formData.get("contact-memberid") || "";
       const message = formData.get("contact-message") || "";
@@ -237,7 +227,6 @@ document.addEventListener("DOMContentLoaded", async () => {
         `Vorname: ${firstName}`,
         `Nachname: ${lastName}`,
         `E-Mail: ${email}`,
-        `Telefon: ${phone || "Nicht angegeben"}`,
         `Thema: ${topic}`,
         `Member ID: ${memberId || "Nicht angegeben"}`,
         "",
