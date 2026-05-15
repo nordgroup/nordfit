@@ -75,6 +75,25 @@ document.addEventListener("DOMContentLoaded", async () => {
     return true;
   };
 
+  const isSamePageHashLink = (link) => {
+    if (!link) return false;
+
+    const href = link.getAttribute("href");
+    if (!href || !href.includes("#")) return false;
+
+    try {
+      const targetUrl = new URL(href, window.location.href);
+
+      return (
+        targetUrl.pathname === window.location.pathname &&
+        targetUrl.search === window.location.search &&
+        targetUrl.hash.length > 1
+      );
+    } catch (error) {
+      return false;
+    }
+  };
+
   document.querySelectorAll("a").forEach((link) => {
     if (!isInternalPageLink(link)) return;
 
@@ -83,6 +102,10 @@ document.addEventListener("DOMContentLoaded", async () => {
 
       if (!href) return;
       if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+      if (isSamePageHashLink(link)) {
+        return;
+      }
 
       event.preventDefault();
 
