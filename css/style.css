@@ -255,7 +255,7 @@ main > section:first-child {
 
 .logo img {
   width: auto;
-  height: 112px;
+  height: 100px;
   max-width: none;
   object-fit: contain;
   image-rendering: auto;
