@@ -207,13 +207,13 @@ main > section:first-child {
   position: relative;
   width: 100%;
   max-width: var(--max-width);
-  min-height: 64px;
+  min-height: 52px;
   margin-inline: auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.25rem;
-  padding: 0.38rem 0.52rem 0.38rem 0.75rem;
+  padding: 0.14rem 0.52rem 0.14rem 0.75rem;
   border: 1px solid transparent;
   border-radius: var(--radius-pill);
   background: transparent;
@@ -249,7 +249,9 @@ main > section:first-child {
   align-items: center;
   justify-content: center;
   flex: 0 0 auto;
+  height: 52px;
   line-height: 0;
+  overflow: visible;
   transform: translateZ(0);
 }
 
@@ -2575,6 +2577,7 @@ select:focus {
   .logo {
     position: relative;
     z-index: 10004;
+    height: auto;
   }
 
   .logo img {
