@@ -176,13 +176,15 @@
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 0.85rem;
+      align-items: stretch;
     }
 
     .legal-card {
-      display: grid;
-      gap: 0.45rem;
       min-width: 0;
-      padding: 1.05rem 1.08rem;
+      display: grid;
+      align-content: start;
+      gap: 0.72rem;
+      padding: 1.14rem 1.16rem;
       border-radius: 24px;
       background: rgba(255, 255, 255, 0.7);
       border: 1px solid rgba(0, 0, 0, 0.045);
@@ -201,6 +203,42 @@
       font-weight: 860;
       letter-spacing: 0.06em;
       text-transform: uppercase;
+    }
+
+    .legal-info-lines {
+      display: grid;
+      gap: 0.48rem;
+    }
+
+    .legal-info-line {
+      display: grid;
+      grid-template-columns: minmax(7.4rem, 0.34fr) minmax(0, 1fr);
+      gap: 0.8rem;
+      align-items: baseline;
+    }
+
+    .legal-info-line span {
+      color: var(--muted);
+      font-size: 0.94rem;
+      line-height: 1.45;
+      letter-spacing: -0.012em;
+    }
+
+    .legal-info-line strong,
+    .legal-info-line p,
+    .legal-info-line a {
+      color: var(--text-soft);
+      font-size: 0.98rem;
+      line-height: 1.48;
+      letter-spacing: -0.014em;
+      font-weight: 560;
+      overflow-wrap: break-word;
+    }
+
+    .legal-info-line a {
+      color: var(--nf-green-dark);
+      font-weight: 760;
+      word-break: break-word;
     }
 
     .legal-card p,
@@ -228,11 +266,10 @@
     }
 
     .legal-support-box {
-      width: min(100%, 520px);
       display: grid;
-      gap: 0.42rem;
-      margin-top: 0.8rem;
-      padding-top: 0.85rem;
+      gap: 0.52rem;
+      margin-top: 0.1rem;
+      padding-top: 0.92rem;
       border-top: 1px solid rgba(0, 0, 0, 0.065);
     }
 
@@ -245,7 +282,7 @@
 
     .legal-support-row {
       display: grid;
-      grid-template-columns: minmax(90px, 0.35fr) minmax(0, 1fr);
+      grid-template-columns: minmax(7.4rem, 0.34fr) minmax(0, 1fr);
       align-items: baseline;
       gap: 0.8rem;
       color: var(--muted);
@@ -381,13 +418,17 @@
         padding: 1rem;
       }
 
-      .legal-support-box {
-        width: 100%;
-      }
-
+      .legal-info-line,
       .legal-support-row {
         grid-template-columns: 1fr;
         gap: 0.04rem;
+      }
+
+      .legal-info-line span {
+        font-size: 0.76rem;
+        font-weight: 850;
+        letter-spacing: 0.045em;
+        text-transform: uppercase;
       }
     }
 
@@ -484,41 +525,73 @@
             <div class="legal-grid">
               <div class="legal-card">
                 <span class="legal-card-label">Betreiber</span>
-                <p>
-                  <strong>NordFit / NordGroup</strong><br />
-                  [vollständiger Betreibername ergänzen]
-                </p>
+
+                <div class="legal-info-lines">
+                  <div class="legal-info-line">
+                    <span>Name</span>
+                    <strong>NordFit / NordGroup</strong>
+                  </div>
+
+                  <div class="legal-info-line">
+                    <span>Betreiber</span>
+                    <p>[vollständiger Betreibername ergänzen]</p>
+                  </div>
+                </div>
               </div>
 
               <div class="legal-card">
                 <span class="legal-card-label">Vertreten durch</span>
-                <p>[vertretungsberechtigte Person ergänzen]</p>
+
+                <div class="legal-info-lines">
+                  <div class="legal-info-line">
+                    <span>Person</span>
+                    <p>[vertretungsberechtigte Person ergänzen]</p>
+                  </div>
+                </div>
               </div>
 
               <div class="legal-card">
                 <span class="legal-card-label">Anschrift</span>
-                <p>
-                  [Straße und Hausnummer ergänzen]<br />
-                  [PLZ und Ort ergänzen]<br />
-                  Deutschland
-                </p>
+
+                <div class="legal-info-lines">
+                  <div class="legal-info-line">
+                    <span>Straße</span>
+                    <p>[Straße und Hausnummer ergänzen]</p>
+                  </div>
+
+                  <div class="legal-info-line">
+                    <span>Ort</span>
+                    <p>[PLZ und Ort ergänzen]</p>
+                  </div>
+
+                  <div class="legal-info-line">
+                    <span>Land</span>
+                    <p>Deutschland</p>
+                  </div>
+                </div>
               </div>
 
               <div class="legal-card">
                 <span class="legal-card-label">Kontakt</span>
 
-                <p>
-                  E-Mail:
-                  <a href="mailto:nordgroup.business@gmail.com">nordgroup.business@gmail.com</a><br />
-                  Instagram – NordFit:
-                  <a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">
-                    @nordfit.business
-                  </a><br />
-                  Instagram – NordGroup:
-                  <a href="https://instagram.com/nordgroup.business" target="_blank" rel="noopener noreferrer">
-                    @nordgroup.business
-                  </a>
-                </p>
+                <div class="legal-info-lines">
+                  <div class="legal-info-line">
+                    <span>E-Mail</span>
+                    <a href="mailto:nordgroup.business@gmail.com">nordgroup.business@gmail.com</a>
+                  </div>
+
+                  <div class="legal-info-line">
+                    <span>Formular</span>
+                    <a href="kontakt.html">Kontaktformular</a>
+                  </div>
+
+                  <div class="legal-info-line">
+                    <span>Instagram</span>
+                    <a href="https://instagram.com/nordfit.business" target="_blank" rel="noopener noreferrer">
+                      @nordfit.business
+                    </a>
+                  </div>
+                </div>
 
                 <div class="legal-support-box">
                   <p class="legal-support-title">Supportzeiten</p>
@@ -532,20 +605,40 @@
 
               <div class="legal-card">
                 <span class="legal-card-label">Umsatzsteuer-ID</span>
-                <p>[Umsatzsteuer-ID ergänzen, falls vorhanden]</p>
+
+                <div class="legal-info-lines">
+                  <div class="legal-info-line">
+                    <span>ID</span>
+                    <p>[Umsatzsteuer-ID ergänzen, falls vorhanden]</p>
+                  </div>
+                </div>
               </div>
 
               <div class="legal-card">
                 <span class="legal-card-label">Registereintrag</span>
-                <p>[Registergericht und Registernummer ergänzen, falls vorhanden]</p>
+
+                <div class="legal-info-lines">
+                  <div class="legal-info-line">
+                    <span>Register</span>
+                    <p>[Registergericht und Registernummer ergänzen, falls vorhanden]</p>
+                  </div>
+                </div>
               </div>
 
               <div class="legal-card full">
                 <span class="legal-card-label">Verantwortlich für Inhalte</span>
-                <p>
-                  [Name der verantwortlichen Person ergänzen]<br />
-                  [Anschrift ergänzen]
-                </p>
+
+                <div class="legal-info-lines">
+                  <div class="legal-info-line">
+                    <span>Name</span>
+                    <p>[Name der verantwortlichen Person ergänzen]</p>
+                  </div>
+
+                  <div class="legal-info-line">
+                    <span>Anschrift</span>
+                    <p>[Anschrift ergänzen]</p>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -576,18 +669,23 @@
             <div class="legal-text-stack">
               <section class="legal-text-card">
                 <h3>1. Verantwortlicher</h3>
+
                 <p>Verantwortlich für die Verarbeitung personenbezogener Daten ist:</p>
+
                 <p>
                   <strong>NordFit / NordGroup</strong><br />
                   [vollständiger Betreibername ergänzen]<br />
                   [Anschrift ergänzen]<br />
                   E-Mail:
-                  <a href="mailto:nordgroup.business@gmail.com">nordgroup.business@gmail.com</a>
+                  <a href="mailto:nordgroup.business@gmail.com">nordgroup.business@gmail.com</a><br />
+                  Kontaktformular:
+                  <a href="kontakt.html">kontakt.html</a>
                 </p>
               </section>
 
               <section class="legal-text-card">
                 <h3>2. Besuch der Website</h3>
+
                 <p>
                   Beim Aufrufen dieser Website können technisch notwendige Zugriffsdaten verarbeitet werden.
                   Dazu gehören insbesondere aufgerufene Seiten, Datum und Uhrzeit des Zugriffs, Browsertyp,
@@ -602,6 +700,7 @@
 
               <section class="legal-text-card">
                 <h3>3. Hosting</h3>
+
                 <p>
                   Diese Website wird derzeit statisch über GitHub Pages bereitgestellt. Dabei können technische
                   Zugriffsdaten durch den Hosting-Anbieter verarbeitet werden.
@@ -615,6 +714,7 @@
 
               <section class="legal-text-card">
                 <h3>4. Kontaktformular</h3>
+
                 <p>
                   Wenn du das Kontaktformular nutzt, werden die eingegebenen Daten zur Bearbeitung deiner Anfrage
                   verarbeitet. Dazu gehören insbesondere:
@@ -636,6 +736,7 @@
 
               <section class="legal-text-card">
                 <h3>5. E-Mail-Kommunikation</h3>
+
                 <p>
                   Wenn du per E-Mail Kontakt aufnimmst oder eine Anfrage über das Kontaktformular vorbereitest,
                   werden deine Angaben zur Bearbeitung der Anfrage verarbeitet. E-Mail-Kommunikation kann technisch
@@ -645,6 +746,7 @@
 
               <section class="legal-text-card">
                 <h3>6. Instagram</h3>
+
                 <p>
                   NordFit kann auf Instagram vertreten sein. Wenn du Instagram nutzt oder über Instagram Kontakt
                   aufnimmst, gelten zusätzlich die Datenschutzinformationen des jeweiligen Plattformanbieters.
@@ -654,6 +756,7 @@
 
               <section class="legal-text-card">
                 <h3>7. Externe Links und Dienste</h3>
+
                 <p>
                   Auf dieser Website können Links zu externen Angeboten eingebunden sein, zum Beispiel Instagram,
                   Google Maps, App Store oder Google Play. Beim Öffnen dieser Links verlässt du die NordFit-Website.
@@ -663,6 +766,7 @@
 
               <section class="legal-text-card">
                 <h3>8. Google Maps</h3>
+
                 <p>
                   Auf der Standortseite kann eine Karte von Google Maps eingebunden sein. Beim Laden der Karte
                   können Daten an Google übertragen werden. Es muss rechtlich geprüft werden, ob und in welcher
@@ -672,6 +776,7 @@
 
               <section class="legal-text-card">
                 <h3>9. Speicherdauer</h3>
+
                 <p>
                   Personenbezogene Daten werden nur so lange gespeichert, wie dies für den jeweiligen Zweck
                   erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.
@@ -680,6 +785,7 @@
 
               <section class="legal-text-card">
                 <h3>10. Rechte betroffener Personen</h3>
+
                 <p>
                   Betroffene Personen können nach Maßgabe der gesetzlichen Voraussetzungen Auskunft, Berichtigung,
                   Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie Widerspruch gegen die
@@ -689,6 +795,7 @@
 
               <section class="legal-text-card">
                 <h3>11. Beschwerderecht</h3>
+
                 <p>
                   Wenn du der Ansicht bist, dass die Verarbeitung personenbezogener Daten gegen Datenschutzrecht
                   verstößt, kannst du dich bei einer zuständigen Datenschutzaufsichtsbehörde beschweren.
@@ -697,6 +804,7 @@
 
               <section class="legal-text-card">
                 <h3>12. Änderungen</h3>
+
                 <p>
                   Diese Datenschutzinformationen können angepasst werden, wenn sich die Website, eingebundene Dienste
                   oder rechtliche Anforderungen ändern. Die Angaben müssen regelmäßig geprüft und bei Bedarf aktualisiert werden.
@@ -722,6 +830,7 @@
             <div class="legal-text-stack">
               <section class="legal-text-card">
                 <h3>1. Geltungsbereich</h3>
+
                 <p>
                   Diese Allgemeinen Geschäftsbedingungen gelten für die Nutzung von Angeboten von NordFit, soweit sie
                   wirksam in einen Vertrag einbezogen werden. Dazu können Mitgliedschaften, Tagespässe, digitale Zugänge,
@@ -731,7 +840,9 @@
 
               <section class="legal-text-card">
                 <h3>2. Vertragspartner</h3>
+
                 <p>Vertragspartner ist:</p>
+
                 <p>
                   <strong>NordFit / NordGroup</strong><br />
                   [vollständiger Betreibername ergänzen]<br />
@@ -741,6 +852,7 @@
 
               <section class="legal-text-card">
                 <h3>3. Mitgliedschaften</h3>
+
                 <p>
                   NordFit kann verschiedene Mitgliedschaftsmodelle anbieten. Preise, Mindestlaufzeiten, Leistungen,
                   Zahlungsbedingungen und Kündigungsregeln ergeben sich aus dem jeweils gewählten Tarif, der
@@ -750,6 +862,7 @@
 
               <section class="legal-text-card">
                 <h3>4. Tagespass</h3>
+
                 <p>
                   Tagespässe können einen zeitlich begrenzten Zugang zum Studio ermöglichen. Der genaue Leistungsumfang,
                   die Gültigkeit, der Preis und die Nutzungsbedingungen ergeben sich aus dem jeweiligen Angebot.
@@ -758,6 +871,7 @@
 
               <section class="legal-text-card">
                 <h3>5. Zugang und App</h3>
+
                 <p>
                   Der Zugang zum Studio kann digital über die NordFit App, einen QR-Code oder ein vergleichbares
                   Zugangssystem erfolgen. Zugangsdaten sind persönlich und dürfen nicht an andere Personen weitergegeben werden.
@@ -771,6 +885,7 @@
 
               <section class="legal-text-card">
                 <h3>6. Hausordnung</h3>
+
                 <p>
                   Die Nutzung des Studios setzt die Einhaltung der jeweils gültigen Hausordnung voraus. Die Hausordnung
                   regelt insbesondere Zutritt, Rücksichtnahme, Hygiene, Gerätenutzung, Sicherheit und Verhalten im Studio.
@@ -779,6 +894,7 @@
 
               <section class="legal-text-card">
                 <h3>7. Zahlung</h3>
+
                 <p>
                   Zahlungsarten, Fälligkeiten, Abbuchungen und mögliche Gebühren ergeben sich aus dem jeweiligen Vertrag
                   oder der Buchungsübersicht. Diese Bedingungen müssen vollständig festgelegt und rechtlich geprüft werden.
@@ -787,6 +903,7 @@
 
               <section class="legal-text-card">
                 <h3>8. Laufzeit und Kündigung</h3>
+
                 <p>
                   Laufzeiten, Mindestvertragslaufzeiten, Verlängerungen und Kündigungsfristen richten sich nach dem
                   jeweils abgeschlossenen Vertrag und den gesetzlichen Vorgaben. Diese Angaben werden im Buchungsprozess
@@ -796,6 +913,7 @@
 
               <section class="legal-text-card">
                 <h3>9. Gesundheit und Eigenverantwortung</h3>
+
                 <p>
                   Mitglieder und Nutzer trainieren eigenverantwortlich. Bei gesundheitlichen Beschwerden, Vorerkrankungen,
                   Unsicherheiten oder Schmerzen sollte vor dem Training ärztlicher Rat eingeholt werden.
@@ -804,6 +922,7 @@
 
               <section class="legal-text-card">
                 <h3>10. Geräte und Räume</h3>
+
                 <p>
                   Geräte, Trainingsflächen, Umkleidebereiche und sonstige Einrichtungen sind sorgfältig und bestimmungsgemäß
                   zu nutzen. Schäden, Defekte oder gefährliche Situationen sind unverzüglich zu melden.
@@ -812,6 +931,7 @@
 
               <section class="legal-text-card">
                 <h3>11. Haftung</h3>
+
                 <p>
                   Für Schäden haftet NordFit nach Maßgabe der gesetzlichen Vorschriften. Nutzer haften für Schäden, die
                   sie schuldhaft verursachen. Eine Haftung für mitgebrachte Gegenstände besteht nur im Rahmen der
@@ -821,6 +941,7 @@
 
               <section class="legal-text-card">
                 <h3>12. Änderungen von Leistungen</h3>
+
                 <p>
                   Änderungen von Öffnungszeiten, Standorten, App-Funktionen, Zugangssystemen oder Studioleistungen können
                   erforderlich sein. Vertragsrelevante Änderungen erfolgen nur, soweit sie rechtlich zulässig sind und
@@ -830,6 +951,7 @@
 
               <section class="legal-text-card">
                 <h3>13. Schlussbestimmungen</h3>
+
                 <p>
                   Sollten einzelne Bestimmungen unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen
                   unberührt. Es gelten die gesetzlichen Vorschriften.
