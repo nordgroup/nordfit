@@ -7,7 +7,7 @@
   <title>NordFit – Für deinen Weg nach vorn</title>
   <meta
     name="description"
-    content="NordFit ist ein modernes Fitnessstudio mit 24/7-Zugang, klarer Struktur und einer App für Mitgliedschaft, Tagespass und Zutritt."
+    content="NordFit ist ein modernes Fitnessstudio im Norden mit 24/7-Zugang, klarer Struktur und einer App für Mitgliedschaft, Tagespass und Zutritt."
   />
 
   <link rel="stylesheet" href="css/style.css" />
@@ -17,16 +17,18 @@
   <div data-header></div>
 
   <main class="home-product-page">
-    <section class="product-hero product-hero-main home-first-hero">
+    <section class="product-hero product-hero-main home-first-hero" aria-labelledby="home-hero-title">
       <div class="product-copy">
-        <h1>Für deinen Weg nach vorn.</h1>
+        <p class="eyebrow">NordFit</p>
+
+        <h1 id="home-hero-title">Für deinen Weg nach vorn.</h1>
 
         <p>
-          Ein modernes Fitnessstudio mit 24/7-Zugang, klarer Struktur und einer App
-          für Mitgliedschaft, Tagespass und Zutritt.
+          Ein modernes Fitnessstudio im Norden. Ruhig, klar und 24/7 bereit —
+          mit digitalem Zugang über die NordFit App.
         </p>
 
-        <div class="product-actions">
+        <div class="product-actions" aria-label="Wichtige Links">
           <a href="mitgliedschaften.html" class="product-link product-link-primary">
             Tarife ansehen
           </a>
@@ -39,25 +41,27 @@
 
       <div class="home-hero-image-wrap">
         <img
-          src="images/home-hero.jpg"
+          src="images/home-hero.jpeg"
           alt="Modernes helles Fitnessstudio mit klarer Trainingsfläche und ruhiger Atmosphäre"
           class="home-hero-image"
         />
       </div>
     </section>
 
-    <section class="product-hero product-hero-dark">
+    <section class="product-hero product-hero-dark" aria-labelledby="home-access-title">
       <div class="product-copy product-copy-light">
-        <h2>24/7 bereit, wenn du es bist.</h2>
+        <p class="eyebrow">24/7 Zugang</p>
+
+        <h2 id="home-access-title">Bereit, wenn du es bist.</h2>
 
         <p>
           Trainiere dann, wenn es in deinen Alltag passt. Früh, spät oder spontan —
-          der Zugang läuft digital über die NordFit App.
+          dein Zugang läuft digital über die NordFit App.
         </p>
 
-        <div class="product-actions">
+        <div class="product-actions" aria-label="Links zu App und Tarifen">
           <a href="app.html" class="product-link product-link-primary">
-            Zur App
+            App ansehen
           </a>
 
           <a href="mitgliedschaften.html" class="product-link product-link-secondary product-link-light">
@@ -67,17 +71,19 @@
       </div>
     </section>
 
-    <section class="app-showcase-section">
+    <section class="app-showcase-section" aria-labelledby="home-app-title">
       <div class="container app-showcase-container">
         <div class="app-showcase-copy">
-          <h2>Alles Wichtige in einer App.</h2>
+          <p class="eyebrow">NordFit App</p>
+
+          <h2 id="home-app-title">Alles Wichtige in einer App.</h2>
 
           <p>
-            Mitgliedschaft abschließen, Tagespass buchen und per QR-Code ins Studio kommen.
-            Einfach gebündelt, damit dein Training nicht mit Papierkram beginnt.
+            Mitgliedschaft buchen, Tagespass aktivieren und per QR-Code ins Studio.
+            Klar gebündelt, damit dein Training nicht mit Papierkram beginnt.
           </p>
 
-          <div class="product-actions app-showcase-actions">
+          <div class="product-actions app-showcase-actions" aria-label="Links zur App und zum Kontakt">
             <a href="app.html" class="product-link product-link-primary">
               Zur App
             </a>
