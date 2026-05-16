@@ -385,6 +385,13 @@
       justify-content: center;
     }
 
+    @media (prefers-reduced-motion: reduce) {
+      .store-badge-clean,
+      .store-badge-clean:hover {
+        transform: none;
+      }
+    }
+
     @media (max-width: 1100px) {
       .app-hero-grid,
       .app-flow-shell {
@@ -609,28 +616,28 @@
   <div data-header></div>
 
   <main class="app-page">
-    <section class="app-hero">
+    <section class="app-hero" aria-labelledby="app-page-title">
       <div class="container app-hero-grid">
         <div class="app-hero-copy">
           <p class="eyebrow">NordFit App</p>
 
-          <h1 class="app-hero-title">
+          <h1 class="app-hero-title" id="app-page-title">
             Dein Zugang.<br />
             Alles in <span>einer App.</span>
           </h1>
 
           <p class="app-hero-text">
-            Mitgliedschaft buchen, Tagespass nutzen und per QR-Code ins Studio.
+            Mitgliedschaft buchen, Tagespass vorbereiten und per QR-Code ins Studio.
             Klar, digital und ohne Papierkram.
           </p>
 
-          <div class="app-store-row-clean">
+          <div class="app-store-row-clean" aria-label="NordFit App suchen">
             <a
               class="store-badge-clean store-badge-clean-dark"
               href="https://search.itunes.apple.com/WebObjects/MZSearch.woa/wa/search?media=software&term=NordFit"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="NordFit im App Store suchen"
+              aria-label="NordFit im App Store suchen, öffnet in neuem Tab"
             >
               <span class="store-badge-clean-icon" aria-hidden="true"></span>
               <span class="store-badge-clean-text">
@@ -644,7 +651,7 @@
               href="https://play.google.com/store/search?q=NordFit&c=apps"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="NordFit bei Google Play suchen"
+              aria-label="NordFit bei Google Play suchen, öffnet in neuem Tab"
             >
               <span class="store-badge-clean-icon" aria-hidden="true">▶</span>
               <span class="store-badge-clean-text">
@@ -665,12 +672,12 @@
       </div>
     </section>
 
-    <section class="app-feature-section">
+    <section class="app-feature-section" aria-labelledby="app-features-title">
       <div class="container">
         <div class="app-section-intro">
           <p class="eyebrow">Funktionen</p>
 
-          <h2 class="app-section-title">
+          <h2 class="app-section-title" id="app-features-title">
             Alles, was du vor dem Training brauchst.
           </h2>
 
@@ -723,13 +730,13 @@
       </div>
     </section>
 
-    <section class="app-flow-section">
+    <section class="app-flow-section" aria-labelledby="app-flow-title">
       <div class="container">
         <div class="app-flow-shell">
           <div class="app-flow-copy">
             <p class="eyebrow">Ablauf</p>
 
-            <h2>
+            <h2 id="app-flow-title">
               Kaufen. Öffnen. Trainieren.
             </h2>
 
@@ -738,9 +745,9 @@
               deinen Tarif und deinen Tagespass an einem Ort.
             </p>
 
-            <div class="app-flow-list">
+            <div class="app-flow-list" aria-label="Ablauf in der NordFit App">
               <div class="app-flow-item">
-                <span class="app-flow-dot">1</span>
+                <span class="app-flow-dot" aria-hidden="true">1</span>
                 <div>
                   <strong>App öffnen</strong>
                   <span>Mitgliedschaft oder Tagespass auswählen und digital vorbereiten.</span>
@@ -748,7 +755,7 @@
               </div>
 
               <div class="app-flow-item">
-                <span class="app-flow-dot">2</span>
+                <span class="app-flow-dot" aria-hidden="true">2</span>
                 <div>
                   <strong>QR-Code nutzen</strong>
                   <span>Beim Studiozutritt den QR-Code anzeigen und den Zugang aktivieren.</span>
@@ -756,7 +763,7 @@
               </div>
 
               <div class="app-flow-item">
-                <span class="app-flow-dot">3</span>
+                <span class="app-flow-dot" aria-hidden="true">3</span>
                 <div>
                   <strong>Training starten</strong>
                   <span>Reingehen, trainieren und alles Weitere ruhig in der App behalten.</span>
@@ -775,7 +782,7 @@
       </div>
     </section>
 
-    <section class="app-note-section">
+    <section class="app-note-section" aria-label="Hinweis zum Studiozutritt">
       <div class="container">
         <div class="info-note">
           <p class="info-note-label">Hinweis</p>
@@ -788,22 +795,22 @@
       </div>
     </section>
 
-    <section class="app-final-cta">
+    <section class="app-final-cta" aria-labelledby="app-final-title">
       <div class="app-final-copy">
-        <h2>Bereit, wenn du es bist.</h2>
+        <h2 id="app-final-title">Bereit, wenn du es bist.</h2>
 
         <p>
-          Lade die App, wähle deinen Zugang und starte dein Training genau dann,
-          wenn es für dich passt.
+          Wenn die App verfügbar ist, kannst du deinen Zugang digital vorbereiten
+          und dein Training genau dann starten, wenn es für dich passt.
         </p>
 
-        <div class="app-store-row-clean">
+        <div class="app-store-row-clean" aria-label="NordFit App in Stores suchen">
           <a
             class="store-badge-clean store-badge-clean-dark"
             href="https://search.itunes.apple.com/WebObjects/MZSearch.woa/wa/search?media=software&term=NordFit"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="NordFit im App Store suchen"
+            aria-label="NordFit im App Store suchen, öffnet in neuem Tab"
           >
             <span class="store-badge-clean-icon" aria-hidden="true"></span>
             <span class="store-badge-clean-text">
@@ -817,7 +824,7 @@
             href="https://play.google.com/store/search?q=NordFit&c=apps"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="NordFit bei Google Play suchen"
+            aria-label="NordFit bei Google Play suchen, öffnet in neuem Tab"
           >
             <span class="store-badge-clean-icon" aria-hidden="true">▶</span>
             <span class="store-badge-clean-text">
