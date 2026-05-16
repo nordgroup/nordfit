@@ -533,21 +533,22 @@ main > section:first-child {
   content: "";
   position: absolute;
   left: 50%;
-  bottom: -8rem;
+  bottom: -9rem;
   z-index: 1;
-  width: min(155vw, 1760px);
-  height: 46rem;
+  width: min(165vw, 1880px);
+  height: 52rem;
   transform: translateX(-50%);
   pointer-events: none;
   background:
     radial-gradient(
       ellipse at center,
-      rgba(45, 48, 52, 0.34) 0%,
-      rgba(92, 96, 101, 0.25) 30%,
-      rgba(46, 145, 63, 0.055) 55%,
-      transparent 78%
+      rgba(37, 40, 44, 0.42) 0%,
+      rgba(76, 80, 86, 0.34) 28%,
+      rgba(136, 140, 146, 0.24) 46%,
+      rgba(46, 145, 63, 0.055) 61%,
+      transparent 80%
     );
-  filter: blur(36px);
+  filter: blur(38px);
   opacity: 1;
 }
 
@@ -558,16 +559,17 @@ main > section:first-child {
   bottom: -1px;
   z-index: 1;
   width: 100%;
-  height: 36rem;
+  height: 42rem;
   transform: translateX(-50%);
   pointer-events: none;
   background:
     linear-gradient(
       180deg,
       transparent 0%,
-      rgba(245, 245, 247, 0.16) 24%,
-      rgba(213, 216, 220, 0.58) 68%,
-      rgba(245, 245, 247, 0.96) 100%
+      rgba(245, 245, 247, 0.18) 18%,
+      rgba(218, 221, 226, 0.42) 44%,
+      rgba(190, 194, 200, 0.7) 72%,
+      rgba(245, 245, 247, 0.98) 100%
     );
 }
 
@@ -2856,28 +2858,31 @@ select:focus {
   }
 
   .product-hero-main::before {
-    bottom: -6.5rem;
-    height: 31rem;
-    filter: blur(30px);
+    bottom: -7.4rem;
+    height: 36rem;
+    width: min(175vw, 1500px);
+    filter: blur(32px);
     background:
       radial-gradient(
         ellipse at center,
-        rgba(45, 48, 52, 0.3) 0%,
-        rgba(92, 96, 101, 0.22) 31%,
-        rgba(46, 145, 63, 0.045) 58%,
-        transparent 78%
+        rgba(37, 40, 44, 0.38) 0%,
+        rgba(76, 80, 86, 0.3) 30%,
+        rgba(136, 140, 146, 0.22) 48%,
+        rgba(46, 145, 63, 0.045) 62%,
+        transparent 80%
       );
   }
 
   .product-hero-main::after {
-    height: 24rem;
+    height: 29rem;
     background:
       linear-gradient(
         180deg,
         transparent 0%,
-        rgba(245, 245, 247, 0.16) 24%,
-        rgba(213, 216, 220, 0.54) 70%,
-        rgba(245, 245, 247, 0.94) 100%
+        rgba(245, 245, 247, 0.18) 18%,
+        rgba(218, 221, 226, 0.4) 46%,
+        rgba(190, 194, 200, 0.66) 74%,
+        rgba(245, 245, 247, 0.96) 100%
       );
   }
 
