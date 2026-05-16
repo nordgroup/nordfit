@@ -429,12 +429,12 @@
   <div data-header></div>
 
   <main class="legal-page">
-    <section class="legal-hero">
+    <section class="legal-hero" aria-labelledby="legal-page-title">
       <div class="container">
         <div class="legal-hero-inner">
           <p class="eyebrow">Rechtliches</p>
 
-          <h1 class="legal-hero-title">
+          <h1 class="legal-hero-title" id="legal-page-title">
             Klar geregelt.<br />
             <span>Sauber auffindbar.</span>
           </h1>
@@ -489,43 +489,59 @@
 
     <section class="legal-content">
       <div class="container">
-        <div class="legal-panel is-active" id="panel-impressum" role="tabpanel" aria-labelledby="tab-impressum">
+        <div
+          class="legal-panel is-active"
+          id="panel-impressum"
+          role="tabpanel"
+          aria-labelledby="tab-impressum"
+        >
           <article class="legal-document">
             <div class="legal-document-head">
               <p class="eyebrow">Impressum</p>
 
-              <h2>Angaben gemäß Anbieterkennzeichnung.</h2>
+              <h2>Angaben nach § 5 DDG.</h2>
 
               <p>
                 Dieses Impressum enthält die Anbieterinformationen für das Online-Angebot von NordFit.
-                Noch offene Angaben sind als Platzhalter markiert und müssen vollständig ersetzt werden.
+                Noch offene Angaben sind als Platzhalter markiert und müssen vor einer echten geschäftlichen
+                Nutzung vollständig und korrekt ersetzt werden.
               </p>
             </div>
 
             <div class="legal-grid">
               <div class="legal-card">
-                <span class="legal-card-label">Betreiber</span>
+                <span class="legal-card-label">Anbieter / Betreiber</span>
 
                 <div class="legal-info-lines">
                   <div class="legal-info-line">
-                    <span>Name</span>
+                    <span>Marke</span>
                     <strong>NordFit / NordGroup</strong>
                   </div>
 
                   <div class="legal-info-line">
                     <span>Betreiber</span>
-                    <p>[vollständiger Betreibername ergänzen]</p>
+                    <p>[vollständigen Betreibername ergänzen]</p>
+                  </div>
+
+                  <div class="legal-info-line">
+                    <span>Rechtsform</span>
+                    <p>[Rechtsform ergänzen, z. B. Einzelunternehmen, UG, GmbH]</p>
                   </div>
                 </div>
               </div>
 
               <div class="legal-card">
-                <span class="legal-card-label">Vertreten durch</span>
+                <span class="legal-card-label">Vertretung</span>
 
                 <div class="legal-info-lines">
                   <div class="legal-info-line">
-                    <span>Person</span>
+                    <span>Vertreten durch</span>
                     <p>[vertretungsberechtigte Person ergänzen]</p>
+                  </div>
+
+                  <div class="legal-info-line">
+                    <span>Inhaltlich verantwortlich</span>
+                    <p>[verantwortliche Person ergänzen]</p>
                   </div>
                 </div>
               </div>
@@ -584,56 +600,75 @@
               </div>
 
               <div class="legal-card">
-                <span class="legal-card-label">Umsatzsteuer-ID</span>
+                <span class="legal-card-label">Registerangaben</span>
 
                 <div class="legal-info-lines">
                   <div class="legal-info-line">
-                    <span>ID</span>
-                    <p>[Umsatzsteuer-ID ergänzen, falls vorhanden]</p>
+                    <span>Register</span>
+                    <p>[Registergericht ergänzen, falls vorhanden]</p>
+                  </div>
+
+                  <div class="legal-info-line">
+                    <span>Registernummer</span>
+                    <p>[Registernummer ergänzen, falls vorhanden]</p>
                   </div>
                 </div>
               </div>
 
               <div class="legal-card">
-                <span class="legal-card-label">Registereintrag</span>
+                <span class="legal-card-label">Steuerliche Angaben</span>
 
                 <div class="legal-info-lines">
                   <div class="legal-info-line">
-                    <span>Register</span>
-                    <p>[Registergericht und Registernummer ergänzen, falls vorhanden]</p>
+                    <span>USt-IdNr.</span>
+                    <p>[Umsatzsteuer-ID ergänzen, falls vorhanden]</p>
+                  </div>
+
+                  <div class="legal-info-line">
+                    <span>Wirtschafts-ID</span>
+                    <p>[Wirtschafts-ID ergänzen, falls vorhanden]</p>
                   </div>
                 </div>
               </div>
 
               <div class="legal-card full">
-                <span class="legal-card-label">Verantwortlich für Inhalte</span>
+                <span class="legal-card-label">Verbraucherstreitbeilegung</span>
 
-                <div class="legal-info-lines">
-                  <div class="legal-info-line">
-                    <span>Name</span>
-                    <p>[Name der verantwortlichen Person ergänzen]</p>
-                  </div>
+                <p>
+                  [Erklärung zur Teilnahme oder Nichtteilnahme an Streitbeilegungsverfahren vor einer
+                  Verbraucherschlichtungsstelle ergänzen.]
+                </p>
+              </div>
 
-                  <div class="legal-info-line">
-                    <span>Anschrift</span>
-                    <p>[Anschrift ergänzen]</p>
-                  </div>
-                </div>
+              <div class="legal-card full">
+                <span class="legal-card-label">Haftung für externe Links</span>
+
+                <p>
+                  Diese Website enthält Links zu externen Angeboten. Für deren Inhalte und Datenverarbeitung
+                  sind die jeweiligen Anbieter verantwortlich. Externe Links werden nach bestem Wissen gesetzt,
+                  können sich aber jederzeit ändern.
+                </p>
               </div>
             </div>
 
             <div class="info-note legal-note">
-              <p class="info-note-label">Noch zu ergänzen</p>
+              <p class="info-note-label">Vor Veröffentlichung ergänzen</p>
 
               <p class="info-note-text">
-                Betreiber, Anschrift, Vertretungsberechtigung, steuerliche Angaben und mögliche
-                Registerinformationen müssen vollständig und korrekt eingetragen werden.
+                Betreiber, Rechtsform, Anschrift, Vertretungsberechtigung, steuerliche Angaben, mögliche
+                Registerinformationen und die Streitbeilegungsangabe müssen vollständig und korrekt eingetragen werden.
               </p>
             </div>
           </article>
         </div>
 
-        <div class="legal-panel" id="panel-datenschutz" role="tabpanel" aria-labelledby="tab-datenschutz" hidden>
+        <div
+          class="legal-panel"
+          id="panel-datenschutz"
+          role="tabpanel"
+          aria-labelledby="tab-datenschutz"
+          hidden
+        >
           <article class="legal-document">
             <div class="legal-document-head">
               <p class="eyebrow">Datenschutz</p>
@@ -642,7 +677,7 @@
 
               <p>
                 Diese Hinweise erklären, welche personenbezogenen Daten im Zusammenhang mit der Website
-                verarbeitet werden können und wofür sie genutzt werden.
+                verarbeitet werden können, wofür sie genutzt werden und welche Rechte betroffene Personen haben.
               </p>
             </div>
 
@@ -654,8 +689,9 @@
 
                 <p>
                   <strong>NordFit / NordGroup</strong><br />
-                  [vollständiger Betreibername ergänzen]<br />
+                  [vollständigen Betreibername ergänzen]<br />
                   [Anschrift ergänzen]<br />
+                  Deutschland<br />
                   E-Mail:
                   <a href="mailto:nordgroup.business@gmail.com">nordgroup.business@gmail.com</a><br />
                   Kontaktformular:
@@ -664,36 +700,55 @@
               </section>
 
               <section class="legal-text-card">
-                <h3>2. Besuch der Website</h3>
+                <h3>2. Allgemeine Grundsätze</h3>
+
+                <p>
+                  Personenbezogene Daten werden nur verarbeitet, soweit dies für den Betrieb der Website,
+                  die Bearbeitung von Anfragen, die technische Sicherheit oder die spätere Bereitstellung
+                  von NordFit-Angeboten erforderlich ist oder eine Einwilligung vorliegt.
+                </p>
+
+                <p>
+                  Zu personenbezogenen Daten können alle Informationen gehören, die sich auf eine identifizierte
+                  oder identifizierbare natürliche Person beziehen, zum Beispiel Name, E-Mail-Adresse,
+                  IP-Adresse, Nachrichteninhalt oder freiwillige Angaben in Formularen.
+                </p>
+              </section>
+
+              <section class="legal-text-card">
+                <h3>3. Besuch der Website</h3>
 
                 <p>
                   Beim Aufrufen dieser Website können technisch notwendige Zugriffsdaten verarbeitet werden.
                   Dazu gehören insbesondere aufgerufene Seiten, Datum und Uhrzeit des Zugriffs, Browsertyp,
-                  Betriebssystem, Referrer-URL und IP-Adresse.
+                  Betriebssystem, Referrer-URL, IP-Adresse und technische Statusinformationen.
                 </p>
 
                 <p>
-                  Die Verarbeitung erfolgt, damit die Website technisch bereitgestellt, stabil betrieben
-                  und vor Missbrauch geschützt werden kann.
+                  Die Verarbeitung erfolgt, damit die Website technisch bereitgestellt, stabil betrieben,
+                  optimiert und vor Missbrauch geschützt werden kann. Rechtsgrundlage kann insbesondere
+                  Art. 6 Abs. 1 lit. f DSGVO sein.
                 </p>
               </section>
 
               <section class="legal-text-card">
-                <h3>3. Hosting</h3>
+                <h3>4. Hosting über GitHub Pages</h3>
 
                 <p>
-                  Diese Website wird derzeit statisch über GitHub Pages bereitgestellt. Dabei können technische
-                  Zugriffsdaten durch den Hosting-Anbieter verarbeitet werden.
+                  Diese Website wird derzeit statisch über GitHub Pages bereitgestellt. Beim Aufruf der Website
+                  können technische Daten durch GitHub verarbeitet werden, zum Beispiel IP-Adresse, Gerätedaten,
+                  Datum und Uhrzeit der Anfrage sowie weitere technische Nutzungsinformationen.
                 </p>
 
                 <p>
-                  Hosting, Anbieter, Speicherorte und Datenschutzinformationen müssen für eine echte geschäftliche
-                  Nutzung rechtlich geprüft und vollständig ergänzt werden.
+                  Die Verarbeitung dient der technischen Bereitstellung, Sicherheit und Stabilität der Website.
+                  Für eine echte geschäftliche Nutzung müssen Hosting, Anbieter, Speicherorte,
+                  Auftragsverarbeitung und Datenschutzinformationen final geprüft und ergänzt werden.
                 </p>
               </section>
 
               <section class="legal-text-card">
-                <h3>4. Kontaktformular</h3>
+                <h3>5. Kontaktformular</h3>
 
                 <p>
                   Wenn du das Kontaktformular nutzt, werden die eingegebenen Daten zur Bearbeitung deiner Anfrage
@@ -709,72 +764,130 @@
                 </ul>
 
                 <p>
+                  Die Anfrage wird derzeit über ein vorbereitetes E-Mail-Programm des Nutzers versendet.
                   Bitte sende über das Formular keine besonders sensiblen Daten, zum Beispiel Gesundheitsdaten,
-                  Zahlungsdaten, Ausweisdaten oder private Unterlagen.
+                  Zahlungsdaten, Ausweisdaten, Zugangsdaten oder private Unterlagen.
+                </p>
+
+                <p>
+                  Rechtsgrundlage kann je nach Anfrage Art. 6 Abs. 1 lit. b DSGVO oder Art. 6 Abs. 1 lit. f DSGVO sein.
                 </p>
               </section>
 
               <section class="legal-text-card">
-                <h3>5. E-Mail-Kommunikation</h3>
+                <h3>6. E-Mail-Kommunikation</h3>
 
                 <p>
                   Wenn du per E-Mail Kontakt aufnimmst oder eine Anfrage über das Kontaktformular vorbereitest,
-                  werden deine Angaben zur Bearbeitung der Anfrage verarbeitet. E-Mail-Kommunikation kann technisch
-                  bedingt Sicherheitsrisiken haben, wenn sie nicht vollständig verschlüsselt erfolgt.
+                  werden deine Angaben zur Bearbeitung der Anfrage verarbeitet. E-Mail-Kommunikation kann
+                  technisch bedingt Sicherheitsrisiken haben, wenn sie nicht vollständig verschlüsselt erfolgt.
                 </p>
-              </section>
-
-              <section class="legal-text-card">
-                <h3>6. Instagram</h3>
 
                 <p>
-                  NordFit kann auf Instagram vertreten sein. Wenn du Instagram nutzt oder über Instagram Kontakt
-                  aufnimmst, gelten zusätzlich die Datenschutzinformationen des jeweiligen Plattformanbieters.
-                  NordFit hat keinen vollständigen Einfluss auf die dortige Datenverarbeitung.
+                  Anfragen werden nur so lange gespeichert, wie dies zur Bearbeitung, Dokumentation oder aufgrund
+                  gesetzlicher Pflichten erforderlich ist.
                 </p>
               </section>
 
               <section class="legal-text-card">
-                <h3>7. Externe Links und Dienste</h3>
+                <h3>7. Instagram</h3>
+
+                <p>
+                  NordFit kann auf Instagram vertreten sein. Wenn du Instagram nutzt, dem Profil folgst,
+                  Inhalte kommentierst oder über Instagram Kontakt aufnimmst, können personenbezogene Daten
+                  durch den Plattformanbieter verarbeitet werden.
+                </p>
+
+                <p>
+                  Für die Datenverarbeitung auf Instagram gelten zusätzlich die Datenschutzinformationen
+                  des jeweiligen Plattformanbieters. NordFit hat keinen vollständigen Einfluss auf die
+                  dortige Datenverarbeitung.
+                </p>
+              </section>
+
+              <section class="legal-text-card">
+                <h3>8. Externe Links und App-Stores</h3>
 
                 <p>
                   Auf dieser Website können Links zu externen Angeboten eingebunden sein, zum Beispiel Instagram,
-                  Google Maps, App Store oder Google Play. Beim Öffnen dieser Links verlässt du die NordFit-Website.
-                  Für externe Anbieter gelten deren eigene Datenschutzinformationen.
+                  Google Maps, Apple App Store oder Google Play. Beim Öffnen solcher Links verlässt du die
+                  NordFit-Website. Für externe Anbieter gelten deren eigene Datenschutzinformationen.
                 </p>
               </section>
 
               <section class="legal-text-card">
-                <h3>8. Google Maps</h3>
+                <h3>9. Google Maps</h3>
 
                 <p>
                   Auf der Standortseite kann eine Karte von Google Maps eingebunden sein. Beim Laden der Karte
-                  können Daten an Google übertragen werden. Es muss rechtlich geprüft werden, ob und in welcher
-                  Form Karten eingebunden werden und welche Datenschutzinformationen dafür erforderlich sind.
+                  können Daten an Google übertragen werden, insbesondere technische Zugriffsdaten wie IP-Adresse,
+                  Browserinformationen und Geräteinformationen.
+                </p>
+
+                <p>
+                  Für eine echte geschäftliche Nutzung sollte geprüft werden, ob Google Maps erst nach Einwilligung
+                  geladen wird, zum Beispiel über eine 2-Klick-Lösung oder ein Consent-Management. Solange keine
+                  solche Lösung eingebaut ist, sollte die Datenschutzinformation dies transparent erklären.
                 </p>
               </section>
 
               <section class="legal-text-card">
-                <h3>9. Speicherdauer</h3>
+                <h3>10. Cookies, lokale Speicherung und Analyse</h3>
+
+                <p>
+                  Diese Website setzt nach aktuellem Stand keine eigenen Analyse- oder Marketing-Cookies ein.
+                  Falls später Cookies, Tracking, lokale Speicherung, Newsletter, Zahlungsanbieter,
+                  App-Logins oder ähnliche Dienste ergänzt werden, müssen diese Datenschutzinformationen
+                  entsprechend erweitert und gegebenenfalls Einwilligungen eingeholt werden.
+                </p>
+              </section>
+
+              <section class="legal-text-card">
+                <h3>11. Speicherdauer</h3>
 
                 <p>
                   Personenbezogene Daten werden nur so lange gespeichert, wie dies für den jeweiligen Zweck
-                  erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen.
+                  erforderlich ist oder gesetzliche Aufbewahrungspflichten bestehen. Danach werden die Daten
+                  gelöscht oder gesperrt, soweit keine weitere rechtliche Grundlage für die Verarbeitung besteht.
                 </p>
               </section>
 
               <section class="legal-text-card">
-                <h3>10. Rechte betroffener Personen</h3>
+                <h3>12. Empfänger von Daten</h3>
 
                 <p>
-                  Betroffene Personen können nach Maßgabe der gesetzlichen Voraussetzungen Auskunft, Berichtigung,
-                  Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie Widerspruch gegen die
-                  Verarbeitung verlangen.
+                  Personenbezogene Daten können, soweit erforderlich, an technische Dienstleister, Hostinganbieter,
+                  Kommunikationsanbieter oder sonstige Empfänger übermittelt werden, wenn dies für den Betrieb der
+                  Website, die Bearbeitung von Anfragen oder die Erfüllung rechtlicher Pflichten erforderlich ist.
+                </p>
+
+                <p>
+                  Eine Weitergabe zu Werbezwecken erfolgt nicht, sofern nicht ausdrücklich etwas anderes angegeben
+                  und rechtlich zulässig umgesetzt wird.
                 </p>
               </section>
 
               <section class="legal-text-card">
-                <h3>11. Beschwerderecht</h3>
+                <h3>13. Rechte betroffener Personen</h3>
+
+                <p>
+                  Betroffene Personen können nach Maßgabe der gesetzlichen Voraussetzungen insbesondere folgende
+                  Rechte geltend machen:
+                </p>
+
+                <ul>
+                  <li>Auskunft über gespeicherte personenbezogene Daten</li>
+                  <li>Berichtigung unrichtiger Daten</li>
+                  <li>Löschung personenbezogener Daten</li>
+                  <li>Einschränkung der Verarbeitung</li>
+                  <li>Datenübertragbarkeit</li>
+                  <li>Widerspruch gegen bestimmte Verarbeitungen</li>
+                  <li>Widerruf erteilter Einwilligungen mit Wirkung für die Zukunft</li>
+                </ul>
+              </section>
+
+              <section class="legal-text-card">
+                <h3>14. Beschwerderecht</h3>
 
                 <p>
                   Wenn du der Ansicht bist, dass die Verarbeitung personenbezogener Daten gegen Datenschutzrecht
@@ -783,18 +896,34 @@
               </section>
 
               <section class="legal-text-card">
-                <h3>12. Änderungen</h3>
+                <h3>15. Änderungen dieser Datenschutzinformationen</h3>
 
                 <p>
-                  Diese Datenschutzinformationen können angepasst werden, wenn sich die Website, eingebundene Dienste
-                  oder rechtliche Anforderungen ändern. Die Angaben müssen regelmäßig geprüft und bei Bedarf aktualisiert werden.
+                  Diese Datenschutzinformationen können angepasst werden, wenn sich die Website, eingebundene Dienste,
+                  technische Abläufe oder rechtliche Anforderungen ändern. Die Angaben müssen regelmäßig geprüft und
+                  bei Bedarf aktualisiert werden.
                 </p>
               </section>
+            </div>
+
+            <div class="info-note legal-note">
+              <p class="info-note-label">Noch final prüfen</p>
+
+              <p class="info-note-text">
+                Vor echter Nutzung müssen insbesondere Hosting, Google Maps, mögliche App-Funktionen, Zahlungsanbieter,
+                Vertragsabschluss, Videoüberwachung, Cookies, Analyse-Tools und Auftragsverarbeitungsverträge geprüft werden.
+              </p>
             </div>
           </article>
         </div>
 
-        <div class="legal-panel" id="panel-agb" role="tabpanel" aria-labelledby="tab-agb" hidden>
+        <div
+          class="legal-panel"
+          id="panel-agb"
+          role="tabpanel"
+          aria-labelledby="tab-agb"
+          hidden
+        >
           <article class="legal-document">
             <div class="legal-document-head">
               <p class="eyebrow">AGB</p>
@@ -803,7 +932,8 @@
 
               <p>
                 Die folgenden Bedingungen bilden einen strukturierten Entwurf für NordFit.
-                Vor einer echten geschäftlichen Nutzung müssen sie an den tatsächlichen Betrieb angepasst und geprüft werden.
+                Vor einer echten geschäftlichen Nutzung müssen sie an den tatsächlichen Betrieb,
+                die App, Zahlungsarten, Kündigungsregeln und Standortbedingungen angepasst und geprüft werden.
               </p>
             </div>
 
@@ -812,9 +942,13 @@
                 <h3>1. Geltungsbereich</h3>
 
                 <p>
-                  Diese Allgemeinen Geschäftsbedingungen gelten für die Nutzung von Angeboten von NordFit, soweit sie
-                  wirksam in einen Vertrag einbezogen werden. Dazu können Mitgliedschaften, Tagespässe, digitale Zugänge,
-                  App-Funktionen und Studioleistungen gehören.
+                  Diese Allgemeinen Geschäftsbedingungen gelten für die Nutzung von Angeboten von NordFit,
+                  soweit sie wirksam in einen Vertrag einbezogen werden. Dazu können Mitgliedschaften,
+                  Tagespässe, digitale Zugänge, App-Funktionen und Studioleistungen gehören.
+                </p>
+
+                <p>
+                  Abweichende Bedingungen gelten nur, wenn sie ausdrücklich bestätigt wurden.
                 </p>
               </section>
 
@@ -825,32 +959,56 @@
 
                 <p>
                   <strong>NordFit / NordGroup</strong><br />
-                  [vollständiger Betreibername ergänzen]<br />
+                  [vollständigen Betreibername ergänzen]<br />
                   [Anschrift ergänzen]
                 </p>
               </section>
 
               <section class="legal-text-card">
-                <h3>3. Mitgliedschaften</h3>
+                <h3>3. Vertragsschluss</h3>
+
+                <p>
+                  Ein Vertrag kommt zustande, wenn ein Nutzer ein NordFit-Angebot auswählt und der Vertragsschluss
+                  nach den jeweils vorgesehenen Schritten bestätigt wird. Details ergeben sich aus der
+                  Buchungsübersicht, der App oder den Vertragsunterlagen.
+                </p>
+
+                <p>
+                  Preise, Laufzeiten, Leistungen und besondere Hinweise werden vor Vertragsschluss transparent angezeigt.
+                </p>
+              </section>
+
+              <section class="legal-text-card">
+                <h3>4. Mitgliedschaften</h3>
 
                 <p>
                   NordFit kann verschiedene Mitgliedschaftsmodelle anbieten. Preise, Mindestlaufzeiten, Leistungen,
                   Zahlungsbedingungen und Kündigungsregeln ergeben sich aus dem jeweils gewählten Tarif, der
                   Buchungsübersicht und den Vertragsunterlagen.
                 </p>
-              </section>
-
-              <section class="legal-text-card">
-                <h3>4. Tagespass</h3>
 
                 <p>
-                  Tagespässe können einen zeitlich begrenzten Zugang zum Studio ermöglichen. Der genaue Leistungsumfang,
-                  die Gültigkeit, der Preis und die Nutzungsbedingungen ergeben sich aus dem jeweiligen Angebot.
+                  Eine Mitgliedschaft ist persönlich und darf nicht auf andere Personen übertragen werden,
+                  sofern nicht ausdrücklich etwas anderes vereinbart wurde.
                 </p>
               </section>
 
               <section class="legal-text-card">
-                <h3>5. Zugang und App</h3>
+                <h3>5. Tagespass</h3>
+
+                <p>
+                  Tagespässe ermöglichen einen zeitlich begrenzten Zugang zum Studio. Der genaue Leistungsumfang,
+                  die Gültigkeit, der Preis und die Nutzungsbedingungen ergeben sich aus dem jeweiligen Angebot.
+                </p>
+
+                <p>
+                  Ein Tagespass begründet keine laufende Mitgliedschaft, sofern dies im Buchungsprozess nicht
+                  ausdrücklich anders vereinbart wird.
+                </p>
+              </section>
+
+              <section class="legal-text-card">
+                <h3>6. Zugang und App</h3>
 
                 <p>
                   Der Zugang zum Studio kann digital über die NordFit App, einen QR-Code oder ein vergleichbares
@@ -858,83 +1016,135 @@
                 </p>
 
                 <p>
-                  Eine Weitergabe von Zugangsdaten oder das Mitnehmen nicht berechtigter Personen kann zu einer Sperrung
-                  des Zugangs und weiteren Maßnahmen führen.
+                  Eine Weitergabe von Zugangsdaten, das Mitnehmen nicht berechtigter Personen oder sonstiger
+                  Missbrauch kann zu einer Sperrung des Zugangs, einem Hausverbot und weiteren angemessenen Maßnahmen führen.
                 </p>
               </section>
 
               <section class="legal-text-card">
-                <h3>6. Hausordnung</h3>
+                <h3>7. Hausordnung</h3>
 
                 <p>
                   Die Nutzung des Studios setzt die Einhaltung der jeweils gültigen Hausordnung voraus. Die Hausordnung
-                  regelt insbesondere Zutritt, Rücksichtnahme, Hygiene, Gerätenutzung, Sicherheit und Verhalten im Studio.
+                  regelt insbesondere Zutritt, Rücksichtnahme, Hygiene, Gerätenutzung, Sicherheit, Privatsphäre
+                  und Verhalten im Studio.
                 </p>
-              </section>
-
-              <section class="legal-text-card">
-                <h3>7. Zahlung</h3>
 
                 <p>
-                  Zahlungsarten, Fälligkeiten, Abbuchungen und mögliche Gebühren ergeben sich aus dem jeweiligen Vertrag
-                  oder der Buchungsübersicht. Diese Bedingungen müssen vollständig festgelegt und rechtlich geprüft werden.
+                  Verstöße gegen die Hausordnung können zu Verwarnung, Zugangssperre, Hausverbot oder weiteren
+                  angemessenen Maßnahmen führen.
                 </p>
               </section>
 
               <section class="legal-text-card">
-                <h3>8. Laufzeit und Kündigung</h3>
+                <h3>8. Zahlung</h3>
+
+                <p>
+                  Zahlungsarten, Fälligkeiten, Abbuchungen und mögliche Gebühren ergeben sich aus dem jeweiligen Vertrag,
+                  der Buchungsübersicht oder den Zahlungsinformationen. Diese Bedingungen müssen vor echter Nutzung
+                  vollständig festgelegt und rechtlich geprüft werden.
+                </p>
+              </section>
+
+              <section class="legal-text-card">
+                <h3>9. Laufzeit und Kündigung</h3>
 
                 <p>
                   Laufzeiten, Mindestvertragslaufzeiten, Verlängerungen und Kündigungsfristen richten sich nach dem
                   jeweils abgeschlossenen Vertrag und den gesetzlichen Vorgaben. Diese Angaben werden im Buchungsprozess
                   klar und transparent dargestellt.
                 </p>
-              </section>
-
-              <section class="legal-text-card">
-                <h3>9. Gesundheit und Eigenverantwortung</h3>
 
                 <p>
-                  Mitglieder und Nutzer trainieren eigenverantwortlich. Bei gesundheitlichen Beschwerden, Vorerkrankungen,
-                  Unsicherheiten oder Schmerzen sollte vor dem Training ärztlicher Rat eingeholt werden.
+                  Kündigungen müssen über die vorgesehenen Kontakt- oder App-Funktionen möglich sein, sobald diese
+                  rechtlich und technisch final umgesetzt sind.
                 </p>
               </section>
 
               <section class="legal-text-card">
-                <h3>10. Geräte und Räume</h3>
+                <h3>10. Widerruf und Verbraucherrechte</h3>
 
                 <p>
-                  Geräte, Trainingsflächen, Umkleidebereiche und sonstige Einrichtungen sind sorgfältig und bestimmungsgemäß
-                  zu nutzen. Schäden, Defekte oder gefährliche Situationen sind unverzüglich zu melden.
+                  Sofern ein Vertrag mit Verbrauchern online oder außerhalb von Geschäftsräumen geschlossen wird,
+                  können gesetzliche Widerrufsrechte bestehen. Einzelheiten müssen vor Vertragsschluss klar und
+                  gesetzeskonform bereitgestellt werden.
+                </p>
+
+                <p>
+                  Für eine echte Nutzung müssen Widerrufsbelehrung, Muster-Widerrufsformular und mögliche Ausnahmen
+                  rechtlich geprüft und ergänzt werden.
                 </p>
               </section>
 
               <section class="legal-text-card">
-                <h3>11. Haftung</h3>
+                <h3>11. Gesundheit und Eigenverantwortung</h3>
 
                 <p>
-                  Für Schäden haftet NordFit nach Maßgabe der gesetzlichen Vorschriften. Nutzer haften für Schäden, die
-                  sie schuldhaft verursachen. Eine Haftung für mitgebrachte Gegenstände besteht nur im Rahmen der
-                  gesetzlichen Bestimmungen.
+                  Mitglieder und Nutzer trainieren eigenverantwortlich. Bei gesundheitlichen Beschwerden,
+                  Vorerkrankungen, Unsicherheiten, Schmerzen oder sonstigen Risiken sollte vor dem Training
+                  ärztlicher Rat eingeholt werden.
+                </p>
+
+                <p>
+                  Übungen, Geräte und Trainingsgewichte sind so zu wählen, dass keine unnötigen Risiken für sich selbst
+                  oder andere entstehen.
                 </p>
               </section>
 
               <section class="legal-text-card">
-                <h3>12. Änderungen von Leistungen</h3>
+                <h3>12. Geräte, Räume und Schäden</h3>
 
                 <p>
-                  Änderungen von Öffnungszeiten, Standorten, App-Funktionen, Zugangssystemen oder Studioleistungen können
-                  erforderlich sein. Vertragsrelevante Änderungen erfolgen nur, soweit sie rechtlich zulässig sind und
-                  transparent kommuniziert werden.
+                  Geräte, Trainingsflächen, Umkleidebereiche und sonstige Einrichtungen sind sorgfältig und
+                  bestimmungsgemäß zu nutzen. Schäden, Defekte oder gefährliche Situationen sind unverzüglich zu melden.
+                </p>
+
+                <p>
+                  Nutzer haften für Schäden, die sie schuldhaft verursachen. Eine Abrechnung von Schäden erfolgt
+                  nach den gesetzlichen Vorschriften.
                 </p>
               </section>
 
               <section class="legal-text-card">
-                <h3>13. Schlussbestimmungen</h3>
+                <h3>13. Haftung</h3>
 
                 <p>
-                  Sollten einzelne Bestimmungen unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen Bestimmungen
-                  unberührt. Es gelten die gesetzlichen Vorschriften.
+                  Für Schäden haftet NordFit nach Maßgabe der gesetzlichen Vorschriften. Die Haftung für Schäden
+                  aus der Verletzung des Lebens, des Körpers oder der Gesundheit sowie für vorsätzlich oder grob
+                  fahrlässig verursachte Schäden bleibt unberührt.
+                </p>
+
+                <p>
+                  Für mitgebrachte Gegenstände besteht eine Haftung nur im Rahmen der gesetzlichen Bestimmungen.
+                </p>
+              </section>
+
+              <section class="legal-text-card">
+                <h3>14. Änderungen von Leistungen</h3>
+
+                <p>
+                  Änderungen von Öffnungszeiten, Standorten, App-Funktionen, Zugangssystemen oder Studioleistungen
+                  können aus sachlichen Gründen erforderlich sein. Vertragsrelevante Änderungen erfolgen nur, soweit
+                  sie rechtlich zulässig sind und transparent kommuniziert werden.
+                </p>
+              </section>
+
+              <section class="legal-text-card">
+                <h3>15. Datenschutz</h3>
+
+                <p>
+                  Informationen zur Verarbeitung personenbezogener Daten ergeben sich aus den Datenschutzinformationen
+                  auf dieser Website, aus Hinweisen in der App und aus weiteren Informationen vor Ort.
+                </p>
+              </section>
+
+              <section class="legal-text-card">
+                <h3>16. Schlussbestimmungen</h3>
+
+                <p>
+                  Es gilt deutsches Recht, soweit keine zwingenden Verbraucherschutzvorschriften entgegenstehen.
+                  Sollten einzelne Bestimmungen unwirksam sein oder werden, bleibt die Wirksamkeit der übrigen
+                  Bestimmungen unberührt.
                 </p>
               </section>
             </div>
@@ -943,9 +1153,9 @@
               <p class="info-note-label">Rechtlich prüfen lassen</p>
 
               <p class="info-note-text">
-                Diese AGB sind ein strukturierter Entwurf. Vor einer echten geschäftlichen Nutzung müssen sie anhand des
-                tatsächlichen Geschäftsmodells, der Mitgliedschaften, Zahlungsarten, Kündigungsregeln, App-Funktionen
-                und Standortbedingungen rechtlich geprüft und finalisiert werden.
+                Diese AGB sind ein strukturierter Entwurf. Vor echter geschäftlicher Nutzung müssen sie anhand des
+                tatsächlichen Geschäftsmodells, der Mitgliedschaften, Zahlungsarten, Kündigungsregeln, App-Funktionen,
+                Widerrufsbelehrung, Videoüberwachung und Standortbedingungen rechtlich geprüft und finalisiert werden.
               </p>
             </div>
           </article>
@@ -971,6 +1181,7 @@
           const isActive = button.dataset.tab === selectedTab;
           button.classList.toggle("is-active", isActive);
           button.setAttribute("aria-selected", String(isActive));
+          button.tabIndex = isActive ? 0 : -1;
         });
 
         panels.forEach((panel) => {
@@ -980,7 +1191,7 @@
         });
 
         if (updateHash) {
-          window.location.hash = selectedTab;
+          window.history.pushState(null, "", `#${selectedTab}`);
         }
       };
 
@@ -989,9 +1200,41 @@
         activateTab(hash || "impressum", false);
       };
 
-      tabButtons.forEach((button) => {
+      tabButtons.forEach((button, index) => {
         button.addEventListener("click", () => {
           activateTab(button.dataset.tab, true);
+        });
+
+        button.addEventListener("keydown", (event) => {
+          const key = event.key;
+
+          if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(key)) return;
+
+          event.preventDefault();
+
+          let nextIndex = index;
+
+          if (key === "ArrowLeft") {
+            nextIndex = index === 0 ? tabButtons.length - 1 : index - 1;
+          }
+
+          if (key === "ArrowRight") {
+            nextIndex = index === tabButtons.length - 1 ? 0 : index + 1;
+          }
+
+          if (key === "Home") {
+            nextIndex = 0;
+          }
+
+          if (key === "End") {
+            nextIndex = tabButtons.length - 1;
+          }
+
+          const nextButton = tabButtons[nextIndex];
+          if (!nextButton) return;
+
+          nextButton.focus();
+          activateTab(nextButton.dataset.tab, true);
         });
       });
 
