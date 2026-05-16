@@ -40,6 +40,15 @@
       white-space: nowrap;
     }
 
+    .pricing-page-note {
+      max-width: 760px;
+      margin: 1rem auto 0;
+      color: var(--muted);
+      font-size: 1rem;
+      line-height: 1.5;
+      letter-spacing: -0.012em;
+    }
+
     .tariff-scroll-wrap {
       width: 100%;
     }
@@ -413,6 +422,14 @@
       min-height: 52px;
     }
 
+    .tariff-small-note {
+      margin-top: 1rem;
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.45;
+      letter-spacing: -0.01em;
+    }
+
     .daypass-section {
       padding-top: 0;
       padding-bottom: 5.5rem;
@@ -648,6 +665,11 @@
         white-space: normal;
       }
 
+      .pricing-page-note {
+        max-width: 34ch;
+        font-size: 0.96rem;
+      }
+
       .tariff-scroll-wrap {
         width: auto;
         margin-inline: calc(50% - 50vw);
@@ -823,20 +845,24 @@
   <div data-header></div>
 
   <main>
-    <section id="mitgliedschaften" class="section pricing-page-section">
+    <section id="mitgliedschaften" class="section pricing-page-section" aria-labelledby="pricing-page-title">
       <div class="container">
         <div class="section-intro center pricing-page-intro">
           <p class="eyebrow">Mitgliedschaften</p>
 
-          <h1 class="pricing-main-title">
+          <h1 class="pricing-main-title" id="pricing-page-title">
             Tarife und Tagespass.
           </h1>
+
+          <p class="pricing-page-note">
+            Wähle deinen Zugang digital in der NordFit App. Rabatte und Laufzeiten werden vor der Buchung noch einmal klar angezeigt.
+          </p>
         </div>
 
-        <div class="tariff-scroll-wrap">
+        <div class="tariff-scroll-wrap" aria-label="NordFit Mitgliedschaften">
           <div class="tariff-grid">
-            <article class="tariff-card">
-              <h2 class="tariff-name">NordFit <span>Basic</span></h2>
+            <article class="tariff-card" aria-labelledby="basic-title">
+              <h2 class="tariff-name" id="basic-title">NordFit <span>Basic</span></h2>
 
               <div class="tariff-price-area">
                 <div class="tariff-price-row">
@@ -859,11 +885,11 @@
                         <button
                           class="extra-info-button"
                           type="button"
-                          aria-label="Information zu den Freigetränken"
+                          aria-label="Information zu den Freigetränken im Basic-Tarif"
                           data-info-title="Wie funktionieren die Freigetränke?"
-                          data-info-text="Du erhältst jeden Monat 3 Freigetränke à 330 ml. Wenn du deine Freigetränke in einem Monat nicht alle nutzt, verfallen sie nicht. Die neuen Freigetränke des nächsten Monats werden einfach zusätzlich dazugebucht. Wenn deine Freigetränke aufgebraucht sind, kannst du weitere Getränke in der App kaufen und im Studio einlösen."
+                          data-info-text="Du erhältst jeden Monat 3 Freigetränke à 330 ml. Wenn du deine Freigetränke in einem Monat nicht alle nutzt, verfallen sie nicht. Die neuen Freigetränke des nächsten Monats werden zusätzlich dazugebucht. Wenn deine Freigetränke aufgebraucht sind, kannst du weitere Getränke in der App kaufen und im Studio einlösen."
                         >
-                          <span>?</span>
+                          <span aria-hidden="true">?</span>
                         </button>
                       </span>
                     </li>
@@ -877,11 +903,11 @@
                   <button
                     class="runtime-info-button"
                     type="button"
-                    aria-label="Information zur Mindestlaufzeit"
+                    aria-label="Information zur Mindestlaufzeit im Basic-Tarif"
                     data-info-title="Wie funktioniert die Mindestlaufzeit?"
                     data-info-text="Die Mindestlaufzeit ist der Zeitraum, für den deine Mitgliedschaft mindestens läuft. Du kannst bereits während der Mindestlaufzeit kündigen; die Mitgliedschaft endet dann zum Ablauf der Mindestlaufzeit. Wenn du nicht kündigst, läuft die Mitgliedschaft nach der Mindestlaufzeit regulär weiter und kann dann monatlich gekündigt werden."
                   >
-                    <span>?</span>
+                    <span aria-hidden="true">?</span>
                   </button>
                 </div>
 
@@ -891,10 +917,12 @@
               </div>
             </article>
 
-            <article class="tariff-card is-plus">
-              <span class="discount-badge"><span>-5,98 €</span></span>
+            <article class="tariff-card is-plus" aria-labelledby="plus-title">
+              <span class="discount-badge" aria-label="Rabatt: 5,98 Euro insgesamt">
+                <span>-5,98 €</span>
+              </span>
 
-              <h2 class="tariff-name">NordFit <span>Plus</span></h2>
+              <h2 class="tariff-name" id="plus-title">NordFit <span>Plus</span></h2>
 
               <div class="tariff-price-area">
                 <div class="tariff-price-row has-discount">
@@ -908,7 +936,7 @@
                     <p class="tariff-discount-unit">pro Monat</p>
                   </div>
 
-                  <p class="tariff-discount-note">* für die ersten 2 Monate</p>
+                  <p class="tariff-discount-note">für die ersten 2 Monate, danach 34,99 € / Monat</p>
                 </div>
               </div>
 
@@ -926,11 +954,11 @@
                         <button
                           class="extra-info-button"
                           type="button"
-                          aria-label="Information zu den Freigetränken"
+                          aria-label="Information zu den Freigetränken im Plus-Tarif"
                           data-info-title="Wie funktionieren die Freigetränke?"
-                          data-info-text="Du erhältst jeden Monat 6 Freigetränke à 330 ml. Wenn du deine Freigetränke in einem Monat nicht alle nutzt, verfallen sie nicht. Die neuen Freigetränke des nächsten Monats werden einfach zusätzlich dazugebucht. Wenn deine Freigetränke aufgebraucht sind, kannst du weitere Getränke in der App kaufen und im Studio einlösen."
+                          data-info-text="Du erhältst jeden Monat 6 Freigetränke à 330 ml. Wenn du deine Freigetränke in einem Monat nicht alle nutzt, verfallen sie nicht. Die neuen Freigetränke des nächsten Monats werden zusätzlich dazugebucht. Wenn deine Freigetränke aufgebraucht sind, kannst du weitere Getränke in der App kaufen und im Studio einlösen."
                         >
-                          <span>?</span>
+                          <span aria-hidden="true">?</span>
                         </button>
                       </span>
                     </li>
@@ -941,11 +969,11 @@
                         <button
                           class="extra-info-button"
                           type="button"
-                          aria-label="Information zu Kreatin im Getränk"
+                          aria-label="Information zu Kreatin im Getränk im Plus-Tarif"
                           data-info-title="Kreatin im Getränk"
                           data-info-text="Mit NordFit Plus kannst du bei passenden Getränken zusätzlich Kreatin auswählen und direkt mit einmischen lassen. Die Menge soll später in der App bzw. am Getränkesystem auswählbar sein."
                         >
-                          <span>?</span>
+                          <span aria-hidden="true">?</span>
                         </button>
                       </span>
                     </li>
@@ -959,11 +987,11 @@
                   <button
                     class="runtime-info-button"
                     type="button"
-                    aria-label="Information zur Mindestlaufzeit"
+                    aria-label="Information zur Mindestlaufzeit im Plus-Tarif"
                     data-info-title="Wie funktioniert die Mindestlaufzeit?"
                     data-info-text="Die Mindestlaufzeit ist der Zeitraum, für den deine Mitgliedschaft mindestens läuft. Du kannst bereits während der Mindestlaufzeit kündigen; die Mitgliedschaft endet dann zum Ablauf der Mindestlaufzeit. Wenn du nicht kündigst, läuft die Mitgliedschaft nach der Mindestlaufzeit regulär weiter und kann dann monatlich gekündigt werden."
                   >
-                    <span>?</span>
+                    <span aria-hidden="true">?</span>
                   </button>
                 </div>
 
@@ -973,8 +1001,8 @@
               </div>
             </article>
 
-            <article class="tariff-card">
-              <h2 class="tariff-name">NordFit <span>Pro</span></h2>
+            <article class="tariff-card" aria-labelledby="pro-title">
+              <h2 class="tariff-name" id="pro-title">NordFit <span>Pro</span></h2>
 
               <div class="tariff-price-area">
                 <div class="tariff-price-row">
@@ -997,11 +1025,11 @@
                         <button
                           class="extra-info-button"
                           type="button"
-                          aria-label="Information zu den Freigetränken"
+                          aria-label="Information zu den Freigetränken im Pro-Tarif"
                           data-info-title="Wie funktionieren die Freigetränke?"
-                          data-info-text="Du erhältst jeden Monat 9 Freigetränke à 330 ml. Wenn du deine Freigetränke in einem Monat nicht alle nutzt, verfallen sie nicht. Die neuen Freigetränke des nächsten Monats werden einfach zusätzlich dazugebucht. Wenn deine Freigetränke aufgebraucht sind, kannst du weitere Getränke in der App kaufen und im Studio einlösen."
+                          data-info-text="Du erhältst jeden Monat 9 Freigetränke à 330 ml. Wenn du deine Freigetränke in einem Monat nicht alle nutzt, verfallen sie nicht. Die neuen Freigetränke des nächsten Monats werden zusätzlich dazugebucht. Wenn deine Freigetränke aufgebraucht sind, kannst du weitere Getränke in der App kaufen und im Studio einlösen."
                         >
-                          <span>?</span>
+                          <span aria-hidden="true">?</span>
                         </button>
                       </span>
                     </li>
@@ -1012,11 +1040,11 @@
                         <button
                           class="extra-info-button"
                           type="button"
-                          aria-label="Information zu Kreatin im Getränk"
+                          aria-label="Information zu Kreatin im Getränk im Pro-Tarif"
                           data-info-title="Kreatin im Getränk"
                           data-info-text="Mit NordFit Pro kannst du bei passenden Getränken zusätzlich Kreatin auswählen und direkt mit einmischen lassen. Die Menge soll später in der App bzw. am Getränkesystem auswählbar sein."
                         >
-                          <span>?</span>
+                          <span aria-hidden="true">?</span>
                         </button>
                       </span>
                     </li>
@@ -1027,11 +1055,11 @@
                         <button
                           class="extra-info-button"
                           type="button"
-                          aria-label="Information zu den 500-Milliliter-Freigetränken"
+                          aria-label="Information zu den zusätzlichen 500-Milliliter-Freigetränken im Pro-Tarif"
                           data-info-title="Zusätzliche 500-ml-Freigetränke"
                           data-info-text="Zusätzlich zu deinen 9 Freigetränken à 330 ml erhältst du jeden Monat 2 weitere Freigetränke à 500 ml. 500-ml-Getränke können unabhängig davon auch regulär in der App gekauft und im Studio eingelöst werden."
                         >
-                          <span>?</span>
+                          <span aria-hidden="true">?</span>
                         </button>
                       </span>
                     </li>
@@ -1045,11 +1073,11 @@
                   <button
                     class="runtime-info-button"
                     type="button"
-                    aria-label="Information zur Mindestlaufzeit"
+                    aria-label="Information zur Mindestlaufzeit im Pro-Tarif"
                     data-info-title="Wie funktioniert die Mindestlaufzeit?"
                     data-info-text="Die Mindestlaufzeit ist der Zeitraum, für den deine Mitgliedschaft mindestens läuft. Du kannst bereits während der Mindestlaufzeit kündigen; die Mitgliedschaft endet dann zum Ablauf der Mindestlaufzeit. Wenn du nicht kündigst, läuft die Mitgliedschaft nach der Mindestlaufzeit regulär weiter und kann dann monatlich gekündigt werden."
                   >
-                    <span>?</span>
+                    <span aria-hidden="true">?</span>
                   </button>
                 </div>
 
@@ -1060,24 +1088,30 @@
             </article>
           </div>
         </div>
+
+        <p class="tariff-small-note">
+          Alle Preise verstehen sich inklusive gesetzlicher Umsatzsteuer, sofern anwendbar. Die genaue Buchung, Zahlungsart, Laufzeit und Kündigungsregel werden später in der App bzw. im Buchungsprozess verbindlich angezeigt.
+        </p>
       </div>
     </section>
 
-    <section id="tagespass" class="section daypass-section">
+    <section id="tagespass" class="section daypass-section" aria-labelledby="daypass-title">
       <div class="container">
         <div class="daypass-card">
           <div class="daypass-copy">
             <p class="eyebrow">Tagespass</p>
 
-            <h2>NordFit <span>Tagespass</span></h2>
+            <h2 id="daypass-title">NordFit <span>Tagespass</span></h2>
 
             <p>
-              Zum Testen: einmal trainieren, einen Tag lang Zugang nutzen und NordFit kennenlernen.
+              Zum Testen: einmal trainieren, 24 Stunden Zugang nutzen und NordFit kennenlernen.
             </p>
           </div>
 
           <div class="daypass-price-box-clean">
-            <span class="discount-badge"><span>-30%</span></span>
+            <span class="discount-badge" aria-label="Rabatt: 30 Prozent">
+              <span>-30%</span>
+            </span>
 
             <div class="tariff-price-area">
               <div class="tariff-price-row has-discount">
@@ -1107,11 +1141,11 @@
                       <button
                         class="extra-info-button"
                         type="button"
-                        aria-label="Information zum Freigetränk"
+                        aria-label="Information zum Freigetränk beim Tagespass"
                         data-info-title="Freigetränk beim Tagespass"
                         data-info-text="Mit dem Tagespass erhältst du für diesen Nutzungstag 1 Freigetränk à 330 ml. Weitere Getränke können zusätzlich in der App gekauft und im Studio eingelöst werden."
                       >
-                        <span>?</span>
+                        <span aria-hidden="true">?</span>
                       </button>
                     </span>
                   </li>
@@ -1129,7 +1163,7 @@
                   data-info-title="Wie funktioniert der Zugang?"
                   data-info-text="Der Tagespass wird nach dem Kauf in deinem Profil hinterlegt und startet nicht sofort. Die 24 Stunden beginnen erst, wenn du den Tagespass beim Betreten des Studios über die NordFit App aktivierst und den QR-Code für den Zutritt nutzt. Danach ist der Zugang 24 Stunden gültig und endet automatisch. Aus dem Tagespass entsteht keine Mitgliedschaft."
                 >
-                  <span>?</span>
+                  <span aria-hidden="true">?</span>
                 </button>
               </div>
 
@@ -1139,12 +1173,23 @@
             </div>
           </div>
         </div>
+
+        <p class="tariff-small-note">
+          Der Tagespass wird einmalig gebucht und begründet keine Mitgliedschaft. Die 24 Stunden starten erst bei Aktivierung über den App-Zutritt.
+        </p>
       </div>
     </section>
   </main>
 
   <div class="tariff-info-modal" id="tariff-info-modal" aria-hidden="true">
-    <div class="tariff-info-box" role="dialog" aria-modal="true" aria-labelledby="tariff-info-title">
+    <div
+      class="tariff-info-box"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="tariff-info-title"
+      aria-describedby="tariff-info-text"
+      tabindex="-1"
+    >
       <div class="tariff-info-head">
         <div>
           <p class="tariff-info-label">Info</p>
@@ -1167,19 +1212,29 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const modal = document.getElementById("tariff-info-modal");
+      const modalBox = modal ? modal.querySelector(".tariff-info-box") : null;
       const modalTitle = document.getElementById("tariff-info-title");
       const modalText = document.getElementById("tariff-info-text");
       const closeButton = document.querySelector(".tariff-info-close");
       const infoButtons = document.querySelectorAll(".runtime-info-button, .extra-info-button");
+      const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
-      const openModal = (title, text) => {
-        if (!modal || !modalTitle || !modalText) return;
+      let lastFocusedElement = null;
+
+      const openModal = (title, text, trigger) => {
+        if (!modal || !modalBox || !modalTitle || !modalText) return;
+
+        lastFocusedElement = trigger || document.activeElement;
 
         modalTitle.textContent = title;
         modalText.textContent = text;
         modal.classList.add("show");
         modal.setAttribute("aria-hidden", "false");
         document.body.classList.add("modal-open");
+
+        window.setTimeout(() => {
+          closeButton?.focus({ preventScroll: true });
+        }, prefersReducedMotion.matches ? 0 : 80);
       };
 
       const closeModal = () => {
@@ -1188,11 +1243,34 @@
         modal.classList.remove("show");
         modal.setAttribute("aria-hidden", "true");
         document.body.classList.remove("modal-open");
+
+        if (lastFocusedElement && typeof lastFocusedElement.focus === "function") {
+          lastFocusedElement.focus({ preventScroll: true });
+        }
+
+        lastFocusedElement = null;
+      };
+
+      const getFocusableElements = () => {
+        if (!modal) return [];
+
+        return Array.from(
+          modal.querySelectorAll(
+            "a[href], button:not([disabled]), textarea:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex='-1'])"
+          )
+        ).filter((element) => {
+          const style = window.getComputedStyle(element);
+          return style.display !== "none" && style.visibility !== "hidden";
+        });
       };
 
       infoButtons.forEach((button) => {
         button.addEventListener("click", () => {
-          openModal(button.dataset.infoTitle || "Information", button.dataset.infoText || "");
+          openModal(
+            button.dataset.infoTitle || "Information",
+            button.dataset.infoText || "",
+            button
+          );
         });
       });
 
@@ -1209,8 +1287,27 @@
       }
 
       document.addEventListener("keydown", (event) => {
+        if (!modal || !modal.classList.contains("show")) return;
+
         if (event.key === "Escape") {
           closeModal();
+          return;
+        }
+
+        if (event.key !== "Tab") return;
+
+        const focusableElements = getFocusableElements();
+        if (!focusableElements.length) return;
+
+        const firstElement = focusableElements[0];
+        const lastElement = focusableElements[focusableElements.length - 1];
+
+        if (event.shiftKey && document.activeElement === firstElement) {
+          event.preventDefault();
+          lastElement.focus();
+        } else if (!event.shiftKey && document.activeElement === lastElement) {
+          event.preventDefault();
+          firstElement.focus();
         }
       });
     });
